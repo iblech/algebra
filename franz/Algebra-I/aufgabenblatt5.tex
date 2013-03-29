@@ -1,0 +1,115 @@
+\documentclass{algsheet}
+    \usepackage{amssymb} 
+\usepackage[protrusion=true,expansion=false]{microtype}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   \lecture{Algebra I\\ \small{Einführung in die Algebra}}
+        
+        \semester{Wintersemester 2010/2011}
+        \sheet{5.\ Aufgabenblatt}
+        \author{Dipl.-Math.~Franz Vogler}
+        \date{16.~November 2010}
+        
+        %/usr/local/share/texmf/tex/algmacros.sty
+    \usepackage[arrow,curve,matrix]{xy}    
+        \begin{document}
+                \maketitle
+
+
+
+\begin{exercise}(2 Punkte)\newline
+    Gib eine normierte Polynomgleichung dritten Grades an, welche \(1\)
+    als zweifache Lösung, \(2\) als einfache Lösung und keine weiteren Lösungen
+    besitzt.
+\end{exercise}
+
+\begin{exercise}(3 Punkte)\newline
+    Warum sind beide Seiten von 
+\begin{equation}
+ (gh)'(X)=g'(X)h(X)+g(X)h'(X)
+\end{equation}
+ sowohl in
+    \(g(X)\) als auch in \(h(X)\) linear und warum reicht es daher, die
+    Gleichung (1) nur für \(g(X) = X^m\) und \(h(X) = X^n\)
+    nachzurechnen?
+\end{exercise}
+
+
+
+
+
+\begin{exercise}(4 Punkte)\newline
+    Seien \(g(X)\) und \(h(X)\) zwei Polynome. Begründe, warum
+    mittels vollständiger Induktion
+    \[
+        (g h)^{(k)}(X)
+        = \sum_{i + j = k} \binom k i \, g^{(i)}(X) \, h^{(j)}(X)
+    \]
+    aus Gleichung (1) in Aufgabe 2 folgt.
+\end{exercise}
+
+\begin{exercise}(3 Punkte)\newline
+    Sei \(f(X)\) ein Polynom. Zeige, daß \(f^{(n + 1)} = 0 \iff \deg f \leq n\)
+    für jede natürliche Zahl \(n\).
+\end{exercise}
+\newpage
+
+\begin{exercise}(4 Punkte)\newline
+    Sei \(f(X)\) ein Polynom und \(x\) eine komplexe Zahl. Zeige, daß die
+    Entwicklung von \(f(X)\) nach \(X - x\) durch die \emph{Taylorsche%
+    \footnote{Brooke Taylor, 1685--1731, britischer Mathematiker} Formel}
+    \[
+        f(X) = \sum_{k = 0}^\infty \frac{f^{(k)}(x)}{k!} \, (X - x)^k
+    \]
+    gegeben ist.
+\end{exercise}
+
+\begin{exercise}(2 Punkte)\newline
+    Gib die zweite elementarsymmetrische Funktion in den fünf Unbestimmten
+    \(X\), \(Y\), \(Z\), \(U\) und \(V\) explizit an.
+\end{exercise}
+
+\begin{exercise}(4 Punkte)\newline
+    Sei \(X^4 + a_3 X^3 + a_2 X^2 + a_1 X + a_0 = 0\) eine normierte Polynomgleichung
+    vierten Grades, deren Lösungen mit Vielfachheiten \(x_1\), \(x_2\), \(x_3\)
+    und \(x_4\) seien. Drücke die Koeffizienten \(a_0\), \(a_1\), \(a_2\) und
+    \(a_3\) explizit als Polynome in den \(x_i\) aus.
+\end{exercise}
+
+\begin{exercise}(4 Punkte)\newline
+    Verwende den Vietaschen Satz für \(n = 2\) um die bekannte Lösungsformel
+    für normierte quadratische Gleichungen herzuleiten.
+\end{exercise}
+
+
+
+
+\begin{exercise}(8 Punkte)\newline
+    Sei \(f(X, Y, Z, W) \coloneqq X Y + Z W + X Y Z W\).
+    Wieviele \(4\)-stellige Permutationen \(\sigma\) gibt es, so daß
+    \(\sigma \cdot f = f\)?
+\end{exercise}
+
+\begin{exercise}(3 Punkte)\newline
+     Zeige, daß \(e_k(\underbrace{1, \dots, 1}_n) = \binom n k\).
+\end{exercise}
+ 
+\begin{exercise}(1 Punkt)\newline
+    Schreibe \(X^2 + Y^2 + Z^2\) als Polynom in den elementarsymmetrischen
+    Funktionen in \(X\), \(Y\) und \(Z\).
+\end{exercise}
+
+\begin{exercise}(1 Punkt)\newline
+    Schreibe \(X_1^2 + X_2^2 + \dotsb + X_n^2\) als Polynom in den
+    elementarsymmetrischen Funktionen in \(X_1\), \dots, \(X_n\).
+\end{exercise}
+
+\begin{exercise}(2 Punkte)\newline
+    Sei \(X^3 + p X + q = 0\) eine reduzierte kubische Gleichung. Zeige, daß
+    ihre Diskrimante durch \(-4 p^3 - 27 q^2\) gegeben ist.
+\end{exercise}
+
+
+
+\end{document} 

@@ -1,0 +1,152 @@
+\documentclass{algsheet}
+    \usepackage{amssymb} 
+\usepackage[protrusion=true,expansion=false]{microtype}
+ \usepackage{magros_3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   \lecture{Algebra II}
+        
+        \semester{Sommersemester 2011}
+        \sheet{14.\ Aufgabenblatt}
+        \author{Dipl.-Math.~Franz Vogler}
+        \date{25.~Juli 2011}
+        
+        %/usr/local/share/texmf/tex/algmacros.sty
+    \usepackage[arrow,curve,matrix]{xy}    
+        \begin{document}
+                \maketitle
+
+
+
+\textbf{Abgabe: Aufgabenblatt 14 kann bis zum 24.~August um 14:00 Uhr in den Briefkasten eingeworfen werden.}
+\newline
+Die Besprechung der Aufgaben und die Rückgabe der Abgaben erfolgt im Klausurenkurs, welcher vom 29.~August bis 02.~September stattfinden wird. 
+
+
+
+
+
+
+\begin{exercise}\textbf{(Quickies):}(5+5+5 Zusatzpunkte)\vspace{-1ex}
+   \begin{itemize}
+       \item[(Q1)]     Wieso ist
+    \begin{equation}
+        K^{p^{-\infty}}
+    \end{equation}
+    ein sinnvolles Symbol für den vollkommenen Abschluß eines Körpers positiver
+    Charakteristik \(p\)?
+       \item[(Q2)] Sei \(K\) ein Körper endlicher Charakteristik. Zeige, daß sein Primkörper der
+    kleinste Unterkörper (bezüglich der Inklusionsrelation) von \(K\) ist.
+       \item[(Q3)] Gibt es in einem Körper mit \(27\) Elementen einen Unterkörper mit \(9\)
+    Elementen?
+   \end{itemize}
+\end{exercise}
+
+
+
+\begin{exercise}(5 Punkte)\newline
+    Zeige, daß in einem Körper \(K\) mit \(25\) Elementen eine Quadratwurzel
+    \(\sqrt 2\) aus \(2\) existiert. Gib einen Erzeuger der multiplikativen Gruppe
+    von \(K\) der Form \(a + b \sqrt 2\) an, wobei \(a\) und \(b \in \mathbb F_5\).
+\end{exercise}
+
+
+\begin{exercise}(6 Punkte)\newline
+    Seien \(p\) eine Primzahl und \(n\) und \(d\) positive natürliche
+    Zahlen. Sei \(q = p^n\). Sei \(L\) ein Körper mit \(q^d\) Elementen und
+    \(K\) sein Unterkörper mit \(q\) Elementen. Zeige, daß die Gruppe der
+    Automorphismen von \(L\) als \(K\)-Algebra von \(\mathrm{Frob}^n\) erzeugt wird und
+    \(d\) Elemente besitzt.
+\end{exercise}
+
+
+
+
+\begin{exercise}\textbf{(Spezialistenaufgabe):}(10 Zusatzpunkte)\newline
+    Sei \(R\) ein kommutativer Ring positiver Charakteristik \(p\), das heißt
+    \(R\) ist nicht der Nullring und \(p = 0\) in \(R\). Sei
+    \begin{equation}
+        \varprojlim_{i \in \mathbb N_0} R^{p^i}
+    \end{equation}
+    die Menge aller Folgen \((x_0, x_1, x_2, \dotsc)\) mit \(x_i \in R\) und
+    \(x_{i + 1}^p = x_i\) für alle \(i \in \mathbb N_0\). Durch gliedweise Addition
+    und Multiplikation der Folgen wird \(E \coloneqq \varprojlim\limits_i R^{p^i}\) zu
+    einem kommutativen Ring. Zeige, daß in \(E\) jedes Element eine \(p\)-te Wurzel
+    besitzt.
+    
+    Zeige, daß unter der Voraussetzung, daß \(R\) ein Körper ist, der Ring \(E\)
+    vermöge der Abbildung
+    \begin{equation}
+        (x_0, x_1, x_2, \dotsc) \mapsto x_0
+    \end{equation}
+    zu einem vollkommenen Unterkörper von \(R\) wird und mit denjenigen Elementen
+    in \(R\) identifiziert werden kann, die alle \(q\)-ten Wurzel besitzen, wobei
+    \(q\) eine beliebige \(p\)-Potenz ist.
+    
+    Im allgemeinen heißt der Ring \(E\) heißt die
+    \emph{Vervollkommnung von \(R\)}.
+\end{exercise}
+
+
+
+\begin{exercise}(5 Punkte)\newline
+    Gib die siebenten Wurzeln aller Elemente von \(\mathbb F_7\) an.
+\end{exercise}
+
+
+
+
+
+\begin{exercise}(6 Punkte)\newline
+    Sei \(K\) ein Körper positiver Charakteristik \(p\). Zeige, daß \(K\) genau
+    dann vollkommen ist, wenn der Frobenius von \(K\) ein Isomorphismus von \(K\)
+    auf sich selbst ist.
+\end{exercise}
+
+
+\begin{exercise}(6 Punkte)\newline
+    Sei \(L\) eine Körpererweiterung eines Körpers \(K\). Zeige, daß die Menge
+    der über \(K\) rein inseparablen Elemente in \(L\) eine Zwischenerweiterung
+    von \(L\) über \(K\) ist.
+\end{exercise}
+
+
+\begin{exercise}(6 Punkte)\newline
+	Sei \(L\) eine endliche Körpererweiterung eines Körpers \(K\). Sei \(L\)
+	über \(K\) sowohl separabel als auch rein inseparabel. Zeige, daß \(L = K\).
+\end{exercise}
+
+\begin{exercise}(6 Punkte)\newline
+	Sei \(L\) über \(K\) eine endliche Körpererweiterung. Sei \(x \in L\) separabel
+	über \(K\) und \(y \in L\) rein inseparabel über \(K\). Zeige, daß
+	\(K(x, y) = K(x + y)\).
+\end{exercise}
+
+
+
+\begin{exercise}\textbf{(Staatsexamens-/Klausuraufgaben)}(10+10 Zusatzpunkte)\vspace{-1ex}
+   \begin{itemize}
+       \item[(a)] Sei \(L\) über \(K\) eine endliche Körpererweiterung. Die \emph{Norm}
+	\begin{equation}
+		N_{L/K}(x)
+	\end{equation}
+	eines Elementes \(x\) in \(L\) über \(K\) ist als die Determinante der
+	\(K\)-linearen Abbildung von \(L\) nach \(L\) definiert, die durch Multiplikation mit
+	\(x\) gegeben ist. Zeige, daß
+	\begin{equation}
+		N_{L/K}(x) = \left(\prod_{i = 1}^{[L : K]_\sep} x_i\right)^{[L : K]_\mathrm i},
+	\end{equation}
+	wobei die \(x_i\) die verschiedenen galoisschen Konjugierten von \(x\) in
+	einem algebraisch abgeschlossenen Oberkörper \(\Omega\) von \(K\) sind.
+      
+       \item[(b)] Sei \(L\) über \(K\) eine endliche Körpererweiterung. Sei \(E\) ein über \(K\)
+	endlicher Zwischenkörper. Zeige, daß
+	\begin{equation}
+		\mathrm{disc}_{L/K} = N_{E/K}(\mathrm{disc}_{L/E}) \cdot \mathrm{disc}_{E/K}^{[L : E]}.
+	\end{equation}
+   \end{itemize}
+\end{exercise}
+
+
+
+\end{document}

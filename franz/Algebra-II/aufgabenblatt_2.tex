@@ -1,0 +1,135 @@
+\documentclass{algsheet}
+    \usepackage{amssymb} 
+     \usepackage{magros}
+\usepackage[protrusion=true,expansion=false]{microtype}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   \lecture{Algebra II}
+        
+        \semester{Sommersemester 2011}
+        \sheet{2.\ Aufgabenblatt}
+        \author{Dipl.-Math.~Franz Vogler}
+        \date{02.~Mai 2011}
+        
+        %/usr/local/share/texmf/tex/algmacros.sty
+    \usepackage[arrow,curve,matrix]{xy}    
+        \begin{document}
+                \maketitle
+
+
+
+\begin{exercise}\textbf{(Staatsexamens-/Klausuraufgaben)} (3+3+3+3 Zusatzpunkte)
+\vspace{-1ex}
+\begin{itemize}
+    \item [\textbf{(S1)}]Seien \(H_1\) und \(H_2\) zwei Untergruppen einer Gruppe \(G\). Es gelte
+    \(G = H_1 \cup H_2\), das heißt, jedes Element aus \(G\) sei in (mindestens)
+    einer der Untergruppen enthalten. Sei \(H_1\) eine echte Teilmenge von \(G\)
+    (wir sprechen auch von einer \emph{echten Untergruppe}). Zeige, daß dann schon
+    \(H_2 = G\) gelten muß.
+
+    \item [\textbf{(S2)}]  Sei \(H\) eine endliche Untergruppe einer zyklischen Gruppe \(G\). Zeige,
+    daß \(H\) eine endliche zyklische Gruppe ist.
+    \item [\textbf{(S3)}] Sei \(G\) eine endliche Gruppe, so daß \(\Aut(G)\) eine zyklische Gruppe ist.
+    Zeige, daß \(G\) abelsch ist.
+    \item [\textbf{(S4)}]  Zeige, daß die additive Gruppe der rationalen Zahlen nicht zyklisch ist.
+\end{itemize}
+\end{exercise}
+
+
+
+
+\begin{exercise}(3 Punkte)\newline
+    Gib alle Gruppenautomorphismen der ganzen Zahlen auf sich selbst an.
+\end{exercise}
+
+
+
+\begin{exercise}(4+3+3 Punkte)\vspace{-1ex}
+ \begin{itemize}
+    \item [(i)] Sei \(\phi\colon G \to H\) ein Gruppenhomomorphismus. Sei \(x \in G\) ein
+    Element endlicher Ordnung. Zeige, daß die Ordnung von \(\phi(x)\) ebenfalls
+    endlich ist und zwar ein Teiler der Ordnung von \(x\).
+ \item [(ii)] Seien \(x\) und \(y\) zwei Elemente einer Gruppe \(G\). Zeige, daß es
+    einen Gruppenisomorphismus \(\phi\colon G \to G\) mit \(\phi(xy) = y x\)
+    gibt.
+ \item [(iii)] Seien \(x\) und \(y\) zwei Elemente einer Gruppe \(G\), so daß \(x y\)
+    endliche Ordnung hat. Zeige, daß dann auch \(y x\) endliche Ordnung hat.
+\end{itemize}
+\end{exercise}
+
+
+
+\newpage
+
+\begin{exercise}\textbf{(Quickies)} (1+1+2+2 Punkte)\vspace{-1ex}
+\begin{itemize}
+    \item [\textbf{(Q1)}]Sei \(G\) eine endliche Gruppe von      	Primzahlordnung. Zeige, daß \(G\)
+    genau zwei endliche Untergruppen hat.
+    \item [\textbf{(Q2)}]  Zeige, daß jede zyklische Gruppe abelsch 	                       ist.
+    \item [\textbf{(Q3)}]    Sei \(G\) eine Gruppe. Seien \(H\)   	und  \(H'\) zwei konjugierte Untergruppen
+    von \(G\). Gib einen Gruppenisomorphismus zwischen \(H\) und   	\(H'\) an.
+    \item [\textbf{(Q4)}]     Eine endliche Gruppe wirke auf einer endlichen Menge. Ist die Länge einer
+    Bahn der Operation immer ein Teiler der Gruppenordnung?
+\end{itemize}
+\end{exercise}
+
+
+
+\begin{exercise}(3+3 Punkte)\newline
+    Seien \(n\) und \(m\) zwei natürliche Zahlen, deren Minimum mit \(k\)
+    bezeichnet sei. 
+\begin{itemize}
+  \item [(a)] Zeige, daß die Gruppe
+    \(G \coloneqq \GL_n(\mathbb Q) \times \GL_m(\mathbb Q)\) vermöge
+    \begin{equation}
+        G \times \Mat_{n, m}(\mathbb Q) \to \Mat_{n, m}(\mathbb Q),\quad
+        ((S, T), A) \mapsto S A T^{-1}
+    \end{equation}
+    auf der Menge der \((n \times m)\)-Matrizen wirkt.
+ \item [(b)] Zeige, daß durch den Rang
+    eine wohldefinierte Bijektion
+    \begin{equation}
+        \rk\colon G \backslash \Mat_{n, m}(\mathbb Q) \to \Set{0, \dotsc, k},
+        \quad A \mapsto \rk A
+    \end{equation}
+    gegeben wird.
+\end{itemize}
+\end{exercise}
+
+
+
+
+
+
+\begin{exercise}(4 Punkte)\newline
+    Wirke eine Gruppe \(G\) auf einer Menge \(X\). Zeige, daß die Wirkung von
+    \(G\) auf \(X\) genau dann frei ist, wenn die Abbildung
+    \begin{equation}    
+        G \times X \to X \times X,\quad
+        (g, x) \mapsto (gx, x)
+    \end{equation}
+    injektiv ist.
+\end{exercise}
+
+
+
+
+\begin{exercise}(5 Punkte)\newline
+    Wirke eine endliche Gruppe auf einer endlichen Menge \(X\). Zeige, daß
+    endliche Untergruppen \(H_1\), \dots, \(H_n\) von \(G\) und ein Isomorphismus
+    \begin{equation}
+        G/H_1 \amalg \dotsb \amalg G/H_n \to X
+    \end{equation}
+    existieren, wobei jeder einzelne Summand der disjunkten Vereinigung auf der
+    linken Seite durch Linkstranslation eine \(G\)-Wirkung bekommt.
+\end{exercise}
+
+\begin{exercise}(4 Punkte)\newline
+    Eine endliche Gruppe der Ordnung \(91\) wirke auf einer endlichen
+    Menge mit \(71\) Elementen.
+    Zeige, daß die Operation mindestens einen Fixpunkt hat.
+\end{exercise}
+
+
+\end{document} 

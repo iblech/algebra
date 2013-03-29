@@ -1,0 +1,142 @@
+\documentclass{algsheet}
+    \usepackage{amssymb} 
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage{magros_3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   \lecture{Algebra II}
+        
+        \semester{Sommersemester 2011}
+        \sheet{7.\ Aufgabenblatt}
+        \author{Dipl.-Math.~Franz Vogler}
+        \date{06.~Juni 2011}
+        
+        %/usr/local/share/texmf/tex/algmacros.sty
+    \usepackage[arrow,curve,matrix]{xy}    
+        \begin{document}
+                \maketitle
+
+
+\begin{exercise}\textbf{(Quickies)}(1+2+2+2+1+3 Punkte)\vspace{-1ex}
+ \begin{itemize}
+  \item [(Q1)]     Seien \(R\) ein Ring. Zeige, daß das direkte Produkt \(R \times 0\) von
+    \(R\) mit dem Nullring
+    als Ring kanonisch isomorph zum Ring \(R\) selbst ist.
+    \item [(Q2)]     Sei \(R\) ein kommutativer Ring. Gibt es einen kanonischen Isomorphismus
+    von Ringen zwischen \(R[X, Y]\) und \(R[X] \times R[Y]\)?
+  \item [(Q3)]     Seien \(R\) ein kommutativer Ring und \(n\) eine natürliche Zahl. Zeige,
+    daß die Diagonalmatrizen einen Unterring von \(\Mat_n(R)\) bilden, welcher
+    als Ring isomorph zum direkten Produkte \(R^n = \underbrace{R \times \dotsb
+    \times R}_n\) ist.
+   \item [(Q4)]     Schreibe das Ideal \((3, 8, 9)\) in \(\mathbb Z\) als Hauptideal.
+   \item [(Q5)]       Sei \(p\) eine Primzahl.
+    Bestimme alle endlich erzeugten Ideale von \(\mathbb Z_p\).
+   \item [(Q6)]      Bestimme die Nilradikale der kommutativen Ringe \(\mathbb Z/(n)\), \(n \in \mathbb N_0\)
+    als Hauptideal.
+ \end{itemize}
+\end{exercise}
+
+
+
+\begin{exercise} (6 Punkte)\newline
+    Sei \(R\) ein kommutativer Ring. Zeige, daß folgende Aussagen äquivalent
+    sind:
+    \begin{enumerate}
+    \item
+        Es existieren nicht verschwindende Elemente \(e\), \(f\) in \(R\) mit
+        \(e f = 0\), \(e^2 = e\), \(f^2 = f\) und \(e + f = 1\).
+    \item
+        Der Ring \(R\) ist als Ring isomorph zu einem Produkte \(S \times T\)
+        kommutativer Ringe \(S\) und \(T\), die jeweils nicht der Nullring sind.
+    \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}(3+3 Punkte)\vspace{-1ex}
+  \begin{itemize}
+   \item [(a)] Sei \(p\) eine Primzahl und \(\mathbb Z_p\) die Menge all derjenigen rationalen
+    Zahlen, in deren vollständig gekürzter Bruchdarstellung der Nenner nicht durch
+    \(p\) teilbar ist.
+    Zeige, daß \(\mathbb Z_p\) ein Unterring von \(\mathbb Q\) ist und bestimme seine
+    Einheitengruppe.
+   \item [(b)]     Bestimme die Einheiten der ganzen Gaußschen Zahlen \(\mathbb Z[\iu]\).
+  \end{itemize}
+\end{exercise}
+
+
+
+\begin{exercise}(4 Punkte)\newline
+    Sei \(R\) ein Integritätsbereich. Sei \(n \ge 0\).
+    Seien \(x_1\), \dots, \(x_n\) Elemente
+    von \(R\) mit \(x_1 \dotsm x_n = 0\). Zeige, daß ein \(k\) mit \(x_k = 0\)
+    existiert. Was ist im Falle von $n=0$ ?
+\end{exercise}
+
+
+
+
+\begin{exercise}(4+2+2+2 Punkte)\newline
+    Sei \(\mathbb Q[\sin x, \cos x]\) der kleinste Unterring von
+    von \(\mathbb R^{\mathbb R}\), welcher die Funktionen \(\sin x\) und \(\cos x\) 
+    und die rationalen Zahlen (aufgefaßt als konstante Funktionen)
+    enthält.
+\vspace{-1ex}
+    \begin{itemize}
+  \item [(a)] 
+    Zeige, daß \(\mathbb Q[\sin x, \cos x]\) genau aus den Funktionen
+    \(f \in \mathbb R^{\mathbb R}\) besteht, welche in der Form
+    \begin{equation}
+        f(x) = a_0 + \sum_{m = 1}^n (a_m \cos (m x) + b_m \sin (m x))
+    \end{equation}
+    geschrieben werden können, wobei \(a_0\), \(a_1\), \(a_2\), \dots und
+    \(b_1\), \(b_2\), \dots rationale Zahlen sind.
+  \item [(b)] 
+    Zeige, daß für jedes von Null verschiedene \(f \in \mathbb Q[\sin x, \cos x]\)
+    eine eindeutig definierte natürliche Zahl \(\deg f = n\) existiert, so daß
+    \begin{equation}
+        f(x) = a_0 + \sum_{m = 1}^n (a_m \cos (m x) + b_m \sin (m x))
+    \end{equation}
+    mit \(a_n \neq 0\) oder \(b_n \neq 0\).
+  \item [(c)] 
+    Seien \(f\), \(g \in \mathbb Q[\sin x, \cos x]\). Zeige, daß \(\deg (f \cdot g)
+    = (\deg f) + (\deg g)\), wenn wir zusätzlich \(\deg 0 = -\infty\) setzen.
+  \item[(d)] 
+    Zeige, daß \(\mathbb Q[\sin x, \cos x]\) ein Integritätsbereich ist. 
+\end{itemize}
+\end{exercise}
+
+
+
+\begin{exercise}(5 Punkte)\newline
+    Sei \(R\) ein kommutativer Ring, der genau zwei endlich erzeugte Ideale
+    besitzt. Zeige, daß \(R\) ein Körper ist.
+\end{exercise}
+
+
+\begin{exercise}(4 Punkte)\newline
+    Sei \(K\) ein Körper. Zeige, daß \(K\) genau dann von Charakteristik \(n \in \mathbb N\)
+    ist, wenn der Kern des (einzigen) Ringhomomorphismus' \(\mathbb Z \to K\) durch
+    das Hauptideal \((n)\) gegeben ist.
+ \newline
+    Was gilt in der Situation $n = 0$ ?
+\end{exercise}
+
+\begin{exercise}(5 Punkte)\newline
+    Zeige, daß der Restklassenring \(\mathbb F_3[X]/(X^2 + 1)\) ein Körper mit
+    \(9\) Elementen ist.
+\end{exercise}
+
+
+
+\begin{exercise}(5 Punkte)\newline
+    Sei \(\phi\colon R \to S\) ein Homomorphismus von Ringen. Sei \(\ideal b\)
+    ein Ideal von \(S\). Zeige, daß \(\phi^{-1} \ideal b\) ein Ideal von \(R\)
+    ist. Für dieses Ideal schreiben wir auch häufig \(R \cap \ideal b\), wenn
+    der Homomorphismus \(\phi\) aus dem Zusammenhange hervorgeht.
+   \newline
+   Ist das Bild eines Ideals unter einem Ringhomomorphismus wieder ein Ideal?
+\end{exercise}
+
+
+
+\end{document} 

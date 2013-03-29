@@ -1,0 +1,125 @@
+\documentclass{algsheet}
+    \usepackage{amssymb} 
+\usepackage[protrusion=true,expansion=false]{microtype}
+ \usepackage{magros_3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   \lecture{Algebra II}
+        
+        \semester{Sommersemester 2011}
+        \sheet{10.\ Aufgabenblatt}
+        \author{Dipl.-Math.~Franz Vogler}
+        \date{27.~Juni 2011}
+        
+        %/usr/local/share/texmf/tex/algmacros.sty
+    \usepackage[arrow,curve,matrix]{xy}    
+        \begin{document}
+                \maketitle
+
+
+\begin{exercise}(3+3 Punkte)\vspace{-1ex}
+  \begin{itemize}
+   \item [(a)]     Bestimme die Primfaktorzerlegung von \(X^4 + 4 Y^4\) im Ringe \(\set Z[X, Y]\).
+
+   \item [(b)]      Zeige, daß das Polynom \(X^2 + Y\) im Ringe \(\set Z[X, Y]\) irreduzibel ist.
+
+  \end{itemize}
+\end{exercise}
+
+
+
+\begin{exercise}(3+3 Punkte)\vspace{-1ex}
+  \begin{itemize}
+   \item [(i)]      Sei \(R\) ein Ring mit eindeutiger Primfaktorzerlegung. Sei \(f \in R\)
+    ein reguläres Element. Zeige, daß \(R[f^{-1}]\) ein Ring mit eindeutiger
+    Primfaktorzerlegung ist.
+   \item [(ii)]       Sei \(R\) ein faktorieller Ring. Sei \(f \in R\) ein reguläres Element.
+    Zeige, daß \(R[f^{-1}]\) ein faktorieller Ring mit eindeutiger Primfaktorzerlegung ist.
+  \end{itemize}
+\end{exercise}
+
+
+\begin{exercise}(5 Punkte)\newline
+    Sei \(I\) ein echtes Ideal in einem kommutativen Ringe \(R\) (\emph{echt}
+    heißt dabei, daß \(1 \notin I\), das heißt, \(I\) ist eine echte Teilmenge
+    von \(R\)). Sei \(f(X)\) ein normiertes Polynom über \(R\), so daß das
+    Bild von \(f(X)\) unter dem kanonischen Ringhomomorphismus
+    \begin{equation}
+        R[X] \to R/I[X],\quad f(X) \mapsto f(X)
+    \end{equation}
+    irreduzibel ist. Zeigen Sie, daß dann auch \(f(X) \in R[X]\) irreduzibel
+    ist.
+\end{exercise}
+
+
+\begin{exercise}(3 Punkte)\newline
+    Sei \(R\) ein Integritätsbereich. Zeige, daß das Ideal \((X, Y)\) in \(R[X, Y]\)
+    nicht von einem Elemente erzeugt werden kann.
+\end{exercise}
+
+\begin{exercise}(3 Punkte)\newline
+    Bestimme eine teilweise Faktorisierung der drei ganzen Zahlen
+    \(99\), \(1200\) und \(160\).
+\end{exercise}
+
+\begin{exercise}(5 Punkte)\newline
+    Bestimme einen größten gemeinsamen Teiler der beiden Polynome
+    \begin{equation}
+      f(X,Y) = X^3 Y^2 - X^2 Y^3 + X Y^3 - Y^4
+    \end{equation}
+    und
+    \begin{equation}
+      g(X,Y) = X^4 Y - X^3 Y^2 - X^2 Y^2 + X Y^3
+    \end{equation}
+    im Ringe \(\set Q[X, Y]\). 
+\end{exercise}
+
+\begin{exercise}(6 Punkte)\newline
+    Sei \(R = \set Z[Y, X_1, X_2, \dotsc]/I\), wobei \(I\) das durch alle
+    Linearkombinationen von \(X_{i + 1} Y - X_i\) mit \(i \ge 1\) gebildete 
+    Ideal ist. Zeige, daß \(R\) ein Ring mit größten gemeinsamen Teilern ist,
+    welcher nicht die aufsteigende Kettenbedingung für Hauptideale erfüllt.
+    Zeige weiter, daß keine teilweise Faktorisierung von \(Y\) und \(X_1\)
+    existiert.
+\end{exercise}
+
+\begin{exercise}(3 Punkte)\newline
+  Seien \(a\), \(b\) und \(c\) drei Elemente in einem Ringe mit größten gemeinsamen
+  Teilern. Es teile \(a\) das Produkt von \(b\) und \(c\), und es sei \(1\) ein
+  größter gemeinsamer Teiler von \(a\) und \(b\). Zeige, daß dann \(a\) das Element
+  \(c\) teilt.
+\end{exercise}
+
+\begin{exercise}(4 Punkte)\newline
+  Sei \(R\) ein Integritätsbereich, in dem eine teilweise Primfaktorzerlegung
+  immer möglich ist. Zeige, daß \(R\) ein Ring mit größten gemeinsamen Teilern ist.
+\end{exercise}
+
+\begin{exercise}(4 Punkte)\newline
+  Sei \(R\) ein Integritätsbereich, in dem eine teilweise Primfaktorzerlegung
+  immer möglich ist. Zeige, daß \(R\) ein Ring mit eindeutiger Primfaktorzerlegung
+  ist, wenn wir annehmen können, daß wir einen Irreduzibilitätstest für 
+  Elemente aus \(R\) haben.
+\end{exercise}
+
+\begin{exercise}\textbf{(Staatsexamens-/Klausuraufgaben)}(6 Zusatzpunkte)\newline
+  Seien \(a\) und \(b\) ganze Zahlen. Sei \(\omega\) eine primitive dritte Einheitswurzel.
+  Definiere
+  \begin{equation}
+    N(a + b \, \omega) = a^2 - ab + b^2.
+  \end{equation}
+  Zeige, daß \(\mathcal O_{\set Q(\omega)} = \set Z[\omega]\) zusammen mit der
+  Abbildung \(N\) als Norm ein Euklidischer Ring ist.
+\end{exercise}
+
+\begin{exercise}(4 Punkte)\newline
+  Seien \(a\) und \(b\) ganze Zahlen. Definiere
+  \begin{equation}
+    N(a + b \sqrt{-5}) \coloneqq a^2 + 5 b^2.
+  \end{equation}
+  Zeige, daß \(\set Z[\sqrt{-5}]\) zusammen mit der Abbildung \(N\) als Norm
+  kein Euklidischer Ring ist.
+\end{exercise}
+
+
+\end{document}

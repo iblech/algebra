@@ -1,0 +1,128 @@
+\documentclass{algsheet}
+    \usepackage{amssymb} 
+          \usepackage{magros_3}
+\usepackage[protrusion=true,expansion=false]{microtype}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   \lecture{Algebra II}
+        
+        \semester{Sommersemester 2011}
+        \sheet{3.\ Aufgabenblatt}
+        \author{Dipl.-Math.~Franz Vogler}
+        \date{09.~Mai 2011}
+        
+        %/usr/local/share/texmf/tex/algmacros.sty
+    \usepackage[arrow,curve,matrix]{xy}    
+        \begin{document}
+                \maketitle
+
+
+\begin{exercise}(3+3 Punkte)\newline
+    Seien \(n\) und \(m\) zwei natürliche Zahlen, deren Minimum mit \(k\)
+    bezeichnet sei. 
+\begin{itemize}
+  \item [(a)] Zeige, daß die Gruppe
+    \(G \coloneqq \GL_n(\mathbb Q) \times \GL_m(\mathbb Q)\) vermöge
+    \begin{equation}
+        G \times \Mat_{n, m}(\mathbb Q) \to \Mat_{n, m}(\mathbb Q),\quad
+        ((S, T), A) \mapsto S A T^{-1}
+    \end{equation}
+    auf der Menge der \((n \times m)\)-Matrizen wirkt.
+ \item [(b)] Zeige, daß durch den Rang
+    eine wohldefinierte Bijektion
+    \begin{equation}
+        \rk\colon G \backslash \Mat_{n, m}(\mathbb Q) \to \Set{0, \dotsc, k},
+        \quad A \mapsto \rk A
+    \end{equation}
+    gegeben wird.
+\end{itemize}
+\end{exercise}
+
+
+
+
+
+
+\begin{exercise}(4 Punkte)\newline
+    Wirke eine Gruppe \(G\) auf einer Menge \(X\). Zeige, daß die Wirkung von
+    \(G\) auf \(X\) genau dann frei ist, wenn die Abbildung
+    \begin{equation}    
+        G \times X \to X \times X,\quad
+        (g, x) \mapsto (gx, x)
+    \end{equation}
+    injektiv ist.
+\end{exercise}
+
+
+
+
+\begin{exercise}(5 Punkte)\newline
+    Wirke eine endliche Gruppe auf einer endlichen Menge \(X\). Zeige, daß
+    endliche Untergruppen \(H_1\), \dots, \(H_n\) von \(G\) und ein Isomorphismus
+    \begin{equation}
+        G/H_1 \amalg \dotsb \amalg G/H_n \to X
+    \end{equation}
+    existieren, wobei jeder einzelne Summand der disjunkten Vereinigung auf der
+    linken Seite durch Linkstranslation eine \(G\)-Wirkung bekommt.
+\end{exercise}
+
+\begin{exercise}(4 Punkte)\newline
+    Eine endliche Gruppe der Ordnung \(91\) wirke auf einer endlichen
+    Menge mit \(71\) Elementen.
+    Zeige, daß die Operation mindestens einen Fixpunkt hat.
+\end{exercise}
+
+
+
+\begin{exercise}(4+4 Punkte)\vspace{-1ex}
+\begin{itemize}
+    \item [($\alpha$)] Sei \(G\) eine Gruppe. Sei \((N_i)_{i \in I}\) eine Familie normaler
+    Untergruppen von \(G\). Zeige, daß \(N \coloneqq \bigcap\limits_{i \in I}
+    N_i\) wieder ein Normalteiler von \(G\) ist.
+\item [($\beta$)]     Sei \(G\) eine Gruppe. Sei \(H\) eine Untergruppe von \(G\). Sei
+    \((N_i)_{i \in I}\) die Familie aller Normalteiler von \(G\), welche
+    \(H\) enthalten. Zeige, daß \(\bigcap\limits_{i \in I} N_i\) der
+    normale Abschluß von \(H\) in \(G\) ist.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}(6 Punkte)\newline
+    Gib einen ausführlichen Beweis für Proposition 6.67 auf Seite 251 des Vorlesungsskriptes.
+\end{exercise}
+
+\begin{exercise}\textbf{(Quickies)} (2+2+3 Punkte)\vspace{-1ex}
+\begin{itemize}
+ \item [\textbf{(Q1)}]   Sei \(n \ge 3\).
+    Gib einen Isomorphismus von der Dieder-Gruppe \(\DG_n\) zu einer Gruppe mit
+    zwei Erzeugern und zwei Relationen an.
+\item [\textbf{(Q2)}]     Zeige, daß jedes direkte Produkt zweier Gruppen auch als halbdirektes
+    Produkt angesehen werden kann.
+\item [\textbf{(Q3)}]  Eine endliche Gruppe wirke auf einer endlichen Menge. Ist die Länge einer
+    Bahn der Operation immer ein Teiler der Gruppenordnung?
+\end{itemize}
+\end{exercise}
+
+
+
+\begin{exercise}(5 Punkte)\newline
+    Seien \(G\) eine Gruppe, \(N\) ein Normalteiler in \(G\) und \(H\) eine
+    beliebige Untergruppe von \(G\). Jedes Element von \(G\) lasse sich als
+    Produkt \(n h\) mit \(n \in N\) und \(h \in H\) darstellen. Schließlich
+    sei \(N \cap H\) die triviale Gruppe. Gib eine Wirkung von \(H\) auf
+    \(N\) an, so daß für das diesbezüglich konstruierte halbdirekte Produkt
+    \(N \rtimes H\) gilt, daß
+    \begin{equation}
+        N \rtimes H \to G,\quad (n, h) \mapsto n h
+    \end{equation}
+    ein Gruppenisomorphismus ist.
+\end{exercise}
+
+\begin{exercise}(4 Punkte)\newline
+    Sei \(n \ge 1\). Zeige, daß die orthogonale Gruppe \(\OG_n(\mathbb R)\) isomorph
+    zu einem halbdirekten Produkte von \(\SO_n(\mathbb R)\) mit \(\CG_2\) ist.
+\end{exercise}
+
+
+
+\end{document} 

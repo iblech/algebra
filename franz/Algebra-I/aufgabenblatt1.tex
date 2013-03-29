@@ -1,0 +1,181 @@
+\documentclass{algsheet}
+    \usepackage{amssymb}    
+%\input{praeambel}     
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{german}
+\usepackage{makeidx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage[Euler]{upgreek}
+\usepackage{prettyref}
+\usepackage[draft,german]{varioref} % XXX draft mode.
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[unicode,pdftex,pagebackref,colorlinks]{hyperref}
+\usepackage[all]{hypcap} % XXX has to go after hyperref
+\usepackage[shortalphabetic,backrefs,abbrev]{amsrefs} % XXX has to go after hyperref
+
+
+\usetikzlibrary{calc,through}
+\mathtoolsset{showonlyrefs}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   \lecture{Algebra I\\ \small{Einführung in die Algebra}}
+        
+        \semester{Wintersemester 2010/2011}
+        \sheet{1.\ Aufgabenblatt}
+        \author{Dipl.-Math.~Franz Vogler}
+        \date{19.~Oktober 2010}
+        
+        %/usr/local/share/texmf/tex/algmacros.sty
+    \usepackage[arrow,curve,matrix]{xy}    
+        \begin{document}
+                \maketitle
+
+
+Willkommen zur Lehrveranstaltung Algebra I im Wintersemester 2010/11!
+\newline
+
+Die Anmeldung zu den Übungen erfolgt unter
+\newline
+http://www.math.uni-augsburg.de/alg/lehre/wintersemester-2010-11/algebra-i/anmeldung-zu-den-ubungen
+
+\newline 
+
+Die Übungen beginnen DIESE WOCHE. Der Abgabetermin der schriftlich zu bearbeitenden Aufgaben ist jeweils der Dienstag 08:00 Uhr beginnend mit dem 26.10.2010. Ort der Abgabe ist der mit
+ \glqq Algebra 1\grqq\; gekennzeichnete Briefkasten im Erdgeschoss von Gebäude L. Die Abgaben bitte DEUTLICH mit dem eigenen
+Namen, der Übungsgruppe und dem Namen des Übungsleiters versehen. Weitere Einzelheiten zum Ablauf der Übungen geben die Tutoren in der ersten Übung bekannt.
+\newline
+
+Die Aufgaben 1--6 werden in dieser Woche gemeinsam in der Übung gerechnet. Die Aufgaben 7--13 sind bis kommenden Montag schriftlich zu bearbeiten und abzugeben. 
+
+\begin{exercise} 
+ Zeige, daß \(\sqrt 3\) keine rationale Zahl ist.
+\end{exercise}
+
+
+
+
+
+\begin{exercise}
+Zeige, daß \(\sqrt{12}\) keine rationale Zahl ist.
+\end{exercise}
+
+
+
+\begin{exercise}
+    Zeige, daß \(\sqrt[3]{25}\) keine rationale Zahl ist.
+\end{exercise}
+
+
+
+\begin{exercise}
+ Finde eine Polynomgleichung mit ganzzahligen Koeffizienten, welche die ganzen Zahlen $x_1,x_2,\dots,x_{n-1},x_n$ als Nullstellen besitzt.  
+\end{exercise}
+
+
+
+\begin{exercise}
+    Zeige, daß eine ganze Zahl \(a\) genau dann eine
+    \(n\)-te Wurzel in den rationalen Zahlen besitzt, wenn
+    \(a\) eine \(n\)-te Wurzel in den ganzen Zahlen besitzt.
+
+\end{exercise}
+
+
+
+
+\begin{exercise}
+    Zeige, daß jede rationale Lösung
+    einer normierten Polynomgleichung mit ganzzahligen
+    Koeffizenten eine ganze Zahl ist.
+
+\end{exercise}
+
+
+
+
+\begin{exercise}(5 Punkte)\newline
+    Sei
+    \[
+        X^n + a_{n - 1} X^{n - 1} + \dotsb + a_1 X + a_0 = 0
+    \]
+    eine normierte Polynomgleichung mit ganzzahligen Koeffizenten. Zeige, daß
+    jede ganzzahlige Lösung ein Teiler von \(a_0\) sein muß.
+\end{exercise}
+
+
+
+
+\begin{exercise}(5 Punkte)\newline
+    Zeige, daß jede normierte Polynomgleichung ungeraden Grades mit
+    rationalen Koeffizienten in den reellen Zahlen eine
+    Lösung besitzt.
+\end{exercise}
+
+
+
+\begin{exercise}(5 Punkte)\newline
+    Gib eine normierte Polynomgleichung vierten Grades mit
+    rationalen Koeffizienten an, welche in den reellen Zahlen keine
+    Lösung hat.
+\end{exercise}
+
+
+
+
+\begin{exercise}(5 Punkte)\newline
+    Gib eine normierte Polynomgleichung fünften Grades mit
+    rationalen Koeffizienten an,
+    welche als einzige Nullstelle die Zahl \(1\) hat.
+\end{exercise}
+
+
+
+\begin{exercise}(5 Punkte)\newline
+ Gib eine Polynomgleichung mit ganzzahligen Koeffizienten an, die $\sqrt[7]{3+\sqrt[3] 4}$ als Lösung besitzt.
+\end{exercise}
+
+
+
+
+\begin{exercise}(5 Punkte)\newline
+    Gib eine Polynomgleichung mit ganzzahligen Koeffizienten an,
+    welche die reelle Zahl \(\cos 15^\circ\) als Lösung besitzt.
+\end{exercise}
+
+
+
+\input{cal_dreieck_graphik}
+\begin{exercise}(10 Punkte)\newline
+    Eugenio Calabi\footnote{Eugenio Calabi, 1923--, italienisch-amerikanischer
+    Mathematiker} hat ein nicht gleichseitiges, gleichschenkliges Dreieck
+    gefunden, in welchem sich drei gleich große, größte Quadrate gemäß
+    Abbildung 1 einschreiben lassen. Zeige, daß das Verhältnis
+    \(x\) der längsten zu einer der beiden kürzeren Seiten die Gleichung
+    \(2 X^3 - 2 X^2 - 3 X + 2 = 0\) erfüllt.
+\end{exercise}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document} 

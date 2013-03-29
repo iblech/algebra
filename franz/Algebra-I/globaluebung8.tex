@@ -1,0 +1,100 @@
+\documentclass{algsheet}
+    \usepackage{amssymb} 
+\usepackage[protrusion=true,expansion=false]{microtype}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   \lecture{Algebra I\\ \small{Einführung in die Algebra}}
+        
+        \semester{Wintersemester 2010/2011}
+        \sheet{Globalübung}
+        \author{Dipl.-Math.~Arturo Mancino}
+        \date{08.~Dezember 2010}
+        
+        %/usr/local/share/texmf/tex/algmacros.sty
+    \usepackage[arrow,curve,matrix]{xy}    
+        \begin{document}
+                \maketitle
+
+
+\begin{exercise}(x Punkte)\newline
+    Sei \(f(X) = X^6 + X^5 + X^4 + X^3 + X^2 + X + 1 = 0\). Zeige, daß
+    \(f(X)\) irreduzibel ist.
+\end{exercise}
+
+\begin{exercise}(x Punkte)\newline
+    Sei \(f(X) = X^5 + X^4 + X^3 + X^2 + X + 1\). Zeige, daß \(f(X)\) nicht
+    irreduzibel ist.
+\end{exercise}
+
+\begin{exercise}(x Punkte)\newline
+	Gib ein Beispiel dafür an, daß die Bedingung im
+	Eisensteinschen Irreduzibilitätskriterium,
+	daß \(p^2\) kein Teiler von \(a_0\) ist, notwendig ist.
+\end{exercise}
+
+\begin{exercise}(x Punkte)\newline
+	Gib ein Beispiel dafür an, daß die Bedingung im
+	Eisensteinschen Irreduzibilitätskriterium,
+	daß \(p\) ein Teiler von allen \(a_0\), \dots, \(a_{n - 1}\) ist,
+	notwendig ist. 
+\end{exercise}
+
+\begin{exercise}(x Punkte)\newline
+    Seien \(f(X)\) und \(g(X)\) zwei normierte Polynome positiven Grades
+    und mit rationalen Koeffizienten, so daß \(f(g(X))\) irreduzibel ist.
+    Ist dann auch \(g(X)\) irreduzibel?
+\end{exercise}
+
+
+
+%5
+\begin{exercise}
+ \[\begin{split} f(X+1)&=(X+1)^6+(X+1)^5+(X+1)^4+(X+1)3+(X+1)2+(X+1)+1\\
+     &=(X^6+6X^5+15X^4+20X^3+15X^2+6X+1)+(X^5+5X^4+10X^3+10X^2+5X+1)\\&\quad+(X^4+4X^3+6X^2+4X+1)
+        +(X^3 + 3 X^2 + 3 X + 1) + (X^2 + 2 X
+        + 1) + X + 1 + 1\\
+ &=(X^6+6X^5+15X^4+20X^3+15X^2+6X+1)+(X^5+5X^4+10X^3+10X^2+5X+1)\\&\quad+X^4 + 5 X^3 + 10 X^2 + 10 X + 5\\
+ &=X^6+7X^5+21X^4+35X^3+35X^2+21X+7.  \end{split}\]                                                       
+Jetzt können wir das Eisensteinkriterium (Proposition 3.18) mit $p=7$ anwenden und erhalten, dass $f(X+1)$ irreduzibel ist.
+Gäbe es nun eine Zerlegung $f(X)=g(X)h(X)$, so wäre auch $f(X+1)=g(X+1)h(X+1)$ eine Zerlegung, was nicht sein kann. 
+\end{exercise}
+
+
+
+%6
+\begin{exercise}
+ Durch Hinschauen sehen wir, dass $-1$ eine Nullstelle des gegebenen Polynoms ist, also ist
+ \[X^5+X^4+X^3+X^2+X+1=(X+1)(X^4+X^2+1)\]
+eine Faktorisierung.
+\end{exercise}
+
+
+
+%7
+\begin{exercise}
+ Beispielsweise $X^2+4X+4=(X+2)^2$ mit $p=2$.
+\end{exercise}
+
+
+%8
+\begin{exercise}
+ Zum Beispiel $X^2+2X+1=(X+1)^2$.
+\end{exercise}
+
+
+
+%9
+\begin{exercise}
+ Nein: Definiere $f(X):=X+1$ und $g(X):=X^2+2X+1$. Dann ist $f(g(X))=X^2+2X+2$ irreduzibel nach dem Eisensteinkriterium.
+\end{exercise}
+
+
+
+
+
+
+
+
+
+\end{document} 

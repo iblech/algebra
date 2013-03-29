@@ -1,0 +1,118 @@
+\documentclass{algsheet}
+    \usepackage{amssymb} 
+\usepackage[protrusion=true,expansion=false]{microtype}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   \lecture{Algebra I\\ \small{Einführung in die Algebra}}
+        
+        \semester{Wintersemester 2010/2011}
+        \sheet{8.\ Aufgabenblatt}
+        \author{Dipl.-Math.~Franz Vogler}
+        \date{07.~Dezember 2010}
+        
+        %/usr/local/share/texmf/tex/algmacros.sty
+    \usepackage[arrow,curve,matrix]{xy}    
+        \begin{document}
+                \maketitle
+
+
+
+
+
+\begin{exercise}(4 Punkte)\newline
+    Bestimme numerisch die Nullstellen von \(f(X) = X^4 - 10 X^2 + 1\)
+    bis auf wenige Stellen nach dem Komma, und nutze diese Information um zu
+    zeigen, daß \(f(X)\) über den rationalen Zahlen irreduzibel ist.
+\end{exercise}
+
+\begin{exercise}(3 Punkte)\newline
+    Sei \(f(X)\) ein nicht verschwindendes Polynom mit rationalen Koeffizienten.
+    Zeige, daß der Inhalt von \(f(X)\) genau dann ganzzahlig ist, wenn 
+    \(f(X)\) ganzzahlige Koeffizienten besitzt.
+\end{exercise}
+
+\begin{exercise}(3 Punkte)\newline
+    Sei \(f(X)\) ein normiertes Polynom mit rationalen Koeffizienten. Zeige,
+    daß der Inhalt von \(f(X)\) das Inverse des führenden Koeffizienten von
+    \(\tilde f(X)\) ist.
+\end{exercise}
+
+\begin{exercise}(4 Punkte)\newline
+    Sei \(f(X)\) ein Polynom mit rationalen Koeffizienten. Zeige, daß
+    der Inhalt von \(f(X)\) das Inverse einer ganzen Zahl ist, wenn
+    \(f(X)\) normiert ist. Gilt auch die Umkehrung?
+\end{exercise}
+
+
+
+
+
+\begin{exercise}(2 Punkte)\newline
+    Seien \(a\), \(a'\), \(b\) und \(b'\) vier ganze Zahlen, so daß die
+    Kongruenzen \(a \equiv b\) und \(a' \equiv b'\) modulo einer weiteren
+    ganzen Zahl \(n\) gelten.
+    Rechne explizit nach, daß \(a + a' \equiv b + b'\) modulo \(n\).
+\end{exercise}
+
+\begin{exercise}(3 Punkte)\newline
+    Sei \(a\) eine ganze Zahl mit \(a \equiv 1\) modulo \(3\). Für welche
+    Exponenten \(n\) ist dann \(a^n \equiv 2\) modulo \(3\)?
+\end{exercise}
+
+\begin{exercise}(3 Punkte)\newline
+    Berechne zwei Inverse von \(6\) modulo \(35\).
+\end{exercise}
+
+\begin{exercise}(4 Punkte)\newline
+    Seien \(n\) eine positive ganze Zahl
+    und \(a\) eine ganze Zahl, welche teilerfremd zu
+    \(n\) ist. Seien \(b\) und \(b'\) zwei ganze Zahlen mit
+    \(a b \equiv a b' \equiv 1 \pmod n\). Zeige, daß
+    \(b \equiv b'  \pmod n\).
+\end{exercise}
+
+\begin{exercise}(3 Punkte)\newline
+    Sei \(f(X)\) ein normiertes Polynom mit ganzzahligen Koeffizienten.
+    Sei \(p\) eine Primzahl, so daß \(f(X)\) modulo \(p\) nicht irreduzibel
+    ist. Ist dann auch \(f(X)\) nicht irreduzibel?
+\end{exercise}
+
+\begin{exercise}(5 Punkte)\newline
+    Seien \(b_0\), \dots, \(b_m\) ganze, von Null verschiedene Zahlen. Zeige, daß es nur endlich viele Polynome
+    \(g(X)\) mit ganzzahligen Koeffizienten und \(\deg g(X) \leq m\) gibt, so daß für alle
+    \(i \in \{0, \dots, m\}\) die ganze Zahl \(g(i)\) ein Teiler von \(b_i\) ist.
+\end{exercise}
+
+\begin{exercise}(6 Punkte)\newline
+    Sei \(f(X)\) ein primitives Polynom vom Grade \(n\) mit ganzzahligen Koeffizienten. Sei
+    \(f(i) \neq 0\) für alle ganzen Zahlen \(i\) mit \(0 \leq i \leq \frac n 2\).
+    
+    Sei
+    \begin{equation}
+        f(X) = g(X) \cdot h(X)
+        \label{eq:kronecker}
+    \end{equation}
+    eine Faktorisierung, wobei \(g(X)\) und \(h(X)\) Polynome mit ganzzahligen Koeffizienten sind.
+    Ohne Einschränkung nehmen
+    wir an, daß \(\deg g(X) \leq \frac n 2\) (ansonsten vertauschen wir beide Faktoren).
+    
+    Überlege, daß für alle ganzen Zahlen \(i\) mit \(0 \leq i \leq \frac n 2\) die ganze Zahl \(g(i)\)
+    ein Teiler von \(f(i)\) ist. Folgere daraus, daß nur endlich viele ganzzahlige Polynome \(g(X)\)
+    mit~\eqref{eq:kronecker} existieren können. Leite daraus ein Verfahren festzustellen ab, ob \(f(X)\) über den
+    ganzen Zahlen irreduzibel ist oder nicht.
+    
+    Wie läßt sich dieses Verfahren auf alle primitiven Polynome vom Grade \(n\) mit ganzzahligen Koeffizienten
+    ausdehnen?
+    
+    (Dieses Verfahren ist zuerst von Leopold Kronecker\footnote{Leopold Kronecker, 1823--1891, deutscher
+    Mathematiker} angegeben worden, der zuerst auf die Notwendigkeit eines
+    Verfahrens hinwies, die Irreduzibilität eines Polynoms mit ganzzahligen Koeffizienten festzustellen.)
+\end{exercise}
+
+
+
+
+
+
+\end{document} 
