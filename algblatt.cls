@@ -5,7 +5,8 @@
 
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[ngerman]{babel}
-\RequirePackage{amsmath,amsthm,amssymb,amscd,color,graphicx}
+\RequirePackage{amsmath,amsthm,amssymb,amscd,color,graphicx,environ}
+\RequirePackage{framed}
 \RequirePackage[protrusion=true,expansion=true]{microtype}
 \RequirePackage{lmodern}
 \RequirePackage{hyperref}
@@ -27,14 +28,28 @@
   \end{center}
   \vspace{1.5em}}
 
+\renewcommand*\theenumi{\alph{enumi}}
+\renewcommand{\labelenumi}{\theenumi)}
+
 \newcounter{aufgabennummer}
 \newenvironment{aufgabe}[1]{
   \addtocounter{aufgabennummer}{1}
   \textbf{Aufgabe \theaufgabennummer.} \emph{#1} \par
 }{\vspace{2.0em}}
 
-\renewcommand*\theenumi{\alph{enumi}}
-\renewcommand{\labelenumi}{\theenumi)}
+\definecolor{shadecolor}{rgb}{.9,.9,.9}
+
+\newif\ifloesungen\loesungenfalse
+\NewEnviron{loesung}{%
+  \ifloesungen%
+    \begin{shaded}\textbf{Lösung. }\BODY\end{shaded}%
+  \fi%
+}
+\NewEnviron{loesungE}{%
+  \ifloesungen%
+    \begin{shaded}\textbf{Lösung. }\begin{enumerate}\BODY\end{enumerate}\end{shaded}%
+  \fi%
+}
 
 \clubpenalty=10000
 \widowpenalty=10000
