@@ -1,0 +1,93 @@
+\documentclass{algblatt}
+\input{config.tex}
+\geometry{tmargin=2cm,bmargin=2cm,lmargin=3.0cm,rmargin=3.0cm}
+
+\begin{document}
+
+\maketitle{2}{Abgabe bis 29. April 2013, 17:00 Uhr}
+
+\begin{aufgabe}{Lösungen polynomieller Gleichungen sind algebraisch}
+Sei $z$ eine Lösung der Polynomgleichung
+\[ X^3 - \sqrt{2 - \sqrt[3] 4} \, X^2 + 3 = 0. \]
+Finde eine normierte Polynomgleichung mit \emph{rationalen} Koeffizienten,
+die~$z$ als Lösung hat.
+\end{aufgabe}
+
+\begin{aufgabe}{Auf den Spuren Bombellis}
+Zeige formal die zuerst von Rafael Bombelli (1526--1572, italienischer
+Mathematiker) gefundene
+Gleichheit
+\[
+    (2 \pm \sqrt{-1})^3 = 2 \pm \sqrt{- 121}
+\]
+und diskutiere, welche Vorzeichen der Quadratwurzeln jeweils zu wählen sind.
+\end{aufgabe}
+
+\begin{aufgabeE}{Rechnen mit komplexen Zahlen}
+\item
+Sei~$z \neq 0$ eine komplexe Zahl, deren Real- und Imaginärteil rationale
+Zahlen sind. Zeige, dass~$z$ ebenfalls rationalen Real- und Imaginärteil
+hat.
+\item
+Zeige, dass der Realteil einer komplexen Zahl~$z$ durch
+\(\frac 1 2 (z + \overline z)\)
+und dass der Imaginärteil durch \(\frac 1 {2 \i} (z - \overline z)\)
+gegeben ist.
+\item
+Sei \(z\) eine invertierbare komplexe Zahl. Folgere die Gleichheit
+$
+    \overline{z}^{-1} = \overline{z^{-1}}
+$
+aus der Multiplikativität der komplexen Konjugation.
+\item
+Interpretiere die Multiplikation mit der imaginären Einheit~$\i$
+als geometrische Operation in der Gaußschen Zahlenebene.
+\end{aufgabeE}
+
+\begin{aufgabe}{Zahlen nahe bei Null}
+Zeige, dass für zwei reelle Zahlen $a$ und $b$ genau dann die Wurzel
+$\sqrt{a^2 + b^2}$ nahe bei Null ist, wenn sowohl $|a|$ und $|b|$
+nahe bei Null sind. Zeige also:
+\[    \forall \epsilon > 0\ \exists \delta > 0  \colon 
+        \sqrt{a^2 + b^2} < \delta  \implies |a|, |b| < \epsilon
+\]
+\[
+    \forall \epsilon > 0\ \exists \delta > 0  \colon 
+        |a|, |b| < \delta  \implies \sqrt{a^2  + b^2} < \epsilon
+\]
+\vspace{-1em}
+\end{aufgabe}
+
+\newpage
+\begin{aufgabeE}{Ein neuer Zahlbereich}
+\item
+Zeige, dass die Gleichung $X^2 + X + 1 = 0$ in den reellen Zahlen
+keine Lösung besitzt.
+\item
+Konstruiere einen minimalen Zahlbereich~$\RR(\omega)$, welcher die
+reellen Zahlen und eine Lösung~$\omega$ der Gleichung $X^2 + X + 1 = 0$
+enthält und in welchem Addition und Multiplikation so definiert sind, dass sie
+die Addition und Multiplikation reeller Zahlen fortsetzen und die
+einschlägigen Gesetze der Arithmetik erfüllen.
+\item Zeige, dass~$\omega^3 = 1$ in~$\RR(\omega)$ gilt.
+\item Finde eine Lösung der Gleichung~$X^2 + 1 = 0$ in~$\RR(\omega)$.
+\end{aufgabeE}
+
+\begin{aufgabe}{Drehmatrizen}
+Erkläre, warum \(\left(\begin{smallmatrix}
+                           \cos \alpha & - \sin \alpha\\
+                           \sin \alpha & \cos \alpha
+                       \end{smallmatrix}\right)\) eine Drehung um den Winkel \(\alpha\) um
+den Ursprung der Gaußschen Zahlenebene beschreibt. Folgere sodann
+die Additionstheoreme
+\begin{align*}
+    \cos (\alpha_1 + \alpha_2) & = \cos \alpha_1 \, \cos \alpha_2
+        - \sin \alpha_1 \, \sin \alpha_2
+    \\
+    \sin (\alpha_1 + \alpha_2) & = \cos \alpha_1 \, \sin \alpha_2
+        + \sin \alpha_1 \, \cos \alpha_2
+\end{align*}
+aus der bekannten Formel für das Produkt von Matrizen.
+\end{aufgabe}
+
+\end{document}
