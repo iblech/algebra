@@ -31,11 +31,13 @@
 \renewcommand*\theenumi{\alph{enumi}}
 \renewcommand{\labelenumi}{\theenumi)}
 
+\newlength{\aufgabenskip}
+\setlength{\aufgabenskip}{2.0em}
 \newcounter{aufgabennummer}
 \newenvironment{aufgabe}[1]{
   \addtocounter{aufgabennummer}{1}
   \textbf{Aufgabe \theaufgabennummer.} \emph{#1} \par
-}{\vspace{2.0em}}
+}{\vspace{\aufgabenskip}}
 \newenvironment{aufgabeE}[1]{\begin{aufgabe}{#1}\begin{enumerate}}{\end{enumerate}\end{aufgabe}}
 
 \definecolor{shadecolor}{rgb}{.9,.9,.9}
