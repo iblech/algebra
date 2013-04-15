@@ -17,6 +17,8 @@
 \setlength\parskip{\medskipamount}
 \setlength\parindent{0pt}
 
+\newlength{\titleskip}
+\setlength{\titleskip}{1.5em}
 \renewcommand{\maketitle}[2]{%
   \thispagestyle{empty}%
   Universität Augsburg \hfill Sommersemester 2013 \\
@@ -26,7 +28,7 @@
   \begin{center}\Large \textbf{Übungsblatt #1 zur Algebra I} \\[1em]
   \normalsize #2
   \end{center}
-  \vspace{1.5em}}
+  \vspace{\titleskip}}
 
 \renewcommand*\theenumi{\alph{enumi}}
 \renewcommand{\labelenumi}{\theenumi)}

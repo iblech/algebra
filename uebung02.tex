@@ -2,8 +2,12 @@
 \input{config.tex}
 \geometry{tmargin=2cm,bmargin=2cm,lmargin=3.0cm,rmargin=3.0cm}
 
+\setlength{\titleskip}{0.7em}
+\setlength{\aufgabenskip}{1.5em}
+
 \begin{document}
 
+\vspace*{-1.2cm}
 \maketitle{2}{Abgabe bis 29. April 2013, 17:00 Uhr}
 
 \begin{aufgabe}{Lösungen polynomieller Gleichungen sind algebraisch}
@@ -41,12 +45,12 @@ $
 aus der Multiplikativität der komplexen Konjugation.
 \item
 Interpretiere die Multiplikation mit der imaginären Einheit~$\i$
-als geometrische Operation in der Gaußschen Zahlenebene.
+geometrisch.
 \end{aufgabeE}
 
 \begin{aufgabe}{Zahlen nahe bei Null}
 Zeige, dass für zwei reelle Zahlen $a$ und $b$ genau dann die Wurzel
-$\sqrt{a^2 + b^2}$ nahe bei Null ist, wenn sowohl $|a|$ und $|b|$
+$\sqrt{a^2 + b^2}$ nahe bei Null ist, wenn sowohl $|a|$ als auch $|b|$
 nahe bei Null sind. Zeige also:
 \[    \forall \epsilon > 0\ \exists \delta > 0  \colon 
         \sqrt{a^2 + b^2} < \delta  \implies |a|, |b| < \epsilon
@@ -55,10 +59,9 @@ nahe bei Null sind. Zeige also:
     \forall \epsilon > 0\ \exists \delta > 0  \colon 
         |a|, |b| < \delta  \implies \sqrt{a^2  + b^2} < \epsilon
 \]
-\vspace{-1em}
+\vspace{-1.5em}
 \end{aufgabe}
 
-\newpage
 \begin{aufgabeE}{Ein neuer Zahlbereich}
 \item
 Zeige, dass die Gleichung $X^2 + X + 1 = 0$ in den reellen Zahlen
@@ -70,9 +73,10 @@ enthält und in welchem Addition und Multiplikation so definiert sind, dass sie
 die Addition und Multiplikation reeller Zahlen fortsetzen und die
 einschlägigen Gesetze der Arithmetik erfüllen.
 \item Zeige, dass~$\omega^3 = 1$ in~$\RR(\omega)$ gilt.
-\item Finde eine Lösung der Gleichung~$X^2 + 1 = 0$ in~$\RR(\omega)$.
+Finde eine Lösung der Gleichung~$X^2 + 1 = 0$ in~$\RR(\omega)$.
 \end{aufgabeE}
 
+\end{document}
 \begin{aufgabe}{Drehmatrizen}
 Erkläre, warum \(\left(\begin{smallmatrix}
                            \cos \alpha & - \sin \alpha\\
