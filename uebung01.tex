@@ -3,7 +3,7 @@
 
 \begin{document}
 
-\maketitle{1}{Abgabe bis 23. April 2013, 17:00 Uhr}
+\maketitle{1}{Abgabe bis 23. April 2013, 12:00 Uhr}
 
 \begin{aufgabe}{Lösungskriterium}
 Sei eine normierte Polynomgleichung mit ganzzahligen Koeffizienten
@@ -16,6 +16,11 @@ jede ganzzahlige Lösung ein Teiler von~$a_0$ sein muss.
 \[ x \cdot (x^{n-1} + a_{n-1} x^{n-2} + \cdots + a_1) = -a_0. \]
 Da der Ausdruck in Klammern eine ganze Zahl ist (wieso?), ist daher~$x$ ein
 Teiler von~$a_0$ (wieso?).
+
+\emph{Bemerkung:} Zusammen mit Aufgabe~3b) von Blatt~0 hat man damit ein
+nützliches Kriterium gefunden: Jede rationale Lösung einer solchen
+Polynomgleichung muss sogar schon ganzzahlig und ein Teiler von~$a_0$ sein.
+Weitere irrationale Lösungen werden damit aber nicht ausgeschlossen.
 \end{loesung}
 \end{aufgabe}
 
@@ -23,37 +28,125 @@ Teiler von~$a_0$ (wieso?).
 Zeige, dass jede normierte Polynomgleichung ungeraden Grads mit rationalen
 Koeffizienten eine Lösung in den reellen Zahlen besitzt.
 \begin{loesung}Sei~$f$ ein Polynom ungeraden Grads mit rationalen
-Koeffizienten. Dann\ldots
+Koeffizienten. Dann konstruieren wir in drei Schritten eine Lösung der
+Gleichung~$f(X) = 0$.
+\begin{enumerate}
+\item[1.] Zunächst finden wir zwei Schranken für die zu findende Lösung, genauer
+zwei Zahlen~$x_0, y_0 \in \QQ$ mit~$f(x_0) < 0 < f(y_0)$.
+
+Das beweist man entweder über eine Grenzwertüberlegung oder direkt über
+Abschätzungen: Sei~$R := |a_{n-1}| + \cdots + |a_0|$. Dann gilt folgende für
+alle~$x \in \RR$ mit~$|x| \geq R + 1$ gültige Hilfsüberlegung (wieso?):
+\begin{align*}
+  \left|a_{n-1} \frac{1}{x} + \cdots + a_1 \frac{1}{x^{n-1}} + a_0
+  \frac{1}{x^n}\right| &\stackrel{\triangle}{\leq}
+  |a_{n-1}| \frac{1}{|x|} + \cdots + |a_1| \frac{1}{|x|^{n-1}} + |a_0|
+  \frac{1}{|x|^n} \\
+  &\leq R \cdot \frac{1}{|x|}
+  \leq \underbrace{\frac{R}{R+1}}_{=:\,q} < 1
+\end{align*}
+Somit gilt (wieso?) für alle~$x \geq R + 1$
+\[ f(x) = x^n \left(1 + a_{n-1} \frac{1}{x} + \cdots + a_0 \frac{1}{x^n}\right)
+  \geq x^n \left(1 - q\right) > 0 \]
+und für alle~$x \leq -R - 1$
+\[ f(x) = x^n \left(1 + a_{n-1} \frac{1}{x} + \cdots + a_0 \frac{1}{x^n}\right)
+  \leq x^n \left(1 - q\right) < 0. \]
+Die Zahlen~$x_0 := -R - 1$ und~$y_0 := R + 1$ leisten also das Gewünschte.
+
+\item[2.] Nun geben wir eine Konstruktion an, um sukzessive immer bessere
+Schranken
+\[ x_n, y_n \in \QQ \text{ mit } x_n \leq y_n \text{ und } f(x_n) \leq 0 \leq
+f(y_n) \]
+zu finden. Der ersten Schritt wird durch obige Argumentation erledigt. Ist
+nun~$(x_n,y_n)$ schon konstruiert, schreiben wir~$m := \frac{x_n + y_n}{2}$
+und konstruieren die nächstbesseren Schranken (Skizze!):
+\[ \begin{cases}
+  \text{Falls~$f(m) < 0$:} &
+    \text{Setze $x_{n+1} := m$, $y_{n+1} := y_n$.} \\
+  \text{Falls~$f(m) = 0$:} &
+    \text{Setze $x_{n+1} := m$, $y_{n+1} := m$.} \\
+  \text{Falls~$f(m) > 0$:} &
+    \text{Setze $x_{n+1} := x_n$, $y_{n+1} := m$.}
+\end{cases} \]
+Diese Fallunterscheidung kann man tatsächlich (in der Praxis, intuitionistisch)
+durchführen, da~$f(m)$ eine rationale Zahl ist.
+\item[3.] Da die so konstruierten Schranken~$x_n$ und~$y_n$ legen nach dem
+Intervallschachtelungsprinzip eine bestimmte Zahl~$z \in \RR$ fest (wieso?):
+\[ x_n \xra{n \to \infty} z, \quad y_n \xra{n \to \infty} z. \]
+Daher konvergieren auch die Folgen~$(f(x_n))_n$ und~$(f(y_n))_n$:
+\[ f(x_n) \xra{n \to \infty} f(z), \quad f(y_n) \xra{n \to \infty} f(z). \]
+Denn~$f$ setzt sich ja nur aus Konstanten, Addition und Multiplikation
+zusammen, und dafür gibt es in der Analysis entsprechende Grenzwertregeln
+(etwas abstrakter: Die Polynomfunktion~$f$ ist stetig!).
+
+Die Behauptung~$f(z) = 0$ folgt nun wegen der Tatsache, dass schwache
+Ungleichungen im Grenzwert erhalten bleiben, aus folgender Beobachtung:
+\begin{align*}
+  \text{$f(x_n) \leq 0$ für alle~$n \geq 0$} &\quad\Longrightarrow\quad f(z) \leq 0 \\
+  \text{$f(y_n) \geq 0$ für alle~$n \geq 0$} &\quad\Longrightarrow\quad f(z) \geq 0
+\end{align*}
+\end{enumerate}
+
+\emph{Bemerkung:} Im Wesentlichen wiederholt obige Argumentation einfach den
+Beweis des Zwischenwertsatzes für stetige Funktionen aus der Analysis. In
+seiner Allgemeinheit steht dieser uns nicht zur Verfügung, da wir die im
+zweiten Schritt benötigten Fallunterscheidungen bei beliebigen stetigen
+Funktionen nicht treffen können.
 
 \emph{Bemerkung:} Wenn man den Fundamentalsatz der Algebra schon kennt, kann
 man kürzer so argumentieren: Echt komplexe Lösungen treten stets in
-konjugiert-komplexen Paaren auf.
+komplex-konjugierten Paaren auf. Da die Gleichung~$f(X) = 0$ aber insgesamt
+eine ungerade Anzahl von Lösungen hat, muss mindestens eine der Lösungen rein
+reell sein.
 \end{loesung}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Beispiele für Polynomgleichungen}
 Finde eine normierte Polynomgleichung mit rationalen Koeffizienten\ldots
 \begin{enumerate}
 \item vierten Grads, welche in den reellen Zahlen keine Lösung besitzt.
-\item fünften Grads, welche als einzige Lösung die Zahl~$1$ besitzt.
+\item fünften Grads, welche als einzige komplexe Lösung die Zahl~$1$ besitzt.
 \item die $\sqrt[7]{3 + \sqrt[3]{4}}$ als eine Lösung besitzt.
 \item die $\cos 15^\circ$ als eine Lösung besitzt.
 \end{enumerate}
 \begin{loesung}\begin{enumerate}
-\item $X^4 + 1 = 0$.
-\item $(X - 1)^5 = 0$, d.\,h. $X^5-5\,X^4+10\,X^3-10\,X^2+5\,X-1 = 0$.
-\item $(X^7-3)^3-4=0$, d.\,h. $X^{21}-9\,X^{14}+27\,X^7-31 = 0$.
+\item $X^4 + 1 = 0$ oder $(X^2 + 1) (X^2 + 1) = 0$ oder viele andere (wieso?).
+\item $(X - 1)^5 = 0$ (wieso?), d.\,h. $X^5-5\,X^4+10\,X^3-10\,X^2+5\,X-1 = 0$.
+
+\emph{Bemerkung:} Die Gleichung~$X^5 - 1 = 0$ hat als einzige reelle Lösung die
+Zahl~$1$, besitzt in den komplexen Zahlen aber noch vier weitere Lösungen,
+nämlich die vier restlichen fünften Einheitswurzeln.
+\item Wir schreiben~$x := \sqrt[7]{3 + \sqrt[3]{4}}$ und formen diese Identität
+so lange um, bis keine Wurzeln mehr übrig bleiben: Konkret rechnen wir hoch
+sieben, minus drei, hoch drei und minus vier. Mit diesen Schritten sieht man,
+dass
+\[ (x^7 - 3)^3 - 4 = 0 \]
+folgt. Also ist $(X^7-3)^3-4=0$ die gesuchte Gleichung, ausmultipliziert
+$X^{21}-9\,X^{14}+27\,X^7-31 = 0$.
+
+\emph{Bemerkung:} Eine Probe ist nicht nötig, da man beim Herleiten der
+Gleichung "`$\Rightarrow$"'-Zeichen verwendet hat. In der Gleichung am Ende sollte die
+Polynomvariable groß geschrieben werden.
 \item Nach einem Additionstheorem gilt
 \[ \cos 30^\circ = 2 \, (\cos 15^\circ)^2 - 1. \]
-Stellt man diese Beziehung um, erkennt man~$\cos 15^\circ$ als Lösung der
+Stellt man diese Beziehung unter Beachtung von~$\cos 30^\circ = \sqrt{3}/2$ um, erkennt man~$\cos 15^\circ$ als Lösung der
 Gleichung
 \[ X^4 - X^2 + \frac{1}{16} = 0. \]
+
+\emph{Bemerkung:} Durch Verwendung eines anderen Additionstheorems kann man den
+Wert von~$\cos 15^\circ$ auch direkt bestimmen,
+\[ \cos 15^\circ = \cos (45^\circ - 30^\circ) =
+  \cos 45^\circ \cos 30^\circ + \sin 45^\circ \cos 30^\circ = \cdots =
+  \frac{1 + \sqrt{3}}{2 \sqrt{2}}, \]
+und dann die Technik von Teilaufgabe~c) verwenden.
+
 \emph{Bemerkung:} Eine abstraktere Argumentation ist folgende.
 Die Zahl~$e^{\i \pi / 12}$ ist algebraisch (da sie die Gleichung~$X^{24} - 1 =
 0$ erfüllt). Nach einem späteren Satz der Vorlesung muss daher auch ihr Realteil
 algebraisch sein. Dieser ist gerade~$\cos 15^\circ$. Da der Beweis dieses Satzes
-konstruktiv ist, kann man aus ihm sicher eine entsprechende Gleichung für~$\cos
-15^\circ$ ablesen.
+konstruktiv ist, kann man aus ihm sicher auch eine entsprechende Gleichung für~$\cos
+15^\circ$ ablesen, allerdings wird diese recht großen Grad haben.
 \end{enumerate}
 \end{loesung}
 \end{aufgabe}
@@ -73,6 +166,47 @@ erfüllt. \\[1em]
 \begin{center}
   \scalebox{0.5}{\input{calabi.pspdftex}}
 \end{center}
+
+\begin{loesung}\addtolength{\jot}{0.3em}%
+Da es nur um das Verhältnis der Längen geht, können wir die Längen der
+beiden Katheten jeweils als~$1$ festlegen. Die Länge~$x$ der Hypotenuse ist
+dann gesucht. Außerdem ist es hilfreich, drei weitere Größen zu betrachten
+(Skizze!):
+\begin{itemize}
+\item die Länge~$h$ der Höhe des Dreiecks,
+\item die Seitenlänge~$s$ der Quadrate und
+\item den spitzen Winkel~$\alpha$ (in der Skizze unten links).
+\end{itemize}
+Dann kann man folgende drei Gleichungen aufstellen:
+\begin{align}
+  \frac{s}{1 - s} &= \frac{h}{x/2} \\
+  \frac{s}{1 - s} &= \frac{s}{x/2 - s/2} \\
+  (x/2)^2 + h^2 &= 1
+\end{align}
+Gleichung~(1) drückt den Tangens von~$\alpha$ auf zwei verschiedene Arten und
+Weisen aus: über das "`schiefe"' Dreieck unten links und über das (nicht
+eingezeichnete) Teildreieck, dessen eine Seite die Höhe ist. Auch die zweite
+Gleichung drückt den Tangens aus, über das schiefe Dreieck und das, dessen eine
+Seite die linke Kante des blauen Quadrats ist. Gleichung~(3) ist eine Instanz
+des Satzes von Pythagoras.
+
+Dieses Gleichungssystem kann man dann sukzessive lösen. Etwa kann man zunächst
+die erste Gleichung nach~$s$ und die dritte nach~$h$ auflösen:
+\begin{align*}
+  s &= \frac{2h}{x + 2h} \\
+  h &= \sqrt{1 - x^2/4}
+\end{align*}
+(Wieso weiß man, dass~$h$ die positive Lösung der quadratischen Gleichung sein
+muss?) Setzt man diese Darstellungen in Gleichung~(2) ein, erhält man
+\[ 2x^4 - 6x^3 + x^2 + 8x - 4 = 0; \]
+das ist schon fast die gesuchte Gleichung. Mittels einer Polynomdivision kann
+man den Faktor~$(x-2)$ ausklammern:
+\[ (2x^3 - 2x^2 - 3x + 2) (x-2) = 0. \]
+Da dieser Faktor nicht null ist (sonst wäre das Dreieck entartet), kann man ihn
+kürzen.
+
+\emph{Bemerkung:} Es gibt noch viele andere Lösungswege.
+\end{loesung}
 \end{aufgabe}
 
 \end{document}

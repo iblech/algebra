@@ -36,18 +36,31 @@ gewisse ganze Zahlen~$p,q$. Dann folgt
 \[ 3 q^2 = p^2. \]
 Auf der rechten Seite kommt der Primfaktor~3 eine gerade Anzahl von Malen vor
 (wieso?), links aber eine ungerade Anzahl von Malen. Das ist ein Widerspruch.
-\item Aus~$\sqrt{12} = p/q$ folgt~$12 q^2 = 2^2 \, 3 \, q^2 = p^2$, also
+\item Aus~$\sqrt{12} = p/q$ folgt~$12 q^2 = 2^2 \cdot 3 \cdot q^2 = p^2$, also
 liefert dasselbe Argument den Widerspruch.
+
+\emph{Bemerkung:} Alternativ beobachtet man wegen~$\sqrt{12} = 2 \sqrt{3}$,
+dass aus der Rationalität von~$\sqrt{12}$ die Rationalität von~$\sqrt{3}$
+folgen würde, die wir in Teilaufgabe~a) aber widerlegt haben. Hierbei nutzt man
+aus, dass das Produkt rationaler Zahlen rational ist (wieso?).
+
 \item Aus~$\sqrt[3]{25} = p/q$ folgt~$25 q^3 = p^3$. Die Anzahl der Male, wie
 oft der Primfaktor~5 vorkommt, ist rechts ein Vielfaches von~3 und links nicht
 (es bleibt der Rest~2, wieso?).
 \end{loesungE}
+
+\emph{Bemerkung:} Die Entdeckung der Irrationalität ist mathematisches
+Kulturgut!
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Beispiele für Polynomgleichungen}
 Seien ganze Zahlen~$x_1, \ldots, x_n$ gegeben. Finde eine Polynomgleichung mit
 ganzzahligen Koeffizienten, die diese Zahlen als Lösungen besitzt.
-\begin{loesung}$(X-x_1) \cdots (X-x_n) = 0$.
+\begin{loesung}$(X-x_1) \cdots (X-x_n) = 0$ (wieso hat diese Gleichung
+ganzzahlige Koeffizienten?).
+
+\emph{Bemerkung:} Natürlich gibt es noch viele weitere passende Gleichungen.
 \end{loesung}
 \end{aufgabe}
 
@@ -61,9 +74,17 @@ ganzzahligen Koeffizienten, die diese Zahlen als Lösungen besitzt.
   \item Was haben die Teilaufgaben~a) und~b) miteinander zu tun?
 \end{enumerate}
 \begin{loesungE}
-\item Eine~$n$-te Wurzel von~$a$ ist eine Lösung der Polynomgleichung~$X^n - a
-= 0$. Da das eine normierte Polynomgleichung mit ganzzahligen Koeffizienten
-ist, folgt die Behauptung schon mit Teilaufgabe~b).
+\item Zu zeigen ist also: $\sqrt[n]{a} \in \QQ \Leftrightarrow \sqrt[n]{a} \in
+\ZZ$.
+
+Dabei ist die Richtung "`$\Leftarrow$"' klar. Für die
+Richtung~"`$\Rightarrow$"' können wir eine vollständig gekürzte
+Bruchdarstellung von~$\sqrt[n]{a}$ ansetzen: $\sqrt[n]{a} = p/q$.
+
+Dann folgt~$a = p^n / q^n \in \ZZ$. Da diese Division aufgeht, kommt jeder
+Primfaktor von~$q$ auch in~$p^n$ und damit in~$p$ vor. Da~$p$ und~$q$ keine
+gemeinsamen Primfaktoren haben, besteht~$q$ also aus überhaupt keinem
+Primfaktor und ist daher (wieso?) gleich~$\pm 1$.
 \item Sei~$x = p/q$ eine vollständig gekürzte Bruchdarstellung einer Lösung der
 Gleichung
 \[ X^n + a_{n-1} X^{n-1} + \cdots + a_1 X + a_0 = 0. \]
@@ -74,7 +95,9 @@ also ist~$q$ ein Teiler von~$p^n$. Daher kommt jeder Primfaktor von~$q$ auch
 in~$p^n$ und daher in~$p$ vor (wieso?). Da nach Voraussetzung~$p$ und~$q$ keine
 gemeinsamen Primfaktoren haben, besteht~$q$ aus überhaupt keinem Primfaktor und
 ist daher (wieso?) gleich~$\pm1$. Also ist~$x = \pm p$ eine ganze Zahl.
-\item Siehe die Argumentation bei~a).
+\item Eine~$n$-te Wurzel von~$a$ ist eine Lösung der Polynomgleichung~$X^n - a
+= 0$. Da das eine normierte Polynomgleichung mit ganzzahligen Koeffizienten
+ist, folgt die Behauptung von Teilaufgabe~a) mit Teilaufgabe~b).
 \end{loesungE}
 \end{aufgabe}
 
@@ -86,6 +109,12 @@ reelle Zahlen sind:
 \item $\dfrac{1 + \i}{1 - \i}$
 \item alle vier Lösungen der Polynomgleichung $X^4 - 1 = 0$
 \end{enumerate}
+
+\begin{loesungE}
+\item $11 + 2 \, \i$.
+\item $0 + 1 \, \i$.
+\item $1 + 0 \, \i$, $0 + 1 \, \i$, $-1 + 0 \, \i$ und~$0 + (-1) \, \i$.
+\end{loesungE}
 \end{aufgabe}
 
 \end{document}

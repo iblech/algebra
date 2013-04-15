@@ -42,7 +42,7 @@
 }{\vspace{\aufgabenskip}}
 \newenvironment{aufgabeE}[1]{\begin{aufgabe}{#1}\begin{enumerate}}{\end{enumerate}\end{aufgabe}}
 
-\definecolor{shadecolor}{rgb}{.9,.9,.9}
+\definecolor{shadecolor}{rgb}{.93,.93,.93}
 
 \newif\ifloesungen\loesungenfalse
 \NewEnviron{loesung}{%
