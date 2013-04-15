@@ -1,0 +1,157 @@
+\documentclass{algblatt}
+\usepackage{array}
+\geometry{tmargin=1cm,bmargin=2cm,lmargin=2.7cm,rmargin=2.7cm}
+
+\theoremstyle{plain}
+
+\newtheorem{prop}{Proposition}
+\begin{document}
+
+\begin{center}\huge \textsf{\textbf{Crashkurs: Konstruktive Mathematik}}\end{center}
+
+\section*{Begriffe}
+
+\emph{Konstruktive Mathematik} ist der Oberbegriff. \emph{Intuitionistische
+Logik} ist die zugrundeliegende Logik, die die meisten Mathematiker einsetzen,
+wenn sie formal konstruktive Mathematik betreiben wollen.
+
+
+\section*{Bedeutung logischer Aussagen}
+
+Bei intuitionistischer Logik verwendet man dieselbe formale Sprache wie bei
+klassischer Logik ($\wedge, \vee, \Rightarrow, \neg, \forall, \exists$), aber
+mit anderen Bedeutungen:
+\begin{center}
+\vspace{-1em}
+\setlength{\extrarowheight}{0.3em}
+\begin{tabular}{@{}r@{\quad}p{6.0cm}@{\quad}p{6.6cm}}
+  & \underline{klassische Logik} & \underline{intuitionistische Logik} \\[0.5em]
+  Aussage $\varphi$ & Die Aussage $\varphi$ gilt. & Wir haben Beleg für $\varphi$. \\
+  $\bot$ & Es stimmt Falschheit. & Wir haben Beleg für Falschheit. \\
+  $\varphi \wedge \psi$ & $\varphi$ und $\psi$ stimmen. & Wir haben Beleg für~$\varphi$ und für~$\psi$. \\
+  $\varphi \vee \psi$ & $\varphi$ oder $\psi$ stimmt. & Wir haben Beleg für~$\varphi$ oder für~$\psi$. \\
+  $\varphi \Rightarrow \psi$ & Sollte~$\varphi$ stimmen, dann auch~$\psi$. &
+  Aus Belegen für~$\varphi$ können wir Belege für~$\psi$ konstruieren. \\
+  $\neg\varphi :\equiv (\varphi \Rightarrow \bot)$ &
+    $\varphi$ stimmt nicht. &
+    Es kann keinen Beleg für~$\varphi$ geben. \\
+  $\forall x \in X{:}\ \varphi(x)$ & Für alle $x \in X$ stimmt jeweils~$\varphi(x).$ &
+    Wir können (gleichmäßig) für alle~$x \in X$ Belege für~$\varphi(x)$ konstruieren. \\
+  $\exists x \in X{:}\ \varphi(x)$ & \raggedright Es gibt mindestens ein~$x \in X$, für das~$\varphi(x)$
+  stimmt. & {\raggedright
+    Wir haben ein~$x \in X$ zusammen mit Beleg für~$\varphi(x).$} \\
+  $\varphi \vee \neg\varphi$ &
+    $\varphi$ stimmt oder stimmt nicht. &
+    Wir haben Beleg für~$\varphi$ oder für~$\neg\varphi$.
+\end{tabular}
+\end{center}
+
+
+\section*{Schlussregeln intuitionistischer Logik}
+
+Intuitionistisch verwenden wir dieselben Schlussregeln wie in klassischer
+Logik, mit einer Ausnahme: Auf das \emph{Prinzip vom ausgeschlossenen Dritten},
+demnach man für jede Aussage~$\varphi$
+\[ \varphi \vee \neg\varphi \]
+voraussetzen darf, verzichten wir, denn es ist die Quelle nicht-konstruktiver
+Beweise.
+Das heißt aber nicht, dass wir sein
+Gegenteil $\neg\left(\varphi \vee \neg\varphi\right)$
+als Axiom verwenden! Außerdem verzichten wir auf das Auswahlaxiom (denn
+zusammen mit den übrigen Schlussregeln folgt aus ihm das Prinzip vom
+ausgeschlossenen Dritten). Intuitionistische Logik ist also abwärtskompatibel
+zu klassischer Logik.
+
+Für manche spezielle Aussagen~$\varphi$ gilt das Prinzip vom ausgeschlossenen
+Dritten aber doch: Etwa hat man
+\[ \forall x,y \in \NN{:}\ x = y \vee x \neq y \qquad\text{und}\qquad
+  \forall x,y \in \overline{\QQ}{:}\ x = y \vee x \neq y, \]
+aber nicht
+\[ \forall x,y \in \CC{:}\ x = y \vee x \neq y. \]
+Die erste Aussage zeigt man durch Induktion, die zweite ist Gegenstand der
+(nichttrivialen) Proposition~1.6 im Buch.
+
+
+\section*{Widerspruchsbeweise}
+
+Äquivalent zum Prinzip vom ausgeschlossenen Dritten ist das \emph{Prinzip der
+Doppelnegationselimination}, demnach man für jede Aussage~$\varphi$
+\[ \neg\neg\varphi \Longrightarrow \varphi \]
+voraussetzen darf. Da wir also auf dieses Prinzip ebenfalls verzichten, darf
+man nicht mehr nach Belieben "`nicht nicht"'s streichen und muss Behauptungen
+und Argumente etwas präziser formulieren.
+(Die Umkehrung~$\varphi \Rightarrow \neg\neg\varphi$ gilt schon und lässt sich
+leicht zeigen.)
+
+Da man das Prinzip der Doppelnegationselimination benötigt, um
+Widerspruchsbeweise führen zu können, sind diese intuitionistisch nicht
+zulässig. Von dieser Beschränkung unbetroffen sind Beweise negierter Aussagen
+(siehe Beispiel~1); dabei handelt es sich aber nicht um Widerspruchsbeweise im
+eigentlichen Sinn.
+
+
+\section*{Sinn und Zweck}
+
+\begin{itemize}
+\item Intuitionistische Logik macht Spaß! Auch grundlegende Theorien (lineare
+Algebra, kommutative Algebra usw.) erhalten neue Tiefe.
+\item Mit intuitionistischer Logik kann man Belegbarkeitsfragen untersuchen.
+\item Intuitionistische Logik hilft einen, Beweise und Theorien eleganter zu
+formulieren.
+\item Nur mit intuitionistischer Logik kann man durch Hinzunahme klassisch
+verletzter, aber trotzdem motivierbarer Axiome \emph{Traummathematik}
+betreiben. Beispiele:
+
+\begin{itemize}
+\item \emph{Alle Funktionen~$\RR \to \RR$ sind stetig.}
+\item \emph{Es gibt nilquadratische Zahlen~$x \in \RR$ (Zahlen mit~$x^2
+= 0$), die selbst nicht null sind.}
+\end{itemize}
+
+\item Aus jedem intuitionistischen Beweis einer Existenzbehauptung kann man
+maschinell ein \emph{Programm} extrahieren, das in endlicher Zeit das
+behauptete Objekt findet bzw. konstruiert. Das ist in der Informatik nützlich.
+
+Auch unsere Studenten können einen Vorteil daraus ziehen: Jeden Beweis der
+Vorlesung kann man explizit an Beispielen nachvollziehen.
+
+\item Wenn man normal Mathematik betreibt, betreibt man tatsächlich Mathematik
+im \emph{Topos der Mengen}. Es gibt aber auch andere Topoi, in denen man
+arbeiten möchte (das ist etwa für die algebraische Geometrie wichtig); deren
+interne logische Sprache ist nur sehr selten klassisch, aber immer
+intuitionistisch.
+\end{itemize}
+
+
+\section*{Zwei Beispiele}
+
+\begin{prop}Die Zahl $\sqrt{2}$ ist nicht rational.\end{prop}
+\begin{proof}[Beweis (intuitionistisch unzulässig)] Angenommen, die
+Behauptung,~$\sqrt{2}$ sei irrational, wäre falsch. Nach dem Prinzip der
+Doppelnegationselimination wäre~$\sqrt{2}$ dann rational, also gäbe es ganze
+Zahlen~$p,q > 0$ mit~$\sqrt{2} = p/q$. \ldots\ldots{} Das ist ein
+Widerspruch.\end{proof}
+\begin{proof}[Beweis (intuitionistisch einwandfrei)] Angenommen,~$\sqrt{2}$ wäre
+rational. Dann gäbe es ganze Zahlen~$p,q > 0$ mit~$\sqrt{2} = p/q$.
+\ldots\ldots{} Das ist ein Widerspruch.\end{proof}
+
+\enlargethispage{3em}
+
+\begin{prop}
+  Es gibt irrationale Zahlen~$x$ und $y$, sodass $x^y$ rational ist.
+\end{prop}
+
+\begin{proof}[Beweis (intuitionistisch unzulässig)]
+  Es ist~$\sqrt{2}^{\sqrt{2}}$ rational oder irrational. Setze
+  \begin{align*}
+    \text{im ersten Fall:} && x &:= \sqrt{2}, & y &:= \sqrt{2}, \\
+    \text{im zweiten Fall:} &&
+    x &:= \sqrt{2}^{\sqrt{2}}, & y & := \sqrt{2}. \qedhere
+  \end{align*}
+\end{proof}
+
+\begin{proof}[Beweis (intuitionistisch einwandfrei)]
+  Setze~$x := \sqrt{2}$, $y := \log_{\sqrt{2}} 3$. Dann ist $x^y = 3$.
+\end{proof}
+
+\end{document}
