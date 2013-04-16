@@ -1,4 +1,4 @@
-AuthUserFile /home/git/wd-algebra1-ss2013/.htpassed
+AuthUserFile /home/git/wd-algebra1-ss2013/.htpasswd
 AuthGroupFile /dev/null
 AuthName "Algebra I"
 AuthType Basic
