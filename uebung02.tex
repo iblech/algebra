@@ -100,13 +100,12 @@ ist~$\overline{z^{-1}}$ das Inverse von~$\overline{z}$, das war zu zeigen.
 Zeige, dass für zwei reelle Zahlen $a$ und $b$ genau dann die Wurzel
 $\sqrt{a^2 + b^2}$ nahe bei Null ist, wenn sowohl $|a|$ als auch $|b|$
 nahe bei Null sind. Zeige also:
-\[    \forall \epsilon > 0\ \exists \delta > 0  \colon 
-        \sqrt{a^2 + b^2} < \delta  \implies |a|, |b| < \epsilon
-\]
-\[
-    \forall \epsilon > 0\ \exists \delta > 0  \colon 
-        |a|, |b| < \delta  \implies \sqrt{a^2 + b^2} < \epsilon
-\]
+\[ \begin{array}{@{}rr@{\ }c@{\ }l@{}}
+  \forall \epsilon > 0\ \exists \delta > 0 \colon &
+        \sqrt{a^2 + b^2} < \delta & \implies & |a|, |b| < \epsilon \\[0.5em]
+    \forall \epsilon > 0\ \exists \delta > 0 \colon &
+        |a|, |b| < \delta & \implies & \sqrt{a^2  + b^2} < \epsilon
+\end{array} \]
 \vspace{-1.5em}
 \begin{loesung}
 \begin{enumerate}
@@ -124,6 +123,7 @@ nicht im Vornhinein, sondern erst nach erfolgter Abschätzung.
 \end{loesung}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Ein neuer Zahlbereich}
 \begin{enumerate}
 \item
