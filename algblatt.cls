@@ -17,10 +17,12 @@
 \setlength\parskip{\medskipamount}
 \setlength\parindent{0pt}
 
+\newif\ifloesungen\loesungenfalse
+
 \newlength{\titleskip}
 \setlength{\titleskip}{1.5em}
 \renewcommand{\maketitle}[2]{%
-  \thispagestyle{empty}%
+  \ifloesungen\else\thispagestyle{empty}\fi%
   Universität Augsburg \hfill Sommersemester 2013 \\
   Lehrstuhl für Algebra und Zahlentheorie \hfill Ingo Blechschmidt \\
   Prof. Marc Nieper-Wißkirchen \hfill Robert Gelb \\[0em]
@@ -44,7 +46,6 @@
 
 \definecolor{shadecolor}{rgb}{.93,.93,.93}
 
-\newif\ifloesungen\loesungenfalse
 \NewEnviron{loesung}{%
   \ifloesungen%
     \begin{shaded}\textbf{Lösung. }\BODY\end{shaded}%
