@@ -35,8 +35,8 @@ Gleichung~$f(X) = 0$.
 zwei Zahlen~$x_0, y_0 \in \QQ$ mit~$f(x_0) < 0 < f(y_0)$.
 
 Das beweist man entweder über eine Grenzwertüberlegung oder direkt über
-Abschätzungen: Sei~$R := |a_{n-1}| + \cdots + |a_0|$. Dann gilt folgende für
-alle~$x \in \RR$ mit~$|x| \geq R + 1$ gültige Hilfsüberlegung (wieso?):
+Abschätzungen: Sei~$R := |a_{n-1}| + \cdots + |a_0|$. Dann gilt für
+alle~$x \in \RR$ mit~$|x| \geq R + 1$ folgende Hilfsüberlegung (wieso?):
 \begin{align*}
   \left|a_{n-1} \frac{1}{x} + \cdots + a_1 \frac{1}{x^{n-1}} + a_0
   \frac{1}{x^n}\right| &\stackrel{\triangle}{\leq}
@@ -57,7 +57,7 @@ Die Zahlen~$x_0 := -R - 1$ und~$y_0 := R + 1$ leisten also das Gewünschte.
 Schranken
 \[ x_n, y_n \in \QQ \text{ mit } x_n \leq y_n \text{ und } f(x_n) \leq 0 \leq
 f(y_n) \]
-zu finden. Der ersten Schritt wird durch obige Argumentation erledigt. Ist
+zu finden. Der erste Schritt wird durch obige Argumentation erledigt. Ist
 nun~$(x_n,y_n)$ schon konstruiert, schreiben wir~$m := \frac{x_n + y_n}{2}$
 und konstruieren die nächstbesseren Schranken (Skizze!):
 \[ \begin{cases}
@@ -69,8 +69,8 @@ und konstruieren die nächstbesseren Schranken (Skizze!):
     \text{Setze $x_{n+1} := x_n$, $y_{n+1} := m$.}
 \end{cases} \]
 Diese Fallunterscheidung kann man tatsächlich (in der Praxis, intuitionistisch)
-durchführen, da~$f(m)$ eine rationale Zahl ist.
-\item[3.] Da die so konstruierten Schranken~$x_n$ und~$y_n$ legen nach dem
+durchführen, da~$f(m)$ eine rationale Zahl ist (wieso?).
+\item[3.] Die so konstruierten Schranken~$x_n$ und~$y_n$ legen nach dem
 Intervallschachtelungsprinzip eine bestimmte Zahl~$z \in \RR$ fest (wieso?):
 \[ x_n \xra{n \to \infty} z, \quad y_n \xra{n \to \infty} z. \]
 Daher konvergieren auch die Folgen~$(f(x_n))_n$ und~$(f(y_n))_n$:
@@ -91,7 +91,7 @@ Ungleichungen im Grenzwert erhalten bleiben, aus folgender Beobachtung:
 Beweis des Zwischenwertsatzes für stetige Funktionen aus der Analysis. In
 seiner Allgemeinheit steht dieser uns nicht zur Verfügung, da wir die im
 zweiten Schritt benötigten Fallunterscheidungen bei beliebigen stetigen
-Funktionen nicht treffen können.
+Funktionen intuitionistisch nicht treffen können.
 
 \emph{Bemerkung:} Wenn man den Fundamentalsatz der Algebra schon kennt, kann
 man kürzer so argumentieren: Echt komplexe Lösungen treten stets in
@@ -161,7 +161,7 @@ Mathematiker) gefunden und ist gleichschenklig.
 Zeige, dass das Längenverhältnis der längsten zu einer der kürzeren Seiten die
 Gleichung
 \[ 2 X^3 - 2 X^2 - 3 X + 2 = 0 \]
-erfüllt. \\[1em]
+erfüllt. \ifloesungen\else\\[1em]\fi
 
 \begin{center}
   \scalebox{0.5}{\input{calabi.pspdftex}}
