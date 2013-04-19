@@ -177,7 +177,7 @@ dann gesucht. Außerdem ist es hilfreich, drei weitere Größen zu betrachten
 \item die Seitenlänge~$s$ der Quadrate und
 \item den spitzen Winkel~$\alpha$ (in der Skizze unten links).
 \end{itemize}
-Dann kann man folgende drei Gleichungen aufstellen:
+\emph{Variante 1:} Man kann folgende drei Gleichungen aufstellen:
 \begin{align}
   \frac{s}{1 - s} &= \frac{h}{x/2} \\
   \frac{s}{1 - s} &= \frac{s}{x/2 - s/2} \\
@@ -205,7 +205,26 @@ man den Faktor~$(x-2)$ ausklammern:
 Da dieser Faktor nicht null ist (sonst wäre das Dreieck entartet), kann man ihn
 kürzen.
 
-\emph{Bemerkung:} Es gibt noch viele andere Lösungswege.
+\emph{Variante 2:} Ein anderes zielführendes Gleichungssystem ist folgendes
+(nach Tim~Baumann):
+\begin{align*}
+  h &= s + \tan\alpha \cdot s/2 \\
+  h &= \cos\alpha \cdot s + \sin\alpha \cdot s \\
+  x/2 &= \cos\alpha
+\end{align*}
+Die erste Gleichung kommt durch Betrachtung des kleinen Teildreiecks oben
+zustande, die zweite durch Betrachtung des Winkels~$\alpha$ an einer zu
+Hypotenuse parallelen Hilfslinie durch die obere Spitze des "`schiefen
+Dreiecks"' (wie genau?).
+
+Setzt man die ersten beiden Gleichungen gleich und formt unter Beachtung
+von~$0^\circ < \alpha < 90^\circ$ um, erhält man nach
+einigem Rechnen die Beziehung
+\[ y^4 + 3y^3 - \frac{1}{4}y^2 - y + \frac{1}{4} = 0 \]
+für~$y := \cos\alpha$. Da~$y \neq 1$ (wieso?), kann man durch den
+Faktor~$(y-1)$ dividieren und erhält
+\[ 2 (2y)^3 - 2(2y)^2 - 3 (2y) + 2 = 0. \]
+Mit der dritten Gleichung folgt die Behauptung.
 \end{loesung}
 \end{aufgabe}
 
