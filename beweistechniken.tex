@@ -1,0 +1,228 @@
+\documentclass[12pt,a4paper,ngerman]{scrartcl}
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb,amscd,amsthm,graphicx}
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tabto}
+
+\setlength\parskip{\medskipamount}
+\setlength\parindent{0pt}
+
+\newcommand{\Bild}{\operatorname{im}}
+\newcommand{\Kern}{\operatorname{ker}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\I}{\mathrm{i}}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+
+\newenvironment{indentblock}{%
+  \list{}{\leftmargin\leftmargin}%
+  \item\relax
+}{%
+  \endlist
+}
+
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{bsp}{Beispiel}
+
+\theoremstyle{plain}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{beh}{Behauptung}
+
+\theoremstyle{remark}
+\newtheorem*{bem}{Bemerkung}
+
+%\usepackage{geometry}
+%\geometry{tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=3cm}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{19. April 2013}
+\lhead{Beweistechniken}
+
+\renewcommand{\labelitemi}{--}
+
+\newcommand{\hil}[1]{\textcolor{blue}{#1}}
+
+\begin{document}
+
+\begin{center}\includegraphics[scale=0.8]{saint_curious_george.png}\end{center}
+\vfill
+\footnotetext{Comic: \url{http://abstrusegoose.com/353}}
+\newpage
+
+
+\section*{Beweistechniken}
+
+Bis man zum eigentlichen Kern eines mathematischen Problems vordringt, muss man
+im Allgemeinen mehrere Definitionen entfalten. Das gelingt meist mit der
+Technik des direkten Beweisens ("`immer der Nase nach"').
+
+\emph{Beispiel:} Seien $f{:}\, X \to Y$ und $g{:}\, Y \to Z$ zwei Abbildungen. Wir
+wollen zeigen:
+\[ \text{$f$ injektiv} \,\wedge\, \text{$g$ injektiv} \ \Longrightarrow\ 
+  \text{$g \circ f$ injektiv}. \]
+Mit den unten beschriebenen Vorlagen lautet ein sehr ausführlicher Beweis wie
+folgt:
+\begin{indentblock}
+Gelte, dass~$f$ und~$g$ injektiv sind. Um dann die Injektivität von~$g
+\circ f$ zu zeigen, seien~$x, \tilde x \in X$
+beliebig und gelte~$(g \circ f)(x) = (g \circ f)(\tilde x)$. Nach Definition
+der Abbildungsverkettung gilt also
+\begin{align*}g(f(x)) &= g(f(\tilde x)). \\
+\intertext{Da $g$ injektiv ist, folgt daraus}
+f(x) &= f(\tilde x). \\
+\intertext{Da auch $f$ injektiv ist, folgt daraus wiederum}
+x &= \tilde x. \\
+\intertext{Das war zu zeigen.}\end{align*}
+\end{indentblock}
+\vspace{-2em}
+Der Kern der Argumentation liegt in den Folgerungen zwischen den drei
+abgesetzten Gleichungen, der Vorbau ist aber trotzdem wichtig; insbesondere ist
+es wichtig, die Variablen~$x$ und~$\tilde x$ richtig einzuführen.
+Setzt man Vertrautheit des Lesers mit den Voraussetzungen der
+Angabenstellung voraus, kann man den Beweis etwas kürzer auch so formulieren:
+\begin{indentblock}
+Seien~$x, \tilde x \in X$ beliebig mit~$(g \circ f)(x) = (g \circ f)(\tilde
+x)$. Dann folgt:
+\[ g(f(x)) = g(f(\tilde x)) \ \stackrel{\text{$g$ inj.}}{\Longrightarrow}\ 
+   f(x) = f(\tilde x) \ \stackrel{\text{$f$ inj.}}{\Longrightarrow}\ 
+   x = \tilde x, \]
+das war zu zeigen.
+\end{indentblock}
+
+\newpage
+
+\subsection*{Direkter Beweis}
+
+\begin{itemize}
+\item Um \hil{$A \wedge B$} direkt zu zeigen, muss man sowohl~$A$ als auch~$B$ zeigen.
+
+\emph{Vorlage:} Da \ldots, gilt $A$. Da außerdem \ldots, gilt auch~$B$.
+
+\item Um \hil{$A \vee B$} direkt zu zeigen, muss man zeigen, dass~$A$ oder~$B$ (oder beide
+-- das sagt man selten dazu) gelten. Meistens muss man dazu eine
+Fallunterscheidung führen.
+
+\begin{tabbing}
+  \emph{Vorlage:} \= \kill
+  \emph{Vorlage:} \> Wegen $\ldots$ können nur folgende Fälle eintreten: \\
+  \> \emph{Fall 1}: Wegen~$\ldots$ gilt dann~$A$. \\
+  \> \emph{Fall 2}: Wegen~$\ldots$ gilt dann~$B$.
+\end{tabbing}
+
+\item Um~\hil{$\neg A$} direkt zu zeigen, zeigt man, dass die Annahme, dass~$A$ doch stimmt,
+zu einem Widerspruch führt.
+
+\emph{Vorlage:} Angenommen, es gilt doch~$A$. Dann \ldots, das kann nicht sein.
+
+\item Um \hil{$A \Rightarrow B$} direkt zu zeigen, setzt man die Gültigkeit von~$A$ voraus
+und zeigt dann~$B$. Ob~$A$ tatsächlich stimmt, ist für die Argumentation nicht
+relevant, es geht nur um die hypothetische Schlussfolgerung.
+
+\emph{Vorlage:} Gelte~$A$. Dann \ldots, daher gilt~$B$.
+
+\item Um \hil{$A \Leftrightarrow B$} direkt zu zeigen, zeigt man~$A \Rightarrow B$
+(die sog. Hinrichtung) und~$B \Rightarrow A$ (die sog. Rückrichtung). Ob
+dabei~$A$ und~$B$ tatsächlich stimmen, ist nicht relevant.
+
+\begin{tabbing}
+  \emph{Vorlage:} \= \kill
+  \emph{Vorlage:} \> "`$\Rightarrow$"': Gelte~$A$. Dann \ldots, daher gilt~$B$. \\
+  \> "`$\Leftarrow$"': Gelte~$B$. Dann \ldots, daher gilt~$A$.
+\end{tabbing}
+
+Manchmal sind die Beweise der beiden Richtungen so ähnlich, dass man sie zu
+einem zusammenfassen kann:
+
+\begin{tabbing}
+  \emph{Vorlage:} \= \kill
+  \emph{Vorlage:} \> $A$ gilt genau dann, wenn \ldots; das ist genau dann der
+Fall, wenn \ldots; \ldots; \\
+  \> das ist genau dann der Fall, wenn~$B$ gilt.
+\end{tabbing}
+
+Oder kürzer notiert:
+
+\emph{Vorlage:} $A \Leftrightarrow \ldots \Leftrightarrow \ldots
+\Leftrightarrow \ldots \Leftrightarrow \ldots \Leftrightarrow B$
+
+\item Um \hil{$\forall x\in X{:}\, A(x)$} direkt zu zeigen, zeigt man, dass für
+jedes~$x \in X$ jeweils die Aussage~$A(x)$ gilt.
+
+\emph{Vorlage:} Sei~$x \in X$ beliebig. Da \ldots, gilt~$A(x)$.
+
+Der bei den Auslassungspunkten auszuführende Beweis darf dabei von~$x$ nur
+voraussetzen, dass es ein Element der Menge~$X$ ist: Der Beweis muss mit
+jedem~$x \in X$ zurechtkommen.
+
+\item Um \hil{$\exists x \in X{:}\, A(x)$} direkt zu zeigen, gibt man explizit ein~$x
+\in X$ an, für das~$A(x)$ gilt.
+
+\begin{tabbing}
+  \emph{Vorlage:} \= \kill
+  \emph{Vorlage:} \> Setze~$x := \ldots$. Dann liegt~$x$ in der Tat in~$X$,
+denn \ldots; und wegen \ldots \\
+  \> gilt~$A(x)$.
+\end{tabbing}
+
+\item Um~\hil{$X \subseteq Y$} direkt zu zeigen, wobei~$X$ und~$Y$ Mengen sind,
+zeigt man, dass jedes Element von~$X$ auch in~$Y$ liegt.
+
+\emph{Vorlage:} Sei~$x \in X$ beliebig. Dann \ldots, daher gilt~$x \in Y$.
+
+\item
+Um~\hil{$X = Y$} direkt zu zeigen, zeigt man~$X \subseteq Y$ und~$Y \subseteq
+X$.
+
+\begin{tabbing}
+  \emph{Vorlage:} \= \kill
+  \emph{Vorlage:} \> "`$\subseteq$"': Sei~$x \in X$ beliebig. Dann \ldots,
+  daher gilt~$x \in Y$. \\
+  \> "`$\supseteq$"': Sei~$y \in Y$ beliebig. Dann \ldots, daher gilt~$y \in
+  X$.
+\end{tabbing}
+
+Manchmal kann man die beiden Teilbeweise auch zu einem kombinieren.
+
+\item Um \hil{$f = g$} direkt zu zeigen, wobei~$f$ und~$g$ beides Abbildungen
+$X \to Y$ sind (also dieselbe Definitions- und Zielmenge haben), zeigt
+man, dass die beiden Funktionen an allen Stellen ihres Definitionsbereichs
+übereinstimmen.
+
+\emph{Vorlage:} Sei~$x \in X$ beliebig. Dann \ldots, daher gilt~$f(x) = g(x)$.
+\end{itemize}
+
+
+\subsection*{Beweis durch Widerspruch}
+
+Um eine Aussage~$A$ zu zeigen, kann man auch zeigen, dass die Annahme von~$\neg
+A$ zu einem Widerspruch führt.
+
+\emph{Vorlage:} Angenommen,~$A$ wäre falsch. Dann \ldots, das kann nicht sein.
+
+
+\subsection*{Beweis durch Kontraposition}
+
+Um eine Implikation der Form~$A \Rightarrow B$ zu zeigen, kann man auch~$\neg B
+\Rightarrow \neg A$ zeigen, d.\,h. unter der Voraussetzung von~$\neg B$ einen
+Beweis von~$\neg A$ führen.
+Das ist häufig dann hilfreich, wenn~$A$ und~$B$ selbst negierte Aussagen sind.
+
+\emph{Beispiel:} Wenn man sich direkt an einem Beweis der Implikation
+\begin{align*}\text{$k$ ist undorig} &\ \Longrightarrow\  \text{$k$ ist unfoberant} \\
+\intertext{versucht,
+wird man durch die vielen Verneinungen vielleicht verwirrt. Möglicherweise ist
+es daher einfacher, die Kontraposition}
+\text{$k$ ist foberant} &\ \Longrightarrow\  \text{$k$ ist dorig} \\
+\intertext{zu zeigen.}\end{align*}
+
+\end{document}
