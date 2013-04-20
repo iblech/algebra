@@ -18,6 +18,35 @@ Lösung~$\alpha$ besitzt.
 \item Zeige, dass diese Lösung~$\alpha$ invertierbar ist, und finde eine normierte
 Polynomgleichung mit rationalen Koeffizienten, die~$\alpha^{-1}$ als Lösung besitzt.
 \end{enumerate}
+\begin{loesungE}
+\item Ja, denn die Zahl~$\cos 10^\circ$ ist der Realteil der komplexen
+Zahl~$e^{\pi\i/18}$, und diese ist algebraisch, da sie die Gleichung
+\[ X^{18} + 1 = 0 \]
+erfüllt (wieso?). Da Realteile algebraischer Zahlen selbst ebenfalls
+algebraisch sind, begründet das die Algebraizität von~$\cos 10^\circ$.
+\item Wir setzen~$f := X^3-2X+5$. Da~$f(-3) =
+-16 < 0 < 1 = f(-2)$, besitzt die Gleichung~$f(X) = 0$ nach Blatt~1, Aufgabe~2
+mindestens eine reelle Lösung~$\alpha$ im Intervall~$(-3, -2)$. Mit einer Polynomdivision
+durch~$(X-\alpha)$ kann man~$f$ faktorisieren:
+\[ f = (X - \alpha) (X^2 + \alpha X + \alpha^2-2). \]
+Das verbleibende Polynom hat nun keine weiteren reellen Nullstellen, denn seine
+Diskriminante
+\[ D = \alpha^2 - 4(\alpha^2-2) = 8 - 3 \alpha^2 \leq 8 - 3 \cdot 2^2 = -4 < 0
+\]
+ist negativ.
+\item Die Zahl~$\alpha$ kann nicht Null sein, da Null keine Lösung der
+Gleichung~$f(X) = 0$ ist:
+\[ f(0) = 0^3 - 2 \cdot 0 + 5 = 5 \neq 0. \]
+Also ist~$\alpha$ invertierbar. Für die Zahl~$\alpha^{-1}$ gilt
+\[ (\alpha^{-1})^{-3} - 2 (\alpha^{-1})^{-1} + 5 = 0; \]
+das ist zwar eine Gleichung, aber keine Polynomgleichung für~$\alpha^{-1}$.
+Wenn wir mit~$(\alpha^{-1})^3$ durchmultiplizieren, erhalten wir die
+äquivalente Gleichung
+\[ 1 - 2 (\alpha^{-1})^2 + 5 (\alpha^{-1})^3 = 0. \]
+Also ist~$\alpha^{-1}$ Lösung der normierten Polynomgleichung mit rationalen
+Koeffizienten
+\[ X^3 - \frac{2}{5} X^2 + \frac{1}{5} = 0. \]
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Produkt algebraischer Zahlen}
@@ -39,6 +68,26 @@ Zahlen in Abhängigkeit der Grade der Faktoren.
 \item Sei~$f$ ein normiertes Polynom mit rationalen Koeffizienten und~$z$ eine
 transzendente Zahl. Zeige, dass dann auch~$f(z)$ eine transzendente Zahl ist.
 \end{enumerate}
+\begin{loesungE}
+\item Sei~$z$ eine algebraische Zahl. Dann gilt
+\[ |z|^2 = z \overline{z}. \]
+Da mit~$z$ auch~$\overline{z}$ algebraisch ist und das Produkt algebraischer
+Zahlen algebraisch ist, ist die rechte Seite dieser Identität algebraisch. Der
+Betrag von~$z$ ist also als eine der Lösungen der Gleichung mit algebraischen
+Koeffizienten
+\[ X^2 - z \overline{z} = 0 \]
+ebenfalls algebraisch.
+\item Sei~$z$ eine rationale ganz-algebraische Zahl. Dann erfüllt~$z$ also eine
+normierte Polynomgleichung mit ganzzahligen Koeffizienten. Nach Blatt~0,
+Aufgabe~3b) ist~$z$ daher schon ganzzahlig.
+\item Angenommen,~$y := f(z)$ wäre algebraisch. Dann gibt es ein normiertes
+Polynom~$g$ mit rationalen Koeffizienten, sodass~$y$ die Gleichung
+\[ g(Y) = 0 \]
+erfüllt, sodass also~$g(f(z)) = 0$ ist. Setzt man~$h := g \circ f$ -- das ist
+wieder ein normiertes Polynom mit rationalen Koeffizienten (wieso?) -- sieht
+man, dass~$z$ Lösung der Gleichung~$h(X) = 0$ ist. Das ist ein Widerspruch zur
+Transzendenz von~$z$.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Spielen mit Einheitswurzeln}
