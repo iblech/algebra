@@ -30,10 +30,8 @@ mindestens eine reelle Lösung~$\alpha$ im Intervall~$(-3, -2)$. Mit einer Polyn
 durch~$(X-\alpha)$ kann man~$f$ faktorisieren:
 \[ f = (X - \alpha) (X^2 + \alpha X + \alpha^2-2). \]
 Das verbleibende Polynom hat nun keine weiteren reellen Nullstellen, denn seine
-Diskriminante
-\[ D = \alpha^2 - 4(\alpha^2-2) = 8 - 3 \alpha^2 \leq 8 - 3 \cdot 2^2 = -4 < 0
-\]
-ist negativ.
+Diskriminante ist negativ:
+\[ D = \alpha^2 - 4(\alpha^2-2) = 8 - 3 \alpha^2 \leq 8 - 3 \cdot 2^2 = -4 < 0. \]
 \item Die Zahl~$\alpha$ kann nicht Null sein, da Null keine Lösung der
 Gleichung~$f(X) = 0$ ist:
 \[ f(0) = 0^3 - 2 \cdot 0 + 5 = 5 \neq 0. \]
@@ -103,6 +101,47 @@ die~$1$.
 Zeige, dass~$\zeta \cdot \vartheta$ eine~$k$-te Einheitswurzel ist, wobei~$k$
 das kleinste gemeinsame Vielfache von~$n$ und~$m$ ist.
 \end{enumerate}
+\begin{loesungE}
+\item Bezeichne~$\xi$ eine primitive sechste Einheitswurzel, etwa~$\xi =
+e^{2\pi\i / 6}$. Eine Lösung der Gleichung ist~$\i$. Daher sind die
+insgesamt sechs Lösungen der Gleichung durch
+\[ \i,\quad \xi \i,\quad \xi^2 \i,\quad \xi^3 \i,\quad \xi^4 \i,\quad \xi^5 \i \]
+gegeben (wieso?).
+\item Die Gleichung~$X^7 - (1+\i)^7 = 0$ tut's (wieso?).
+
+\emph{Bemerkung:} Wenn man möchte, kann man die Gleichung auch ausfaktorisiert
+hinschreiben. Sei dazu~$\xi$ eine primitive siebte Einheitswurzel, etwa~$\xi =
+e^{2\pi\i / 7}$. Dann ist obige Gleichung äquivalent zu
+\[ \prod_{k=0}^6 (X - \xi^k (1+\i)) = 0. \]
+
+\emph{Bemerkung:} Es kann keine Polynomgleichung mit \emph{rationalen}
+Koeffizienten geben, die genau die sieben Ecken als Lösungen besitzt. Denn jede
+solche Gleichung würde mit~$1+\i$ auch das komplex Konjugierte~$1-\i$ als
+Lösung besitzen, das ist aber keine der Ecken.
+
+\item Sei~$x$ eine beliebige komplexe Zahl. Dann gilt:
+\begin{align*}
+  && x^{n-1} + x^{n-2} + \cdots + x + 1 &= 0 \\
+  \stackrel{?}{\Longleftrightarrow} &&
+    x^{n-1} + x^{n-2} + \cdots + x + 1 &= 0 \ \wedge\  x \neq 1 \\
+  \Longleftrightarrow &&
+    (x - 1) \cdot (x^{n-1} + x^{n-2} + \cdots + x + 1) &= 0 \ \wedge\  x \neq 1 \\
+  \Longleftrightarrow &&
+    x^n - 1 &= 0 \ \wedge\  x \neq 1 \\
+  \Longleftrightarrow &&
+    \omit\rlap{\text{$x$ ist eine der~$n$-ten Einheitswurzeln, aber nicht
+    die~$1$.}}
+\end{align*}
+Da wir durchgängig Äquivalenzumformungen verwendet haben, zeigt diese
+Überlegung tatsächlich die Behauptung.
+
+\emph{Bemerkung:} Bei einem~"`$\Rightarrow$"'-Schritt können Phantomlösungen
+entstehen, bei einem~"`$\Leftarrow$"'-Schritt können Lösungen verloren gehen.
+
+\item Da~$k$ ein Vielfaches von~$n$ ist, gilt~$\zeta^k = 1$. Analog
+gilt~$\vartheta^k = 1$. Daher folgt:
+\[ (\zeta \cdot \vartheta)^k = \zeta^k \cdot \vartheta^k = 1 \cdot 1 = 1. \]
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Primitive Einheitswurzeln}
@@ -115,6 +154,14 @@ in~$\{1,\ldots,n\}$.
 \item Zeige, dass es genau~$\Phi(n)$ primitive~$n$-te
 Einheitswurzeln gibt.
 \end{enumerate}
+\begin{loesungE}
+\item Insgesamt gibt es vier vierte Einheitswurzeln:
+\[ 1,\quad \i,\quad -1,\quad -\i. \]
+Von diesen sind~$\i$ und~$-\i$ primitiv: Denn die Potenzen von~$\i$ geben
+gerade diese vier Zahlen, und für~$-\i$ stimmt es auch. Die anderen beiden
+Wurzeln sind aber nicht primitiv: Denn die Potenzen von~$1$ sind nur~$1$
+selbst, und die von~$-1$ sind nur~$\pm 1$.
+\end{loesungE}
 \end{aufgabe}
 
 \end{document}
