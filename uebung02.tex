@@ -35,6 +35,13 @@ Die gesuchte Gleichung lautet also
 denn diese hat~$z$ als Lösung (Probe unnötig, wieso?), ihre Koeffizienten sind
 alle rational und sie ist normiert (das ist nicht ganz offensichtlich, wieso
 stimmt das?).
+
+\emph{Bemerkung:} Ausmultipliziert wird die Gleichung nicht schöner:
+\begin{multline*}
+X^{18}-6\,X^{16}+18\,X^{15}+12\,X^{14}-72\,X^{13}+123\,X^{12}+72\,X^{11}-324\,X^{10}+\\540\,X^{9}
++
+          108\,X^{8}-648\,X^{7}+1215\,X^{6}-486\,X^{4}+1458\,X^{3}+729=0.
+\end{multline*}
 \end{loesung}
 \end{aufgabe}
 
@@ -65,15 +72,11 @@ Sei~$z \neq 0$ eine komplexe Zahl, deren Real- und Imaginärteil rationale
 Zahlen sind. Zeige, dass~$z^{-1}$ ebenfalls rationalen Real- und Imaginärteil
 hat.
 \item
-Zeige, dass der Realteil einer komplexen Zahl~$z$ durch
-\(\frac 1 2 (z + \overline z)\)
-und dass der Imaginärteil durch \(\frac 1 {2 \i} (z - \overline z)\)
-gegeben ist.
+Zeige, dass der Realteil einer komplexen Zahl~$z$ durch $\frac{1}{2} (z + \overline z)$
+und dass der Imaginärteil durch $\frac{1}{2 \i} (z - \overline z)$ gegeben ist.
 \item
-Sei \(z\) eine invertierbare komplexe Zahl. Folgere die Gleichheit
-$
-    \overline{z}^{-1} = \overline{z^{-1}}
-$
+Sei~$z$ eine invertierbare komplexe Zahl. Folgere die Gleichheit
+$\overline{z}^{-1} = \overline{z^{-1}}$
 aus der Multiplikativität der komplexen Konjugation.
 \item
 Interpretiere die Multiplikation mit der imaginären Einheit~$\i$
@@ -106,7 +109,7 @@ nahe bei Null sind. Zeige also:
     \forall \epsilon > 0\ \exists \delta > 0 \colon &
         |a|, |b| < \delta & \implies & \sqrt{a^2  + b^2} < \epsilon
 \end{array} \]
-\vspace{-1.5em}
+\vspace{-1.0em}
 \begin{loesung}
 \begin{enumerate}
 \item Sei~$\epsilon > 0$ beliebig. Setze~$\delta := \epsilon$. Gelte~$\sqrt{a^2
@@ -145,7 +148,33 @@ die beiden Lösungen der Gleichung jeweils echt komplex sind:
 \emph{Variante 2:} Man zeigt durch quadratische Ergänzung, dass für jedes
 reelle~$x$ die linke Seite der Gleichung positiv (und daher nicht null) ist:
 \[ x^2 + x + 1 = (x + 1/2)^2 - 1/4 + 1 \geq 3/4 > 0. \]
-\item \ldots
+
+\item Wir versuchen, die Konstruktion der komplexen Zahlen auf die Situation
+hier zu übertragen. Dazu überlegen wir zunächst, wie der
+Rechenbereich~$\RR(\omega)$ aussähe, wenn er existierte.
+Da~$\RR(\omega)$ die reellen Zahlen umfassen soll, muss~$\RR(\omega)$
+neben~$\omega$ selbst auch alle Zahlen der Form~$a + b\omega$ enthalten.
+Weitere Zahlen sind aber nicht nötig, da Summe und Produkt solcher Zahlen
+wieder von dieser Form sind:
+\begin{align}
+  \label{omegaadd}
+  (a + b \omega) + (c + d \omega) &= (a+c) + (b+d) \omega \\
+  \label{omegamult}
+  (a + b \omega) \cdot (c + d \omega) &= ac + ad\omega + bc\omega + bd\omega^2 =
+  (ac-bd) + (ad+bc-bd)\omega
+\end{align}
+Dabei haben wir die Identität~$\omega^2 = -\omega - 1$ verwendet. Wir haben
+also keinen Anlass, noch weitere Zahlen aufzunehmen.
+
+Es liegt somit nahe, den Zahlbereich~$\RR(\omega)$ formal als Menge von Paaren zu
+definieren,
+\[ \RR(\omega) := \{ (a,b) \,|\, a,b \in \RR \}\!, \]
+und die Rechnungen~\eqref{omegaadd},~\eqref{omegamult} als Definition der
+Rechenarten zu verwenden.
+
+\emph{Bemerkung:} Wer den Faktorringbegriff kennt, kann kürzer auch definieren:
+\[ \RR(\omega) := \RR[X]/(X^2 + X + 1). \]
+
 \item Per Definition gilt~$\omega^2 + \omega + 1 = 0$, also $\omega^2 = -\omega
 - 1$. Damit kann man~$\omega^3$ explizit ausrechnen:
 \[ \omega^3 = \omega \cdot \omega^2 = -\omega^2 - \omega = -(-\omega - 1) -
@@ -181,6 +210,15 @@ also folgt
   \frac{2}{\sqrt{3}} \omega + \frac{1}{\sqrt{3}}
 \right)^2 = -1 \]
 und man kann ebenfalls die beiden Lösungen ablesen.
+
+\emph{Bemerkung:} Da es umgekehrt in~$\CC$ eine Lösung~$\xi$ der Gleichung
+$X^2+X+1=0$ gibt, sieht man, dass der in dieser Aufgabe neu konstruierte
+Rechenbereich~$\RR(\omega)$ tatsächlich isomorph zu~$\CC$ ist. Man kann einen
+Isomorphismus sogar explizit hinschreiben:
+\[ \begin{array}{@{}rcl@{}}
+  \RR(\omega) &\longrightarrow& \CC \\
+  a+b\omega &\longmapsto& a+b\xi
+\end{array} \]
 \end{loesungE}
 \end{aufgabe}
 
