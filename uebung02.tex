@@ -12,9 +12,37 @@
 
 \begin{aufgabe}{Lösungen polynomieller Gleichungen sind algebraisch}
 Sei $z$ eine Lösung der Polynomgleichung
-\[ X^3 - \sqrt{2 - \sqrt[3] 4} \, X^2 + 3 = 0. \]
+\[ X^3 - \sqrt{2 - \sqrt[3]{4}} \, X^2 + 3 = 0. \]
 Finde eine normierte Polynomgleichung mit \emph{rationalen} Koeffizienten,
 die~$z$ als Lösung hat.
+\begin{loesung}
+Wir formen um:
+\begin{align*}
+  &&z^3 - \sqrt{2 - \sqrt[3]{4}} \, z^2 + 3 &= 0 \\
+  \Longleftrightarrow&&
+  z^3 + 3 &= \sqrt{2 - \sqrt[3]{4}} \, z^2 \\
+  \Longrightarrow&&
+  (z^3 + 3)^2 &= 2 \, z^4 - \sqrt[3]{4} \, z^4 \\
+  \Longleftrightarrow&&
+  (z^3 + 3)^2 - 2 \, z^4 &= \sqrt[3]{4} \, z^4 \\
+  \Longrightarrow&&
+  ((z^3 + 3)^2 - 2 \, z^4)^3 &= 4 \, z^{12} \\
+  \Longleftrightarrow&&
+  ((z^3 + 3)^2 - 2 \, z^4)^3 - 4 \, z^{12} &= 0
+\end{align*}
+Die gesuchte Gleichung lautet also
+\[ ((X^3 + 3)^2 - 2 \, X^4)^3 - 4 \, X^{12} = 0, \]
+denn diese hat~$z$ als Lösung (Probe unnötig, wieso?), ihre Koeffizienten sind
+alle rational und sie ist normiert (das ist nicht ganz offensichtlich, wieso
+stimmt das?).
+
+\emph{Bemerkung:} Ausmultipliziert wird die Gleichung nicht schöner:
+\begin{multline*}
+X^{18}-6\,X^{16}+18\,X^{15}+12\,X^{14}-72\,X^{13}+123\,X^{12}+72\,X^{11}-324\,X^{10}+\\540\,X^{9}
++
+          108\,X^{8}-648\,X^{7}+1215\,X^{6}-486\,X^{4}+1458\,X^{3}+729=0.
+\end{multline*}
+\end{loesung}
 \end{aufgabe}
 
 \begin{aufgabe}{Auf den Spuren Bombellis}
@@ -22,31 +50,54 @@ Zeige formal die zuerst von Rafael Bombelli (1526--1572, italienischer
 Mathematiker) gefundene
 Gleichheit
 \[
-    (2 \pm \sqrt{-1})^3 = 2 \pm \sqrt{- 121}
+    (2 \pm \sqrt{-1})^3 = 2 \pm \sqrt{-121}
 \]
 und diskutiere, welche Vorzeichen der Quadratwurzeln jeweils zu wählen sind.
+\begin{loesung}
+Mit der binomischen Formel multiplizieren wir die linke Seite aus:
+\[ (2 \pm \i)^3 = 8 \pm 3 \cdot 4 \, \i - 3 \cdot 2 \pm \i^3 =
+  2 \pm 11 \, \i. \]
+Bombellis Formel stimmt also, wenn man $\sqrt{-1}$ konsistent als~$\i$ (statt
+als~$-\i$) und $\sqrt{-121}$ konsistent als~$11 \,\i$ (statt als~$-11\,\i$)
+liest und dann entweder auf beiden Seiten~"`$+$"' oder auf beiden Seiten~"`$-$"' für
+das~"`$\pm$"'-Zeichen nimmt.
+\end{loesung}
 \end{aufgabe}
 
-\begin{aufgabeE}{Rechnen mit komplexen Zahlen}
+\ifloesungen\newpage\fi
+\begin{aufgabe}{Rechnen mit komplexen Zahlen}
+\begin{enumerate}
 \item
 Sei~$z \neq 0$ eine komplexe Zahl, deren Real- und Imaginärteil rationale
 Zahlen sind. Zeige, dass~$z^{-1}$ ebenfalls rationalen Real- und Imaginärteil
 hat.
 \item
-Zeige, dass der Realteil einer komplexen Zahl~$z$ durch
-\(\frac 1 2 (z + \overline z)\)
-und dass der Imaginärteil durch \(\frac 1 {2 \i} (z - \overline z)\)
-gegeben ist.
+Zeige, dass der Realteil einer komplexen Zahl~$z$ durch $\frac{1}{2} (z + \overline z)$
+und dass der Imaginärteil durch $\frac{1}{2 \i} (z - \overline z)$ gegeben ist.
 \item
-Sei \(z\) eine invertierbare komplexe Zahl. Folgere die Gleichheit
-$
-    \overline{z}^{-1} = \overline{z^{-1}}
-$
+Sei~$z$ eine invertierbare komplexe Zahl. Folgere die Gleichheit
+$\overline{z}^{-1} = \overline{z^{-1}}$
 aus der Multiplikativität der komplexen Konjugation.
 \item
 Interpretiere die Multiplikation mit der imaginären Einheit~$\i$
 geometrisch.
-\end{aufgabeE}
+\end{enumerate}
+\begin{loesungE}
+\item Wir schreiben~$z = a + b \i$ mit~$a,b \in \QQ$. Dann gilt
+\[ z^{-1} = \frac{1}{a + b \i} = \frac{a - b \i}{a^2 + b^2} =
+  \frac{a}{a^2 + b^2} + \frac{-b}{a^2 + b^2} \i \]
+und wir sehen, dass in der Tat Real- und Imaginärteil wieder in~$\QQ$ liegen.
+\item Wir schreiben~$z = a + b \i$ mit~$a,b \in \RR$ und rechnen:
+\begin{align*}
+  \tfrac{1}{2} (z + \overline z) &= \tfrac{1}{2} (a + b \i + a - b \i) = a \\
+  \tfrac{1}{2\i} (z - \overline z) &= \tfrac{1}{2\i} (a + b \i - a + b \i) = b
+\end{align*}
+\item Aus~$z \cdot z^{-1} = 1$ folgt wegen der Multiplikativität der komplexen
+Konjugation $\overline z \cdot \overline{z^{-1}} = 1$. Also
+ist~$\overline{z^{-1}}$ das Inverse von~$\overline{z}$, das war zu zeigen.
+\item Drehung um $90^\circ$ um den Ursprung im Gegenuhrzeigersinn (wieso?). Skizze!
+\end{loesungE}
+\end{aufgabe}
 
 \begin{aufgabe}{Zahlen nahe bei Null}
 Zeige, dass für zwei reelle Zahlen $a$ und $b$ genau dann die Wurzel
@@ -57,12 +108,26 @@ nahe bei Null sind. Zeige also:
         \sqrt{a^2 + b^2} < \delta & \implies & |a|, |b| < \epsilon \\[0.5em]
     \forall \epsilon > 0\ \exists \delta > 0 \colon &
         |a|, |b| < \delta & \implies & \sqrt{a^2  + b^2} < \epsilon
-\end{array}
-\]
-\vspace{-1.5em}
+\end{array} \]
+\vspace{-1.0em}
+\begin{loesung}
+\begin{enumerate}
+\item Sei~$\epsilon > 0$ beliebig. Setze~$\delta := \epsilon$. Gelte~$\sqrt{a^2
++ b^2} < \delta$. Dann folgt
+\[ |a| = \sqrt{|a|^2} \leq \sqrt{|a|^2 + |b|^2} < \delta = \epsilon \]
+und analog mit~$|b|$.
+\item Sei~$\epsilon > 0$ beliebig. Setze~$\delta := \epsilon/\sqrt{2}$.
+Gelte~$|a|,|b| < \delta$. Dann folgt
+\[ \sqrt{a^2 + b^2} < \sqrt{\delta^2 + \delta^2} = \sqrt{2} \delta = \epsilon. \]
+\end{enumerate}
+\emph{Bemerkung:} Auf die passenden Wahlen von~$\delta$ kommt man natürlich
+nicht im Vornhinein, sondern erst nach erfolgter Abschätzung.
+\end{loesung}
 \end{aufgabe}
 
-\begin{aufgabeE}{Ein neuer Zahlbereich}
+\ifloesungen\newpage\fi
+\begin{aufgabe}{Ein neuer Zahlbereich}
+\begin{enumerate}
 \item
 Zeige, dass die Gleichung $X^2 + X + 1 = 0$ in den reellen Zahlen
 keine Lösung besitzt.
@@ -74,7 +139,87 @@ die Addition und Multiplikation reeller Zahlen fortsetzen und die
 einschlägigen Gesetze der Arithmetik erfüllen.
 \item Zeige, dass~$\omega^3 = 1$ in~$\RR(\omega)$ gilt.
 \item Finde eine Lösung der Gleichung~$X^2 + 1 = 0$ in~$\RR(\omega)$.
-\end{aufgabeE}
+\end{enumerate}
+\begin{loesungE}
+\item \emph{Variante 1:} Man verwendet die Mitternachtsformel und sieht, dass
+die beiden Lösungen der Gleichung jeweils echt komplex sind:
+\[ \frac{-1 \pm \sqrt{1 - 4}}{2} \]
+\emph{Variante 2:} Man zeigt durch quadratische Ergänzung, dass für jedes
+reelle~$x$ die linke Seite der Gleichung positiv (und daher nicht null) ist:
+\[ x^2 + x + 1 = (x + 1/2)^2 - 1/4 + 1 \geq 3/4 > 0. \]
+
+\item Wir versuchen, die Konstruktion der komplexen Zahlen auf die Situation
+hier zu übertragen. Dazu überlegen wir zunächst, wie der
+Rechenbereich~$\RR(\omega)$ aussähe, wenn er existierte.
+Da~$\RR(\omega)$ die reellen Zahlen umfassen soll, muss~$\RR(\omega)$
+neben~$\omega$ selbst auch alle Zahlen der Form~$a + b\omega$ enthalten.
+Weitere Zahlen sind aber nicht nötig, da Summe und Produkt solcher Zahlen
+wieder von dieser Form sind:
+\begin{align}
+  \label{omegaadd}
+  (a + b \omega) + (c + d \omega) &= (a+c) + (b+d) \omega \\
+  \label{omegamult}
+  (a + b \omega) \cdot (c + d \omega) &= ac + ad\omega + bc\omega + bd\omega^2 =
+  (ac-bd) + (ad+bc-bd)\omega
+\end{align}
+Dabei haben wir die Identität~$\omega^2 = -\omega - 1$ verwendet. Wir haben
+also keinen Anlass, noch weitere Zahlen aufzunehmen.
+
+Es liegt somit nahe, den Zahlbereich~$\RR(\omega)$ formal als Menge von Paaren zu
+definieren,
+\[ \RR(\omega) := \{ (a,b) \,|\, a,b \in \RR \}\!, \]
+und die Rechnungen~\eqref{omegaadd},~\eqref{omegamult} als Definition der
+Rechenarten zu verwenden.
+
+\emph{Bemerkung:} Wer den Faktorringbegriff kennt, kann kürzer auch definieren:
+\[ \RR(\omega) := \RR[X]/(X^2 + X + 1). \]
+
+\item Per Definition gilt~$\omega^2 + \omega + 1 = 0$, also $\omega^2 = -\omega
+- 1$. Damit kann man~$\omega^3$ explizit ausrechnen:
+\[ \omega^3 = \omega \cdot \omega^2 = -\omega^2 - \omega = -(-\omega - 1) -
+\omega = 1. \]
+\emph{Bemerkung:} Alternativ kann man auch den Faktor~$(\omega-1)$ vom Himmel
+fallen lassen:
+\[ 0 = (\omega^2 + \omega + 1) (\omega - 1) = \omega^3 - 1. \]
+
+\item \emph{Variante 1:} Wir untersuchen für alle~$a,b \in \RR$, ob~$x := a + b
+\omega$ eine Lösung der Gleichung ist:
+\begin{align*}
+  & (a + b\omega)^2 + 1 = 0 \\
+  \Longleftrightarrow\ &
+  (a^2 - b^2 + 1) + (-b^2 + 2ab) \omega = 0 \\
+  \Longleftrightarrow\ &
+  a^2 - b^2 + 1 = 0 \text{ und } b \, (2a-b) = 0 \\
+  \stackrel{?}{\Longleftrightarrow}\ &
+  a^2 - b^2 + 1 = 0 \text{ und } 2a = b \\
+  \Longleftrightarrow\ &
+  1 = 3 a^2 \text{ und } 2a = b \\
+  \Longleftrightarrow\ &
+  a = \pm 1 / \sqrt{3} \text{ und } b = \pm 2 / \sqrt{3}
+\end{align*}
+Da wir insbesondere die Richtung "`$\Leftarrow$"' haben, folgt also: Die
+Gleichung~$X^2 + 1 = 0$ hat in~$\RR(\omega)$ zwei Lösungen, nämlich
+\[ \frac{1}{\sqrt{3}} + \frac{2}{\sqrt{3}} \omega \quad\text{und}\quad
+  {-\frac{1}{\sqrt{3}} - \frac{2}{\sqrt{3}} \omega}. \]
+
+\emph{Variante 2:} Wir verwenden die quadratische Ergänzung von oben:
+\[ 0 = \omega^2 + \omega + 1 = (\omega + 1/2)^2 + 3/4, \]
+also folgt
+\[ \frac{4}{3} \left(\omega + \frac{1}{2}\right)^2 = \left(
+  \frac{2}{\sqrt{3}} \omega + \frac{1}{\sqrt{3}}
+\right)^2 = -1 \]
+und man kann ebenfalls die beiden Lösungen ablesen.
+
+\emph{Bemerkung:} Da es umgekehrt in~$\CC$ eine Lösung~$\xi$ der Gleichung
+$X^2+X+1=0$ gibt, sieht man, dass der in dieser Aufgabe neu konstruierte
+Rechenbereich~$\RR(\omega)$ tatsächlich isomorph zu~$\CC$ ist. Man kann einen
+Isomorphismus sogar explizit hinschreiben:
+\[ \begin{array}{@{}rcl@{}}
+  \RR(\omega) &\longrightarrow& \CC \\
+  a+b\omega &\longmapsto& a+b\xi
+\end{array} \]
+\end{loesungE}
+\end{aufgabe}
 
 \end{document}
 \begin{aufgabe}{Drehmatrizen}
