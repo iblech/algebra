@@ -57,8 +57,56 @@ einer normierten Polynomgleichung mit rationalen Koeffizienten, die~$z$ als Lös
 besitzt. Finde eine Abschätzung für den Grad des Produkts zweier algebraischer
 Zahlen in Abhängigkeit der Grade der Faktoren.
 \end{enumerate}
+\begin{loesungE}
+\item Es ist unnötig, nach den Zahlen~$x$ und~$y$ aufzulösen. Stattdessen
+können wir direkt das Verfahren aus Proposition~1.3 des Skripts verwenden, wir
+setzen also $c_{ij} := x^i y^j$ für~$i = 0,1,2$ und~$j = 0,1$ und rechnen:
+\begin{align*}
+  xy \cdot c_{00} &= xy \cdot x^0 y^0 = xy = c_{11} \\
+  xy \cdot c_{01} &= xy \cdot x^0 y^1 = xy^2 = 2x = 2 c_{10} \\
+  xy \cdot c_{10} &= xy \cdot x^1 y^0 = x^2y = c_{21} \\
+  xy \cdot c_{11} &= xy \cdot x^1 y^1 = x^2y^2 = 2x^2 = 2 c_{20} \\
+  xy \cdot c_{20} &= xy \cdot x^2 y^0 = x^3y = (x-1)y = c_{11} - c_{01} \\
+  xy \cdot c_{21} &= xy \cdot x^2 y^1 = x^3y^2 = 2x^3 = 2(x-1) = 2 c_{10} - 2 c_{00}
+\end{align*}
+In Matrixform:
+\[
+  xy \cdot
+  \begin{pmatrix}c_{00}\\c_{01}\\c_{10}\\c_{11}\\c_{20}\\c_{21}\end{pmatrix} =
+  \underbrace{\begin{pmatrix}
+    0&0&0&1&0&0 \\
+    0&0&2&0&0&0 \\
+    0&0&0&0&0&1 \\
+    0&0&0&0&2&0 \\
+    0&-1&0&1&0&0 \\
+    -2&0&2&0&0&0
+  \end{pmatrix}}_{=:\,A}
+  \begin{pmatrix}c_{00}\\c_{01}\\c_{10}\\c_{11}\\c_{20}\\c_{21}\end{pmatrix}
+\]
+Also ist~$xy$ als Eigenwert dieser Matrix Nullstelle ihres charakteristischen
+Polynoms
+\[ p(X) = \det(X I - A) = \cdots = X^6 - 4\,X^4 + 4\,X^2 - 8 \]
+und erfüllt somit die Gleichung~$p(X) = 0$.
+\item Sei~$x$ eine algebraische Zahl vom Grad~$n$ und~$y$ eine algebraische
+Zahl vom Grad~$m$. Nach Proposition~1.3 des Skripts erhält man eine
+Polynomgleichung für das Produkt~$xy$, indem man aus den Zahlen~$xy \cdot
+c_{ij}$, wobei~$c_{ij} := x^i y^j$ und~$i = 0,\ldots,n-1$, $j = 0,\ldots,m-1$,
+eine Matrix baut und deren charakteristisches Polynom bestimmt. Da diese Matrix
+eine~$(nm \times nm)$-Matrix ist, hat das charakteristische Polynom Grad~$nm$.
+Also ist der Grad des Produkts höchstens~$nm$.
+
+\emph{Bemerkung:} Diese Abschätzung ist \emph{scharf}, d.\,h. es gibt
+tatsächlich Fälle, bei denen der Grad des Produkts genau gleich dem Produkt der
+Grade der Faktoren ist (etwa bei~$x = \sqrt{2}$, $y = \sqrt{3}$). Es gibt aber
+auch Fälle, bei denen der Produktgrad deutlich unter der Schranke aus der
+Abschätzung bleibt (etwa bei~$x = \sqrt[71]{2}$, $y = 1/x$).
+
+\emph{Bemerkung:} Für den Grad der Summe algebraischer Zahlen gilt dieselbe
+Abschätzung.
+\end{loesungE}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Eigenschaften algebraischer Zahlen}
 \begin{enumerate}
 \item Zeige, dass der Betrag einer jeden algebraischen Zahl algebraisch ist.
@@ -67,6 +115,21 @@ Zahlen in Abhängigkeit der Grade der Faktoren.
 transzendente Zahl. Zeige, dass dann auch~$f(z)$ eine transzendente Zahl ist.
 \end{enumerate}
 \begin{loesungE}
+\item Da~$z$ algebraisch ist, ist~$z$ Lösung einer normierten Polynomgleichung
+\[ X^n + a_{n-1} X^{n-1} + \cdots + a_1 X + a_0 = 0 \]
+mit rationalen Koeffizienten, d.\,h. es gilt
+$z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0 = 0$.
+Damit folgt (wieso?)
+\[ 0 = \overline{z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0} =
+  \overline{z}^n + a_{n-1} \overline{z}^{n-1} + \cdots + a_1 \overline{z} + a_0, \]
+also ist~$\overline{z}$ Lösung derselben Gleichung und damit als algebraisch
+enttarnt.
+
+\emph{Bemerkung:} Die Erkenntnis aus dieser Aufgabe kann man als griffige
+Merkregel formulieren: Lösungen von Polynomgleichungen mit reellen
+Koeffizienten treten stets in komplex-konjugierten Paaren auf. Für allgemeine
+Polynomgleichungen stimmt das nicht.
+
 \item Sei~$z$ eine algebraische Zahl. Dann gilt
 \[ |z|^2 = z \overline{z}. \]
 Da mit~$z$ auch~$\overline{z}$ algebraisch ist und das Produkt algebraischer
@@ -88,6 +151,7 @@ Transzendenz von~$z$.
 \end{loesungE}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Spielen mit Einheitswurzeln}
 \begin{enumerate}
 \item Finde alle komplexen Lösungen der Gleichung~$X^6 + 1 = 0$.
@@ -107,17 +171,19 @@ e^{2\pi\i / 6}$. Eine Lösung der Gleichung ist~$\i$. Daher sind die
 insgesamt sechs Lösungen der Gleichung durch
 \[ \i,\quad \xi \i,\quad \xi^2 \i,\quad \xi^3 \i,\quad \xi^4 \i,\quad \xi^5 \i \]
 gegeben (wieso?).
-\item Die Gleichung~$X^7 - (1+\i)^7 = 0$ tut's (wieso?).
+\item Sei~$\heartsuit$ meine Lieblingszahl. Dann tut's die Gleichung~$X^7 -
+\heartsuit^7 = 0$ tut's (wieso?).
 
 \emph{Bemerkung:} Wenn man möchte, kann man die Gleichung auch ausfaktorisiert
 hinschreiben. Sei dazu~$\xi$ eine primitive siebte Einheitswurzel, etwa~$\xi =
 e^{2\pi\i / 7}$. Dann ist obige Gleichung äquivalent zu
-\[ \prod_{k=0}^6 (X - \xi^k (1+\i)) = 0. \]
+\[ \prod_{k=0}^6 (X - \xi^k \cdot \heartsuit) = 0. \]
 
-\emph{Bemerkung:} Es kann keine Polynomgleichung mit \emph{rationalen}
-Koeffizienten geben, die genau die sieben Ecken als Lösungen besitzt. Denn jede
-solche Gleichung würde mit~$1+\i$ auch das komplex Konjugierte~$1-\i$ als
-Lösung besitzen, das ist aber keine der Ecken.
+\emph{Bemerkung:} Für die meisten Wahlen von~$\heartsuit$ kann es keine
+Polynomgleichung mit \emph{reellen} Koeffizienten geben, die genau die sieben
+Ecken als Lösungen besitzt. Denn jede solche Gleichung würde mit~$\heartsuit$
+auch das komplex Konjugierte~$\overline{\heartsuit}$ als Lösung besitzen, das
+ist aber im Allgemeinen keine der Ecken.
 
 \item Sei~$x$ eine beliebige komplexe Zahl. Dann gilt:
 \begin{align*}
@@ -144,6 +210,7 @@ gilt~$\vartheta^k = 1$. Daher folgt:
 \end{loesungE}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Primitive Einheitswurzeln}
 Eine~$n$-te Einheitswurzel~$\zeta$ heißt genau dann \emph{primitiv}, wenn
 \emph{jede}~$n$-te Einheitswurzel eine ganzzahlige Potenz von~$\zeta$ ist.
@@ -161,6 +228,25 @@ Von diesen sind~$\i$ und~$-\i$ primitiv: Denn die Potenzen von~$\i$ geben
 gerade diese vier Zahlen, und für~$-\i$ stimmt es auch. Die anderen beiden
 Wurzeln sind aber nicht primitiv: Denn die Potenzen von~$1$ sind nur~$1$
 selbst, und die von~$-1$ sind nur~$\pm 1$.
+
+\item Sei~$\xi := e^{2\pi\i/n}$. Dann wollen wir untersuchen, wann eine
+beliebige~$n$-te Einheitswurzel~$\xi^a$ primitiv ist:
+\begin{align*}
+  & \text{$\xi^a$ primitiv} \\
+  \Longleftrightarrow\ &
+    \text{jede $n$-te Einheitswurzel ist Potenz von~$\xi^a$} \\
+  \Longleftrightarrow\ &
+    \text{speziell~$\xi$ ist Potenz von~$\xi^a$} \\
+  \Longleftrightarrow\ &
+    \exists m \in \ZZ{:}\ 
+    (\xi^a)^m = \xi \\
+  \Longleftrightarrow\ &
+    \exists m \in \ZZ{:}\ 
+    am \equiv 1 \mod n \\
+  \Longleftrightarrow\ &
+    \text{$a$ und $n$ sind zueinander teilerfremd}
+\end{align*}
+Das zeigt die Behauptung. (Wieso gelten die Äquivalenzaussagen?)
 \end{loesungE}
 \end{aufgabe}
 
