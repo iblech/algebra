@@ -1,0 +1,91 @@
+\documentclass{algblatt}
+\input{config.tex}
+\geometry{tmargin=2cm,bmargin=2cm,lmargin=2.9cm,rmargin=2.9cm}
+
+%\setlength{\titleskip}{0.7em}
+\setlength{\aufgabenskip}{1.6em}
+
+\begin{document}
+
+\vspace*{-1.5cm}
+\maketitle{4}{Abgabe bis 13. Mai 2013, 17:00 Uhr}
+
+\begin{aufgabe}{Lage der Lösungen von Polynomengleichungen}
+Sei $X^n + a_{n - 1} X^{n - 1} + \cdots + a_1 X + a_0 = 0$ eine normierte
+Polynomgleichung mit komplexen Koeffizienten. Zeige, dass jede komplexe
+Lösung~$z$ höchstens die Entfernung
+$1+\max\{|a_0|,\ldots,|a_{n-1}|\}$ zum Ursprung hat.
+\end{aufgabe}
+
+\begin{aufgabe}{Stetigkeit von Polynomfunktionen}
+Sei~$f:\CC\to\CC, z \mapsto a_nz^n + a_{n-1}z^{n-1} + \cdots + a_1z + a_0$ eine
+Polynomfunktion mit Koeffizienten~$a_0,\ldots,a_n \in \CC$. Zeige, dass~$f$ in
+folgendem starken Sinn stetig ist:
+\[
+  \forall C > 0\ 
+  \forall \epsilon > 0\ 
+  \exists \delta > 0 \ 
+  \forall \text{$z,z' \in \CC$ mit $|z|,|z'| \leq C$}{:}\ \ 
+  |z-z'| < \delta \Longrightarrow |f(z) - f(z')| < \epsilon
+\]
+\vspace{-2.0em}
+\end{aufgabe}
+
+\begin{aufgabe}{Rechenregeln}
+\begin{enumerate}
+\item Seien~$f$ und~$g$ Polynome mit~$\deg f \leq n$ und~$\deg g \leq m$.
+Zeige, dass $\deg(f+g) \leq \max\{n,m\}$ und~$\deg(fg) \leq n+m$.
+\item Beweise oder widerlege: Für alle Polynome~$f$ und Zahlen~$x,y$ gilt~$f(xy) = f(x) f(y)$.
+\item Sei~$q$ eine komplexe Zahl ungleich Eins. Zeige: $\sum_{k=0}^n q^k =
+(q^{n+1}-1)\,/\,(q-1).$
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Teiler von Polynomen}
+\begin{enumerate}
+\item Ist~$X+\sqrt{2}$ ein Teiler von~$X^3-2X$?
+\item Besitzt~$X^7 + 11 X^3 - 33 X + 22$ einen Teiler der
+Form~$(X-a)(X-b)$ mit~$a,b \in \QQ$?
+\item Sei $f = 3 X^4 - X^3 + X^2 - X + 1$ und $g = X^3 - 2 X + 1$. \\
+Finde Polynome $q$ und $r$ mit $f = q g + r$ und
+$\deg r < \deg g$.
+\item Sei~$d$ ein gemeinsamer Teiler zweier Polynome~$f$ und~$g$ und seien~$p$
+und~$q$ weitere Polynome.
+Zeige, dass~$d$ dann auch ein Teiler von~$pf + qg$ ist.
+\item Seien~$f$, $g$ und~$h$ Polynome mit ganzzahligen Koeffizienten und~$f =
+gh$. Zeige, dass für jede ganze Zahl~$n$ die ganze Zahl~$g(n)$ ein Teiler
+von~$f(n)$ ist.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Polynomielle Ausdrücke}
+\begin{enumerate}
+\item Schreibe~$\frac{1}{\sqrt{2} + 5\sqrt{3}}$ als polynomiellen Ausdruck
+in~$\sqrt{2}$ und~$\sqrt{3}$ mit rat. Koeffizienten.
+\item Sei~$z$ eine komplexe Zahl mit~$\QQ(z) = \QQ[z]$. Zeige, dass~$z$
+algebraisch ist.
+\item Inwiefern kann man ein Polynom in zwei Unbestimmten~$X$ und~$Y$ als
+Polynom in einer einzigen Unbestimmten~$Y$, dessen Koeffizienten
+Polynome in~$X$ sind, auffassen?
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Beweis des Fundamentalsatzes}
+Im Beweis des Fundamentalsatzes der Algebra tritt die Zahl~3 immer wieder auf.
+Kann sie durch eine kleinere Zahl~$3-\epsilon$ ersetzt werden?
+\end{aufgabe}
+
+\end{document}
+
+\begin{exercise}(1 Punkt)\newline
+    Sei \(z_n\) eine konvergente Folge komplexer Zahlen. Warum ist
+    \(\lim\limits_{n \to \infty} |z_n|
+    = |\lim\limits_{n \to \infty} z_n|\)?
+\end{exercise}
+
+\begin{exercise}(2 Punkte)\newline
+    Gib eine Abschätzung des Betrages aller komplexen Lösungen von
+    \(X^4 - 2 X^3 + 5 X^2 - 4 X + 5\) von oben an.
+\end{exercise}
+
+\end{document} 
