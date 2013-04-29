@@ -56,6 +56,20 @@ Zeige, dass~$d$ dann auch ein Teiler von~$pf + qg$ ist.
 gh$. Zeige, dass für jede ganze Zahl~$n$ die ganze Zahl~$g(n)$ ein Teiler
 von~$f(n)$ ist.
 \end{enumerate}
+\begin{loesungE}
+\item \emph{Variante 1:} Ja, denn~$-\sqrt{2}$ ist eine Nullstelle von~$X^3 -
+2X$ (wieso?).
+
+\emph{Variante 2:} Ja, denn es gilt:
+$X^3 - 2X = X (X^2 - 2) = X (X - \sqrt{2}) (X + \sqrt{2})$.
+
+\item Nach Blatt~0, Aufgabe~3b) und Blatt~1, Aufgabe~1 können
+rationale Nullstellen des gegebenen Polynoms nur Teiler von~22 sein. Einsetzen
+zeigt aber, dass keine der Zahlen
+\[ \pm 1, \quad \pm 2, \quad \pm 11, \quad \pm 22 \]
+Nullstellen sind. Also besitzt das Polynom keinerlei rationale Nullstellen und
+daher auch keine Teiler der Form~$(X-a)(X-b)$ mit~$a,b \in \QQ$.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Polynomielle Ausdrücke}
@@ -68,6 +82,36 @@ algebraisch ist.
 Polynom in einer einzigen Unbestimmten~$Y$, dessen Koeffizienten
 Polynome in~$X$ sind, auffassen?
 \end{enumerate}
+\begin{loesungE}
+\item Wir bedienen uns desselben Tricks, den man auch beim Dividieren durch
+komplexe Zahlen verwendet:
+\[ \frac{1}{\sqrt{2} + 5\sqrt{3}} =
+  \frac{\sqrt{2} - 5\sqrt{3}}{(\sqrt{2} + 5\sqrt{3}) (\sqrt{2} - 5\sqrt{3})} =
+  \frac{\sqrt{2} - 5\sqrt{3}}{2 - 25 \cdot 3} =
+  \frac{-1}{73} \sqrt{2} + \frac{5}{73} \sqrt{3}. \]
+
+\item Wir beweisen die Behauptung zunächst für den Fall, dass~$z \neq 0$. Dann
+ist nämlich $1/z$ ein Element von~$\QQ(z)$ und daher auch von~$\QQ[z]$; also
+gibt es ein Polynom~$f(X)$ mit rationalen Koeffizienten und
+$\frac{1}{z} = f(z)$. Dieses Polynom kann nicht das Nullpolynom sein (wieso?)
+und hat daher mindestens Grad~0. Die Zahl~$z$ ist also Lösung der
+Polynomgleichung
+\[ f(X) \cdot X - 1 = 0 \]
+mit rationalen Koeffizienten. Diese ist nichttrivial (wegen der Multiplikation
+mit~$X$ ist ihr Grad mindestens~1) und enttarnt daher nach Normierung~$z$ als
+algebraisch.
+
+Nun wollen wir den allgemeinen Fall behandeln. In klassischer Logik ist das
+einfach, denn da ist~$z$ null oder nicht null; im ersten Fall ist~$z$ sowieso
+algebraisch, im zweiten Fall haben wir das gerade gesehen. Intuitionistisch ist
+diese Fallunterscheidung nicht zulässig, trotzdem können wir den Beweis retten:
+Denn auch konstruktiv gilt
+\[ |z| > 0 \quad\text{oder}\quad |z| < 1. \]
+Im ersten Fall folgt~$z \neq 0$ und daher die Algebraizität nach obigem
+Argument. Im zweiten Fall ist~$z' := z + 1$ nicht null; wegen~$\QQ(z) =
+\QQ(z')$ und~$\QQ[z] = \QQ[z']$ (wieso?) zeigt obige Argumentation, dass~$z'$
+algebraisch ist. Also ist auch~$z = z' - 1$ algebraisch.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Beweis des Fundamentalsatzes}
