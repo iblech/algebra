@@ -15,6 +15,22 @@ Sei $X^n + a_{n - 1} X^{n - 1} + \cdots + a_1 X + a_0 = 0$ eine normierte
 Polynomgleichung mit komplexen Koeffizienten. Zeige, dass jede komplexe
 Lösung~$z$ höchstens die Entfernung
 $1+\max\{|a_0|,\ldots,|a_{n-1}|\}$ zum Ursprung hat.
+\begin{loesung}
+Sei~$R := |a_{n-1}| + \cdots + |a_0|$. Dann gilt für
+alle~$x \in \RR$ mit~$|x| \geq R + 1$ folgende Hilfsüberlegung (wieso?):
+\begin{align*}
+  \left|a_{n-1} \frac{1}{x} + \cdots + a_1 \frac{1}{x^{n-1}} + a_0
+  \frac{1}{x^n}\right| &\stackrel{\triangle}{\leq}
+  |a_{n-1}| \frac{1}{|x|} + \cdots + |a_1| \frac{1}{|x|^{n-1}} + |a_0|
+  \frac{1}{|x|^n} \\
+  &\leq R \cdot \frac{1}{|x|}
+  \leq \underbrace{\frac{R}{R+1}}_{=:\,q} < 1
+\end{align*}
+Somit gilt (wieso?) für alle~$x \geq R + 1$
+\[ |f(x)| = |x|^n \left|1 + a_{n-1} \frac{1}{x} + \cdots + a_0 \frac{1}{x^n}\right|
+  \geq |x|^n \left(1 - q\right) > 0, \]
+insbesondere also~$f(x) \neq 0$.
+\end{loesung}
 \end{aufgabe}
 
 \begin{aufgabe}{Stetigkeit von Polynomfunktionen}
@@ -29,6 +45,26 @@ folgendem starken Sinn stetig ist:
   |z-z'| < \delta \Longrightarrow |f(z) - f(z')| < \epsilon
 \]
 \vspace{-2.0em}
+\begin{loesung}
+Sei~$R > 0$ beliebig. Sei~$\epsilon > 0$ beliebig. Wir setzen
+\[ \delta := \epsilon \cdot \left[n R^{n-1} \cdot \Biggl(\sum_{i=0}^n |a_i| +
+1\Biggr)\right]^{-1}, \]
+dann gilt für alle~$z, w \in \CC$ mit $|z|, |w| \leq C$ und~$|z - w| < \delta$
+zunächst die Abschätzung
+\begin{align*}
+  |z^i - w^i| &=
+    |z - w| \cdot |z^{i-1} + z^{i-2}w + z^{i-3}w^2 + \cdots + zw^{i-2} + w^{i-1}| \\
+  &\leq |z-w| \cdot (R^{i-1} + \cdots + R^{i-1}) \\
+  &\leq n R^{n-1} |z-w|
+\intertext{und daher folgt}
+  |f(z) - f(w)| &=
+    \Biggl|\sum_{i=0}^{n-1} a_i (z^i - w^i)\Biggr| \leq
+    \sum_{i=0}^{n-1} |a_i| |z^i - w^i| \\
+  &\leq
+    \sum_{i=0}^{n-1} |a_i| \cdot n R^{n-1} |z-w| =
+    n R^{n-1} \left(\sum_{i=0}^{n-1} |a_i|\right) \cdot |z - w| < \epsilon.
+\end{align*}
+\end{loesung}
 \end{aufgabe}
 
 \begin{aufgabe}{Rechenregeln}
@@ -39,6 +75,35 @@ Zeige, dass $\deg(f+g) \leq \max\{n,m\}$ und~$\deg(fg) \leq n+m$.
 \item Sei~$q$ eine komplexe Zahl ungleich Eins. Zeige: $\sum_{k=0}^n q^k =
 (q^{n+1}-1)\,/\,(q-1).$
 \end{enumerate}
+\begin{loesungE}
+\item Da~$\deg f \leq n$, gibt es Koeffizienten~$a_0,\ldots,a_n \in \CC$
+sodass $f = \sum_{i=0}^n a_i X^i$. Analog gibt es Koeffizienten~$b_0,\ldots,b_m
+\in \CC$ mit~$g = \sum_{j=0}^m b_j X^j$. Dann sehen wir: In der Summe~$f+g$
+sind die Koeffizienten aller Monomome vom Grad~$> \max\{n,m\}$ und im
+Produkt~$fg$ die aller Monome vom Grad~$> nm$ null. Das zeigt die Behauptung.
+
+\emph{Bemerkung:} Wenn man von den Koeffizienten nicht entscheiden kann, ob sie
+null oder nicht null sind (wie bei allgemeinen reellen oder komplexen Zahlen
+der Fall), ist der Grad eines Polynoms keine wohldefinierte natürliche Zahl
+(wieso?). Dem zusammengesetzten Ausdruck "`$\deg f \leq n$"' kann man aber
+trotzdem einen Sinn verleihen, nämlich dass alle Koeffizienten von~$f$ zu
+Monomen mit Grad echt größer als~$n$ null sind. In diesem Sinn ist die Aufgabe
+zu verstehen.
+
+\item Die Behauptung gilt fast nie. Ein einfaches Gegenbeispiel ist
+\[ f(X) := X + 1, \quad x := 0, \quad y := 1, \]
+denn dann ist
+\[ f(xy) = f(0) = 1 \neq 2 = 1 \cdot 2 = f(0) f(1). \]
+
+\item Wir rechnen:
+\begin{align*}
+  (q-1) \cdot (1 + q + q^2 + \cdots + q^n) &=
+    \phantom{1\mathop{-}{}} q + q^2 + q^3 + \cdots + q^n + q^{n+1} \\
+  &-1 - q - q^2 - q^3 - \cdots - q^n \\
+  &= q^{n+1} - 1.
+\end{align*}
+Nach Division durch~$q-1$ steht die zu zeigende Identität da.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Teiler von Polynomen}
@@ -69,6 +134,20 @@ zeigt aber, dass keine der Zahlen
 \[ \pm 1, \quad \pm 2, \quad \pm 11, \quad \pm 22 \]
 Nullstellen sind. Also besitzt das Polynom keinerlei rationale Nullstellen und
 daher auch keine Teiler der Form~$(X-a)(X-b)$ mit~$a,b \in \QQ$.
+
+\item Polynomdivision liefert
+\begin{align*}
+  q &= 3X - 1, \\
+  r &= 7X^2 - 6X + 2.
+\end{align*}
+
+\item Nach Voraussetzung gibt es Polynome~$\tilde f$ und~$\tilde g$ mit~$f = d
+\tilde f$ und~$g = d \tilde g$. Damit folgt
+\[ pf + qg = pf\tilde f + qd\tilde g = d \cdot (p\tilde f + q\tilde g), \]
+also ist~$d$ tatsächlich ein Teiler von~$pf+qg$.
+
+\item Für jede ganze Zahl~$n$ folgt $f(n) = g(n) \cdot h(n)$ (wieso?). Da~$h(n)$ eine
+ganze Zahl ist (wieso?), zeigt das schon die Behauptung.
 \end{loesungE}
 \end{aufgabe}
 
