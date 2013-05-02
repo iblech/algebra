@@ -1,0 +1,89 @@
+\documentclass{algblatt}
+\input{config.tex}
+\geometry{tmargin=2cm,bmargin=2cm,lmargin=2.9cm,rmargin=2.9cm}
+
+%\setlength{\titleskip}{0.7em}
+\setlength{\aufgabenskip}{1.6em}
+
+\begin{document}
+
+\vspace*{-1.5cm}
+\maketitle{5}{Abgabe bis 20. Mai 2013, 17:00 Uhr}
+
+{\centering\textbf{Rohentwurf!}\par}
+
+\begin{aufgabe}{Elementarsymmetrische Funktionen}
+\begin{enumerate}
+\item Gib~$e_2(X,Y,Z,U,V)$, also
+die zweite elementarsymmetrische Funktion in den fünf Unbestimmten
+$X$, $Y$, $Z$, $U$ und $V$, explizit an.
+\item Schreibe~$X^2 + Y^2 + Z^2$ als Polynom in den~$e_i(X,Y,Z)$.
+\item Schreibe~$X_1^2 + \cdots + X_n^2$ als Polynom in
+den~$e_i(X_1,\ldots,X_n)$.
+\item Zeige, dass $e_k(\underbrace{1, \dots, 1}_{\text{$n$ Argumente}}) = \binom{n}{k}$.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Der Vietasche Satz}
+\begin{enumerate}
+\item Sei $X^4 + a_3 X^3 + a_2 X^2 + a_1 X + a_0 = 0$ eine normierte Polynomgleichung
+vierten Grades, deren Lösungen mit Vielfachheiten $x_1$, $x_2$, $x_3$
+und $x_4$ seien. Drücke die Koeffizienten $a_0$, $a_1$, $a_2$ und
+$a_3$ explizit als Polynome in den $x_i$ aus.
+\item Verwende den Vietaschen Satz für~$n = 2$ um die bekannte Lösungsformel
+für normierte quadratische Gleichungen herzuleiten.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Diskriminante der reduzierten kubischen Gleichung}
+Sei~$X^3 + p X + q = 0$ eine reduzierte kubische Gleichung. Zeige, dass
+ihre Diskrimante durch $-4 p^3 - 27 q^2$ gegeben ist.
+\end{aufgabe}
+
+\begin{aufgabe}{Symmetrien eines Polynoms}
+Sei $f(X, Y, Z, W) := X Y + Z W + X Y Z W$.
+Wieviele vierstellige Permutationen~$\sigma$ gibt es, so dass
+$\sigma \cdot f = f$?
+\end{aufgabe}
+
+\begin{aufgabe}{Formale Ableitung von Polynomen}
+\begin{enumerate}
+\item Seien~$g(X)$ und~$h(Y)$ Polynome. Zeige:
+$
+  (g h)^{(k)}(X)
+  = \sum_{i + j = k} \binom k i \, g^{(i)}(X) \, h^{(j)}(X).
+$
+
+\item Sei $f(X)$ ein Polynom und~$n$ eine natürliche Zahl. Zeige:
+\[ f^{(n + 1)} = 0 \quad\Longleftrightarrow\quad \deg f \leq n. \]
+
+\item Sei $f(X)$ ein Polynom und $x$ eine komplexe Zahl. Zeige, daß die
+Entwicklung von $f(X)$ nach $X - x$ durch die \emph{Taylorsche Formel} gegeben
+ist (nach
+Brooke Taylor, 1685--1731, britischer Mathematiker):
+\[
+    f(X) = \sum_{k = 0}^\infty \frac{f^{(k)}(x)}{k!} \, (X - x)^k
+\]
+\end{enumerate}
+\end{aufgabe}
+
+\end{document} 
+
+\begin{exercise}(2 Punkte)\newline
+    Gib eine normierte Polynomgleichung dritten Grades an, welche \(1\)
+    als zweifache Lösung, \(2\) als einfache Lösung und keine weiteren Lösungen
+    besitzt.
+\end{exercise}
+
+\begin{exercise}(3 Punkte)\newline
+    Warum sind beide Seiten von 
+\begin{equation}
+ (gh)'(X)=g'(X)h(X)+g(X)h'(X)
+\end{equation}
+ sowohl in
+    \(g(X)\) als auch in \(h(X)\) linear und warum reicht es daher, die
+    Gleichung (1) nur für \(g(X) = X^m\) und \(h(X) = X^n\)
+    nachzurechnen?
+\end{exercise}
+ 
+\end{document} 
