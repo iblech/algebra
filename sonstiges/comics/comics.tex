@@ -1,0 +1,23 @@
+\documentclass[a4paper,ngerman,landscape]{scrartcl}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{lmodern}
+
+\usepackage{geometry}
+\geometry{tmargin=1.5cm,bmargin=0.5cm,lmargin=2.5cm,rmargin=2.5cm}
+
+\pagestyle{empty}
+
+\newcommand{\comic}[3]{\begin{center}
+  \includegraphics[scale=#3]{#1} \\[2em]
+
+  Quelle: \url{#2}
+\end{center}\newpage}
+
+\begin{document}
+
+\comic{purity.png}{http://xkcd.com/435}{0.8}
+\comic{three-logicians.png}{http://spikedmath.com/445.html}{1.4}
+
+\end{document}
