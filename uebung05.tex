@@ -20,6 +20,25 @@ $X$, $Y$, $Z$, $U$ und $V$, explizit an.
 den~$e_i(X_1,\ldots,X_n)$.
 \item Zeige, dass $e_k(\underbrace{1, \dots, 1}_{\text{$n$ Argumente}}) = \binom{n}{k}$.
 \end{enumerate}
+\begin{loesungE}
+\item $e_2(X,Y,Z,U,V) = XY + XZ + XU + XV + YZ + YU + YV + ZU + ZV + UV.$
+\item $X^2 + Y^2 + Z^2 = (X + Y + Z)^2 - 2\,XY - 2\,XZ - 2\,YZ =
+e_1(X,Y,Z)^2 - 2\,e_2(X,Y,Z).$
+\item $X_1^2 + \cdots + X_n^2 = (X_1 + \cdots + X_n)^2 -
+2 \sum\limits_{1 \leq i < j \leq n} X_i X_j = e_1(X_1,\ldots,X_n)^2 -
+2\,e_2(X_1,\ldots,X_n).$
+\item \emph{Variante 1:} $e_k(1,\ldots,1) = \sum_{1 \leq i_1 < \cdots < i_k
+\leq n} 1 = \binom{n}{k}$, denn der Summand~$1$ wird genau so oft summiert, wie
+es Möglichkeiten gibt, aus den Zahlen~$\{1,\ldots,n\}$ genau~$k$ Stück als
+Indizes auszuwählen.
+
+\emph{Variante 2:} Vielleicht kennt man die Formel
+\[ \prod_{i=1}^n (1 + X_i\,T) = \sum_{k=0}^n e_k(X_1,\ldots,X_n) \, T^k. \]
+Setzt man in dieser Identität alle~$X_i$ auf~$1$, folgt die Behauptung sofort
+mit dem binomischen Lehrsatz
+\[ \prod_{i=1}^n (1 + T) = (1 + T)^n = \sum_{k=0}^n \binom{n}{k} T^k \]
+und Koeffizientenvergleich.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Der Vietasche Satz}
@@ -31,6 +50,36 @@ $a_3$ explizit als Polynome in den $x_i$ aus.
 \item Verwende den Vietaschen Satz für~$n = 2$ um die bekannte Lösungsformel
 für normierte quadratische Gleichungen herzuleiten.
 \end{enumerate}
+\begin{loesungE}
+\item Wir multiplizieren~$(X - x_1) \cdots (X - x_4)$ aus und führen einen
+Koeffizientenvergleich durch. Damit folgen die gesuchten Beziehungen:
+\begin{align*}
+  a_0 &= \phantom{+} e_4(x_1,\ldots,x_4) = \phantom{+} x_1 x_2 x_3 x_4 \\
+  a_1 &= - e_3(x_1,\ldots,x_4) = -(x_1 x_2 x_3 + x_1 x_2 x_4 + x_1 x_3 x_4 + x_2 x_3 x_4) \\
+  a_2 &= \phantom{+} e_2(x_1,\ldots,x_4) = \phantom{+} x_1 x_2 + x_1 x_3 + x_1 x_4 + x_2 x_3 + x_2 x_4 + x_3 x_4 \\
+  a_3 &= -e_1(x_1,\ldots,x_4) = -(x_1 + x_2 + x_3 + x_4) \\
+    1 &= \phantom{+} e_0(x_1,\ldots,x_4)
+\end{align*}
+
+\item Sei~$X^2 + bX + c = 0$ eine allgemeine normierte quadratische Gleichung.
+Ausmultiplizieren von~$(X-x_1) (X-x_2)$ und Koeffizientenvergleich führt zu den
+Beziehungen
+\begin{align*}
+  c &= x_1 x_2, \\
+  b &= -(x_1 + x_2).
+\end{align*}
+Daher gilt:
+\[ \frac{-b \pm \sqrt{b^2 - 4c}}{2} =
+  \frac{x_1 + x_2 \pm \sqrt{(x_1 - x_2)^2}}{2} =
+  \frac{x_1 + x_2 \pm (x_1 - x_2)}{2} =
+  \text{$x_1$ bzw. $x_2$}. \]
+
+\emph{Bemerkung:} Dem ersten Anschein nach haben wir hier die Rechenregel
+"`$\sqrt{a^2} = a$"' verwendet, die ja völlig falsch ist -- für reelle~$a$ gilt
+stattdessen~$\sqrt{a^2} = |a|$, und für komplexe~$a$ sollte man lieber nicht
+von der Wurzel reden. In der Rechnung wird der Wurzelausdruck allerdings von
+einem~"`$\pm$"'-Zeichen geschützt; dann ist das okay (wieso?).
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Diskriminanten kubischer Gleichungen}
@@ -41,6 +90,10 @@ besitzt. Was ist ihre Diskriminante?
 \item Sei~$X^3 + p X + q = 0$ eine allgemeine reduzierte kubische Gleichung.
 Zeige, dass ihre Diskrimante durch $-4 p^3 - 27 q^2$ gegeben ist.
 \end{enumerate}
+\begin{loesungE}
+\item $(X - 1)^2 (X - 2) = 0$ tut's. Ihre Diskriminante ist~$0$, da sie ja
+doppelte Lösungen besitzt.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Symmetrien eines Polynoms}
