@@ -113,8 +113,9 @@ Abschätzung.
 ist.
 \item Zeige, dass der Betrag einer jeden algebraischen Zahl algebraisch ist.
 \item Zeige, dass rationale ganz algebraische Zahlen schon ganzzahlig sind.
-\item Sei~$f$ ein normiertes Polynom mit rationalen Koeffizienten und~$z$ eine
-transzendente Zahl. Zeige, dass dann auch~$f(z)$ eine transzendente Zahl ist.
+\item Sei~$f$ ein normiertes Polynom vom Grad mindestens~1 mit rationalen Koeffizienten
+und~$z$ eine transzendente Zahl. Zeige, dass dann auch~$f(z)$ eine
+transzendente Zahl ist.
 \end{enumerate}
 \begin{loesungE}
 \item Da~$z$ algebraisch ist, ist~$z$ Lösung einer normierten Polynomgleichung
@@ -150,6 +151,14 @@ erfüllt, sodass also~$g(f(z)) = 0$ ist. Setzt man~$h := g \circ f$ -- das ist
 wieder ein normiertes Polynom mit rationalen Koeffizienten (wieso?) -- sieht
 man, dass~$z$ Lösung der Gleichung~$h(X) = 0$ ist. Das ist ein Widerspruch zur
 Transzendenz von~$z$.
+
+\emph{Explizitere Variante:} Angenommen,~$y := f(z) = z^n + a_{n-1} z^{n-1} + \cdots +
+a_1 z + a_0$ wäre algebraisch. Dann erfüllt~$y$ eine normierte Polynomgleichung
+mit rationalen Koeffizienten:
+\[ y^m + b_{m-1} y^{m-1} + \cdots + b_1 y + b_0 = 0. \]
+Setzt man obige Darstellung von~$y$ in diese Gleichung ein, erhält man eine
+normierte Polynomgleichung mit rationalen Koeffizienten, die~$z$ als Lösung
+hat. Das ist ein Widerspruch zur Transzendenz von~$z$.
 \end{loesungE}
 \end{aufgabe}
 
