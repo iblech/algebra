@@ -17,19 +17,19 @@ Lösung~$z$ höchstens die Entfernung
 $1+\max\{|a_0|,\ldots,|a_{n-1}|\}$ zum Ursprung hat.
 \begin{loesung}
 Sei~$R := |a_{n-1}| + \cdots + |a_0|$. Dann gilt für
-alle~$x \in \RR$ mit~$|x| \geq R + 1$ folgende Hilfsüberlegung (wieso?):
+alle~$z \in \CC$ mit~$|z| \geq R + 1$ folgende Hilfsüberlegung (wieso?):
 \begin{align*}
-  \left|a_{n-1} \frac{1}{x} + \cdots + a_1 \frac{1}{x^{n-1}} + a_0
-  \frac{1}{x^n}\right| &\stackrel{\triangle}{\leq}
-  |a_{n-1}| \frac{1}{|x|} + \cdots + |a_1| \frac{1}{|x|^{n-1}} + |a_0|
-  \frac{1}{|x|^n} \\
-  &\leq R \cdot \frac{1}{|x|}
+  \left|a_{n-1} \frac{1}{z} + \cdots + a_1 \frac{1}{z^{n-1}} + a_0
+  \frac{1}{z^n}\right| &\stackrel{\triangle}{\leq}
+  |a_{n-1}| \frac{1}{|z|} + \cdots + |a_1| \frac{1}{|z|^{n-1}} + |a_0|
+  \frac{1}{|z|^n} \\
+  &\leq R \cdot \frac{1}{|z|}
   \leq \underbrace{\frac{R}{R+1}}_{=:\,q} < 1
 \end{align*}
-Somit gilt (wieso?) für alle~$x \geq R + 1$
-\[ |f(x)| = |x|^n \left|1 + a_{n-1} \frac{1}{x} + \cdots + a_0 \frac{1}{x^n}\right|
-  \geq |x|^n \left(1 - q\right) > 0, \]
-insbesondere also~$f(x) \neq 0$.
+Somit gilt (wieso?) für alle~$z \geq R + 1$
+\[ |f(z)| = |z|^n \left|1 + a_{n-1} \frac{1}{z} + \cdots + a_0 \frac{1}{z^n}\right|
+  \geq |z|^n \left(1 - q\right) > 0, \]
+insbesondere also~$f(z) \neq 0$.
 \end{loesung}
 \end{aufgabe}
 
