@@ -16,7 +16,7 @@ Polynomgleichung mit komplexen Koeffizienten. Zeige, dass jede komplexe
 Lösung~$z$ höchstens die Entfernung
 $1+\max\{|a_0|,\ldots,|a_{n-1}|\}$ zum Ursprung hat.
 \begin{loesung}
-Sei~$R := |a_{n-1}| + \cdots + |a_0|$. Dann gilt für
+Sei~$R := \max\{|a_0|,\ldots,|a_{n-1}|\}$. Dann gilt für
 alle~$z \in \CC$ mit~$|z| \geq R + 1$ folgende Hilfsüberlegung (wieso?):
 \begin{align*}
   \left|a_{n-1} \frac{1}{z} + \cdots + a_1 \frac{1}{z^{n-1}} + a_0
@@ -26,7 +26,9 @@ alle~$z \in \CC$ mit~$|z| \geq R + 1$ folgende Hilfsüberlegung (wieso?):
   &\leq R \cdot \frac{1}{|z|}
   \leq \underbrace{\frac{R}{R+1}}_{=:\,q} < 1
 \end{align*}
-Somit gilt (wieso?) für alle~$z \geq R + 1$
+Dabei haben wir~$\frac{1}{|z|^i} \leq \frac{1}{|z|}$ verwendet (okay, da~$|z|
+\geq 1$).
+Somit gilt (wieso?) für alle~$|z| \geq R + 1$
 \[ |f(z)| = |z|^n \left|1 + a_{n-1} \frac{1}{z} + \cdots + a_0 \frac{1}{z^n}\right|
   \geq |z|^n \left(1 - q\right) > 0, \]
 insbesondere also~$f(z) \neq 0$.
@@ -58,11 +60,11 @@ zunächst die Abschätzung
   &\leq n R^{n-1} |z-w|
 \intertext{und daher folgt}
   |f(z) - f(w)| &=
-    \Biggl|\sum_{i=0}^{n-1} a_i (z^i - w^i)\Biggr| \leq
-    \sum_{i=0}^{n-1} |a_i| |z^i - w^i| \\
+    \Biggl|\sum_{i=0}^n a_i (z^i - w^i)\Biggr| \leq
+    \sum_{i=0}^n |a_i| |z^i - w^i| \\
   &\leq
-    \sum_{i=0}^{n-1} |a_i| \cdot n R^{n-1} |z-w| =
-    n R^{n-1} \left(\sum_{i=0}^{n-1} |a_i|\right) \cdot |z - w| < \epsilon.
+    \sum_{i=0}^n |a_i| \cdot n R^{n-1} |z-w| =
+    n R^{n-1} \left(\sum_{i=0}^n |a_i|\right) \cdot |z - w| < \epsilon.
 \end{align*}
 \end{loesung}
 \end{aufgabe}
