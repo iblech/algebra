@@ -53,11 +53,26 @@ dass für komplexe Zahlen~$z \in \CC$, die weiter
 als die angegebene Länge vom Ursprung entfernt sind, der Betrag~$|f(z)|$ echt
 größer als Null ist. Unter anderem benötigt man dazu die für alle komplexen
 Zahlen~$z_1,\ldots,z_n$ gültige Dreiecksungleichung
-\[ |z_1 + \cdots + z_n| \leq |z_1| + \cdots + |z_n|. \]
+\[ |z_1 + \cdots + z_n| \leq |z_1| + \cdots + |z_n| \]
+und die für alle komplexen Zahlen~$x,y$ sog. umgekehrte Dreiecksungleichung
+\[ |x + y| \geq \Bigl| |x| - |y| \Bigr| \geq |x| - |y|. \]
 
-\paragraph{Aufgabe 2.} Vielleicht ist die Identität
+\paragraph{Aufgabe 2.} Vorgehen kann man wie immer
+bei~$\epsilon$/$\delta$-Aufgaben: Man gibt sich zunächst~$R > 0$ und~$\epsilon > 0$
+beliebig vor. Dann lässt man schon an dieser Stelle Platz für die Definition
+von~$\delta$, da~$\delta$ nicht von~$z$ und~$w$ abhängen darf -- banalerweise ist die einfachste
+Möglichkeit, das sicherzustellen,~$\delta$ vor~$z$ und~$w$ einzuführen.
+Danach gibt
+man sich beliebige~$z,w \in \CC$ mit~$|z|,|w| \leq R$ und~$|z-w| < \delta$ vor.
+In diesem Kontext versucht man schließlich (hierin steckt die Hauptarbeit), den
+Abstand~$|f(z)-f(w)|$ nach oben durch ein Vielfaches von~$|z-w|$ abzuschätzen;
+ist das gelungen, kann man nachträglich die Definition von~$\delta$ ausfüllen.
+Für die Hauptarbeit ist neben der Dreiecksungleichung vielleicht die Identität
 \[ z^m - w^m = (z - w) \cdot (z^{m-1} + z^{m-2} w + z^{m-3} w^2 + \cdots + z w^{m-2}
 + w^{m-1}) \]
-hilfreich. Wieso gilt sie?
+hilfreich (wieso gilt sie?).
+
+\paragraph{Aufgabe 5.} Die Behauptung von Teilaufgabe~b) ist nicht mit ihrer
+Umkehrung zu verwechseln (diese wird im Skript auf Seite~47 bewiesen).
 
 \end{document}
