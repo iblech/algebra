@@ -16,7 +16,7 @@ Polynomgleichung mit komplexen Koeffizienten. Zeige, dass jede komplexe
 Lösung~$z$ höchstens die Entfernung
 $1+\max\{|a_0|,\ldots,|a_{n-1}|\}$ zum Ursprung hat.
 \begin{loesung}
-Sei~$R := |a_{n-1}| + \cdots + |a_0|$. Dann gilt für
+Sei~$R := \max\{ |a_0|,\ldots,|a_{n-1}| \}$. Dann gilt für
 alle~$z \in \CC$ mit~$|z| \geq R + 1$ folgende Hilfsüberlegung (wieso?):
 \begin{align*}
   \left|a_{n-1} \frac{1}{z} + \cdots + a_1 \frac{1}{z^{n-1}} + a_0
@@ -26,10 +26,14 @@ alle~$z \in \CC$ mit~$|z| \geq R + 1$ folgende Hilfsüberlegung (wieso?):
   &\leq R \cdot \frac{1}{|z|}
   \leq \underbrace{\frac{R}{R+1}}_{=:\,q} < 1
 \end{align*}
-Somit gilt (wieso?) für alle~$z \geq R + 1$
+Somit gilt (wieso?) für alle~$|z| \geq R + 1$
 \[ |f(z)| = |z|^n \left|1 + a_{n-1} \frac{1}{z} + \cdots + a_0 \frac{1}{z^n}\right|
   \geq |z|^n \left(1 - q\right) > 0, \]
 insbesondere also~$f(z) \neq 0$.
+
+Die Idee ist also: Über die Terme der Ordnung echt kleiner als~$n$ können wir
+wenig aussagen. Aber diese Terme werden vom Monom~$z^n$ dominiert -- ausnutzen
+können wir das dadurch, indem wir es ausklammern.
 \end{loesung}
 \end{aufgabe}
 
@@ -48,22 +52,30 @@ folgendem starken Sinn stetig ist:
 \begin{loesung}
 Sei~$R > 0$ beliebig. Sei~$\epsilon > 0$ beliebig. Wir setzen
 \[ \delta := \epsilon \cdot \left[n R^{n-1} \cdot \Biggl(\sum_{i=0}^n |a_i| +
-1\Biggr)\right]^{-1}, \]
-dann gilt für alle~$z, w \in \CC$ mit $|z|, |w| \leq C$ und~$|z - w| < \delta$
+1\Biggr)\right]^{-1}. \]
+Ohne Einschränkung der Allgemeinheit sei außerdem~$R \geq 1$ (dann ist die
+Funktion~$t \mapsto R^t$ monoton steigend).
+Dann gilt für alle~$z, w \in \CC$ mit $|z|, |w| \leq R$ und~$|z - w| < \delta$
 zunächst die Abschätzung
 \begin{align*}
   |z^i - w^i| &=
     |z - w| \cdot |z^{i-1} + z^{i-2}w + z^{i-3}w^2 + \cdots + zw^{i-2} + w^{i-1}| \\
   &\leq |z-w| \cdot (R^{i-1} + \cdots + R^{i-1}) \\
   &\leq n R^{n-1} |z-w|
-\intertext{und daher folgt}
+\intertext{für alle~$i = 0, \ldots, n$ und daher folgt}
   |f(z) - f(w)| &=
-    \Biggl|\sum_{i=0}^{n-1} a_i (z^i - w^i)\Biggr| \leq
-    \sum_{i=0}^{n-1} |a_i| |z^i - w^i| \\
+    \Biggl|\sum_{i=0}^n a_i (z^i - w^i)\Biggr| \leq
+    \sum_{i=0}^n |a_i| |z^i - w^i| \\
   &\leq
-    \sum_{i=0}^{n-1} |a_i| \cdot n R^{n-1} |z-w| =
-    n R^{n-1} \left(\sum_{i=0}^{n-1} |a_i|\right) \cdot |z - w| < \epsilon.
+    \sum_{i=0}^n |a_i| \cdot n R^{n-1} |z-w| =
+    n R^{n-1} \left(\sum_{i=0}^n |a_i|\right) \cdot |z - w| < \epsilon.
 \end{align*}
+
+\emph{Bemerkung:} In Worten lautet die Behauptung, dass die Polynomfunktion~$f$
+auf jeder abgeschlossenen Kreisscheibe um den Ursprung gleichmäßig stetig ist.
+Der Vorteil der hier gegebenen Lösung gegenüber einem Verweis auf eine
+Analysis-Vorlesung ist, dass wir die $\epsilon$-Abhängigkeit von~$\delta$
+explizit angeben konnten.
 \end{loesung}
 \end{aufgabe}
 
@@ -82,6 +94,9 @@ sodass $f = \sum_{i=0}^n a_i X^i$. Analog gibt es Koeffizienten~$b_0,\ldots,b_m
 sind die Koeffizienten aller Monomome vom Grad~$> \max\{n,m\}$ und im
 Produkt~$fg$ die aller Monome vom Grad~$> nm$ null. Das zeigt die Behauptung.
 
+\emph{Bemerkung:} Abgerundet wird die Aufgabe durch Beispiele, wo man sieht,
+wie sich bei der Addition die höchsten Potenzen wegheben oder nicht wegheben.
+
 \emph{Bemerkung:} Wenn man von den Koeffizienten nicht entscheiden kann, ob sie
 null oder nicht null sind (wie bei allgemeinen reellen oder komplexen Zahlen
 der Fall), ist der Grad eines Polynoms keine wohldefinierte natürliche Zahl
@@ -95,6 +110,11 @@ zu verstehen.
 denn dann ist
 \[ f(xy) = f(0) = 1 \neq 2 = 1 \cdot 2 = f(0) f(1). \]
 
+Ein noch einfacheres Gegenbeispiel ist
+\[ f(X) := 2, \quad x := 0, \quad y := 1, \]
+denn dann ist
+\[ f(xy) = f(0) = 2 \neq 4 = 2 \cdot 2 = f(0) f(1). \]
+
 \item Wir rechnen:
 \begin{align*}
   (q-1) \cdot (1 + q + q^2 + \cdots + q^n) &=
@@ -103,6 +123,9 @@ denn dann ist
   &= q^{n+1} - 1.
 \end{align*}
 Nach Division durch~$q-1$ steht die zu zeigende Identität da.
+
+\emph{Bemerkung:} Wem die Auslassungszeichen unlieb sind, kann auch einen
+Induktionsbeweis führen.
 \end{loesungE}
 \end{aufgabe}
 
@@ -127,6 +150,9 @@ von~$f(n)$ ist.
 
 \emph{Variante 2:} Ja, denn es gilt:
 $X^3 - 2X = X (X^2 - 2) = X (X - \sqrt{2}) (X + \sqrt{2})$.
+
+\emph{Variante 3:} Ja, denn eine Nebenrechnung zeigt, dass die Polynomdivision
+von~$X^3 - 2X$ durch~$X+\sqrt{2}$ keinen Rest lässt.
 
 \item Nach Blatt~0, Aufgabe~3b) und Blatt~1, Aufgabe~1 können
 rationale Nullstellen des gegebenen Polynoms nur Teiler von~22 sein. Einsetzen
@@ -169,6 +195,19 @@ komplexe Zahlen verwendet:
   \frac{\sqrt{2} - 5\sqrt{3}}{2 - 25 \cdot 3} =
   \frac{-1}{73} \sqrt{2} + \frac{5}{73} \sqrt{3}. \]
 
+\emph{Bemerkung:} Im neunjährigen Gymnasium war diese Technik unter dem Titel
+\emph{Nenner rational machen} bekannt.
+
+\emph{Bemerkung:} Mit ein wenig Galoistheorie kann man verstehen, wie man
+bei komplizierteren Nennern verfahren kann: Der Nenner~$x$ ist in diesem Fall
+Element einer gewissen endlichen Erweiterung von~$\QQ$. Wenn wir die Elemente
+ihrer Galoisgruppe mit~$\sigma_1, \ldots, \sigma_n$ bezeichnen, wobei
+wir~$\sigma_1 = \id$ setzen, so können wir den Bruch mit $\sigma_2(x) \cdots
+\sigma_n(x)$ erweitern. Der erweiterte Nenner ist dann
+\[ \sigma_1(x) \cdots \sigma_n(x), \]
+augenscheinlich invariant unter der Wirkung der~$\sigma_i$, und somit
+tatsächlich rational.
+
 \item Wir beweisen die Behauptung zunächst für den Fall, dass~$z \neq 0$. Dann
 ist nämlich $1/z$ ein Element von~$\QQ(z)$ und daher auch von~$\QQ[z]$; also
 gibt es ein Polynom~$f(X)$ mit rationalen Koeffizienten und
@@ -190,6 +229,12 @@ Im ersten Fall folgt~$z \neq 0$ und daher die Algebraizität nach obigem
 Argument. Im zweiten Fall ist~$z' := z + 1$ nicht null; wegen~$\QQ(z) =
 \QQ(z')$ und~$\QQ[z] = \QQ[z']$ (wieso?) zeigt obige Argumentation, dass~$z'$
 algebraisch ist. Also ist auch~$z = z' - 1$ algebraisch.
+
+\emph{Bemerkung:} Die Inklusion~$\QQ[z] \subseteq \QQ(z)$ besteht stets. Die
+Umkehrung der Behauptung der Aufgabe gilt ebenfalls und wird im Skript
+unmittelbar vor Folgerung~2.3 bewiesen. Zusammengefasst ist die Beweisidee
+dort folgende: Die Nenner~$x$ von Zahlen aus~$\QQ(z)$ sind algebraisch, daher sind
+ihre Inversen polynomielle Ausdrücke in~$x$ und damit auch in~$z$.
 \end{loesungE}
 \end{aufgabe}
 
