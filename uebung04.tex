@@ -15,6 +15,28 @@ Sei $X^n + a_{n - 1} X^{n - 1} + \cdots + a_1 X + a_0 = 0$ eine normierte
 Polynomgleichung mit komplexen Koeffizienten. Zeige, dass jede komplexe
 Lösung~$z$ höchstens die Entfernung
 $1+\max\{|a_0|,\ldots,|a_{n-1}|\}$ zum Ursprung hat.
+\begin{loesung}
+Sei~$R := \max\{|a_0|,\ldots,|a_{n-1}|\}$. Dann gilt für
+alle~$z \in \CC$ mit~$|z| \geq R + 1$ folgende Hilfsüberlegung (wieso?):
+\begin{align*}
+  \left|a_{n-1} \frac{1}{z} + \cdots + a_1 \frac{1}{z^{n-1}} + a_0
+  \frac{1}{z^n}\right| &\stackrel{\triangle}{\leq}
+  |a_{n-1}| \frac{1}{|z|} + \cdots + |a_1| \frac{1}{|z|^{n-1}} + |a_0|
+  \frac{1}{|z|^n} \\
+  &\leq R \cdot \frac{1}{|z|}
+  \leq \underbrace{\frac{R}{R+1}}_{=:\,q} < 1
+\end{align*}
+Dabei haben wir~$\frac{1}{|z|^i} \leq \frac{1}{|z|}$ verwendet (okay, da~$|z|
+\geq 1$).
+Somit gilt (wieso?) für alle~$|z| \geq R + 1$
+\[ |f(z)| = |z|^n \left|1 + a_{n-1} \frac{1}{z} + \cdots + a_0 \frac{1}{z^n}\right|
+  \geq |z|^n \left(1 - q\right) > 0, \]
+insbesondere also~$f(z) \neq 0$.
+
+Die Idee ist also: Über die Terme der Ordnung echt kleiner als~$n$ können wir
+wenig aussagen. Aber diese Terme werden vom Monom~$z^n$ dominiert -- ausnutzen
+können wir das dadurch, indem wir es ausklammern.
+\end{loesung}
 \end{aufgabe}
 
 \begin{aufgabe}{Stetigkeit von Polynomfunktionen}
@@ -29,6 +51,34 @@ folgendem starken Sinn stetig ist:
   |z-w| < \delta \Longrightarrow |f(z) - f(w)| < \epsilon
 \]
 \vspace{-2.0em}
+\begin{loesung}
+Sei~$R > 0$ beliebig. Sei~$\epsilon > 0$ beliebig. Wir setzen
+\[ \delta := \epsilon \cdot \left[n R^{n-1} \cdot \Biggl(\sum_{i=0}^n |a_i| +
+1\Biggr)\right]^{-1}. \]
+Ohne Einschränkung der Allgemeinheit sei außerdem~$R \geq 1$ (dann ist die
+Funktion~$t \mapsto R^t$ monoton steigend).
+Dann gilt für alle~$z, w \in \CC$ mit $|z|, |w| \leq R$ und~$|z - w| < \delta$
+zunächst die Abschätzung
+\begin{align*}
+  |z^i - w^i| &=
+    |z - w| \cdot |z^{i-1} + z^{i-2}w + z^{i-3}w^2 + \cdots + zw^{i-2} + w^{i-1}| \\
+  &\leq |z-w| \cdot (R^{i-1} + \cdots + R^{i-1}) \\
+  &\leq n R^{n-1} |z-w|
+\intertext{für alle~$i = 0, \ldots, n$ und daher folgt}
+  |f(z) - f(w)| &=
+    \Biggl|\sum_{i=0}^n a_i (z^i - w^i)\Biggr| \leq
+    \sum_{i=0}^n |a_i| |z^i - w^i| \\
+  &\leq
+    \sum_{i=0}^n |a_i| \cdot n R^{n-1} |z-w| =
+    n R^{n-1} \left(\sum_{i=0}^n |a_i|\right) \cdot |z - w| < \epsilon.
+\end{align*}
+
+\emph{Bemerkung:} In Worten lautet die Behauptung, dass die Polynomfunktion~$f$
+auf jeder abgeschlossenen Kreisscheibe um den Ursprung gleichmäßig stetig ist.
+Der Vorteil der hier gegebenen Lösung gegenüber einem Verweis auf eine
+Analysis-Vorlesung ist, dass wir die $\epsilon$-Abhängigkeit von~$\delta$
+explizit angeben konnten.
+\end{loesung}
 \end{aufgabe}
 
 \begin{aufgabe}{Rechenregeln}
@@ -40,6 +90,46 @@ Zeige, dass $\deg(f+g) \leq \max\{n,m\}$ und~$\deg(fg) \leq n+m$.
 \item Sei~$q$ eine komplexe Zahl ungleich Eins. Zeige: $\sum_{k=0}^n q^k =
 (q^{n+1}-1)\,/\,(q-1).$
 \end{enumerate}
+\begin{loesungE}
+\item Da~$\deg f \leq n$, gibt es Koeffizienten~$a_0,\ldots,a_n \in \CC$
+sodass $f = \sum_{i=0}^n a_i X^i$. Analog gibt es Koeffizienten~$b_0,\ldots,b_m
+\in \CC$ mit~$g = \sum_{j=0}^m b_j X^j$. Dann sehen wir: In der Summe~$f+g$
+sind die Koeffizienten aller Monomome vom Grad~$> \max\{n,m\}$ und im
+Produkt~$fg$ die aller Monome vom Grad~$> nm$ null. Das zeigt die Behauptung.
+
+\emph{Bemerkung:} Abgerundet wird die Aufgabe durch Beispiele, wo man sieht,
+wie sich bei der Addition die höchsten Potenzen wegheben oder nicht wegheben.
+
+\emph{Bemerkung:} Wenn man von den Koeffizienten nicht entscheiden kann, ob sie
+null oder nicht null sind (wie bei allgemeinen reellen oder komplexen Zahlen
+der Fall), ist der Grad eines Polynoms keine wohldefinierte natürliche Zahl
+(wieso?). Dem zusammengesetzten Ausdruck "`$\deg f \leq n$"' kann man aber
+trotzdem einen Sinn verleihen, nämlich dass alle Koeffizienten von~$f$ zu
+Monomen mit Grad echt größer als~$n$ null sind. In diesem Sinn ist die Aufgabe
+zu verstehen.
+
+\item Die Behauptung gilt fast nie. Ein einfaches Gegenbeispiel ist
+\[ f(X) := X + 1, \quad x := 0, \quad y := 1, \]
+denn dann ist
+\[ f(xy) = f(0) = 1 \neq 2 = 1 \cdot 2 = f(0) f(1). \]
+
+Ein noch einfacheres Gegenbeispiel ist
+\[ f(X) := 2, \quad x := 0, \quad y := 1, \]
+denn dann ist
+\[ f(xy) = f(0) = 2 \neq 4 = 2 \cdot 2 = f(0) f(1). \]
+
+\item Wir rechnen:
+\begin{align*}
+  (q-1) \cdot (1 + q + q^2 + \cdots + q^n) &=
+    \phantom{1\mathop{-}{}} q + q^2 + q^3 + \cdots + q^n + q^{n+1} \\
+  &-1 - q - q^2 - q^3 - \cdots - q^n \\
+  &= q^{n+1} - 1.
+\end{align*}
+Nach Division durch~$q-1$ steht die zu zeigende Identität da.
+
+\emph{Bemerkung:} Wem die Auslassungszeichen unlieb sind, kann auch einen
+Induktionsbeweis führen.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Teiler von Polynomen}
@@ -57,6 +147,37 @@ Zeige, dass~$d$ dann auch ein Teiler von~$pf + qg$ ist.
 g \cdot h$. Zeige, dass für jede ganze Zahl~$n$ die ganze Zahl~$g(n)$ ein Teiler
 von~$f(n)$ ist.
 \end{enumerate}
+\begin{loesungE}
+\item \emph{Variante 1:} Ja, denn~$-\sqrt{2}$ ist eine Nullstelle von~$X^3 -
+2X$ (wieso?).
+
+\emph{Variante 2:} Ja, denn es gilt:
+$X^3 - 2X = X (X^2 - 2) = X (X - \sqrt{2}) (X + \sqrt{2})$.
+
+\emph{Variante 3:} Ja, denn eine Nebenrechnung zeigt, dass die Polynomdivision
+von~$X^3 - 2X$ durch~$X+\sqrt{2}$ keinen Rest lässt.
+
+\item Nach Blatt~0, Aufgabe~3b) und Blatt~1, Aufgabe~1 können
+rationale Nullstellen des gegebenen Polynoms nur Teiler von~22 sein. Einsetzen
+zeigt aber, dass keine der Zahlen
+\[ \pm 1, \quad \pm 2, \quad \pm 11, \quad \pm 22 \]
+Nullstellen sind. Also besitzt das Polynom keinerlei rationale Nullstellen und
+daher auch keine Teiler der Form~$(X-a)(X-b)$ mit~$a,b \in \QQ$.
+
+\item Polynomdivision liefert
+\begin{align*}
+  q &= 3X - 1, \\
+  r &= 7X^2 - 6X + 2.
+\end{align*}
+
+\item Nach Voraussetzung gibt es Polynome~$\tilde f$ und~$\tilde g$ mit~$f = d
+\tilde f$ und~$g = d \tilde g$. Damit folgt
+\[ pf + qg = pf\tilde f + qd\tilde g = d \cdot (p\tilde f + q\tilde g), \]
+also ist~$d$ tatsächlich ein Teiler von~$pf+qg$.
+
+\item Für jede ganze Zahl~$n$ folgt $f(n) = g(n) \cdot h(n)$ (wieso?). Da~$h(n)$ eine
+ganze Zahl ist (wieso?), zeigt das schon die Behauptung.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Polynomielle Ausdrücke}
@@ -69,11 +190,162 @@ algebraisch ist.
 Polynom in einer einzigen Unbestimmten~$Y$, dessen Koeffizienten
 Polynome in~$X$ sind, auffassen?
 \end{enumerate}
+\begin{loesungE}
+\item Wir bedienen uns desselben Tricks, den man auch beim Dividieren durch
+komplexe Zahlen verwendet:
+\[ \frac{1}{\sqrt{2} + 5\sqrt{3}} =
+  \frac{\sqrt{2} - 5\sqrt{3}}{(\sqrt{2} + 5\sqrt{3}) (\sqrt{2} - 5\sqrt{3})} =
+  \frac{\sqrt{2} - 5\sqrt{3}}{2 - 25 \cdot 3} =
+  \frac{-1}{73} \sqrt{2} + \frac{5}{73} \sqrt{3}. \]
+
+\emph{Bemerkung:} Im neunjährigen Gymnasium war diese Technik unter dem Titel
+\emph{Nenner rational machen} bekannt.
+
+\emph{Bemerkung:} Mit ein wenig Galoistheorie kann man verstehen, wie man
+bei komplizierteren Nennern verfahren kann: Der Nenner~$x$ ist in diesem Fall
+Element einer gewissen endlichen Erweiterung von~$\QQ$. Wenn wir die Elemente
+ihrer Galoisgruppe mit~$\sigma_1, \ldots, \sigma_n$ bezeichnen, wobei
+wir~$\sigma_1 = \id$ setzen, so können wir den Bruch mit $\sigma_2(x) \cdots
+\sigma_n(x)$ erweitern. Der erweiterte Nenner ist dann
+\[ \sigma_1(x) \cdots \sigma_n(x), \]
+augenscheinlich invariant unter der Wirkung der~$\sigma_i$, und somit
+tatsächlich rational.
+
+\item Wir beweisen die Behauptung zunächst für den Fall, dass~$z \neq 0$. Dann
+ist nämlich $1/z$ ein Element von~$\QQ(z)$ und daher auch von~$\QQ[z]$; also
+gibt es ein Polynom~$f(X)$ mit rationalen Koeffizienten und
+$\frac{1}{z} = f(z)$. Dieses Polynom kann nicht das Nullpolynom sein (wieso?)
+und hat daher mindestens Grad~0. Die Zahl~$z$ ist also Lösung der
+Polynomgleichung
+\[ f(X) \cdot X - 1 = 0 \]
+mit rationalen Koeffizienten. Diese ist nichttrivial (wegen der Multiplikation
+mit~$X$ ist ihr Grad mindestens~1) und enttarnt daher nach Normierung~$z$ als
+algebraisch.
+
+Nun wollen wir den allgemeinen Fall behandeln. In klassischer Logik ist das
+einfach, denn da ist~$z$ null oder nicht null; im ersten Fall ist~$z$ sowieso
+algebraisch, im zweiten Fall haben wir das gerade gesehen. Intuitionistisch ist
+diese Fallunterscheidung nicht zulässig, trotzdem können wir den Beweis retten:
+Denn auch konstruktiv gilt
+\[ |z| > 0 \quad\text{oder}\quad |z| < 1. \]
+Im ersten Fall folgt~$z \neq 0$ und daher die Algebraizität nach obigem
+Argument. Im zweiten Fall ist~$z' := z + 1$ nicht null; wegen~$\QQ(z) =
+\QQ(z')$ und~$\QQ[z] = \QQ[z']$ (wieso?) zeigt obige Argumentation, dass~$z'$
+algebraisch ist. Also ist auch~$z = z' - 1$ algebraisch.
+
+\emph{Bemerkung:} Die Inklusion~$\QQ[z] \subseteq \QQ(z)$ besteht stets. Die
+Umkehrung der Behauptung der Aufgabe gilt ebenfalls und wird im Skript
+unmittelbar vor Folgerung~2.3 bewiesen. Zusammengefasst ist die Beweisidee
+dort folgende: Die Nenner~$x$ von Zahlen aus~$\QQ(z)$ sind algebraisch, daher sind
+ihre Inversen polynomielle Ausdrücke in~$x$ und damit auch in~$z$.
+
+\item Ein Polynom aus~$\QQ[X,Y]$ kann man einfach dadurch als Polynom
+in~$(\QQ[X])[Y]$ auffassen, indem man seine Terme nach~$Y$-Potenzen
+umgruppiert, zum Beispiel so:
+\[ 3\,X^2Y - 5\,XY - 8\,X + 4\,Y + 5 =
+  (3\,X^2 - 5\,X + 4) Y^1 + (-8\,X + 5) Y^0. \]
+
+\emph{Bemerkung:} Etwas präziser kann man mittels dieser Idee einen
+\emph{Ringisomorphismus}~$\QQ[X,Y] \to (\QQ[X])[Y]$ angeben. Für formale
+Potenzreihen stimmt die analoge Aussage ebenfalls.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Beweis des Fundamentalsatzes}
 Im Beweis des Fundamentalsatzes der Algebra tritt die Zahl~3 immer wieder auf.
 Kann sie durch eine kleinere Zahl~$3-\epsilon$ ersetzt werden?
+\begin{loesung}
+Wir erinnern an die grobe Struktur des Beweises des Fundamentalsatzes:
+Ausgehend von der (möglicherweise sehr schlechten) Näherung~$0$ als Lösung der
+Polynomgleichung
+\[ f(X) = X^n + b_{n-1}X^{n-1} + \cdots + b_1 X + b_0 = 0 \]
+konstruieren wir eine erste bessere Näherung~$z$. Diese ist insofern besser,
+als dass sie die Abschätzung
+\begin{equation}\label{absch}
+  |z^n + b_{n-1}z^{n-1} + \cdots + b_1 z + b_0| \leq q |b_0|
+\end{equation}
+erfüllt, wobei~$q := 1 - \frac{1}{2} \cdot 3^{1 - n^2}$ ein fester Faktor
+kleiner als Eins ist. (Zum Vergleich: Für die Näherung~$0$ ergibt sich als
+Abstand~$|f(0)| = |b_0|$.) Aus dieser besseren Näherung konstruieren wir dann
+eine abermals verbesserte Näherung; sukzessive erhalten wir so eine Folge immer
+besser werdender Näherungslösungen, deren Grenzwert eine tatsächliche Lösung
+der Gleichung ist.
+
+Wenn man nun die Zahl~$3$ in der Definition von~$q$ durch eine kleinere Zahl
+ersetzen könnte, hätte das folgenden Vorteil: Der Faktor~$q$ wäre dann kleiner
+(wieso?) und damit die Konvergenz schneller -- zumindest, wenn die
+Abschätzung~\eqref{absch} nicht zu pessimistisch ist, sondern ein realistisches
+Bild der Konvergenzgeschwindigkeit vermittelt. (Manche numerische Verfahren
+konvergieren in der Realität viel schneller, als naive Abschätzungen vermuten
+lassen.)
+
+Um nun die Frage, ob man~$3$ durch eine kleinere Zahl ersetzen kann, zu klären,
+müssen wir den gesamten Beweis des Fundamentalsatzes durchgehen und bei jedem
+Vorkommen von~$3$ prüfen, ob der jeweilige Schritt auch bei einer kleineren
+Zahl durchgeht. Bei einer solchen Analyse stellt man fest: Für den Großteil des
+Beweises spielt der Wert dieser Konstanten keine Rolle (solange er nur positiv
+ist), erst bei den Abschätzungen~(1.47), (1.48), (1.49) und der finalen
+Abschätzung (auf Seite~41) wird es kritisch.
+
+Wir wollen unseren kleineren Ersatz für die Zahl~$3$ mit~"`$\widetilde 3$"'
+bezeichnen. Entsprechend setzen wir~$\widetilde 2 := \widetilde 3 - 1$. Die
+veränderten Abschätzungen lauten dann:
+\begin{align}
+  m(r) &\geq \widetilde 3^{k^2 - n^2} |b_0| \tag{1.47} \\
+  \sum_{i=1}^{k-1} f_i(r) &\leq \frac{1 - \widetilde 3^{1-k}}{\widetilde 2} f_k(r) \tag{1.48} \\
+  \sum_{i=k+1}^n f_i(r) &\leq \frac{1 - \widetilde 3^{k-n}}{\widetilde 2} f_k(r) \tag{1.49} \\
+  \sum_{i\neq0,k} f_i(r) &\leq
+    \left(\frac{2}{\widetilde 2} - \frac{\widetilde 3^{1-k}}{\widetilde
+    2}\right) f_k(r) \nonumber
+\intertext{Interessant wird es, wenn wir uns der finalen Abschätzung zuwenden:}
+  \label{abschfinal}
+  |f(z)| &\leq
+    |b_0| - \left(\frac{\widetilde 3^{1-k}}{\widetilde 2} + 1 -
+    \frac{2}{\widetilde 2}\right) m(r)
+\end{align}
+Auf der rechten Seite wollen wir nun mittels Abschätzung~(1.47) weiter nach
+oben abschätzen. Dazu muss aber der Vorfaktor~$\left(\cdots\right)$ positiv
+sein; eine kleine Nebenrechung zeigt, dass das genau dann der Fall ist, wenn
+\begin{equation}\label{absch2}
+  3 - \widetilde 3 < \widetilde 3^{1-k}
+\end{equation}
+für alle~$k \in J \subseteq \{ 1, \ldots, n \}$. Da unsere neue
+Konstante~$\widetilde 3$ schon unabhängig von~$J$ sein soll (denn diese Menge
+kann in sich jedem Iterationsschritt des Näherungsverfahrens ändern), müssen
+wir daher fordern, dass die Abschätzung sogar im schlimmstmöglichen Fall
+gilt~$k = n$ gilt:
+\begin{equation}\label{absch3}
+  3 - \widetilde 3 < \widetilde 3^{1-n}.
+\end{equation}
+Denn für~$k = n$ ist die rechte Seite der Ungleichung~\eqref{absch2} am
+kleinsten. Wenn wir unsere neue Konstante~$\widetilde 3$ also so einschränken,
+dass sie Abschätzung~\eqref{absch3} erfüllt, können wir
+Ungleichung~\eqref{abschfinal} fortführen:
+\[
+  |f(z)| \leq |b_0| \cdot \left(1 - \frac{\widetilde 3^{1-k+k^2-n^2}}{\widetilde 2}
+    + \frac{\widetilde 3^{k^2-n^2}}{\widetilde 2} \cdot (3 - \widetilde 3)\right). \]
+Für jedes~$k$ muss nun der Faktor~$(\cdots)$ auf der rechten Seite
+echt kleiner als~$1$ sein. Eine Nebenrechnung zeigt, dass das genau dann der
+Fall ist, wenn~$\widetilde 3$ die Abschätzung~\eqref{absch3} erfüllt, was wir
+ja sowieso voraussetzten mussten.
+
+Als Fazit können wir also festhalten: Für festen Polynomgrad~$n$ kann die
+Konstante~$3$ in der Tat durch jede kleinere positive Zahl~$\widetilde 3$
+ersetzt werden, die noch Abschätzung~\eqref{absch3} erfüllt. Konkret ergeben
+sich folgende Möglichkeiten (aufgerundete Werte):
+\begin{center}\begin{tabular}{r|l}
+  $n$ & kleinstmögliche Konstante~$\widetilde 3$ \\ \hline
+  $2$ & $2{,}619$ \\
+  $3$ & $2{,}880$ \\
+  $4$ & $2{,}962$ \\
+  $5$ & $2{,}988$ \\
+  $6$ & $2{,}996$
+\end{tabular}\end{center}
+Es gibt aber keine bessere Konstante, die für alle Polynomgrade~$n$ gleichmäßig
+funktionieren würde: Denn im Grenzwert~$n \to \infty$ lautet
+Abschätzung~\eqref{absch3}
+\[ 3 - \widetilde 3 \leq 0. \]
+\end{loesung}
 \end{aufgabe}
 
 \end{document}
