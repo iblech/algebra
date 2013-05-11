@@ -276,10 +276,10 @@ ersetzen könnte, hätte das folgenden Vorteil: Der Faktor~$q$ wäre dann kleine
 (wieso?) und damit die Konvergenz schneller -- zumindest, wenn die
 Abschätzung~\eqref{absch} nicht zu pessimistisch ist, sondern ein realistisches
 Bild der Konvergenzgeschwindigkeit vermittelt. (Manche numerische Verfahren
-konvergieren in der Realität viel schneller, als naive Abschätzungen vermuten
+konvergieren in der Realität viel schneller als naive Abschätzungen vermuten
 lassen.)
 
-Um nun die Frage, ob man~$3$ durch eine kleinere Zahl ersetzen kann, zu klären,
+Um nun die Frage zu klären, ob man~$3$ durch eine kleinere Zahl ersetzen kann,
 müssen wir den gesamten Beweis des Fundamentalsatzes durchgehen und bei jedem
 Vorkommen von~$3$ prüfen, ob der jeweilige Schritt auch bei einer kleineren
 Zahl durchgeht. Bei einer solchen Analyse stellt man fest: Für den Großteil des
@@ -311,9 +311,8 @@ sein; eine kleine Nebenrechung zeigt, dass das genau dann der Fall ist, wenn
 \end{equation}
 für alle~$k \in J \subseteq \{ 1, \ldots, n \}$. Da unsere neue
 Konstante~$\widetilde 3$ schon unabhängig von~$J$ sein soll (denn diese Menge
-kann in sich jedem Iterationsschritt des Näherungsverfahrens ändern), müssen
-wir daher fordern, dass die Abschätzung sogar im schlimmstmöglichen Fall
-gilt~$k = n$ gilt:
+kann sich in jedem Iterationsschritt des Näherungsverfahrens ändern), müssen
+wir daher fordern, dass die Abschätzung sogar im schlimmstmöglichen Fall~$k = n$ gilt:
 \begin{equation}\label{absch3}
   3 - \widetilde 3 < \widetilde 3^{1-n}.
 \end{equation}
@@ -325,7 +324,7 @@ Ungleichung~\eqref{abschfinal} fortführen:
   |f(z)| \leq |b_0| \cdot \left(1 - \frac{\widetilde 3^{1-k+k^2-n^2}}{\widetilde 2}
     + \frac{\widetilde 3^{k^2-n^2}}{\widetilde 2} \cdot (3 - \widetilde 3)\right). \]
 Für jedes~$k$ muss nun der Faktor~$(\cdots)$ auf der rechten Seite
-echt kleiner als~$1$ sein. Eine Nebenrechnung zeigt, dass das genau dann der
+echt kleiner als~$1$ sein (er wird unser neues~$q$). Eine Nebenrechnung zeigt, dass das genau dann der
 Fall ist, wenn~$\widetilde 3$ die Abschätzung~\eqref{absch3} erfüllt, was wir
 ja sowieso voraussetzten mussten.
 
@@ -335,6 +334,7 @@ ersetzt werden, die noch Abschätzung~\eqref{absch3} erfüllt. Konkret ergeben
 sich folgende Möglichkeiten (aufgerundete Werte):
 \begin{center}\begin{tabular}{r|l}
   $n$ & kleinstmögliche Konstante~$\widetilde 3$ \\ \hline
+  $1$ & beliebig wenig mehr als exakt~$2$ \\
   $2$ & $2{,}619$ \\
   $3$ & $2{,}880$ \\
   $4$ & $2{,}962$ \\
