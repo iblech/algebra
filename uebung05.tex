@@ -38,6 +38,27 @@ Setzt man in dieser Identität alle~$X_i$ auf~$1$, folgt die Behauptung sofort
 mit dem binomischen Lehrsatz
 \[ \prod_{i=1}^n (1 + T) = (1 + T)^n = \sum_{k=0}^n \binom{n}{k} T^k \]
 und Koeffizientenvergleich.
+
+\emph{Variante 2':} Auf ähnliche Art und Weise kann man auch die Formel
+\[ \prod_{i=1}^n (T + X_i) = \sum_{k=0}^n e_{n-k}(X_1,\ldots,X_n) \, T^k \]
+als Ausgangspunkt verwenden. Deren Vorteil ist, dass man ihre Korrektheit ganz
+mühelos beweisen kann: Denn die linke Seite der Gleichung hat -- als Polynom
+in der einzigen Variablen~$T$ mit Koeffizienten aus~$\QQ[X_1,\ldots,X_n]$
+gedacht -- die Nullstellen~$-X_1,\ldots,-X_n$. Daher liefert der Vietasche Satz
+sofort die Behauptung.
+
+\emph{Variante 3':} Variante 2' kann man etwas expliziter auch wie folgt
+formulieren. Das Polynom
+$(1 + T)^n = \sum_{k=0}^n \binom{n}{k} T^{n-k}$
+hat die Zahl~$-1$ als~$n$-fache Nullstelle. Mit dem Vietaschen Satz folgt daher
+\[ \text{$k$-ter Koeffizient} = \binom{n}{n-k} =
+  (-1)^{n-k} e_{n-k}(-1,\ldots,-1) = e_{n-k}(1,\ldots,1). \]
+
+\emph{Variante 3:} Analog kann man Variante~2 explizit ausführen: Das Polynom
+$(T - 1)^n = \sum_{k=0}^n \binom{n}{k} (-1)^k T^{n-k}$ hat die Zahl~$+1$
+als~$n$-fache Nullstelle. Mit dem Vietaschen Satz folgt daher
+\[ \text{$k$-ter Koeff.} = \textstyle (-1)^{n-k} \binom{n}{n-k} =
+  (-1)^{n-k} (-1)^{n-k} e_{n-k}(1,\ldots,1) = e_{n-k}(1,\ldots,1). \]
 \end{loesungE}
 \end{aufgabe}
 
@@ -61,14 +82,37 @@ Koeffizientenvergleich durch. Damit folgen die gesuchten Beziehungen:
     1 &= \phantom{+} e_0(x_1,\ldots,x_4)
 \end{align*}
 
-\item Sei~$X^2 + bX + c = 0$ eine allgemeine normierte quadratische Gleichung.
+\emph{Bemerkung:} Wenn man den Vietaschen Satz zitiert, kann man sich das
+Ausmultiplizieren sparen.
+
+\item Sei~$X^2 + bX + c = 0$ eine allgemeine normierte quadratische Gleichung
+und seien~$x_1, x_2$ ihre (nach dem Fundamentalsatz der Algebra existierenden)
+komplexen Lösungen (mit Vielfachheiten).
 Ausmultiplizieren von~$(X-x_1) (X-x_2)$ und Koeffizientenvergleich führt zu den
 Beziehungen
 \begin{align*}
   c &= x_1 x_2, \\
-  b &= -(x_1 + x_2).
+  b &= -(x_1 + x_2),
 \end{align*}
-Daher gilt:
+wie vom Vietaschen Satz vorausgesagt.
+Dann gibt es zwei Möglichkeiten fortzufahren:
+
+\emph{Variante 1 (tatsächliche Herleitung):} Mit den Beziehungen können wir
+den (aus der Schule bekannten) Ausdruck für die Determinante herleiten, denn
+\[ \Delta = (x_1 - x_2)^2 = x_1^2 + 2x_1x_2 + x_2^2 - 4x_1x_2 = b^2 - 4c. \]
+Somit gilt
+\[ x_1 - x_2 = \pm\sqrt{\Delta}, \]
+wobei das~"`$\pm$"'-Zeichen hier bedeuten soll, dass für \emph{eine} der beiden
+komplexen Wurzeln von~$\Delta$ die Gleichung stimmt. Über einen üblichen Trick,
+den wir etwa schon bei den Formeln für Real- und Imaginärteil komplexer Zahlen
+gesehen haben, folgt:
+\begin{align*}
+  x_1 &= \frac{(x_1 + x_2) + (x_1 - x_2)}{2} = \frac{-b \pm \sqrt{\Delta}}{2} \\
+  x_2 &= \frac{(x_1 + x_2) - (x_1 - x_2)}{2} = \frac{-b \mp \sqrt{\Delta}}{2}
+\end{align*}
+
+\emph{Variante 2 (lediglich Verifikaiton):} Alternativ können wir uns damit
+begnügen, die bekannte Formel zu verfizieren:
 \[ \frac{-b \pm \sqrt{b^2 - 4c}}{2} =
   \frac{x_1 + x_2 \pm \sqrt{(x_1 - x_2)^2}}{2} =
   \frac{x_1 + x_2 \pm (x_1 - x_2)}{2} =
@@ -93,6 +137,24 @@ Zeige, dass ihre Diskriminante durch $-4 p^3 - 27 q^2$ gegeben ist.
 \begin{loesungE}
 \item $(X - 1)^2 (X - 2) = 0$ tut's. Ihre Diskriminante ist~$0$, da sie ja
 doppelte Lösungen besitzt.
+
+\item \emph{Variante 1 (lange Rechnung):} Seien~$x,y,z$ die drei Lösungen der
+Gleichung. Der Vietasche Satz liefert die Beziehungen
+\begin{align*}
+  0 &= x+y+z, \\
+  p &= xy + xz + yz, \\
+  q &= -xyz.
+\end{align*}
+Daher folgt
+\begin{align*}
+  \Delta &= (x-y)^2 \cdot (x-z)^2 \cdot (y-z)^2 \\
+  &= (x^2+2xy+y^2-4xy) \cdot (x^2+2xz+z^2-4xz) \cdot (y^2+2yz+z^2-4yz) \\
+  &= ((x+y)^2-4xy) \cdot ((x+z)^2-4xz) \cdot ((y+z)^2-4yz) \\
+  &= (z^2-4xy) \cdot (y^2-4xz) \cdot (x^2-4yz) \\
+  &= -63x^2y^2z^2 -4x^3y^3 - 4x^3z^3 - 4y^3z^3 + 16x^4yz + 16xy^4z + 16xyz^4 \\
+  &= -63x^2y^2z^2 - 4(x^3y^3 + x^3z^3 + y^3z^3) + 16 xyz (x^3+y^3+z^3) \\
+  &= \cdots = -4p^3 - 27q^2.
+\end{align*}
 \end{loesungE}
 \end{aufgabe}
 
