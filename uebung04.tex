@@ -17,18 +17,21 @@ Lösung~$z$ höchstens die Entfernung
 $1+\max\{|a_0|,\ldots,|a_{n-1}|\}$ zum Ursprung hat.
 \begin{loesung}
 Sei~$R := \max\{|a_0|,\ldots,|a_{n-1}|\}$. Dann gilt für
-alle~$z \in \CC$ mit~$|z| \geq R + 1$ folgende Hilfsüberlegung (wieso?):
+alle~$z \in \CC$ mit~$|z| > R + 1$ folgende Hilfsüberlegung (wieso?):
 \begin{align*}
   \left|a_{n-1} \frac{1}{z} + \cdots + a_1 \frac{1}{z^{n-1}} + a_0
   \frac{1}{z^n}\right| &\stackrel{\triangle}{\leq}
   |a_{n-1}| \frac{1}{|z|} + \cdots + |a_1| \frac{1}{|z|^{n-1}} + |a_0|
   \frac{1}{|z|^n} \\
-  &\leq R \cdot \frac{1}{|z|}
-  \leq \underbrace{\frac{R}{R+1}}_{=:\,q} < 1
+  &\leq R \cdot \sum_{i=1}^n \left(\frac{1}{|z|}\right)^i
+  \leq R \cdot \sum_{i=1}^\infty \left(\frac{1}{|z|}\right)^i \\
+  &= R \cdot \frac{|z|^{-1}}{1 - |z|^{-1}} =
+  \underbrace{\frac{R}{|z| - 1}}_{=:\,q} < \frac{R}{(1+R)-1} = 1
 \end{align*}
-Dabei haben wir~$\frac{1}{|z|^i} \leq \frac{1}{|z|}$ verwendet (okay, da~$|z|
-\geq 1$).
-Somit gilt (wieso?) für alle~$|z| \geq R + 1$
+Dabei haben wir die abgeschnittene geometrische Reihe mit der Formel
+\[ \sum_{i=1}^\infty p^n = \frac{1}{1 - p} - 1 =
+  \frac{p}{1-p} \]
+behandelt. Somit gilt (wieso?) für alle~$|z| > R + 1$
 \[ |f(z)| = |z|^n \left|1 + a_{n-1} \frac{1}{z} + \cdots + a_0 \frac{1}{z^n}\right|
   \geq |z|^n \left(1 - q\right) > 0, \]
 insbesondere also~$f(z) \neq 0$.
