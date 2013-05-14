@@ -39,16 +39,40 @@ Vielfachheit~1.
 von einer algebraischen Zahl~$a$ erfüllt wird, wenn das Polynom~$f_a(X) := X^3
 + 2a^2 X - a + 5$ nicht separabel ist.
 \end{enumerate}
+
+\begin{loesungE}
+\item ...
+\item ...
+\item Das Polynom~$f_a$ ist genau dann nicht separabel, wenn seine Diskriminante null
+ist:
+\[ \Delta_{f_a} = -4p^3 - 27q^2 = \cdots =
+  -32 \cdot a^6 - 27 a^2 + 270 a - 675 \stackrel{!}{=} 0. \]
+Damit haben wir die geforderte Polynomgleichung gefunden.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Irreduzible Polynome}
 \begin{enumerate}
 \item Zeige, dass normierte Polynome vom Grad~2 oder~3 über den rationalen
-Zahlen genau dann irreduzibel sind, wenn sie keine rationale Nullstelle
+Zahlen genau dann reduzibel sind, wenn sie mindestens eine rationale Nullstelle
 besitzen.
 \item Finde ein Polynom mit rationalen Koeffizienten, das keine rationale
 Nullstelle besitzt und trotzdem über den rationalen Zahlen reduzibel ist.
 \end{enumerate}
+
+\begin{loesungE}
+\item Sei~$f(X)$ ein normiertes Polynom vom Grad~2 oder~3 mit rationalen
+Koeffizienten. Die Rückrichtung ist klar: Wenn~$f$ eine rationale
+Nullstelle~$x$ besitzt, geht die Division von~$f$ durch den Linearfaktor~$X-x$
+auf -- also ist~$f$ zerlegbar.
+
+Sei für den Beweis der Hinrichtung eine Zerlegung~$f = g \cdot h$ gegeben. Nach
+der Gradvoraussetzung an~$f$ hat dann~$g$ oder~$h$ Grad~1 und ist daher von der
+Form~$X-x$ für eine gewisse rationale Zahl~$x$. Also besitzt~$f$ eine rationale
+Nullstelle, nämlich~$x$.
+
+\item Das Polynom~$(X^2+1)^2$ ist eines von unzähligen Beispielen.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Prime Polynome}
@@ -61,6 +85,14 @@ beiden Faktoren.
 \item Zeige, dass jedes prime Polynom irreduzibel ist.
 \item Zeige umgekehrt, dass irreduzible Polynome prim sind.
 \end{enumerate}
+
+\begin{loesungE}
+\item Sei~$f(X)$ ein primes Polynom. Da~$f$ nicht das Einspolynom ist, hat es
+mindestens Grad~1 (wieso?). Es bleibt also nur zu zeigen, dass~$f(X) = f(X)$
+die \emph{einzige} Zerlegung von~$f$ ist. Sei dazu~$f = g \cdot h$ mit
+normierten nichtkonstanten Polynomen~$g(X), h(X)$ mit rationalen Koeffizienten. Dann folgt
+insbesondere~$f \mid gh$, also nach Voraussetzung~$f \mid g$ oder~$f \mid h$.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Euklidischer Algorithmus für ganze Zahlen}
