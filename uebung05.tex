@@ -200,23 +200,62 @@ relativ schmerzlos:
 \end{align*}
 Also folgt~$\beta = -27$.
 \end{enumerate}
-Zusammengenommen haben wir also gesehen:
-\[ \Delta = -4p^3 - 27q^2. \]
+Damit ist die Behauptung bewiesen.
 \end{loesungE}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Symmetrien eines Polynoms}
 Sei $f(X, Y, Z, W) := X Y + Z W + X Y Z W$.
 Wie viele vierstellige Permutationen~$\sigma$ mit~$\sigma \cdot f = f$ gibt es?
+\begin{loesung}
+\emph{Variante 1:} Man kann alle 24 vierstelligen Permutationen~$\sigma$ durchgehen und
+jeweils~$\sigma \cdot f$ mit~$f$ vergleichen:
+\begin{center}\tiny\begin{tabular}{rll}
+  $xyzw$ & $xy + zw + xyzw$ \\\hline
+  $xyzw$ & $xy + zw + xyzw$ & \checkmark \\
+  $wxyz$ & $xw + yz + xyzw$ \\
+  $xwyz$ & $xw + yz + xyzw$ \\
+  $xywz$ & $xy + zw + xyzw$ & \checkmark  \\
+  $xzyw$ & $xz + yw + xyzw$ \\
+  $wxzy$ & $xw + yz + xyzw$ \\
+  $xwzy$ & $xw + yz + xyzw$ \\
+  $xzwy$ & $xz + yw + xyzw$ \\
+  $yxzw$ & $xy + zw + xyzw$ & \checkmark  \\
+  $wyxz$ & $xz + yw + xyzw$ \\
+  $ywxz$ & $xz + yw + xyzw$ \\
+  $yxwz$ & $xy + zw + xyzw$ & \checkmark  \\
+  $yzxw$ & $xw + yz + xyzw$ \\
+  $wyzx$ & $xz + yw + xyzw$ \\
+  $ywzx$ & $xz + yw + xyzw$ \\
+  $yzwx$ & $xw + yz + xyzw$ \\
+  $wzxy$ & $xy + zw + xyzw$ & \checkmark  \\
+  $zxyw$ & $xz + yw + xyzw$ \\
+  $zwxy$ & $xy + zw + xyzw$ & \checkmark  \\
+  $zxwy$ & $xz + yw + xyzw$ \\
+  $wzyx$ & $xy + zw + xyzw$ & \checkmark  \\
+  $zyxw$ & $xw + yz + xyzw$ \\
+  $zwyx$ & $xy + zw + xyzw$ & \checkmark  \\
+  $zywx$ & $xw + yz + xyzw$
+\end{tabular}\end{center}
+Also lassen genau acht Permutationen das Polynom invariant.
+
+\emph{Variante 2:} Der hintere Summand bleibt unter jeder Permutation
+invariant. Der vordere bleibt unter Vertauschung~$x \leftrightarrow y$ (und
+sowieso~$z \leftrightarrow w$) invariant, also unter insgesamt vier
+Permutationen. Analog ist es für den mittleren Summanden. Außerdem kann man
+aber noch mittels~$x \leftrightarrow z, y \leftrightarrow w$ die beiden
+Summanden vertauschen; insgesamt gibt es daher acht Permutationen, die das
+Polynom als Ganzes invariant lassen.
+\end{loesung}
 \end{aufgabe}
 
 \begin{aufgabe}{Formale Ableitung von Polynomen}
 \begin{enumerate}
 \item Seien~$g(X)$ und~$h(X)$ Polynome. Zeige:
-$
-  (g h)^{(k)}(X)
+\[ (g h)^{(k)}(X)
   = \sum_{i + j = k} \binom k i \, g^{(i)}(X) \, h^{(j)}(X).
-$
+\]
 
 \item Sei $f(X)$ ein Polynom und~$n$ eine natürliche Zahl. Zeige:
 $f^{(n + 1)} = 0 \Longleftrightarrow \deg f \leq n.$
@@ -224,10 +263,62 @@ $f^{(n + 1)} = 0 \Longleftrightarrow \deg f \leq n.$
 \item Sei $f(X)$ ein Polynom und $x$ eine komplexe Zahl. Zeige, dass die
 Entwicklung von $f(X)$ nach $X - x$ durch die \emph{Taylorsche Formel} gegeben
 ist (nach Brooke Taylor, 1685--1731, britischer Mathematiker):
-\[
-    f(X) = \sum_{k = 0}^\infty \frac{f^{(k)}(x)}{k!} \, (X - x)^k
-\]
+\[ f(X) = \sum_{k = 0}^\infty \frac{f^{(k)}(x)}{k!} \, (X - x)^k \]
 \end{enumerate}
+
+\ifloesungen\newpage\fi
+\begin{loesungE}
+\item Wir führen einen Induktionsbeweis über~$k \geq 0$.
+Dabei ist der Induktionsanfang~$k = 0$ klar. Für den Induktionsschritt~$k \to k
++ 1$ führen wir die Rechnung
+\begin{align*}
+  (gh)^{(k+1)} &=
+  ((gh)')^{(k)} = (g'h + gh')^{(k)} = (g'h)^{(k)} + (gh')^{(k)} \\
+  &\stackrel{\text{IV}}{=}
+    \sum_{i+j=k} \binom{k}{i} (g')^{(i)} h^{(j)} +
+    \sum_{i+j=k} \binom{k}{i} g^{(i)} (h')^{(j)} \\
+  &=
+    \sum_{i+j=k} \binom{k}{i} g^{(i+1)} h^{(j)} +
+    \sum_{i+j=k} \binom{k}{i} g^{(i)} h^{(j+1)} \\
+  &=
+    \sum_{\substack{\hat\imath+\hat\jmath=k+1\\\hat\imath\geq1}} \binom{k}{\hat\imath - 1} g^{(\hat\imath)} h^{(\hat\jmath)} +
+    \sum_{\substack{\hat\imath+\hat\jmath=k+1\\\hat\jmath\geq1}} \binom{k}{\hat\imath} g^{(\hat\imath)} h^{(\hat\jmath)} \\
+  &=
+    \sum_{\hat\imath+\hat\jmath=k+1} \binom{k}{\hat\imath - 1} g^{(\hat\imath)} h^{(\hat\jmath)} +
+    \sum_{\hat\imath+\hat\jmath=k+1} \binom{k}{\hat\imath} g^{(\hat\imath)} h^{(\hat\jmath)} \\
+  &= \sum_{\hat\imath+\hat\jmath=k+1}
+    \left(\binom{k}{\hat\imath - 1} + \binom{k}{\hat\imath}\right) g^{(\hat\imath)} h^{(\hat\jmath)}
+  = \sum_{\hat\imath+\hat\jmath=k+1}
+    \binom{k+1}{\hat\imath} g^{(\hat\imath)} h^{(\hat\jmath)}.
+\end{align*}
+Dabei haben wir der Übersichtlichkeit halber die Konvention~$\binom{n}{-1} = 0$
+für alle~$n$ und die bekannte Rekursionsgleichung für die Binomialkoeffizienten
+verwendet.
+
+\item "`$\Longrightarrow$"': Da~$f$ ein Polynom ist, können wir es als eine gewisse
+endliche Summe~$f = \sum_{i=0}^m a_i X^i$ schreiben. Eine kurze Überlegung
+zeigt, dass die~$k$-te Ableitung des Monoms~$X^i$ für~$i < k$ null ist und
+für~$i \geq k$ durch
+\[ (X^i)^{(k)} = \frac{i!}{(i-k)!} X^{i-k} \]
+gegeben ist. Daher folgt aus der Voraussetzung
+\[ 0 = f^{(n+1)} = \sum_{i=n+1}^m \frac{i!}{(i-(n+1))!} a_i X^i \]
+durch Koeffizientenvergleich, dass für jedes~$i = n+1,\ldots,m$ der
+Koeffizient~$\frac{i!}{(i-(n+1))!} a_i$ null ist. Also sind alle~$a_i$ mit~$i
+\geq n+1$ null; das Polynom~$f$ hat also in der Tat Grad~$\leq n$.
+
+"`$\Longleftarrow$"': Alle in~$f$ auftretenden Monome verschwinden bei~$(n+1)$-maligem Ableiten.
+
+\item Beide Seiten der Gleichung sind linear in~$f$ (wieso?); daher genügt es
+(wieso?), die Identität für die Spezialfälle~$f := X^n$, $n \geq 0$, zu
+bestätigen. Dies gelingt mithilfe des binomischen Lehrsatzes:
+\begin{align*}
+  \sum_{k=0}^\infty \frac{f^{(k)}(x)}{k!} (X-x)^k &=
+  \sum_{k=0}^\infty \frac{(X^n)^{(k)}(x)}{k!} (X-x)^k \\
+  &= \sum_{k=0}^n \frac{n! / (n-k)! \cdot x^{n-k}}{k!} (X-x)^k \\
+  &= \sum_{k=0}^n \binom{n}{k} x^{n-k} (X-x)^k \\
+  &= (x + (X-x))^n = X^n = f.
+\end{align*}
+\end{loesungE}
 \end{aufgabe}
 
 \end{document} 
