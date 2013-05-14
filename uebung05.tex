@@ -138,7 +138,7 @@ Zeige, dass ihre Diskriminante durch $-4 p^3 - 27 q^2$ gegeben ist.
 \item $(X - 1)^2 (X - 2) = 0$ tut's. Ihre Diskriminante ist~$0$, da sie ja
 doppelte Lösungen besitzt.
 
-\item \emph{Variante 1 (lange Rechnung):} Seien~$x,y,z$ die drei Lösungen der
+\item \emph{Variante 1 (lange Rechnung mit Tricks):} Seien~$x,y,z$ die drei Lösungen der
 Gleichung. Der Vietasche Satz liefert die Beziehungen
 \begin{align*}
   0 &= x+y+z, \\
@@ -153,8 +153,55 @@ Daher folgt
   &= (z^2-4xy) \cdot (y^2-4xz) \cdot (x^2-4yz) \\
   &= -63x^2y^2z^2 -4x^3y^3 - 4x^3z^3 - 4y^3z^3 + 16x^4yz + 16xy^4z + 16xyz^4 \\
   &= -63x^2y^2z^2 - 4(x^3y^3 + x^3z^3 + y^3z^3) + 16 xyz (x^3+y^3+z^3) \\
-  &= \cdots = -4p^3 - 27q^2.
+  &= \text{(weitere Tricks)} \\
+  &= -4p^3 - 27q^2.
 \end{align*}
+
+\emph{Variante 2 (lange Rechnung ohne Tricks):} Seien wieder~$x,y,z$ die drei
+Lösungen der Gleichung. Wegen der obigen Beziehungen können wir~$z = -x-y$
+schreiben; dann folgt
+\begin{align*}
+  \Delta &= (x-y)^2 \cdot (x-z)^2 \cdot (y-z)^2 \\
+  &= (x-y)^2 \cdot (2x + y)^2 \cdot (x + 2y)^2 \\
+  &= 4y^6+12xy^5-3x^2y^4-26x^3y^3-3x^4y^2+12x^5y+4x^6 \\
+  \\
+  -4p^3 - 27q^2 &= -4 \cdot (-x^2 - xy - y^2)^3 - 27 \cdot (xy^2 + x^2y) \\
+  &= 4y^6+12xy^5-3x^2y^4-26x^3y^3-3x^4y^2+12x^5y+4x^6,
+\end{align*}
+also stimmen die beiden Seiten der zu zeigenden Gleichung überein.
+
+\emph{Variante 3 (durch Überlegung):} Aus der Vorlesung ist bereits bekannt,
+dass die Diskriminante~$\Delta$ auf genau eine Art und Weise ein polynomieller
+Ausdruck in den Koeffizienten~$p$ und~$q$ (und~$0$) der Gleichung ist. Da~$p$
+vom Grad~2,~$q$ vom Grad~3 und~$\Delta$ vom Grad~6 in den Nullstellen ist, gibt
+es für die Gestalt dieses Ausdrucks nur eine Möglichkeit, nämlich
+\[ \Delta = \alpha p^3 + \beta q^2, \]
+wobei die konstanten Vorfaktoren noch zu bestimmen sind. Da diese für jede
+reduzierte kubische Gleichung gleich sind (sie sind universelle Konstanten),
+können wir diese dadurch bestimmen, indem wir bestimmte einfache
+Beispielgleichungen betrachten:
+\begin{enumerate}
+\item[1.] Die Gleichung~$X^3 - X = 0$ hat~$p = -1$, $q = 0$ und die drei
+Lösungen~$-1, 0, 1$. Ihre Diskriminante ist~4. Also folgt aus
+$4 = \Delta = \alpha (-1)^3$,
+dass~$\alpha = -4$ sein muss.
+\item[2.] Die Gleichung~$X^3 - 1 = 0$ hat~$p = 0$, $q = -1$ und die drei
+Lösungen~$1, \omega, \omega^2$ mit~$\omega = \exp(2\pi\i/3)$. Ihre
+Diskriminante ist~$-27$ -- wenn man die Beziehung~$\omega^2 = -\omega - 1$, die
+wir schon in Aufgabe~5 von Blatt~2 gesehen haben, verwendet, ist die Rechnung
+relativ schmerzlos:
+\begin{align*}
+  \Delta &= (1-\omega)^2 \cdot (1-\omega^2)^2 \cdot (\omega-\omega^2)^2 \\
+  &= (1-\omega)^2 \cdot (2+\omega)^2 \cdot (2\omega+1)^2 \\
+  &= (1-2\omega+\omega^2) \cdot (4+4\omega+\omega^2) \cdot (4\omega^2+4\omega+1) \\
+  &= (-3\omega) \cdot (3+3\omega) \cdot (-3) \\
+  &= 27 \cdot (\omega+\omega^2) \\
+  &= -27
+\end{align*}
+Also folgt~$\beta = -27$.
+\end{enumerate}
+Zusammengenommen haben wir also gesehen:
+\[ \Delta = -4p^3 - 27q^2. \]
 \end{loesungE}
 \end{aufgabe}
 
