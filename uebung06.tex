@@ -20,6 +20,14 @@ Koeffizienten~$p$ und~$q$. Zeige, dass die Gleichung drei \emph{verschiedene} L�
 Polynomgleichung mit rationalen Koeffizienten. Zeige, dass sie mindestens eine
 nicht reelle Nullstelle besitzt, wenn ihre Diskriminante negativ ist.
 \end{enumerate}
+
+\begin{loesungE}
+\item Die Diskriminante~$\Delta = -4p^3 - 27q^2$ ist nicht null, da der
+Term~$-4p^3$ gerade, aber~$27q^2$ ungerade ist.
+\item Wenn~$x_1,\ldots,x_n$ die Lösungen der Gleichungen mit Vielfachheiten
+sind, so ist~$\Delta = \prod_{i < j} (x_i-x_j)^2$. Wenn nun alle~$x_i$ reell
+wären, wäre~$\Delta \geq 0$.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Diskriminanten allgemeiner kubischer Gleichungen}
@@ -29,6 +37,26 @@ $X^3 + a X^2 + b X + c = 0$.
 \item Zeige, dass~$X^3 - 5\,X^2 + 3\,X + 9 = 0$ höchstens zwei verschiedene
 Lösungen hat.
 \end{enumerate}
+
+\begin{loesungE}
+\item Wenn wir~$Y := X + \frac{a}{3}$ und
+\begin{align*}
+  p &:= b - \frac{a^2}{3} &
+  q &:= \frac{2a^3 - 9ab + 27c}{27}
+\end{align*}
+setzen, lässt sich die gegebene Gleichung äquivalent als
+\[ Y^3 + pY + q = 0 \]
+schreiben. Die Lösungen für~$Y$ dieser Gleichung sind von den Lösungen der
+originalen Gleichung um~$a/3$ verschoben -- das ändert aber die Diskriminante
+nicht, da in ihr nur die Differenzen der Lösungen eingehen. Somit ist die
+Diskriminante der gegebenen Gleichung gleich der Diskriminante der reduzierten
+Gleichung, also gleich
+\[ \Delta = -4p^3 - 27q^2 = \cdots = a^2b^2 - 4b^3 - 4a^3c - 27c^2 + 18abc. \]
+
+\item Die Diskriminante dieser Gleichung ist null:
+\[ \Delta = (-5)^2 \cdot 3^2 - 4 \cdot 3^3 - 4 \cdot (-5)^3 \cdot 9 - 27 \cdot
+9^2 + 18\cdot(-5)\cdot3\cdot9 = 0. \]
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Die Resultante zweier Polynome}
@@ -43,6 +71,89 @@ Gleichungen. Gib einen in~$a$, $b$, $c$ und~$d$ polynomiellen Ausdruck an, der
 genau dann verschwindet, wenn die beiden Gleichungen eine gemeinsame Lösung
 besitzen.
 \end{enumerate}
+
+\begin{loesungE}
+\item Zunächst betrachten wir noch nicht speziell die gegebenen
+Polynome~$f$ und~$g$. Stattdessen definieren wir allgemein ein Polynom
+\[ P := \prod_{i,j} (X_i - Y_j), \]
+man beachte die Großbuchstaben auf der rechten Seite. Dieses Polynom ist
+offenkundig in den~$X_i$ und separat in den~$Y_j$ symmetrisch. Unser Ziel ist
+es nun, dieses Polynom als Polynom in den elementarsymmetrischen
+Funktionen~$e_i(X_1,\ldots,X_n)$ und~$e_j(Y_1,\ldots,Y_m)$ zu schreiben. Das
+erreichen wir in zwei Schritten. Zur besseren Lesbarkeit verwenden wir die
+Abkürzung~"`$\vec X$"' für~$X_1,\ldots,X_n$ und analog für~$Y_1,\ldots,Y_m$.
+
+\newcommand{\symm}{\mathrm{symm}}%
+\emph{Schritt 1:} Wir fassen~$P$ als Polynom
+in~$(\ZZ[\vec Y]_\symm)[\vec X]$ auf. Dabei meinen wir mit~"`$\ZZ[\vec
+Y]_\symm$"' den Rechenbereich der in~$Y_1,\ldots,Y_m$ \emph{symmetrischen}
+Polynome. So aufgefasst, ist es symmetrisch (in den~$X_i$), womit Satz~2.12 der
+Vorlesung uns garantiert, dass es genau ein Polynom~$H \in (\ZZ[\vec
+Y]_\symm)[E_1,\ldots,E_n]$ mit
+\[ P = H(e_1(\vec X), \ldots, e_n(\vec X)) \]
+gibt. Die Koeffizienten von~$H$ stammen dabei aus demselben Rechenbereich wie
+die von~$P$, nach unserer Auffassung also~$\ZZ[\vec Y]_\symm$; konkret handelt
+es sich bei den Koeffizienten von~$H$ also um in den~$Y_j$ symmetrische
+Polynome.
+
+\emph{Schritt 2:} Das Polynom~$H$ können wir auch als Polynom
+aus~$(\ZZ[E_1,\ldots,E_n])[\vec Y]$ auffassen; so aufgefasst, ist es in
+den~$Y_j$ symmetrisch. Damit können wir abermals Satz~2.12 der Vorlesung
+anwenden: Es gibt genau ein Polynom~$L \in
+(\ZZ[E_1,\ldots,E_n])[E_1',\ldots,E_m']$ mit
+\[ H = L(e_1'(\vec Y), \ldots, e_m'(\vec Y)). \]
+Dabei bezeichnen wir zur besseren Unterscheidung die elementarsymmetrischen
+Funktionen in den~$Y_j$ mit~$e_1'(\vec Y), \ldots, e_m'(\vec Y)$.
+
+\emph{Zwischenfazit:} Zusammenfassend gilt
+\begin{equation}\label{zwischenfazit}
+  P(X_1,\ldots,X_n, Y_1,\ldots,Y_m) =
+  L(e_1(\vec X),\ldots,e_n(\vec X), e_1'(\vec Y),\ldots,e_m'(\vec Y)).
+\end{equation}
+Die Notation auf der rechten Seite bedeutet dabei, dass wir in~$L$ für die
+Variablen~$E_i$ jeweils die~$e_i(\vec X)$ und für die Variablen~$E_j'$ jeweils
+die~$e_j'(\vec Y)$ einsetzen. Unser obiges Ziel ist also erreicht.
+
+Jetzt betrachten wir speziell die Polynome~$f = X^n + a_{n-1}X^{n-1} + \cdots +
+a_1X + a_0$ und~$g = Y^m + b_{m-1}Y^{m-1} + \cdots + b_1Y + b_0$ mit ihren
+Nullstellen~$x_1,\ldots,y_n$ bzw.~$y_1,\ldots,y_m$. Nach dem Vietaschen Satz
+gelten die Beziehungen
+\begin{align*}
+  e_i(\vec X) &= (-1)^i a_{n-i} \\
+  e_j'(\vec Y) &= (-1)^j b_{m-j}.
+\end{align*}
+Setzen wir also in Gleichung~\eqref{zwischenfazit} für~$X_1,\ldots,X_n$ die
+tatsächlichen Nullstellen~$x_1,\ldots,x_n$ und für~$Y_1,\ldots,Y_m$ die
+Nullstellen~$y_1,\ldots,y_m$ ein, erhalten wir
+\[ R = P(x_1,\ldots,x_n,y_1,\ldots,y_m) =
+  L(\pm a_{n-1},\ldots,\pm a_0, \pm b_{m-1},\ldots,\pm b_0). \]
+Also ist~$R$ in der Tat ein in den Koeffizienten von~$f$ und~$g$ polynomieller
+Ausdruck.
+
+\item In Erinnerung an Teilaufgabe~a) definieren wir
+\[ R := (x_1 - y_1) (x_1 - y_2) (x_2 - y_1) (x_2 - y_2), \]
+wobei~$x_1,x_2$ und~$y_1,y_2$ die Lösungen der ersten bzw. zweiten Gleichung
+seien. Dieser Ausdruck ist genau dann null, wenn die beiden Gleichungen
+gemeinsame Lösungen besitzen. Jetzt müssen wir ihn noch als Polynom in den
+Koeffizienten schreiben -- Teilaufgabe~a) verleiht uns die Gewissheit, dass das
+möglich ist. Zur konkreten Ausführung nutzen wir die Beziehungen aus dem
+Vietaschen Satz,
+\begin{align*}
+  b &= x_1 x_2 & d &= y_1 y_2, \\
+  a &= -(x_1+x_2) & c &= -(y_1 + y_2),
+\end{align*}
+und rechnen:
+\begin{align*}
+  R &= (x_1 - y_1) (x_1 - y_2) (x_2 - y_1) (x_2 - y_2) \\
+  &= (x_1^2 - x_1y_2 - x_1y_1 + y_1y_2) (x_2^2 - x_2y_2 - x_2y_1 + y_1y_2) \\
+  &= (x_1^2 + cx_1 + d) (x_2^2 + cx_2 + d) \\
+  &= x_1^2 x_2^2 + c x_1^2 x_2 + d x_1^2 + c x_1 x_2^2 + c^2 x_1 x_2 +
+    c d x_1 + d x_2^2 + cd x_2 + d^2 \\
+  &= b^2 + bcx_1 + dx_1^2 + bcx_2 + c^2b + cdx_1 + dx_2^2 + cdx_2 + d^2 \\
+  &= b^2 - abc + d(x_1^2 + x_2^2 + 2x_1x_2) - 2x_1x_2d - acd + c^2b + d^2 \\
+  &= a^2d - abc - acd + b^2 + bc^2 - 2bd + d^2.
+\end{align*}
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Transzendente Zahlen}
@@ -52,11 +163,42 @@ seien alle Folgenglieder~$z_n$ algebraisch. Ist dann auch~$z$ algebraisch?
 \item Ist~$\sqrt[3]{\pi}$ eine algebraische Zahl? Ist~$\pi^3$ algebraisch?
 \item Finde eine Folge paarweise verschiedener transzendenter Zahlen.
 \end{enumerate}
+
+\begin{loesungE}
+\item Das ist in den seltensten Fällen der Fall. Etwa kann man
+\[ z_n := 3{,}\text{die ersten~$n$ Nachkommaziffern von~$\pi$} \]
+setzen. Dann sind alle Folgenglieder algebraisch (sogar rational), aber der
+Grenzwert~$\pi$ ist nicht algebraisch.
+
+\item Nein: Wäre~$\sqrt[3]{\pi}$ algebraisch, so wäre auch~$(\sqrt[3]{\pi})^3 =
+\pi$ algebraisch.
+
+Ebenso ist~$\pi^3$ nicht algebraisch: Wäre~$\pi^3$ algebraisch, so wäre
+auch~$\sqrt[3]{\pi^3} = \pi$ algebraisch (da Wurzeln algebraischer Zahlen stets
+algebraisch sind).
+
+\item Man kann etwa $z_n := \pi + n$ setzen. Die Folgenglieder sind paarweise
+verschieden (klar) und jeweils transzendent (wieso?).
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Triangulatur des Kreises}
 Ist folgendes Problem lösbar? Gegeben ein Kreis. Konstruiere nur mit Zirkel und
 Lineal ein gleichseitiges Dreieck mit demselben Flächeninhalt.
+
+\begin{loesung}
+Sei~$r$ der Radius des Kreises und~$a$ die Seitenlänge eines flächengleichen
+gleichseitigen Dreiecks. Da nach dem Satz des Pythagoras die Höhe des Dreiecks
+durch~$h = \frac{\sqrt{3}}{2} a$ gegeben ist, gilt dann also die Beziehung
+\[ A_\bigcirc = \pi r^2 = \frac{\sqrt{3}}{4} a^2 = A_\triangle. \]
+Somit ist die Seitenlänge~$a$ die Zahl
+\[ a = \sqrt{\frac{4}{\sqrt{3}} \pi} \cdot r. \]
+Für die meisten Werte von~$r$, etwa~$r = 1$, ist die Seitenlänge~$a$ daher
+nicht algebraisch (wieso?) und somit nicht konstruierbar: Wäre sie es, könnte
+man die Strecke beim Ursprung abtragen und so die Zahl~$a$ konstruieren -- aber
+transzendente Zahlen sind nicht konstruierbar. Im Allgemeinen ist das Problem
+also nicht lösbar.
+\end{loesung}
 \end{aufgabe}
 
 Nicht verpassen: \textbf{Gauß-Vorlesung} über Muster bei Primzahlen am 28. Mai
