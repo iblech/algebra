@@ -1,0 +1,1 @@
+Seite xx, vor Formel (5): Das "c + " in der Definition von q muss weg.
