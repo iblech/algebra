@@ -16,8 +16,23 @@ Polynomgleichung mit komplexen Koeffizienten. Zeige, dass jede komplexe
 Lösung~$z$ höchstens die Entfernung
 $1+\max\{|a_0|,\ldots,|a_{n-1}|\}$ zum Ursprung hat.
 \begin{loesung}
-Sei~$R := \max\{|a_0|,\ldots,|a_{n-1}|\}$. Dann gilt für
-alle~$z \in \CC$ mit~$|z| > R + 1$ folgende Hilfsüberlegung (wieso?):
+Sei~$R := \max\{|a_0|,\ldots,|a_{n-1}|\}$. Dann gilt für alle~$z \in \CC$
+mit~$|z| > 1 + R$
+\begin{align*}
+  |f(z)| &= |z^n + a_{n-1}z^{n-1} + \cdots + a_1 z + a_0| \\
+  &\geq |z^n| - |a_{n-1}z^{n-1} + \cdots + a_1 z + a_0| \\
+  &\geq |z^n| - \left(|a_{n-1}| |z|^{n-1} + \cdots + |a_1| |z| + |a_0|\right) \\
+  &\geq |z^n| - R \cdot \left(|z|^{n-1} + \cdots + |z| + 1\right) \\
+  &= |z^n| - R \cdot \frac{|z|^n-1}{|z|-1} \\
+  &> |z^n| - R \cdot \frac{|z|^n-1}{1+R-1} \\
+  &= |z^n| - (|z|^n - 1) \\
+  &= 1 > 0,
+\end{align*}
+insbesondere also~$f(z) \neq 0$. Somit hat jede Lösung der Polynomgleichung
+Betrag $\leq 1 + R$.
+
+\emph{Schlechtere Variante.}
+Für alle alle~$z \in \CC$ mit~$|z| > 1 + R$ gilt folgende Hilfsüberlegung (wieso?):
 \begin{align*}
   \left|a_{n-1} \frac{1}{z} + \cdots + a_1 \frac{1}{z^{n-1}} + a_0
   \frac{1}{z^n}\right| &\stackrel{\triangle}{\leq}
@@ -31,7 +46,7 @@ alle~$z \in \CC$ mit~$|z| > R + 1$ folgende Hilfsüberlegung (wieso?):
 Dabei haben wir die abgeschnittene geometrische Reihe mit der Formel
 \[ \sum_{i=1}^\infty p^n = \frac{1}{1 - p} - 1 =
   \frac{p}{1-p} \]
-behandelt. Somit gilt (wieso?) für alle~$|z| > R + 1$
+behandelt. Somit gilt (wieso?) für alle~$|z| > 1 + R$
 \[ |f(z)| = |z|^n \left|1 + a_{n-1} \frac{1}{z} + \cdots + a_0 \frac{1}{z^n}\right|
   \geq |z|^n \left(1 - q\right) > 0, \]
 insbesondere also~$f(z) \neq 0$.
@@ -41,9 +56,10 @@ wenig aussagen. Aber diese Terme werden vom Monom~$z^n$ dominiert -- ausnutzen
 können wir das dadurch, indem wir es ausklammern.
 
 \emph{Bemerkung:} Mit nur wenig Mehraufwand sieht man, dass die Lösungen sogar
-in der \emph{offenen} Kreisscheibe mit Radius~$1 + R$ liegen müssen: Denn beim
-Übergang der endlichen zur unendlichen geometrischen Reihe hat man auch
-schon~"`$<$"' statt nur~"`$\leq$"'.
+in der \emph{offenen} Kreisscheibe mit Radius~$1 + R$ liegen müssen: Bei der
+ersten Lösung hat man nämlich für~$|z| \geq 1 + R$ trotzdem noch~$|f(z)| \geq 1
+> 0$, und bei der zweiten hat man beim Übergang von der endlichen zur
+> unendlichen geometrischen Reihe auch schon~"`$<$"' statt nur~"`$\leq$"'.
 
 \emph{Bemerkung:} Die in dieser Aufgabe gegebene Schranke ist \emph{asymptotisch
 scharf}: Etwa ist für~$a > 0$ die Schranke zur Polynomgleichung
