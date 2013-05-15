@@ -21,37 +21,37 @@ Lösung~$z$ höchstens die Entfernung
 $1+\max\{|a_0|,\ldots,|a_{n-1}|\}$ zum Ursprung hat.
 \begin{loesung}
 Schreibe~$f(X) = X^n + a_{n - 1} X^{n - 1} + \cdots + a_1 X + a_0$.
-Setze~$R := \max\{|a_0|,\ldots,|a_{n-1}|\}$. Dann gilt für alle~$z \in \CC$
-mit~$|z| > 1 + R$
+Setze~$M := \max\{|a_0|,\ldots,|a_{n-1}|\}$. Dann gilt für alle~$z \in \CC$
+mit~$|z| > 1 + M$
 \begin{align*}
   |f(z)| &= |z^n + a_{n-1}z^{n-1} + \cdots + a_1 z + a_0| \\
   &\geq |z^n| - |a_{n-1}z^{n-1} + \cdots + a_1 z + a_0| \\
   &\geq |z^n| - \left(|a_{n-1}| |z|^{n-1} + \cdots + |a_1| |z| + |a_0|\right) \\
-  &\geq |z^n| - R \cdot \left(|z|^{n-1} + \cdots + |z| + 1\right) \\
-  &= |z^n| - R \cdot \frac{|z|^n-1}{|z|-1} \\
-  &> |z^n| - R \cdot \frac{|z|^n-1}{1+R-1} \\
+  &\geq |z^n| - M \cdot \left(|z|^{n-1} + \cdots + |z| + 1\right) \\
+  &= |z^n| - M \cdot \frac{|z|^n-1}{|z|-1} \\
+  &> |z^n| - M \cdot \frac{|z|^n-1}{1+M-1} \\
   &= |z^n| - (|z|^n - 1) \\
   &= 1 > 0,
 \end{align*}
 insbesondere also~$f(z) \neq 0$. Somit hat jede Lösung der Polynomgleichung
-Betrag $\leq 1 + R$.
+Betrag $\leq 1 + M$.
 
 \emph{Schlechtere Variante:}
-Für alle alle~$z \in \CC$ mit~$|z| > 1 + R$ gilt folgende Hilfsüberlegung (wieso?):
+Für alle alle~$z \in \CC$ mit~$|z| > 1 + M$ gilt folgende Hilfsüberlegung (wieso?):
 \begin{align*}
   \left|a_{n-1} \frac{1}{z} + \cdots + a_1 \frac{1}{z^{n-1}} + a_0
   \frac{1}{z^n}\right| &\stackrel{\triangle}{\leq}
   |a_{n-1}| \frac{1}{|z|} + \cdots + |a_1| \frac{1}{|z|^{n-1}} + |a_0|
   \frac{1}{|z|^n} \\
-  &\leq R \cdot \sum_{i=1}^n \left(\frac{1}{|z|}\right)^i
-  \leq R \cdot \sum_{i=1}^\infty \left(\frac{1}{|z|}\right)^i \\
-  &= R \cdot \frac{|z|^{-1}}{1 - |z|^{-1}} =
-  \underbrace{\frac{R}{|z| - 1}}_{=:\,q} < \frac{R}{(1+R)-1} = 1
+  &\leq M \cdot \sum_{i=1}^n \left(\frac{1}{|z|}\right)^i
+  \leq M \cdot \sum_{i=1}^\infty \left(\frac{1}{|z|}\right)^i \\
+  &= M \cdot \frac{|z|^{-1}}{1 - |z|^{-1}} =
+  \underbrace{\frac{M}{|z| - 1}}_{=:\,q} < \frac{M}{(1+M)-1} = 1
 \end{align*}
 Dabei haben wir die abgeschnittene geometrische Reihe mit der Formel
 \[ \sum_{i=1}^\infty p^n = \frac{1}{1 - p} - 1 =
   \frac{p}{1-p} \]
-behandelt. Somit gilt (wieso?) für alle~$|z| > 1 + R$
+behandelt. Somit gilt (wieso?) für alle~$|z| > 1 + M$
 \[ |f(z)| = |z|^n \left|1 + a_{n-1} \frac{1}{z} + \cdots + a_0 \frac{1}{z^n}\right|
   \geq |z|^n \left(1 - q\right) > 0, \]
 insbesondere also~$f(z) \neq 0$.
@@ -63,22 +63,22 @@ können wir das dadurch, indem wir es ausklammern.
 \emph{Funktionentheoretische Variante:} Wir können das Polynom in seinen
 dominanten Anteil~$X^n$ und den Rest~$g(X) := a_{n-1}X^{n-1} + \cdots + a_1X +
 a_0$ aufspalten. Dann haben wir oben implizit gesehen, dass für~$z \in \CC$
-mit~$|z| = 1 + R$ die Abschätzung
+mit~$|z| = 1 + M$ die Abschätzung
 \[ |g(z)| \leq |z|^n - 1 < |z^n| \]
 gilt. Mit dem Satz von Rouché aus der Funktionentheorie folgt damit, dass die
 holomorphen Funktionen~$z \mapsto z^n$ und~$z \mapsto z^n + g(z) = f(z)$ auf
-der offenen Scheibe um den Ursprung mit Radius~$1 + R$ gleich viele Nullstellen
+der offenen Scheibe um den Ursprung mit Radius~$1 + M$ gleich viele Nullstellen
 besitzen (mit Vielfachheiten gezählt). Da erstere Funktion auf dieser
 Scheibe~$n$ Nullstellen besitzt, muss auch~$f$ dort~$n$ Nullstellen besitzen. Da~$f$
 insgesamt auch nur~$n$ Nullstellen besitzt, kann es keine weiteren außerhalb
 dieser Scheibe geben.
 
 \emph{Bemerkung:} Mit nur wenig Mehraufwand sieht man, dass die Lösungen sogar
-in der \emph{offenen} Kreisscheibe mit Radius~$1 + R$ liegen müssen: Bei der
-ersten Lösung hat man nämlich für~$|z| \geq 1 + R$ trotzdem noch~$|f(z)| \geq 1
+in der \emph{offenen} Kreisscheibe mit Radius~$1 + M$ liegen müssen: Bei der
+ersten Lösung hat man nämlich für~$|z| \geq 1 + M$ trotzdem noch~$|f(z)| \geq 1
 > 0$, und bei der zweiten hat man beim Übergang von der endlichen zur
 unendlichen geometrischen Reihe auch schon~"`$<$"' statt nur~"`$\leq$"'
-(zumindest für~$R > 0$). Bei der funktionentheoretischen Variante folgt das
+(zumindest für~$M > 0$). Bei der funktionentheoretischen Variante folgt das
 sowieso.
 
 \emph{Bemerkung:} Die in dieser Aufgabe gegebene Schranke ist \emph{asymptotisch
@@ -86,10 +86,10 @@ scharf}: Etwa ist für~$a > 0$ die Schranke zur Polynomgleichung
 \[ \left(X - a\right) \left(X + \frac{a}{1+a}\right) =
   X^2 - \frac{a^2}{1 + a} X - \frac{a^2}{1+a} = 0 \]
 durch
-\[ 1 + R = 1 + \frac{a^2}{1 + a} \]
+\[ 1 + M = 1 + \frac{a^2}{1 + a} \]
 gegeben. Für~$a \to \infty$ nähert sich diese dem tatsächlichen größten
 Abstand einer Lösung zum Ursprung -- also~$a$ -- beliebig genau an:
-\[ 1 + R - a = \frac{1}{1 + a} \xrightarrow{a \to \infty} 0. \]
+\[ 1 + M - a = \frac{1}{1 + a} \xrightarrow{a \to \infty} 0. \]
 Trotzdem gibt es noch bessere Schranken (siehe etwa Josep Rubió-Massegú,
 \emph{Note on the location of zeros of polynomials}, 2011,
 \url{http://arxiv.org/abs/1102.2510}). Die Schranke dieser Aufgabe wird
