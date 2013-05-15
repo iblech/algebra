@@ -98,7 +98,7 @@ zunächst die Abschätzung
   |z^i - w^i| &=
     |z - w| \cdot |z^{i-1} + z^{i-2}w + z^{i-3}w^2 + \cdots + zw^{i-2} + w^{i-1}| \\
   &\leq |z-w| \cdot (R^{i-1} + \cdots + R^{i-1}) \\
-  &\leq n R^{i-1} \cdot |z-w| \leq n R^{n-1} \cdot |z-w|
+  &\leq i R^{i-1} \cdot |z-w| \leq n R^{n-1} \cdot |z-w|
 \intertext{für alle~$i = 0, \ldots, n$ und daher folgt}
   |f(z) - f(w)| &=
     \Biggl|\sum_{i=0}^n a_i (z^i - w^i)\Biggr| \leq
@@ -109,10 +109,10 @@ zunächst die Abschätzung
 \end{align*}
 
 \emph{Bemerkung:} Man kann in der Hilfsüberlegung auch auf die
-letzte Abschätzung~$R^{i-1} \leq R^{n-1}$ verzichten. Dann kann man~$\delta$
+letzte Abschätzung~$i R^{i-1} \leq n R^{n-1}$ verzichten. Dann kann man~$\delta$
 sogar etwas kleiner wählen (das ist besser), nämlich als
 \[ \delta = \epsilon \cdot \left[
-  n \cdot \sum_{i=0}^n |a_i| R^{i-1} + 1
+  \sum_{i=0}^n i |a_i| R^{i-1} + 1
 \right]^{-1}, \]
 und muss auch nicht die Einschränkung~$R \geq 1$ annehmen:
 \begin{align*}
@@ -120,8 +120,8 @@ und muss auch nicht die Einschränkung~$R \geq 1$ annehmen:
     \Biggl|\sum_{i=0}^n a_i (z^i - w^i)\Biggr| \leq
     \sum_{i=0}^n |a_i| |z^i - w^i| \\
   &\leq
-    \sum_{i=0}^n |a_i| \cdot n R^{i-1} \cdot |z-w| =
-    \left(n \cdot \sum_{i=0}^n |a_i| R^{i-1}\right) \cdot |z-w| < \epsilon.
+    \sum_{i=0}^n |a_i| \cdot i R^{i-1} \cdot |z-w| =
+    \left(\sum_{i=0}^n i |a_i| R^{i-1}\right) \cdot |z-w| < \epsilon.
 \end{align*}
 
 \emph{Bemerkung:} In Worten lautet die Behauptung, dass die Polynomfunktion~$f$
