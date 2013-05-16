@@ -19,3 +19,6 @@ Blatt 4:
 * A1: gut
 * A2: viele, gut
 * A3: viele, gut
+* A4: viele, gut
+* A5: a) viele, gut, b) okay, c) gut
+* A6: niemand
