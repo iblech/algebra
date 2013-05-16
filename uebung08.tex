@@ -11,9 +11,46 @@
 \maketitle{8}{Abgabe bis 10. Juni 2013, 17:00 Uhr}
 
 \begin{aufgabe}{Irreduzibilitätstest}
-Bestimme numerisch die Nullstellen von~$f(X) = X^4 - 10\,X^2 + 1$ bis auf
+Bestimme numerisch die Nullstellen von~$f(X) = X^4 - 12\,X^2 + 1$ bis auf
 wenige Stellen nach dem Komma, und nutze diese Information um zu zeigen,
 dass~$f(X)$ über den rationalen Zahlen irreduzibel ist.
+
+\begin{loesung}
+Die Nullstellen von~$f(X)$ sind näherungsweise
+\begin{align*}
+  x_1 &\approx -3{,}452, &
+  x_2 &\approx -0{,}290, &
+  x_3 &\approx 0{,}290, &
+  x_4 &\approx 3{,}452.
+\end{align*}
+Da~$f(X)$ normiert und ganzzahlige Koeffizienten hat, können wir nun alle
+Auswahlen der Nullstellen durchgehen und jeweils prüfen, ob die
+elementarsymmetrischen Funktionen in diesen Nullstellen ganze Zahlen ergeben.
+
+\emph{Linearfaktoren:} Keine der Nullstellen ist ganzzahlig, also kann kein
+Linearfaktor abspalten.
+
+\emph{Quadratische Faktoren:} Für jede zweielementige Auswahl der Nullstellen
+sind stets nicht beide elementarsymmetrischen Funktionen in den Nullstellen
+ganzzahlig:
+\begin{align*}
+  e_1(x_1,x_2) &\approx -3{,}7 &
+  e_2(x_1,x_2) &\approx \phantom{+}1{,}0 \\
+  e_1(x_1,x_3) &\approx -3{,}2 &
+  e_2(x_1,x_3) &\approx -1{,}0 \\
+  e_1(x_1,x_4) &\approx \phantom{+}0{,}0 &
+  e_2(x_1,x_4) &\approx -11{,}9 \\
+  e_1(x_2,x_3) &\approx \phantom{+}0{,}0 &
+  e_2(x_2,x_3) &\approx -0{,}1 \\
+  e_1(x_2,x_4) &\approx \phantom{+}3{,}2 &
+  e_2(x_2,x_4) &\approx -1{,}0 \\
+  e_1(x_3,x_4) &\approx \phantom{+}3{,}7 &
+  e_2(x_3,x_4) &\approx \phantom{+}1{,}0
+\end{align*}
+
+\emph{Kubische Faktoren:} Kann es nicht geben, da die komplementären Faktoren
+Linearfaktoren wären.
+\end{loesung}
 \end{aufgabe}
 
 \begin{aufgabe}{Inhalt von Polynomen}
@@ -33,16 +70,36 @@ von~$\widetilde f$ ist.
 \item Sei~$n$ eine ganze Zahl und seien~$a,a', b,b'$ ganze Zahlen mit~$a \equiv
 a'$ und~$b \equiv b'$ modulo~$n$. Rechne explizit nach, dass dann auch~$a+b
 \equiv a'+b'$ modulo~$n$.
-\item Sei~$a$ eine ganze Zahl mit~$a \equiv 1$ modulo~$3$. Für welche
-Exponenten~$k$ ist~$a^k \equiv 2$ modulo~$3$?
-\item Finde zwei Inverse von~$6$ modulo~$35$.
+\item Sei~$a$ eine ganze Zahl mit~$a \equiv 1$ modulo~$5$. Für welche
+Exponenten~$k$ ist~$a^k \equiv 2$ modulo~$5$?
+\item Finde zwei Inverse von~$8$ modulo~$35$.
 \end{enumerate}
+
+\begin{loesungE}
+\item Gelte~$a \equiv a'$ und~$b \equiv b'$ modulo~$n$, d.\,h.~$a - a'$ und~$b
+- b'$ sind jeweils durch~$n$ teilbar. Dann ist auch
+\[ (a+b) - (a'+b') = (a-a') + (b-b') \]
+durch~$n$ teilbar, d.\,h. es gilt~$a+b \equiv a'+b'$.
+
+\item Für keinen einzigen Exponenten ist das erfüllt. Denn wenn~$a \equiv 1$
+modulo~$5$, so sind auch~$a^2$, $a^3$ usw. jeweils kongruent zu~$1$ modulo~$5$.
+Aber~$2$ ist nicht kongruent zu~$1$ modulo~$5$.
+
+\item Ein Inverses ist~$22$, denn~$8 \cdot 22 = 176 = 5 \cdot 35 + 1 \equiv 1$
+modulo~$35$. Ein anderes ist~$-13$.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Reduktion modulo einer Primzahl}
 Sei~$f(X)$ ein normiertes Polynom mit ganzzahligen Koeffizienten. Beweise oder
 widerlege: Ist~$f(X)$ modulo einer Primzahl reduzibel, so ist~$f(X)$ auch über
 den rationalen Zahlen reduzibel.
+
+\begin{loesung}
+Das stimmt nicht. Etwa ist das Polynom~$f(X) = X^2 + 1$ über der Primzahl~$2$
+reduzibel, denn da gilt~$f(X) = X^2 + 1 \equiv (X + 1)^2$ -- aber
+bekanntermaßen ist~$f(X)$ nicht üben den rationalen Zahlen reduzibel.
+\end{loesung}
 \end{aufgabe}
 
 \begin{aufgabe}{Irreduzibilitätstest nach Leopold Kronecker}
@@ -57,8 +114,35 @@ dass es nur endlich viele Polynome~$g(X), h(X)$ mit ganzzahligen Koeffizienten
 und~$f = g \cdot h$ gibt.
 \item Verwende Teilaufgabe~b), um ein Verfahren anzugeben, das von einem
 primitiven Polynom~$f(X)$ mit ganzzahligen Koeffizienten feststellt, ob es
-reduzibel oder irreduzibel ist.
+über den rationalen Zahlen reduzibel oder irreduzibel ist.
 \end{enumerate}
+
+\begin{loesungE}
+\item Jede der Zahlen~$b_i$ besitzt nur endlich viele Teiler, da sie nicht null
+sind. Daher gibt es nur endlich viele Tupel~$(g_0,\ldots,g_m)$ mit~$g_i \mid
+b_i$ für alle~$i = 0,\ldots,m$. Wegen des Satzes über die Eindeutigkeit der
+Polynominterpolation gibt es für jedes dieser Tupel nur genau ein Polynom~$g(X)$ mit~$g(i)
+= g_i$ für alle~$i = 0,\ldots,m$.
+
+\item Gelte~$f(X) = g(X) \cdot h(X)$.
+Nach Aufgabe~4e) von Blatt~4 sind dann
+für jedes~$i$ mit~$0 \leq i \leq \frac{n}{2}$ die Zahlen~$g(i)$ und~$h(i)$
+jeweils Teiler von~$b_i := f(i)$. Mindestens einer der beiden Faktoren hat
+Grad~$\leq \frac{n}{2}$; daher folgt mit Teilaufgabe~a), dass es nur endlich
+viele Möglichkeiten für ihn gibt. Der andere Faktor ist aus dem ersten sowieso
+eindeutig bestimmt. Das zeigt zusammengenommen die Behauptung.
+
+\item Von einem gegebenen primitiven Polynom~$f(X)$ vom Grad~$n$ mit ganzzahligen
+Koeffizienten können wir zunächst prüfen, ob eine der Zahlen~$f(i)$ für~$0 \leq i
+\leq \frac{n}{2}$ null ist. Wenn ja, ist~$f(X)$ sicherlich reduzibel. Wenn
+nein, können wir die endlich vielen Teiler der Zahlen~$f(i)$ bestimmen, durch
+Polynominterpolation jeweils ein Polynom~$g(X)$ konstruieren und prüfen, ob die
+Polynomdivision von~$f(X)$ durch~$g(X)$ glatt in einem ganzzahligen Polynom
+aufgeht. Wenn ja, ist~$f(X)$ reduzibel, da wir einen abspaltenden Faktor
+gefunden haben. Wenn die Division so nie aufgeht, ist~$f(X)$ über den ganzen
+Zahlen und wegen seiner Primitivität auch über den rationalen Zahlen
+irreduzibel.
+\end{loesungE}
 \end{aufgabe}
 
 \end{document}
