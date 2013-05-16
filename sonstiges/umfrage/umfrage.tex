@@ -1,0 +1,66 @@
+\documentclass[12pt,a4paper,ngerman]{scrartcl}
+% Auf DIN-A5-Zettel packen mittels:
+% dfjam --landscape --nup 2x1 --outfile umfrage-2on1.pdf umfrage.pdf umfrage.pdf
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx,amssymb}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{lmodern}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+\setlength\parskip{\medskipamount}
+\setlength\parindent{0pt}
+
+\usepackage{geometry}
+\geometry{tmargin=0.3cm,bmargin=0.3cm,lmargin=0.3cm,rmargin=0.3cm}
+
+\pagestyle{empty}
+
+\newcommand{\quest}[1]{$\bigstar$ #1 \vfill}
+\newcommand{\neugierde}[1]{\textbf{Nur aus Neugierde:} #1}
+
+\renewcommand\familydefault{\sfdefault}
+
+\begin{document}
+
+\begin{center}\Large\textbf{Zwischenumfrage in Algebra~I}\end{center}
+
+\large
+
+\quest{\textbf{Was gefällt dir an der Algebra~I gut?} \\
+Stichwörter: Vorlesung, Globalübung, Übungsblätter, Übungen, Inhalt/Thema,
+Prüfungsmodus}
+
+\hrulefill
+
+\quest{\textbf{Was gefällt dir nicht? Bitte möglichst kritisch beantworten!}}
+
+\hrulefill
+
+\quest{\textbf{Was wünschst du dir für den Rest des Semesters?} \\
+Stichwörter: Vorlesungstempo, Übungsblattlänge und -schwierigkeit,
+Hinweise zu den Übungsblättern, Unterstützung bei Fragen}
+
+\hrulefill
+
+\neugierde{{Wie viele Stunden investierst du pro Woche in die
+Algebra~I außerhalb der Vorlesung und Übung?}}
+\underline{\quad\qquad} Stunden.
+
+\begin{center}\large Vielen Dank! \includegraphics[height=1em]{smile}
+
+\includegraphics[height=127px,width=170px]{tumblr_lwq9efEyjK1qfwtbao1_500}
+\,
+\includegraphics[height=127px,width=170px]{math-troll}
+\,
+\includegraphics[height=127px,width=170px]{Free_Smiles_Dear_Math} \\[0.4cm]
+\includegraphics[height=127px,width=170px]{phil}
+\,
+\includegraphics[height=127px,width=170px]{3-ihasafunny-cat-did-the-math-and-you-cannot-afford-the-dog1}
+\,
+\includegraphics[height=127px,width=170px]{tumblr_lurqp6jVCU1qfv9pvo1_500}
+\end{center}
+
+\end{document}
