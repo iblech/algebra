@@ -264,10 +264,10 @@ Polynom als Ganzes invariant lassen.
 \item Sei $f(X)$ ein Polynom und~$n$ eine natürliche Zahl. Zeige:
 $f^{(n + 1)} = 0 \Longleftrightarrow \deg f \leq n.$
 
-\item Sei $f(X)$ ein Polynom und $x$ eine komplexe Zahl. Zeige, dass die
-Entwicklung von $f(X)$ nach $X - x$ durch die \emph{Taylorsche Formel} gegeben
+\item Sei $f(X)$ ein Polynom und $a$ eine komplexe Zahl. Zeige, dass die
+Entwicklung von $f(X)$ nach $X - a$ durch die \emph{Taylorsche Formel} gegeben
 ist (nach Brooke Taylor, 1685--1731, britischer Mathematiker):
-\[ f(X) = \sum_{k = 0}^\infty \frac{f^{(k)}(x)}{k!} \, (X - x)^k \]
+\[ f(X) = \sum_{k = 0}^\infty \frac{f^{(k)}(a)}{k!} \, (X - a)^k \]
 \end{enumerate}
 
 \ifloesungen\newpage\fi
@@ -316,22 +316,16 @@ Koeffizient~$\frac{i!}{(i-(n+1))!} a_i$ null ist. Also sind alle~$a_i$ mit~$i
 (wieso?), die Identität für die Spezialfälle~$f := X^n$, $n \geq 0$, zu
 bestätigen. Dies gelingt mithilfe des binomischen Lehrsatzes:
 \begin{align*}
-  \sum_{k=0}^\infty \frac{f^{(k)}(x)}{k!} (X-x)^k &=
-  \sum_{k=0}^\infty \frac{(X^n)^{(k)}(x)}{k!} (X-x)^k \\
-  &= \sum_{k=0}^n \frac{n! / (n-k)! \cdot x^{n-k}}{k!} (X-x)^k \\
-  &= \sum_{k=0}^n \binom{n}{k} x^{n-k} (X-x)^k \\
-  &= (x + (X-x))^n = X^n = f.
+  \sum_{k=0}^\infty \frac{f^{(k)}(a)}{k!} (X-a)^k &=
+  \sum_{k=0}^\infty \frac{(X^n)^{(k)}(a)}{k!} (X-a)^k \\
+  &= \sum_{k=0}^n \frac{n! / (n-k)! \cdot a^{n-k}}{k!} (X-a)^k \\
+  &= \sum_{k=0}^n \binom{n}{k} a^{n-k} (X-a)^k \\
+  &= (a + (X-a))^n = X^n = f.
 \end{align*}
 \end{loesungE}
 \end{aufgabe}
 
 \end{document} 
-
-\begin{exercise}(2 Punkte)\newline
-    Gib eine normierte Polynomgleichung dritten Grades an, welche \(1\)
-    als zweifache Lösung, \(2\) als einfache Lösung und keine weiteren Lösungen
-    besitzt.
-\end{exercise}
 
 \begin{exercise}(3 Punkte)\newline
     Warum sind beide Seiten von 
