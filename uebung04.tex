@@ -337,7 +337,7 @@ Polynomgleichung
 konstruieren wir eine erste bessere Näherung~$z$. Diese ist insofern besser,
 als dass sie die Abschätzung
 \begin{equation}\label{absch}
-  |z^n + b_{n-1}z^{n-1} + \cdots + b_1 z + b_0| \leq q |b_0|
+  |z^n + b_{n-1}z^{n-1} + \cdots + b_1 z + b_0| \leq q \cdot |b_0|
 \end{equation}
 erfüllt, wobei~$q := 1 - \frac{1}{2} \cdot 3^{1 - n^2}$ ein fester Faktor
 kleiner als Eins ist. (Zum Vergleich: Für die Näherung~$0$ ergibt sich als
@@ -356,10 +356,10 @@ lassen.)
 
 Um nun die Frage zu klären, ob man~$3$ durch eine kleinere Zahl ersetzen kann,
 müssen wir den gesamten Beweis des Fundamentalsatzes durchgehen und bei jedem
-Vorkommen von~$3$ prüfen, ob der jeweilige Schritt auch bei einer kleineren
+Vorkommen von~$3$ prüfen, ob der jeweilige Schritt auch mit einer kleineren
 Zahl durchgeht. Bei einer solchen Analyse stellt man fest: Für den Großteil des
-Beweises spielt der Wert dieser Konstanten keine Rolle (solange er nur positiv
-ist), erst bei den Abschätzungen~(1.47), (1.48), (1.49) und der finalen
+Beweises spielt der Wert dieser Konstanten keine Rolle (solange er nur mehr
+als~$1$ ist), erst bei den Abschätzungen~(1.47), (1.48), (1.49) und der finalen
 Abschätzung (auf Seite~41) wird es kritisch.
 
 Wir wollen unseren kleineren Ersatz für die Zahl~$3$ mit~"`$\widetilde 3$"'
@@ -378,7 +378,7 @@ veränderten Abschätzungen lauten dann:
     |b_0| - \left(\frac{\widetilde 3^{1-k}}{\widetilde 2} + 1 -
     \frac{2}{\widetilde 2}\right) m(r)
 \end{align}
-Auf der rechten Seite wollen wir nun mittels Abschätzung~(1.47) weiter nach
+Auf der rechten Seite wollen wir nun, genau wie im Skript, mittels Ungleichung~(1.47) weiter nach
 oben abschätzen. Dazu muss aber der Vorfaktor~$\left(\cdots\right)$ positiv
 sein; eine kleine Nebenrechung zeigt, dass das genau dann der Fall ist, wenn
 \begin{equation}\label{absch2}
