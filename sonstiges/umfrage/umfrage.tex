@@ -1,6 +1,6 @@
 \documentclass[12pt,a4paper,ngerman]{scrartcl}
 % Auf DIN-A5-Zettel packen mittels:
-% dfjam --landscape --nup 2x1 --outfile umfrage-2on1.pdf umfrage.pdf umfrage.pdf
+% pdfjam --landscape --nup 2x1 --outfile umfrage-2on1.pdf umfrage.pdf umfrage.pdf
 
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
@@ -14,7 +14,7 @@
 \setlength\parindent{0pt}
 
 \usepackage{geometry}
-\geometry{tmargin=0.3cm,bmargin=0.3cm,lmargin=0.3cm,rmargin=0.3cm}
+\geometry{tmargin=0.3cm,bmargin=0.0cm,lmargin=0.6cm,rmargin=0.6cm}
 
 \pagestyle{empty}
 
@@ -26,8 +26,6 @@
 \begin{document}
 
 \begin{center}\Large\textbf{Zwischenumfrage in Algebra~I}\end{center}
-
-\large
 
 \quest{\textbf{Was gefällt dir an der Algebra~I gut?} \\
 Stichwörter: Vorlesung, Globalübung, Übungsblätter, Übungen, Inhalt/Thema,
@@ -41,13 +39,15 @@ Prüfungsmodus}
 
 \quest{\textbf{Was wünschst du dir für den Rest des Semesters?} \\
 Stichwörter: Vorlesungstempo, Übungsblattlänge und -schwierigkeit,
-Hinweise zu den Übungsblättern, Konzeption der Globalübung, Unterstützung bei Fragen}
+Hinweise zu den Übungsblättern, Korrektur der Übungsblätter, Feedback zur
+eigenen Leistung, Konzeption der Globalübung, Unterstützung bei Fragen}
 
 \hrulefill
 
 \neugierde{{Wie viele Stunden investierst du pro Woche in die
-Algebra~I außerhalb der Vorlesung und Übung?}}
+Algebra~I außerhalb von Vorlesung und Übung?}}
 \underline{\quad\qquad} Stunden.
+Bist du Erstsemester? $\square$ Ja $\quad\square$ Nein
 
 \begin{center}\large Vielen Dank! \includegraphics[height=1em]{smile}
 
