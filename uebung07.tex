@@ -23,10 +23,59 @@ größter gemeinsamer Teiler von~$f$ und~$g$ ist.
 Gib ein Verfahren zur Berechnung des größten gemeinsamen Teilers
 von~$f$ und~$g$ über die Zerlegung von~$f$ und~$g$ in ihre
 irreduziblen Faktoren an.
-\item Seien~$f$ und~$g$ wie in~b) und~c). Definiere, was man unter dem
+\item Seien~$f$ und~$g$ wie in~b) und~c). Definiere, was man unter einem
 \emph{kleinsten gemeinsamen Vielfachen} von~$f$ und~$g$ verstehen sollte,
 und gib eine Konstruktionsvorschrift für es an.
 \end{enumerate}
+
+\begin{loesungE}
+\item
+
+\item \emph{Existenz (kurz auch im Skript abgehandelt):} Dank des euklidischen
+Algorithmus gibt es ein normiertes Polynom~$d$, welches ein gemeinsamer Teiler
+von~$f$ und~$g$ ist und für gewisse weitere Polynome~$p$ und~$q$ die Beziehung
+\[ d = p \cdot f + q \cdot g \]
+erfüllt. Aus dieser folgt, dass~$d$ sogar ein größter gemeinsamer Teiler ist,
+d.\,h. ein Vielfaches jedes anderen gemeinsamen Teilers ist: Ist~$e$ ein
+beliebiger gemeinsamer Teiler von~$f$ und~$g$, so ist er auch ein Teiler
+von~$pf$ und~$qg$ und somit auch ein Teiler der rechten Seite der Gleichung,
+also von~$d$.
+
+\emph{Eindeutigkeit:} Seien~$d$ und~$\widetilde d$ beides normierte
+größte gemeinsame Teiler von~$f$ und~$g$. Da~$d$ ein größer gemeinsamer Teiler
+ist, folgt~$\widetilde d \mid d$. Umgekehrt folgt~$d \mid \widetilde d$,
+da~$\widetilde d$ ein größter gemeinsamer Teiler ist. Da~$d$ und~$\widetilde d$
+beide normiert sind, folgt~$d = \widetilde d$.
+
+\item Wir können~$f$ und~$g$ in ihre irreduziblen Faktoren~$p_i$ zerlegen:
+\begin{align*}
+  f &= \prod_i p_i^{a_i} \\
+  g &= \prod_i p_i^{b_i}
+\end{align*}
+Dabei dürfen die Exponenten auch null sein -- damit tragen wir, ohne die
+Notation verkomplizieren zu müssen, dem Umstand Rechnung, dass manche Faktoren
+vielleicht nur in einem der beiden Polynome vorkommen. Als Vorschlag für den
+größten gemeinsamen Teiler definieren wir
+\[ d = \prod_i p_i^{c_i} \]
+mit~$c_i := \min\{ a_i, b_i \}$ für alle Indizes~$i$. Klar ist zumindest, dass
+dieses Polynom ein gemeinsamer Teiler von~$f$ und~$g$ ist. Zum Nachweis,
+dass~$d$ wirklich größter gemeinsamer Teiler ist, sei ein beliebiger
+gemeinsamer Teiler~$\widetilde d$ von~$f$ und~$g$ gegeben. Dann folgt (siehe
+unten), dass in~$\widetilde d$ nur die Faktoren~$p_i$ (und keine anderen)
+vorkommen, und dass diese höchstens mit Vielfachheit~$a_i$ (wegen~$\widetilde d
+\mid f$) und zugleich höchstens mit Vielfachheit~$b_i$ (wegen~$\widetilde d
+\mid g$) vorkommen. Unter'm Strich kommen sie also höchstens mit
+Vielfachheit~$c_i$ vor, also gilt~$\widetilde d \mid $.
+
+Implizit haben wir dabei folgendes allgemeines Lemma benutzt: Sei~$p$ ein irreduzibles
+Polynom und gelte~$f \mid g$. Dann ist die Vielfachheit von~$p$ in~$f$
+höchstens gleich der Vielfachheit von~$p$ in~$g$.
+
+\item Folgende Definition ist sinnvoll: Ein Polynom~$k$ heißt genau dann
+\emph{kleinstes gemeinsames Vielfaches} von~$f$ und~$g$, wenn~$k$ ein
+gemeinsames Vielfaches von~$f$ und~$g$ ist und für jedes gemeinsame
+Vielfache~$\widetilde k$ von~$f$ und~$g$ gilt:~$k \mid \widetilde k$.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Separable Polynome}
@@ -45,13 +94,39 @@ und~$f'$ das konstante Polynom~$1$ ist.
 \end{enumerate}
 
 \begin{loesungE}
-\item ...
+\item Wir befolgen das Verfahren des Skripts und berechnen daher zunächst die
+normierte Ableitung des Polynoms~$f = X^7-X^6+4\,X^4-4\,X^3+4\,X-4$:
+\[ \frac{1}{7} f'(X) = X^6 - \frac{6}{7} X^5 + \frac{16}{7} X^3 - \frac{12}{7}
+X^2 + \frac{4}{7}. \]
+Der eindeutig bestimmte normierte größte gemeinsame Teiler von~$f$ und~$f'/7$
+ist das Polynom~$d(X) = X^3 + 2$, wie eine Nebenrechnung mit dem euklidischen
+Algorithmus zeigt, und es gilt~$f(X) = d(X) \cdot \widetilde f(X)$
+mit~$\widetilde f(X) = X^4 - X^3 + 2\,X - 2$. Die gesuchte Gleichung ist also
+\[ X^4 - X^3 + 2\,X - 2 = 0. \]
+
+\emph{Variante:} Vielleicht schafft man es auch irgendwie, das gegebene
+Polynom~$f$ zu faktorisieren: Es gilt~$f(X) = (X-1) \cdot (X^3 + 2)^2$. Dann
+sieht man sofort, dass
+\[ (X-1) \cdot (X^3 + 2) = 0 \]
+die gesuchte Gleichung ist. Diese stimmt mit obiger überein.
+
 \item Das Polynom~$f_a$ ist genau dann nicht separabel, wenn seine Diskriminante null
 ist:
 \[ \Delta_{f_a} = -4p^3 - 27q^2 = \cdots =
   -32 \cdot a^6 - 27 a^2 + 324 a - 972 \stackrel{!}{=} 0. \]
 Damit haben wir die geforderte Polynomgleichung gefunden.
-\item ...
+
+\item Sei~$d(X)$ der normierte größte gemeinsame Teiler
+von~$f$ und~$f'$. Dann sind die Nullstellen von~$d(X)$ (in den algebraischen
+Zahlen) genau die mehrfachen Nullstellen von~$f(X)$, d.\,h. diejenigen mit
+Vielfachheit~$\geq 2$.
+
+"`$\Longrightarrow$"': Da~$f(X)$ nach Voraussetzung keine mehrfachen
+Nullstellen besitzt, besitzt~$d(X)$ also keine einzige Nullstelle. Da es
+normiert ist, muss es daher gleich dem Einspolynom sein.
+
+"`$\Longleftarrow$"': Da~$d(X)$ nach Voraussetzung keine Nullstellen besitzt,
+besitzt~$f(X)$ keinerlei mehrfache Nullstellen.
 \end{loesungE}
 \end{aufgabe}
 
@@ -69,6 +144,8 @@ rationalen Zahlen irreduzibel ist.
 \end{enumerate}
 
 \begin{loesungE}
+\item Ja!
+
 \item Sei~$f(X)$ ein normiertes Polynom vom Grad~2 oder~3 mit rationalen
 Koeffizienten. Die Rückrichtung ist klar: Wenn~$f$ eine rationale
 Nullstelle~$x$ besitzt, geht die Division von~$f$ durch den Linearfaktor~$X-x$
@@ -80,6 +157,21 @@ Form~$X-x$ für eine gewisse rationale Zahl~$x$. Also besitzt~$f$ eine rationale
 Nullstelle, nämlich~$x$.
 
 \item Das Polynom~$(X^2+1)^2$ ist eines von unzähligen Beispielen.
+
+\item Nach Teilaufgabe~b) genügt es, nachzuweisen, dass das gegebene Polynom
+keine rationalen Nullstellen besitzt. Äquivalent ist zu zeigen, dass das
+mit~$10$ durchmultiplizierte Polynom
+\[ 10 \, X^3 - 15 \, X^2 + 10 \, X - 12 \]
+keine rationalen Nullstellen besitzt. In vollständig gekürzter Darstellung
+müssen Zähler und Nenner solcher Nullstellen Teiler von~$-12$ bzw.~$10$ sein.
+Also kommen nur die Möglichkeiten
+\begin{align*}
+  \text{Zähler} &\in \{ \pm 1, \pm 2, \pm 3, \pm 4, \pm 6, \pm 12 \}, \\
+  \text{Nenner} &\in \{ \pm 1, \pm 2, \pm 5, \pm 10 \},
+\end{align*}
+in Betracht. Probiert man diese Möglichkeiten alle durch (ein paar fallen
+wegen fehlender Teilerfremdheit wieder weg), sieht man: Das Polynom hat keine
+rationalen Nullstellen.
 \end{loesungE}
 \end{aufgabe}
 
@@ -100,8 +192,31 @@ Zeige, dass~$f$ dann schon eines der~$g_i$ teilt.
 \item Sei~$f(X)$ ein primes Polynom. Da~$f$ nicht das Einspolynom ist, hat es
 mindestens Grad~1 (wieso?). Es bleibt also nur zu zeigen, dass~$f(X) = f(X)$
 die \emph{einzige} Zerlegung von~$f$ ist. Sei dazu~$f = g \cdot h$ mit
-normierten nichtkonstanten Polynomen~$g(X), h(X)$ mit rationalen Koeffizienten. Dann folgt
-insbesondere~$f \mid gh$, also nach Voraussetzung~$f \mid g$ oder~$f \mid h$.
+normierten nichtkonstanten Polynomen~$g(X), h(X)$ mit rationalen Koeffizienten
+eine hypothetische Zerlegung.
+Dann folgt insbesondere~$f \mid gh$, also wegen der Primalität~$f \mid g$ oder~$f
+\mid h$.
+
+Im ersten Fall folgt~$g = f \cdot \widetilde g$ für ein
+Polynom~$\widetilde g$. Dieses Polynom muss normiert sein, da~$g$ und~$h$ es
+sind. Eingesetzt ergibt sich~$f = f \widetilde g h$; ein Gradvergleich zeigt,
+dass dann~$h$ doch konstant ist -- das ist ein Widerspruch. Analog verfährt man
+im zweiten Fall.
+
+\item Wir führen einen Induktionsbeweis. Der Induktionsanfang~$n = 0$ ist
+witzig: Für ihn müssen wir zeigen, dass aus der Voraussetzung~$f \mid 1$
+(leeres Produkt) eine unmögliche Aussage folgt (nämlich, dass es ein~$i \in
+\emptyset$ gibt). Da die Voraussetzung~$f \mid 1$ nie erfüllt ist (irreduzible
+Polynome haben mindestens Grad~1), ist diese Implikation trivialerweise
+erfüllt.
+
+Wenn man mag, kann man die Induktion auch erst bei~$n = 1$ beginnen: Dann ist
+der Induktionsanfang klar und bereit weniger Kopfschmerzen.
+
+Für den Beweis des Induktionsschritts~$n \to n + 1$ gelte~$f \mid g_1 \cdots
+g_{n+1} = (g_1 \cdots g_n) \cdot g_{n+1}$. Nach Folgerung~3.11 folgt dann~$f
+\mid g_1 \cdots g_n$ oder~$f \mid g_{n+1}$. Im zweiten Fall sind wir sofort
+fertig, im ersten Fall nach Anwendung der Induktionsvoraussetzung.
 \end{loesungE}
 \end{aufgabe}
 
