@@ -111,7 +111,7 @@ gesehen haben, folgt:
   x_2 &= \frac{(x_1 + x_2) - (x_1 - x_2)}{2} = \frac{-b \mp \sqrt{\Delta}}{2}
 \end{align*}
 
-\emph{Variante 2 (lediglich Verifikaiton):} Alternativ können wir uns damit
+\emph{Variante 2 (lediglich Verifikation):} Alternativ können wir uns damit
 begnügen, die bekannte Formel zu verfizieren:
 \[ \frac{-b \pm \sqrt{b^2 - 4c}}{2} =
   \frac{x_1 + x_2 \pm \sqrt{(x_1 - x_2)^2}}{2} =
@@ -182,10 +182,14 @@ können wir diese dadurch bestimmen, indem wir bestimmte einfache
 Beispielgleichungen betrachten:
 \begin{enumerate}
 \item[1.] Die Gleichung~$X^3 - X = 0$ hat~$p = -1$, $q = 0$ und die drei
-Lösungen~$-1, 0, 1$. Ihre Diskriminante ist~4. Also folgt aus
-$4 = \Delta = \alpha (-1)^3$,
+Lösungen~$-1, 0, 1$. Ihre Diskriminante ist~$4$. Also folgt aus
+$4 = \Delta = \alpha \cdot (-1)^3$,
 dass~$\alpha = -4$ sein muss.
-\item[2.] Die Gleichung~$X^3 - 1 = 0$ hat~$p = 0$, $q = -1$ und die drei
+\item[2.] Die Gleichung~$X^3 - 3\,X + 2 = 0$ hat~$p = -3$, $q = 2$ und die drei
+Lösungen~$1, 1, -2$. Ihre Diskriminante ist~$0$. Also folgt aus~$0 = \Delta =
+-4 \cdot (-3)^3 + \beta \cdot 2^2$, dass~$\beta = -27$ sein muss.
+\item[2.'] \emph{(alternativ)}
+Die Gleichung~$X^3 - 1 = 0$ hat~$p = 0$, $q = -1$ und die drei
 Lösungen~$1, \omega, \omega^2$ mit~$\omega = \exp(2\pi\i/3)$. Ihre
 Diskriminante ist~$-27$ -- wenn man die Beziehung~$\omega^2 = -\omega - 1$, die
 wir schon in Aufgabe~5 von Blatt~2 gesehen haben, verwendet, ist die Rechnung
@@ -260,10 +264,10 @@ Polynom als Ganzes invariant lassen.
 \item Sei $f(X)$ ein Polynom und~$n$ eine natürliche Zahl. Zeige:
 $f^{(n + 1)} = 0 \Longleftrightarrow \deg f \leq n.$
 
-\item Sei $f(X)$ ein Polynom und $x$ eine komplexe Zahl. Zeige, dass die
-Entwicklung von $f(X)$ nach $X - x$ durch die \emph{Taylorsche Formel} gegeben
+\item Sei $f(X)$ ein Polynom und $a$ eine komplexe Zahl. Zeige, dass die
+Entwicklung von $f(X)$ nach $X - a$ durch die \emph{Taylorsche Formel} gegeben
 ist (nach Brooke Taylor, 1685--1731, britischer Mathematiker):
-\[ f(X) = \sum_{k = 0}^\infty \frac{f^{(k)}(x)}{k!} \, (X - x)^k \]
+\[ f(X) = \sum_{k = 0}^\infty \frac{f^{(k)}(a)}{k!} \, (X - a)^k \]
 \end{enumerate}
 
 \ifloesungen\newpage\fi
@@ -312,22 +316,16 @@ Koeffizient~$\frac{i!}{(i-(n+1))!} a_i$ null ist. Also sind alle~$a_i$ mit~$i
 (wieso?), die Identität für die Spezialfälle~$f := X^n$, $n \geq 0$, zu
 bestätigen. Dies gelingt mithilfe des binomischen Lehrsatzes:
 \begin{align*}
-  \sum_{k=0}^\infty \frac{f^{(k)}(x)}{k!} (X-x)^k &=
-  \sum_{k=0}^\infty \frac{(X^n)^{(k)}(x)}{k!} (X-x)^k \\
-  &= \sum_{k=0}^n \frac{n! / (n-k)! \cdot x^{n-k}}{k!} (X-x)^k \\
-  &= \sum_{k=0}^n \binom{n}{k} x^{n-k} (X-x)^k \\
-  &= (x + (X-x))^n = X^n = f.
+  \sum_{k=0}^\infty \frac{f^{(k)}(a)}{k!} (X-a)^k &=
+  \sum_{k=0}^\infty \frac{(X^n)^{(k)}(a)}{k!} (X-a)^k \\
+  &= \sum_{k=0}^n \frac{n! / (n-k)! \cdot a^{n-k}}{k!} (X-a)^k \\
+  &= \sum_{k=0}^n \binom{n}{k} a^{n-k} (X-a)^k \\
+  &= (a + (X-a))^n = X^n = f.
 \end{align*}
 \end{loesungE}
 \end{aufgabe}
 
 \end{document} 
-
-\begin{exercise}(2 Punkte)\newline
-    Gib eine normierte Polynomgleichung dritten Grades an, welche \(1\)
-    als zweifache Lösung, \(2\) als einfache Lösung und keine weiteren Lösungen
-    besitzt.
-\end{exercise}
 
 \begin{exercise}(3 Punkte)\newline
     Warum sind beide Seiten von 

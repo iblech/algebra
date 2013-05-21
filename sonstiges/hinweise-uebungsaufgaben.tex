@@ -110,6 +110,39 @@ binomische Lehrsatz
 \[ (a + b)^n = \sum_{i=0}^n \binom{n}{i} a^i \, b^{n-i} \]
 und die Formel $\binom{n}{k} = \frac{n!}{k! \cdot (n-k)!}$ hilfreich.
 
+
+\section*{Übungsblatt 6}
+
+\paragraph{Aufgabe 2.} Bei Teilaufgabe~a) spart man sich viel Rechenaufwand,
+wenn man durch die Substitution~$Y := X + \frac{a}{3}$ die gegebene Gleichung
+auf die reduzierte Form
+\[ Y^3 + pY + q = 0 \quad\text{mit}\quad
+  p = b - \frac{a^2}{3}, q = \frac{2a^3 - 9ab + 27c}{27} \]
+bringt. Die Diskriminante dieser Gleichung ist nämlich dieselbe wie die von der
+ursprünglichen Gleichung (wieso?) und dank Aufgabe~3b) von Übungsblatt~5
+einfacher zu berechnen. Vielleicht findet ihr aber auch andere kreative
+Lösungswege. Nur zur Kontrolle: Das Ergebnis wird
+\[ \Delta = a^2b^2 - 4b^3 - 4a^3c - 27c^2 + 18abc \]
+sein. Teilaufgabe~b) ist unabhängig von~a) bearbeitbar.
+
+\paragraph{Aufgabe 5.} Die Definition von~$R$ in Teilaufgabe~a) lautet etwas
+ausführlicher
+\[ R = \prod_{i=1}^n \prod_{j=1}^m (x_i - y_j). \]
+Für die Bearbeitung der Aufgabe ist Satz~2.12 von Seite~58 des Skripts
+hilfreich. Ohne Beweis kann verwendet werden, dass dieser nicht nur für
+Polynome mit ganzen, rationalen, reellen, komplexen und algebraischen
+Koeffizienten funktioniert, sondern auch für Polynome, deren Koeffizienten
+selbst aus einem Rechenbereich von Polynomen (oder einem Rechenbereich von
+symmetrischen Polynomen) stammen. Diesen Satz wird man dann insgesamt zweimal
+anwenden müssen. Teilaufgabe~b) kann \emph{unabhängig} von Teilaufgabe~a)
+bearbeitet werden. Ein Ansatz ist (wieso?), den Ausdruck
+\[ R := (x_1 - y_1) \cdot (x_1 - y_2) \cdot (x_2 - y_1) \cdot (x_2 - y_2) \]
+zu verwenden, wobei~$x_1,x_2$ die Lösungen der ersten und~$y_1,y_2$ die
+Lösungen der zweiten Gleichung sind. Dann muss man diesen Ausdruck so
+umschreiben, dass nur noch die Gleichungskoeffizienten, aber nicht mehr die
+Lösungen, vorkommen. Das ist etwa mit den Beziehungen aus dem Vietaschen Satz
+oder der Mitternachtsformel möglich.
+
 \end{document}
 
 
@@ -118,9 +151,14 @@ und die Formel $\binom{n}{k} = \frac{n!}{k! \cdot (n-k)!}$ hilfreich.
 \paragraph{Aufgabe 1.} Bei Teilaufgabe~a) sollte man unbedingt den euklidischen
 Algorithmus verwenden.
 
-\paragraph{Aufgabe 2.} Das Vorgehen für Teilaufgabe~b) ist in Beispiel~3.5 auf
-Seite~75 des Skripts beschrieben. Für Teilaufgabe~c) mag die Resultante von
-Blatt~6, Aufgabe~3 nützlich sein.
+\paragraph{Aufgabe 2.} Das Vorgehen für Teilaufgabe~a) ist in Beispiel~3.5 auf
+Seite~75 des Skripts beschrieben. Für Teilaufgabe~b) mag die Diskriminante
+hilfreich sein.
 
 \paragraph{Aufgabe 4.} Mit \emph{Einspolynom} ist das konstante Polynom~$1$
 gemeint.
+
+
+\section*{Übungsblatt 9}
+
+A1b): "nichttrivial", "verschwindend" erklären"

@@ -1,6 +1,10 @@
 \documentclass{algblatt}
 \input{config.tex}
-\geometry{tmargin=2cm,bmargin=2cm,lmargin=2.85cm,rmargin=2.85cm}
+\ifloesungen
+  \geometry{tmargin=2cm,bmargin=2cm,lmargin=2.35cm,rmargin=2.35cm}
+\else
+  \geometry{tmargin=2cm,bmargin=2cm,lmargin=2.85cm,rmargin=2.85cm}
+\fi
 
 %\setlength{\titleskip}{0.7em}
 \setlength{\aufgabenskip}{1.4em}
@@ -16,37 +20,38 @@ Polynomgleichung mit komplexen Koeffizienten. Zeige, dass jede komplexe
 Lösung~$z$ höchstens die Entfernung
 $1+\max\{|a_0|,\ldots,|a_{n-1}|\}$ zum Ursprung hat.
 \begin{loesung}
-Sei~$R := \max\{|a_0|,\ldots,|a_{n-1}|\}$. Dann gilt für alle~$z \in \CC$
-mit~$|z| > 1 + R$
+Schreibe~$f(X) = X^n + a_{n - 1} X^{n - 1} + \cdots + a_1 X + a_0$.
+Setze~$M := \max\{|a_0|,\ldots,|a_{n-1}|\}$. Dann gilt für alle~$z \in \CC$
+mit~$|z| > 1 + M$
 \begin{align*}
   |f(z)| &= |z^n + a_{n-1}z^{n-1} + \cdots + a_1 z + a_0| \\
   &\geq |z^n| - |a_{n-1}z^{n-1} + \cdots + a_1 z + a_0| \\
   &\geq |z^n| - \left(|a_{n-1}| |z|^{n-1} + \cdots + |a_1| |z| + |a_0|\right) \\
-  &\geq |z^n| - R \cdot \left(|z|^{n-1} + \cdots + |z| + 1\right) \\
-  &= |z^n| - R \cdot \frac{|z|^n-1}{|z|-1} \\
-  &> |z^n| - R \cdot \frac{|z|^n-1}{1+R-1} \\
+  &\geq |z^n| - M \cdot \left(|z|^{n-1} + \cdots + |z| + 1\right) \\
+  &= |z^n| - M \cdot \frac{|z|^n-1}{|z|-1} \\
+  &> |z^n| - M \cdot \frac{|z|^n-1}{1+M-1} \\
   &= |z^n| - (|z|^n - 1) \\
   &= 1 > 0,
 \end{align*}
 insbesondere also~$f(z) \neq 0$. Somit hat jede Lösung der Polynomgleichung
-Betrag $\leq 1 + R$.
+Betrag $\leq 1 + M$.
 
-\emph{Schlechtere Variante.}
-Für alle alle~$z \in \CC$ mit~$|z| > 1 + R$ gilt folgende Hilfsüberlegung (wieso?):
+\emph{Schlechtere Variante:}
+Für alle alle~$z \in \CC$ mit~$|z| > 1 + M$ gilt folgende Hilfsüberlegung (wieso?):
 \begin{align*}
   \left|a_{n-1} \frac{1}{z} + \cdots + a_1 \frac{1}{z^{n-1}} + a_0
   \frac{1}{z^n}\right| &\stackrel{\triangle}{\leq}
   |a_{n-1}| \frac{1}{|z|} + \cdots + |a_1| \frac{1}{|z|^{n-1}} + |a_0|
   \frac{1}{|z|^n} \\
-  &\leq R \cdot \sum_{i=1}^n \left(\frac{1}{|z|}\right)^i
-  \leq R \cdot \sum_{i=1}^\infty \left(\frac{1}{|z|}\right)^i \\
-  &= R \cdot \frac{|z|^{-1}}{1 - |z|^{-1}} =
-  \underbrace{\frac{R}{|z| - 1}}_{=:\,q} < \frac{R}{(1+R)-1} = 1
+  &\leq M \cdot \sum_{i=1}^n \left(\frac{1}{|z|}\right)^i
+  \leq M \cdot \sum_{i=1}^\infty \left(\frac{1}{|z|}\right)^i \\
+  &= M \cdot \frac{|z|^{-1}}{1 - |z|^{-1}} =
+  \underbrace{\frac{M}{|z| - 1}}_{=:\,q} < \frac{M}{(1+M)-1} = 1
 \end{align*}
 Dabei haben wir die abgeschnittene geometrische Reihe mit der Formel
 \[ \sum_{i=1}^\infty p^n = \frac{1}{1 - p} - 1 =
   \frac{p}{1-p} \]
-behandelt. Somit gilt (wieso?) für alle~$|z| > 1 + R$
+behandelt. Somit gilt (wieso?) für alle~$|z| > 1 + M$
 \[ |f(z)| = |z|^n \left|1 + a_{n-1} \frac{1}{z} + \cdots + a_0 \frac{1}{z^n}\right|
   \geq |z|^n \left(1 - q\right) > 0, \]
 insbesondere also~$f(z) \neq 0$.
@@ -55,21 +60,40 @@ Die Idee ist also: Über die Terme der Ordnung echt kleiner als~$n$ können wir
 wenig aussagen. Aber diese Terme werden vom Monom~$z^n$ dominiert -- ausnutzen
 können wir das dadurch, indem wir es ausklammern.
 
+\emph{Funktionentheoretische Variante:} Wir können das Polynom in seinen
+dominanten Anteil~$X^n$ und den Rest~$g(X) := a_{n-1}X^{n-1} + \cdots + a_1X +
+a_0$ aufspalten. Dann haben wir oben implizit gesehen, dass für~$z \in \CC$
+mit~$|z| = 1 + M$ die Abschätzung
+\[ |g(z)| \leq |z|^n - 1 < |z^n| \]
+gilt. Mit dem Satz von Rouché aus der Funktionentheorie folgt damit, dass die
+holomorphen Funktionen~$z \mapsto z^n$ und~$z \mapsto z^n + g(z) = f(z)$ auf
+der offenen Scheibe um den Ursprung mit Radius~$1 + M$ gleich viele Nullstellen
+besitzen (mit Vielfachheiten gezählt). Da erstere Funktion auf dieser
+Scheibe~$n$ Nullstellen besitzt, muss auch~$f$ dort~$n$ Nullstellen besitzen. Da~$f$
+insgesamt auch nur~$n$ Nullstellen besitzt, kann es keine weiteren außerhalb
+dieser Scheibe geben.
+
 \emph{Bemerkung:} Mit nur wenig Mehraufwand sieht man, dass die Lösungen sogar
-in der \emph{offenen} Kreisscheibe mit Radius~$1 + R$ liegen müssen: Bei der
-ersten Lösung hat man nämlich für~$|z| \geq 1 + R$ trotzdem noch~$|f(z)| \geq 1
+in der \emph{offenen} Kreisscheibe mit Radius~$1 + M$ liegen müssen: Bei der
+ersten Lösung hat man nämlich für~$|z| \geq 1 + M$ trotzdem noch~$|f(z)| \geq 1
 > 0$, und bei der zweiten hat man beim Übergang von der endlichen zur
-> unendlichen geometrischen Reihe auch schon~"`$<$"' statt nur~"`$\leq$"'.
+unendlichen geometrischen Reihe auch schon~"`$<$"' statt nur~"`$\leq$"'
+(zumindest für~$M > 0$). Bei der funktionentheoretischen Variante folgt das
+sowieso.
 
 \emph{Bemerkung:} Die in dieser Aufgabe gegebene Schranke ist \emph{asymptotisch
 scharf}: Etwa ist für~$a > 0$ die Schranke zur Polynomgleichung
 \[ \left(X - a\right) \left(X + \frac{a}{1+a}\right) =
   X^2 - \frac{a^2}{1 + a} X - \frac{a^2}{1+a} = 0 \]
 durch
-\[ 1 + R = 1 + \frac{a^2}{1 + a} \]
+\[ 1 + M = 1 + \frac{a^2}{1 + a} \]
 gegeben. Für~$a \to \infty$ nähert sich diese dem tatsächlichen größten
 Abstand einer Lösung zum Ursprung -- also~$a$ -- beliebig genau an:
-\[ 1 + R - a = \frac{1}{1 + a} \xrightarrow{a \to \infty} 0. \]
+\[ 1 + M - a = \frac{1}{1 + a} \xrightarrow{a \to \infty} 0. \]
+Trotzdem gibt es noch bessere Schranken (siehe etwa Josep Rubió-Massegú,
+\emph{Note on the location of zeros of polynomials}, 2011,
+\url{http://arxiv.org/abs/1102.2510}). Die Schranke dieser Aufgabe wird
+oft Cauchy zugeschrieben.
 \end{loesung}
 \end{aufgabe}
 
@@ -89,6 +113,7 @@ folgendem starken Sinn stetig ist:
 Sei~$R > 0$ beliebig. Sei~$\epsilon > 0$ beliebig. Wir setzen
 \[ \delta := \epsilon \cdot \left[n R^{n-1} \cdot \Biggl(\sum_{i=0}^n |a_i| +
 1\Biggr)\right]^{-1}. \]
+Wegen der Addition von~1 kann hier keine Division durch Null auftreten.
 Ohne Einschränkung der Allgemeinheit sei außerdem~$R \geq 1$ (dann ist die
 Funktion~$t \mapsto R^t$ monoton steigend).
 Dann gilt für alle~$z, w \in \CC$ mit $|z|, |w| \leq R$ und~$|z - w| < \delta$
@@ -97,14 +122,30 @@ zunächst die Abschätzung
   |z^i - w^i| &=
     |z - w| \cdot |z^{i-1} + z^{i-2}w + z^{i-3}w^2 + \cdots + zw^{i-2} + w^{i-1}| \\
   &\leq |z-w| \cdot (R^{i-1} + \cdots + R^{i-1}) \\
-  &\leq n R^{n-1} |z-w|
+  &\leq i R^{i-1} \cdot |z-w| \leq n R^{n-1} \cdot |z-w|
 \intertext{für alle~$i = 0, \ldots, n$ und daher folgt}
   |f(z) - f(w)| &=
     \Biggl|\sum_{i=0}^n a_i (z^i - w^i)\Biggr| \leq
     \sum_{i=0}^n |a_i| |z^i - w^i| \\
   &\leq
-    \sum_{i=0}^n |a_i| \cdot n R^{n-1} |z-w| =
+    \sum_{i=0}^n |a_i| \cdot n R^{n-1} \cdot |z-w| =
     n R^{n-1} \left(\sum_{i=0}^n |a_i|\right) \cdot |z - w| < \epsilon.
+\end{align*}
+
+\emph{Bemerkung:} Man kann in der Hilfsüberlegung auch auf die
+letzte Abschätzung~$i R^{i-1} \leq n R^{n-1}$ verzichten. Dann kann man~$\delta$
+sogar etwas kleiner wählen (das ist besser), nämlich als
+\[ \delta = \epsilon \cdot \left[
+  \sum_{i=0}^n i |a_i| R^{i-1} + 1
+\right]^{-1}, \]
+und muss auch nicht die Einschränkung~$R \geq 1$ annehmen:
+\begin{align*}
+  |f(z) - f(w)| &=
+    \Biggl|\sum_{i=0}^n a_i (z^i - w^i)\Biggr| \leq
+    \sum_{i=0}^n |a_i| |z^i - w^i| \\
+  &\leq
+    \sum_{i=0}^n |a_i| \cdot i R^{i-1} \cdot |z-w| =
+    \left(\sum_{i=0}^n i |a_i| R^{i-1}\right) \cdot |z-w| < \epsilon.
 \end{align*}
 
 \emph{Bemerkung:} In Worten lautet die Behauptung, dass die Polynomfunktion~$f$
@@ -296,7 +337,7 @@ Polynomgleichung
 konstruieren wir eine erste bessere Näherung~$z$. Diese ist insofern besser,
 als dass sie die Abschätzung
 \begin{equation}\label{absch}
-  |z^n + b_{n-1}z^{n-1} + \cdots + b_1 z + b_0| \leq q |b_0|
+  |z^n + b_{n-1}z^{n-1} + \cdots + b_1 z + b_0| \leq q \cdot |b_0|
 \end{equation}
 erfüllt, wobei~$q := 1 - \frac{1}{2} \cdot 3^{1 - n^2}$ ein fester Faktor
 kleiner als Eins ist. (Zum Vergleich: Für die Näherung~$0$ ergibt sich als
@@ -315,10 +356,10 @@ lassen.)
 
 Um nun die Frage zu klären, ob man~$3$ durch eine kleinere Zahl ersetzen kann,
 müssen wir den gesamten Beweis des Fundamentalsatzes durchgehen und bei jedem
-Vorkommen von~$3$ prüfen, ob der jeweilige Schritt auch bei einer kleineren
+Vorkommen von~$3$ prüfen, ob der jeweilige Schritt auch mit einer kleineren
 Zahl durchgeht. Bei einer solchen Analyse stellt man fest: Für den Großteil des
-Beweises spielt der Wert dieser Konstanten keine Rolle (solange er nur positiv
-ist), erst bei den Abschätzungen~(1.47), (1.48), (1.49) und der finalen
+Beweises spielt der Wert dieser Konstanten keine Rolle (solange er nur mehr
+als~$1$ ist), erst bei den Abschätzungen~(1.47), (1.48), (1.49) und der finalen
 Abschätzung (auf Seite~41) wird es kritisch.
 
 Wir wollen unseren kleineren Ersatz für die Zahl~$3$ mit~"`$\widetilde 3$"'
@@ -337,7 +378,7 @@ veränderten Abschätzungen lauten dann:
     |b_0| - \left(\frac{\widetilde 3^{1-k}}{\widetilde 2} + 1 -
     \frac{2}{\widetilde 2}\right) m(r)
 \end{align}
-Auf der rechten Seite wollen wir nun mittels Abschätzung~(1.47) weiter nach
+Auf der rechten Seite wollen wir nun, genau wie im Skript, mittels Ungleichung~(1.47) weiter nach
 oben abschätzen. Dazu muss aber der Vorfaktor~$\left(\cdots\right)$ positiv
 sein; eine kleine Nebenrechung zeigt, dass das genau dann der Fall ist, wenn
 \begin{equation}\label{absch2}

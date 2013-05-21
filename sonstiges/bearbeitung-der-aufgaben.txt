@@ -1,3 +1,24 @@
 Blatt 1:
 * A1, A2, A3: viele, gut
 * A4: wenige
+
+Blatt 2:
+* A1, A2: viele, gut
+* A3: okay
+* A4: wenige
+* A5: okay, aber teilweise missverstanden
+
+Blatt 3:
+* A1: a) gut, b), c) okay
+* A2: gut
+* A3: a), b) und c) okay, d) wenig
+* A4: okay
+* A5: a) okay, b) wenig
+
+Blatt 4:
+* A1: gut
+* A2: viele, gut
+* A3: viele, gut
+* A4: viele, gut
+* A5: a) viele, gut, b) okay, c) gut
+* A6: niemand
