@@ -1,6 +1,13 @@
 \documentclass{../algblatt}
 \usepackage{multicol}
 
+\newenvironment{indentblock}{%
+  \list{}{\leftmargin\leftmargin}%
+  \item\relax
+}{%
+  \endlist
+}
+
 \begin{document}
 
 \begin{center}\Large \textsf{\textbf{Hinweise zu den Übungsaufgaben in Algebra I}}\end{center}
@@ -135,7 +142,8 @@ Koeffizienten funktioniert, sondern auch für Polynome, deren Koeffizienten
 selbst aus einem Rechenbereich von Polynomen (oder einem Rechenbereich von
 symmetrischen Polynomen) stammen. Diesen Satz wird man dann insgesamt zweimal
 anwenden müssen. Teilaufgabe~b) kann \emph{unabhängig} von Teilaufgabe~a)
-bearbeitet werden. Ein Ansatz ist (wieso?), den Ausdruck
+bearbeitet werden. Mit \emph{verschwinden} ist \emph{Null sein} gemeint. Ein
+Ansatz ist (wieso?), den Ausdruck
 \[ R := (x_1 - y_1) \cdot (x_1 - y_2) \cdot (x_2 - y_1) \cdot (x_2 - y_2) \]
 zu verwenden, wobei~$x_1,x_2$ die Lösungen der ersten und~$y_1,y_2$ die
 Lösungen der zweiten Gleichung sind. Dann muss man diesen Ausdruck so
@@ -145,22 +153,56 @@ oder der Mitternachtsformel möglich.
 
 \end{document}
 
-
 \section*{Übungsblatt 7}
 
 \paragraph{Aufgabe 1.} Bei Teilaufgabe~a) sollte man unbedingt den euklidischen
-Algorithmus verwenden. [An Def. des ggT erinnern!]
-Tipp b) Eindt.: ansetzen, dann Gleichheit zeigen
+Algorithmus verwenden, wenn man nicht stundenlang knobeln möchte. Für
+Teilaufgabe~b) hier die Erinnerung an die relevante Definition:
+\begin{quote}Ein Polynom~$d$ heißt genau dann \emph{größter gemeinsamer Teiler}
+zweier Polynome~$f$ und~$g$, falls
+\begin{enumerate}
+\item[1.] es ein Teiler von~$f$ und von~$g$ (also ein gemeinsamer Teiler) ist und
+\item[2.] für jeden gemeinsamen Teiler~$\widetilde d$ von~$f$ und~$g$ gilt,
+dass $\widetilde d$ seinerseits ein Teiler
+von~$d$ ist (kurz: $\widetilde d \mid d$).
+\end{enumerate}
+\end{quote}
+Ohne eine Normiertheitsbedingung haben übrigens je zwei Polynome unendlich
+viele größte gemeinsame Teiler. Wenn man von \emph{dem} größten gemeinsamer
+Teiler spricht, ist von diesen unendlich vielen immer der normierte gemeint.
+Den Eindeutigkeitsteil von Teilaufgabe~b) kann man mit folgender Vorlage in
+Angriff nehmen:
+\begin{quote}Seien~$d$ und~$\widetilde d$ beides normierte größte gemeinsame
+Teiler von~$f$ und~$g$. Dann\ldots, daher folgt~$d = \widetilde d$.\end{quote}
 
-\paragraph{Aufgabe 2.} Das Vorgehen für Teilaufgabe~a) ist in Beispiel~3.5 auf
-Seite~75 des Skripts beschrieben. Für Teilaufgabe~b) mag die Diskriminante
-hilfreich sein.
-[Erwähnen, dass mit ggT jetzt meistens der normierte ggT gemeint ist.]
+\paragraph{Aufgabe 2.} Beispiel~3.5 auf Seite~75 des Skripts zeigt eine
+Möglichkeit, Teilaufgabe~a) zu lösen. Andere Lösungswege sind aber auch
+möglich. Für Teilaufgabe~c) mag es hilfreich sein, dass der relevante größte
+gemeinsame Teiler im Skript schon berechnet worden ist.
 
-\paragraph{Aufgabe 4.} Mit \emph{Einspolynom} ist das konstante Polynom~$1$
-gemeint.
-[Nochmal an Definition der Irreduzibilität erinnern.]
+\paragraph{Aufgaben 3 und 4.} Der Bequemlichkeit halber hier die nötigen
+Definitionen:
+\begin{quote}
+\begin{enumerate}
+\item[1.] Eine \emph{Zerlegung} eines normierten Polynoms~$f$ mit rationalen
+Koeffizienten ist eine Darstellung von~$f$ als Produkt~$f = f_1 \cdots f_n$
+aus~$n \geq 1$ normierten, nichtkonstanten Polynomen mit rationalen
+Koeffizienten.
+\item[2.] Ein normiertes Polynom~$f$ mit rationalen Koeffizienten heißt genau
+dann \emph{irreduzibel (über den rationalen Zahlen)}, wenn es genau eine
+Zerlegung zulässt, und zwar die triviale: $f = f$. Sonst heißt es
+\emph{reduzibel}.
+\end{enumerate}
+\end{quote}
+Aus der präzisen Art und Weise, wie diese Definitionen formuliert sind, folgt
+insbesondere, dass das Einspolynom (das ist das konstante Polynom~$1$) nicht
+als irreduzibel gilt (wieso?). Das ist auch gut so, denn sonst wäre die
+Eindeutigkeit der Zerlegung in irreduzible Faktoren (Proposition~3.9 im Skript)
+nicht mehr gegeben (wieso?). Abschließend sei bemerkt, dass die
+\emph{Umkehrung} von Teilaufgabe~4a) Gegenstand der Vorlesung war
+(Folgerung~3.11 im Skript).
 
+\end{document}
 
 \section*{Übungsblatt 9}
 
