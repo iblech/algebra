@@ -1,6 +1,10 @@
 \documentclass{algblatt}
 \input{config.tex}
-\geometry{tmargin=2cm,bmargin=1.5cm,lmargin=2.6cm,rmargin=2.6cm}
+\ifloesungen
+  \geometry{tmargin=2cm,bmargin=1.9cm,lmargin=2.32cm,rmargin=2.32cm}
+\else
+  \geometry{tmargin=2cm,bmargin=1.5cm,lmargin=2.6cm,rmargin=2.6cm}
+\fi
 
 %\setlength{\titleskip}{0.7em}
 \setlength{\aufgabenskip}{1.0em}
@@ -10,8 +14,6 @@
 \vspace*{-1.5cm}
 \maketitle{7}{Abgabe bis 3. Juni 2013, 17:00 Uhr}
 \vspace*{-0.3cm}
-
-\ifloesungen\begin{center}\textbf{Wird noch vervollständigt.}\end{center}\fi
 
 \begin{aufgabe}{Größte gemeinsame Teiler und kleinste gemeinsame Vielfache}
 \begin{enumerate}
@@ -31,7 +33,21 @@ und gib eine Konstruktionsvorschrift für es an.
 \end{enumerate}
 
 \begin{loesungE}
-\item
+\item Wir verwenden natürlich den euklidischen Algorithmus:
+\begin{align*}
+  f &= (X-1) \cdot g + (3 \, X + 6) \\
+  g &= \frac{1}{3} (X+1) \cdot (3\,X+6) + 0
+\end{align*}
+Dann noch rückwärts auflösen: $3\,X+6 = f - (X-1) \cdot g$, also $X+2 =
+\frac{1}{3} f + \frac{1}{3} (-X+1) g$.
+
+\emph{Variante:} Man kann die Neu-Normierung auch schon in jedem Schritt des
+Algorithmus vornehmen (diese Variante verwendet der Beweis im Skript):
+\begin{align*}
+  f &= (X-1) \cdot g + 3 \, (X + 2) \\
+  g &= (X+1) \cdot (X+2) + 0
+\end{align*}
+Dann noch rückwärts auflösen: $X + 2 = \frac{1}{3} f + \frac{1}{3} (-X+1) g$.
 
 \item \emph{Existenz (kurz auch im Skript abgehandelt):} Dank des euklidischen
 Algorithmus gibt es ein normiertes Polynom~$d$, welches ein gemeinsamer Teiler
@@ -58,7 +74,7 @@ Dabei dürfen die Exponenten auch null sein -- damit tragen wir, ohne die
 Notation verkomplizieren zu müssen, dem Umstand Rechnung, dass manche Faktoren
 vielleicht nur in einem der beiden Polynome vorkommen. Als Vorschlag für den
 größten gemeinsamen Teiler definieren wir
-\[ d = \prod_i p_i^{c_i} \]
+\[ d := \prod_i p_i^{c_i} \]
 mit~$c_i := \min\{ a_i, b_i \}$ für alle Indizes~$i$. Klar ist zumindest, dass
 dieses Polynom ein gemeinsamer Teiler von~$f$ und~$g$ ist. Zum Nachweis,
 dass~$d$ wirklich größter gemeinsamer Teiler ist, sei ein beliebiger
@@ -70,13 +86,55 @@ vorkommen, und dass diese höchstens mit Vielfachheit~$a_i$ (wegen~$\widetilde d
 Vielfachheit~$c_i$ vor, also gilt~$\widetilde d \mid d$.
 
 Implizit haben wir dabei folgendes allgemeines Lemma verwendet: Sei~$p$ ein irreduzibles
-Polynom und gelte~$f \mid g$. Dann ist die Vielfachheit von~$p$ in~$f$
-höchstens gleich der Vielfachheit von~$p$ in~$g$.
+Polynom und gelte~$f \mid g$ (also~$g = \widetilde g \cdot f$ für ein
+Polynom~$\widetilde g$). Dann ist die Vielfachheit von~$p$ in~$f$
+höchstens gleich der Vielfachheit von~$p$ in~$g$. Diese Beobachtung folgt
+sofort aus der Eindeutigkeit der Zerlegung in irreduzible Faktoren.
 
 \item Folgende Definition ist sinnvoll: Ein Polynom~$k$ heißt genau dann
 \emph{kleinstes gemeinsames Vielfaches} von~$f$ und~$g$, wenn~$k$ ein
 gemeinsames Vielfaches von~$f$ und~$g$ ist und für jedes gemeinsame
 Vielfache~$\widetilde k$ von~$f$ und~$g$ gilt:~$k \mid \widetilde k$.
+
+Konstruieren können wir es zum Beispiel durch die Setzung
+\[ k := \prod_i p_i^{e_i}, \]
+wobei wir die Bezeichnungen der Lösung von Teilaufgabe~c) weiterverwenden,
+jetzt aber~$e_i := \max\{ a_i, b_i \}$ setzen. Der Beweis, dass dieses Polynom
+tatsächlich ein kleinstes gemeinsames Vielfaches von~$f$ und~$g$ ist, verläuft
+völlig analog.
+
+\emph{Konstruktionsvariante:} Man kann auch~$k := f \cdot g / d$. Dabei geht
+die Polynomdivision auf, denn da~$d$ größter gemeinsamer Teiler ist, gibt es
+Polynome~$\widetilde f, \widetilde g, p, q$ mit
+\begin{align*}
+  f &= \widetilde f \cdot d, \\
+  g &= \widetilde g \cdot d, \\
+  d &= p f + q g,
+\end{align*}
+weshalb die Darstellungen~$k = \widetilde f \cdot g = f \cdot \widetilde g$
+folgen. Über diese ist auch klar, dass~$k$ tatsächlich ein gemeinsames
+Vielfaches von~$f$ und~$g$ ist. Sei zum Nachweis der Kleinstheit ein weiteres
+gemeinsames Vielfaches~$\widehat k$ gegeben. Dann gibt es Polynome~$\widehat f,
+\widehat g$ mit~$\widehat k = \widehat f \cdot f$ und~$\widehat k = \widehat g
+\cdot g$. Mit der Bézoutdarstellung von~$d$ folgt
+\[ \widehat k = \widehat f \cdot f =
+  \widehat f \cdot \widetilde f d =
+  \widehat f \widetilde f p f + \widehat f \widetilde f q g =
+  \widehat g \widetilde g p f + \widehat f q \cdot k =
+  (\widehat g p + \widehat f q) \cdot k, \]
+also ist~$k$ in der Tat ein Teiler von~$\widehat k$.
+
+\emph{Definitionsvariante:} Folgende Definition funktioniert ebenfalls, ist aber weniger
+schön (da sie nicht nur über Teilbarkeit spricht): Ein Polynom~$k$ heißt genau
+dann \emph{kleinstes gemeinsames Vielfaches} von~$f$ und~$g$, wenn~$k$ ein
+gemeinsames Vielfaches von~$f$ und~$g$ ist und für jedes gemeinsame
+Vielfache~$\widetilde k$ von~$f$ und~$g$ gilt:~$\deg k \leq \deg \widetilde k$.
+
+\emph{Bemerkung:} Die eleganten Definitionen von ggT und kgV sind Beispiele für
+Definitionen durch sog. \emph{universelle Eigenschaften}. Tatsächlich kann man
+ggT und kgV als Produkt bzw. Koprodukt in einer geeigneten Kategorie von
+Polynomen realisieren (in der zwischen zwei Polynomen genau dann ein Morphismus
+verläuft, falls das erste das zweite teilt).
 \end{loesungE}
 \end{aufgabe}
 
@@ -137,6 +195,7 @@ besitzt~$f(X)$ keinerlei mehrfache Nullstellen.
 \end{loesungE}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Irreduzible Polynome}
 \begin{enumerate}
 \item Sind normierte Polynome vom Grad~1 stets irreduzibel über den rationalen
@@ -193,6 +252,7 @@ rationalen Nullstellen.
 \end{loesungE}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Prime Polynome}
 \begin{enumerate}
 \item Ein normiertes Polynom $f$ mit rationalen Koeffizienten heißt
@@ -207,8 +267,12 @@ Zeige, dass~$f$ dann schon eines der~$g_i$ teilt.
 \end{enumerate}
 
 \begin{loesungE}
-\item Sei~$f(X)$ ein primes Polynom. Da~$f$ nicht das Einspolynom ist, hat es
-mindestens Grad~1 (wieso?). Es bleibt also nur zu zeigen, dass~$f(X) = f(X)$
+\item Sei~$f(X)$ ein primes Polynom. Zunächst müssen wir zeigen, dass~$f(X) =
+f(X)$ eine Zerlegung ist. Nach Definition von \emph{Zerlegung} müssen wir dazu
+nur anmerken, dass~$f$ mindestens Grad~1 hat; das ist erfüllt, da~$f$ nicht das
+Einspolynom ist.
+
+Dann bleibt nur noch zu zeigen, dass~$f(X) = f(X)$
 die \emph{einzige} Zerlegung von~$f$ ist. Sei dazu~$f = g \cdot h$ mit
 normierten nichtkonstanten Polynomen~$g(X), h(X)$ mit rationalen Koeffizienten
 eine hypothetische Zerlegung.
@@ -238,6 +302,7 @@ fertig, im ersten Fall nach Anwendung der Induktionsvoraussetzung.
 \end{loesungE}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Euklidischer Algorithmus für ganze Zahlen}
 Seien~$a$ und~$b$ ganze Zahlen. Zeige, dass es eine ganze Zahl~$d
 \geq 0$ gibt, welche ein gemeinsamer Teiler von~$a$ und~$b$ ist, und für die es
@@ -288,6 +353,25 @@ als Linearkombinaton von~$r_{n-3}$ und~$r_{n-2}$ zu schreiben; als
 Zwischenfazit können wir daher~$d$ als Linearkombination von~$r_{n-3}$
 und~$r_{n-2}$ schreiben. Wenn wir auf diese Art und Weise fortfahren, können
 wir schlussendlich~$d$ als Linearkombination von~$a$ und~$b$ ausdrücken.
+
+\emph{Bemerkung:} Sollte~$|b| > |a|$ sein, funktioniert das hier gegebene
+Verfahren trotzdem: Im ersten Schritt stellt sich die gewohnte Situation von
+selbst ein (siehe Beispiel).
+
+\emph{Bemerkung:} Gute Beispiele zum Vorführen bzw. Üben des euklidischen
+Algorithmus geben Fibonaccizahlen ab (wieso?), ggf. multipliziert mit einer
+gemeinsamen Konstante, damit der größte gemeinsamer Teiler keine langweilige~1
+wird. Etwa ergibt sich für~$a = 2 \cdot 21$, $b = 2 \cdot 34$:
+\begin{align*}
+  a = 42 &= 0 \cdot 68 + 42 \\
+  b = 68 &= 1 \cdot 42 + 26 \\
+  42 &= 1 \cdot 26 + 16 \\
+  26 &= 1 \cdot 16 + 10 \\
+  16 &= 1 \cdot 10 + \phantom{0}6 \\
+  10 &= 1 \cdot \phantom{0}6 + \phantom{0}4 \\
+   6 &= 1 \cdot \phantom{0}4 + \phantom{0}2 \\
+   4 &= 2 \cdot \phantom{0}2 + \phantom{0}0.
+\end{align*}
 \end{loesung}
 \end{aufgabe}
  
