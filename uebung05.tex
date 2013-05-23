@@ -332,6 +332,17 @@ bestätigen. Dies gelingt mithilfe des binomischen Lehrsatzes:
   &= \sum_{k=0}^n \binom{n}{k} a^{n-k} (X-a)^k \\
   &= (a + (X-a))^n = X^n = f.
 \end{align*}
+
+\emph{Elegantere Variante (nach Tim Daffler):} Das Polynom~$f(X)$ lässt sich
+als Ausdruck der Form
+\[ f(X) = b_n (X-a)^n + b_{n-1} (X-a)^{n-1} + \cdots + b_1 (X-a) + b_0 \]
+schreiben, wobei die~$b_i$ \emph{nicht} die Koeffizienten von~$f$ sind,
+sondern noch zu bestimmen sind -- angeblich gilt~$b_k = f^{(k)}(a) / k!$. (Dass
+eine solche Umschreibung möglich ist, erkennt man, wenn man~$f(X) = f(a+(X-a))$
+ausmultipliziert.) Leiten wir beide Seiten dieser Identität~$k$~Mal ab und
+setzen dann~$a$ für~$X$ ein, so fallen die meisten Terme weg; übrig bleibt nur noch
+\[ f^{(k)}(a) = b_k \cdot k!. \]
+Stellt man diese Gleichung nach~$b_k$ um, folgt schon die Behauptung.
 \end{loesungE}
 \end{aufgabe}
 
