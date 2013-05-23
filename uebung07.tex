@@ -11,6 +11,8 @@
 \maketitle{7}{Abgabe bis 3. Juni 2013, 17:00 Uhr}
 \vspace*{-0.3cm}
 
+\ifloesungen\begin{center}\textbf{Wird noch vervollständigt.}\end{center}\fi
+
 \begin{aufgabe}{Größte gemeinsame Teiler und kleinste gemeinsame Vielfache}
 \begin{enumerate}
 \item Seien die Polynome~$f = X^3 + 2\,X^2 + 2\,X + 4$
@@ -43,6 +45,16 @@ dann separabel ist,
 wenn der größte gemeinsame Teiler von~$f$
 und~$f'$ das konstante Polynom~$1$ ist.
 \end{enumerate}
+
+\begin{loesungE}
+\item ...
+\item ...
+\item Das Polynom~$f_a$ ist genau dann nicht separabel, wenn seine Diskriminante null
+ist:
+\[ \Delta_{f_a} = -4p^3 - 27q^2 = \cdots =
+  -32 \cdot a^6 - 27 a^2 + 324 a - 972 \stackrel{!}{=} 0. \]
+Damit haben wir die geforderte Polynomgleichung gefunden.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Irreduzible Polynome}
@@ -50,13 +62,27 @@ und~$f'$ das konstante Polynom~$1$ ist.
 \item Sind normierte Polynome vom Grad~1 stets irreduzibel über den rationalen
 Zahlen?
 \item Zeige, dass normierte Polynome vom Grad~2 oder~3 über den rationalen
-Zahlen genau dann irreduzibel sind, wenn sie keine rationale Nullstelle
+Zahlen genau dann reduzibel sind, wenn sie mindestens eine rationale Nullstelle
 besitzen.
 \item Finde ein Polynom mit rationalen Koeffizienten, das keine rationale
 Nullstelle besitzt und trotzdem über den rationalen Zahlen reduzibel ist.
 \item Zeige, dass das Polynom $X^3 - \frac{3}{2}X^2 + X - \frac{6}{5}$ über den
 rationalen Zahlen irreduzibel ist.
 \end{enumerate}
+
+\begin{loesungE}
+\item Sei~$f(X)$ ein normiertes Polynom vom Grad~2 oder~3 mit rationalen
+Koeffizienten. Die Rückrichtung ist klar: Wenn~$f$ eine rationale
+Nullstelle~$x$ besitzt, geht die Division von~$f$ durch den Linearfaktor~$X-x$
+auf -- also ist~$f$ zerlegbar.
+
+Sei für den Beweis der Hinrichtung eine Zerlegung~$f = g \cdot h$ gegeben. Nach
+der Gradvoraussetzung an~$f$ hat dann~$g$ oder~$h$ Grad~1 und ist daher von der
+Form~$X-x$ für eine gewisse rationale Zahl~$x$. Also besitzt~$f$ eine rationale
+Nullstelle, nämlich~$x$.
+
+\item Das Polynom~$(X^2+1)^2$ ist eines von unzähligen Beispielen.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Prime Polynome}
@@ -71,6 +97,14 @@ beiden Faktoren. Zeige, dass jedes prime Polynom irreduzibel ist.
 Produkt~$g_1 \cdots g_n$ von Polynomen mit rationalen Koeffizienten.
 Zeige, dass~$f$ dann schon eines der~$g_i$ teilt.
 \end{enumerate}
+
+\begin{loesungE}
+\item Sei~$f(X)$ ein primes Polynom. Da~$f$ nicht das Einspolynom ist, hat es
+mindestens Grad~1 (wieso?). Es bleibt also nur zu zeigen, dass~$f(X) = f(X)$
+die \emph{einzige} Zerlegung von~$f$ ist. Sei dazu~$f = g \cdot h$ mit
+normierten nichtkonstanten Polynomen~$g(X), h(X)$ mit rationalen Koeffizienten. Dann folgt
+insbesondere~$f \mid gh$, also nach Voraussetzung~$f \mid g$ oder~$f \mid h$.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Euklidischer Algorithmus für ganze Zahlen}
