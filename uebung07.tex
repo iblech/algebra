@@ -67,9 +67,9 @@ unten), dass in~$\widetilde d$ nur die Faktoren~$p_i$ (und keine anderen)
 vorkommen, und dass diese höchstens mit Vielfachheit~$a_i$ (wegen~$\widetilde d
 \mid f$) und zugleich höchstens mit Vielfachheit~$b_i$ (wegen~$\widetilde d
 \mid g$) vorkommen. Unter'm Strich kommen sie also höchstens mit
-Vielfachheit~$c_i$ vor, also gilt~$\widetilde d \mid $.
+Vielfachheit~$c_i$ vor, also gilt~$\widetilde d \mid d$.
 
-Implizit haben wir dabei folgendes allgemeines Lemma benutzt: Sei~$p$ ein irreduzibles
+Implizit haben wir dabei folgendes allgemeines Lemma verwendet: Sei~$p$ ein irreduzibles
 Polynom und gelte~$f \mid g$. Dann ist die Vielfachheit von~$p$ in~$f$
 höchstens gleich der Vielfachheit von~$p$ in~$g$.
 
@@ -106,11 +106,14 @@ Algorithmus zeigt, und es gilt~$f(X) = d(X) \cdot \widetilde f(X)$
 mit~$\widetilde f(X) = X^4 - X^3 + 2\,X - 2$. Die gesuchte Gleichung ist also
 \[ X^4 - X^3 + 2\,X - 2 = 0. \]
 
-\emph{Variante:} Vielleicht schafft man es auch irgendwie, das gegebene
-Polynom~$f$ zu faktorisieren: Es gilt~$f(X) = (X-1) \cdot (X^3 + 2)^2$. Dann
+\emph{Variante:} Man kann auch über die Faktorisierung von~$f$ gehen:
+Es gilt~$f(X) = (X-1) \cdot (X^3 + 2)^2$. Dann
 sieht man sofort, dass
 \[ (X-1) \cdot (X^3 + 2) = 0 \]
-die gesuchte Gleichung ist. Diese stimmt mit obiger überein.
+die gesuchte Gleichung ist, denn die beiden Faktoren haben jeweils nur einfache
+Nullstellen und sie überlappen nicht mit denen des anderen Faktors (das ist
+nach dem Abelschen Irreduzibilitätssatz auch allgemein klar). Diese Gleichung
+stimmt mit obiger überein.
 
 \item Das Polynom~$f_a$ ist genau dann nicht separabel, wenn seine Diskriminante null
 ist:
@@ -121,7 +124,9 @@ Damit haben wir die geforderte Polynomgleichung gefunden.
 \item Sei~$d(X)$ der normierte größte gemeinsame Teiler
 von~$f$ und~$f'$. Dann sind die Nullstellen von~$d(X)$ (in den algebraischen
 Zahlen) genau die mehrfachen Nullstellen von~$f(X)$, d.\,h. diejenigen mit
-Vielfachheit~$\geq 2$.
+Vielfachheit~$\geq 2$. Dieser Umstand ist im Skript auf Seite~74 festgehalten:
+Gilt~$f(X) = \prod_i (X-x_i)^{a_i}$, so ist~$\operatorname{ggT}(f, f') =
+\prod_i (X-x_i)^{a_i - 1}$.
 
 "`$\Longrightarrow$"': Da~$f(X)$ nach Voraussetzung keine mehrfachen
 Nullstellen besitzt, besitzt~$d(X)$ also keine einzige Nullstelle. Da es
@@ -148,6 +153,12 @@ rationalen Zahlen irreduzibel ist.
 \begin{loesungE}
 \item Ja!
 
+\emph{Bemerkung:} Über den ganzen Zahlen ist die Situation komplizierter, wenn
+man die Forderung nach Normiertheit fallen lässt: Etwa
+gilt das Polynom~$2\,X - 2 = 2 \cdot (X - 1)$ dort als reduzibel. Die
+verfeinerte Regel lautet: Ein Polynom vom Grad~1 ist genau dann irreduzibel
+über den ganzen Zahlen, wenn es primitiv ist.
+
 \item Sei~$f(X)$ ein normiertes Polynom vom Grad~2 oder~3 mit rationalen
 Koeffizienten. Die Rückrichtung ist klar: Wenn~$f$ eine rationale
 Nullstelle~$x$ besitzt, geht die Division von~$f$ durch den Linearfaktor~$X-x$
@@ -158,9 +169,14 @@ der Gradvoraussetzung an~$f$ hat dann~$g$ oder~$h$ Grad~1 und ist daher von der
 Form~$X-x$ für eine gewisse rationale Zahl~$x$. Also besitzt~$f$ eine rationale
 Nullstelle, nämlich~$x$.
 
+\emph{Bemerkung:} Im Skript auf Seite~76 wird eine \emph{Zerlegung} eines
+normierten Polynoms~$f$ als ein Produkt der Form~$f = f_1 \cdots f_n$
+definiert, wobei die~$f_i$ jeweils normiert und mindestens vom Grad~1 sein
+sollen.
+
 \item Das Polynom~$(X^2+1)^2$ ist eines von unzähligen Beispielen.
 
-\item Nach Teilaufgabe~b) genügt es, nachzuweisen, dass das gegebene Polynom
+\item Nach Teilaufgabe~b) genügt es nachzuweisen, dass das gegebene Polynom
 keine rationalen Nullstellen besitzt. Äquivalent ist zu zeigen, dass das
 mit~$10$ durchmultiplizierte Polynom
 \[ 10 \, X^3 - 15 \, X^2 + 10 \, X - 12 \]
@@ -226,6 +242,53 @@ fertig, im ersten Fall nach Anwendung der Induktionsvoraussetzung.
 Seien~$a$ und~$b$ ganze Zahlen. Zeige, dass es eine ganze Zahl~$d
 \geq 0$ gibt, welche ein gemeinsamer Teiler von~$a$ und~$b$ ist, und für die es
 weitere ganze Zahlen~$r$ und~$s$ mit~$d = r \cdot a + s \cdot b$ gibt.
+
+\begin{loesung}
+Wir führen sukzessive Divisionen mit Rest durch, sodass wir folgende
+Gleichungen erhalten:
+\begin{align*}
+  a &= p_1 \cdot b + r_1 \\
+  b &= p_2 \cdot r_1 + r_2 \\
+  r_1 &= p_3 \cdot r_2 + r_3 \\
+  r_2 &= p_4 \cdot r_3 + r_4 \\
+  \vdots \\
+  r_{n-3} &= p_{n-1} \cdot r_{n-2} + r_{n-1} \\
+  r_{n-2} &= p_{n} \cdot r_{n-1} + r_{n} \\
+  r_{n-1} &= p_{n+1} \cdot r_{n} + 0
+\end{align*}
+Dabei soll jeweils~$0 \leq r_i < |r_{i-1}|$ gelten, wobei wir der
+Übersichtlichkeit halber~$r_0 := b$ setzen. Wir hören auf, wenn sich als
+Rest~$0$ ergibt; den vorletzten Rest~$r_n$ nennen wir kurz~"`$d$"'. Nun sind
+noch drei Dinge zu tun:
+\begin{enumerate}
+\item[1.] Wir müssen zeigen, dass das Verfahren \emph{terminiert}, also
+irgendwann zu einem Ende kommt. (Wenn nicht, hätten wir~$d$ nicht wirklich
+gefunden!)
+\item[2.] Wir müssen zeigen, dass der vorletzte Rest~$d$ tatsächlich ein
+gemeinsamer Teiler von~$a$ und~$b$ ist.
+\item[3.] Wir müssen zeigen, dass es wirklich die geforderte Bézoutdarstellung
+gibt.
+\end{enumerate}
+Für Punkt~1 müssen wir nur beobachten, dass die Reste~$r_i$ mit jedem Schritt
+echt abnehmen, aber nach unten durch~$0$ beschränkt sind. Daher muss
+irgendwann (genauer: nach spätestens~$|b|$ Schritten) der Rest~$0$
+erreicht werden.
+
+Zu Punkt~2 können wir die Gleichungen rückwärts betrachten: Die letzte
+Gleichung sagt uns, dass~$d = r_n$ ein Teiler von~$r_{n-1}$ ist. Aus der
+vorletzten Gleichung folgt daher, dass~$d$ auch ein Teiler von~$r_{n-2}$ ist.
+Analog folgt dann aus der drittletzten Gleichung, dass~$d$ ein Teiler
+von~$r_{n-3}$ ist (wieso?). Wenn wir auf dieselbe Art und Weise fortfahren,
+erkennen wir schließlich, dass~$d$ ein Teiler von~$b$ und von~$a$ ist.
+
+Für Punkt~3 lösen wir die Gleichungen rückwärts auf: Mithilfe der vorletzten
+Gleichung können wir~$d$ als Linearkombination von~$r_{n-2}$ und~$r_{n-1}$
+ausdrücken. Die drittletzte Gleichung erlaubt uns wiederum, die Zahl~$r_{n-1}$
+als Linearkombinaton von~$r_{n-3}$ und~$r_{n-2}$ zu schreiben; als
+Zwischenfazit können wir daher~$d$ als Linearkombination von~$r_{n-3}$
+und~$r_{n-2}$ schreiben. Wenn wir auf diese Art und Weise fortfahren, können
+wir schlussendlich~$d$ als Linearkombination von~$a$ und~$b$ ausdrücken.
+\end{loesung}
 \end{aufgabe}
  
 \end{document} 
