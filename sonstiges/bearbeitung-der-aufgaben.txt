@@ -22,3 +22,10 @@ Blatt 4:
 * A4: viele, gut
 * A5: a) viele, gut, b) okay, c) gut
 * A6: niemand
+
+Blatt 5:
+* A1: viele, gut
+* A2: a) viele, gut, b) okay
+* A3: a) viele, gut, b) okay
+* A4: viele gut
+* A5: gut
