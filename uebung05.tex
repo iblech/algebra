@@ -44,8 +44,11 @@ und Koeffizientenvergleich.
 als Ausgangspunkt verwenden. Deren Vorteil ist, dass man ihre Korrektheit ganz
 mühelos beweisen kann: Denn die linke Seite der Gleichung hat -- als Polynom
 in der einzigen Variablen~$T$ mit Koeffizienten aus~$\QQ[X_1,\ldots,X_n]$
-gedacht -- die Nullstellen~$-X_1,\ldots,-X_n$. Daher liefert der Vietasche Satz
-sofort die Behauptung.
+gedacht -- die Nullstellen~$-X_1,\ldots,-X_n$. Daher besagt der Vietasche
+Satz, dass der~$k$-te Koeffizient des Polynoms auf der linken Seite durch
+\[ (-1)^{n-k} e_{n-k}(-X_1,\ldots,-X_n) = (-1)^{n-k} (-1)^{n-k}
+e_{n-k}(X_1,\ldots,X_n) \]
+gegeben ist -- wie von der rechten Seite der Gleichung behauptet.
 
 \emph{Variante 3':} Variante 2' kann man etwas expliziter auch wie folgt
 formulieren. Das Polynom
@@ -213,12 +216,11 @@ Damit ist die Behauptung bewiesen.
 niedrigeren Potenzen wie~$p^1, p^2, q^1$ oder gar konstante Glieder auftreten
 können, ist folgender: Der Ausdruck~$\Delta$ ist nicht nur irgendein Polynom
 vom Grad~6 in den Nullstellen, sondern sogar ein \emph{homogenes} Polynom vom
-Grad~6 in den Nullstellen, d.\,h. alle vorkommenden Monome haben jeweils
+Grad~6 in den Nullstellen, d.\,h. \emph{alle} vorkommenden Monome haben jeweils
 Grad~6.
 \end{loesungE}
 \end{aufgabe}
 
-\ifloesungen\newpage\fi
 \begin{aufgabe}{Symmetrien eines Polynoms}
 Sei $f(X, Y, Z, W) := X Y + Z W + X Y Z W$.
 Wie viele vierstellige Permutationen~$\sigma$ mit~$\sigma \cdot f = f$ gibt es?
@@ -280,7 +282,6 @@ ist (nach Brooke Taylor, 1685--1731, britischer Mathematiker):
 \[ f(X) = \sum_{k = 0}^\infty \frac{f^{(k)}(a)}{k!} \, (X - a)^k \]
 \end{enumerate}
 
-\ifloesungen\newpage\fi
 \begin{loesungE}
 \item Wir führen einen Induktionsbeweis über~$k \geq 0$.
 Dabei ist der Induktionsanfang~$k = 0$ klar. Für den Induktionsschritt~$k \to k
