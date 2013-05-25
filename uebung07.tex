@@ -205,7 +205,7 @@ Zahlen genau dann reduzibel sind, wenn sie mindestens eine rationale Nullstelle
 besitzen.
 \item Finde ein Polynom mit rationalen Koeffizienten, das keine rationale
 Nullstelle besitzt und trotzdem über den rationalen Zahlen reduzibel ist.
-\item Zeige, dass das Polynom $X^3 - \frac{3}{2}X^2 + X - \frac{6}{5}$ über den
+\item Zeige, dass das Polynom $X^3 - \frac{5}{2}X^2 + \frac{4}{3}$ über den
 rationalen Zahlen irreduzibel ist.
 \end{enumerate}
 
@@ -237,18 +237,32 @@ sollen.
 
 \item Nach Teilaufgabe~b) genügt es nachzuweisen, dass das gegebene Polynom
 keine rationalen Nullstellen besitzt. Äquivalent ist zu zeigen, dass das
-mit~$10$ durchmultiplizierte Polynom
-\[ 10 \, X^3 - 15 \, X^2 + 10 \, X - 12 \]
+mit~$6$ durchmultiplizierte Polynom
+\[ 6 \, X^3 - 15 \, X^2 + 8 \]
 keine rationalen Nullstellen besitzt. In vollständig gekürzter Darstellung
-müssen Zähler und Nenner solcher Nullstellen Teiler von~$-12$ bzw.~$10$ sein.
+müssen Zähler und Nenner solcher Nullstellen Teiler von~$8$ bzw.~$6$ sein.
 Also kommen nur die Möglichkeiten
 \begin{align*}
-  \text{Zähler} &\in \{ \pm 1, \pm 2, \pm 3, \pm 4, \pm 6, \pm 12 \}, \\
-  \text{Nenner} &\in \{ \pm 1, \pm 2, \pm 5, \pm 10 \},
+  \text{Zähler} &\in \{ \pm 1, \pm 2, \pm 4, \pm 8 \}, \\
+  \text{Nenner} &\in \{ \pm 1, \pm 2, \pm 3, \pm 6 \},
 \end{align*}
-in Betracht. Probiert man diese Möglichkeiten alle durch (ein paar fallen
+infrage. Probiert man diese Möglichkeiten alle durch (ein paar fallen
 wegen fehlender Teilerfremdheit wieder weg), sieht man: Das Polynom hat keine
 rationalen Nullstellen.
+
+\emph{Variante:} Man kann auch das allgemeine Verfahren zur
+Irreduzibilitätsprüfung einsetzen (wie in Beispiel~3.17 des Skripts
+vorgeführt). Der Inhalt des Polynoms ist~$\frac{1}{6}$. Da es vom Grad~3 ist,
+genügt es, einelementige Auswahlen der Nullstellen zu untersuchen -- wir müssen
+also prüfen, ob mindestens eine der Nullstellen mit~$6$ multipliziert eine
+ganze Zahl gibt. Das ist nicht der Fall:
+\begin{align*}
+  x_1 &\approx -0{,}651 & x_2 &\approx 0{,}916 & x_3 &\approx \phantom{0}2{,}232 \\
+  6 x_1 &\approx -3{,}9 & 6 x_2 &\approx 5{,}5 & x_3 &\approx 13{,}4
+\end{align*}
+Wenn man Zugriff auf Näherungswerte der Nullstellen hat (und man weiß, dass man
+ihnen vertrauen kann), ist dieses Verfahren in der Praxis schneller als obige
+Methode über Nullstellenkandidaten.
 \end{loesungE}
 \end{aufgabe}
 
