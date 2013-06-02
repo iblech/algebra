@@ -64,8 +64,27 @@ von~$\widetilde f$ ist.
 ...nicht getreu...
 \end{enumerate}
 
-\begin{loesungE}
-\end{loesungE}
+\begin{loesung}
+\newcommand{\leit}[1]{\mathrm{Leitkoeff}(#1)}%
+Es gilt die Beziehung~$\leit{\widetilde f} = c^{-1} \cdot \leit{f}$,
+wobei~$\widetilde f$ ein Polynom mit ganzzahligen Koeffizienten ist, das zudem
+primitiv ist. Diese Beziehung werden wir wiederholt verwenden.
+\begin{enumerate}
+\item "`$\Longrightarrow$"': Es gilt~$f = c \cdot \widetilde f$, also ist~$f$ als
+Produkt von Polynomen aus~$\ZZ[X]$ selbst ein Polynom aus~$\ZZ[X]$.
+
+"`$\Longleftarrow$"': Wenn~$f$ ganzzahlige Koeffizienten hat, ist~$c$ der
+größte gemeinsame Teiler der Koeffizienten von~$f$ (wieso?) und daher ganzzahlig.
+
+\item Wenn~$f$ normiert ist, gilt~$\leit{\widetilde f} = c^{-1} \cdot
+\leit{f} = c^{-1} \cdot 1$, also ist~$c$ das Inverse der Zahl~$\leit{\widetilde f}$.
+
+\item Mit Teilaufgabe~b) folgt sofort die Behauptung, denn der Leitkoeffizient
+von~$\widetilde f$ ist ganzzahlig. Die Umkehrung gilt überhaupt nicht: Eines
+von unzähligen Gegenbeispielen ist~$f(X) = 2\,X + 3$, dessen Inhalt~$1$ ist,
+das aber nicht normiert ist.
+\end{enumerate}
+\end{loesung}
 \end{aufgabe}
 
 \begin{aufgabe}{Kongruenzrechnungen}
@@ -83,6 +102,12 @@ Exponenten~$k$ ist~$a^k \equiv 2$ modulo~$5$?
 - b'$ sind jeweils durch~$n$ teilbar. Dann ist auch
 \[ (a+b) - (a'+b') = (a-a') + (b-b') \]
 durch~$n$ teilbar, d.\,h. es gilt~$a+b \equiv a'+b'$.
+
+\item Da~$a$ und~$n$ zueinander teilerfremd sind, gibt es eine
+Bézoutdarstellung der Form~$1 = pa + qn$ für gewisse ganze Zahlen~$p$ und~$q$.
+Modulo~$n$ gilt daher~$1 \equiv p a$ (d.\,h.~$p$ ist ein Inverses für~$a$
+modulo~$n$). Wenn man die gegebene Kongruenz~$ab \equiv ab'$ auf beiden Seiten
+mit~$p$ multipliziert, erhält man~$pab \equiv pab'$, also~$b \equiv b'$.
 
 \item Für keinen einzigen Exponenten ist das erfüllt. Denn wenn~$a \equiv 1$
 modulo~$5$, so sind auch~$a^2$, $a^3$ usw. jeweils kongruent zu~$1$ modulo~$5$.
