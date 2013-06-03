@@ -83,7 +83,8 @@ größte gemeinsame Teiler der Koeffizienten von~$f$ (wieso?) und daher ganzzahl
 \item Mit Teilaufgabe~b) folgt sofort die Behauptung, denn der Leitkoeffizient
 von~$\widetilde f$ ist ganzzahlig. Die Umkehrung gilt überhaupt nicht: Eines
 von unzähligen Gegenbeispielen ist~$f(X) = 2\,X + 3$, dessen Inhalt~$1$ ist,
-das aber nicht normiert ist.
+das aber nicht normiert ist. Ein anderes Gegenbeispiel ist~$f(X) = \frac{1}{3}
+X$, dessen Inhalt~$\frac{1}{3}$ ist.
 \end{enumerate}
 \end{loesung}
 \end{aufgabe}
@@ -107,6 +108,9 @@ Exponenten~$k$ ist~$a^k \equiv 2$ modulo~$5$?
 \[ (a+b) - (a'+b') = (a-a') + (b-b') \]
 durch~$n$ teilbar, d.\,h. es gilt~$a+b \equiv a'+b'$.
 
+\emph{Bemerkung:} Etwas abstrakter formuliert hat man in dieser Aufgabe
+gezeigt, dass die Addition auf dem Restklassenring~$\ZZ/(n)$ wohldefiniert ist.
+
 \item Da~$a$ und~$n$ zueinander teilerfremd sind, gibt es eine
 Bézoutdarstellung der Form~$1 = pa + qn$ für gewisse ganze Zahlen~$p$ und~$q$.
 Modulo~$n$ gilt daher~$1 \equiv p a$ (d.\,h.~$p$ ist ein Inverses für~$a$
@@ -116,6 +120,11 @@ mit~$p$ multipliziert, erhält man~$pab \equiv pab'$, also~$b \equiv b'$.
 \item Für keinen einzigen Exponenten ist das erfüllt. Denn wenn~$a \equiv 1$
 modulo~$5$, so sind auch~$a^2$, $a^3$ usw. jeweils kongruent zu~$1$ modulo~$5$.
 Aber~$2$ ist nicht kongruent zu~$1$ modulo~$5$.
+
+\emph{Variante:} Wenn~$a \equiv 1$ modulo~$5$, gibt es eine ganze Zahl~$p$
+mit~$a - 1 = 5p$. Dann kann man mit dem binomischen Lehrsatz das
+Produkt~$(a-1)^k$ explizit ausmultiplizieren und sehen, dass es modulo~$5$
+kongruent zu~$1$ ist.
 
 \item Ein Inverses ist~$22$, denn~$8 \cdot 22 = 176 = 5 \cdot 35 + 1 \equiv 1$
 modulo~$35$. Ein anderes ist~$-13$.
@@ -156,7 +165,8 @@ primitiven Polynom~$f(X)$ mit ganzzahligen Koeffizienten feststellt, ob es
 \item Jede der Zahlen~$b_i$ besitzt nur endlich viele Teiler, da sie nicht null
 ist. Daher gibt es nur endlich viele Tupel~$(g_0,\ldots,g_m)$ mit~$g_i \mid
 b_i$ für alle~$i = 0,\ldots,m$. Wegen des Satzes über die Eindeutigkeit der
-Polynominterpolation gibt es für jedes dieser Tupel nur genau ein Polynom~$g(X)$ mit~$g(i)
+Polynominterpolation gibt es für jedes dieser Tupel nur genau ein
+Polynom~$g(X)$ vom Grad~$\leq m$ mit~$g(i)
 = g_i$ für alle~$i = 0,\ldots,m$.
 
 \item Gelte~$f(X) = g(X) \cdot h(X)$.
@@ -177,6 +187,17 @@ aufgeht. Wenn ja, ist~$f(X)$ reduzibel, da wir einen abspaltenden Faktor
 gefunden haben. Wenn die Division so nie aufgeht, ist~$f(X)$ über den ganzen
 Zahlen und wegen seiner Primitivität auch über den rationalen Zahlen
 irreduzibel.
+
+\emph{Bemerkung:} Das hier vorgestellte Verfahren ist in der Praxis relativ
+untauglich. Besser ist es, spezialisierte Algorithmen zu verwenden; einen davon
+(bei weitem nicht der beste) haben wir in der Vorlesung kennengelernt
+(Auswahlen von Nullstellen betrachten). All diese besseren Verfahren verwenden
+aber die reellen oder komplexen Zahlen. Der Vorteil des Verfahrens dieser
+Aufgabe ist, dass es ausschließlich mit der Betrachtung rationaler Zahlen
+auskommt. Das ist von einem theoretischen Standpunkt aus wünschenswert: Denn in
+der Formulierung der Frage nach der Irreduzibilität eines primitiven Polynoms
+mit ganzzahligen Koeffizienten treten die reellen oder komplexen Zahlen ja gar
+nicht auf.
 \end{loesungE}
 \end{aufgabe}
 
