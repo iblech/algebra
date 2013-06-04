@@ -239,3 +239,54 @@ ab 17:00 Uhr im Parktheater Göggingen, mehr Informationen auf
 \url{http://xrl.us/gauss2013}.
  
 \end{document} 
+
+
+Maxima 5.24.0 http://maxima.sourceforge.net
+using Lisp GNU Common Lisp (GCL) GCL 2.6.7 (a.k.a. GCL)
+Distributed under the GNU Public License. See the file COPYING.
+Dedicated to the memory of William Schelter.
+The function bug_report() provides bug reporting information.
+(%i1) -a+sqrt(a^2-4*b) = -c + sqrt(c^2-4*d);
+                          2                    2
+(%o1)               sqrt(a  - 4 b) - a = sqrt(c  - 4 d) - c
+(%i2) % + a - sqrt(c^2-4*d);
+                          2                2
+(%o2)               sqrt(a  - 4 b) - sqrt(c  - 4 d) = a - c
+(%i3) %^2;
+                        2                2        2          2
+(%o3)            (sqrt(a  - 4 b) - sqrt(c  - 4 d))  = (a - c)
+(%i4) expand(%);
+                      2              2           2          2    2            2
+(%o4) - 4 d - 2 sqrt(a  - 4 b) sqrt(c  - 4 d) + c  - 4 b + a  = c  - 2 a c + a
+(%i5) % - a^2 - c^2 + 4*b + 4*d;
+                       2              2
+(%o5)        - 2 sqrt(a  - 4 b) sqrt(c  - 4 d) = 4 d - 2 a c + 4 b
+(%i6) % / 2;
+                      2              2          4 d - 2 a c + 4 b
+(%o6)         - sqrt(a  - 4 b) sqrt(c  - 4 d) = -----------------
+                                                        2
+(%i7) expand(%);
+                       2              2
+(%o7)          - sqrt(a  - 4 b) sqrt(c  - 4 d) = 2 d - a c + 2 b
+(%i8) %^2;
+                    2          2                           2
+(%o8)             (a  - 4 b) (c  - 4 d) = (2 d - a c + 2 b)
+(%i9) expand(%);
+                  2          2    2  2
+(%o9) 16 b d - 4 a  d - 4 b c  + a  c  =
+                                   2                      2  2                2
+                                4 d  - 4 a c d + 8 b d + a  c  - 4 a b c + 4 b
+(%i10) lhs(%) - rhs(%);
+               2                        2          2                2
+(%o10)    - 4 d  + 4 a c d + 8 b d - 4 a  d - 4 b c  + 4 a b c - 4 b
+(%i11) a^2 *d - a*b*c - a*c*d + b^2 + b*c^2 - 2*b*d + d^2;
+                  2                    2        2            2
+(%o11)           d  - a c d - 2 b d + a  d + b c  - a b c + b
+(%i12) %o10 / -4;
+                2                        2          2                2
+           - 4 d  + 4 a c d + 8 b d - 4 a  d - 4 b c  + 4 a b c - 4 b
+(%o12)   - -----------------------------------------------------------
+                                        4
+(%i13) expand(%);
+                  2                    2        2            2
+(%o13)           d  - a c d - 2 b d + a  d + b c  - a b c + b
