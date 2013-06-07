@@ -231,6 +231,42 @@ und rechnen:
 \emph{Variante:} Statt der Beziehungen aus dem Satz von Vieta kann man auch die
 explizite Darstellung der Lösungen durch die Mitternachtsformel verwenden und
 dann die Ausmultipliziererei beginnen. Man erhält dasselbe Ergebnis.
+
+\emph{Variante, die zu wenig zeigt:} Man kann mit der Mitternachtsformel die
+Lösungen der beiden Gleichungen angeben und diese gleichsetzen -- die
+beiden~"`$\pm$"'-Zeichen sollen dabei unabhängig voneinander sein:
+\begin{align*}
+  && x_{1,2} &= y_{1,2} \\
+  \Longleftrightarrow &&
+    -a \pm_1 \sqrt{a^2 - 4b} &= -c \pm_2 \sqrt{c^2 - 4d} \\
+  \Longleftrightarrow &&
+    \pm_1\sqrt{a^2 - 4b} \mp_2\sqrt{c^2 - 4d} &= a - c \\
+  \Longrightarrow &&
+    a^2 - 4b + 2 \pm_1 \mp_2 \sqrt{a^2-4b}\sqrt{c^2-4d} + c^2 - 4d &= a^2 - 2ac + c^2 \\
+  \Longleftrightarrow &&
+    \pm_1 \mp_2 \sqrt{a^2-4b}\sqrt{c^2-4d} &= 2b + 2d - ac \\
+  \Longrightarrow &&
+    (a^2 - 4b) \cdot (c^2 - 4d) &= (2b + 2d - ac)^2 \\
+  \Longleftrightarrow &&
+    a^2d - abc - acd + b^2 + bc^2 - 2bd + d^2 &= 0
+\end{align*}
+Dann erhält man zwar denselben Ausdruck wie oben, kann sich jedoch nicht sicher
+sein, dass er \emph{nur} dann verschwindet, wenn die beiden Gleichungen eine
+gemeinsame Lösung besitzen: Denn in der Herleitung kamen nicht
+ausschließlich~"`$\Leftrightarrow$"'-Pfeile vor. Man kann sich aber sicher
+sein, dass der Ausdruck \emph{zumindest} dann verschwindet, wenn es gemeinsame
+Lösungen gibt, denn jeder Schritt funktionierte zumindest in der
+Richtung~"`$\Rightarrow$"'.
+
+\emph{Bemerkung, die Neugierde wecken soll:} Man kann den gesuchten Ausdruck
+auch als Determinante einer gewissen Matrix schreiben:
+\[ R = \det\begin{pmatrix}
+  1 & a & b & 0 \\
+  0 & 1 & a & b \\
+  1 & c & d & 0 \\
+  0 & 1 & c & d
+\end{pmatrix}\!. \]
+Das hat einen tieferen Grund.
 \end{loesungE}
 \end{aufgabe}
 
@@ -241,54 +277,4 @@ ab 17:00 Uhr im Parktheater Göggingen, mehr Informationen auf
 \end{document} 
 
 
-Maxima 5.24.0 http://maxima.sourceforge.net
-using Lisp GNU Common Lisp (GCL) GCL 2.6.7 (a.k.a. GCL)
-Distributed under the GNU Public License. See the file COPYING.
-Dedicated to the memory of William Schelter.
-The function bug_report() provides bug reporting information.
-(%i1) -a+sqrt(a^2-4*b) = -c + sqrt(c^2-4*d);
-                          2                    2
-(%o1)               sqrt(a  - 4 b) - a = sqrt(c  - 4 d) - c
-(%i2) % + a - sqrt(c^2-4*d);
-                          2                2
-(%o2)               sqrt(a  - 4 b) - sqrt(c  - 4 d) = a - c
-(%i3) %^2;
-                        2                2        2          2
-(%o3)            (sqrt(a  - 4 b) - sqrt(c  - 4 d))  = (a - c)
-(%i4) expand(%);
-                      2              2           2          2    2            2
-(%o4) - 4 d - 2 sqrt(a  - 4 b) sqrt(c  - 4 d) + c  - 4 b + a  = c  - 2 a c + a
-(%i5) % - a^2 - c^2 + 4*b + 4*d;
-                       2              2
-(%o5)        - 2 sqrt(a  - 4 b) sqrt(c  - 4 d) = 4 d - 2 a c + 4 b
-(%i6) % / 2;
-                      2              2          4 d - 2 a c + 4 b
-(%o6)         - sqrt(a  - 4 b) sqrt(c  - 4 d) = -----------------
-                                                        2
-(%i7) expand(%);
-                       2              2
-(%o7)          - sqrt(a  - 4 b) sqrt(c  - 4 d) = 2 d - a c + 2 b
-(%i8) %^2;
-                    2          2                           2
-(%o8)             (a  - 4 b) (c  - 4 d) = (2 d - a c + 2 b)
-(%i9) expand(%);
-                  2          2    2  2
-(%o9) 16 b d - 4 a  d - 4 b c  + a  c  =
-                                   2                      2  2                2
-                                4 d  - 4 a c d + 8 b d + a  c  - 4 a b c + 4 b
-(%i10) lhs(%) - rhs(%);
-               2                        2          2                2
-(%o10)    - 4 d  + 4 a c d + 8 b d - 4 a  d - 4 b c  + 4 a b c - 4 b
-(%i11) a^2 *d - a*b*c - a*c*d + b^2 + b*c^2 - 2*b*d + d^2;
-                  2                    2        2            2
-(%o11)           d  - a c d - 2 b d + a  d + b c  - a b c + b
-(%i12) %o10 / -4;
-                2                        2          2                2
-           - 4 d  + 4 a c d + 8 b d - 4 a  d - 4 b c  + 4 a b c - 4 b
-(%o12)   - -----------------------------------------------------------
-                                        4
-(%i13) expand(%);
-                  2                    2        2            2
-(%o13)           d  - a c d - 2 b d + a  d + b c  - a b c + b
-
-determinant(matrix([1,a,b,0],[0,1,a,b],[1,c,d,0],[0,1,c,d]));
+TODO: Beste Formulierung von Aufgabe 5a finden!
