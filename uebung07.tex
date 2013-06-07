@@ -63,7 +63,7 @@ also von~$d$.
 größte gemeinsame Teiler von~$f$ und~$g$. Da~$d$ ein größer gemeinsamer Teiler
 ist, folgt~$\widetilde d \mid d$. Umgekehrt folgt~$d \mid \widetilde d$,
 da~$\widetilde d$ ein größter gemeinsamer Teiler ist. Da~$d$ und~$\widetilde d$
-beide normiert sind, folgt~$d = \widetilde d$.
+beide normiert sind, folgt~$d = \widetilde d$ (wieso?).
 
 \item Wir können~$f$ und~$g$ in ihre irreduziblen Faktoren~$p_i$ zerlegen:
 \begin{align*}
@@ -89,7 +89,7 @@ Implizit haben wir dabei folgendes allgemeines Lemma verwendet: Sei~$p$ ein irre
 Polynom und gelte~$f \mid g$ (also~$g = \widetilde g \cdot f$ für ein
 Polynom~$\widetilde g$). Dann ist die Vielfachheit von~$p$ in~$f$
 höchstens gleich der Vielfachheit von~$p$ in~$g$. Diese Beobachtung folgt
-sofort aus der Eindeutigkeit der Zerlegung in irreduzible Faktoren.
+sofort aus der Eindeutigkeit der Zerlegung in irreduzible Faktoren (wieso?).
 
 \item Folgende Definition ist sinnvoll: Ein Polynom~$k$ heißt genau dann
 \emph{kleinstes gemeinsames Vielfaches} von~$f$ und~$g$, wenn~$k$ ein
@@ -103,7 +103,7 @@ jetzt aber~$e_i := \max\{ a_i, b_i \}$ setzen. Der Beweis, dass dieses Polynom
 tatsächlich ein kleinstes gemeinsames Vielfaches von~$f$ und~$g$ ist, verläuft
 völlig analog.
 
-\emph{Konstruktionsvariante:} Man kann auch~$k := f \cdot g / d$. Dabei geht
+\emph{Konstruktionsvariante:} Man kann auch~$k := f \cdot g / d$ setzen. Dabei geht
 die Polynomdivision auf, denn da~$d$ größter gemeinsamer Teiler ist, gibt es
 Polynome~$\widetilde f, \widetilde g, p, q$ mit
 \begin{align*}
@@ -130,11 +130,12 @@ dann \emph{kleinstes gemeinsames Vielfaches} von~$f$ und~$g$, wenn~$k$ ein
 gemeinsames Vielfaches von~$f$ und~$g$ ist und für jedes gemeinsame
 Vielfache~$\widetilde k$ von~$f$ und~$g$ gilt:~$\deg k \leq \deg \widetilde k$.
 
-\emph{Bemerkung:} Die eleganten Definitionen von ggT und kgV sind Beispiele für
-Definitionen durch sog. \emph{universelle Eigenschaften}. Tatsächlich kann man
-ggT und kgV als Produkt bzw. Koprodukt in einer geeigneten Kategorie von
-Polynomen realisieren (in der zwischen zwei Polynomen genau dann ein Morphismus
-verläuft, falls das erste das zweite teilt).
+\emph{Bemerkung für Leute, die wissen, was eine Kategorie ist:} Die eleganten
+Definitionen von ggT und kgV sind Beispiele für Definitionen durch sog.
+\emph{universelle Eigenschaften}. Tatsächlich kann man ggT und kgV als Produkt
+bzw. Koprodukt in einer geeigneten Kategorie von Polynomen realisieren (in der
+zwischen zwei Polynomen genau dann ein Morphismus verläuft, falls das erste das
+zweite teilt).
 \end{loesungE}
 \end{aufgabe}
 
@@ -176,7 +177,7 @@ stimmt mit obiger überein.
 \item Das Polynom~$f_a$ ist genau dann nicht separabel, wenn seine Diskriminante null
 ist:
 \[ \Delta_{f_a} = -4p^3 - 27q^2 = \cdots =
-  -32 \cdot a^6 - 27 a^2 + 324 a - 972 \stackrel{!}{=} 0. \]
+  -32 a^6 - 27 a^2 + 324 a - 972 \stackrel{!}{=} 0. \]
 Damit haben wir die geforderte Polynomgleichung gefunden.
 
 \item Sei~$d(X)$ der normierte größte gemeinsame Teiler
@@ -192,6 +193,10 @@ normiert ist, muss es daher gleich dem Einspolynom sein.
 
 "`$\Longleftarrow$"': Da~$d(X)$ nach Voraussetzung keine Nullstellen besitzt,
 besitzt~$f(X)$ keinerlei mehrfache Nullstellen.
+
+\emph{Variante für die Rückrichtung:} Nach Vorlesung ist~$f_0 := f /
+\operatorname{ggT}(f, f')$ ein separables Polynom. Da nach Voraussetzung der
+Nenner das Einspolynom ist, ist also~$f_0 = f$ ein separables Polynom.
 \end{loesungE}
 \end{aufgabe}
 
@@ -313,6 +318,11 @@ Für den Beweis des Induktionsschritts~$n \to n + 1$ gelte~$f \mid g_1 \cdots
 g_{n+1} = (g_1 \cdots g_n) \cdot g_{n+1}$. Nach Folgerung~3.11 folgt dann~$f
 \mid g_1 \cdots g_n$ oder~$f \mid g_{n+1}$. Im zweiten Fall sind wir sofort
 fertig, im ersten Fall nach Anwendung der Induktionsvoraussetzung.
+
+\emph{Variante:} Wir können die Polynome~$g_i$ jeweils in ihre irreduziblen
+Faktoren zerlegen. Wegen der Eindeutigkeit der Zerlegung muss dann einer dieser
+vielen Faktoren gleich~$f$ sein. Also teilt~$f$ dasjenige~$g_i$, zu dem dieser
+Faktor gehört.
 \end{loesungE}
 \end{aufgabe}
 
@@ -353,7 +363,7 @@ echt abnehmen, aber nach unten durch~$0$ beschränkt sind. Daher muss
 irgendwann (genauer: nach spätestens~$|b|$ Schritten) der Rest~$0$
 erreicht werden.
 
-Zu Punkt~2 können wir die Gleichungen rückwärts betrachten: Die letzte
+Für Punkt~2 können wir die Gleichungen rückwärts betrachten: Die letzte
 Gleichung sagt uns, dass~$d = r_n$ ein Teiler von~$r_{n-1}$ ist. Aus der
 vorletzten Gleichung folgt daher, dass~$d$ auch ein Teiler von~$r_{n-2}$ ist.
 Analog folgt dann aus der drittletzten Gleichung, dass~$d$ ein Teiler
@@ -394,3 +404,7 @@ wird. Etwa ergibt sich für~$a = 2 \cdot 21$, $b = 2 \cdot 34$:
 Herausgefallen:
 * Algebraischen Zahlen sind ein Integritätsbereich.
 * Bewertung wie Logarithmus
+
+Was passiert bei der f_a-Aufgabe, wenn man f_0 betrachtet?
+
+Euklid-Aufgabe mit Induktionsbeweis
