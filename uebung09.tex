@@ -1,42 +1,44 @@
 \documentclass{algblatt}
 \input{config.tex}
-\geometry{tmargin=2cm,bmargin=2cm,lmargin=3.0cm,rmargin=3.0cm}
+\geometry{tmargin=2cm,bmargin=2cm,lmargin=2.4cm,rmargin=2.4cm}
 
 %\setlength{\titleskip}{0.7em}
-\setlength{\aufgabenskip}{1.6em}
+\setlength{\aufgabenskip}{1.4em}
 
 \begin{document}
 
 \vspace*{-1.5cm}
 \maketitle{9}{Abgabe bis 17. Juni 2013, 17:00 Uhr}
 
-\begin{aufgabe}{\ldots}
-\begin{enumerate}
-\item Sei~$x \in \QQ(\sqrt{3})$. Liegt dann immer auch eine Quadratwurzel
-von~$x$ in~$\QQ(\sqrt{3})$?
-\item Zeige, dass der \emph{goldene Schnitt} $\Phi = \frac{1+\sqrt{5}}{2}$ eine
-ganz algebraische Zahl ist, obwohl in diesem Ausdruck Nenner vorkommen, die
-sich nicht offensichtlich wegkürzen lassen.
-\end{enumerate}
-\end{aufgabe}
+%\begin{aufgabe}{\ldots}
+%\begin{enumerate}
+%\item Sei~$x \in \QQ(\sqrt{3})$. Liegt dann immer auch eine Quadratwurzel
+%von~$x$ in~$\QQ(\sqrt{3})$?
+%\item Zeige, dass der \emph{goldene Schnitt} $\Phi = \frac{1+\sqrt{5}}{2}$ eine
+%ganz algebraische Zahl ist, obwohl in diesem Ausdruck Nenner vorkommen, die
+%sich nicht offensichtlich wegkürzen lassen.
+%\end{enumerate}
+%\end{aufgabe}
 
 \begin{aufgabe}{Linearkombinationen}
 \begin{enumerate}
-\item Sei~$x$ eine Lösung der Gleichung~$X^4-2\,X^3+12\,X-10=0$. Drücke~$x^6$
+\item Sei~$x$ eine Lösung der Gleichung~$X^4-3\,X^3+10\,X-10=0$. Drücke~$x^6$
 als Linearkombination der Zahlen~$1,x,x^2,x^3$ mit rationalen Koeffizienten
 aus.
-\item Sei~$z := \sqrt{2} + \sqrt[3]{2}$ gegeben. Gib eine
+\item Sei~$z := \sqrt{5} + \sqrt[3]{5}$ gegeben. Gib eine
 natürliche Zahl~$n$ und eine verschwindende nichttriviale Linearkombination
 von~$1,z,z^2,\ldots,z^n$ mit rationalen Koeffizienten an.
+\item Finde zwei komplexe Zahlen, die über~$\RR$ linear unabhängig und
+über~$\CC$ linear abhängig sind.
 \end{enumerate}
 \end{aufgabe}
 
 \begin{aufgabe}{Grade algebraischer Zahlen}
 \begin{enumerate}
-\item Berechne den Grad von~$\sqrt{2} + \i$ über~$\QQ$, über~$\QQ(\sqrt{2})$ und
+\item Berechne den Grad von~$\sqrt{3} + \i$ über~$\QQ$, über~$\QQ(\sqrt{3})$ und
 über~$\QQ(\i)$.
 \item Finde ein Polynom mit rationalen Koeffizienten, das über~$\QQ$
-irreduzibel ist, über~$\QQ(\sqrt{2})$ in genau zwei und über~$\QQ(\sqrt{2}+\i)$
+irreduzibel ist, über~$\QQ(\sqrt{3})$ in genau zwei und über~$\QQ(\sqrt{3}+\i)$
 in genau vier irreduzible Polynome zerfällt.
 \item Seien~$a$ und~$d$ ganze Zahlen. Zeige, dass~$a + \sqrt{d}$ eine ganz
 algebraische Zahl ist und berechne ihren Grad in Abhängigkeit von~$a$ und~$d$.
@@ -46,11 +48,18 @@ und gib eine Basis von~$\QQ(\alpha)$ über~$\QQ(\zeta)$ an.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{Irrationale Zahlen für Fortgeschrittene}
-Zeige mit elementaren Methoden direkt über den Ansatz~$\sqrt{2} = a +
-b\sqrt{3}$ mit rationalen Zahlen~$a$ und~$b$, dass~$\sqrt{2}$ kein Element
-von~$\QQ(\sqrt{3})$ ist, also keine in~$\sqrt{3}$ rationale Zahl ist. Welchen
-Grad hat~$\sqrt{2}$ daher über~$\QQ(\sqrt{3})$?
+\begin{aufgabe}{Spiel und Spaß mit der Gradformel}
+\begin{enumerate}
+\item Seien~$x \in \overline{\QQ}$, $y \in \QQ(x)$ und~$z \in \QQ(y)$. Wie lässt sich~$\deg_{\QQ(z)} x$
+aus~$\deg_{\QQ(y)} x$ und~$\deg_{\QQ(z)} y$ berechnen?
+
+\item Seien~$x, y, z$ wie in~a). Zeige, dass~$\deg_{\QQ(z)} y$ ein Teiler
+von~$\deg_{\QQ(z)} x$ ist.
+
+\item Sei~$f$ ein normiertes und irreduzibles Polynom vom Grad~$\geq 2$ mit rationalen
+Koeffizienten. Sei~$a$ eine algebraische Zahl, deren Grad teilerfremd zum Grad
+von~$f$ ist. Zeige, dass keine Zahl aus~$\QQ(a)$ Nullstelle von~$f$ sein kann.
+\end{enumerate}
 \end{aufgabe}
 
 \begin{aufgabe}{Primitive Elemente}
@@ -64,6 +73,13 @@ algebraische Zahl~$z$ mit~$\QQ(z) = \QQ(z_1,\ldots,z_n)$ gibt.
 algebraische Zahl~$a$ existiert, sodass~$f(X)$ über~$\QQ(a)$ vollständig in
 Linearfaktoren zerfällt.
 \end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Irrationale Zahlen für Fortgeschrittene}
+Zeige mit elementaren Methoden direkt über den Ansatz~$\sqrt{2} = a +
+b\sqrt{3}$ mit rationalen Zahlen~$a$ und~$b$, dass~$\sqrt{2}$ kein Element
+von~$\QQ(\sqrt{3})$ ist, also keine in~$\sqrt{3}$ rationale Zahl ist. Welchen
+Grad hat~$\sqrt{2}$ daher über~$\QQ(\sqrt{3})$?
 \end{aufgabe}
 
 \end{document}
