@@ -1,0 +1,82 @@
+\documentclass{algblatt}
+\input{config.tex}
+\geometry{tmargin=2cm,bmargin=2cm,lmargin=3.0cm,rmargin=3.0cm}
+
+%\setlength{\titleskip}{0.7em}
+\setlength{\aufgabenskip}{1.6em}
+
+\begin{document}
+
+\vspace*{-1.5cm}
+\maketitle{10}{Abgabe bis 24. Juni 2013, 17:00 Uhr}
+
+%\begin{aufgabe}{\ldots}
+%\begin{enumerate}
+%\item Sei~$x \in \QQ(\sqrt{3})$. Liegt dann immer auch eine Quadratwurzel
+%von~$x$ in~$\QQ(\sqrt{3})$?
+%\item Zeige, dass der \emph{goldene Schnitt} $\Phi = \frac{1+\sqrt{5}}{2}$ eine
+%ganz algebraische Zahl ist, obwohl in diesem Ausdruck Nenner vorkommen, die
+%sich nicht offensichtlich wegkürzen lassen.
+%\end{enumerate}
+%\end{aufgabe}
+
+\begin{aufgabe}{Weitere Gradformelaufgaben}
+\begin{enumerate}
+\item Sei~$z$ eine algebraische Zahl und seien~$x, y \in \QQ(z)$. Zeige, dass
+\[ \gra{\QQ(z)}{\QQ(x)} \cdot \gra{\QQ(x)}{\QQ} = \gra{\QQ(z)}{\QQ(y)} \cdot
+\gra{\QQ(y)}{\QQ}, \]
+und gib ein Diagramm zur Veranschaulichung an.
+\item Sei~$a$ eine algebraische Zahl und~$y \in \QQ(a)$. Sei~$f$ ein normiertes
+Polynom mit Koeffizienten aus~$\QQ(y)$, das über~$\QQ(y)$
+auch irreduzibel ist. Sei der Grad von~$f$ mindestens~2 und teilerfremd
+zu~$\deg_{\QQ(y)} x$. Zeige, dass keine Zahl aus~$\QQ(a)$ Nullstelle von~$f$
+sein kann.
+
+\item Beweise oder widerlege: Sei~$z$ ein primitives Element zu algebraischen
+Zahlen~$x, y$. Dann ist~$\deg_\QQ z$ ein Teiler von~$\deg_\QQ x \cdot \deg_\QQ
+y$.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Galoissche Konjugierte}
+\begin{enumerate}
+\item Finde zwei algebraische Zahlen, die nicht zueinander galoissch konjugiert
+sind.
+\item Wie viele galoissch Konjugierte hat die Zahl~$x_1 = \sqrt[3]{1 +
+\sqrt{2}}$?
+\item Seien~$p$ und~$q$ zwei verschiedene Primzahlen. Finde alle galoissch
+Konjugierten von~$\sqrt{p} + \sqrt{q}$.
+\item Sei~$t$ eine algebraische Zahl. Zeige, dass die Summe von~$t$ mit all
+seinen galoisschen Konjugierten eine rationale Zahl ist. Wie steht es mit dem
+Produkt?
+\item Seien~$x, y, z$ algebraische Zahlen sodass~$x$ zu~$y$ und~$y$ zu~$z$
+galoissch konjugiert ist. Zeige, dass dann auch~$x$ galoissch konjugiert zu~$z$
+ist.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Polynome sind blind für galoissch Konjugierte}
+\begin{enumerate}
+\item Zeige, dass eine algebraische Zahl~$t$ genau dann zu einer weiteren
+algebraischen Zahl~$t'$ galoissch konjugiert ist, wenn jedes Polynom mit
+rationalen Koeffizienten, welches~$t$ als Nullstelle hat, auch~$t'$ als
+Nullstelle hat.
+\item Seien~$t$ und~$t'$ zueinander galoissch konjugierte algebraische Zahlen
+und~$f$ ein Polynom mit rationalen Koeffizienten. Zeige, dass dann auch die
+Zahlen~$x := f(t)$ und~$x' := f(t')$ zueinander galoissch konjugiert sind.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Gegenbeispiele}
+Zeige an jeweils einem Beispiel, dass
+\begin{enumerate}
+\item Hilfssatz~4.3 auf Seite 118
+\item Proposition~4.4 auf Seite 119
+\end{enumerate}
+falsch werden, wenn man von den dort vorkommenden Zahlen~$x_1,\ldots,x_n$ nicht
+voraussetzt, dass sie die gesamten Lösungen (mit Vf.) einer Polynomgleichung
+mit rationalen Koeffizienten sind, sondern stattdessen beliebige algebraische
+Zahlen erlaubt.
+\end{aufgabe}
+
+\end{document}

@@ -78,3 +78,5 @@
 \newcommand{\Hom}{\mathrm{Hom}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\GL}[1]{\operatorname{GL}(#1)}
+
+\newcommand{\gra}[2]{[#1:#2]}
