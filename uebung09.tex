@@ -1,4 +1,5 @@
 \documentclass{algblatt}
+\usepackage{tikz}
 \input{config.tex}
 \geometry{tmargin=2cm,bmargin=2cm,lmargin=2.4cm,rmargin=2.4cm}
 
@@ -31,6 +32,40 @@ von~$1,z,z^2,\ldots,z^n$ mit rationalen Koeffizienten an.
 \item Finde zwei komplexe Zahlen, die über~$\RR$ linear unabhängig und
 über~$\CC$ linear abhängig sind.
 \end{enumerate}
+
+\begin{loesungE}
+\item \emph{Variante 1:} Wir rechnen unter Verwendung der Beziehung~$x^4 = 3x^3
+- 10x + 10$:
+\begin{align*}
+  x^6 &= x^4 x^2 = (3x^3 - 10x + 10) x^2 \\
+  &= 3x^4 x - 10x^3 + 10x^2 \\
+  &= 3 \cdot (3x^3 - 10x + 10)x - 10x^3 + 10x^2 \\
+  &= 9x^4 - 30x^2 + 30x - 10x^3 + 10x^2 \\
+  &= 9 \cdot (3x^3 - 10x + 10) - 30x^2 + 30x - 10x^3 + 10x^2 \\
+  &= 27x^3 - 90x + 90 - 30x^2 + 30x - 10x^3 + 10x^2 \\
+  &= 17x^3 - 20x^2 - 60x + 90
+\end{align*}
+
+\emph{Variante 2:} Wir führen in einem Schritt eine Polynomdivision durch:
+\[ X^6 = (X^4-3\,X^3+10\,X-10) \cdot (X^2 + 3\,X + 9) + (17\,X^3 - 20\,X^2 -
+60\,X + 90). \]
+Setzt man nun~$x$ für~$X$ ein, erhält man dasselbe Ergebnis, da die erste
+Klammer verschwindet.
+
+\item \ldots
+
+\item Zum Beispiel~$1$ und~$\i$: Diese sind über~$\RR$ sicherlich linear
+unabhängig, denn für reelle Zahlen~$a,b \in \RR$ folgt aus
+\[ a \cdot 1 + b \cdot \i = 0 \]
+sofort~$a = b = 0$, da eine komplexe Zahl genau dann null ist, wenn ihr Real-
+und Imaginärteil null sind. Dagegen bezeugt die verschwindende und trotzdem
+nichttriviale Linearkombination
+\[ \i \cdot 1 + (-1) \cdot \i = 0, \]
+dass die beiden Zahlen über~$\CC$ linear abhängig sind.
+
+\emph{Bemerkung:} Letzteres muss auch so sein, denn~$\CC$ ist
+als~$\CC$-Vektorraum nur eindimensional.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Grade algebraischer Zahlen}
@@ -46,6 +81,95 @@ algebraische Zahl ist und berechne ihren Grad in Abhängigkeit von~$a$ und~$d$.
 0$. Zeige, dass~$\zeta$ eine in~$\alpha := \exp(\pi\i/5)$ rationale Zahl ist,
 und gib eine Basis von~$\QQ(\alpha)$ über~$\QQ(\zeta)$ an.
 \end{enumerate}
+
+\begin{loesungE}
+\item \emph{Variante 1 (direkt, etwas länglich):} Sei~$z := \sqrt{3} + \i$. Wir
+wollen zunächst den Grad von~$z$ über~$\QQ(\sqrt{3})$ bestimmen. Dazu suchen
+wir das Minimalpolynom:
+\begin{align*}
+  && z &= \sqrt{3} + \i \\
+  \Longleftrightarrow&& z - \sqrt{3} &= \i \\
+  \Longrightarrow&& (z - \sqrt{3})^2 &= -1 \\
+  \Longleftrightarrow&& z^2 - 2\sqrt{3}z + 4 &= 0
+\end{align*}
+Das Polynom~$X^2 - 2\sqrt{3}\,X + 4$ ist tatsächlich über~$\QQ(\sqrt{3})$
+irreduzibel: Es hat Grad~2 und seine Nullstellen~$\sqrt{3} \pm \i$ sind echt
+komplex und liegen daher nicht in~$\QQ(\sqrt{3}) \subseteq \RR$. Also ist es
+das Minimalpolynom von~$z$ über~$\QQ(\sqrt{3})$; der Grad von~$z$
+über~$\QQ(\sqrt{3})$ ist also~$2$.
+
+Nun wollen wir das Minimalpolynom über~$\QQ(\i)$ bestimmen. Dazu rechnen wir:
+\begin{align*}
+  && z &= \sqrt{3} + \i \\
+  \Longleftrightarrow&& z - \i &= \sqrt{3} \\
+  \Longrightarrow&& (z - \i)^2 &= 3 \\
+  \Longleftrightarrow&& z^2 - 2\i z - 4 &= 0
+\end{align*}
+Das Polynom~$X^2 - 2\i\,X - 4$ ist tatsächlich über~$\QQ(\i)$
+irreduzibel: Es hat Grad~2 und seine Nullstellen~$\pm\sqrt{3} + \i$ liegen
+nicht in~$\QQ(\i)$: Wenn doch, läge auch~$\sqrt{3}$ in~$\QQ(\i)$ (wieso?), also
+gäbe es rationale Zahlen~$a, b \in \QQ$ mit~$\sqrt{3} = a + b \i$.
+Realteilvergleich würde dann~$\sqrt{3} = a \in \QQ$ liefern, ein Widerspruch.
+Also ist das Polynom tatsächlich das Minimalpolynom von~$z$ über~$\QQ(\i)$; der
+Grad von~$z$ über~$\QQ(\i)$ ist also~$2$.
+
+Nun bleibt es, den Grad von~$z$ über~$\QQ$ zu bestimmen. Dazu müssen wir unsere
+Rechnungen fortsetzen:
+\begin{align*}
+  && z &= \sqrt{3} + \i \\
+  \Longrightarrow&& z^2 - 2\i z - 4 &= 0 \\
+  \Longleftrightarrow&& z^2 - 4 &= 2 \i z \\
+  \Longrightarrow&& (z^2 - 4)^2 &= -4z^2 \\
+  \Longleftrightarrow&& z^4 - 4z^2 + 16 &= 0
+\end{align*}
+Nun kann man nachrechnen, dass das Polynom~$X^4 - 4\,X^2 + 16$ tatsächlich über
+den rationalen Zahlen irreduzibel ist. Das gelingt etwa über unseren
+numerischen Irreduzibilitätstest. Ist das getan, folgt, dass der Grad von~$z$
+über~$\QQ$ genau~4 ist.
+
+\emph{Variante 2 (schneller mit der Gradformel):} Sei~$z := \sqrt{3} + \i$. Die
+Zahl~$\sqrt{3}$ liegt in~$\QQ(z)$. Das kann man durch kurzes Knobeln erkennen
+(es gilt~$\sqrt{3} = z - z^3/8$) oder auch daran, dass nach dem Verfahren der
+Vorlesung~$z$ ein primitives Element von~$\sqrt{3}$ und~$\i$ ist (die
+Ausnahmemenge~$S$ enthält nur~$0$ und~$\sqrt{3} \cdot \i$) und daher
+sogar~$\QQ(z) = \QQ(\sqrt{3}, \i)$ gilt.
+
+Auf jeden Fall liegt daher der Rechenbereich~$\QQ(\sqrt{3})$ in~$\QQ(z)$ und
+wir können das Diagramm
+\begin{center}\begin{tikzpicture}[node distance=1.5cm]
+  \node (Q)                  {$\mathbb{Q}$};
+  \node (Q3)  [above of=Q]   {$\mathbb{Q}(\sqrt{3})$};
+  \node (Q3i) [above of=Q3]  {$\mathbb{Q}(\sqrt{3} + \i)$};
+  \draw (Q) -- (Q3);
+  \draw (Q3) -- (Q3i);
+\end{tikzpicture}\end{center}
+zeichnen. Nach der Gradformel gilt also
+\[ \gra{\QQ(\sqrt{3}+\i)}{\QQ} = \gra{\QQ(\sqrt{3}+\i)}{\QQ(\sqrt{3}} \cdot
+  \gra{\QQ(\sqrt{3})}{\QQ}. \]
+Wie die erste Rechnung in Variante~1 gezeigt hat, ist der erste Faktor auf der
+rechten Seite gleich~2, und vom zweiten Faktor weiß man sowieso, dass er
+gleich~2 ist (Minimalpolynom ist~$X^2 - 3$). Folglich ist der Grad von~$z$
+über~$\QQ$ gleich~$4$.
+
+Bleibt, den Grad von~$z$ über~$\QQ(\i)$ zu bestimmen. Da~$\QQ(\i) \subseteq
+\QQ(z)$ (da~$\i = z^3/8$), können wir dafür das Diagramm
+\begin{center}\begin{tikzpicture}[node distance=1.5cm]
+  \node (Q)                  {$\mathbb{Q}$};
+  \node (Qi)  [above of=Q]   {$\mathbb{Q}(\sqrt{i})$};
+  \node (Q3i) [above of=Qi]  {$\mathbb{Q}(\sqrt{3} + \i)$};
+  \draw (Q) -- (Qi);
+  \draw (Qi) -- (Q3i);
+\end{tikzpicture}\end{center}
+zeichnen und daher die Gradformel verwenden:
+\[ \gra{\QQ(\sqrt{3}+\i)}{\QQ} = \gra{\QQ(\sqrt{3}+\i)}{\QQ(\sqrt{i}} \cdot
+  \gra{\QQ(\sqrt{i})}{\QQ}. \]
+Gesucht ist der erste Faktor auf der rechten Seite, die anderen Terme kennen
+wir. Aufgelöst ergibt sich~$\gra{\QQ(\sqrt{3}+\i)}{\QQ(\sqrt{i}} =
+\deg_{\QQ(\i)} z = 2$.
+
+\emph{Bemerkung:} Die beiden Varianten kann man auf mehrere Arten und Weisen
+miteinander kombinieren.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Spiel und Spaß mit der Gradformel}
@@ -60,6 +184,25 @@ von~$\deg_{\QQ(z)} x$ ist.
 Koeffizienten. Sei~$a$ eine algebraische Zahl, deren Grad teilerfremd zum Grad
 von~$f$ ist. Zeige, dass keine Zahl aus~$\QQ(a)$ Nullstelle von~$f$ sein kann.
 \end{enumerate}
+
+\begin{loesungE}
+\item Da~$\QQ(z) \subseteq \QQ(y) \subseteq \QQ(x)$, ist die Gradformel
+anwendbar:
+\[ \deg_{\QQ(z)} x = \gra{\QQ(x)}{\QQ(z)} = \gra{\QQ(x)}{\QQ(y)} \cdot
+\gra{\QQ(y)}{\QQ(z)} = \deg_{\QQ(y)} x \cdot \deg_{\QQ(z)} y. \]
+Auf diese Weise lässt sich also der gesuchte Grad berechnen.
+
+\item Folgt sofort aus der in~a) hergeleiteten Beziehung.
+
+\item Sei~$w \in \QQ(a)$ eine hypothetische Zahl mit~$f(w) = 0$. Da~$f$
+normiert ist, rationale Koeffizienten hat und über den rationalen Zahlen
+irreduzibel ist, ist~$f$ daher Minimalpolynom von~$z$, es gilt also~$\deg_\QQ w =
+\deg f$. Somit folgt
+\[ \deg_\QQ a = \gra{\QQ(a)}{\QQ} = \gra{\QQ(a)}{\QQ(w)} \cdot \gra{\QQ(w)}{\QQ} =
+  \gra{\QQ(a)}{\QQ(w)} \cdot \deg f, \]
+also ist der Grad von~$f$ einer Teiler vom Grad von~$a$. Wegen~$\deg f \geq 2$
+ist das ein Widerspruch zur Teilerfremdheitsvoraussetzung.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Primitive Elemente}
@@ -73,6 +216,74 @@ algebraische Zahl~$z$ mit~$\QQ(z) = \QQ(z_1,\ldots,z_n)$ gibt.
 algebraische Zahl~$a$ existiert, sodass~$f(X)$ über~$\QQ(a)$ vollständig in
 Linearfaktoren zerfällt.
 \end{enumerate}
+
+\begin{loesungE}
+\item
+\emph{Variante 1 (Verfahren aus der Vorlesung):}
+Die Minimalpolynome von~$x := \i$ und~$y := \sqrt[3]{2}$ sind~$f(X) = X^2 + 1$
+bzw.~$g(X) = X^3 - 2$ mit den Nullstellen~$\pm \i$ bzw.~$\omega^k \cdot \sqrt[3]{2}$,
+$k=0,1,2$. Die Ausnahmemenge~$S$ ist daher gleich
+\begin{align*}
+  S &= \left\{ \frac{x' - x}{y - y'} \,\middle|\, f(x') = 0, g(y') = 0, y \neq
+  y' \right\} \\
+  &= \left\{ 0, \frac{-2\i}{\sqrt[3]{2} - \omega \sqrt[3]{2}},
+    \frac{-2\i}{\sqrt[3]{2} - \omega^2 \sqrt[3]{2}} \right\}.
+\end{align*}
+Näherungsweise ergibt sich
+\begin{align*}
+  \frac{-2\i}{\sqrt[3]{2} - \omega \sqrt[3]{2}} \approx \phantom{+}0{,}46 - 0{,}79 \,\i, \\
+  \frac{-2\i}{\sqrt[3]{2} - \omega^2 \sqrt[3]{2}} \approx -0{,}46 - 0{,}79 \,\i.
+\end{align*}
+Also ist zum Beispiel die Wahl~$\lambda := 1 \not\in S$ erlaubt und~$\i +
+\sqrt[3]{2}$ daher ein primitives Element.
+
+\emph{Variante 2 (durch stundenlanges Knobeln):}
+Wir vermuten, dass~$z := \i + \sqrt[3]{2}$ ein primitives Element ist und
+wollen diese Vermutung nur noch bestätigen. Klar ist zumindest, dass~$z$
+in~$\i$ und~$\sqrt[3]{2}$ rational ist, dass also~$\QQ(z) \subseteq
+\QQ(\i,\sqrt[3]{2})$ gilt. Umgekehrt kann man durch Vergleich
+verschiedener~$z$-Potenzen auf die Beziehungen
+\begin{align*}
+  \i &= -\frac{91}{22} - \frac{39}{11}z + \frac{39}{11}z^2 - \frac{20}{11}z^3 +
+  \frac{9}{22}z^4 - \frac{6}{11}z^5, \\
+  \sqrt[3]{2} &= \frac{91}{22} + \frac{50}{11}z - \frac{39}{11}z^2 +
+  \frac{20}{11}z^3 - \frac{9}{22}z^4 + \frac{6}{11}z^5
+\end{align*}
+kommen; diese bezeugen, dass~$\QQ(\i)$ und~$\QQ(\sqrt[3]{2})$ jeweils
+Teilmengen von~$\QQ(z)$ sind.
+
+\item Sei~$z := \sqrt{2} + \sqrt{3}$. Dann rechnen wir ein paar~$z$-Potenzen
+aus:
+\begin{align*}
+  z &= \sqrt{2} + \sqrt{3} \\
+  z^2 &= 5 + 2 \sqrt{6} \\
+  z^3 &= 11\sqrt{2} + 9\sqrt{3}
+\end{align*}
+Die Darstellung der Potenz~$z^2$ hilft uns nicht weiter, da in ihr nicht nur
+die Zahlen~$\sqrt{2}$ und~$\sqrt{3}$ vorkommen, sondern auch die für uns nicht
+weiter relevante Zahl~$\sqrt{6}$. Aber mit~$z^1$ und~$z^3$ können wir geeignet
+gegeneinander ausspielen:
+\begin{align*}
+  \sqrt{2} &= (z^3 - 9z) / 2 \\
+  \sqrt{3} &= (z^3 - 11z) / (-2)
+\end{align*}
+
+\item Wir führen einen Induktionsbeweis. Der Induktionsanfang~$n = 1$ ist klar.
+Für den Induktionsschritt~$n \to n + 1$ seien algebraische
+Zahlen~$z_1,\ldots,z_{n+1}$ gegeben. Nach Induktionsvoraussetzung gibt es dann
+ein primitives Element der Zahlen~$z_1,\ldots,z_n$, d.\,h. eine
+eine algebraische Zahl~$t$ mit~$\QQ(t) = \QQ(z_1,\ldots,z_n)$. Ferner können
+wir ein primitives Element~$t'$ zu~$t$ und~$z_{n+1}$ finden, also eine Zahl mit
+\[ \QQ(t') = \QQ(t,z_{n+1}) = \QQ(t)(z_{n+1}) = \QQ(z_1,\ldots,z_n)(z_{n+1}) =
+\QQ(z_1,\ldots,z_{n+1}). \]
+Das beschließt den Beweis des Induktionsschritts.
+
+\item Über den algebraischen Zahlen zerfällt~$f$ vollständig in
+Linearfaktoren:~$f = (X-x_1) \cdots (X-x_n)$. Etwas genauer zerfällt~$f$ aber
+auch schon in dem kleineren Rechenbereich~$\QQ(x_1,\ldots,x_n)$ vollständig in
+Linearfaktoren. Nach Teilaufgabe~c) ist dieser von der geforderten
+Form~$\QQ(a)$ für eine geeignete algebraische Zahl~$a$.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Irrationale Zahlen für Fortgeschrittene}
@@ -80,6 +291,37 @@ Zeige mit elementaren Methoden direkt über den Ansatz~$\sqrt{2} = a +
 b\sqrt{3}$ mit rationalen Zahlen~$a$ und~$b$, dass~$\sqrt{2}$ kein Element
 von~$\QQ(\sqrt{3})$ ist, also keine in~$\sqrt{3}$ rationale Zahl ist. Welchen
 Grad hat~$\sqrt{2}$ daher über~$\QQ(\sqrt{3})$?
+
+\begin{loesung}
+\emph{Variante 1 (über Primfaktoren):} Angenommen, $\sqrt{2} = a + b \sqrt{3}$
+für gewisse rationale Zahlen~$a = x/y$, $b = u/v \in \QQ$ mit~$x,y,u,v \in
+\ZZ$. Dann rechnen wir:
+\begin{align*}
+  && \sqrt{2} &= a + b \sqrt{3} \\
+  \Longleftrightarrow && \sqrt{2} y v &= xv + uy \sqrt{3} \\
+  \Longrightarrow && 2 y^2 v^2 &= x^2 v^2 + 2 xyuv \sqrt{3} + 3 u^2 y^2 \\
+  \Longleftrightarrow && 2 y^2 v^2 - x^2 v^2 - 3 u^2 y^2 &= 2 xyuv \sqrt{3} \\
+  \Longrightarrow && (2 y^2 v^2 - x^2 v^2 - 3 u^2 y^2)^2 &= 12 \cdot (xyuv)^2
+\end{align*}
+Auf der linken Seite kommt der Primfaktor~$3$ eine gerade Anzahl von Malen vor,
+auf der rechten Seite dagegen eine ungerade Anzahl von Malen (da er
+in~$(xyuv)^2$ gerade oft und dann noch einmal im Vorfaktor~$12$ vorkommt), das
+ist ein Widerspruch.
+
+\emph{Variante 2 (mit Fallunterscheidungen:} Angenommen, $\sqrt{2} = a + b
+\sqrt{3}$ für gewisse rationale Zahlen~$a, b \in \QQ$. Dann folgt
+\[ 2 = a^2 + 3b^2 + 2ab \sqrt{3}. \]
+Falls~$ab \neq 0$, ist das ein Widerspruch, denn dann können wir
+nach~$\sqrt{3}$ auflösen und so als rationale Zahl ausdrücken. Nach Aufgabe~1a)
+von Blatt~0 ist~$\sqrt{3}$ aber irrational.
+
+Falls~$ab = 0$, gibt es zwei Unterfälle: Falls~$b = 0$, gilt~$\sqrt{2} = a \in
+\QQ$ im Widerspruch zur Irrationalität von~$\sqrt{2}$. Falls~$b \neq 0$,
+folgt~$a = 0$ und daher~$\sqrt{2/3} = b \in \QQ$. Das kann aber nicht sein:
+Ist~$b = x/y$ mit~$x,y \in \ZZ$, folgt~$2/3 = x^2/y^2$, also~$2y^2 = 3x^2$. In
+der linken Seite tritt der Primfaktor~$2$ ungerade oft auf (wieso?), rechts
+aber gerade oft.
+\end{loesung}
 \end{aufgabe}
 
 \end{document}
