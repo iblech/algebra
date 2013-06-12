@@ -169,6 +169,40 @@ wir. Aufgelöst ergibt sich~$\gra{\QQ(\sqrt{3}+\i)}{\QQ(\sqrt{i}} =
 
 \emph{Bemerkung:} Die beiden Varianten kann man auf mehrere Arten und Weisen
 miteinander kombinieren.
+
+\item Von dem Polynom~$f(X) = X^4 - 4\,X^2 + 16 \in \QQ[X]$ haben wir schon
+gesehen, dass es über~$\QQ$ irreduzibel ist. Seine vier Nullstellen sind die
+Zahlen
+\[ x_1 = \sqrt{3} + \i,\quad x_2 = \sqrt{3} - \i,\quad x_3 = -\sqrt{3} +
+\i,\quad x_4 = -\sqrt{3} - \i, \]
+welche alle in~$\QQ(\sqrt{3} + \i)$ liegen, da~$\sqrt{3} + \i$ ein primitives
+Element für~$\QQ(\sqrt{3},\i)$ ist. Also zerfällt~$f(X)$
+über~$\QQ(\sqrt{3}+\i)$ in die vier Linearfaktoren
+\[ f(X) = (X-x_1) \cdot (X-x_2) \cdot (X-x_3) \cdot (X-x_4). \]
+Über~$\QQ(\sqrt{3})$ erhalten wir die Zerlegung
+\[ f(X) = (X-x_1) (X-x_2) \cdot (X-x_3) (X-x_4) =
+  (X^2 - 2\sqrt{3}\,X + 4) \cdot (X^2 + 2\sqrt{3}\,X + 4). \]
+Dabei sind die beiden auftretenden Faktoren sicherlich über~$\QQ(\sqrt{3})$
+irreduzibel, da sie vom Grad~2 sind und ihre Nullstellen nicht
+in~$\QQ(\sqrt{3})$ liegen, da sie echt komplex sind,
+aber~$\QQ(\sqrt{3})$ nur reelle Zahlen enthält.
+
+\item Wir setzen~$z := a + \sqrt{d}$ und rechnen:
+\begin{align*}
+  && z &= a + \sqrt{d} \\
+  \Longleftrightarrow&& z - a &= \sqrt{d} \\
+  \Longrightarrow&& (z-a)^2 &= d \\
+  \Longleftrightarrow && z^2 - 2az + a^2-d &= 0
+\end{align*}
+Die Zahl~$z$ ist also als Lösung der Polynomgleichung~$X^2 - 2aX + a^2-d = 0$
+mit ganzzahligen Koeffizienten ganz algebraisch. Außerdem ist damit klar, dass
+der Grad von~$z$ höchstens~$2$ ist. Er ist genau dann~$1$, wenn dieses Polynom
+reduzibel ist. Das ist genau dann der Fall, wenn eine seiner beiden
+Nullstellen, etwa~$z$, schon ganzzahlig ist. Das wiederum ist genau dann der
+Fall, wenn~$\sqrt{d}$ in~$\ZZ$ liegt; das ist äquivalent dazu, dass~$d$ eine
+Quadratzahl ist.
+
+\item Suche noch nach einer schönen Lösung!
 \end{loesungE}
 \end{aufgabe}
 
@@ -245,12 +279,22 @@ in~$\i$ und~$\sqrt[3]{2}$ rational ist, dass also~$\QQ(z) \subseteq
 verschiedener~$z$-Potenzen auf die Beziehungen
 \begin{align*}
   \i &= -\frac{91}{22} - \frac{39}{11}z + \frac{39}{11}z^2 - \frac{20}{11}z^3 +
-  \frac{9}{22}z^4 - \frac{6}{11}z^5, \\
-  \sqrt[3]{2} &= \frac{91}{22} + \frac{50}{11}z - \frac{39}{11}z^2 +
+  \frac{9}{22}z^4 - \frac{6}{11}z^5, \\[0.7em]
+  \sqrt[3]{2} &= \phantom{+}\frac{91}{22} + \frac{50}{11}z - \frac{39}{11}z^2 +
   \frac{20}{11}z^3 - \frac{9}{22}z^4 + \frac{6}{11}z^5
 \end{align*}
 kommen; diese bezeugen, dass~$\QQ(\i)$ und~$\QQ(\sqrt[3]{2})$ jeweils
 Teilmengen von~$\QQ(z)$ sind.
+
+\emph{Variante 3 (ein anderes primitives Element):}
+Wir vermuten, dass~$z := \i \cdot \sqrt[3]{2}$ ein primitives Element ist. Klar
+ist zumindest, dass~$z$ in~$\i$ und~$\sqrt[3]{2}$ rational ist, dass
+also~$\QQ(z) \subseteq \QQ(\i,\sqrt[3]{2})$ gilt. Die umgekehrte Inklusion
+zeigen die Beziehungen
+\begin{align*}
+  \i &= -z^3/2, \\
+  \sqrt[3]{2} &= z^4/2.
+\end{align*}
 
 \item Sei~$z := \sqrt{2} + \sqrt{3}$. Dann rechnen wir ein paar~$z$-Potenzen
 aus:
@@ -308,7 +352,7 @@ auf der rechten Seite dagegen eine ungerade Anzahl von Malen (da er
 in~$(xyuv)^2$ gerade oft und dann noch einmal im Vorfaktor~$12$ vorkommt), das
 ist ein Widerspruch.
 
-\emph{Variante 2 (mit Fallunterscheidungen:} Angenommen, $\sqrt{2} = a + b
+\emph{Variante 2 (mit Fallunterscheidungen):} Angenommen, $\sqrt{2} = a + b
 \sqrt{3}$ für gewisse rationale Zahlen~$a, b \in \QQ$. Dann folgt
 \[ 2 = a^2 + 3b^2 + 2ab \sqrt{3}. \]
 Falls~$ab \neq 0$, ist das ein Widerspruch, denn dann können wir
