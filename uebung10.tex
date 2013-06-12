@@ -76,6 +76,29 @@ Nullstelle hat.
 und~$f$ ein Polynom mit rationalen Koeffizienten. Zeige, dass dann auch die
 Zahlen~$x := f(t)$ und~$x' := f(t')$ zueinander galoissch konjugiert sind.
 \end{enumerate}
+
+\begin{loesungE}
+\item "`$\Longleftarrow$"': Sei~$m_t$ das Minimalpolynom von~$t$. Dieses hat
+sicherlich~$t$ als Nullstelle. Nach Voraussetzung ist daher auch~$t'$ eine
+Nullstelle. Also haben~$t$ und~$t'$ beide~$m_t$ als Minimalpolynom und sind
+daher galoissch Konjugierte.
+
+"`$\Longrightarrow$"' (schon im Skript als Proposition~4.2): Sei~$m_t$ das
+gemeinsame Minimalpolynom von~$t$ und~$t'$
+und sei~$f \in \QQ[X]$ ein Polynom, das~$t$ als Nullstelle hat. Dann
+haben~$f$ und~$m_t$ also die gemeinsame Nullstelle~$t$. Da~$m_t$ irreduzibel
+ist, folgt mit dem abelschen Irreduzibilitätssatz (Satz~3.10), dass~$f$ ein
+Vielfaches von~$m_t$ ist. Somit ist jede Nullstelle von~$m_t$,
+insbesondere~$t'$, auch Nullstelle von~$f$.
+
+\item Sei~$m_{f(t)}$ das Minimalpolynom von~$x = f(t)$. Dann gilt also
+\[ m_{f(t)}(f(t)) = (m_{f(t)} \circ f)(t) = 0, \]
+das Polynom~$m_{f(t)} \circ f$ besitzt also~$t$ als Nullstelle. Nach
+Teilaufgabe~a) besitzt dieses Polynom dann auch~$t'$ als Nullstelle, also gilt
+\[ m_{f(t)}(f(t')) = (m_{f(t)} \circ f)(t') = 0. \]
+Somit ist~$f(t')$ ebenfalls Nullstelle des Minimalpolynoms von~$f(t)$ und somit
+zu~$f(t)$ galoissch Konjugiert.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Gegenbeispiele}
@@ -88,6 +111,41 @@ falsch werden, wenn man von den dort vorkommenden Zahlen~$x_1,\ldots,x_n$ nicht
 voraussetzt, dass sie die gesamten Lösungen (mit Vf.) einer Polynomgleichung
 mit rationalen Koeffizienten sind, sondern stattdessen beliebige algebraische
 Zahlen erlaubt.
+
+\begin{loesungE}
+\item Hilfssatz~4.3 lautet:
+\begin{quote}
+Seien~$x_1,\ldots,x_n$ die Lösungen (mit Vielfachheiten) einer Polynomgleichung
+mit rationalen Koeffizienten. Ist dann~$V(X_1,\ldots,X_n)$ ein Polynom mit
+rationalen Koeffizienten, so sind die galoissch Konjugierten von~$t =
+V(x_1,\ldots,x_n)$ alle von der Form~$t' =
+V(x_{\sigma(1)},\ldots,x_{\sigma(n)})$, wobei~$\sigma$ eine~$n$-stellige
+Permutation ist.
+\end{quote}
+Es gibt zahlreiche Gegenbeispiele, wenn man die Voraussetzung, dass die~$x_i$
+\emph{alle} Lösungen \emph{einer} Polynomgleichung
+mit rationalen Koeffizienten sind, fallen lässt. Sei etwa~$n = 1$, $x_1 = \i$
+und~$V(X_1) = X_1$. Dann stimmt es nicht, dass alle galoissch Konjugierten
+von~$t = V(x_1) = \i$ von der (wegen~$n = 1$ einzig möglichen) Form~$t' =
+V(x_1)$ sind. Denn~$-\i$ ist ja auch noch ein galoissch Konjugiertes von~$t$.
+
+Ein komplizierteres Gegenbeispiel ist~$n = 2$, $x_1 = 17$, $x_2 = \i$,
+$V(X_1,X_2) = X_2$.
+
+\item Proposition~4.4 lautet:
+\begin{quote}
+Seien~$x_1,\ldots,x_n$ die Lösungen (mit Vielfachheiten) einer Polynomgleichung
+mit rationalen Koeffizienten. Ist dann~$t$ ein primitives Element
+zu~$x_1,\ldots,x_n$, so ist auch jedes galoissch Konjugierte~$t'$ von~$t$ ein
+primitives Element von~$x_1,\ldots,x_n$.
+\end{quote}
+Auch hier gibt es zahlreiche Gegenbeispiele, wenn man die Voraussetzung fallen
+lässt. Sei etwa~$n = 1$, $x_1 = \omega\sqrt[3]{2}$ und~$t = x_1$,
+wobei~$\omega = \exp(2\pi\i/3)$ eine primitive dritte Einheitswurzel ist. Dann stimmt es
+nicht, dass das galoissch Konjugierte~$t' = \sqrt[3]{2}$ ebenfalls ein
+primitives Element von~$\QQ(x_1)$ ist: Denn~$\QQ(t') \subseteq \RR$,
+aber~$\QQ(x_1) \not\subseteq \RR$.
+\end{loesungE}
 \end{aufgabe}
 
 \end{document}
