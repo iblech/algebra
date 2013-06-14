@@ -224,13 +224,13 @@ Quadratzahl ist.
 \item Nach Aufgabe~4c) von Blatt~3 ist~$\zeta$ eine fünfte Einheitswurzel (aber
 nicht die~$1$). Insbesondere ist~$\zeta$ damit auch eine zehnte Einheitswurzel
 (denn~$\zeta^{10}= (\zeta^5)^2 = 1^2 = 1$. Die Zahl~$\alpha = \exp(\pi\i/5) =
-\exp(2\pi\i/10)$ ist eine primitive~$10$-te Einheitswurzel, daher muss es einen
+\exp(2\pi\i/10)$ ist eine primitive zehnte Einheitswurzel, daher muss es einen
 Exponent~$k \in \ZZ$ mit~$\alpha^k = \zeta$ geben. Also ist~$\zeta$ in~$\alpha$
 rational, d.\,h. es gilt~$\QQ(\zeta) \subseteq \QQ(\alpha)$.
 
 Umgekehrt gilt auch~$\QQ(\alpha) \subseteq \QQ(\zeta)$: Die Zahl~$(-\zeta)$ ist
-nämlich eine primitive~$10$-te Einheitswurzel (siehe unten). Da~$\alpha$
-(irgend-)eine~$10$-te Einheitswurzel ist, gibt es daher einen Exponent~$\ell
+nämlich eine primitive zehnte Einheitswurzel (siehe unten). Da~$\alpha$
+(irgend-)eine zehnte Einheitswurzel ist, gibt es daher einen Exponent~$\ell
 \in \ZZ$ mit~$(-\zeta)^\ell = \alpha$. Also ist~$\alpha$ in~$\zeta$ rational,
 d.\,h. es gilt~$\QQ(\alpha) \subseteq \QQ(\zeta)$.
 
@@ -238,8 +238,8 @@ Zusammengenommen gilt somit~$\QQ(\alpha) = \QQ(\zeta)$. Daher ist der Grad der
 Erweiterung~$1$ und eine mögliche Basis ist durch die Familie~$(1)$ der
 Länge~$1$ gegeben.
 
-Nun müssen wir noch zu begründen, wieso~$(-\zeta)$ eine primitive~$10$-te Einheitswurzel
-ist. Klar ist zumindest, dass~$(-\zeta)$ überhaupt eine~$10$-te Einheitswurzel
+Nun müssen wir noch zu begründen, wieso~$(-\zeta)$ eine primitive zehnte Einheitswurzel
+ist. Klar ist zumindest, dass~$(-\zeta)$ überhaupt eine zehnte Einheitswurzel
 ist, denn es gilt~$(-\zeta)^{10} = \zeta^{10} = (\zeta^5)^2 = 1$. Um die
 Primitivität nachzuweisen, zeigen wir, dass~$(-\zeta)^j$ erst für~$j = 10$ (und
 nicht schon für~$j = 1,2,\ldots,9$) wieder~$1$ ist:
@@ -249,6 +249,15 @@ nicht ungerade sein, denn dann gälte~$\zeta^j = -1$, aber~$(-1)$ ist keine
 fünfte Einheitswurzel. Also ist~$j$ gerade und es gilt~$\zeta^j = 1$. Da~$\zeta$ eine
 \emph{primitive} fünfte Einheitswurzel ist, muss~$j$ ein Vielfaches von~$5$
 sein. Da es außerdem gerade ist, muss~$j$ sogar ein Vielfaches von~$10$ sein.
+
+\emph{Variante für den zweiten Teil, wenn man Kreisteilungspolynome kennt:} Wir wollen
+zeigen, dass~$\QQ(\alpha) = \QQ(\zeta)$. Da sicher die
+Inklusion~"`$\supseteq$"' gilt, genügt es zu zeigen, dass beide Vektorräume
+dieselbe Dimension über~$\QQ$ haben, dass also~$\deg_\QQ \alpha = \deg_\QQ
+\zeta$ gilt. Das Minimalpolynom von~$\zeta$ ist das fünfte
+Kreisteilungspolynom,~$\Phi_5 = X^4 + X^3 + X^2 + X + 1$, das von~$\alpha$ ist
+das zehnte Kreisteilungspolynom,~$\Phi_{10} = X^4 - X^3 + X^2 - X + 1$. Also
+haben beide Zahlen in der Tat denselben Grad, nämlich~$4$.
 \end{loesungE}
 \end{aufgabe}
 
