@@ -177,11 +177,12 @@ primitiven Polynom~$f(X)$ mit ganzzahligen Koeffizienten feststellt, ob es
 
 \begin{loesungE}
 \item Jede der Zahlen~$b_i$ besitzt nur endlich viele Teiler, da sie nicht null
-ist. Daher gibt es nur endlich viele Tupel~$(g_0,\ldots,g_m)$ mit~$g_i \mid
+ist (wieso genügt das?). Daher gibt es nur endlich viele Tupel~$(g_0,\ldots,g_m)$ mit~$g_i \mid
 b_i$ für alle~$i = 0,\ldots,m$. Wegen des Satzes über die Eindeutigkeit der
-Polynominterpolation gibt es für jedes dieser Tupel nur genau ein
-Polynom~$g(X)$ vom Grad~$\leq m$ mit~$g(i)
-= g_i$ für alle~$i = 0,\ldots,m$.
+Polynominterpolation gibt es für jedes dieser Tupel höchstens ein
+Polynom~$g(X)$ vom Grad~$\leq m$ mit ganzzahligen Koeffizienten und~$g(i)
+= g_i$ für alle~$i = 0,\ldots,m$ (es gibt genau eines mit rationalen
+Koeffizienten).
 
 \item Gelte~$f(X) = g(X) \cdot h(X)$.
 Nach Aufgabe~4e) von Blatt~4 sind dann
@@ -189,7 +190,7 @@ für jedes~$i$ mit~$0 \leq i \leq \frac{n}{2}$ die Zahlen~$g(i)$ und~$h(i)$
 jeweils Teiler von~$b_i := f(i)$. Mindestens einer der beiden Faktoren hat
 Grad~$\leq \frac{n}{2}$; daher folgt mit Teilaufgabe~a), dass es nur endlich
 viele Möglichkeiten für ihn gibt. Der andere Faktor ist aus dem ersten sowieso
-eindeutig bestimmt. Das zeigt zusammengenommen die Behauptung.
+eindeutig bestimmt (wieso?). Das zeigt zusammengenommen die Behauptung.
 
 \item Von einem gegebenen primitiven Polynom~$f(X)$ vom Grad~$n$ mit ganzzahligen
 Koeffizienten können wir zunächst prüfen, ob eine der Zahlen~$f(i)$ für~$0 \leq i
@@ -204,14 +205,17 @@ irreduzibel.
 
 \emph{Bemerkung:} Das hier vorgestellte Verfahren ist in der Praxis relativ
 untauglich. Besser ist es, spezialisierte Algorithmen zu verwenden; einen davon
-(bei weitem nicht der beste) haben wir in der Vorlesung kennengelernt
-(Auswahlen von Nullstellen betrachten). All diese besseren Verfahren verwenden
+(bei weitem nicht der beste) haben wir in der Vorlesung kennengelernt:
+Elementarsymmetrische Funktionen in Auswahlen von Nullstellen betrachten.
+Diese besseren Verfahren verwenden
 aber die reellen oder komplexen Zahlen. Der Vorteil des Verfahrens dieser
 Aufgabe ist, dass es ausschließlich mit der Betrachtung rationaler Zahlen
 auskommt. Das ist von einem theoretischen Standpunkt aus wünschenswert: Denn in
 der Formulierung der Frage nach der Irreduzibilität eines primitiven Polynoms
 mit ganzzahligen Koeffizienten treten die reellen oder komplexen Zahlen ja gar
-nicht auf.
+nicht auf. Es ist daher schön, eine Lösung zu finden, die die Konzepte der
+Problemstellung nicht verlässt. (Umgekehrt ist es aber auch interessant, die
+Notwendigkeit oder den Nutzen größerer Zahlbereiche zu sehen!)
 \end{loesungE}
 \end{aufgabe}
 
