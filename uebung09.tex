@@ -52,7 +52,26 @@ von~$1,z,z^2,\ldots,z^n$ mit rationalen Koeffizienten an.
 Setzt man nun~$x$ für~$X$ ein, erhält man dasselbe Ergebnis, da die erste
 Klammer verschwindet.
 
-\item \ldots
+\item Wir rechnen:
+\begin{align*}
+  && z &= \sqrt{5} + \sqrt[3]{5} \\
+  \Longleftrightarrow && \sqrt[3]{5} &= z - \sqrt{5} \\
+  \Longrightarrow && 5 &= (z - \sqrt{5})^3 \\
+  \Longleftrightarrow && 5 &= z^3 - 3\sqrt{5}z^2 + 15z - 5\sqrt{5} \\
+  \Longleftrightarrow && 5-15z-z^3 &= -\sqrt{5} \cdot (5 + 3z^2) \\
+  \Longrightarrow && (5-15z-z^3)^2 &= 5 \cdot (25 + 30z^2 + 9z^4) \\
+  \Longleftrightarrow && 0 &= z^6 - 15z^4 - 10z^3 + 75z^2 - 150z - 100 
+\end{align*}
+Also können wir etwa~$n = 6$ setzen, die gesuchte nichttriviale und trotzdem
+verschwindende Linearkombination steht schon da.
+
+\emph{Bemerkung:} Tatsächlich ist der Ausdruck in der letzten Zeile (wenn
+man~"`$X$"' statt~"`$z$"' schreibt) schon das Minimalpolynom von~$z$
+über~$\QQ$. Schmerzlos kann man durch eine schnelle Gradüberlegung erkennen: Da
+die Grade von~$\sqrt{5}$ und~$\sqrt[3]{5}$ teilerfremd sind (sie sind~$2$
+bzw.~$3$), ist der Grad von~$\QQ(\sqrt{5},\sqrt[3]{5})$ gerade durch das
+Produkt der Grade, also durch~$2 \cdot 3 = 6$ gegeben; und~$z$ ist gerade ein
+primitives Element für diese Erweiterung.
 
 \item Zum Beispiel~$1$ und~$\i$: Diese sind über~$\RR$ sicherlich linear
 unabhängig, denn für reelle Zahlen~$a,b \in \RR$ folgt aus
@@ -202,10 +221,38 @@ Nullstellen, etwa~$z$, schon ganzzahlig ist. Das wiederum ist genau dann der
 Fall, wenn~$\sqrt{d}$ in~$\ZZ$ liegt; das ist äquivalent dazu, dass~$d$ eine
 Quadratzahl ist.
 
-\item Suche noch nach einer schönen Lösung!
+\item Nach Aufgabe~4c) von Blatt~3 ist~$\zeta$ eine fünfte Einheitswurzel (aber
+nicht die~$1$). Insbesondere ist~$\zeta$ damit auch eine zehnte Einheitswurzel
+(denn~$\zeta^{10}= (\zeta^5)^2 = 1^2 = 1$. Die Zahl~$\alpha = \exp(\pi\i/5) =
+\exp(2\pi\i/10)$ ist eine primitive~$10$-te Einheitswurzel, daher muss es einen
+Exponent~$k \in \ZZ$ mit~$\alpha^k = \zeta$ geben. Also ist~$\zeta$ in~$\alpha$
+rational, d.\,h. es gilt~$\QQ(\zeta) \subseteq \QQ(\alpha)$.
+
+Umgekehrt gilt auch~$\QQ(\alpha) \subseteq \QQ(\zeta)$: Die Zahl~$(-\zeta)$ ist
+nämlich eine primitive~$10$-te Einheitswurzel (siehe unten). Da~$\alpha$
+(irgend-)eine~$10$-te Einheitswurzel ist, gibt es daher einen Exponent~$\ell
+\in \ZZ$ mit~$(-\zeta)^\ell = \alpha$. Also ist~$\alpha$ in~$\zeta$ rational,
+d.\,h. es gilt~$\QQ(\alpha) \subseteq \QQ(\zeta)$.
+
+Zusammengenommen gilt somit~$\QQ(\alpha) = \QQ(\zeta)$. Daher ist der Grad der
+Erweiterung~$1$ und eine mögliche Basis ist durch die Familie~$(1)$ der
+Länge~$1$ gegeben.
+
+Nun müssen wir noch zu begründen, wieso~$(-\zeta)$ eine primitive~$10$-te Einheitswurzel
+ist. Klar ist zumindest, dass~$(-\zeta)$ überhaupt eine~$10$-te Einheitswurzel
+ist, denn es gilt~$(-\zeta)^{10} = \zeta^{10} = (\zeta^5)^2 = 1$. Um die
+Primitivität nachzuweisen, zeigen wir, dass~$(-\zeta)^j$ erst für~$j = 10$ (und
+nicht schon für~$j = 1,2,\ldots,9$) wieder~$1$ ist:
+
+Gelte~$(-\zeta)^j = (-1)^j \zeta^j = 1$, also~$\zeta^j = (-1)^j$. Dann kann~$j$
+nicht ungerade sein, denn dann gälte~$\zeta^j = -1$, aber~$(-1)$ ist keine
+fünfte Einheitswurzel. Also ist~$j$ gerade und es gilt~$\zeta^j = 1$. Da~$\zeta$ eine
+\emph{primitive} fünfte Einheitswurzel ist, muss~$j$ ein Vielfaches von~$5$
+sein. Da es außerdem gerade ist, muss~$j$ sogar ein Vielfaches von~$10$ sein.
 \end{loesungE}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Spiel und Spaß mit der Gradformel}
 \begin{enumerate}
 \item Seien~$x \in \overline{\QQ}$, $y \in \QQ(x)$ und~$z \in \QQ(y)$. Wie lässt sich~$\deg_{\QQ(z)} x$
@@ -248,7 +295,7 @@ mit rationalen Koeffizienten aus.
 algebraische Zahl~$z$ mit~$\QQ(z) = \QQ(z_1,\ldots,z_n)$ gibt.
 \item Sei~$f(X)$ ein Polynom mit rationalen Koeffizienten. Zeige, dass eine
 algebraische Zahl~$a$ existiert, sodass~$f(X)$ über~$\QQ(a)$ vollständig in
-Linearfaktoren zerfällt.
+Linearfaktoren zerfällt.\ifloesungen\enlargethispage{2em}\fi
 \end{enumerate}
 
 \begin{loesungE}
@@ -264,11 +311,12 @@ $k=0,1,2$. Die Ausnahmemenge~$S$ ist daher gleich
     \frac{-2\i}{\sqrt[3]{2} - \omega^2 \sqrt[3]{2}} \right\}.
 \end{align*}
 Näherungsweise ergibt sich
+\vspace{-1em}
 \begin{align*}
   \frac{-2\i}{\sqrt[3]{2} - \omega \sqrt[3]{2}} \approx \phantom{+}0{,}46 - 0{,}79 \,\i, \\
-  \frac{-2\i}{\sqrt[3]{2} - \omega^2 \sqrt[3]{2}} \approx -0{,}46 - 0{,}79 \,\i.
+  \frac{-2\i}{\sqrt[3]{2} - \omega^2 \sqrt[3]{2}} \approx -0{,}46 - 0{,}79 \,\i,
 \end{align*}
-Also ist zum Beispiel die Wahl~$\lambda := 1 \not\in S$ erlaubt und~$\i +
+also ist zum Beispiel die Wahl~$\lambda := 1 \not\in S$ erlaubt und~$\i +
 \sqrt[3]{2}$ daher ein primitives Element.
 
 \emph{Variante 2 (durch stundenlanges Knobeln):}
@@ -330,6 +378,7 @@ Form~$\QQ(a)$ für eine geeignete algebraische Zahl~$a$.
 \end{loesungE}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Irrationale Zahlen für Fortgeschrittene}
 Zeige mit elementaren Methoden direkt über den Ansatz~$\sqrt{2} = a +
 b\sqrt{3}$ mit rationalen Zahlen~$a$ und~$b$, dass~$\sqrt{2}$ kein Element
