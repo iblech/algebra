@@ -1,0 +1,84 @@
+\documentclass{algblatt}
+\usepackage{multicol}
+\input{config.tex}
+\geometry{tmargin=2.0cm,bmargin=2.0cm,lmargin=2.0cm,rmargin=2.0cm}
+
+%\setlength{\titleskip}{0.7em}
+\setlength{\aufgabenskip}{1.3em}
+
+\begin{document}
+
+\vspace*{-1.5cm}
+\maketitle{11}{Abgabe bis 1. Juli 2013, 17:00 Uhr}
+
+\begin{aufgabe}{Wirkung der galoisschen Gruppe}
+Seien~$x_1,\ldots,x_n$ die Nullstellen eines normierten separablen
+Polynoms~$f(X)$ mit rationalen Koeffizienten.
+\begin{enumerate}
+\item Seien~$\sigma$ und~$\tau$ Symmetrien der Nullstellen. Zeige, dass~$\sigma \cdot
+(\tau \cdot x_i) = (\sigma \circ \tau) \cdot x_i$ für alle~$i = 1,\ldots,n$.
+
+\item Sei~$\sigma$ eine Symmetrie der Nullstellen und seien~$z, w \in
+\QQ(x_1,\ldots,x_n)$. Zeige: $\sigma \cdot (z + w) = \sigma \cdot z + \sigma
+\cdot w$ und~$\sigma \cdot (zw) = (\sigma \cdot z) \, (\sigma \cdot w)$.
+
+\item Zeige, dass genau dann eine Symmetrie~$\sigma$ der Nullstellen
+mit~$x_2 = \sigma \cdot x_1$ existiert, wenn~$x_1$ und~$x_2$ zueinander
+galoissch konjugiert sind.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Abstrakte Beispiele für Galoisgruppen}
+\begin{enumerate}
+\item Sei~$f(X)$ ein normiertes quadratisches Polynom mit rationalen
+Koeffizienten, dessen Nullstellen~$x_1$ und~$x_2$ verschieden seien.
+Berechne die Galoisgruppe~$\Gal_\QQ(x_1,x_2)$ in Abhängigkeit der Diskriminante
+von~$f(X)$.
+
+\item Sei~$f(X)$ ein normiertes irreduzibles Polynom vom Grad~$3$ mit
+rationalen Koeffizienten und Nullstellen~$x_1,x_2,x_3$. Sei~$x_1$ \emph{kein}
+primitives Element zu~$\QQ(x_1,x_2,x_3)$. Zeige, dass die Galoisgruppe der
+Nullstellen genau sechs Element enthält.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Kriterium für gerade Permutationen ???}
+\begin{enumerate}
+\item Zeige, dass die Menge~$A_n$ der geraden Permutationen in~$n$ Ziffern eine
+Untergruppe der~$S_n$ ist.
+
+\item Zeige, dass die Galoisgruppe der Nullstellen eines normierten separables
+Polynoms~$f(X)$ mit rationalen Koeffizienten genau dann vollständig in der
+alternierenden Gruppe~$A_n$ enthalten ist, wenn die Diskriminante von~$f(X)$
+eine Quadratwurzel in den rationalen Zahlen besitzt.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{???}
+Sei~$f(X)$ ein normiertes separables Polynom vom Grad~$n$ und~$t$ ein
+primitives Element seiner Nullstellen. Zeige, dass der Grad von~$t$
+höchstens~$n!$ ist.
+\end{aufgabe}
+
+\begin{aufgabe}{Galoissche Resolventen}
+\begin{enumerate}
+\item Wieso ist das Konzept der galoisschen Resolvente nur für separable
+Polynome definiert worden?
+
+\item Finde eine galoissche Resolvente für das Polynom~$f(X) = X^2 + X + 1$.
+
+\item Seien~$x_1,\ldots,x_n$ die Nullstellen eines normierten separablen
+Polynoms~$f(X)$ mit rationalen Koeffizienten. Sei~$C$ eine natürliche Zahl mit
+\[ n \cdot \left|\frac{x_i - x_j}{x_k - x_\ell}\right| \leq C \]
+für alle~$i,j,k,\ell \in \{ 1,\ldots,n \}$ mit~$k \neq \ell$. Zeige, dass
+\[ V(X_1,\ldots,X_n) := X_1 + C\,X_2 + C^2\,X_3 + \cdots + C^{n-1}\,X_n \]
+eine galoissche Resolvente für~$f(X)$ ist.
+\end{enumerate}
+\end{aufgabe}
+
+\end{document}
+
+Nicht enthalten:
+* Schreibe das Polynom ... als Polynom in X_1 und den elementarsymm. Fkt.
+  von X_1, X_2 und X_3.
+* Dasselbe allgemein.
