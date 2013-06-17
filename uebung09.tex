@@ -52,7 +52,26 @@ von~$1,z,z^2,\ldots,z^n$ mit rationalen Koeffizienten an.
 Setzt man nun~$x$ für~$X$ ein, erhält man dasselbe Ergebnis, da die erste
 Klammer verschwindet.
 
-\item \ldots
+\item Wir rechnen:
+\begin{align*}
+  && z &= \sqrt{5} + \sqrt[3]{5} \\
+  \Longleftrightarrow && \sqrt[3]{5} &= z - \sqrt{5} \\
+  \Longrightarrow && 5 &= (z - \sqrt{5})^3 \\
+  \Longleftrightarrow && 5 &= z^3 - 3\sqrt{5}z^2 + 15z - 5\sqrt{5} \\
+  \Longleftrightarrow && 5-15z-z^3 &= -\sqrt{5} \cdot (5 + 3z^2) \\
+  \Longrightarrow && (5-15z-z^3)^2 &= 5 \cdot (25 + 30z^2 + 9z^4) \\
+  \Longleftrightarrow && 0 &= z^6 - 15z^4 - 10z^3 + 75z^2 - 150z - 100 
+\end{align*}
+Also können wir etwa~$n = 6$ setzen, die gesuchte nichttriviale und trotzdem
+verschwindende Linearkombination steht schon da.
+
+\emph{Bemerkung:} Tatsächlich ist der Ausdruck in der letzten Zeile (wenn
+man~"`$X$"' statt~"`$z$"' schreibt) schon das Minimalpolynom von~$z$
+über~$\QQ$. Schmerzlos kann man durch eine schnelle Gradüberlegung erkennen: Da
+die Grade von~$\sqrt{5}$ und~$\sqrt[3]{5}$ teilerfremd sind (sie sind~$2$
+bzw.~$3$), ist der Grad von~$\QQ(\sqrt{5},\sqrt[3]{5})$ gerade durch das
+Produkt der Grade, also durch~$2 \cdot 3 = 6$ gegeben; und~$z$ ist gerade ein
+primitives Element für diese Erweiterung.
 
 \item Zum Beispiel~$1$ und~$\i$: Diese sind über~$\RR$ sicherlich linear
 unabhängig, denn für reelle Zahlen~$a,b \in \RR$ folgt aus
@@ -169,9 +188,80 @@ wir. Aufgelöst ergibt sich~$\gra{\QQ(\sqrt{3}+\i)}{\QQ(\sqrt{i}} =
 
 \emph{Bemerkung:} Die beiden Varianten kann man auf mehrere Arten und Weisen
 miteinander kombinieren.
+
+\item Von dem Polynom~$f(X) = X^4 - 4\,X^2 + 16 \in \QQ[X]$ haben wir schon
+gesehen, dass es über~$\QQ$ irreduzibel ist. Seine vier Nullstellen sind die
+Zahlen
+\[ x_1 = \sqrt{3} + \i,\quad x_2 = \sqrt{3} - \i,\quad x_3 = -\sqrt{3} +
+\i,\quad x_4 = -\sqrt{3} - \i, \]
+welche alle in~$\QQ(\sqrt{3} + \i)$ liegen, da~$\sqrt{3} + \i$ ein primitives
+Element für~$\QQ(\sqrt{3},\i)$ ist. Also zerfällt~$f(X)$
+über~$\QQ(\sqrt{3}+\i)$ in die vier Linearfaktoren
+\[ f(X) = (X-x_1) \cdot (X-x_2) \cdot (X-x_3) \cdot (X-x_4). \]
+Über~$\QQ(\sqrt{3})$ erhalten wir die Zerlegung
+\[ f(X) = (X-x_1) (X-x_2) \cdot (X-x_3) (X-x_4) =
+  (X^2 - 2\sqrt{3}\,X + 4) \cdot (X^2 + 2\sqrt{3}\,X + 4). \]
+Dabei sind die beiden auftretenden Faktoren sicherlich über~$\QQ(\sqrt{3})$
+irreduzibel, da sie vom Grad~2 sind und ihre Nullstellen nicht
+in~$\QQ(\sqrt{3})$ liegen, da sie echt komplex sind,
+aber~$\QQ(\sqrt{3})$ nur reelle Zahlen enthält.
+
+\item Wir setzen~$z := a + \sqrt{d}$ und rechnen:
+\begin{align*}
+  && z &= a + \sqrt{d} \\
+  \Longleftrightarrow&& z - a &= \sqrt{d} \\
+  \Longrightarrow&& (z-a)^2 &= d \\
+  \Longleftrightarrow && z^2 - 2az + a^2-d &= 0
+\end{align*}
+Die Zahl~$z$ ist also als Lösung der Polynomgleichung~$X^2 - 2aX + a^2-d = 0$
+mit ganzzahligen Koeffizienten ganz algebraisch. Außerdem ist damit klar, dass
+der Grad von~$z$ höchstens~$2$ ist. Er ist genau dann~$1$, wenn dieses Polynom
+reduzibel ist. Das ist genau dann der Fall, wenn eine seiner beiden
+Nullstellen, etwa~$z$, schon ganzzahlig ist. Das wiederum ist genau dann der
+Fall, wenn~$\sqrt{d}$ in~$\ZZ$ liegt; das ist äquivalent dazu, dass~$d$ eine
+Quadratzahl ist.
+
+\item Nach Aufgabe~4c) von Blatt~3 ist~$\zeta$ eine fünfte Einheitswurzel (aber
+nicht die~$1$). Insbesondere ist~$\zeta$ damit auch eine zehnte Einheitswurzel
+(denn~$\zeta^{10}= (\zeta^5)^2 = 1^2 = 1$. Die Zahl~$\alpha = \exp(\pi\i/5) =
+\exp(2\pi\i/10)$ ist eine primitive zehnte Einheitswurzel, daher muss es einen
+Exponent~$k \in \ZZ$ mit~$\alpha^k = \zeta$ geben. Also ist~$\zeta$ in~$\alpha$
+rational, d.\,h. es gilt~$\QQ(\zeta) \subseteq \QQ(\alpha)$.
+
+Umgekehrt gilt auch~$\QQ(\alpha) \subseteq \QQ(\zeta)$: Die Zahl~$(-\zeta)$ ist
+nämlich eine primitive zehnte Einheitswurzel (siehe unten). Da~$\alpha$
+(irgend-)eine zehnte Einheitswurzel ist, gibt es daher einen Exponent~$\ell
+\in \ZZ$ mit~$(-\zeta)^\ell = \alpha$. Also ist~$\alpha$ in~$\zeta$ rational,
+d.\,h. es gilt~$\QQ(\alpha) \subseteq \QQ(\zeta)$.
+
+Zusammengenommen gilt somit~$\QQ(\alpha) = \QQ(\zeta)$. Daher ist der Grad der
+Erweiterung~$1$ und eine mögliche Basis ist durch die Familie~$(1)$ der
+Länge~$1$ gegeben.
+
+Nun müssen wir noch zu begründen, wieso~$(-\zeta)$ eine primitive zehnte Einheitswurzel
+ist. Klar ist zumindest, dass~$(-\zeta)$ überhaupt eine zehnte Einheitswurzel
+ist, denn es gilt~$(-\zeta)^{10} = \zeta^{10} = (\zeta^5)^2 = 1$. Um die
+Primitivität nachzuweisen, zeigen wir, dass~$(-\zeta)^j$ erst für~$j = 10$ (und
+nicht schon für~$j = 1,2,\ldots,9$) wieder~$1$ ist:
+
+Gelte~$(-\zeta)^j = (-1)^j \zeta^j = 1$, also~$\zeta^j = (-1)^j$. Dann kann~$j$
+nicht ungerade sein, denn dann gälte~$\zeta^j = -1$, aber~$(-1)$ ist keine
+fünfte Einheitswurzel. Also ist~$j$ gerade und es gilt~$\zeta^j = 1$. Da~$\zeta$ eine
+\emph{primitive} fünfte Einheitswurzel ist, muss~$j$ ein Vielfaches von~$5$
+sein. Da es außerdem gerade ist, muss~$j$ sogar ein Vielfaches von~$10$ sein.
+
+\emph{Variante für den zweiten Teil, wenn man Kreisteilungspolynome kennt:} Wir wollen
+zeigen, dass~$\QQ(\alpha) = \QQ(\zeta)$. Da sicher die
+Inklusion~"`$\supseteq$"' gilt, genügt es zu zeigen, dass beide Vektorräume
+dieselbe Dimension über~$\QQ$ haben, dass also~$\deg_\QQ \alpha = \deg_\QQ
+\zeta$ gilt. Das Minimalpolynom von~$\zeta$ ist das fünfte
+Kreisteilungspolynom,~$\Phi_5 = X^4 + X^3 + X^2 + X + 1$, das von~$\alpha$ ist
+das zehnte Kreisteilungspolynom,~$\Phi_{10} = X^4 - X^3 + X^2 - X + 1$. Also
+haben beide Zahlen in der Tat denselben Grad, nämlich~$4$.
 \end{loesungE}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Spiel und Spaß mit der Gradformel}
 \begin{enumerate}
 \item Seien~$x \in \overline{\QQ}$, $y \in \QQ(x)$ und~$z \in \QQ(y)$. Wie lässt sich~$\deg_{\QQ(z)} x$
@@ -214,7 +304,7 @@ mit rationalen Koeffizienten aus.
 algebraische Zahl~$z$ mit~$\QQ(z) = \QQ(z_1,\ldots,z_n)$ gibt.
 \item Sei~$f(X)$ ein Polynom mit rationalen Koeffizienten. Zeige, dass eine
 algebraische Zahl~$a$ existiert, sodass~$f(X)$ über~$\QQ(a)$ vollständig in
-Linearfaktoren zerfällt.
+Linearfaktoren zerfällt.\ifloesungen\enlargethispage{2em}\fi
 \end{enumerate}
 
 \begin{loesungE}
@@ -230,11 +320,12 @@ $k=0,1,2$. Die Ausnahmemenge~$S$ ist daher gleich
     \frac{-2\i}{\sqrt[3]{2} - \omega^2 \sqrt[3]{2}} \right\}.
 \end{align*}
 Näherungsweise ergibt sich
+\vspace{-1em}
 \begin{align*}
   \frac{-2\i}{\sqrt[3]{2} - \omega \sqrt[3]{2}} \approx \phantom{+}0{,}46 - 0{,}79 \,\i, \\
-  \frac{-2\i}{\sqrt[3]{2} - \omega^2 \sqrt[3]{2}} \approx -0{,}46 - 0{,}79 \,\i.
+  \frac{-2\i}{\sqrt[3]{2} - \omega^2 \sqrt[3]{2}} \approx -0{,}46 - 0{,}79 \,\i,
 \end{align*}
-Also ist zum Beispiel die Wahl~$\lambda := 1 \not\in S$ erlaubt und~$\i +
+also ist zum Beispiel die Wahl~$\lambda := 1 \not\in S$ erlaubt und~$\i +
 \sqrt[3]{2}$ daher ein primitives Element.
 
 \emph{Variante 2 (durch stundenlanges Knobeln):}
@@ -245,12 +336,22 @@ in~$\i$ und~$\sqrt[3]{2}$ rational ist, dass also~$\QQ(z) \subseteq
 verschiedener~$z$-Potenzen auf die Beziehungen
 \begin{align*}
   \i &= -\frac{91}{22} - \frac{39}{11}z + \frac{39}{11}z^2 - \frac{20}{11}z^3 +
-  \frac{9}{22}z^4 - \frac{6}{11}z^5, \\
-  \sqrt[3]{2} &= \frac{91}{22} + \frac{50}{11}z - \frac{39}{11}z^2 +
+  \frac{9}{22}z^4 - \frac{6}{11}z^5, \\[0.7em]
+  \sqrt[3]{2} &= \phantom{+}\frac{91}{22} + \frac{50}{11}z - \frac{39}{11}z^2 +
   \frac{20}{11}z^3 - \frac{9}{22}z^4 + \frac{6}{11}z^5
 \end{align*}
 kommen; diese bezeugen, dass~$\QQ(\i)$ und~$\QQ(\sqrt[3]{2})$ jeweils
 Teilmengen von~$\QQ(z)$ sind.
+
+\emph{Variante 3 (ein anderes primitives Element):}
+Wir vermuten, dass~$z := \i \cdot \sqrt[3]{2}$ ein primitives Element ist. Klar
+ist zumindest, dass~$z$ in~$\i$ und~$\sqrt[3]{2}$ rational ist, dass
+also~$\QQ(z) \subseteq \QQ(\i,\sqrt[3]{2})$ gilt. Die umgekehrte Inklusion
+zeigen die Beziehungen
+\begin{align*}
+  \i &= -z^3/2, \\
+  \sqrt[3]{2} &= z^4/2.
+\end{align*}
 
 \item Sei~$z := \sqrt{2} + \sqrt{3}$. Dann rechnen wir ein paar~$z$-Potenzen
 aus:
@@ -267,6 +368,12 @@ gegeneinander ausspielen:
   \sqrt{2} &= (z^3 - 9z) / 2 \\
   \sqrt{3} &= (z^3 - 11z) / (-2)
 \end{align*}
+
+\emph{Bemerkung:} Die explizite Rechnung zeigt, dass~$\sqrt{2}+\sqrt{3}$ ein
+primitives Element für~$\QQ(\sqrt{2},\sqrt{3})$ ist:
+Denn~$\QQ(\sqrt{2}+\sqrt{3}) \subseteq \QQ(\sqrt{2},\sqrt{3})$ gilt sowieso,
+und die umgekehrte Inklusion gilt gerade deswegen, weil~$\sqrt{2}$
+und~$\sqrt{3}$ in~$\sqrt{2}+\sqrt{3}$ rational sind.
 
 \item Wir führen einen Induktionsbeweis. Der Induktionsanfang~$n = 1$ ist klar.
 Für den Induktionsschritt~$n \to n + 1$ seien algebraische
@@ -286,6 +393,7 @@ Form~$\QQ(a)$ für eine geeignete algebraische Zahl~$a$.
 \end{loesungE}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Irrationale Zahlen für Fortgeschrittene}
 Zeige mit elementaren Methoden direkt über den Ansatz~$\sqrt{2} = a +
 b\sqrt{3}$ mit rationalen Zahlen~$a$ und~$b$, dass~$\sqrt{2}$ kein Element
@@ -308,7 +416,7 @@ auf der rechten Seite dagegen eine ungerade Anzahl von Malen (da er
 in~$(xyuv)^2$ gerade oft und dann noch einmal im Vorfaktor~$12$ vorkommt), das
 ist ein Widerspruch.
 
-\emph{Variante 2 (mit Fallunterscheidungen:} Angenommen, $\sqrt{2} = a + b
+\emph{Variante 2 (mit Fallunterscheidungen):} Angenommen, $\sqrt{2} = a + b
 \sqrt{3}$ für gewisse rationale Zahlen~$a, b \in \QQ$. Dann folgt
 \[ 2 = a^2 + 3b^2 + 2ab \sqrt{3}. \]
 Falls~$ab \neq 0$, ist das ein Widerspruch, denn dann können wir

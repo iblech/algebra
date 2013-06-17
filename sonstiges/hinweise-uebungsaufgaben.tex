@@ -236,9 +236,9 @@ können unabhängig voneinanander bearbeitet werden.
 \paragraph{Aufgabe 5.} Für Teilaufgabe~a) kann ohne Beweis folgender Satz
 über die sogenannte Existenz und Eindeutigkeit der Polynominterpolation verwendet werden:
 \begin{quote}
-Sei~$n \geq 0$. Seien~$x_0, \ldots, x_n$ paarweise verschiedene reelle Zahlen. Seien~$y_0,
-\ldots, y_n$ beliebige reelle Zahlen. Dann gibt es genau ein Polynom~$f$ mit
-reellen Koeffizienten und Grad~$\leq n$, dessen Graph durch die Punkte~$(x_i,
+Sei~$n \geq 0$. Seien~$x_0, \ldots, x_n$ paarweise verschiedene rationale Zahlen. Seien~$y_0,
+\ldots, y_n$ beliebige rationale Zahlen. Dann gibt es genau ein Polynom~$f$ mit
+rationalen Koeffizienten und Grad~$\leq n$, dessen Graph durch die Punkte~$(x_i,
 y_i)$ geht, also sodass
 \[ f(x_i) = y_i \]
 für alle~$i = 0,\ldots,n$ gilt.
@@ -254,22 +254,69 @@ Teilaufgabe~b) kann dann mit~a) und c) kann mit~b) gelöst werden.
 \paragraph{Aufgabe 1.} In Teilaufgabe~b) soll die Linearkombination den Wert~0
 haben (\emph{verschwinden}) ohne, dass sie \emph{trivial} wäre, d.\,h., dass
 alle Koeffizienten der Linearkombination jeweils~0 wären. Alle Teilaufgaben
-können unabhängig voneinander bearbeitet werden.
+können unabhängig voneinander bearbeitet werden. Nur zur Kontrolle: Der
+Koeffizient vor~$x^2$ in der in Teilaufgabe~a) gesuchten Linearkombination
+ist~$(-20)$. Die kleinste Möglichkeit für~$n$ in Teilaufgabe~b) ist~$6$ (aber
+größere Werte sind auch möglich).
 
 \paragraph{Aufgabe 2.} Alle Teilaufgaben 
 können unabhängig voneinander bearbeitet werden. Nur zur Kontrolle: Die
-Ergebnisse von Teilaufgabe~a) sind~4, 2 und~2.
+Ergebnisse von Teilaufgabe~a) sind~4, 2 und~2. Eine Möglichkeit für das
+gesuchte Polynom in Teilaufgabe~b) ist das Minimalpolynom der Zahl aus~a)
+über~$\QQ$ (also~$X^4-4\,X^2+16$). Für Teilaufgabe~d) sind vielleicht die (zu begründenden)
+Beobachtungen hilfreich, dass~$\alpha$ eine primitive zehnte und~$\zeta$ eine
+primitive fünfte Einheitswurzel ist. Um dann die Basis anzugeben, kann die
+Beobachtung nützlich sein, dass~$-\zeta$ ebenfalls eine primitive zehnte
+Einheitswurzel ist. Alternativ hilft vielleicht die Beobachtung, dass~$\zeta$
+und~$\alpha$ beide vom Grad~4 über~$\QQ$ sind (das Minimalpolynom von~$\alpha$
+ist~$X^4 - X^3 + X^2 - X + 1$, später werden wir diesen Umstand tiefer
+verstehen).
 
 \paragraph{Aufgabe 3.} Allgemein ist mit~$\deg_{\QQ(a)} b$ der Grad der
 Zahl~$b$ über~$\QQ(a)$ gemeint. Dessen Definition findet sich im Skript direkt
 nach Proposition~3.35.
 
 \paragraph{Aufgabe 4.} Für Teilaufgabe~a) kann das Verfahren der
-Vorlesung (siehe etwa Beispiel~3.30) verwendet werden. Bei Teilaufgabe~c) ist
+Vorlesung (siehe etwa Beispiel~3.30) verwendet werden. Bei Teilaufgabe~b) kann
+man ein wenig mit den Potenzen~$(\sqrt{2}+\sqrt{3})^2$, $(\sqrt{2}+\sqrt{3})^3$
+knobeln. Bei Teilaufgabe~c) ist
 ein Induktionsbeweis möglich (denn was ist das Signalwort?). Für Teilaufgabe~d) kann man
-das Ergebnis von Teilaufgabe~c) verwenden.
+das Ergebnis von Teilaufgabe~c) verwenden (auch ohne einen Beweis von~c) zu
+kennen).
 
 \paragraph{Aufgabe 5.} Der Titel der Aufgabe ist irreführend, vermutlich ist
 die schwierigste Aufgabe des Blatts Aufgabe~2d).
+
+
+\section*{Übungsblatt 10}
+
+\paragraph{Aufgabe 1.} Teilaufgabe~b) ist sehr ähnlich, aber nicht völlig
+identisch, zu Aufgabe~3c) von Übungsblatt~9. Das Vorgehen dort lässt sich auf
+die Aufgabe hier übertragen.
+
+\paragraph{Aufgabe 3.} Zur Kontrolle: Eine der Nullstellen
+ist~$\exp(2\pi\i/8)$. Das gegebene Polynom ist tatsächlich irreduzibel, wie man
+etwa mit dem Eisensteinverschiebungstrick sehen kann.
+
+\paragraph{Aufgabe 4.} Eine der beiden Richtungen in Teilaufgabe~a) wurde schon
+in der Vorlesung gezeigt, die andere aber noch nicht.
+
+\paragraph{Aufgabe 5.} Der Bequemlichkeit halber hier die beiden Aussagen des
+Skripts:
+\begin{quote}
+\textbf{Hilfssatz 4.3.}
+Seien~$x_1,\ldots,x_n$ die Lösungen (mit Vielfachheiten) einer Polynomgleichung
+mit rationalen Koeffizienten. Ist dann~$V(X_1,\ldots,X_n)$ ein Polynom mit
+rationalen Koeffizienten, so sind die galoissch Konjugierten von~$t =
+V(x_1,\ldots,x_n)$ alle von der Form~$t' =
+V(x_{\sigma(1)},\ldots,x_{\sigma(n)})$, wobei~$\sigma$ eine~$n$-stellige
+Permutation ist.
+\end{quote}
+
+\begin{quote}
+\textbf{Proposition 4.4.}
+Seien~$x_1,\ldots,x_n$ die Lösungen (mit Vielfachheiten) einee~$t'$ von~$t$ ein
+primitives Element von~$x_1,\ldots,x_n$.
+\end{quote}
 
 \end{document}

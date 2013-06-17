@@ -1,10 +1,15 @@
 \documentclass{algblatt}
 \usepackage{tikz}
+\usepackage{multicol}
 \input{config.tex}
-\geometry{tmargin=2cm,bmargin=2cm,lmargin=3.0cm,rmargin=3.0cm}
+\ifloesungen
+  \geometry{tmargin=2.0cm,bmargin=1.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\else
+  \geometry{tmargin=2.0cm,bmargin=1.5cm,lmargin=2.0cm,rmargin=2.0cm}
+\fi
 
 %\setlength{\titleskip}{0.7em}
-\setlength{\aufgabenskip}{1.6em}
+\setlength{\aufgabenskip}{1.3em}
 
 \begin{document}
 
@@ -21,16 +26,16 @@
 %\end{enumerate}
 %\end{aufgabe}
 
-\begin{aufgabe}{Weitere Gradformelaufgaben}
+\begin{aufgabe}{Weitere Anwendungen der Gradformel}
 \begin{enumerate}
 \item Sei~$z$ eine algebraische Zahl und seien~$x, y \in \QQ(z)$. Zeige, dass
 \[ \gra{\QQ(z)}{\QQ(x)} \cdot \gra{\QQ(x)}{\QQ} = \gra{\QQ(z)}{\QQ(y)} \cdot
 \gra{\QQ(y)}{\QQ}, \]
 und gib ein Diagramm zur Veranschaulichung an.
 \item Sei~$a$ eine algebraische Zahl und~$y \in \QQ(a)$. Sei~$f$ ein normiertes
-Polynom mit Koeffizienten aus~$\QQ(y)$, das über~$\QQ(y)$
-auch irreduzibel ist. Sei der Grad von~$f$ mindestens~2 und teilerfremd
-zu~$\deg_{\QQ(y)} a$. Zeige, dass keine Zahl aus~$\QQ(a)$ Nullstelle von~$f$
+Polynom mit Koeffizienten aus~$\QQ(y)$, das über~$\QQ(y)$ auch
+irreduzibel ist. Sei der Grad von~$f$ mindestens~2 und teilerfremd
+zu~$\deg_{\QQ(y)} x$. Zeige, dass keine Zahl aus~$\QQ(a)$ Nullstelle von~$f$
 sein kann.
 
 \item Beweise oder widerlege: Sei~$z$ ein primitives Element zu algebraischen
@@ -95,6 +100,7 @@ Eine ähnliche und richtige Behauptung ist~$\deg_\QQ z \leq
 \begin{multline*}\deg_\QQ z = \gra{\QQ(x,y)}{\QQ} = \gra{\QQ(x,y)}{\QQ(x)} \cdot
   \gra{\QQ(x)}{\QQ} \\ \leq \gra{\QQ(y)}{\QQ} \cdot \gra{\QQ(x)}{\QQ} =
   \deg_\QQ y \cdot \deg_\QQ x. {\qquad}\end{multline*}
+(Wieso gilt die Abschätzung?)
 \end{loesungE}
 \end{aufgabe}
 
@@ -102,27 +108,26 @@ Eine ähnliche und richtige Behauptung ist~$\deg_\QQ z \leq
 \begin{enumerate}
 \item Finde zwei algebraische Zahlen, die nicht zueinander galoissch konjugiert
 sind.
-\item Wie viele galoissch Konjugierte hat die Zahl~$x_1 = \sqrt[3]{1 +
-\sqrt{2}}$?
-\item Seien~$p$ und~$q$ zwei verschiedene Primzahlen. Finde alle galoissch
-Konjugierten von~$\sqrt{p} + \sqrt{q}$.
+\item Wie viele galoissch Konjugierte hat die Zahl~$\sqrt[4]{3}$?
+\item Seien~$p$ und~$q$ zwei verschiedene Primzahlen. Finde alle
+galoissch Konjugierten von~$\sqrt{p} + \sqrt{q}$.
+\item Seien~$x, y, z$ algebraische Zahlen, sodass~$x$ zu~$y$ und~$y$ zu~$z$
+galoissch konjugiert ist. Zeige, dass dann auch~$x$ galoissch konjugiert zu~$z$
+ist.
 \item Sei~$t$ eine algebraische Zahl. Zeige, dass die Summe von~$t$ mit all
 seinen galoisschen Konjugierten eine rationale Zahl ist. Wie steht es mit dem
 Produkt?
-\item Seien~$x, y, z$ algebraische Zahlen sodass~$x$ zu~$y$ und~$y$ zu~$z$
-galoissch konjugiert ist. Zeige, dass dann auch~$x$ galoissch konjugiert zu~$z$
-ist.
 \end{enumerate}
 
 \begin{loesungE}
 \item Es gibt [abzählbar] unendlich viele Beispiele. Eines ist~$(x,y) = (0,1)$
 mit den Minimalpolynomen~$X$ bzw.~$X-1$.
 
-\item Die Zahl~$x_1$ hat insgesamt genau so viele galoissch Konjugierte, wie
-ihr Grad angibt. Dieser ist~$6$, relativ schmerzlos kann man das wie folgt
-erkennen: Es gilt~$x_1^3 - 1 = \sqrt{2}$, also gilt~$\QQ(\sqrt{2}) \subseteq
-\QQ(x_1)$. Folglich ist die Gradformel anwendbar, sie liefert die
-Beziehung\ldots
+\item Die Zahl~$\sqrt[4]{3}$ hat insgesamt genau so viele galoissch Konjugierte, wie
+ihr Grad angibt. Dieser ist~$4$, denn das Minimalpolynom ist~$X^4 - 3$ -- die
+Irreduzibilität ist wegen des Eisenstein-Kriteriums sofort klar.
+Explizit sind die vier galoissch Konjugierten
+\[ \sqrt[4]{3},\quad \i \sqrt[4]{3},\quad -\sqrt[4]{3}, -\i \sqrt[4]{3}. \]
 
 \item Wir suchen zunächst ein Polynom mit rationalen Koeffizienten, dass~$z :=
 \sqrt{p} + \sqrt{q}$ als Nullstelle besitzt:
@@ -211,17 +216,69 @@ m_z$. Damit sind~$x$ und~$z$ zueinander galoissch konjugiert.
 \end{loesungE}
 \end{aufgabe}
 
+\begin{aufgabe}{Eine konkrete Galoisgruppe}
+Bestimme die Galoisgruppe der vier Nullstellen des Polynoms~$X^4 + 1$.
+
+\begin{loesung}
+\begin{enumerate}
+\item[1.] Die vier Nullstellen sind
+\[ x_1 = \xi,\quad
+  x_2 = \xi^3,\quad
+  x_3 = \xi^5,\quad
+  x_4 = \xi^7, \]
+wobei~$\xi = \exp(2\pi\i/8)$ eine primitive achte Nullstelle ist.
+
+\item[2.] Es gilt
+\[ \QQ(x_1,x_2,x_3,x_4) = \QQ(\xi,\xi^3,\xi^5,\xi^7) = \QQ(\xi), \]
+also ist~$t := \xi$ ein primitives Element.
+
+\item[3.] Für die vier Nullstellen gilt jeweils~$x_i = h_i(t)$, wobei
+\begin{align*}
+  h_1(X) &= X, \\
+  h_2(X) &= X^3, \\
+  h_3(X) &= X^5, \\
+  h_4(X) &= X^7.
+\end{align*}
+
+\item[4.] Das Minimalpolynom von~$t$ ist~$f(X) = X^4 - 1$: Die Irreduzibilität
+bestätigt das Eisenstein-Kriterium angewendet auf
+\[ f(X+1) = X^4 + 4 \,X^3 + 6\,X^2 + 4\,X + 2 \]
+mit~$p = 2$. (Alternative Irreduzibilitätsbegründung: Das Polynom~$f(X)$ gerade
+das achte Kreisteilungspolynom.)
+
+\item[5.] Die vier galoissch Konjugierten von~$t$ sind daher gerade die obigen
+vier Nullstellen:
+\[ t_1 = \xi,\quad
+  t_2 = \xi^3,\quad
+  t_3 = \xi^5,\quad
+  t_4 = \xi^7. \]
+
+\item[6.] Damit können wir die Elemente der Galoisgruppe auflisten:
+\begin{center}
+  \begin{tabular}{@{}r|cccc|l@{}}
+    $t_i$ & $h_1(t_i)$ & $h_2(t_i)$ & $h_3(t_i)$ & $h_4(t_i)$ & $\sigma_i$ \\\hline
+    $t_1$ & $x_1$ & $x_2$ & $x_3$ & $x_4$ & $\id$ \\
+    $t_2$ & $x_2$ & $x_1$ & $x_4$ & $x_3$ & $(1,2) \, (3,4)$ \\
+    $t_3$ & $x_3$ & $x_4$ & $x_1$ & $x_2$ & $(1,2,3,4)$ \\
+    $t_4$ & $x_4$ & $x_3$ & $x_2$ & $x_1$ & $(4,3,2,1)$
+  \end{tabular}
+\end{center}
+\end{enumerate}
+\end{loesung}
+\end{aufgabe}
+
 \begin{aufgabe}{Polynome sind blind für galoissch Konjugierte}
 \begin{enumerate}
-\item Zeige, dass eine algebraische Zahl~$t$ genau dann zu einer weiteren
-algebraischen Zahl~$t'$ galoissch konjugiert ist, wenn jedes Polynom mit
+\item Zeige, dass zwei algebraische Zahlen~$t$ und~$t'$ genau dann zueinander
+konjugiert sind,
+wenn jedes Polynom mit
 rationalen Koeffizienten, welches~$t$ als Nullstelle hat, auch~$t'$ als
 Nullstelle hat.
-\item Seien~$t$ und~$t'$ zueinander galoissch konjugierte algebraische Zahlen
-und~$f$ ein Polynom mit rationalen Koeffizienten. Zeige, dass dann auch die
-Zahlen~$x := f(t)$ und~$x' := f(t')$ zueinander galoissch konjugiert sind.
+\item Seien~$t$ und~$t'$ zueinander konjugierte algebraische Zahlen
+und~$f$ ein Polynom mit rationalen Koeffizienten. Zeige, dass dann auch~$x := f(t)$ und~$x' := f(t')$ zueinander konjugiert sind.
 \end{enumerate}
 
+\ifloesungen\newpage\fi
 \begin{loesungE}
 \item "`$\Longleftarrow$"': Sei~$m_t$ das Minimalpolynom von~$t$. Dieses hat
 sicherlich~$t$ als Nullstelle. Nach Voraussetzung ist daher auch~$t'$ eine
@@ -248,12 +305,16 @@ zu~$f(t)$ galoissch Konjugiert.
 
 \begin{aufgabe}{Gegenbeispiele}
 Zeige an jeweils einem Beispiel, dass
+\vspace{-0.5em}
+\begin{multicols}{2}
 \begin{enumerate}
 \item Hilfssatz~4.3 auf Seite 118
 \item Proposition~4.4 auf Seite 119
 \end{enumerate}
+\end{multicols}
+\vspace{-1em}
 falsch werden, wenn man von den dort vorkommenden Zahlen~$x_1,\ldots,x_n$ nicht
-voraussetzt, dass sie die gesamten Lösungen (mit Vf.) einer Polynomgleichung
+voraussetzt, dass sie die gesamten Lösungen (mit Vielfachheiten) einer Polynomgleichung
 mit rationalen Koeffizienten sind, sondern stattdessen beliebige algebraische
 Zahlen erlaubt.
 
