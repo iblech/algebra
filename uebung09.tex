@@ -258,10 +258,21 @@ dieselbe Dimension über~$\QQ$ haben, dass also~$\deg_\QQ \alpha = \deg_\QQ
 Kreisteilungspolynom,~$\Phi_5 = X^4 + X^3 + X^2 + X + 1$, das von~$\alpha$ ist
 das zehnte Kreisteilungspolynom,~$\Phi_{10} = X^4 - X^3 + X^2 - X + 1$. Also
 haben beide Zahlen in der Tat denselben Grad, nämlich~$4$.
+
+\emph{Explizite Variante für beide Teile:} Wir gehen alle vier Möglichkeiten
+für~$\zeta$ durch und drücken jeweils~$\zeta$ durch~$\alpha$ und
+umgekehrt~$\alpha$ durch~$\zeta$ aus:
+\begin{align*}
+  \zeta &= \exp(2\pi\i/5), \text{ dann:} & \zeta &= \alpha^2, & \alpha &= -\zeta^3. \\
+  \zeta &= \exp(4\pi\i/5), \text{ dann:} & \zeta &= \alpha^4, & \alpha &= -\zeta^4. \\
+  \zeta &= \exp(6\pi\i/5), \text{ dann:} & \zeta &= \alpha^6, & \alpha &= -\zeta. \\
+  \zeta &= \exp(8\pi\i/5), \text{ dann:} & \zeta &= \alpha^8, & \alpha &= -\zeta^2.
+\end{align*}
+In jedem Fall gilt also~$\QQ(\zeta) = \QQ(\alpha)$, eine Basis also durch~$(1)$
+gegeben.
 \end{loesungE}
 \end{aufgabe}
 
-\ifloesungen\newpage\fi
 \begin{aufgabe}{Spiel und Spaß mit der Gradformel}
 \begin{enumerate}
 \item Seien~$x \in \overline{\QQ}$, $y \in \QQ(x)$ und~$z \in \QQ(y)$. Wie lässt sich~$\deg_{\QQ(z)} x$
@@ -393,7 +404,6 @@ Form~$\QQ(a)$ für eine geeignete algebraische Zahl~$a$.
 \end{loesungE}
 \end{aufgabe}
 
-\ifloesungen\newpage\fi
 \begin{aufgabe}{Irrationale Zahlen für Fortgeschrittene}
 Zeige mit elementaren Methoden direkt über den Ansatz~$\sqrt{2} = a +
 b\sqrt{3}$ mit rationalen Zahlen~$a$ und~$b$, dass~$\sqrt{2}$ kein Element
