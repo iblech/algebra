@@ -26,6 +26,27 @@ Polynoms~$f(X)$ mit rationalen Koeffizienten.
 mit~$x_2 = \sigma \cdot x_1$ existiert, wenn~$x_1$ und~$x_2$ zueinander
 galoissch konjugiert sind.
 \end{enumerate}
+
+\begin{loesungE}
+\item Es gilt~$\sigma \cdot (\tau \cdot x_i) = \sigma \cdot x_{\tau(i)} =
+x_{\sigma(\tau(i))} = x_{(\sigma \circ \tau)(i)} = (\sigma \circ \tau) \cdot
+x_i$.
+
+\item Da~$z$ und~$w$ in~$\QQ(x_1,\ldots,x_n)$ liegen, gibt es Polynome~$g, h
+\in \QQ[X_1,\ldots,X_n]$ mit
+\begin{align*}
+  z &= g(x_1,\ldots,x_n), \\
+  w &= h(x_1,\ldots,x_n). \\
+\intertext{Daher folgt}
+  \sigma \cdot (z+w) &= \sigma \cdot (g(x_1,\ldots,x_n) + h(x_1,\ldots,x_n)) =
+  g(x_{\sigma(1)},\ldots,x_{\sigma(n)}) + h(x_{\sigma(1)},\ldots,x_{\sigma(n)})
+  \\
+  &=
+  \sigma \cdot g(x_1,\ldots,x_n) + \sigma \cdot h(x_1,\ldots,x_n) =
+  \sigma \cdot z + \sigma \cdot w,
+\end{align*}
+der Multiplikationsfall geht völlig analog.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Abstrakte Beispiele für Galoisgruppen}
@@ -40,6 +61,38 @@ rationalen Koeffizienten und Nullstellen~$x_1,x_2,x_3$. Sei~$x_1$ \emph{kein}
 primitives Element zu~$\QQ(x_1,x_2,x_3)$. Zeige, dass die Galoisgruppe der
 Nullstellen genau sechs Element enthält.
 \end{enumerate}
+
+\begin{loesungE}
+\item Die gesuchte Galoisgruppe~$\Gal_\QQ(x_1,x_2)$ ist eine Teilmenge der
+symmetrischen Gruppe~$S_2$, die nur zwei Elemente enthält: die
+Identitätspermutation und die, die die beiden Ziffern vertauscht. Bei dieser
+Aufgabe geht also nur um die Frage, ob diese zweite Permutation~$\sigma$ in der
+Galoisgruppe enthalten ist oder nicht; mit Aufgabe~1c) kann man diese Frage
+schnell klären.
+
+\emph{Erster Fall:} Die Diskriminante ist ein Quadrat in~$\QQ$. Dann sind~$x_1$
+und~$x_2$ rationale Zahlen. Da sie verschieden sind, sind sie nicht zueinander
+galoissch konjugiert. Nach Aufgabe~1c) kann~$\sigma$ daher nicht in der
+Galoisgruppe liegen.
+
+\emph{Zweiter Fall:} Die Diskriminante ist kein Quadrat in~$\QQ$. Dann
+ist~$f(X)$ irreduzibel und somit das gemeinsame Minimalpolynom von~$x_1$
+und~$x_2$, die beiden Nullstellen sind also galoissch Konjugierte. Nach
+Aufgabe~1c) muss die Galoisgruppe daher eine Permutation enthalten, die~$x_1$
+auf~$x_2$ abbildet. Da die Identitätspermutation das nicht macht, muss noch
+die zweite Permutation~$\sigma$ enthalten sein.
+
+\item Die Galoisgruppe kann höchstens sechs Elemente enthalten, denn es gibt
+nur sechs Permutationen in drei Ziffern. Umgekehrt muss die Galoisgruppe aber
+auch mindestens sechs Elemente enthalten, denn
+\[ |\Gal_\QQ(x_1,x_2,x_3)| = \gra{\QQ(x_1,x_2,x_3)}{\QQ} =
+  \underbrace{\gra{\QQ(x_1,x_2,x_3)}{\QQ(x_1)}}_{\geq\,2} \cdot
+  \underbrace{\gra{\QQ(x_1)}{\QQ}}_{=\,3} \geq
+  2 \cdot 3 = 6. \]
+Die Abschätzung gilt deswegen, weil die einzig andere
+Option~$\gra{\QQ(x_1,x_2,x_3)}{\QQ(x_1)} = 1$ gleichbedeutend
+mit~$\QQ(x_1,x_2,x_3) = \QQ(x_1)$ wäre, einem Widerspruch zur Voraussetzung.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Kriterium für gerade Permutationen ???}
@@ -52,12 +105,40 @@ Polynoms~$f(X)$ mit rationalen Koeffizienten genau dann vollständig in der
 alternierenden Gruppe~$A_n$ enthalten ist, wenn die Diskriminante von~$f(X)$
 eine Quadratwurzel in den rationalen Zahlen besitzt.
 \end{enumerate}
+
+\begin{loesungE}
+\item \ldots
+
+\item Seien~$x_1, \ldots, x_n$ die Nullstellen von~$f(X)$. Wir betrachten eine
+der beiden Quadratwurzeln der Diskriminante,
+\[ \delta := \prod_{i < j} (x_i - x_j). \]
+Diese Zahl liegt offensichtlich in~$\QQ(x_1,\ldots,x_n)$. Außerdem sieht man,
+dass eine Permutation~$\sigma$ der Galoisgruppe genau dann~$\delta$ invariant
+lässt (d.\,h.~$\sigma \cdot \delta = \delta$ erfüllt), wenn~$\sigma$ gerade
+ist (sonst entsteht ein Minuszeichen).
+
+Nun besitzt die Diskriminante genau dann eine Quadratwurzel in den rationalen
+Zahlen, wenn~$\delta$ in~$\QQ$ liegt [automatisch liegt dann auch~$-\delta$
+in~$\QQ$]. Das ist genau dann der Fall, wenn~$\delta$ von allen Elementen der
+Galoisgruppe invariant gelassen wird. Nach obiger Überlegung ist das genau dann
+der Fall, wenn alle Elemente der Galoisgruppe gerade sind, wenn also die
+Galoisgruppe eine Teilmenge der alternierenden Gruppe~$A_n$ ist.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{???}
 Sei~$f(X)$ ein normiertes separables Polynom vom Grad~$n$ und~$t$ ein
 primitives Element seiner Nullstellen. Zeige, dass der Grad von~$t$
 höchstens~$n!$ ist.
+
+\begin{loesung}
+Wir wissen um die fundamentale Beobachtung, dass die Elemente der
+Galoisgruppe in Bijektion mit den galoissch Konjugierten von~$t$ stehen.
+Insbesondere enthält die Galoisgruppe also genau so viele Elemente, wie es
+galoissch Konjugierte von~$t$ gibt. Daher ist der Grad von~$t$ gerade durch
+die Anzahl der Elemente der Galoisgruppe gegeben. Diese ist höchstens~$n!$, da
+es nur~$n!$ Permutationen in~$n$ Ziffern gibt.
+\end{loesung}
 \end{aufgabe}
 
 \begin{aufgabe}{Galoissche Resolventen}
@@ -74,6 +155,37 @@ für alle~$i,j,k,\ell \in \{ 1,\ldots,n \}$ mit~$k \neq \ell$. Zeige, dass
 \[ V(X_1,\ldots,X_n) := X_1 + C\,X_2 + C^2\,X_3 + \cdots + C^{n-1}\,X_n \]
 eine galoissche Resolvente für~$f(X)$ ist.
 \end{enumerate}
+
+\begin{loesungE}
+\item \ldots
+
+\item \ldots
+
+\item Seien~$\sigma$ und~$\tau$ zwei verschiedene Permutationen. Wir müssen
+zeigen, dass~$V(x_{\sigma(1)},\ldots,x_{\sigma(n)}) \neq
+V(x_{\tau(1)},\ldots,x_{\tau(n)})$. Dafür wird es hilfreich sein, den größten
+Index~$k \in \{ 1,\ldots,n \}$ mit~$\sigma(k) \neq \tau(k)$ zu betrachten. Nach
+Voraussetzung gilt Abschätzung
+\[ |x_{\sigma(i)} - x_{\tau(i)}| \leq
+  |x_{\sigma(k)} - x_{\tau(k)}| \cdot
+  \frac{1}{n} \cdot C \]
+für alle~$i = 1,\ldots,n$. Damit ergibt sich:
+\begin{align*}
+  |V(x_{\sigma(1)},\ldots,x_{\sigma(n)}) - V(x_{\tau(1)},\ldots,x_{\tau(n)})| &=
+  \Biggl|\sum_{i=1}^n (x_{\sigma(i)} - x_{\tau(i)}) \cdot C^{i-1}\Biggr| \\
+  &= \Biggl|\sum_{i=1}^k (x_{\sigma(i)} - x_{\tau(i)}) \cdot C^{i-1}\Biggr| \\
+  &\geq |x_{\sigma(k)} - x_{\tau(k)}| \cdot C^{k-1} - \sum_{i=1}^{k-1}
+  |x_{\sigma(i)} - x_{\tau(i)}| \cdot C^{i-1}\\
+  &\geq |x_{\sigma(k)} - x_{\tau(k)}| \cdot C^{k-1} - \sum_{i=1}^{k-1}
+  |x_{\sigma(k)} - x_{\tau(k)}| \cdot \frac{1}{n} \cdot C \cdot C^{i-1} \\
+  &\geq |x_{\sigma(k)} - x_{\tau(k)}| \cdot C^{k-1} - |x_{\sigma(k)} -
+  x_{\tau(k)}| \cdot \sum_{i=1}^{k-1}
+  \frac{1}{n} \cdot C^{k-1} \\
+  &= |x_{\sigma(k)} - x_{\tau(k)}| \cdot C^{k-1} \cdot \left(1 -
+  \frac{k-1}{n}\right) \\
+  &> 0.
+\end{align*}
+\end{loesungE}
 \end{aufgabe}
 
 \end{document}
