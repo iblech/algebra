@@ -1,123 +1,118 @@
-\documentclass[10pt,pdftex,a4paper,headsepline]{scrartcl}
-
-
-\usepackage{ngerman}
-\usepackage[latin1]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{array}
-\usepackage{amsmath, amsthm, amssymb}
-\usepackage{mathtools}
-\usepackage[right]{eurosym}
-\usepackage[automark]{scrpage2}
-\usepackage[bookmarks, colorlinks=true, linkcolor=blue, pagebackref=true]{hyperref}
-\usepackage{color}
-\usepackage[left=2cm,right=2cm,top=3cm,bottom=3.5cm]{geometry}
-
-
-\pagestyle{scrheadings}
+\documentclass{../../algblatt}
 
 
 \begin{document}
 
-\section{Wissenswertes über $S_n$}
+\section{Wissenswertes Ã¼ber $S_n$}
+
 \begin{itemize}
-\item $S_n$ ist eine Gruppe mittels der Verknüpfung von Abbildungen $\circ$ und dem neutralen Element $Id$
-\item $S_n$ hat $n!$ viele Elemente
-\item $A_n$ ist eine Untergruppe der $S_n$ und enthält alle geraden Permutationen ($sgn(\sigma)=1$)
-\item $A_n$ hat genau $\frac{n!}{2}$ Elemente
+\item $S_n$ ist eine Gruppe mittels der VerknÃ¼pfung von Abbildungen $\circ$
+(Komposition) und dem neutralen Element $\id$.
+\item $S_n$ hat $n!$ viele Elemente.
+\item $A_n$ ist eine Untergruppe der $S_n$ und enthÃ¤lt alle geraden
+Permutationen (solche mit $\sgn \sigma = 1$).
+\item $A_n$ hat genau $\frac{n!}{2}$ Elemente.
 \end{itemize}
 
+
 \section{Rechnen mit $S_n$}
+
 \begin{itemize}
-\item Ein Element in $S_n$ ist eine Bijektion von einer $n$-elementigen Menge in sich selbst. Diese schreibt man am besten so:
-\begin{align*}
-\sigma = \begin{pmatrix}
-1 & 2 & \cdots & n \\
-\sigma (1) & \sigma (2) & \cdots & \sigma (n)
-\end{pmatrix}
-\end{align*}
+\item Ein Element in $S_n$ ist eine Bijektion (Umordnung) der $n$-elementigen
+Menge~$\{1,\ldots,n\}$ in sich selbst. Diese schreibt man am einfachsten so:
+\[ \sigma = \begin{pmatrix}
+  1 & 2 & \cdots & n \\
+  \sigma(1) & \sigma(2) & \cdots & \sigma(n)
+\end{pmatrix} \]
+
 \item Diese Schreibweise eignet sich hervorragend zum Rechnen:
-\begin{align*}
-\sigma \circ \tau = \begin{pmatrix}
-1 & 2 & 3 & 4 & 5 & 6 \\
-3 & 6 & 1 & 4 & 2 & 5
-\end{pmatrix} \circ
-\begin{pmatrix}
-1 & 2 & 3 & 4 & 5 & 6 \\
-5 & 4 & 3 & 2 & 1 & 6
-\end{pmatrix} =
-\begin{pmatrix}
-1 & 2 & 3 & 4 & 5 & 6 \\
-2 & 4 & 1 & 6 & 3 & 5
-\end{pmatrix}
-\end{align*}
-\item Auch zur Inversenbestimmung muss man hierfür nicht viel denken. Einfach umdrehen und sortieren.
-\begin{align*}
-\tau = \begin{pmatrix}
-1 & 2 & 3 & 4 & 5 & 6 \\
-6 & 5 & 4 & 1 & 2 & 3
-\end{pmatrix}
-\end{align*}
+\[ \sigma \circ \tau = \begin{pmatrix}
+  1 & 2 & 3 & 4 & 5 & 6 \\
+  3 & 6 & 1 & 4 & 2 & 5
+  \end{pmatrix} \circ
+  \begin{pmatrix}
+  1 & 2 & 3 & 4 & 5 & 6 \\
+  5 & 4 & 3 & 2 & 1 & 6
+  \end{pmatrix} =
+  \begin{pmatrix}
+  1 & 2 & 3 & 4 & 5 & 6 \\
+  2 & 4 & 1 & 6 & 3 & 5
+  \end{pmatrix} \]
+
+\item Auch zur Inversenbestimmung muss man hierfÃ¼r nicht viel denken. Einfach
+umdrehen und sortieren.
+\[ \tau = \begin{pmatrix}
+  1 & 2 & 3 & 4 & 5 & 6 \\
+  6 & 5 & 4 & 1 & 2 & 3
+\end{pmatrix} \]
 Umdrehen:
-\begin{align*}
-\begin{pmatrix}
-6 & 5 & 4 & 1 & 2 & 3 \\
-1 & 2 & 3 & 4 & 5 & 6
-\end{pmatrix}
-\end{align*}
+\[ \begin{pmatrix}
+  6 & 5 & 4 & 1 & 2 & 3 \\
+  1 & 2 & 3 & 4 & 5 & 6
+\end{pmatrix} \]
 Sortieren und fertig:
-\begin{align*}
-\tau^{-1}=
-\begin{pmatrix}
-1 & 2 & 3 & 4 & 5 & 6 \\
-4 & 5 & 6 & 3 & 2 & 1
-\end{pmatrix}
-\end{align*}
-\item die Zykelschreibweise eignet sich nicht zum Rechnen, da es dazu sehr viel Erfahrung benötigt. Also zuerst umrechnen, rechnen und wieder umrechnen.
-\begin{align*}
-\begin{pmatrix}
-3 & 1
-\end{pmatrix}
-\circ
-\begin{pmatrix}
-1 & 2
-\end{pmatrix}
-=
-\begin{pmatrix}
-1 & 2 & 3 & 4 \\
-3 & 2 & 1 & 4 
-\end{pmatrix}
-\circ
-\begin{pmatrix}
-1 & 2 & 3 & 4 \\
-2 & 1 & 3 & 4 
-\end{pmatrix}
-=
-\begin{pmatrix}
-1 & 2 & 3 & 4 \\
-2 & 3 & 1 & 4 
-\end{pmatrix}
-=
-\begin{pmatrix}
-1 & 2 & 3
-\end{pmatrix}
-\end{align*}
+\[ \tau^{-1} =
+  \begin{pmatrix}
+  1 & 2 & 3 & 4 & 5 & 6 \\
+  4 & 5 & 6 & 3 & 2 & 1
+  \end{pmatrix} \]
+
+\item Die Zykelschreibweise eignet sich nicht zum Rechnen, da es dazu ein wenig
+Erfahrung benÃ¶tigt. Also zuerst umrechnen, rechnen und wieder umrechnen.
+\[
+  \begin{pmatrix}
+  3 & 1
+  \end{pmatrix}
+  \circ
+  \begin{pmatrix}
+  1 & 2
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+  1 & 2 & 3 & 4 \\
+  3 & 2 & 1 & 4 
+  \end{pmatrix}
+  \circ
+  \begin{pmatrix}
+  1 & 2 & 3 & 4 \\
+  2 & 1 & 3 & 4 
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+  1 & 2 & 3 & 4 \\
+  2 & 3 & 1 & 4 
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+  1 & 2 & 3
+  \end{pmatrix}
+\]
+
+\item Die beiden Zykel
+\[ \begin{pmatrix}1 & 2\end{pmatrix}, \quad \begin{pmatrix}1 & 3\end{pmatrix}
+\]
+sind nicht disjunkt. Die beiden Zykel
+\[ \begin{pmatrix}1 & 2\end{pmatrix}, \quad \begin{pmatrix}4 & 3\end{pmatrix}
+\]
+sind disjunkt.
 \end{itemize}
-\section{Was nützt uns dann die Zykelschreibweise?}
-\begin{itemize}
-\item Bestimmung des Signums einer Permutation. Denn es gilt:
+
+
+\section{Was nÃ¼tzt uns dann die Zykelschreibweise?}
+
+\subsection*{Bestimmung des Signums einer Permutation}
+
+Es gilt:
 \begin{description}
-\item $sgn(\tau)=(-1)^{k+1}$, wenn $\tau$ ein Zusammenhängender k-Zykel ist
-\item $sgn(\tau \circ \sigma)= sgn(\tau) \cdot sgn(\sigma)$, falls $\tau$ und $\sigma$ disjunkte k-Zykel sind.
+\item $\sgn(\tau)=(-1)^{k+1}$, wenn $\tau$ ein einzelner $k$-Zykel ist,
+\item $\sgn(\tau \circ \sigma)= \sgn(\tau) \cdot \sgn(\sigma)$, falls $\tau$
+und $\sigma$ \emph{disjunkte} $k$-Zykel sind.
 \end{description}
-Bsp: ges: $sgn(\tau)$ mit
-\begin{align*}
-\tau=
-\begin{pmatrix}
-1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
-6 & 7 & 5 & 9 & 8 & 4 & 10 & 3 & 1 & 2
-\end{pmatrix}
-=
+Beispiel: Gesucht sei $\sgn(\tau)$ mit
+\[ \tau = \begin{pmatrix}
+  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+  6 & 7 & 5 & 9 & 8 & 4 & 10 & 3 & 1 & 2
+\end{pmatrix} =
 \begin{pmatrix}
 1 & 6 & 4 & 9
 \end{pmatrix}
@@ -126,19 +121,28 @@ Bsp: ges: $sgn(\tau)$ mit
 \end{pmatrix}
 \begin{pmatrix}
 3 & 5 & 8
-\end{pmatrix}
-\end{align*}
+\end{pmatrix}. \]
 \begin{align*}
-\Longrightarrow \ sgn(\tau)= (-1)\cdot 1 \cdot 1= -1
+\Longrightarrow \ \sgn(\tau)= (-1)\cdot 1 \cdot 1= -1
 \end{align*}
-\item Bestimmung der Ordnung k für ein $\sigma \in S_n$\\
-Die Ordung ist def. als kleinste natürliche Zahl: $\sigma^k=\underbrace{\sigma \circ \sigma \circ \cdots}_{k}= id$\\
-Haben:
+
+
+\subsection*{Bestimmung der Ordnung einer Permutation}
+
+Die (Element-)Ordnung einer Permutation~$\sigma \in S_n$ ist definiert als die
+\emph{kleinste} natÃ¼rliche Zahl~$\geq 1$ mit der
+Eigenschaft
+\[ \sigma^k=\underbrace{\sigma \circ \sigma \circ \cdots \circ
+\sigma}_{\text{$k$ Faktoren}}= \id. \]
+
+Es gilt:
 \begin{description}
-\item $ord(\tau)=$k, falls $\tau$ ein zusammenhängender k-Zykel ist.
-\item $ord(\tau \circ \sigma)=kgV(ord(\tau), ord(\sigma))$, wenn $\sigma$ und $\tau$ zwei disjunkte Zykel sind.
+\item $\ord(\tau)=k$, falls $\tau$ ein einzelner $k$-Zykel ist.
+\item $\ord(\tau \circ \sigma)=\operatorname{kgV}(\ord(\tau), \ord(\sigma))$, wenn $\sigma$ und
+$\tau$ zwei \emph{disjunkte} Zykel sind.
 \end{description}
-Bsp: Gesucht ist die Ordnung von $\sigma$ mit
+
+Beispiel: Gesucht ist die Ordnung von $\sigma$ mit
 \begin{align*}
 \sigma=
 \begin{pmatrix}
@@ -151,8 +155,8 @@ Bsp: Gesucht ist die Ordnung von $\sigma$ mit
 \end{pmatrix}
 \begin{pmatrix}
 2 & 6 & 5
-\end{pmatrix}
+\end{pmatrix}\!.
 \end{align*}
-$\Longrightarrow ord(\sigma)= kgV(2,3)=6$
-\end{itemize}
+\[ \Longrightarrow \ord(\sigma) = \operatorname{kgV}(2,3)=6. \]
+
 \end{document}

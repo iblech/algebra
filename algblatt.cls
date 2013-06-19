@@ -79,5 +79,7 @@
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\GL}[1]{\operatorname{GL}(#1)}
 \newcommand{\Gal}{\mathrm{Gal}}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\ord}{ord}
 
 \newcommand{\gra}[2]{[#1:#2]}
