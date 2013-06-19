@@ -1,0 +1,107 @@
+\documentclass[12pt,a4paper,ngerman]{scrartcl}
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb,amscd,amsthm,color,graphicx}
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage{lmodern}
+\usepackage{hyperref}
+
+\setlength\parskip{\medskipamount}
+\setlength\parindent{0pt}
+
+\newcommand{\Bild}{\operatorname{im}}
+\newcommand{\Kern}{\operatorname{ker}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\I}{\mathrm{i}}
+
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{bsp}{Beispiel}
+
+\theoremstyle{plain}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{beh}{Behauptung}
+
+\theoremstyle{remark}
+\newtheorem*{bem}{Bemerkung}
+
+\usepackage{geometry}
+\geometry{tmargin=3cm,bmargin=3cm,lmargin=2.5cm,rmargin=2.5cm}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Algebra I, SS 2012}
+\chead{1. Juli 2012}
+\rhead{Körpererweiterungen}
+
+\renewcommand{\labelitemi}{--}
+
+\begin{document}
+
+\section*{Rechenregeln für Körpererweiterungen}
+
+Folgende Regeln kann man benutzen, um Darstellungen von Körpererweiterungen der
+Form~$L = K(x_1,\ldots,x_n)$ über~$K$ zu vereinfachen:
+\begin{enumerate}
+\item[a)] Die Reihenfolge der Erzeuger spielt keine Rolle.
+\item[b)] Erzeuger, die in~$K$ liegen, kann man weglassen.
+\item[c)] Man kann beliebige Elemente aus~$K$ zu Erzeugern addieren und
+subtrahieren, sowie (falls nicht null) multiplizieren und dividieren.
+\item[d)] Man kann beliebige~$K$-Vielfache eines Erzeugers auf einen anderen
+addieren und subtrahieren, sowieso (falls nicht null) multiplizieren und
+dividieren.
+\end{enumerate}
+
+Außerdem helfen folgende Tatsachen ($F$ beliebiger Körper):
+\begin{enumerate}
+\item[e)] $K(x_1,\ldots,x_n)(y_1,\ldots,y_m) = K(x_1,\ldots,x_n,y_1,\ldots,y_m)$
+\item[f)] $K(x_1,\ldots,x_n) \subseteq F$ genau dann, wenn $K \subseteq F$ und
+$x_1,\ldots,x_n \in F$.
+\end{enumerate}
+Im Allgemeinen gilt nicht, dass~$K(x,y) = K(x+y)$.
+
+\subsection*{Beispiele}
+
+\begin{enumerate}
+\item $\Q(\sqrt{2}, {-}\sqrt{2}) = \Q(\sqrt{2})$
+\item $\Q(\frac{1 + \sqrt{5}}{2}, \frac{1 - \sqrt{5}}{2}) = \Q(1+\sqrt{5},
+1-\sqrt{5}) = \Q(\sqrt{5},-\sqrt{5}) = \Q(\sqrt{5})$
+\item $\Q(\zeta^0,\zeta^1,\ldots,\zeta^5) = \Q(\zeta) = \Q(1
++ \sqrt{3}\,\I) = \Q(\sqrt{3}\,\I),$ \\
+${\qquad}$ für $\zeta := e^{2 \pi \I/6} = \cos 60^\circ + \I \sin 60^\circ =
+\frac{1}{2}(1 + \sqrt{3}\,\I)$.
+\item $\Q(\sqrt{3})(\zeta^0,\ldots,\zeta^5) = \Q(\sqrt{3})(\sqrt{3}\,\I) =
+\Q(\sqrt{3},\sqrt{3}\,\I) = \Q(\sqrt{3},\I),$ \\
+${\qquad}$ für~$\zeta$ wie in Beispiel 3.
+\item
+$\Q(\sqrt[8]{2}\,\zeta^0, \ldots, \sqrt[8]{2}\,\zeta^7) = \Q(\sqrt[8]{2},
+\zeta, \zeta^2, \ldots, \zeta^7) = \Q(\sqrt[8]{2}, \zeta) = \Q(\sqrt[8]{2}, 1 + \I) = \Q(\sqrt[8]{2},
+\I),$ \\
+${\qquad}$ für $\zeta := e^{2 \pi \I/8} = \frac{1}{\sqrt{2}}(1 + \I)$.
+\item $\Q(\text{alle sechs Nullstellen von~$(X^4 - 2) (X^2 + 1)$}) =
+\Q(\sqrt[4]{2}, \I)$
+\item $\Q(\sqrt{2}, \I) = \Q(\sqrt{2} + \I)$ (ein Ausnahmefall; knifflig)
+\end{enumerate}
+
+\subsection*{Anwendungen}
+
+Die Darstellung zu vereinfachen ist hilfreich, wenn man\ldots
+\begin{itemize}
+\item \ldots den Grad einer Körpererweiterung bestimmen
+möchte.
+
+\emph{Bsp.:} Die Erweiterung von Beispiel~3 hat über~$\Q$ den Grad~2, denn das
+Minimalpolynom von~$\sqrt{3}\,\I$ über~$\Q$ ist~$X^2 + 3$ (wieso?). In der
+Ausgangsformulierung~$\Q(\zeta^0,\zeta^1,\ldots,\zeta^5)$ erkennt man den Grad
+dagegen nicht so schnell.
+\item \ldots Zerfällungskörper in knapper Form angeben möchte.
+\item \ldots Galoisgruppen bestimmen möchte.
+\end{itemize}
+
+\end{document}
