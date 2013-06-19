@@ -20,7 +20,7 @@ Polynoms~$f(X)$ mit rationalen Koeffizienten.
 
 \item Sei~$\sigma$ eine Symmetrie der Nullstellen und seien~$z, w \in
 \QQ(x_1,\ldots,x_n)$. Zeige: $\sigma \cdot (z + w) = \sigma \cdot z + \sigma
-\cdot w$ und~$\sigma \cdot (zw) = (\sigma \cdot z) \, (\sigma \cdot w)$.
+\cdot w$ und~$\sigma \cdot (zw) = (\sigma \cdot z) \cdot (\sigma \cdot w)$.
 
 \item Zeige, dass genau dann eine Symmetrie~$\sigma$ der Nullstellen
 mit~$x_2 = \sigma \cdot x_1$ existiert, wenn~$x_1$ und~$x_2$ zueinander
@@ -47,7 +47,7 @@ x_i$.
 \end{align*}
 der Multiplikationsfall geht völlig analog.
 
-\item "`$\Rightarrow$"': Sei~$m$ das Minimalpolynom von~$x_1$. Dann gilt
+\item "`$\Longrightarrow$"': Sei~$m$ das Minimalpolynom von~$x_1$. Dann gilt
 \[ m(x_2) = m(\sigma \cdot x_1) = \sigma \cdot m(x_1) = \sigma \cdot 0 = 0, \]
 also ist~$x_2$ in der Tat galoissch konjugiert zu~$x_1$.
 Die Multiplikation mit~$\sigma$ darf man deswegen an~$m$ vorbeiziehen, weil~$m$
@@ -59,6 +59,27 @@ man eine formale Begründung wie folgt führen:
   \sum_i \sigma \cdot (a_i x_2^i) =
   \sigma \cdot \sum_i a_i x_2^i =
   \sigma \cdot m(x_2). \]
+
+"`$\Longleftarrow$"': Wir kürzen die Galoisgruppe der Nullstellen kurz
+mit~"`$G$"' ab. Dann betrachten wir das Polynom
+\[ g(X) := \prod_{\sigma \in G} (X - \sigma \cdot x_1). \]
+Dieses ist sicher normiert und hat~$x_1$ als Nullstelle. Außerdem sind seine
+Koeffizienten rational: Denn sie sind invariant unter der Wirkung der
+Galoisgruppe. Das folgt aus der für jedes~$\tau \in G$ gültigen Beziehung
+\[ \tau \cdot g(X) = \tau \cdot \prod_{\sigma \in G} (X
+- \sigma \cdot x_1) = \prod_{\sigma \in G} (X - \tau \cdot
+  \sigma \cdot x_1) = \prod_{\sigma \in G} (X
+  - \sigma \cdot x_1) = g(X) \]
+(wieso gilt diese?) und Koeffizientenvergleich.
+
+Da nach Voraussetzung~$x_1$ zu~$x_2$ galoissch konjugiert ist, muss nach
+Aufgabe~4b) von Blatt 10 auch~$x_2$ eine Nullstelle von~$g(X)$ sein, einer der
+Faktoren
+\[ x_2 - \sigma \cdot x_1, \quad \sigma \in G, \]
+muss also verschwinden. Das zeigt die Behauptung.
+
+\emph{Bemerkung:} Das betrachtete Polynom~$g(X)$ wird im Allgemeinen nicht das
+Minimalpolynom von~$x_1$ sein; das stört aber auch nicht weiter.
 \end{loesungE}
 \end{aufgabe}
 
@@ -95,6 +116,14 @@ Aufgabe~1c) muss die Galoisgruppe daher eine Permutation enthalten, die~$x_1$
 auf~$x_2$ abbildet. Da die Identitätspermutation das nicht macht, muss noch
 die zweite Permutation~$\sigma$ enthalten sein.
 
+\emph{Variante:} Mit der Formel~$|\Gal_\QQ(x_1,x_2)| =
+\gra{\QQ(x_1,x_2)}{\QQ}$ kann man die Fallunterscheidungen ein wenig kürzer
+fassen und muss auch nicht mehr Aufgabe~1c) kennen. Falls die Diskriminante ein
+Quadrat in~$\QQ$ ist, sind die beiden Lösungen rational und es gilt
+einfach~$\QQ(x_1,x_2) = \QQ$, also wird der Grad in diesem Fall~$1$ sein.
+Ansonsten wird der Grad mehr als~$1$ sein [tatsächlich genau~$2$], weswegen die
+Galoisgruppe dann noch das zweite Element enthalten muss.
+
 \item Die Galoisgruppe kann höchstens sechs Elemente enthalten, denn es gibt
 nur sechs Permutationen in drei Ziffern. Umgekehrt muss die Galoisgruppe aber
 auch mindestens sechs Elemente enthalten, denn
@@ -129,13 +158,18 @@ Permutation (wieso?) und daher in~$A_n$ enthalten.
 Sei schließlich~$\sigma$ eine Permutation aus~$A_n$. Dann ist
 auch~$\sigma^{-1}$ eine gerade Permutation (wieso?), also in~$A_n$ enthalten.
 
+\emph{Bemerkung:} Wenn man das nötige abstrakte Vorwissen mitbringt, kann man
+auch wie folgt argumentieren: Die Signumsabbildung ist ein
+Gruppenhomomorphismus~$S_n \to \{ \pm1 \}$. Die Menge~$A_n$ ist daher als Kern
+dieses Homomorphismus eine Untergruppe.
+
 \item Seien~$x_1, \ldots, x_n$ die Nullstellen von~$f(X)$. Wir betrachten eine
-der beiden Quadratwurzeln der Diskriminante,
+der beiden Quadratwurzeln der Diskriminante, und zwar
 \[ \delta := \prod_{i < j} (x_i - x_j). \]
 Diese Zahl liegt offensichtlich in~$\QQ(x_1,\ldots,x_n)$. Außerdem sieht man,
-dass eine Permutation~$\sigma$ der Galoisgruppe genau dann~$\delta$ invariant
-lässt (d.\,h.~$\sigma \cdot \delta = \delta$ erfüllt), wenn~$\sigma$ gerade
-ist (sonst entsteht ein Minuszeichen).
+dass wegen der vorausgesetzten Separabilität eine Permutation~$\sigma$ der
+Galoisgruppe genau dann~$\delta$ invariant lässt (d.\,h.~$\sigma \cdot \delta =
+\delta$ erfüllt), wenn~$\sigma$ gerade ist (sonst entsteht ein Minuszeichen).
 
 Nun besitzt die Diskriminante genau dann eine Quadratwurzel in den rationalen
 Zahlen, wenn~$\delta$ in~$\QQ$ liegt [automatisch liegt dann auch~$-\delta$
@@ -167,10 +201,28 @@ Insbesondere enthält die Galoisgruppe also genau so viele Elemente, wie es
 galoissch Konjugierte von~$t$ gibt. Daher ist der Grad von~$t$ gerade durch
 die Anzahl der Elemente der Galoisgruppe gegeben. Diese ist höchstens~$n!$, da
 es nur~$n!$ Permutationen in~$n$ Ziffern gibt. Als Formel:
-\[ \deg_\QQ t = |\Gal(x_1,\ldots,x_n)| \leq |S_n| = n!. \]
+\[ \deg_\QQ t = |\Gal_\QQ(x_1,\ldots,x_n)| \leq |S_n| = n!. \]
+
+\emph{Variante:} Es gilt für jedes~$k = 0,\ldots,n-1$ die Abschätzung
+\[ \gra{\QQ(x_1,\ldots,x_{k+1})}{\QQ(x_1,\ldots,x_k)} \leq n - k, \]
+denn mit Polynomdivision über dem Rechenbereich~$\QQ(x_1,\ldots,x_k)$ sieht
+man, dass sich das Polynom~$f(X)$ über~$\QQ(x_1,\ldots,x_k)$ aufspaltet als
+\[ f(X) = (X-x_1) \cdots (X-x_k) \cdot g_k(X) \]
+für einen verbleidenden Faktor~$g_k(X) \in \QQ(x_1,\ldots,x_k)[X]$ vom
+Grad~$n-k$. Da~$f(x_{k+1}) = 0$ und die anderen Nullstellen nicht gleich~$x_{k+1}$ sind,
+muss~$g_k(x_{k+1})$ gelten, also ist~$g_k(X)$ ein annulierendes Polynom
+für~$x_{k+1}$ über~$\QQ(x_1,\ldots,x_k)$.
+
+Damit gilt die Abschätzungskette
+\begin{align*}
+  \deg_\QQ t &= \gra{\QQ(t)}{\QQ} = \gra{\QQ(x_1,\ldots,x_n)}{\QQ} \\
+  &= \gra{\QQ(x_1,\ldots,x_n)}{\QQ(x_1,\ldots,x_{n-1})} \cdots
+    \gra{\QQ(x_1,x_2)}{\QQ(x_1)} \cdot \gra{\QQ(x_1)}{\QQ} \\
+  &\leq 1 \cdot 2 \cdots (n-1) \cdot n = n!.
+\end{align*}
 
 \item Da die Galoisgruppe der Nullstellen eine Untergruppe der~$S_n$ ist, ist
-nach dem Satz von Lagrange $|\Gal(x_1,\ldots,x_n)|$ ein Teiler von~$|S_n| =
+nach dem Satz von Lagrange $|\Gal_\QQ(x_1,\ldots,x_n)|$ ein Teiler von~$|S_n| =
 n!$. Mit der Formel aus~b) zeigt das schon die Behauptung.
 \end{loesungE}
 \end{aufgabe}
@@ -199,7 +251,8 @@ und~$V(x_{\tau(1)},\ldots,x_{\tau(n)})$ verschieden sind. Das ist aber
 unmöglich, wenn manche der Nullstellen übereinstimmen, d.\,h. wenn~$x_i = x_j$
 für~$i \neq j$ gilt.
 
-\item Seien~$x_1$ und~$x_2$ die beiden (verschiedenen) Nullstellen von~$X^2 + X + 1$.
+\item \emph{Variante 1 (durch Probieren):} Seien~$x_1$ und~$x_2$ die beiden
+(verschiedenen) Nullstellen von~$X^2 + X + 1$.
 (Sie sind~$\omega$ und~$\omega^2$, wobei~$\omega =
 \exp(2\pi\i/3)$, aber das müssen wir für diese Aufgabe gar nicht wissen.) Dann
 ist etwa~$V(X_1,X_2) := X_1$ eine galoissche Resolvente,
@@ -217,6 +270,27 @@ kommt keine Zahl doppelt vor.
 Polynome~$f(X) = X^2 + b\,X + c$ jede Nullstelle~$x_i$ schon ein primitives
 Element für~$\QQ(x_1,x_2)$ ist. Das kann man auch direkt sehen, denn es
 gilt~$x_2 = -b - x_1$ und~$x_1 = -b - x_1$ und daher~$\QQ(x_2) = \QQ(x_1)$.
+
+\emph{Variante 2 (mit der Technik aus der nächsten Teilaufgabe):} Wir listen
+für alle~$i,j,k,\ell \in \{ 1, 2 \}$ mit~$k \neq \ell$ die für Teilaufgabe~c)
+relevanten Zahlen auf:
+\begin{center}
+  \begin{tabular}{c|c|c|c|l}
+    $i$ & $j$ & $k$ & $\ell$ & $n \cdot |x_i - x_j| / |x_k - x_\ell|$ \\\hline
+    $1$ & $1$ & $1$ & $2$ & $0$ \\
+    $1$ & $2$ & $1$ & $2$ & $2$ \\
+    $2$ & $1$ & $1$ & $2$ & $2$ \\
+    $2$ & $2$ & $1$ & $2$ & $0$ \\
+    $1$ & $1$ & $2$ & $1$ & $0$ \\
+    $1$ & $2$ & $2$ & $1$ & $2$ \\
+    $2$ & $1$ & $2$ & $1$ & $2$ \\
+    $2$ & $2$ & $2$ & $1$ & $0$
+  \end{tabular}
+\end{center}
+Wenn man nur kurz nachdenkt, kann man sich die meisten Kombinationen sogar
+sparen. Auf jeden Fall folgt, dass die Wahl~$C := 2$ möglich ist und daher
+\[ x_1 + 2 x_2 \]
+ein primitives Element ist.
 
 \item Seien~$\sigma$ und~$\tau$ zwei verschiedene Permutationen. Wir müssen
 zeigen, dass~$V(x_{\sigma(1)},\ldots,x_{\sigma(n)}) \neq
