@@ -46,6 +46,19 @@ x_i$.
   \sigma \cdot z + \sigma \cdot w,
 \end{align*}
 der Multiplikationsfall geht völlig analog.
+
+\item "`$\Rightarrow$"': Sei~$m$ das Minimalpolynom von~$x_1$. Dann gilt
+\[ m(x_2) = m(\sigma \cdot x_1) = \sigma \cdot m(x_1) = \sigma \cdot 0 = 0, \]
+also ist~$x_2$ in der Tat galoissch konjugiert zu~$x_1$.
+Die Multiplikation mit~$\sigma$ darf man deswegen an~$m$ vorbeiziehen, weil~$m$
+nur rationale Koeffizienten hat. Wenn man~$m = \sum_i a_i X^i$ schreibt, kann
+man eine formale Begründung wie folgt führen:
+\[ m(\sigma \cdot x_2) =
+  \sum_i a_i (\sigma \cdot x_2)^i =
+  \sum_i (\sigma \cdot a_i) \cdot (\sigma \cdot x_2)^i =
+  \sum_i \sigma \cdot (a_i x_2^i) =
+  \sigma \cdot \sum_i a_i x_2^i =
+  \sigma \cdot m(x_2). \]
 \end{loesungE}
 \end{aufgabe}
 
@@ -59,7 +72,7 @@ von~$f(X)$.
 \item Sei~$f(X)$ ein normiertes irreduzibles Polynom vom Grad~$3$ mit
 rationalen Koeffizienten und Nullstellen~$x_1,x_2,x_3$. Sei~$x_1$ \emph{kein}
 primitives Element zu~$\QQ(x_1,x_2,x_3)$. Zeige, dass die Galoisgruppe der
-Nullstellen genau sechs Element enthält.
+Nullstellen genau sechs Elemente enthält.
 \end{enumerate}
 
 \begin{loesungE}
@@ -95,7 +108,7 @@ mit~$\QQ(x_1,x_2,x_3) = \QQ(x_1)$ wäre, einem Widerspruch zur Voraussetzung.
 \end{loesungE}
 \end{aufgabe}
 
-\begin{aufgabe}{Kriterium für gerade Permutationen ???}
+\begin{aufgabe}{Manchmal sind alle Symmetrien gerade}
 \begin{enumerate}
 \item Zeige, dass die Menge~$A_n$ der geraden Permutationen in~$n$ Ziffern eine
 Untergruppe der~$S_n$ ist.
@@ -107,7 +120,14 @@ eine Quadratwurzel in den rationalen Zahlen besitzt.
 \end{enumerate}
 
 \begin{loesungE}
-\item \ldots
+\item Die Identitätspermutation liegt in~$A_n$, da sie gerade ist.
+
+Seien~$\sigma$ und~$\tau$ zwei Permutationen aus~$A_n$, also zwei gerade
+Permutationen. Dann ist auch die Komposition~$\sigma \circ \tau$ eine gerade
+Permutation (wieso?) und daher in~$A_n$ enthalten.
+
+Sei schließlich~$\sigma$ eine Permutation aus~$A_n$. Dann ist
+auch~$\sigma^{-1}$ eine gerade Permutation (wieso?), also in~$A_n$ enthalten.
 
 \item Seien~$x_1, \ldots, x_n$ die Nullstellen von~$f(X)$. Wir betrachten eine
 der beiden Quadratwurzeln der Diskriminante,
@@ -126,10 +146,14 @@ Galoisgruppe eine Teilmenge der alternierenden Gruppe~$A_n$ ist.
 \end{loesungE}
 \end{aufgabe}
 
-\begin{aufgabe}{???}
+\begin{aufgabe}{Grad primitiver Elemente}
 Sei~$f(X)$ ein normiertes separables Polynom vom Grad~$n$ und~$t$ ein
-primitives Element seiner Nullstellen. Zeige, dass der Grad von~$t$
-höchstens~$n!$ ist.
+primitives Element seiner Nullstellen.
+\begin{enumerate}
+\item Zeige, dass jedes weitere primitive Element~$t'$ denselben Grad wie~$t$
+hat.
+\item Zeige, dass der Grad von~$t$ höchstens~$n!$ ist.
+\end{enumerate}
 
 \begin{loesung}
 Wir wissen um die fundamentale Beobachtung, dass die Elemente der
@@ -157,9 +181,32 @@ eine galoissche Resolvente für~$f(X)$ ist.
 \end{enumerate}
 
 \begin{loesungE}
-\item \ldots
+\item Eine galoissche Resolvente~$V(X_1,\ldots,X_n)$ für ein Polynom~$f(X)$ mit
+den Nullstellen~$x_1,\ldots,x_n$ ist ein Polynom, sodass für je zwei
+verschiedene Permutationen~$\sigma,\tau \in S_n$ jeweils die
+Zahlen~$V(x_{\sigma(1)},\ldots,x_{\sigma(n)})$
+und~$V(x_{\tau(1)},\ldots,x_{\tau(n)})$ verschieden sind. Das ist aber
+unmöglich, wenn manche der Nullstellen übereinstimmen, d.\,h. wenn~$x_i = x_j$
+für~$i \neq j$ gilt.
 
-\item \ldots
+\item Seien~$x_1$ und~$x_2$ die beiden (verschiedenen) Nullstellen von~$X^2 + X + 1$.
+(Sie sind~$\omega$ und~$\omega^2$, wobei~$\omega =
+\exp(2\pi\i/3)$, aber das müssen wir für diese Aufgabe gar nicht wissen.) Dann
+ist etwa~$V(X_1,X_2) := X_1$ eine galoissche Resolvente,
+denn in der Liste
+\begin{center}
+  \begin{tabular}{c|c}
+    $\sigma$ & $V(x_{\sigma(1)}, x_{\sigma(2)})$ \\\hline
+    $\id$ & $V(x_1,x_2) = x_1$ \\
+    $(1,2)$ & $V(x_2,x_1) = x_2$
+  \end{tabular}
+\end{center}
+kommt keine Zahl doppelt vor.
+
+\emph{Bemerkung:} Es stimmt also ganz allgemein, dass für quadratische
+Polynome~$f(X) = X^2 + b\,X + c$ jede Nullstelle~$x_i$ schon ein primitives
+Element für~$\QQ(x_1,x_2)$ ist. Das kann man auch direkt sehen, denn es
+gilt~$x_2 = -b - x_1$ und~$x_1 = -b - x_1$ und daher~$\QQ(x_2) = \QQ(x_1)$.
 
 \item Seien~$\sigma$ und~$\tau$ zwei verschiedene Permutationen. Wir müssen
 zeigen, dass~$V(x_{\sigma(1)},\ldots,x_{\sigma(n)}) \neq
@@ -169,9 +216,12 @@ Voraussetzung gilt Abschätzung
 \[ |x_{\sigma(i)} - x_{\tau(i)}| \leq
   |x_{\sigma(k)} - x_{\tau(k)}| \cdot
   \frac{1}{n} \cdot C \]
-für alle~$i = 1,\ldots,n$. Damit ergibt sich:
+für alle~$i = 1,\ldots,n$. Damit ergibt sich für den Betrag~$|\delta|$ der
+Differenz:
 \begin{align*}
-  |V(x_{\sigma(1)},\ldots,x_{\sigma(n)}) - V(x_{\tau(1)},\ldots,x_{\tau(n)})| &=
+  |\delta| &= |V(x_{\sigma(1)},\ldots,x_{\sigma(n)}) -
+  V(x_{\tau(1)},\ldots,x_{\tau(n)})| \\
+  &=
   \Biggl|\sum_{i=1}^n (x_{\sigma(i)} - x_{\tau(i)}) \cdot C^{i-1}\Biggr| \\
   &= \Biggl|\sum_{i=1}^k (x_{\sigma(i)} - x_{\tau(i)}) \cdot C^{i-1}\Biggr| \\
   &\geq |x_{\sigma(k)} - x_{\tau(k)}| \cdot C^{k-1} - \sum_{i=1}^{k-1}
