@@ -153,16 +153,26 @@ primitives Element seiner Nullstellen.
 \item Zeige, dass jedes weitere primitive Element~$t'$ denselben Grad wie~$t$
 hat.
 \item Zeige, dass der Grad von~$t$ höchstens~$n!$ ist.
+\item Zeige, dass der Grad von~$t$ sogar ein Teiler von~$n!$ ist.
 \end{enumerate}
 
-\begin{loesung}
-Wir wissen um die fundamentale Beobachtung, dass die Elemente der
+\begin{loesungE}
+\item Nach Voraussetzung gilt~$\QQ(t) = \QQ(x_1,\ldots,x_n) = \QQ(t')$. Daher
+folgt $\deg_\QQ t = \gra{\QQ(t)}{\QQ} = \gra{\QQ(x_1,\ldots,x_n)}{\QQ} =
+\gra{\QQ(t')}{\QQ} = \deg_\QQ t'$.
+
+\item Wir wissen um die fundamentale Beobachtung, dass die Elemente der
 Galoisgruppe in Bijektion mit den galoissch Konjugierten von~$t$ stehen.
 Insbesondere enthält die Galoisgruppe also genau so viele Elemente, wie es
 galoissch Konjugierte von~$t$ gibt. Daher ist der Grad von~$t$ gerade durch
 die Anzahl der Elemente der Galoisgruppe gegeben. Diese ist höchstens~$n!$, da
-es nur~$n!$ Permutationen in~$n$ Ziffern gibt.
-\end{loesung}
+es nur~$n!$ Permutationen in~$n$ Ziffern gibt. Als Formel:
+\[ \deg_\QQ t = |\Gal(x_1,\ldots,x_n)| \leq |S_n| = n!. \]
+
+\item Da die Galoisgruppe der Nullstellen eine Untergruppe der~$S_n$ ist, ist
+nach dem Satz von Lagrange $|\Gal(x_1,\ldots,x_n)|$ ein Teiler von~$|S_n| =
+n!$. Mit der Formel aus~b) zeigt das schon die Behauptung.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Galoissche Resolventen}
