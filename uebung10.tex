@@ -3,7 +3,7 @@
 \usepackage{multicol}
 \input{config.tex}
 \ifloesungen
-  \geometry{tmargin=2.0cm,bmargin=1.5cm,lmargin=2.5cm,rmargin=2.5cm}
+  \geometry{tmargin=2.0cm,bmargin=2.0cm,lmargin=2.5cm,rmargin=2.5cm}
 \else
   \geometry{tmargin=2.0cm,bmargin=1.5cm,lmargin=2.0cm,rmargin=2.0cm}
 \fi
@@ -137,7 +137,7 @@ mit den Minimalpolynomen~$X$ bzw.~$X-1$.
 ihr Grad angibt. Dieser ist~$4$, denn das Minimalpolynom ist~$X^4 - 3$ -- die
 Irreduzibilität ist wegen des Eisenstein-Kriteriums sofort klar.
 Explizit sind die vier galoissch Konjugierten
-\[ \sqrt[4]{3},\quad \i \sqrt[4]{3},\quad -\sqrt[4]{3}, -\i \sqrt[4]{3}. \]
+\[ \sqrt[4]{3},\quad \i \sqrt[4]{3},\quad -\sqrt[4]{3},\quad -\i \sqrt[4]{3}. \]
 
 \item Wir suchen zunächst ein Polynom mit rationalen Koeffizienten, dass~$z :=
 \sqrt{p} + \sqrt{q}$ als Nullstelle besitzt:
@@ -253,7 +253,7 @@ also ist~$t := \xi$ ein primitives Element.
 \item[4.] Das Minimalpolynom von~$t$ ist~$f(X) = X^4 - 1$: Die Irreduzibilität
 bestätigt das Eisenstein-Kriterium angewendet auf
 \[ f(X+1) = X^4 + 4 \,X^3 + 6\,X^2 + 4\,X + 2 \]
-mit~$p = 2$. (Alternative Irreduzibilitätsbegründung: Das Polynom~$f(X)$ gerade
+mit~$p = 2$. (Alternative Irreduzibilitätsbegründung: Das Polynom~$f(X)$ ist gerade
 das achte Kreisteilungspolynom.)
 
 \item[5.] Die vier galoissch Konjugierten von~$t$ sind daher gerade die obigen
@@ -268,7 +268,7 @@ vier Nullstellen:
   \begin{tabular}{@{}r|cccc|l@{}}
     $t_i$ & $h_1(t_i)$ & $h_2(t_i)$ & $h_3(t_i)$ & $h_4(t_i)$ & $\sigma_i$ \\\hline
     $t_1$ & $x_1$ & $x_2$ & $x_3$ & $x_4$ & $\id$ \\
-    $t_2$ & $x_2$ & $x_1$ & $x_4$ & $x_3$ & $(1,2) \, (3,4)$ \\
+    $t_2$ & $x_2$ & $x_1$ & $x_4$ & $x_3$ & $(1,2) \circ (3,4)$ \\
     $t_3$ & $x_3$ & $x_4$ & $x_1$ & $x_2$ & $(1,2,3,4)$ \\
     $t_4$ & $x_4$ & $x_3$ & $x_2$ & $x_1$ & $(4,3,2,1)$
   \end{tabular}
