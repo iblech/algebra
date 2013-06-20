@@ -1,7 +1,7 @@
 \documentclass{../../algblatt}
 
 \usepackage{geometry}
-\geometry{tmargin=3cm,bmargin=2cm,lmargin=2.7cm,rmargin=2.7cm}
+\geometry{tmargin=3cm,bmargin=2cm,lmargin=2.3cm,rmargin=2.3cm}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -59,15 +59,15 @@ ${\qquad}$ für $\zeta := e^{2 \pi \i/8} = \frac{1}{\sqrt{2}}(1 + \i)$.
 
 Die Darstellung zu vereinfachen ist hilfreich, wenn man\ldots
 \begin{itemize}
-\item \ldots den Grad einer Körpererweiterung bestimmen
+\item \ldots Erweiterungen von~$\QQ$ in knapper Form angeben möchte.
+
+\item \ldots den Grad einer Erweiterung bestimmen
 möchte.
 
 \emph{Beispiel:} Die Erweiterung von Beispiel~3 hat über~$\QQ$ den Grad~2, denn das
 Minimalpolynom von~$\sqrt{3}\,\i$ über~$\QQ$ ist~$X^2 + 3$ (wieso?). In der
 Ausgangsformulierung~$\QQ(\zeta^0,\zeta^1,\ldots,\zeta^5)$ erkennt man den Grad
 dagegen nicht so schnell.
-
-\item \ldots Erweiterungen von~$\QQ$ in knapper Form angeben möchte.
 
 \item \ldots primitive Elemente bestimmen möchte.
 
@@ -87,10 +87,12 @@ Seien $F$ und~$\widetilde F$ beliebige weitere Erweiterungen von~$\QQ$. Dann
 gilt (wieso?):
 
 \begin{enumerate}
-\item $\QQ(x_1,\ldots,x_n)(y_1,\ldots,y_m) = \QQ(x_1,\ldots,x_n,y_1,\ldots,y_m)$
+\item $\QQ(x_1,\ldots,x_n)(y_1,\ldots,y_m) = \QQ(x_1,\ldots,x_n,y_1,\ldots,y_m)$.
+\item $\QQ[x] = \QQ(x)$ genau dann, wenn~$x$ algebraisch ist.
 \item $\QQ(x_1,\ldots,x_n) \subseteq F$ genau dann, wenn
 $x_1,\ldots,x_n \in F$.
-\item $\QQ(x_1,x_2) = \QQ(x_1)$ genau dann, wenn~$x_2 \in \QQ(x_1)$.
+\item $\QQ(x_1,x_2) = \QQ(x_1)$ genau dann, wenn~$x_2 \in \QQ(x_1)$ (wie folgt
+das aus~c)?).
 \item Gelte~$F \subseteq \widetilde F$. Dann gilt genau dann~$F =
 \widetilde F$, wenn $[F:\QQ] = [\widetilde F:\QQ]$.
 
@@ -125,9 +127,23 @@ Für den Grad über~$\QQ$ folgt daraus (mit~$u := 1$):
 eines normierten separablen Polynoms mit rationalen Koeffizienten und ist~$t$
 ein primitives Element für diese Nullstellen, so
 gilt~$[\QQ(x_1,\ldots,x_n):\QQ] = [\QQ(t):\QQ] =
-|\mathrm{Gal}_\QQ(x_1,\ldots,x_n)|$. Dies folgt aus fundamentalen
+|\mathrm{Gal}_\QQ(x_1,\ldots,x_n)|$. Dies folgt aus der fundamentalen
 1:1--Korrespondenz zwischen den Elementen der Galoisgruppe und den galoissch
 Konjugierten von~$t$ (Proposition~4.8).
 \end{enumerate}
+
+
+\section*{Basen}
+
+Eine mögliche~$\QQ$-Basis der Erweiterung~$\QQ(\alpha)$ ist durch
+\[ 1,\quad \alpha,\quad \alpha^2,\quad \ldots,\quad \alpha^{n-1} \]
+gegeben, wobei~$n$ der Grad von~$\alpha$ sei. Ausbuchstabiert bedeutet das:
+\emph{Jede} Zahl aus~$\QQ(\alpha)$ lässt sich auf \emph{eindeutige} Art und Weise als
+rationale Linearkombination in den Zahlen~$\alpha^0,\ldots,\alpha^{n-1}$ schreiben.
+
+\emph{Beispiel:} Der Grad von~$\sqrt[3]{2}$ über~$\QQ$ ist~$3$ (wieso?). Daher
+gibt es für jede Zahl~$x$ aus~$\QQ(\sqrt[3]{2})$ genau einen Satz von
+rationalen Koeffizienten~$a, b, c$ mit
+\[ x = a \cdot 1 + b \cdot \sqrt[3]{2} + c \cdot \sqrt[3]{2}^2. \]
 
 \end{document}
