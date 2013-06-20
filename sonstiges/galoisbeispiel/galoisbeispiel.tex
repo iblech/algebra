@@ -1,0 +1,70 @@
+\documentclass{../../algblatt}
+
+\usepackage{geometry}
+\geometry{tmargin=2cm,bmargin=2cm,lmargin=2.3cm,rmargin=2.3cm}
+
+\pagestyle{empty}
+
+\renewcommand{\labelitemi}{--}
+
+\begin{document}
+
+\begin{center}\huge \sffamily\textbf{Beispielberechnung einer Galoisgruppe}\end{center}
+
+Wir wollen die Galoisgruppe der Nullstellen des Polynoms
+\[ f(X) = X^4 - 1 \in \QQ[X] \]
+bestimmen.
+
+\begin{enumerate}
+\item[\textbf{1.}] Die vier Nullstellen sind
+\[ x_1 = 1,\quad
+  x_2 = \i,\quad
+  x_3 = -1,\quad
+  x_4 = -\i. \]
+
+\item[\textbf{2.}] Es gilt
+\[ \QQ(x_1,x_2,x_3,x_4) = \QQ(1,\i,-1,-\i) = \QQ(\i,-\i) = \QQ(\i), \]
+also ist~$t := \i$ ein primitives Element.
+
+\item[\textbf{3.}] Wir müssen die Nullstellen als polynomielle Ausdrücke in~$t$ mit
+rationalen Koeffizienten schreiben: Für die vier Nullstellen gilt jeweils~$x_i
+= h_i(t)$, wobei
+\begin{align*}
+  h_1(X) &= 1, \\
+  h_2(X) &= X, \\
+  h_3(X) &= -1, \\
+  h_4(X) &= -X.
+\end{align*}
+Nicht zulässig wäre beispielsweise die Setzung~$h_2(X) = \i$ gewesen (wieso?).
+Eine korrekte, aber unnötig komplizierte, Alternative ist~$h_2(X) = X + X^2 +
+1$ (wieso?).
+
+\item[\textbf{4.}] Das Minimalpolynom von~$t$ ist bekanntermaßen~$X^2 + 1$: Denn
+dieses Polynom ist normiert, hat nur rationale Koeffizienten, besitzt~$t$ als
+Nullstelle und ist irreduzibel (es ist vom Grad~$2$ und seine Nullstellen sind
+nicht rational).
+
+\item[\textbf{5.}] Die zwei galoissch Konjugierten von~$t$ (die Nullstellen
+seines Minimalpolynoms) sind
+\[ t_1 = \i,\quad
+  t_2 = -\i. \]
+
+\item[\textbf{6.}] Damit können wir die Elemente der Galoisgruppe auflisten:
+\begin{center}
+  \begin{tabular}{@{}r|cccc|l@{}}
+    $t_i$ & $h_1(t_i)$ & $h_2(t_i)$ & $h_3(t_i)$ & $h_4(t_i)$ & $\sigma_i$ \\\hline
+    $t_1$ & $x_1$ & $x_2$ & $x_3$ & $x_4$ &
+      $\begin{pmatrix}1&2&3&4\\1&2&3&4\end{pmatrix} = \id$ \\[1.5em]
+    $t_2$ & $x_1$ & $x_4$ & $x_3$ & $x_2$ &
+      $\begin{pmatrix}1&2&3&4\\1&4&3&2\end{pmatrix} = (2,4)$
+  \end{tabular}
+\end{center}
+\end{enumerate}
+
+Es gilt also
+\[ \Gal_\QQ(x_1,x_2,x_3,x_4) = \left\{
+  \begin{pmatrix}1&2&3&4\\1&2&3&4\end{pmatrix}\!,
+  \begin{pmatrix}1&2&3&4\\1&4&3&2\end{pmatrix}
+\right\} = \left\{ \id,\ (2, 4) \right\}\!. \]
+
+\end{document}
