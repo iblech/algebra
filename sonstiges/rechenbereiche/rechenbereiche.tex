@@ -1,106 +1,59 @@
-\documentclass[12pt,a4paper,ngerman]{scrartcl}
-
-\usepackage{ucs}
-\usepackage[utf8x]{inputenc}
-\usepackage[ngerman]{babel}
-\usepackage{amsmath,amssymb,amscd,amsthm,color,graphicx}
-\usepackage[protrusion=true,expansion=false]{microtype}
-\usepackage{lmodern}
-\usepackage{hyperref}
-
-\setlength\parskip{\medskipamount}
-\setlength\parindent{0pt}
-
-\newcommand{\Bild}{\operatorname{im}}
-\newcommand{\Kern}{\operatorname{ker}}
-\newcommand{\Span}{\operatorname{span}}
-\newcommand{\GL}{\mathrm{GL}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\QQ}{\mathbb{Q}}
-\renewcommand{\i}{\mathrm{i}}
-
-\theoremstyle{definition}
-\newtheorem*{defn}{Definition}
-\newtheorem*{bsp}{Beispiel}
-
-\theoremstyle{plain}
-\newtheorem*{prop}{Proposition}
-\newtheorem*{beh}{Behauptung}
-
-\theoremstyle{remark}
-\newtheorem*{bem}{Bemerkung}
+\documentclass{../../algblatt}
 
 \usepackage{geometry}
-\geometry{tmargin=3cm,bmargin=3cm,lmargin=2.7cm,rmargin=2.7cm}
+\geometry{tmargin=3cm,bmargin=2cm,lmargin=2.7cm,rmargin=2.7cm}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{Rechenbereiche}
-\rhead{19. Juni 2013}
+\rhead{20. Juni 2013}
 \fancyfoot{}
 
 \renewcommand{\labelitemi}{--}
 
 \begin{document}
 
-\section*{Rechenregeln für Erweiterungen der rationalen Zahlen}
+\begin{center}\huge \sffamily\textbf{Erweiterungen der rationalen Zahlen}\end{center}
+
+
+\section*{Vereinfachung der Beschreibung durch Erzeuger}
 
 Folgende Regeln kann man verwenden, um Darstellungen von Erweiterungen der
 Form
-\[ \QQ(x_1,\ldots,x_n) \] zu vereinfachen:
+\[ \QQ(x_1,\ldots,x_n) \] zu vereinfachen (wieso gelten die Regeln?):
 \begin{enumerate}
-\item[a)] Die Reihenfolge der Erzeuger (damit sind die~$x_i$ gemeint) spielt keine Rolle.
-\item[b)] Erzeuger, die in~$\QQ$ liegen, kann man weglassen.
-\item[c)] Man kann beliebige Elemente aus~$\QQ$ zu Erzeugern addieren und
+\item Die Reihenfolge der Erzeuger (damit sind die~$x_i$ gemeint) spielt keine Rolle.
+\item Erzeuger, die in~$\QQ$ liegen, kann man weglassen.
+\item Man kann beliebige Elemente aus~$\QQ$ zu Erzeugern addieren und
 subtrahieren, sowie (falls nicht null) multiplizieren und dividieren.
-\item[d)] Man kann beliebige~$\QQ$-Vielfache eines Erzeugers auf einen anderen
+\item Man kann beliebige~$\QQ$-Vielfache eines Erzeugers auf einen anderen
 addieren und subtrahieren, sowieso (falls nicht null) multiplizieren und
 dividieren.
 \end{enumerate}
 
-Außerdem helfen oft folgende Tatsachen (seien $F$ und~$\widetilde F$ beliebige
-weitere Erweiterungen von~$\QQ$):
-\begin{enumerate}
-\item[e)] $\QQ(x_1,\ldots,x_n)(y_1,\ldots,y_m) = \QQ(x_1,\ldots,x_n,y_1,\ldots,y_m)$
-\item[f)] $\QQ(x_1,\ldots,x_n) \subseteq F$ genau dann, wenn
-$x_1,\ldots,x_n \in \QQ$.
-\item[g)] $\QQ(x_1,x_2) = \QQ(x_1)$ genau dann, wenn~$x_2 \in \QQ(x_1)$.
-\item[h)] Gelte~$F \subseteq \widetilde F$. Dann gilt genau dann~$F =
-\widetilde F$, wenn $[F:\QQ] = [\widetilde F:\QQ]$.
-
-Ohne die Zusatzvoraussetzung~$F \subseteq \widetilde F$ ist das Quatsch!
-\item[i)] Verbindung zur Galoistheorie: Sind~$x_1,\ldots,x_n$ die Nullstellen
-eines normierten separablen Polynoms mit rationalen Koeffizienten und ist~$t$
-ein primitives Element für diese Nullstellen, so
-gilt~$[\QQ(x_1,\ldots,x_n):\QQ] = [\QQ(t):\QQ] =
-|\mathrm{Gal}_\QQ(x_1,\ldots,x_n)|.$
-\end{enumerate}
-Im Allgemeinen gilt nicht, dass~$\QQ(x,y) = \QQ(x+y)$.
 
 \subsection*{Beispiele}
 
 \begin{enumerate}
-\item $\QQ(\sqrt{2}, {-}\sqrt{2}) = \QQ(\sqrt{2})$
-\item $\QQ(\frac{1 + \sqrt{5}}{2}, \frac{1 - \sqrt{5}}{2}) = \QQ(1+\sqrt{5},
+\item[1.] $\QQ(\sqrt{2}, {-}\sqrt{2}) = \QQ(\sqrt{2})$
+\item[2.] $\QQ(\frac{1 + \sqrt{5}}{2}, \frac{1 - \sqrt{5}}{2}) = \QQ(1+\sqrt{5},
 1-\sqrt{5}) = \QQ(\sqrt{5},-\sqrt{5}) = \QQ(\sqrt{5})$
-\item $\QQ(\zeta^0,\zeta^1,\ldots,\zeta^5) = \QQ(\zeta) = \QQ(1
+\item[3.] $\QQ(\zeta^0,\zeta^1,\ldots,\zeta^5) = \QQ(\zeta) = \QQ(1
 + \sqrt{3}\,\i) = \QQ(\sqrt{3}\,\i),$ \\[0.3em]
 ${\qquad}$ für $\zeta := e^{2 \pi \i/6} = \cos 60^\circ + \i \sin 60^\circ =
 \frac{1}{2}(1 + \sqrt{3}\,\i)$.
-\item $\QQ(\sqrt{3})(\zeta^0,\ldots,\zeta^5) = \QQ(\sqrt{3})(\sqrt{3}\,\i) =
+\item[4.] $\QQ(\sqrt{3})(\zeta^0,\ldots,\zeta^5) = \QQ(\sqrt{3})(\sqrt{3}\,\i) =
 \QQ(\sqrt{3},\sqrt{3}\,\i) = \QQ(\sqrt{3},\i),$ \\[0.3em]
 ${\qquad}$ für~$\zeta$ wie in Beispiel 3.
-\item
+\item[5.]
 $\QQ(\sqrt[8]{2}\,\zeta^0, \ldots, \sqrt[8]{2}\,\zeta^7) = \QQ(\sqrt[8]{2},
 \zeta, \zeta^2, \ldots, \zeta^7) = \QQ(\sqrt[8]{2}, \zeta) = \QQ(\sqrt[8]{2}, 1 + \i) = \QQ(\sqrt[8]{2},
 \i),$ \\[0.3em]
 ${\qquad}$ für $\zeta := e^{2 \pi \i/8} = \frac{1}{\sqrt{2}}(1 + \i)$.
-\item $\QQ(\text{alle sechs Nullstellen von~$(X^4 - 2) (X^2 + 1)$}) =
+\item[6.] $\QQ(\text{alle sechs Nullstellen von~$(X^4 - 2) (X^2 + 1)$}) =
 \QQ(\sqrt[4]{2}, \i)$
 \end{enumerate}
 
-\newpage
 
 \subsection*{Anwendungen}
 
@@ -126,5 +79,55 @@ Vorlesung.
 \item \ldots Galoisgruppen bestimmen möchte (denn dazu benötigt man ja diese
 Dinge).
 \end{itemize}
+
+
+\section*{Nachweis von Rechenbereichsinklusionen}
+
+Seien $F$ und~$\widetilde F$ beliebige weitere Erweiterungen von~$\QQ$. Dann
+gilt (wieso?):
+
+\begin{enumerate}
+\item $\QQ(x_1,\ldots,x_n)(y_1,\ldots,y_m) = \QQ(x_1,\ldots,x_n,y_1,\ldots,y_m)$
+\item $\QQ(x_1,\ldots,x_n) \subseteq F$ genau dann, wenn
+$x_1,\ldots,x_n \in F$.
+\item $\QQ(x_1,x_2) = \QQ(x_1)$ genau dann, wenn~$x_2 \in \QQ(x_1)$.
+\item Gelte~$F \subseteq \widetilde F$. Dann gilt genau dann~$F =
+\widetilde F$, wenn $[F:\QQ] = [\widetilde F:\QQ]$.
+
+Ohne die Zusatzvoraussetzung~$F \subseteq \widetilde F$ ist das Quatsch!
+\end{enumerate}
+
+Im Allgemeinen gilt nicht, dass~$\QQ(x,y) = \QQ(x+y)$.
+
+
+\section*{Gradbestimmung}
+
+\begin{enumerate}
+\item Seien~$w$ und~$u$ algebraische Zahlen. Dann gilt
+\begin{align*}
+  \deg_{\QQ(u)} w &= \text{Grad von~$w$ über~$\QQ(u)$} \\
+  &= \text{Grad des Minimalpolynoms von~$w$ über~$\QQ(u)$} \\
+  &= \gra{\QQ(u,w)}{\QQ(u)}. \\
+\intertext{Falls außerdem~$u \in \QQ(w)$ gelten sollte, gilt ferner~$\QQ(u,w) =
+\QQ(w)$, sodass man in diesem Fall die Formel noch weiter vereinfachen kann:}
+  &= \gra{\QQ(w)}{\QQ(u)}.
+\end{align*}
+
+Für den Grad über~$\QQ$ folgt daraus (mit~$u := 1$):
+\[ \deg_\QQ w =
+  \text{(Grad des Minimalpolynoms von~$w$ über~$\QQ$)} =
+  \gra{\QQ(w)}{\QQ}. \]
+
+\item Gelte~$F \subseteq F' \subseteq F''$. Dann gilt die \emph{Gradformel}:
+\[ \gra{F''}{F} = \gra{F''}{F'} \cdot \gra{F'}{F}. \]
+
+\item Verbindung zur Galoistheorie: Sind~$x_1,\ldots,x_n$ die Nullstellen
+eines normierten separablen Polynoms mit rationalen Koeffizienten und ist~$t$
+ein primitives Element für diese Nullstellen, so
+gilt~$[\QQ(x_1,\ldots,x_n):\QQ] = [\QQ(t):\QQ] =
+|\mathrm{Gal}_\QQ(x_1,\ldots,x_n)|$. Dies folgt aus fundamentalen
+1:1--Korrespondenz zwischen den Elementen der Galoisgruppe und den galoissch
+Konjugierten von~$t$ (Proposition~4.8).
+\end{enumerate}
 
 \end{document}
