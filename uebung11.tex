@@ -139,28 +139,28 @@ mit~$\QQ(x_1,x_2,x_3) = \QQ(x_1)$ wäre, einem Widerspruch zur Voraussetzung.
 
 \begin{aufgabe}{Manchmal sind alle Symmetrien gerade}
 \begin{enumerate}
-\item Zeige, dass die Menge~$A_n$ der geraden Permutationen in~$n$ Ziffern eine
-Untergruppe der~$S_n$ ist.
+\item Zeige, dass die Menge~$\AAA_n$ der geraden Permutationen in~$n$ Ziffern eine
+Untergruppe der~$\SSS_n$ ist.
 
 \item Zeige, dass die Galoisgruppe der Nullstellen eines normierten separables
 Polynoms~$f(X)$ mit rationalen Koeffizienten genau dann vollständig in der
-alternierenden Gruppe~$A_n$ enthalten ist, wenn die Diskriminante von~$f(X)$
+alternierenden Gruppe~$\AAA_n$ enthalten ist, wenn die Diskriminante von~$f(X)$
 eine Quadratwurzel in den rationalen Zahlen besitzt.
 \end{enumerate}
 
 \begin{loesungE}
-\item Die Identitätspermutation liegt in~$A_n$, da sie gerade ist.
+\item Die Identitätspermutation liegt in~$\AAA_n$, da sie gerade ist.
 
-Seien~$\sigma$ und~$\tau$ zwei Permutationen aus~$A_n$, also zwei gerade
+Seien~$\sigma$ und~$\tau$ zwei Permutationen aus~$\AAA_n$, also zwei gerade
 Permutationen. Dann ist auch die Komposition~$\sigma \circ \tau$ eine gerade
-Permutation (wieso?) und daher in~$A_n$ enthalten.
+Permutation (wieso?) und daher in~$\AAA_n$ enthalten.
 
-Sei schließlich~$\sigma$ eine Permutation aus~$A_n$. Dann ist
-auch~$\sigma^{-1}$ eine gerade Permutation (wieso?), also in~$A_n$ enthalten.
+Sei schließlich~$\sigma$ eine Permutation aus~$\AAA_n$. Dann ist
+auch~$\sigma^{-1}$ eine gerade Permutation (wieso?), also in~$\AAA_n$ enthalten.
 
 \emph{Bemerkung:} Wenn man das nötige abstrakte Vorwissen mitbringt, kann man
 auch wie folgt argumentieren: Die Signumsabbildung ist ein
-Gruppenhomomorphismus~$S_n \to \{ \pm1 \}$. Die Menge~$A_n$ ist daher als Kern
+Gruppenhomomorphismus~$\SSS_n \to \{ \pm1 \}$. Die Menge~$\AAA_n$ ist daher als Kern
 dieses Homomorphismus eine Untergruppe.
 
 \item Seien~$x_1, \ldots, x_n$ die Nullstellen von~$f(X)$. Wir betrachten eine
@@ -176,7 +176,7 @@ Zahlen, wenn~$\delta$ in~$\QQ$ liegt [automatisch liegt dann auch~$-\delta$
 in~$\QQ$]. Das ist genau dann der Fall, wenn~$\delta$ von allen Elementen der
 Galoisgruppe invariant gelassen wird. Nach obiger Überlegung ist das genau dann
 der Fall, wenn alle Elemente der Galoisgruppe gerade sind, wenn also die
-Galoisgruppe eine Teilmenge der alternierenden Gruppe~$A_n$ ist.
+Galoisgruppe eine Teilmenge der alternierenden Gruppe~$\AAA_n$ ist.
 \end{loesungE}
 \end{aufgabe}
 
@@ -201,7 +201,7 @@ Insbesondere enthält die Galoisgruppe also genau so viele Elemente, wie es
 galoissch Konjugierte von~$t$ gibt. Daher ist der Grad von~$t$ gerade durch
 die Anzahl der Elemente der Galoisgruppe gegeben. Diese ist höchstens~$n!$, da
 es nur~$n!$ Permutationen in~$n$ Ziffern gibt. Als Formel:
-\[ \deg_\QQ t = |\Gal_\QQ(x_1,\ldots,x_n)| \leq |S_n| = n!. \]
+\[ \deg_\QQ t = |\Gal_\QQ(x_1,\ldots,x_n)| \leq |\SSS_n| = n!. \]
 
 \emph{Variante:} Es gilt für jedes~$k = 0,\ldots,n-1$ die Abschätzung
 \[ \gra{\QQ(x_1,\ldots,x_{k+1})}{\QQ(x_1,\ldots,x_k)} \leq n - k, \]
@@ -221,8 +221,8 @@ Damit gilt die Abschätzungskette
   &\leq 1 \cdot 2 \cdots (n-1) \cdot n = n!.
 \end{align*}
 
-\item Da die Galoisgruppe der Nullstellen eine Untergruppe der~$S_n$ ist, ist
-nach dem Satz von Lagrange $|\Gal_\QQ(x_1,\ldots,x_n)|$ ein Teiler von~$|S_n| =
+\item Da die Galoisgruppe der Nullstellen eine Untergruppe der~$\SSS_n$ ist, ist
+nach dem Satz von Lagrange $|\Gal_\QQ(x_1,\ldots,x_n)|$ ein Teiler von~$|\SSS_n| =
 n!$. Mit der Formel aus~b) zeigt das schon die Behauptung.
 \end{loesungE}
 \end{aufgabe}
@@ -245,7 +245,7 @@ eine galoissche Resolvente für~$f(X)$ ist.
 \begin{loesungE}
 \item Eine galoissche Resolvente~$V(X_1,\ldots,X_n)$ für ein Polynom~$f(X)$ mit
 den Nullstellen~$x_1,\ldots,x_n$ ist ein Polynom, sodass für je zwei
-verschiedene Permutationen~$\sigma,\tau \in S_n$ jeweils die
+verschiedene Permutationen~$\sigma,\tau \in \SSS_n$ jeweils die
 Zahlen~$V(x_{\sigma(1)},\ldots,x_{\sigma(n)})$
 und~$V(x_{\tau(1)},\ldots,x_{\tau(n)})$ verschieden sind. Das ist aber
 unmöglich, wenn manche der Nullstellen übereinstimmen, d.\,h. wenn~$x_i = x_j$

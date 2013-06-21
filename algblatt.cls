@@ -75,6 +75,8 @@
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\AAA}{\mathrm{A}}
+\newcommand{\SSS}{\mathrm{S}}
 \newcommand{\Hom}{\mathrm{Hom}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\GL}[1]{\operatorname{GL}(#1)}
