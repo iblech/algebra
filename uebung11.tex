@@ -137,6 +137,7 @@ mit~$\QQ(x_1,x_2,x_3) = \QQ(x_1)$ wäre, einem Widerspruch zur Voraussetzung.
 \end{loesungE}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Manchmal sind alle Symmetrien gerade}
 \begin{enumerate}
 \item Zeige, dass die Menge~$\AAA_n$ der geraden Permutationen in~$n$ Ziffern eine
@@ -204,7 +205,7 @@ es nur~$n!$ Permutationen in~$n$ Ziffern gibt. Als Formel:
 \[ \deg_\QQ t = |\Gal_\QQ(x_1,\ldots,x_n)| \leq |\SSS_n| = n!. \]
 
 \emph{Variante:} Es gilt für jedes~$k = 0,\ldots,n-1$ die Abschätzung
-\[ \gra{\QQ(x_1,\ldots,x_{k+1})}{\QQ(x_1,\ldots,x_k)} \leq n - k, \]
+\[ \gra{\QQ(x_1,\ldots,x_k,x_{k+1})}{\QQ(x_1,\ldots,x_k)} \leq n - k, \]
 denn mit Polynomdivision über dem Rechenbereich~$\QQ(x_1,\ldots,x_k)$ sieht
 man, dass sich das Polynom~$f(X)$ über~$\QQ(x_1,\ldots,x_k)$ aufspaltet als
 \[ f(X) = (X-x_1) \cdots (X-x_k) \cdot g_k(X) \]
@@ -224,6 +225,9 @@ Damit gilt die Abschätzungskette
 \item Da die Galoisgruppe der Nullstellen eine Untergruppe der~$\SSS_n$ ist, ist
 nach dem Satz von Lagrange $|\Gal_\QQ(x_1,\ldots,x_n)|$ ein Teiler von~$|\SSS_n| =
 n!$. Mit der Formel aus~b) zeigt das schon die Behauptung.
+
+\emph{Bemerkung:} Die Variante für Teilaufgabe~b) lässt sich nicht auf die
+stärkere Behauptung von Teilaufgabe~c) übertragen.
 \end{loesungE}
 \end{aufgabe}
 
