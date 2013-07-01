@@ -1,38 +1,38 @@
 \documentclass{algblatt}
 \usepackage{multicol}
 \input{config.tex}
-\geometry{tmargin=2.0cm,bmargin=2.0cm,lmargin=2.0cm,rmargin=2.0cm}
+\geometry{tmargin=2.0cm,bmargin=2.0cm,lmargin=2.7cm,rmargin=2.7cm}
 
 %\setlength{\titleskip}{0.7em}
-\setlength{\aufgabenskip}{1.3em}
+\setlength{\aufgabenskip}{1.0em}
 
 \begin{document}
 
 \vspace*{-1.5cm}
 \maketitle{12}{Abgabe bis 8. Juli 2013, 17:00 Uhr}
 
-\vspace*{-1cm}
-\begin{center}-- 0-ter Entwurf --\end{center}
-
-\begin{aufgabe}{Untergruppen}
+\begin{aufgabe}{Allgemeines zu Gruppen}
 \begin{enumerate}
+\item Gibt es in der Permutationsgruppe~$S_5$ eine Untergruppe mit~$70$
+Elementen?
+
 \item Sei~$G$ eine Gruppe. Sei~$H$ eine Untergruppe von~$G$ und~$K$ eine
 Untergruppe von~$H$. Wieso ist~$K$ dann auch eine Untergruppe von~$G$?
 
-\item Gibt es in der Permutationsgruppe~$S_5$ eine Untergruppe mit~$70$
-Elementen?
+\item Sei~$G$ eine Gruppe und~$\sigma \in G$. Zeige, dass~$\sigma^i \circ
+\sigma^j = \sigma^{i + j}$ für beliebige \emph{ganze} Zahlen~$i,j$.
 \end{enumerate}
 \end{aufgabe}
 
 \begin{aufgabe}{Elementordnungen}
 \begin{enumerate}
-\item Sei~$G$ eine Gruppe,~$\sigma \in G$ ein Element der Ordnung~$n$.
-Zeige, dass die Ordnung einer beliebigen Potenz~$\sigma^m$ durch~$n /
+\item Sei~$G$ eine Gruppe und $\sigma \in G$ ein Element der Ordnung~$n$.
+Zeige, dass die Ordnung einer be\-lie\-bi\-gen Potenz~$\sigma^m$ durch~$n \mathrel{/}
 \operatorname{ggT}(n,m)$ gegeben ist.
 
-\item Bestimme die Ordnungen aller Elemente der zyklischen Gruppe~$C_n$.
+\item Bestimme die Ordnungen aller Elemente der zyklischen Gruppe~$\CCC_n$.
 
-\item Bestimme alle Erzeuger der zyklischen Gruppe~$C_n$.
+\item Bestimme alle Erzeuger der zyklischen Gruppe~$\CCC_n$.
 \end{enumerate}
 \end{aufgabe}
 
@@ -46,25 +46,26 @@ in irreduzible Faktoren.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{???}
+\begin{aufgabe}{Etwas Zahlentheorie}
+Sei~$p$ eine Primzahl.
 \begin{enumerate}
-\item Sei~$X$ die Menge der~$n$-ten Einheitswurzeln. Zeige, dass die Abbildung
-\[ X \longrightarrow X,\ \zeta \longmapsto \zeta^d \]
-genau dann eine Bijektion ist, wenn die feste natürliche Zahl~$d$ teilerfremd
-zu~$n$ ist.
+\item Gib eine Primfaktorzerlegung von~$X^{p-1}-1$
+modulo~$p$ an.
+\item Zeige, dass der
+Binomialkoeffizient~$\binom{p^2}{p}$ durch~$p$, aber nicht durch~$p^2$ teilbar
+ist.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{Muss noch sortiert werden}
+\begin{aufgabe}{Primitive Wurzeln}
 \begin{enumerate}
-\item Sei~$p$ eine Primzahl. Gib eine Primfaktorzerlegung von~$X^{p-1}-1$
-modulo~$p$ an.
-\item Sei~$p$ eine Primzahl. Zeige, dass der
-Binomialkoeffizient~$\binom{p^2}{p}$ durch~$p$, aber nicht durch~$p^2$ teilbar
-ist.
-\item Gib alle primitiven Wurzeln modulo~$11$ an.
-\item Sei~$G$ eine Gruppe und~$\sigma \in G$. Zeige, dass~$\sigma^i \circ
-\sigma^j = \sigma^{i + j}$ für beliebige ganze Zahlen~$i,j$.
+\item Gib alle primitiven Wurzeln modulo~$5$ an.
+
+\item Sei~$X$ die Menge der~$n$-ten komplexen Einheitswurzeln. Zeige, dass die
+Abbildung
+\[ \sigma_d : X \longrightarrow X,\ \zeta \longmapsto \zeta^d \]
+genau dann eine Bijektion ist, wenn die feste natürliche Zahl~$d$ teilerfremd
+zu~$n$ ist.
 \end{enumerate}
 \end{aufgabe}
 
