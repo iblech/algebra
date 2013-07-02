@@ -78,7 +78,7 @@ veranschaulichen. Mit der Gradformel folgt die Beziehung
 \[ \deg_{\QQ(y)} a = \gra{\QQ(a)}{\QQ(y)} = \gra{\QQ(a)}{\QQ(x,y)} \cdot \gra{\QQ(x,y)}{\QQ(y)} =
   \gra{\QQ(a)}{\QQ(x,y)} \cdot \deg f, \]
 die wegen~$\deg f \geq 2$ ein Widerspruch zur Teilerfremdheitsvoraussetzung
-ist (so wäre~$\deg f$ ein echter Teiler von~$\deg_{\QQ(y)} a$).
+ist (sonst wäre~$\deg f$ ein echter Teiler von~$\deg_{\QQ(y)} a$).
 
 \emph{Bemerkung:} Allgemein gilt für den Grad einer algebraischen Zahl~$w$ über
 einer weiteren algebraischen Zahl~$u$ die Formel
@@ -304,8 +304,8 @@ insbesondere~$t'$, auch Nullstelle von~$f$.
 
 \item Es ist klar, dass~$x$ und~$x'$ wieder algebraische Zahlen sind.
 Sei~$m_x$ das Minimalpolynom von~$x = f(t)$. Dann gilt
-\[ m_x(x) = m_x(f(t)) = (m_x \circ f)(t) = 0, \]
-das Polynom~$m_{f(t)} \circ f$ besitzt also~$t$ als Nullstelle. Nach
+\[ 0 = m_x(x) = m_x(f(t)) = (m_x \circ f)(t), \]
+das Polynom~$m_x \circ f$ besitzt also~$t$ als Nullstelle. Nach
 Teilaufgabe~a) besitzt dieses Polynom dann auch~$t'$ als Nullstelle, also gilt
 \[ m_x(x') = m_x(f(t')) = (m_x \circ f)(t') = 0. \]
 Somit ist~$x'$ ebenfalls Nullstelle des Minimalpolynoms von~$x$ und somit
