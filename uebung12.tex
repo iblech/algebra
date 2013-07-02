@@ -13,7 +13,7 @@
 
 \begin{aufgabe}{Allgemeines zu Gruppen}
 \begin{enumerate}
-\item Gibt es in der Permutationsgruppe~$S_5$ eine Untergruppe mit~$70$
+\item Gibt es in der Permutationsgruppe~$\SSS_5$ eine Untergruppe mit~$70$
 Elementen?
 
 \item Sei~$G$ eine Gruppe. Sei~$H$ eine Untergruppe von~$G$ und~$K$ eine
@@ -22,6 +22,28 @@ Untergruppe von~$H$. Wieso ist~$K$ dann auch eine Untergruppe von~$G$?
 \item Sei~$G$ eine Gruppe und~$\sigma \in G$. Zeige, dass~$\sigma^i \circ
 \sigma^j = \sigma^{i + j}$ für beliebige \emph{ganze} Zahlen~$i,j$.
 \end{enumerate}
+
+\begin{loesungE}
+\item Nein, denn nach dem Satz von Lagrange wäre~$70$ dann ein Teiler der
+Ordnung von~$\SSS_5$. Diese ist aber~$5! = 120$.
+
+\item Zur Erinnerung die nötigen Definitionen:
+\begin{quote}
+  Eine \emph{Gruppe}~$G$ ist eine Teilmenge einer~$\SSS_n$, die die
+  Identitätspermutation enthält und außerdem unter
+  Komposition und Inversenbildung abgeschlossen ist.
+
+  In dieser Situation ist eine \emph{Untergruppe}~$L$ von~$G$ eine
+  Teilmenge derselben symmetrischen Gruppe~$\SSS_n$, welche die 
+  Identitätspermutation enthält und außerdem unter
+  Komposition und Inversenbildung abgeschlossen ist, und außerdem eine
+  Teilmenge von~$G$ ist.
+\end{quote}
+Dann ist die Behauptung klar: Zu zeigen ist, dass~$H \subseteq G$ und dass~$H$
+die Identitätspermutation enthält und unter Komposition und Inversenbildung
+abgeschlossen ist. Letzteres gilt nach Voraussetzung, und ersteres folgt aus~$H
+\subseteq G$ und~$K \subseteq H$.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Elementordnungen}
@@ -44,6 +66,28 @@ und~$\Phi_9(X)$.
 \item Zerlege das Polynom~$X^3 + X^2 + X + 1$ über den rationalen Zahlen
 in irreduzible Faktoren.
 \end{enumerate}
+
+\begin{loesungE}
+\item Bekanntermaßen gilt~$\Phi_1 = X - 1$ und~$\Phi_2 = X + 1$. Dann folgt
+jeweils mit Polynomdivision:
+\begin{align*}
+  X^3 - 1 &= \Phi_1 \cdot \Phi_3
+    & \Longrightarrow \Phi_3 &= X^2 + X + 1 \\
+  X^6 - 1 &= \Phi_1 \cdot \Phi_2 \cdot \Phi_3 \cdot \Phi_6
+    & \Longrightarrow \Phi_6 &= X^2 - X + 1 \\
+  X^9 - 1 &= \Phi_1 \cdot \Phi_3 \cdot \Phi_9
+    & \Longrightarrow \Phi_9 &= X^6 + X^3 + 1
+\end{align*}
+
+\item Wir fügen zunächst künstlichen den Faktor~$(X-1)$ hinzu:
+\[ (X^3 + X^2 + X + 1) \cdot (X-1) =
+  X^4 - 1 = \Phi_1 \cdot \Phi_2 \cdot \Phi_4 =
+  (X-1) \cdot (X+1) \cdot (X^2+1). \]
+Dann können wir ihn wieder kürzen, und erhalten so die Zerlegung
+\[ X^3 + X^2 + X + 1 = (X+1) \cdot (X^2 + 1). \]
+Die auftretenden Faktoren sind (wie alle Kreisteilungspolynome) irreduzibel
+über den rationalen Zahlen.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Etwas Zahlentheorie}
@@ -51,10 +95,36 @@ Sei~$p$ eine Primzahl.
 \begin{enumerate}
 \item Gib eine Primfaktorzerlegung von~$X^{p-1}-1$
 modulo~$p$ an.
-\item Zeige, dass der
-Binomialkoeffizient~$\binom{p^2}{p}$ durch~$p$, aber nicht durch~$p^2$ teilbar
-ist.
+\item Zeige, dass der Binomialkoeffizient~$\binom{p^2}{p}$ durch~$p$, aber
+nicht durch~$p^2$ teilbar ist.
 \end{enumerate}
+
+\begin{loesungE}
+\item Nach dem kleinen Satz von Fermat gilt für alle ganzen Zahlen~$a$ die
+Beziehung
+\[ a^p \equiv a \mod p. \]
+Für solche ganze Zahlen~$a$, die modulo~$p$ invertierbar sind (d.\,h. die
+teilerfremd zu~$p$ sind), kann man~$a$ auf beiden Seiten einmal kürzen, sodass
+man die Beziehung
+\[ a^{p-1} \equiv 1 \mod p \]
+erhält. Folglich besitzt das gegebene Polynom modulo~$p$ die~$p-1$
+verschiedenen Nullstellen~$1,2,\ldots,{p-1}$. Aus Gradgründen folgt dann schon:
+\[ X^{p-1} - 1 \equiv (X-1) (X-2) \cdots (X-(p-1)) \mod p. \]
+
+\item Wir rechnen:
+\begin{align*}
+  \binom{p^2}{p} &=
+  \frac{p^2 \cdot (p^2 - 1) \cdots (p^2 - p + 2) \cdot (p^2 - p + 1)}{p \cdot
+  (p-1) \cdots 2 \cdot 1} \\[0.5em]
+  &= p \cdot \frac{(p^2 - 1) \cdot (p^2-2) \cdots (p^2 - p + 2) \cdot (p^2 - p + 1)}{(p-1)
+  \cdot (p-2) \cdots 2 \cdot 1} \\[0.5em]
+  &= p \cdot \binom{p^2-1}{p-1}
+\end{align*}
+Da der hintere Faktor wie jeder Binomialkoeffizient eine ganze Zahl ist, ist
+daher~$p$ ein Teiler von~$\binom{p^2}{p}$. Ferner ist~$p^2$ aber kein Teiler,
+da im Zähler des hinteren Faktors die Primzahl~$p$ kein einziges Mal vorkommt
+(wieso?) [im Nenner auch nicht, aber das tut nichts zur Sache].
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Primitive Wurzeln}
@@ -67,6 +137,32 @@ Abbildung
 genau dann eine Bijektion ist, wenn die feste natürliche Zahl~$d$ teilerfremd
 zu~$n$ ist.
 \end{enumerate}
+
+\begin{loesungE}
+\item Eine \emph{primitive Wurzel modulo~$p$} ist eine solche~$(p-1)$-te
+Einheitswurzel in~$\ZZ/(p)$, sodass jede~$(p-1)$-te Einheitswurzel in~$\ZZ/(p)$
+eine gewisse Potenz von ihr ist.
+
+Von den Zahlen~$0,1,2,3,4$ sind genau die Zahlen~$1,2,3,4$ vierte
+Einheitswurzeln, denn es gilt
+\begin{align*}
+  0^4 &\equiv 0, & 1^4 &\equiv 1, & 2^4 &\equiv 1, & 3^4 &\equiv 1, &
+  4^4 &\equiv 1
+\end{align*}
+modulo~$5$. Zur Überprüfung der Primitivität legen wir folgende Tabelle an:
+\begin{center}
+  \begin{tabular}{r|c|c|c|c|c|c|c}
+    $\xi$ & $\xi^0$ & $\xi^1$ & $\xi^2$ & $\xi^3$ & $\xi^4$ & $\xi^5$ & $\cdots$ \\\hline
+    $1$ & $1$ & $1$ & $1$ & $1$ & $1$ & $1$ & $\cdots$ \\
+    $2$ & $1$ & $2$ & $4$ & $3$ & $1$ & $2$ & $\cdots$ \\
+    $3$ & $1$ & $3$ & $4$ & $2$ & $1$ & $3$ & $\cdots$ \\
+    $4$ & $1$ & $4$ & $1$ & $4$ & $1$ & $4$ & $\cdots$
+  \end{tabular}
+\end{center}
+Also sind~$2$ und~$3$ primitive Wurzeln modulo~$5$, da in ihren Zeilen
+\emph{alle} vierten Einheitswurzeln vorkommen. Die Zahlen~$1$ und~$4$ sind zwar
+vierte Einheitswurzeln, aber nicht primitive vierte Einheitswurzeln.
+\end{loesungE}
 \end{aufgabe}
 
 Zur Erinnerung: \textbf{Algebra-Treffen} am 10. Juli um 18:30 Uhr in Raum
