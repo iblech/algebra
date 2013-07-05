@@ -32,18 +32,21 @@ galoissch konjugiert sind.
 x_{\sigma(\tau(i))} = x_{(\sigma \circ \tau)(i)} = (\sigma \circ \tau) \cdot
 x_i$.
 
-\item Da~$z$ und~$w$ in~$\QQ(x_1,\ldots,x_n)$ liegen, gibt es Polynome~$g, h
+\item Da~$z$ und~$w$ in~$\QQ(x_1,\ldots,x_n) = \QQ[x_1,\ldots,x_n]$ (die~$x_i$
+sind algebraisch!) liegen, gibt es Polynome~$g, h
 \in \QQ[X_1,\ldots,X_n]$ mit
 \begin{align*}
   z &= g(x_1,\ldots,x_n), \\
   w &= h(x_1,\ldots,x_n). \\
 \intertext{Daher folgt}
-  \sigma \cdot (z+w) &= \sigma \cdot (g(x_1,\ldots,x_n) + h(x_1,\ldots,x_n)) =
-  g(x_{\sigma(1)},\ldots,x_{\sigma(n)}) + h(x_{\sigma(1)},\ldots,x_{\sigma(n)})
-  \\
-  &=
-  \sigma \cdot g(x_1,\ldots,x_n) + \sigma \cdot h(x_1,\ldots,x_n) =
-  \sigma \cdot z + \sigma \cdot w,
+  z + w &= (g + h)(x_1,\ldots,x_n), \\
+  z \cdot w &= (g \cdot h)(x_1,\ldots,x_n), \\
+\intertext{sodass wir die Zahl~$\sigma \cdot (z + w)$ durch Anwendung der
+Definition ausrechnen können:}
+  \sigma \cdot (z+w) &= \sigma \cdot (g+h)(x_1,\ldots,x_n) =
+  (g+h)(x_{\sigma(1)},\ldots,x_{\sigma(n)}) \\
+  &= g(x_{\sigma(1)},\ldots,x_{\sigma(n)}) + h(x_{\sigma(1)},\ldots,x_{\sigma(n)}) \\
+  &= \sigma \cdot z + \sigma \cdot w.
 \end{align*}
 der Multiplikationsfall geht völlig analog.
 
