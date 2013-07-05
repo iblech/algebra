@@ -46,7 +46,12 @@ Definition ausrechnen können:}
   \sigma \cdot (z+w) &= \sigma \cdot (g+h)(x_1,\ldots,x_n) =
   (g+h)(x_{\sigma(1)},\ldots,x_{\sigma(n)}) \\
   &= g(x_{\sigma(1)},\ldots,x_{\sigma(n)}) + h(x_{\sigma(1)},\ldots,x_{\sigma(n)}) \\
-  &= \sigma \cdot z + \sigma \cdot w.
+  &= \sigma \cdot z + \sigma \cdot w. \\
+\intertext{Der Multiplikationsfall geht völlig analog:}
+  \sigma \cdot (z \cdot w) &= \sigma \cdot (g \cdot h)(x_1,\ldots,x_n) =
+  (g \cdot h)(x_{\sigma(1)},\ldots,x_{\sigma(n)}) \\
+  &= g(x_{\sigma(1)},\ldots,x_{\sigma(n)}) \cdot h(x_{\sigma(1)},\ldots,x_{\sigma(n)}) \\
+  &= (\sigma \cdot z) \cdot (\sigma \cdot w).
 \end{align*}
 der Multiplikationsfall geht völlig analog.
 
@@ -159,7 +164,7 @@ eine Quadratwurzel in den rationalen Zahlen besitzt.
 \end{enumerate}
 
 \begin{loesungE}
-\item Die Identitätspermutation liegt in~$\AAA_n$, da sie gerade ist.
+\item Die Identitätspermutation liegt in~$\AAA_n$, da sie gerade ist (wieso?).
 
 Seien~$\sigma$ und~$\tau$ zwei Permutationen aus~$\AAA_n$, also zwei gerade
 Permutationen. Dann ist auch die Komposition~$\sigma \circ \tau$ eine gerade
@@ -313,15 +318,15 @@ Voraussetzung gilt Abschätzung
 \[ |x_{\sigma(i)} - x_{\tau(i)}| \leq
   |x_{\sigma(k)} - x_{\tau(k)}| \cdot
   \frac{1}{n} \cdot C \]
-für alle~$i = 1,\ldots,n$. Damit ergibt sich für den Betrag~$|\delta|$ der
+für alle~$i = 1,\ldots,n$. Damit ergibt sich für den Betrag~$|d|$ der
 Differenz:
 \begin{align*}
-  |\delta| &= |V(x_{\sigma(1)},\ldots,x_{\sigma(n)}) -
+  |d| &= |V(x_{\sigma(1)},\ldots,x_{\sigma(n)}) -
   V(x_{\tau(1)},\ldots,x_{\tau(n)})| \\
   &=
   \Biggl|\sum_{i=1}^n (x_{\sigma(i)} - x_{\tau(i)}) \cdot C^{i-1}\Biggr| \\
   &= \Biggl|\sum_{i=1}^k (x_{\sigma(i)} - x_{\tau(i)}) \cdot C^{i-1}\Biggr| \\
-  &\geq |x_{\sigma(k)} - x_{\tau(k)}| \cdot C^{k-1} - \sum_{i=1}^{k-1}
+  &\stackrel{\triangledown}{\geq} |x_{\sigma(k)} - x_{\tau(k)}| \cdot C^{k-1} - \sum_{i=1}^{k-1}
   |x_{\sigma(i)} - x_{\tau(i)}| \cdot C^{i-1}\\
   &\geq |x_{\sigma(k)} - x_{\tau(k)}| \cdot C^{k-1} - \sum_{i=1}^{k-1}
   |x_{\sigma(k)} - x_{\tau(k)}| \cdot \frac{1}{n} \cdot C \cdot C^{i-1} \\
@@ -332,6 +337,7 @@ Differenz:
   \frac{k-1}{n}\right) \\
   &> 0.
 \end{align*}
+(Wieso gelten die einzelnen Schritte? Wieso folgt daraus die Behauptung?)
 \end{loesungE}
 \end{aufgabe}
 
