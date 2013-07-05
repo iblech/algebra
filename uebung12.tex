@@ -56,6 +56,39 @@ Zeige, dass die Ordnung einer be\-lie\-bi\-gen Potenz~$\sigma^m$ durch~$n \mathr
 
 \item Bestimme alle Erzeuger der zyklischen Gruppe~$\CCC_n$.
 \end{enumerate}
+
+\begin{loesungE}
+\item Wir müssen also folgende Frage beantworten: Für welchen Exponenten~$k
+\geq 1$ ist~$(\sigma^m)^k$ das erste Mal gleich der Identitätspermutation?
+Da für eine ganze Zahl~$\ell$ genau dann~$\sigma^\ell = \id$ gilt, wenn~$\ell$
+ein Vielfaches von~$n$ ist, können wir die Frage äquivalent umformulieren: Für
+welchen Exponenten~$k \geq 1$ ist~$m \cdot k$ das erste Mal ein Vielfaches
+von~$n$? Diese Frage nun können wir mit Schulwissen beantworten: Das ist dann
+der Fall, wenn~$m \cdot k$ das kleinste gemeinsame Vielfache von~$n$ und~$m$
+ist, also wenn~$k = \operatorname{kgV}(n,m) \mathrel{/} m = nm \mathrel{/}
+(\operatorname{ggT}(n,m) \cdot m) = n \mathrel{/}
+\operatorname{ggT}(n,m)$ ist.
+
+\item Die zyklische Gruppe ist durch
+\[ \CCC_n = \{ \tau^0, \ldots, \tau^{n-1} \]
+gegeben, wobei~$\tau =
+\begin{pmatrix}1&2&\cdots&n-1&n\\2&3&\cdots&n&1\end{pmatrix} \in \SSS_n$.
+Diese Permutation~$\tau$ hat Ordnung~$n$. Daher
+folgt für die Ordnungen nach Teilaufgabe~a)
+\[ \ord \tau^m = n \mathrel{/} \operatorname{ggT}(n,m). \]
+
+\item Ein \emph{Erzeuger} einer endlichen Gruppe~$G$ ist ein solches
+Element~$\sigma \in G$, sodass alle Elemente von~$G$ gewisse Potenzen
+von~$\sigma$ sind. Das ist gleichbedeutend damit, dass die Ordnung von~$\sigma$
+gleich der Gruppenordnung ist: Denn in der unendlichen Liste
+\[ \ldots, \sigma^{-2}, \sigma^{-1}, \sigma^0, \sigma^1, \sigma^2, \ldots \]
+kommen genau~$(\ord g)$ viele verschiedene Gruppenelemente vor.
+
+Mit dieser allgemeinen Überlegung können wir die Frage der Aufgabe klären: Ein
+beliebiges Element~$\tau^m \in \CCC_n$ ist genau dann ein Erzeuger
+von~$\CCC_n$, wenn seine Ordnung~$n / \operatorname{ggT}(n,m)$ gleich~$n$ ist,
+also wenn~$n$ und~$m$ zueinanander teilerfremd sind.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Kreisteilungspolynome}
