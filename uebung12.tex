@@ -39,10 +39,10 @@ Ordnung von~$\SSS_5$. Diese ist aber~$5! = 120$.
   Komposition und Inversenbildung abgeschlossen ist, und außerdem eine
   Teilmenge von~$G$ ist.
 \end{quote}
-Dann ist die Behauptung klar: Zu zeigen ist, dass~$H \subseteq G$ und dass~$H$
+Dann ist die Behauptung klar: Zu zeigen ist, dass~$K \subseteq G$ und dass~$K$
 die Identitätspermutation enthält und unter Komposition und Inversenbildung
-abgeschlossen ist. Letzteres gilt nach Voraussetzung, und ersteres folgt aus~$H
-\subseteq G$ und~$K \subseteq H$.
+abgeschlossen ist. Letzteres gilt nach Voraussetzung, und ersteres folgt aus~$K
+\subseteq H$ und~$H \subseteq G$.
 \end{loesungE}
 \end{aufgabe}
 
@@ -70,7 +70,7 @@ ist, also wenn~$k = \operatorname{kgV}(n,m) \mathrel{/} m = nm \mathrel{/}
 \operatorname{ggT}(n,m)$ ist.
 
 \item Die zyklische Gruppe ist durch
-\[ \CCC_n = \{ \tau^0, \ldots, \tau^{n-1} \]
+\[ \CCC_n = \{ \tau^0, \ldots, \tau^{n-1} \} \]
 gegeben, wobei~$\tau =
 \begin{pmatrix}1&2&\cdots&n-1&n\\2&3&\cdots&n&1\end{pmatrix} \in \SSS_n$.
 Diese Permutation~$\tau$ hat Ordnung~$n$. Daher
@@ -198,6 +198,22 @@ modulo~$5$. Zur Überprüfung der Primitivität legen wir folgende Tabelle an:
 Also sind~$2$ und~$3$ primitive Wurzeln modulo~$5$, da in ihren Zeilen
 \emph{alle} vierten Einheitswurzeln vorkommen. Die Zahlen~$1$ und~$4$ sind zwar
 vierte Einheitswurzeln, aber nicht primitive vierte Einheitswurzeln.
+
+\item \emph{Fall 1:} $d$ ist teilerfremd zu~$n$. Dann gibt es eine
+Bézoutdarstellung~$1 = ad + bn$. Folglich ist~$\sigma_a$ Umkehrabbildung
+zu~$\sigma_d$: Für alle~$\zeta \in X$ gilt
+\[ (\sigma_a \circ \sigma_d)(\zeta) =
+  (\zeta^d)^a = \zeta^{1 - bn} = \zeta \cdot (\zeta^n)^b = \zeta \cdot 1 =
+  \zeta \]
+und analog gilt~$(\sigma_d \circ \sigma_a)(\zeta) = \zeta$.
+
+\emph{Fall 2:} $d$ ist nicht teilerfremd zu~$n$. Dann gibt es also einen
+gemeinsamen Teiler~$k \geq 2$, sodass~$d = pk$ und~$n = qk$ für gewisse~$p,q
+\geq 0$. Sei~$\zeta_0$ eine feste primitive~$n$-te Einheitswurzel. Dann folgt
+\[ \sigma_d(\zeta_0^q) = \zeta_0^{qd} = \zeta_0^{qpk} = \zeta_0^{np} =
+(\zeta_0^n)^p = 1^p = 1 = \sigma_d(1), \]
+also ist~$\sigma_d$ nicht injektiv (es gilt~$\zeta_0^q \neq 1 = \zeta_0^0$) und
+somit insbesondere nicht bijektiv.
 \end{loesungE}
 \end{aufgabe}
 
