@@ -31,6 +31,69 @@ ist.
 \item Zeige allgemeiner, dass~$M_n$ von~$M_d$ geteilt wird, wenn~$d$ ein
 positiver Teiler von~$n$ ist.
 \end{enumerate}
+
+\begin{loesungE}
+\item Per Definition ist~$F_k = 2^{2^k} + 1$. Die Konvention ist so,
+dass~$2^{(2^k)}$ und nicht~$(2^2)^k = 4^k$ gemeint ist. Die Behauptung zeigen
+wir durch einen Induktionsbeweis. Für~$n = 0$ ist die Aussage klar:
+\[ F_{0+1} = 5 = 2 + 3 = 2 + F_0. \]
+Für den Schritt~$n \to n + 1$ rechnen wir:
+\begin{align*}
+  2 + F_{n+1} F_n F_{n-1} \cdots F_0 &=
+  2 + F_{n+1} \cdot (F_n F_{n-1} \cdots F_0 + 2 - 2) \\
+  &\stackrel{\text{IV}}{=} 2 + F_{n+1} \cdot (F_{n+1} - 2)
+  = (F_{n+1} - 1)^2 + 1 \\
+  &= \bigl(2^{2^{n+1}}\bigr)^2 + 1
+  = 2^{2^{n+2}} + 1
+  = F_{n+2}.
+\end{align*}
+
+\item Ohne Einschränkung sei~$m > n$. Sei~$d$ ein gemeinsamer Faktor von~$F_m$
+und~$F_n$. Aus Teilaufgabe~a) kennen wir die Beziehung
+\[ F_m = F_{(m-1)+1} = 2 + F_{m-1} \cdots F_0. \]
+Der hintere Summand ist ein Vielfaches von~$d$, da einer der Faktoren~$F_n$
+ist. Daher folgt, dass auch~$2$ ein Vielfaches von~$d$ ist; der Teiler~$d$ ist
+also~$\pm 1$ oder~$\pm 2$. Letzteres kann aber nicht eintreten: Direkt an der
+Form der fermatschen Zahlen erkennt man, dass~$\pm 2$ kein Teiler von ihnen
+ist. Also ist~$d = \pm 1$. Das war zu zeigen.
+
+Eine unendliche Folge paarweise verschiedener Primzahlen können wir mit dieser
+Erkenntnis wie folgt konstruieren: Wir zerlegen sukzessive die
+Zahlen~$F_0,F_1,\ldots$ in Primfaktoren. Diese Primfaktoren werden wegen der
+Teilerfremdheit alle unterschiedlich sein. Somit erhalten wir also beliebig
+viele paarweise verschiedene Primzahlen.
+
+\emph{Bemerkung:} Der Beweis stammt von Goldbach. In der Praxis ist er
+allerdings ein recht umständliches Verfahren zur Primzahlgenerierung, da
+die~$F_n$ rasant groß werden:
+\begin{align*}
+  F_0 &= 3 \\
+  F_1 &= 5 \\
+  F_2 &= 17 \\
+  F_3 &= 257 \\
+  F_4 &= 65537 \\
+  F_5 &= 4294967297 = 641 \cdot 6700417 \\
+  F_6 &= 18446744073709551617 = 274177 \cdot 67280421310721
+\end{align*}
+Es ist ein offenes Forschungsproblem, ob~$F_{33}$ eine Primzahl ist.
+
+\item Wir zeigen: Ist~$n$ eine zusammengesetzte Zahl, so auch~$M_n$. Sei
+dazu~$n = a \cdot b$ eine Zerlegung mit~$a,b \geq 2$. Dann folgt
+\begin{align*}
+  M_n &= 2^n - 1 = 2^{ab} - 1 = (2^a)^b - 1 \\
+  &= (2^a - 1) \cdot (1 + 2^a + (2^a)^2 + \cdots + (2^a)^{b-1}).
+\end{align*}
+Da~$a,b \geq 2$, folgt~$2^a - 1 \geq 2^2 - 1 = 3$ und~$\text{(hinterer Faktor)}
+\geq 1 + 2^a \geq 1 + 2^2 = 5$, also ist diese Zerlegung von~$M_n$ eine echte
+und~$M_n$ somit zusammengesetzt.
+
+\item Gelte~$n = d \cdot \ell$. Dann folgt völlig analog (sogar identisch!)
+\begin{align*}
+  M_n &= 2^n - 1 = 2^{d\ell} - 1 = (2^d)^\ell - 1 \\
+  &= (2^d - 1) \cdot (1 + 2^d + (2^d)^2 + \cdots + (2^d)^{\ell-1}),
+\end{align*}
+also ist~$M_d = 2^d - 1$ ein Teiler von~$M_n$.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Hauptsatz der Galoistheorie}
@@ -46,6 +109,21 @@ Polynoms~$X^4 + 1$ und die zugehörigen Zwischenerweiterungen.
 \QQ$ und~$x$ eine algebraische Zahl. Zeige, dass ein galoissch Konjugiertes
 von~$x$ über~$L$ auch ein galoissch Konjugiertes von~$x$ über~$K$ ist.
 \end{enumerate}
+
+\begin{loesungE}
+\item Ein Beispiel bilden die Zahlen~$\pm\sqrt{3}$. Diese sind über~$\QQ$
+sicherlich zueinander galoissch konjugiert (ihr gemeinsames Minimalpolynom
+ist~$X^2 - 3$), aber über~$\QQ(\sqrt{3})$ haben sie verschiedene
+Minimalpolynome~(nämlich~$X \mp \sqrt{3}$).
+
+\item Seien~$m_K$ und~$m_L$ die Minimalpolynome von~$x$ über~$K$ bzw.~$L$. Wenn
+wir~$m_K$ als Polynom über~$L$ auffassen, sagt uns der abelsche
+Irreduzibilitätssatz, dass~$m_L$ ein Teiler von~$m_K$ sein muss (über~$L$) --
+denn~$m_K$ und~$m_L$ haben die gemeinsame Nullstelle~$x$ und~$m_L$ ist
+irreduzibel über~$L$. Folglich ist jede Nullstelle von~$m_L$, also jedes
+galoissch Konjugierte von~$x$ über~$L$, auch eine Nullstelle von~$m_K$, also
+ein galoissch Konjugiertes von~$x$ über~$K$.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Relative Galoisgruppen}
@@ -58,6 +136,10 @@ seine Nullstellen. \\ Sei~$y \in K(x_1,\ldots,x_n)$. Zeige:
 \[ \Gal_{K(y)}(x_1,\ldots,x_n) = \{ \sigma \in \Gal_K(x_1,\ldots,x_n) \,|\,
 \sigma \cdot y = y \}. \]
 \end{enumerate}
+
+\begin{loesungE}
+\item Ein Beispiel ist das Polynom~$X - 1$. 
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Zentrum einer Galoisgruppe}
@@ -70,6 +152,73 @@ Element~$\sigma$ der Ordnung~$p$ enthält.
 zu den Zahlen~$e_i(x_1,\sigma\cdot x_1,\ldots,\sigma^{p-1}\cdot x_1)$, $i =
 1,\ldots,p$. Zeige, dass~$y$ vom Grad~$p^{n-1}$ ist.
 \end{enumerate}
+
+\begin{loesungE}
+\item Die Anzahl der Elemente der Galoisgruppe ist eine~$p$-Potenz:
+\[ |\Gal_\QQ(x_1,\ldots,x_{p^n})| = \gra{\QQ(x_1,\ldots,x_{p^n})}{\QQ} =
+\gra{\QQ(x)}{\QQ} = p^n. \]
+Nach Proposition~4.24 gibt es daher ein Element der Ordnung~$p$ im Zentrum.
+
+\item \emph{Schritt 1:}
+Wir sollten uns zunächst ein wenig Übersicht verschaffen. Da die Ordnung
+der Permutation~$\sigma$ die Primzahl~$p$ ist, zerfällt~$\sigma$ in lauter
+disjunkte~$p$-Zykel. Da~$\sigma$ keine Nullstelle~$x_i$ festhalten darf
+(denn~$x_i$ ist nach Proposition~4.4 wie~$x_1$ ein primitives Element --
+würde~$\sigma$ daher~$x_i$ festhalten, so würde~$\sigma$ alle Nullstellen
+festhalten und wäre somit die Identitätspermutation), kommt sogar \emph{jede} Zahl
+aus~$\{1,\ldots,p^n\}$ in einem dieser Zykel vor.
+
+Die Nullstellen~$x_1,\ldots,x_{p^n}$ zerfallen also in~$p^{n-1}$ Blöcke von
+je~$p$ Zahlen, die von~$\sigma$ jeweils nur unter sich abgebildet werden. Einer
+dieser Blöcke ist
+\begin{equation}\label{block}
+  x_1, \sigma \cdot x_1, \ldots, \sigma^{p-1} \cdot x_1. \tag{$\star$}
+\end{equation}
+Die anderen Blöcke erhält man, wenn man statt mit~$x_1$ mit einer anderen
+Nullstelle~$x_i$ beginnt (einer, die nicht in diesem Block auftritt).
+
+Wir wollen noch kurz untersuchen, was mit einem solchen Block passiert, wenn
+man eine beliebige Symmetrie~$\tau$ der Galoisgruppe auf ihn anwendet:
+Da~$\sigma$ (und somit auch~$\sigma^j$) im Zentrum liegt (hier geht diese
+Eigenschaft das erste Mal ein), gilt
+\[ \tau \cdot (\sigma^j \cdot x_i) = \sigma^j \cdot (\tau \cdot x_i). \]
+Die Wirkung von~$\tau$ vertauscht also die Blöcke untereinander.
+
+\emph{Schritt 2:} Da~$y$ ein primitives Element
+von~$\QQ(e_1(\star),\ldots,e_p(\star))$ ist, gibt es ein
+Polynom~$r \in \QQ[E_1,\ldots,E_p]$ mit~$y = r(e_1(\star),\ldots,e_p(\star))$. Ferner
+können wir ein symmetrisches Polynom~$s \in \QQ[Y_1,\ldots,Y_p]$ mit~$y = s(x_1, \sigma
+\cdot x_1,\ldots, \sigma^{p-1} \cdot x_1)$ finden. Da~$s$ symmetrisch ist,
+ergibt es Sinn, das Polynom
+\[ g(X) := \prod (X - s(b_1,\ldots,b_p)) \]
+zu definieren, wobei das Produkt über jeden Block~$(b_1,\ldots,b_p)$ genau
+einmal gehen soll. Dieses Polynom ist normiert, hat~$y$ als Nullstelle und hat rationale
+Koeffizienten -- denn diese sind unter der Wirkung der Galoisgruppe invariant:
+Sei~$\tau \in \Gal_\QQ(x_1,\ldots,x_{p^n})$ beliebig. Dann gilt
+\[ \tau \cdot g(X) = \prod (X - s(\tau \cdot b_1,\ldots,\tau \cdot b_p)) =
+  \prod (X - s(b_1,\ldots,b_p)) = g(X), \]
+denn wie wir oben schon gesehen haben, führt~$\tau$ nur zu einer Vertauschung
+der Blöcke. Der Grad von~$y$ über~$\QQ$ ist also höchstens gleich dem Grad
+von~$g$, und dieser ist~$p^{n-1}$.
+
+\emph{Schritt 3:} Das Polynom
+\[ h(X) := \prod_{j=0}^{p-1} (X - \sigma^j \cdot x_1) \]
+ist normiert, hat~$x_1$ als Nullstelle und hat Koeffizienten aus~$\QQ(y)$: Denn
+diese sind bis auf Vorzeichen durch die elementarsymmetrischen Funktionen in
+den~$\sigma^j \cdot x_1$, $j = 0,\ldots,p-1$ gegeben -- und diese sind nach
+Voraussetzung rational in~$y$. Folglich ist der Grad von~$x_1$ über~$y$
+höchstens~$p$. Somit folgt
+\[ \gra{\QQ(y)}{\QQ} = \frac{\gra{\QQ(x_1)}{\QQ}}{\gra{\QQ(x_1)}{\QQ(y)}} \geq
+\frac{p^n}{p} = p^{n-1}. \]
+Das zeigt die Behauptung.
+
+\emph{Bemerkung:} Mit dem Hauptsatz der Galoistheorie kann man einen
+drastisch kürzeren Beweis angeben. Vielleicht enthält er aber einen Fehler, da
+die Voraussetzung, dass~$\sigma$ im Zentrum liegt, nicht eingeht! Nach
+Proposition~5.9 ist~$\QQ(y)$ gerade der Fixkörper der Untergruppe~$U := \{
+\sigma^0,\ldots,\sigma^{p-1} \} \subseteq \Gal =: G$. Daher folgt
+\[ \gra{\QQ(y)}{\QQ} = \gra{G}{U} = p^n / p = p^{n-1}. \]
+\end{loesungE}
 \end{aufgabe}
 
 \end{document}
