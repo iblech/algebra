@@ -43,9 +43,35 @@ Dann ist die Behauptung klar: Zu zeigen ist, dass~$K \subseteq G$ und dass~$K$
 die Identitätspermutation enthält und unter Komposition und Inversenbildung
 abgeschlossen ist. Letzteres gilt nach Voraussetzung, und ersteres folgt aus~$K
 \subseteq H$ und~$H \subseteq G$.
+
+\item Wir unterscheiden mehrere Fälle. Falls~$i = 0$ oder~$j = 0$, ist die
+Behauptung klar (wieso?). Für~$i,j > 0$ gilt
+\[ \sigma^i \circ \sigma^j =
+  \underbrace{\sigma \circ \cdots \circ \sigma}_{\text{$i$ Faktoren}}
+  \circ
+  \underbrace{\sigma \circ \cdots \circ \sigma}_{\text{$j$ Faktoren}} =
+  \underbrace{\sigma \circ \cdots \circ \sigma}_{\text{$i+j$ Faktoren}} =
+  \sigma^{i+j}. \]
+Für~$i, j < 0$ gilt
+\[ \sigma^i \circ \sigma^j =
+  \underbrace{\sigma^{-1} \circ \cdots \circ \sigma^{-1}}_{\text{$-i$ Faktoren}}
+  \circ
+  \underbrace{\sigma^{-1} \circ \cdots \circ \sigma^{-1}}_{\text{$-j$ Faktoren}} =
+  \underbrace{\sigma^{-1} \circ \cdots \circ \sigma^{-1}}_{\text{$-(i+j)$ Faktoren}} =
+  \sigma^{i+j}. \]
+Für~$i > 0, j < 0, i > -j$ gilt
+\[ \sigma^i \circ \sigma^j =
+  \underbrace{\sigma \circ \cdots \circ \sigma}_{\text{$i$ Faktoren}}
+  \circ
+  \underbrace{\sigma^{-1} \circ \cdots \circ \sigma^{-1}}_{\text{$-j$ Faktoren}} =
+  \underbrace{\sigma \circ \cdots \circ \sigma}_{\text{$i+j$ Faktoren}} =
+  \sigma^{i+j}. \]
+Analog behandelt man den Fall~$i > 0, j < 0, i < -j$ und den Fall~$i < 0, j >
+0$.
 \end{loesungE}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Elementordnungen}
 \begin{enumerate}
 \item Sei~$G$ eine Gruppe und $\sigma \in G$ ein Element der Ordnung~$n$.
@@ -163,6 +189,7 @@ da im Zähler des hinteren Faktors die Primzahl~$p$ kein einziges Mal vorkommt
 \end{loesungE}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Primitive Wurzeln}
 \begin{enumerate}
 \item Gib alle primitiven Wurzeln modulo~$5$ an.
