@@ -450,7 +450,20 @@ Zur Kontrolle: Insgesamt gibt es fünf Untergruppen, eine von Ordnung~1, drei
 von Ordnung~2, keine von Ordnung~3 und eine von Ordnung~4. Die zugehörigen
 Zwischenerweiterungen kann man mit der Formel aus Proposition~5.9 (Seite~167)
 ausrechnen und mit den Rechenregeln für Rechenbereichserweiterungen
-vereinfachen.
+vereinfachen. Etwa gehört zu der Untergruppe
+\[ H = \left\{ \id, \sigma \right\} \]
+mit~$\sigma := (1,2)\circ(3,4)$ die Zwischenerweiterung
+\begin{align*}
+  \QQ(x_1,x_2,x_3,x_4)^H &= \QQ(t)^H =
+  \QQ(e_1(\id \cdot t, \sigma \cdot t), e_2(\id \cdot t, \sigma \cdot t)) \\
+  &=
+  \QQ(e_1(\xi, \xi^3), e_2(\xi, \xi^3)) =
+  \QQ(\xi + \xi^3, \xi \cdot \xi^3) \\
+  &=
+  \QQ(\xi + \xi^3, -1) =
+  \QQ(\xi + \xi^3) =
+  \QQ(\sqrt{2} \, \i).
+\end{align*}
 
 \paragraph{Aufgabe 6.} Die Aufgabe soll dabei helfen, den Beweis von Proposition~4.34
 genauer zu verstehen, denn hier geht es um eine Verallgemeinerung. Für
