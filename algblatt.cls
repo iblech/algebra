@@ -78,6 +78,7 @@
 \newcommand{\AAA}{\mathrm{A}}
 \newcommand{\SSS}{\mathrm{S}}
 \newcommand{\CCC}{\mathrm{C}}
+\newcommand{\DDD}{\mathrm{D}}
 \newcommand{\Hom}{\mathrm{Hom}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\GL}[1]{\operatorname{GL}(#1)}
