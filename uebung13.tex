@@ -222,6 +222,36 @@ seine Nullstellen. \\ Sei~$y \in K(x_1,\ldots,x_n)$. Zeige:
 
 \begin{loesungE}
 \item Ein Beispiel ist das Polynom~$X - 1$. 
+
+\item "`$\subseteq$"': Sei~$\sigma \in \Gal_{K(y)}$ beliebig. Dann
+erhält~$\sigma$ also alle algebraischen Relationen zwischen den Nullstellen mit
+Koeffizienten aus~$K(y)$; insbesondere erhält~$\sigma$ also alle algebraischen
+Relationen mit Koeffizienten aus~$K$, daher liegt~$\sigma$ auch in~$\Gal_K$.
+
+Ferner muss~$\sigma$ das Element~$y$ festlassen: Vielleicht findet man das
+offensichtlich (da die Galoisgruppe über~$K(y)$ nach Vorlesung trivial
+auf~$K(y)$ operiert), eine explizite Begründung kann man aber auch formulieren:
+Da~$y \in K(x_1,\ldots,x_n)$, gibt es ein Polynom~$H \in K[X_1,\ldots,X_n]$
+mit~$H(x_1,\ldots,x_n) = y$. Das Polynom~$H(X_1,\ldots,X_n) - y \in
+K(y)[X_1,\ldots,X_n]$ ist eine algebraische Relation der Nullstellen
+über~$K(y)$ und wird daher von~$\sigma$ erhalten -- es gilt also
+\[ 0 = H(x_{\sigma(1)},\ldots,x_{\sigma(n)}) - y = \sigma \cdot y - y. \]
+
+"`$\supseteq$"': Sei~$\sigma \in \Gal_K$ mit~$\sigma \cdot y = y$ beliebig.
+Um~$\sigma \in \Gal_{K(y)}$ nachzuweisen, müssen wir zeigen, dass jede algebraische
+Relation~$H \in K(y)[X_1,\ldots,X_n]$ der Nullstellen über~$K(y)$
+unter~$\sigma$ erhalten bleibt. Dazu rechnen wir:
+\begin{align*}
+  H(x_{\sigma(1)},\ldots,x_{\sigma(n)}) &=
+  H(\sigma \cdot x_1,\ldots,\sigma \cdot x_n) =
+  (\sigma \cdot H)(\sigma \cdot x_1,\ldots,\sigma \cdot x_n) \\
+  &= \sigma \cdot H(x_1,\ldots,x_n) = \sigma \cdot 0 = 0.
+\end{align*}
+Dabei ging beim zweiten Gleichheitszeichen die Voraussetzung~$\sigma \cdot y =
+y$ ein. Beim dritten Gleichheitszeichen haben wir die Additivität und
+Multiplikativität der Wirkung von~$\sigma$ verwendet: Ausgeschrieben steht ein
+langer Ausdruck da, dessen Teile alle von~$\sigma$ umklammert werden. Dieses
+kann man vor den gesamten Term ziehen.
 \end{loesungE}
 \end{aufgabe}
 
