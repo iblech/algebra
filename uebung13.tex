@@ -1,5 +1,5 @@
 \documentclass{algblatt}
-\usepackage{multicol}
+\usepackage{tikz}
 \input{config.tex}
 \geometry{tmargin=2.0cm,bmargin=2.0cm,lmargin=2.25cm,rmargin=2.25cm}
 
@@ -17,6 +17,25 @@
 mit Zirkel und Lineal konstruierbar?
 \item Gib eine Konstruktionsvorschrift für das regelmäßige~$15$-Eck an.
 \end{enumerate}
+
+\begin{loesungE}
+\item Satz~4.30 gibt die Antwort vor: Es sind genau die~$n$-Ecke konstruierbar,
+für die~$n$ von der Form~$2^r p_1 \cdots p_s$, $r,s \geq 0$ sind, wobei
+die~$p_i$ paarweise verschiedene Fermatsche Primzahlen sind -- das sind
+Primzahlen, die von der Form~$F_k = 2^{2^k} + 1$, $k \geq 0$, sind. Die ersten
+vier Fermatschen Primzahlen sind
+\[ F_0 = 3,\quad
+  F_1 = 5,\quad
+  F_2 = 17,\quad
+  F_3 = 257. \]
+(Es sind aber nicht alle~$F_k$ Primzahlen, etwa ist~$F_5$ durch~$631$ teilbar.)
+
+Für~$n \leq 100$ sind nur die ersten drei Fermatschen Primzahlen relevant; es
+ergibt sich, dass genau folgende~$n$-Ecke mit~$n \geq 100$ konstruierbar
+sind:
+\[ 1,2,3,4,5,6,8,10,12,15,16,17,20,24,30,32,34,40,48,51,60,64,68,80,85,96. \]
+Das sind insgesamt~26 Stück.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Fermatsche und Mersennesche Primzahlen}
@@ -99,6 +118,70 @@ also ist~$M_d = 2^d - 1$ ein Teiler von~$M_n$.
 \begin{aufgabe}{Hauptsatz der Galoistheorie}
 Bestimme alle Untergruppen der galoisschen Gruppe der Nullstellen des
 Polynoms~$X^4 + 1$ und die zugehörigen Zwischenerweiterungen.
+
+\begin{loesung}
+In Aufgabe~3 von Blatt 10 haben wir die Galoisgruppe bereits berechnet: Es
+gilt~$\QQ(x_1,x_2,x_3,x_4) = \QQ(t)$ mit~$t = \xi := \exp(2\pi\i/8)$ und
+\[ \Gal_\QQ(x_1,x_2,x_3,x_4) =
+  \left\{ \id, \sigma, \tau, \mu \right\} \]
+mit
+\begin{align*}
+  \sigma &= (1,2)\circ(3,4), \\
+  \tau &= (1,3)\circ(2,4), \\
+  \mu &= (1,4)\circ(2,3).
+\end{align*}
+\begin{itemize}
+\item Untergruppen der Ordnung~1: $U_1 = \{\id\}$.
+\item Untergruppen der Ordnung~2: $U_2 = \{\id,\sigma\}$, $U_3 = \{\id,\tau\}$,
+$U_4 = \{\id,\mu\}$.
+\item Untergruppen der Ordnung~3: Kann es keine geben (Lagrange!).
+\item Untergruppen der Ordnung~4: $U_5 = \{\id,\sigma,\tau,\mu\}$.
+\end{itemize}
+Die zugehörigen Zwischenerweiterungen sind laut der expliziten Formel aus
+Proposition~5.9:
+\begin{align*}
+  \QQ(t)^{U_1} &= \QQ(t) \\
+  \QQ(t)^{U_2} &= \QQ(t + \sigma(t), t \cdot \sigma(t)) =
+    \QQ(\xi + \xi^3, \xi \cdot \xi^3) =
+    \QQ(\sqrt{2}\,\i, -1) =
+    \QQ(\sqrt{2}\,\i) \\
+  \QQ(t)^{U_3} &= \QQ(t + \tau(t), t \cdot \tau(t)) =
+    \QQ(\xi + \xi^5, \xi \cdot \xi^5) =
+    \QQ(0, -\i) = \QQ(\i) \\
+  \QQ(t)^{U_4} &= \QQ(t + \mu(t), t \cdot \mu(t)) =
+    \QQ(\xi + \xi^7, \xi \cdot \xi^7) =
+    \QQ(\sqrt{2}, 1) =
+    \QQ(\sqrt{2}) \\
+  \QQ(t)^{U_5} &= \QQ
+\end{align*}
+Die Zwischenerweiterungs- und Untergruppendiagramme sehen also wie folgt aus:
+\begin{center}\begin{tikzpicture}[node distance=2cm]
+ \node (Q)                  {$\mathbb{Q}$};
+ \node (Q6)  [above of=Q]   {$\mathbb{Q}(\i)$};
+ \node (Q2)  [right of=Q6]  {$\mathbb{Q}(\sqrt{2})$};
+ \node (Q3)  [left of=Q6]   {$\mathbb{Q}(\sqrt{2}\,\i)$};
+ \node (Q23) [above of=Q6]  {$\mathbb{Q}(\xi)$};
+ \node (1f)  [right of=Q2]  {$\{\id,\sigma\}$};
+ \node (1fg) [right of=1f]  {$\{\id,\tau\}$};
+ \node (1g)  [right of=1fg] {$\{\id,\mu\}$};
+ \node (G)   [below of=1fg] {$\{\id,\sigma,\tau,\mu\}$};
+ \node (1)   [above of=1fg] {$\{\id\}$};
+ \draw (Q)   -- (Q2);
+ \draw (Q)   -- (Q3);
+ \draw (Q)   -- (Q6);
+ \draw (Q2)  -- (Q23);
+ \draw (Q3)  -- (Q23);
+ \draw (Q6)  -- (Q23);
+ \draw (G)   -- (1f);
+ \draw (G)   -- (1fg);
+ \draw (G)   -- (1g);
+ \draw (1f)  -- (1);
+ \draw (1fg) -- (1);
+ \draw (1g)  -- (1);
+\end{tikzpicture}\end{center}
+Links markiert man üblicherweise die Striche mit den zugehörigen Graden, rechts
+mit den zugehörigen Indizes. Diese sind hier alle jeweils~$2$.
+\end{loesung}
 \end{aufgabe}
 
 \begin{aufgabe}{Relative galoissch Konjugierte}
