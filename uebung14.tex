@@ -227,6 +227,34 @@ Nullstellen gibt.
 Sei~$x$ eine algebraische Zahl und~$t$ ein primitives Element zu allen galoissch
 Konjugierten von~$x$. Zeige, dass~$x$ genau dann konstruierbar ist, wenn der
 Grad von~$t$ eine Zweierpotenz ist.
+
+\begin{loesung}
+Seien~$t_1,\ldots,t_n$ alle galoissch Konjugierten von~$t$. Nach
+Proposition~4.4 sind diese ebenfalls primitive Elemente für~$x_1,\ldots,x_n$,
+d.\,h. es gilt jeweils~$\QQ(t_i) = \QQ(t)$. Folglich gilt
+insbesondere~$t_1,\ldots,t_n \in \QQ(t)$; also sind alle galoissch Konjugierten
+von~$t$ in~$t$ rational und es greift Proposition~4.34: Die Zahl~$t$ ist genau
+dann konstruierbar, wenn der Grad von~$t$ eine Zweierpotenz ist.
+Mit diesem Vorwissen zeigen wir nun die beiden Richtungen:
+
+"`$\Longleftarrow$"': Klar: Da~$t$ konstruierbar ist, ist auch~$x$
+konstruierbar, da~$x$ ja eine in~$t$ rationale Zahl ist.
+
+"`$\Longrightarrow$"': Da~$x$ konstruierbar ist, ist auch jedes galoissch
+Konjugiertes von~$x$ konstruierbar (wieso?! Mir fehlt ein Beweis dafür, aber
+die Aussage stimmt). Da~$t$
+ein primitives Element dieser galoissch Konjugierten ist, ist~$t$ daher
+ebenfalls konstruierbar.
+%Wir erinnern an die Charakterisierung von
+%Konstruierbarkeit (Satz~1.13): Eine Zahl~$z$ ist genau dann konstruierbar, wenn
+%es eine Folge komplexer Zahlen~$z_1,\ldots,z_{n-1},z_n=z$ gibt, sodass für
+%alle~$i = 1,\ldots,n$ jeweils gilt:
+%\begin{itemize}
+%\item $z_i \in \QQ(z_1,\ldots,z_{i-1})$ oder
+%\item $z_i$ ist eine Quadratwurzel aus einer Zahl
+%aus~$\QQ(z_1,\ldots,z_{i-1})$.
+%\end{itemize}
+\end{loesung}
 \end{aufgabe}
 
 \end{document}
