@@ -118,6 +118,41 @@ denselben Wurzelausdruck wie~$x$.
 Exponenten höchstens $\max\{ 2, \frac{n-1}{2}
 \}$ sind, ausgedrückt werden kann.
 \end{enumerate}
+
+\begin{loesungE}
+\item \ldots
+
+\item Dazu schauen wir uns den Beweis von Hilfssatz~5.26 genauer an: In ihm
+werden an insgesamt drei Stellen Wurzeln gezogen, und wir müssen zeigen, dass
+wir die Situation jeweils so arrangieren können, dass die Wurzelexponenten
+höchstens~$\max\{ 2, \frac{n-1}{2} \}$ sind.
+
+Eine Vorbemerkung: Es gilt~$\max\{ 2, \frac{n-1}{2} \} = 2$ genau dann, wenn~$2
+\geq \frac{n-1}{2}$; das ist genau dann der Fall, wenn~$n \leq 5$.
+
+Der Fall~$n = 1$ ist klar.
+
+\emph{Erster Fall im Beweis:} Die Zahl~$n$ ist eine zusammengesetzte Zahl. Dann
+können wir~$n = p q$ schreiben, wobei~$p$ der kleinste Primfaktor von~$n$ sein
+soll und~$q$ die restlichen Faktoren aufsammelt. Im Beweis wird dann eine~$p$-te
+Wurzel gezogen, also müssen wir zeigen:~$p \leq \max\{ 2, \frac{n-1}{2} \}$.
+Falls~$n \leq 5$ -- also~$n = 4$ --, gilt~$p = 2$ und die Behauptung stimmt.
+Falls~$n > 5$, gilt
+\[ \frac{n-1}{2} = \frac{pq-1}{2} \geq \frac{p\cdot3-1}{2} = \frac{2p + p-1}{2}
+= p + \frac{p-1}{2} \geq p \]
+und die Behauptung stimmt ebenfalls. Dabei haben wir~$q \geq 3$ verwendet: $q =
+1$ kann nicht sein (sonst wäre~$n$ prim) und~$q = 2$ kann auch nicht sein
+(da~$p$ der kleinste Primfaktor von~$n$ ist, wäre sonst~$n = p q = 2 \cdot 2 =
+4$ im Widerspruch zu~$n > 5$).
+
+\emph{Zweiter Fall im Beweis:} Die Zahl~$n$ ist eine Primzahl. Im Beweis wird
+dann eine~$(n-1)$-te Wurzel gezogen. Falls~$n = 2$, ist die Behauptung klar.
+Sonst ist~$n-1$ eine gerade Zahl, also können wir~$n-1 = 2a$ mit~$a \geq 1$
+schreiben. Nach Hilfssatz~5.19 können wir statt der~$(n-1)$-ten Wurzel auch
+eine zweite Wurzel (passt, ist sicher höchstens~$\max\{ 2, \ldots \}$) gefolgt
+von einer~$a$-ten Wurzel (passt ebenso, da~$a = \frac{n-1}{2} \leq \max\{
+\ldots, \frac{n-1}{2} \}$) ziehen.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Normalteiler}
