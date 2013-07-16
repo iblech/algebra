@@ -79,6 +79,7 @@
 \newcommand{\SSS}{\mathrm{S}}
 \newcommand{\CCC}{\mathrm{C}}
 \newcommand{\DDD}{\mathrm{D}}
+\newcommand{\ZZZ}{\mathrm{Z}}
 \newcommand{\Hom}{\mathrm{Hom}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\GL}[1]{\operatorname{GL}(#1)}

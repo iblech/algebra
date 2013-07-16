@@ -24,6 +24,88 @@ Koeffizienten, welches mindestens eine echt komplexe Nullstelle besitzt.
 Zeige, dass die Galoisgruppe der Nullstellen von~$f(X)$ mindestens ein Element
 der Ordnung~$2$ besitzt.
 \end{enumerate}
+
+\begin{loesungE}
+\item
+\emph{Variante über den Hauptsatz:} Das Polynom~$X^2 - 2$ hat die
+Nullstellen~$\pm\sqrt{2}$; ein primitives Element der Nullstellen
+ist~$\sqrt{2}$, und daher können wir den Hauptsatz verwenden, um Auskunft über
+die Zwischenerweiterungen von~$\QQ(\sqrt{2})$ zu erhalten: Diese stehen in
+1:1--Korrespondenz zu den Untergruppen der Galoisgruppe der beiden Nullstellen.
+Diese ist~$\{ \id, \sigma \}$, wobei~$\sigma = (1, 2)$; es gibt also genau zwei
+Untergruppen, entsprechend den Zwischenerweiterungen~$\QQ$ und~$\QQ(\sqrt{2})$.
+
+\emph{Direkte Variante:} Sei~$\QQ(\sqrt{2}) \supseteq L \supseteq \QQ$ eine
+Zwischenerweiterung. Nach der Gradformel muss~$[L:\QQ]$ gleich~$2$ oder~$1$
+sein. Im ersten Fall gilt~$L = \QQ(\sqrt{2})$, im zweiten~$L = \QQ$.
+
+\item Wir setzen~$f(X) = X^3 - 2$. Die Nullstellen sind
+\[ x_1 = \sqrt[3]{2},\quad
+  x_2 = \omega \sqrt[3]{2},\quad
+  x_3 = \omega^2 \sqrt[3]{2}, \]
+wobei~$\omega = \exp(2\pi\i/3)$. Da~$x_1$ kein primitives Element
+für~$\QQ(x_1,x_2,x_3)$ ist, folgt mit Aufgabe~2b) von Blatt~11,
+dass~$G := \Gal_\QQ(x_1,x_2,x_3) = \SSS_3$.
+
+Nun gibt es die Zwischenerweiterung~$\QQ(x_1,x_2,x_3) \supseteq
+\QQ(\sqrt[3]{2}) \supseteq \QQ$. Ihr Grad über~$\QQ$ ist~$3$, daher ist der
+Index der zugehörigen Untergruppe~$H$ der Galoisgruppe ebenfalls~$3$. Explizit ist
+sie nach Aufgabe~5b) von Blatt~13 durch
+\[ H = \{ \id, (2, 3) \} \]
+gegeben. Damit kann man nachrechnen, dass~$H$ kein Normalteiler
+in~$G$ ist: Denn die Konjugation von~$(2,3) \in H$
+durch~$(1,2) \in G$ ist
+\[ (1,2) \circ (2,3) \circ (1,2)^{-1} =
+  (1,3) \]
+und liegt also nicht in~$H$.
+
+\emph{Bemerkung:} Man kann sich auch die Motivation über die
+Zwischenerweiterung sparen und direkt die Untergruppe~$H$ angeben.
+
+\item Seien~$x_1,\ldots,x_n$ die Nullstellen von~$f(X)$. Dann definieren wir
+eine Permutation~$\sigma \in \SSS_n$ durch die Forderung
+\[ x_{\sigma(i)} = \overline{x_i} \]
+für~$i = 1,\ldots,n$.
+Diese Permutation liegt tatsächlich in der Galoisgruppe: Denn
+gilt~$H(x_1,\ldots,x_n) = 0$ für ein Polynom~$H \in \QQ[X_1,\ldots,X_n]$, so
+gilt auch
+\[ H(x_{\sigma(1)},\ldots,x_{\sigma(n)}) =
+  H(\overline{x_1},\ldots,\overline{x_n}) =
+  \overline{H}(\overline{x_1},\ldots,\overline{x_n}) =
+  \overline{H(x_1,\ldots,x_n)} =
+  \overline{0} = 0. \]
+Nun gilt~$\sigma^2 = \id$, denn es gilt
+\[ x_{\sigma^2(i)} = x_{\sigma(\sigma(i))} = \overline{x_{\sigma(i)}} =
+\overline{\overline{x_i}} = x_i \]
+für alle~$i = 1,\ldots,n$. Damit ist also die Ordnung von~$\sigma$ gleich~$1$
+oder~$2$. Die Voraussetzung, dass mindestens eine Nullstelle echt komplex ist,
+garantiert nun, dass~$\sigma \neq \id$ ist; also hat~$\sigma$ Ordnung~$2$.
+
+\emph{Bemerkung:} Unter der der Korrespondenz des Hauptsatzes entspricht die
+Untergruppe~$\{\id,\sigma\}$ der Zwischenerweiterung~$\QQ(x_1,\ldots,x_n) \cap
+\RR$. Wenn man~$\QQ(t) = \QQ(x_1,\ldots,x_n)$ schreibt, kann man Erzeuger
+dieser Zwischenerweiterung explizit bestimmen:
+\[ \QQ(t)^{\{\id,\sigma\}} = \QQ(t + \overline{t}, t \cdot \overline{t}) =
+  \QQ(2 \mathrm{Re}(t), \mathrm{Re}(t)^2 + \mathrm{Im}(t)^2) =
+  \QQ(\mathrm{Re}(t), \mathrm{Im}(t)^2). \]
+Man kann auch explizit das Minimalpolynom von~$t$
+über~$\QQ(t)^{\{\id,\sigma\}}$ angeben: Es lautet
+\[ X^2 - (t + \overline{t}) X + t \cdot \overline{t}. \]
+
+%\item Sei~$t$ ein primitives Element der Nullstellen~$x_1,\ldots,x_n$; dann
+%sind bekanntlich die Elemente der Galoisgruppe durch ihre Wirkung auf~$t$
+%bereits eindeutig bestimmt, und zwar gibt es für jedes galoissch
+%Konjugiertes~$t'$ von~$t$ genau ein Element~$\sigma$ mit~$\sigma \cdot t = t'$.
+%
+%Da mindestens eine Nullstelle echt komplex ist, muss auch~$t$ echt komplex sein
+%(sonst würde~$x_i \in \QQ(x_i) \subseteq \QQ(x_1,\ldots,x_n) = \QQ(t) \subseteq
+%\RR$ folgen). Folglich ist das komplex Konjugierte~$\overline{t}$, das
+%auch ein galoissch Konjugiertes ist (wieso?), von~$t$ verschieden.
+%
+%Wir betrachten nun das eindeutig bestimmte Element~$\sigma$ der Galoisgruppe
+%mit~$\sigma \cdot t = \overline{t}$. Da~$t \neq \overline{t}$, ist~$\sigma \neq
+%\id$. Ferner gilt~$\sigma^2 \cdot t = \sigma \cdot \overline{t} =
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Wurzelausdrücke}
@@ -50,7 +132,17 @@ Normalteiler in~$G$ ist.
 \begin{loesungE}
 \item Stets sind die Untergruppen~$\{\id\}$ und~$G$ Normalteiler (wieso?). Nach
 Voraussetzung sind das zwei verschiedene.
-\item \ldots
+
+\item Das \emph{Zentrum} enthält diejenigen Elemente~$\tau \in G$, für die für
+alle~$\sigma \in G$ die Identität~$\sigma \circ \tau \circ \sigma^{-1} = \tau$
+gilt (äquivalent:~$\sigma \circ \tau = \tau \circ \sigma$).
+
+Zum Nachweis der Normalteilereigenschaft sei~$\tau \in \ZZZ(G)$ und~$\sigma \in
+G$ beliebig gegeben. Dann müssen wir
+zeigen, dass~$\sigma \circ \tau \circ \sigma^{-1}$ ebenfalls in~$\ZZZ(G)$
+liegt. Das ist klar, denn wie bemerkt ist dieses Element gerade gleich~$\tau
+\in \ZZZ(G)$.
+
 \item Nein, denn die Untergruppe~$\AAA_5 \subseteq \SSS_5$ ist ein
 Normalteiler: Sei~$\tau \in \AAA_5$ und~$\sigma \in \SSS_5$. Dann gilt
 \[ \sgn(\sigma \circ \tau \circ \sigma^{-1}) =

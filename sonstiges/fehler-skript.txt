@@ -2,3 +2,8 @@ Seite xx, vor Formel (5): Das "c + " in der Definition von q muss weg.
 
 Seite 51, ganz unten: Auf der rechten Seite der Gleichungen fehlen die Striche
 an den Exponenten.
+
+Seite 169, Formulierung des Hauptsatzes: Muss auf endliche Untergruppen
+beschränken.
+
+"delta"
