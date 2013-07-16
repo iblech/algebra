@@ -173,6 +173,54 @@ enthält.
 rationalen Koeffizienten, sodass die Gleichung~$f(X) = 0$ auflösbar ist.
 \item Zeige, dass die Gleichung~$X^5 - 23\,X + 1 = 0$ nicht auflösbar ist.
 \end{enumerate}
+
+\begin{loesungE}
+\item Ein Beispiel ist das Polynom~$f(X) = X^5 - 2$. Dessen Nullstellen sind
+nämlich~$\zeta^i \sqrt[5]{2}$, $i = 0,\ldots,4$, wobei~$\zeta$ eine primitive
+fünfte Einheitswurzel ist. Da primitive Einheitswurzeln durch Wurzeln
+ausdrückbar sind (Satz~5.25) und die Zahl~$\sqrt[5]{2}$ sogar ganz sicher durch
+Wurzeln ausdrückbar ist, sind die Lösungen der Gleichung~$f(X) = 0$ also durch
+Wurzeln ausdrückbar.
+
+\item Wir zeigen, dass das Polynom~$f(X) = X^5 - 23\,X + 1$ irreduzibel ist und
+genau zwei nicht reelle Nullstellen besitzt. Dann folgt nämlich aus
+Hilfssatz~5.39, dass die Galoisgruppe der Nullstellen die volle~$\SSS_5$ ist,
+und diese ist nicht auflösbar (siehe Seite~196 oben).
+
+\emph{Nachweis der Irreduzibilität:} Rationale Nullstellen besitzt~$f(X)$
+keine, denn diese könnten nur Teiler von~$1$ sein, aber~$\pm 1$ sind keine
+Nullstellen. Bleibt zu zeigen, dass~$f(X)$ nicht in Faktoren der Grade~2
+und~3 zerfällt. Nach dem Satz von Gauß genügt es, Faktoren mit ganzzahligen
+Koeffizienten auszuschließen. Aus dem Ansatz
+\[ f(X) = (a + bX + cX^2) \cdot (d + eX + fX^2 + gX^3) \]
+mit ganzzahligen Koeffizienten~$a,b,c,d,e,f,g$ folgen die Gleichungen
+\begin{align*}
+  1 &= ad, \\
+  -23 &= ae + bd, \\
+  0 &= be + af + cd, \\
+  0 &= ag + bf + ce, \\
+  0 &= cf + bg, \\
+  1 &= cg.
+\end{align*}
+Mit einigem Rechnen sieht man: $a = d = \pm 1$, $c = g = {\tilde\pm} 1$, $f =
+-b$, $e = cb^2 - a$, $cb^2 - a + b = \mp 23$. Daraus erhält man die Beziehung
+\[ b \cdot (cb + 1) = \mp 22. \]
+Daraus folgen nur acht Fälle für~$b$: $b = 1$, $b = 2$, $b = 11$, $b = 22$ und
+jeweils mit negativem Vorzeichen. Alle Fälle führen zu einem Widerspruch.
+
+\emph{Nachweis der Nullstelleneigenschaft:} Am einfachsten zeigt man das
+numerisch: Die Nullstellen sind
+\begin{align*}
+  x_1 &\approx -2{,}20, \\
+  x_2 &\approx 0{,}04, \\
+  x_3 &\approx 2{,}18, \\
+  x_4 &\approx -0{,}01 - 2{,}19\,\i, \\
+  x_5 &\approx -0{,}01 + 2{,}19\,\i.
+\end{align*}
+Alternativ führt man eine Kurvendiskussion, kann sich so den groben Verlauf des
+reellen Graphen erschließen und daraus auch ablesen, dass es genau drei reelle
+Nullstellen gibt.
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Kriterium für Konstruierbarkeit}
