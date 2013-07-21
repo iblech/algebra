@@ -123,7 +123,45 @@ Exponenten höchstens $\max\{ 2, \frac{n-1}{2}
 \end{enumerate}
 
 \begin{loesungE}
-\item \ldots
+\item Da~$x$ durch Wurzeln ausdrückbar ist, gibt es
+\begin{itemize}
+\item eine natürliche Zahl~$n \geq 0$,
+\item komplexe Zahlen~$z_1,\ldots,z_n$,
+\item Primzahlen~$p_1,\ldots,p_n$,
+\item Polynome~$f_i \in \QQ[Z_1,\ldots,Z_{i-1}]$, $i = 1,\ldots,n$ mit
+\[ z_i^{p_i} = f_i(z_1,\ldots,z_{i-1}) \quad\text{und}\quad
+  z_i \not\in \QQ(z_1,\ldots,z_{i-1}), \]
+denn das ist gleichbedeutend damit,
+dass~$z_i$ eine über~$\QQ(z_1,\ldots,z_{i-1})$ algebraisch eindeutige~$p_i$-te
+Wurzel ist), sowie
+\item ein Polynom~$g \in \QQ[Z_1,\ldots,Z_n]$ mit~$x = g(z_1,\ldots,z_n)$.
+\end{itemize}
+Wir können dann schreiben:
+\[ x = g\Bigl(\sqrt[p_1]{f_1}, \sqrt[p_2]{f_2(\sqrt[p_1]{f_1})}, \ldots,
+  \sqrt[p_n]{f_n(\ldots)}\Bigr). \]
+
+Wir können nun ein Polynom~$h(X) \in \QQ[X]$ finden, das separabel ist und die
+Zahlen~$x, z_1, \ldots, z_n$ als Nullstellen besitzt: Etwa dadurch, indem wir
+annihilierende Polynome für diese Zahlen aufmultiplizieren und dann den größten
+gemeinsamen Teiler abdividieren. Seien~$u_1,\ldots,u_m$ die Nullstellen
+von~$h(X)$.
+
+Die Zahlen~$x$ und~$x'$ sowie~$z_1,\ldots,z_n$ liegen dann alle
+in~$\QQ(u_1,\ldots,u_m)$. Da~$x$ zu~$x'$ galoissch konjugiert ist, gibt es nach
+Aufgabe~1c) von Blatt~11 eine Permutation~$\sigma \in \Gal_\QQ(u_1,\ldots,u_m)$
+mit~$\sigma \cdot x = x'$. Nun lassen wir diese Permutation auf die~$z_i$
+wirken -- dann sehen wir
+\[ (\sigma \cdot z_i)^{p_i} = \sigma \cdot z_i^{p_i} =
+  \sigma \cdot f_i(z_1,\ldots,z_{i-1}) =
+  f_i(\sigma \cdot z_1,\ldots,\sigma \cdot z_{i-1}) \]
+und
+\[ \sigma \cdot z_i \not\in \QQ(\sigma \cdot z_1,\ldots,\sigma \cdot z_{i-1}).
+\]
+Ferner gilt
+\[ x' = \sigma \cdot x = \sigma \cdot g(z_1,\ldots,z_n) =
+  g(\sigma \cdot z_1,\ldots,\sigma \cdot z_n). \]
+Also bezeugen dieselben Polynome~$f_1,\ldots,f_n$ und~$g$, dass~$x'$ durch
+Wurzeln ausdrückbar ist.
 
 \item Dazu schauen wir uns den Beweis von Hilfssatz~5.26 genauer an: In ihm
 werden an insgesamt drei Stellen Wurzeln gezogen, und wir müssen zeigen, dass
@@ -203,6 +241,46 @@ enthält.
 \item Zeige, dass der Index von~$\DDD_4$ in~$\SSS_4$ gleich~$3$ ist.
 \item Zeige, dass~$\DDD_4$ kein Normalteiler in~$\SSS_4$ ist.
 \end{enumerate}
+
+\begin{loesungE}
+\item Genau die folgenden Bewegungen der Ebene bilden das
+regelmäßige~$n$-Eck auf sich selbst ab (wieso?):
+\begin{itemize}
+\item die Drehungen~$R_i$, $i = 0,\ldots,{n-1}$ um $\frac{i}{n} \cdot
+360^\circ$ im Gegenuhrzeigersinn um den Mittelpunkt sowie
+\item die Spiegelungen~$S_1,\ldots,S_n$ an~$n$ Achsen: Für gerades~$n$ gehen
+diese jeweils entweder durch zwei gegenüberliegende Ecken oder durch die Mittelpunkte
+zweier gegenüberliegender Kanten. Für ungerades~$n$ gehen diese jeweils durch
+eine Ecke und den Mittelpunkt der gegenüberliegenden Seite.
+\end{itemize}
+Es gilt also~$\DDD_n = \{ R_0,\ldots,R_{n-1}, S_1,\ldots,S_n \}$.
+
+Erzeugt werden kann die Diedergruppe durch~$(R_1,S_1)$, d.\,h. es
+gilt~$\DDD_n = \langle R_1, S_1 \rangle$: Denn die Drehungen~$R_i$ lassen sich
+als Potenz der Basisdrehung~$R_1$ darstellen ($R_i = R_0^i$) und die
+Spiegelungen erhält man als Verkettung der Basisspiegelung~$S_1$ mit einer
+geeigneten Drehung.
+
+\emph{Bemerkung:} Für~$n \geq 3$ kann kein Element der Diedergruppe alleine die
+volle Diedergruppe erzeugen, d.\,h. für~$n \geq 3$ ist die Diedergruppe nicht
+zyklisch.
+
+\item Es gilt~$\gra{\SSS_4}{\DDD_4} = (4!) \mathrel{/} (2\cdot4) = 3$.
+
+\item Die Konjugation von~$R_1 \in \DDD_4$ durch~$(1,2) \in \SSS_4$ ist das
+Element
+\[ (1,2) \circ R_1 \circ (1,2)^{-1} =
+  \begin{pmatrix}
+    1 & 2 & 3 & 4 \\
+    3 & 1 & 4 & 2
+  \end{pmatrix} =
+  (1,3,4,2), \]
+welches nicht in der Diedergruppe liegt.
+
+\emph{Bemerkung:} Diese Permutation ist durchaus eine Symmetrie -- aber einer
+anderen Figur, nämlich der, die durch Vertauschung zweier Ecken eines Quadrats
+entsteht: "`$\triangledown\atop\vartriangle$"'
+\end{loesungE}
 \end{aufgabe}
 
 \begin{aufgabe}{Auflösbarkeit von Gleichungen}
@@ -267,22 +345,27 @@ Konjugierten von~$x$. Zeige, dass~$x$ genau dann konstruierbar ist, wenn der
 Grad von~$t$ eine Zweierpotenz ist.
 
 \begin{loesung}
-Seien~$t_1,\ldots,t_n$ alle galoissch Konjugierten von~$t$. Nach
+Seien~$x_1,\ldots,x_n$ alle galoissch Konjugierten von~$x$ und
+seien~$t_1,\ldots,t_m$ alle galoissch Konjugierten von~$t$. Nach
 Proposition~4.4 sind diese ebenfalls primitive Elemente für~$x_1,\ldots,x_n$,
 d.\,h. es gilt jeweils~$\QQ(t_i) = \QQ(t)$. Folglich gilt
-insbesondere~$t_1,\ldots,t_n \in \QQ(t)$; also sind alle galoissch Konjugierten
+insbesondere~$t_1,\ldots,t_m \in \QQ(t)$; also sind alle galoissch Konjugierten
 von~$t$ in~$t$ rational und es greift Proposition~4.34: Die Zahl~$t$ ist genau
 dann konstruierbar, wenn der Grad von~$t$ eine Zweierpotenz ist.
+
+Ferner halten wir fest, dass jedes galoissch Konjugierte einer konstruierbaren
+Zahl selbst konstruierbar ist. Das folgt aus Aufgabe~2a), denn konstruierbare
+Zahlen sind ja nichts anderes als Zahlen, die durch Wurzeln ausdrückbar sind,
+wobei alle vorkommenden Wurzelexponenten gleich~$2$ sein müssen.
+
 Mit diesem Vorwissen zeigen wir nun die beiden Richtungen:
 
-"`$\Longleftarrow$"': Klar: Da~$t$ konstruierbar ist, ist auch~$x$
+"`$\Longleftarrow$"': Da~$t$ konstruierbar ist, ist auch~$x$
 konstruierbar, da~$x$ ja eine in~$t$ rationale Zahl ist.
 
 "`$\Longrightarrow$"': Da~$x$ konstruierbar ist, ist auch jedes galoissch
-Konjugiertes von~$x$ konstruierbar (wieso?! Mir fehlt ein Beweis dafür, aber
-die Aussage stimmt). Da~$t$
-ein primitives Element dieser galoissch Konjugierten ist, ist~$t$ daher
-ebenfalls konstruierbar.
+Konjugierte von~$x$ konstruierbar. Da~$t$ in diesen galoissch Konjugierten
+rational ist, ist~$t$ daher ebenfalls konstruierbar.
 %Wir erinnern an die Charakterisierung von
 %Konstruierbarkeit (Satz~1.13): Eine Zahl~$z$ ist genau dann konstruierbar, wenn
 %es eine Folge komplexer Zahlen~$z_1,\ldots,z_{n-1},z_n=z$ gibt, sodass für

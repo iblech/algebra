@@ -7,3 +7,5 @@ Seite 169, Formulierung des Hauptsatzes: Muss auf endliche Untergruppen
 beschränken.
 
 "delta"
+
+Seite 182, "f_i" statt "f" im Absatz nach der Definition
