@@ -1,0 +1,22 @@
+Hilfssatz 5.44:
+* Finde ein Element sigma, dass nicht in H liegt.
+  Dieses erfüllt dann automatisch sigma^p \in H.
+* Wähle L als zur H gehörigen Zwischenerweiterung.
+* Finde ein primitives Element: L = K(z).
+  Dieses hat dann automatisch Grad p.
+* Setze y_i wie im Beweis. Diese liegen automatisch in L.
+* Mindestens eines der y_i ist nicht null. Nenne dieses y.
+* Setze a := y^p. Das ist automatisch ein Element von K.
+  Außerdem gilt automatisch L = K(z) = K(y).
+
+Satz 5.53:
+* Finde Turm von Radikalerweiterungen gemäß 5.25:
+  K = K_0 <= K_1 <= ... <= K_m
+  K_m soll alle primitiven p-ten Einheitswurzeln enthalten, für alle
+  Primteiler p von |Gal|.
+* Setze G_m := Gal_(K_m).
+* Falls G_m = 1, sind wir fertig!
+* Sonst enthält G_m einen Normalteiler G_(m+1) von einem Primzahlindex p.
+  Nach 5.54 gibt es dann eine Radikalerweiterung K_(m+1) >= K_m mit
+  Gal_(K_(m+1)) = G_(m+1).
+* Und so weiter!

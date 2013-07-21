@@ -8,4 +8,20 @@ beschränken.
 
 "delta"
 
+Seite 178: Satzpunkt in Folgerung 5.18.
+
 Seite 182, "f_i" statt "f" im Absatz nach der Definition
+
+Seite 188, unten: Es sind nicht "vertikale" Linien!
+Seite 189, oben: "IM ersten Falle" (nicht "in")
+Seite 190: s/wenn es ein rat. Ausdruck/wenn sie.../
+Seite 191: Dies ist auch der Grund, wieso aufl. Gr. aufl. genannt werden. Das
+zweite "aufl." muss wohl kursiv.
+Seite 192: zwei Beweisendezeichen
+
+Seite 202: "Wegen sigma^p * z = z": s/z/1/
+
+Seite 207, ganz oben: (p-1)
+Seite 208: "entweder" streichen? (Bei y_1 oder y_2 null.)
+
+Seite 213, Aufg. 5.8.5: "quartisch" fehlt. Außerdem einmal f und einmal g.
