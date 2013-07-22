@@ -1,0 +1,54 @@
+
+div#ma_switch_username_top
+{
+    right:0px; top:0px; position:absolute;  z-index:7;
+
+}
+#ma_switchform_div
+{
+    float:right; color:white; font-size:70%; margin-right:11.2em;  padding:0.5em;
+    padding-top:0.15em;
+    font-size:0.75em;
+text-align:center;
+}
+
+#ma_switchform_div a:link, #ma_switchform_div a:visited
+{
+    color:white;;
+    text-decoration: underline;
+}
+#ma_switchform_div div
+{
+     
+    background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAABHCAYAAAB79XuNAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAB6SURBVHja7NBBAQAwCASguf5pLXCW0B9EoJL0Y8VXIFOmTGTKlIlMmTJlIlOmTGTKlCkTmTJlIlOmTJnIlCkTmTJlIlOmTJnIlCkTmTJlykSmTJnIlClTJjJlykSmTJkykSlTJjJlykSmTJkykSlTJjLPDAAAAP//AwBQlgR9KmMJSAAAAABJRU5ErkJggg==");
+
+
+     -moz-border-radius: 15px;
+    border-radius: 15px;
+    -moz-box-shadow: 5px 5px 10px #0C1D2F;
+    -webkit-box-shadow: 5px 5px 10px #0C1D2F;
+    box-shadow: 5px 5px 10px #0C1D2F;
+
+    padding:0.5em;
+    width:15em;
+    text-align: left;
+    color:black;
+    font-size:110%;
+
+
+}
+#ma_switchform_div div, #ma_switchform_div div a:link, #ma_switchform_div div a:visited
+{
+    color:#173978;
+}
+#ma_switchform_div div ul
+{
+    margin:0 !important;
+    padding:1em !important;
+}
+
+div.ui-dialog-content, div.ui-widget-content
+{
+    background: white !important;
+}
+ 

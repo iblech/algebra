@@ -1,0 +1,34 @@
+div.studip_sub_navigation{
+    background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAABHCAYAAAB79XuNAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAB8SURBVHja7NAxAQAgCAAwsaaXN53JQgn4tgiL97MOI64CmTJlIlOmTGTKlCkTmTJlIlOmTJnIlCkTmTJlykSmTJnIlCkTmTJlykSmTJnIlClTJjJlykSmTJkykSlTJjJlypSJTJkykSlTJjJlypSJTJkykbmmAQAA//8DAIP1ApPZU/6KAAAAAElFTkSuQmCC");
+    font-size:80%;
+    position:absolute;
+    display:none;
+    text-align: left;
+    padding-right:6px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 5px 5px 10px #F9FAFB;
+    -webkit-box-shadow: 5px 5px 10px#F9FAFB;
+    box-shadow: 5px 5px 10px #F9FAFB;
+}
+#barTopMenu div.studip_sub_navigation a, div.studip_sub_navigation a:link, div.studip_sub_navigation a:visited,div.studip_sub_navigation a:hover
+{
+    color:white;
+    margin:0;
+    padding:0;
+    width:100%;
+    text-align: left;
+    font-weight: normal;
+    display: block;
+    padding-left: 6px;
+    padding-right: 0px;
+    padding-bottom:2px;
+
+}
+div.studip_sub_navigation a:hover
+{   color: black !important;
+    margin:0;
+    background: white;
+    /*border-bottom:1px solid #5B616D;
+     padding-bottom:1px !important;*/
+}

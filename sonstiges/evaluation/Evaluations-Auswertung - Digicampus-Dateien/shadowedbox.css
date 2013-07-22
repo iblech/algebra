@@ -1,0 +1,20 @@
+
+/* Schatten so abgeaendert, dass er nicht oberhalb der Box sichtbar wird, da es unschöne Grafikfehler gibt, wenn mehrere Schattenboxen auseinanderfolgen */ 
+.shadowed_box
+{
+    -moz-box-shadow: 5px 8px 7px #989BA1;
+    -webkit-box-shadow: 5px 8px 7px #989BA1;
+    box-shadow: 5px 8px 7px #989BA1;
+    
+   
+}
+
+/* ineinander verschachtelte Schattenboxen nicht mit Schatten versehen, sonst visueller Overkill */
+.shadowed_box .shadowed_box
+{
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+ 
