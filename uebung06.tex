@@ -136,6 +136,7 @@ Fall.
 \end{loesung}
 \end{aufgabe}
 
+
 \begin{aufgabe}{Die Resultante zweier Polynome}
 \begin{enumerate}
 \item Seien~$f(X)$ und~$g(Y)$ zwei normierte Polynome mit Nullstellen (mit
@@ -150,13 +151,23 @@ besitzen.
 \end{enumerate}
 
 \begin{loesungE}
-\item Zunächst betrachten wir noch nicht speziell die gegebenen
+\item Die Grundidee ist einfach: Der gegebene Ausdruck~$R$ ist symmetrisch in
+den~$x_i$ und separat symmetrisch in den~$y_j$. Mit zweimaliger Anwendung des
+Hauptsatzes über die symmetrischen Funktionen folgt daher, dass~$R$ ein
+polynomieller Ausdruck in den elementarsymmetrischen Funktionen der~$x_i$ und
+in denen der~$y_j$ ist. Diese sind nach dem Satz von Vieta bis auf Vorzeichen
+durch die Koeffizienten von~$f$ bzw.~$g$ gegeben.
+
+Wenn man etwas präziser verstehen möchte, auf welche Polynome man den Hauptsatz
+anwendet, muss man etwas ausholen.
+
+Zunächst betrachten wir noch nicht speziell die gegebenen
 Polynome~$f$ und~$g$. Stattdessen definieren wir allgemein ein Polynom
 \[ P := \prod_{i,j} (X_i - Y_j), \]
 man beachte die Großbuchstaben auf der rechten Seite. Dieses Polynom ist
 offenkundig in den~$X_i$ und separat in den~$Y_j$ symmetrisch. Unser Ziel ist
 es nun, dieses Polynom als Polynom in den elementarsymmetrischen
-Funktionen~$e_i(X_1,\ldots,X_n)$ und~$e_j(Y_1,\ldots,Y_m)$ zu schreiben. Das
+Funktionen~$e_i(X_1,\ldots,X_n)$ und~$\widetilde e_j(Y_1,\ldots,Y_m)$ zu schreiben. Das
 erreichen wir in zwei Schritten. Zur besseren Lesbarkeit verwenden wir die
 Abkürzung~"`$\vec X$"' für~$X_1,\ldots,X_n$ und analog für~$Y_1,\ldots,Y_m$.
 
@@ -164,7 +175,8 @@ Abkürzung~"`$\vec X$"' für~$X_1,\ldots,X_n$ und analog für~$Y_1,\ldots,Y_m$.
 \emph{Schritt 1:} Wir fassen~$P$ als Polynom
 in~$(\ZZ[\vec Y]_\symm)[\vec X]$ auf. Dabei meinen wir mit~"`$\ZZ[\vec
 Y]_\symm$"' den Rechenbereich der in~$Y_1,\ldots,Y_m$ \emph{symmetrischen}
-Polynome. So aufgefasst, ist es symmetrisch (in den~$X_i$), womit Satz~2.12 der
+Polynome. So aufgefasst, ist es symmetrisch (in seinen nunmehr einzigen
+Variablen, den~$X_i$), womit Satz~2.12 der
 Vorlesung uns garantiert, dass es genau ein Polynom~$H \in (\ZZ[\vec
 Y]_\symm)[E_1,\ldots,E_n]$ mit
 \[ P = H(e_1(\vec X), \ldots, e_n(\vec X)) \]
@@ -175,7 +187,8 @@ Polynome.
 
 \emph{Schritt 2:} Das Polynom~$H$ können wir auch als Polynom
 aus~$(\ZZ[E_1,\ldots,E_n])[\vec Y]$ auffassen; so aufgefasst, ist es in
-den~$Y_j$ symmetrisch. Damit können wir abermals Satz~2.12 der Vorlesung
+seinen nunmehr einzigen Variablen, den~$Y_j$, symmetrisch. Damit können wir
+abermals Satz~2.12 der Vorlesung
 anwenden: Es gibt genau ein Polynom~$L \in
 (\ZZ[E_1,\ldots,E_n])[\widetilde E_1,\ldots,\widetilde E_m]$ mit
 \[ H = L(\widetilde e_1(\vec Y), \ldots, \widetilde e_m(\vec Y)). \]
@@ -199,7 +212,7 @@ gelten die Beziehungen
   e_i(\vec X) &= (-1)^i a_{n-i} \\
   \widetilde e_j(\vec Y) &= (-1)^j b_{m-j}.
 \end{align*}
-Setzen wir also in Gleichung~\eqref{zwischenfazit} für~$X_1,\ldots,X_n$ die
+Setzen wir also in Gleichung~\eqref{zwischenfazit} für die Platzhalter~$X_1,\ldots,X_n$ die
 tatsächlichen Nullstellen~$x_1,\ldots,x_n$ und für~$Y_1,\ldots,Y_m$ die
 Nullstellen~$y_1,\ldots,y_m$ ein, erhalten wir
 \[ R = P(x_1,\ldots,x_n,y_1,\ldots,y_m) =
@@ -207,8 +220,12 @@ Nullstellen~$y_1,\ldots,y_m$ ein, erhalten wir
 Also ist~$R$ in der Tat ein in den Koeffizienten von~$f$ und~$g$ polynomieller
 Ausdruck.
 
+\emph{Bemerkung:} Der Ausdruck ist sogar \emph{universell} -- das Polynom~$L$,
+das die Form des Ausdrucks vorgibt, hängt nur von den Graden~$n$ und~$m$, aber
+nicht von den konkreten Koeffizienten~$a_i$, $b_j$ ab.
+
 \item In Erinnerung an Teilaufgabe~a) definieren wir
-\[ R := (x_1 - y_1) (x_1 - y_2) (x_2 - y_1) (x_2 - y_2), \]
+\[ R := (x_1 - y_1) \cdot (x_1 - y_2) \cdot (x_2 - y_1) \cdot (x_2 - y_2), \]
 wobei~$x_1,x_2$ und~$y_1,y_2$ die Lösungen der ersten bzw. zweiten Gleichung
 seien. Dieser Ausdruck ist genau dann null, wenn die beiden Gleichungen
 gemeinsame Lösungen besitzen. Jetzt müssen wir ihn noch als Polynom in den
