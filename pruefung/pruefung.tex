@@ -1,0 +1,41 @@
+\documentclass{../algblatt}
+\geometry{tmargin=2cm,bmargin=2cm,lmargin=3.0cm,rmargin=3.0cm}
+
+\setlength{\titleskip}{0.7em}
+%\setlength{\aufgabenskip}{1.5em}
+
+\newcounter{blattnummer}
+
+\renewenvironment{aufgabe}[1]{
+  \addtocounter{aufgabennummer}{1}
+  \textbf{Blatt \theblattnummer, Aufgabe \theaufgabennummer.} \emph{#1} \par
+}{\vspace{\aufgabenskip}}
+
+\thispagestyle{empty}
+
+\begin{document}
+
+\vspace*{-1.2cm}
+
+Universität Augsburg \hfill Sommersemester 2013 \\
+Lehrstuhl für Algebra und Zahlentheorie \hfill Ingo Blechschmidt \\
+Prof. Marc Nieper-Wißkirchen \hfill Robert Gelb \\[0em]
+
+\begin{center}
+  {\Large \textbf{Thema __THEMA__}} \\[2.6em]
+
+  \begin{minipage}{0.93\textwidth}
+    \setlength\parskip{\medskipamount}
+    Es ist nicht schlimm, wenn man nicht alle Aufgaben bis ins letzte Detail
+    ausarbeiten kann. Überlegen Sie sich gegebenenfalls, was die
+    vorkommenden Begriffe bedeuten und welche Zutaten für die Aufgabe nützlich
+    sein könnten.
+  \end{minipage}
+\end{center}
+\vspace{1em}
+
+__AUFGABEN__
+
+\begin{center}Viel Erfolg!\end{center}
+
+\end{document}
