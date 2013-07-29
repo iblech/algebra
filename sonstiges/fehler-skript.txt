@@ -12,12 +12,15 @@ Seite 178: Satzpunkt in Folgerung 5.18.
 
 Seite 182, "f_i" statt "f" im Absatz nach der Definition
 
+Seite 188: s/besitzt/ist/ vor (5.9).
 Seite 188, unten: Es sind nicht "vertikale" Linien!
 Seite 189, oben: "IM ersten Falle" (nicht "in")
 Seite 190: s/wenn es ein rat. Ausdruck/wenn sie.../
 Seite 191: Dies ist auch der Grund, wieso aufl. Gr. aufl. genannt werden. Das
 zweite "aufl." muss wohl kursiv.
 Seite 192: zwei Beweisendezeichen
+Seite 192: s/Satz 5.25/Hilfssatz 5.26/
+Zusatz von Hilfssatz 5.26 falsch formuliert?
 
 Seite 202: "Wegen sigma^p * z = z": s/z/1/
 
