@@ -30,7 +30,7 @@ sub extract_exercise {
 my $thema = shift @ARGV;
 my @exs = map { [split /,/, $_] } @ARGV;
 
-my $template = read_file "pruefung.tex";
+my $template = read_file "vorlage.tex";
 
 $template =~ s/__THEMA__/$thema/g;
 $template =~ s/__AUFGABEN__/
