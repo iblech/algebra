@@ -5,9 +5,9 @@
 \usepackage{tikz}
 \usepackage{geometry}
 \usepackage{extarrows}
-\geometry{tmargin=2cm,bmargin=2cm,lmargin=2.3cm,rmargin=2.3cm}
+\geometry{tmargin=2cm,bmargin=2.0cm,lmargin=2.6cm,rmargin=2.6cm}
 
-\pagestyle{empty}
+\pagestyle{plain}
 
 \newcommand{\fmini}[2]{\framebox{\begin{minipage}{#1}#2\end{minipage}}}
 \makeatletter
@@ -46,105 +46,95 @@ Nullstellen über~$K$.
 %   = \{ \sigma \in G \,|\, \text{$\sigma \cdot x = x$ für alle~$x \in L$} \}
   \end{array}
 \]
-ist eine inklusionsumkehrende Bijektion.
-Genauer gilt für alle Zwischenerweiterungen~$L,L'$ von~$E|K$
-und Untergruppen~$H,H'$ von~$G$:
-\begin{enumerate}
-\item $E^{\mathrm{Gal}_L(x_1,\ldots,x_n)} = L$,
-\tabto{9cm}$\mathrm{Gal}_{E^H}(x_1,\ldots,x_n) = H$.
+ist eine inklusionsumkehrende Bijektion. Der Rechenbereich~$E^H$ wird auch als
+\emph{Fixkörper} bezüglich der Untergruppe~$H$ bezeichnet.
+Genauer gelten für alle Zwischenerweiterungen~$L,L'$ von~$E|K$
+und Untergruppen~$H,H'$ von~$G$ folgende Aussagen.
 
-\item $L \subseteq L' \Leftrightarrow \mathrm{Gal}_L(x_1,\ldots,x_n)
-\supseteq \Gal_{L'}(x_1,\ldots,x_n)$,
-\tabto{9cm}$H \subseteq H' \Leftrightarrow E^H \supseteq E^{H'}$.
 
-\item $|H| = \gra{H}{1} = \gra{E}{E^H}$,
-\tabto{9cm}$\gra{E^H}{K} = \gra{G}{H} = |G| \mathop{/} |H|.$
+\subsubsection*{Hin und zurück}
+\vspace{-1.5em}
+\begin{align*}
+  E^{\mathrm{Gal}_L(x_1,\ldots,x_n)} &= L. \\
+  \mathrm{Gal}_{E^H}(x_1,\ldots,x_n) &= H.
+\end{align*}
 
-\item In Algebra II werden wir eine einfache Charakterisierung dafür
+Der Fixkörper zur Galoisgruppe einer Zwischenerweiterung~$L$
+ist wieder~$L$. Die Galoisgruppe über dem Fixkörper einer Untergruppe~$H$ ist
+wieder~$H$.
+Die erste Aussage umfasst die bekannte Tatsache, dass eine
+Zahl aus~$E$, welche invariant unter der Wirkung der
+Galoisgruppe~$\Gal_L(x_1,\ldots,x_n)$ ist, schon in~$L$ liegen muss. Wieso?
+
+
+\subsubsection*{Größer und kleiner}
+\vspace{-1.5em}
+\begin{align*}
+  L \subseteq L' &\ \Longleftrightarrow\ 
+    \mathrm{Gal}_L(x_1,\ldots,x_n) \supseteq \Gal_{L'}(x_1,\ldots,x_n). \\
+  H \subseteq H' &\ \Longleftrightarrow\ 
+    E^H \supseteq E^{H'}.
+\end{align*}
+
+Je größer der Koeffizientenbereich, desto kleiner ist die zugehörige
+Galoisgruppe; und umgekehrt: Je größer die Untergruppe, desto kleiner ist der
+zugehörige Fixkörper. Wieso sind beide Aussagen anschaulich?
+
+
+\subsubsection*{Grade und Indizes}
+\vspace{-1.5em}
+\begin{align*}
+  (|H| =)\ \gra{H}{1} &= \gra{E}{E^H}. \\
+  \gra{E^H}{K} &= \gra{G}{H}\ (= |G| \mathop{/} |H|).
+\end{align*}
+
+Die \emph{Ordnung} einer Untergruppe~$H$ ist durch den
+Grad~$\gra{E}{E^H}$ gegeben. Der \emph{Index} einer Untergruppe~$H$ ist durch
+den Grad~$\gra{E^H}{K}$ gegeben. Wieso passt das mit dem inklusionsumkehrenden
+Charakter zusammen?
+
+
+\subsubsection*{Normalität}
+
+In Algebra II werden wir eine einfache Charakterisierung dafür
 kennenlernen, wann~$H$ ein Normalteiler in~$G$ ist.
-\end{enumerate}
 
-\emph{Wie kann man die relativen Galoisgruppen ausrechnen?}
+
+\newpage
+\subsubsection*{Wie kann man die relativen Galoisgruppen ausrechnen?}
+
 Wenn~$L = K(z_1,\ldots,z_m)$, gilt
 \[ \Gal_L(x_1,\ldots,x_n) = \{ \sigma \in G \,|\,
   \text{$\sigma \cdot z_i = z_i$ für~$i = 1,\ldots,m$} \}. \]
 
-\emph{Wie kann man Erzeuger der Fixkörper bestimmen?}
+
+\subsubsection*{Wie kann man Erzeuger der Fixkörper bestimmen?}
 Falls~$H = \{ \sigma_1,\ldots,\sigma_m \}$ und~$E = K(t)$, gilt
 \[ E^H = K(
   e_1(\sigma_1 \cdot t, \ldots, \sigma_m \cdot t),
   \ldots,
   e_m(\sigma_1 \cdot t, \ldots, \sigma_m \cdot t)), \]
-wobei die~$e_i$ die elementarsymmetrischen Funktionen in~$m$ Unbekannten seien.
+wobei die~$e_i$ die elementarsymmetrischen Funktionen in~$m$ Unbekannten sind.
 
-\subsection*{Beispiel}
 
-Sei~$L := \QQ(\sqrt{2}, \i)$ der Zerfällungskörper von~$(X^2 - 2) (X^2 + 1)$
-über~$K := \QQ$.
-\begin{enumerate}
-\item Die Galoisgruppe~$G$ besteht aus folgenden vier
-Elementen~$\sigma_1,\ldots,\sigma_4$:
-\begin{align*}
-  \sigma_1{:} & \sqrt{2} \mapsto \phantom{+}\sqrt{2}, \qquad \i \mapsto \phantom{+}\i \\
-  \sigma_2{:} & \sqrt{2} \mapsto \phantom{+}\sqrt{2}, \qquad \i \mapsto         {-}\i \\
-  \sigma_3{:} & \sqrt{2} \mapsto         {-}\sqrt{2}, \qquad \i \mapsto \phantom{+}\i \\
-  \sigma_4{:} & \sqrt{2} \mapsto         {-}\sqrt{2}, \qquad \i \mapsto         {-}\i \\
-\end{align*}
-\item Die Verknüpfungstafel ist:
-\[ \begin{array}{@{}c|cccc@{}}
-  \circ & \sigma_1 & \sigma_2 & \sigma_3 & \sigma_4 \\\hline
-  \sigma_1 & \sigma_1 & \sigma_2 & \sigma_3 & \sigma_4 \\
-  \sigma_2 & \sigma_2 & \sigma_1 & \sigma_4 & \sigma_3 \\
-  \sigma_3 & \sigma_3 & \sigma_4 & \sigma_1 & \sigma_2 \\
-  \sigma_4 & \sigma_4 & \sigma_3 & \sigma_2 & \sigma_1
-\end{array} \]
-Dazu sind die Nebenrechnungen $\sigma_2 \circ \sigma_2 = \sigma_1$ und
-$\sigma_3 \circ \sigma_3 = \sigma_1$ erforderlich, den Rest kann man nach der
-Regel "`in jeder Zeile und Spalte muss jedes Gruppenelement genau einmal
-vorkommen"' erschließen.
-\item Tafel der Untergruppen von~$G$ und der Zwischenerweiterungen von~$\QQ(\sqrt{2},\i)$ über~$\QQ$:
-\begin{center}\begin{tikzpicture}[node distance=2cm]
- \node (Q)                  {$\mathbb{Q}$};
- \node (Q6)  [above of=Q]   {$\mathbb{Q}(\sqrt{2}\,\i)$};
- \node (Q2)  [right of=Q6]  {$\mathbb{Q}(\i)$};
- \node (Q3)  [left of=Q6]   {$\mathbb{Q}(\sqrt{2})$};
- \node (Q23) [above of=Q6]  {$\mathbb{Q}(\sqrt{2}, \i)$};
- \node (1f)  [right of=Q2]  {$\{\sigma_1, \sigma_2 \}$};
- \node (1fg) [right of=1f]  {$\{\sigma_1, \sigma_4 \}$};
- \node (1g)  [right of=1fg] {$\{\sigma_1, \sigma_3 \}$};
- \node (G)   [below of=1fg] {$\{\sigma_1, \ldots, \sigma_4 \}$};
- \node (1)   [above of=1fg] {$\{\sigma_1\}$};
- \draw (Q)   -- (Q2);
- \draw (Q)   -- (Q3);
- \draw (Q)   -- (Q6);
- \draw (Q2)  -- (Q23);
- \draw (Q3)  -- (Q23);
- \draw (Q6)  -- (Q23);
- \draw (G)   -- (1f);
- \draw (G)   -- (1fg);
- \draw (G)   -- (1g);
- \draw (1f)  -- (1);
- \draw (1fg) -- (1);
- \draw (1g)  -- (1);
-\end{tikzpicture}\end{center}
-Im linken Diagramm steht oben die größte und unten die kleinste
-Zwischenerweiterung, im rechten Diagramm umgekehrt oben die kleinste und unten die
-größte Un\-ter\-grup\-pe der Galoisgruppe. Das ist so gemacht, dass zu einer
-Zwischenerweiterung an der entsprechenden Stelle rechts die zugehörige relative
-Galoisgruppe und zu einer Untergruppe entsprechend links der zugehörige
-Fixkörper steht.
+\subsubsection*{Wozu ist der Hauptsatz gut?}
 
-\item Exemplarisch der Nachweis, dass~$L^{\{\sigma_1,\sigma_4\}} =
-\QQ(\sqrt{2}\,\i)$:
-
-Die Richtung "`$\supseteq$"' ist klar, da die Zahl~$\sqrt{2}\,\i$
-von~$\sigma_4$ (und von~$\sigma_1$ sowieso) festgehalten wird:
-\[ \sigma_4(\sqrt{2} \, \i) = \sigma_4(\sqrt{2}) \, \sigma_4(\i) = (-\sqrt{2}) (-\i) = \sqrt{2}\,\i \]
-Die andere Richtung folgt aus Gradgründen:
-\begin{align*}
-  [L^{\{\sigma_1,\sigma_4\}} : \QQ] &= |G|\,/\,|\{\sigma_1,\sigma_4\}| = 4/2 = 2 \\
-  [\QQ(\sqrt{2}\,\i):\QQ] &= 2
-\end{align*}
-\end{enumerate}
+\begin{itemize}
+\item Der Hauptsatz klärt die Struktur der Zwischenerweiterungen, durch
+Rückführung auf die zugänglichere Struktur der Untergruppen.
+\item Informationen über Grade liefern Informationen über Indizes und
+umgekehrt; manchmal ist das eine leichter zu berechnen als das andere.
+\item Der Hauptsatz geht wesentlich im Beweis der fundamentalen Äquivalenz
+\[ \framebox{Gleichung $f(X) = 0$ auflösbar}
+  \Longleftrightarrow
+  \framebox{Galoisgruppe~$\Gal_K(x_1,\ldots,x_n)$ auflösbar}
+\]
+ein: Unter geeigneten Voraussetzungen an den Koeffizientenbereich~$K$ bilden
+die Galoisgruppen zu den einzelnen Stufen eines Turms aus Radikalerweiterungen
+(nach Streichen mehrfach vorkommender Untergruppen) eine Normalreihe der
+vollen Galoisgruppe über~$K$.
+\item Der Hauptsatz ist ein erstes Beispiel für tiefe Dualitätsresultate,
+von denen es noch viele weitere gibt.
+\end{itemize}
 
 \end{document}
