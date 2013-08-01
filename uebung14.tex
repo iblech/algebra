@@ -174,8 +174,9 @@ Eine Vorbemerkung: Es gilt~$\max\{ 2, \frac{n-1}{2} \} = 2$ genau dann, wenn~$2
 Der Fall~$n = 1$ ist klar.
 
 \emph{Erster Fall im Beweis:} Die Zahl~$n$ ist eine zusammengesetzte Zahl. Dann
-können wir~$n = p q$ schreiben, wobei~$p$ der kleinste Primfaktor von~$n$ sein
-soll und~$q$ die restlichen Faktoren aufsammelt. Im Beweis wird dann eine~$p$-te
+können wir~$n = p q$ schreiben, wobei~$p$ der \emph{kleinste} Primfaktor von~$n$ sein
+soll und~$q$ die restlichen Faktoren aufsammelt. (Im Original durfte~$p$
+auch ein größerer Primfaktor von~$n$ sein.) Im Beweis wird dann eine~$p$-te
 Wurzel gezogen, also müssen wir zeigen:~$p \leq \max\{ 2, \frac{n-1}{2} \}$.
 Falls~$n \leq 5$ -- also~$n = 4$ --, gilt~$p = 2$ und die Behauptung stimmt.
 Falls~$n > 5$, gilt
@@ -196,6 +197,7 @@ von einer~$a$-ten Wurzel (passt ebenso, da~$a = \frac{n-1}{2} \leq \max\{
 \end{loesungE}
 \end{aufgabe}
 
+\ifloesungen\newpage\fi
 \begin{aufgabe}{Normalteiler}
 \begin{enumerate}
 \item Sei~$G$ eine Gruppe mit~$G \neq \{ \id \}$. Finde
