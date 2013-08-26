@@ -18,6 +18,7 @@
 \setlength\parindent{0pt}
 
 \newif\ifloesungen\loesungenfalse
+\newif\ifpruefung\pruefungfalse
 
 \newlength{\titleskip}
 \setlength{\titleskip}{1.5em}
