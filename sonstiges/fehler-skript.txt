@@ -1,5 +1,8 @@
 Seite xx, vor Formel (5): Das "c + " in der Definition von q muss weg.
 
+Seite 18: Im ersten Schritt >= statt > (nach 1.19).
+Von Jonas Ernst.
+
 Seite 51, ganz unten: Auf der rechten Seite der Gleichungen fehlen die Striche
 an den Exponenten.
 
@@ -7,6 +10,9 @@ Seite 169, Formulierung des Hauptsatzes: Muss auf endliche Untergruppen
 beschränken.
 
 "delta"
+
+Seite 161/2: Index t_k --> t_m wechselt.
+Von Jonas Ernst.
 
 Seite 178: Satzpunkt in Folgerung 5.18.
 
