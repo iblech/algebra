@@ -83,6 +83,7 @@
 \newcommand{\DDD}{\mathrm{D}}
 \newcommand{\ZZZ}{\mathrm{Z}}
 \newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Aut}{\mathrm{Aut}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\GL}[1]{\operatorname{GL}(#1)}
 \newcommand{\Gal}{\mathrm{Gal}}
