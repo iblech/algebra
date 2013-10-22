@@ -40,11 +40,11 @@
 \newlength{\aufgabenskip}
 \setlength{\aufgabenskip}{1.5em}
 \newcounter{aufgabennummer}
-\newenvironment{aufgabe}[1]{
+\newenvironment{aufgabe}[2]{
   \addtocounter{aufgabennummer}{1}
-  \textbf{Aufgabe \theaufgabennummer.} \emph{#1} \par
+  \textbf{Aufgabe \theaufgabennummer{}.} (#1) \emph{#2} \par
 }{\vspace{\aufgabenskip}}
-\newenvironment{aufgabeE}[1]{\begin{aufgabe}{#1}\begin{enumerate}}{\end{enumerate}\end{aufgabe}}
+\newenvironment{aufgabeE}[2]{\begin{aufgabe}{#1}{#2}\begin{enumerate}}{\end{enumerate}\end{aufgabe}}
 
 \definecolor{shadecolor}{rgb}{.93,.93,.93}
 
@@ -85,7 +85,7 @@
 \newcommand{\Hom}{\mathrm{Hom}}
 \newcommand{\Aut}{\mathrm{Aut}}
 \newcommand{\id}{\mathrm{id}}
-\newcommand{\GL}[1]{\operatorname{GL}(#1)}
+\newcommand{\GL}{\mathrm{GL}}
 \newcommand{\Gal}{\mathrm{Gal}}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\ord}{ord}
