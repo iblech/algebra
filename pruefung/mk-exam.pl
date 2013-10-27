@@ -8,7 +8,7 @@ use File::Slurp;
 sub extract_exercise {
   my ($sheet, $no) = @_;
 
-  open my $fh, "<", "../uebung$sheet.tex" or die $!;
+  open my $fh, "<", "../alg1/uebung$sheet.tex" or die $!;
 
   my $in_no       = 0;
   my $in_exercise = 0;
