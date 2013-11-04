@@ -1,0 +1,84 @@
+\documentclass{algblatt}
+\usepackage{color}
+
+\newenvironment{indentblock}{%
+  \list{}{\leftmargin\leftmargin}%
+  \item\relax
+}{%
+  \endlist
+}
+
+\definecolor{grey}{rgb}{0.9,0.9,0.9}
+\newcommand{\hint}[1]{\rotatebox{180}{\vbox{\textcolor{grey}{#1}}}}
+
+\begin{document}
+
+\begin{center}\Large \textsf{\textbf{Hinweise zu den Übungsaufgaben in Algebra II}}\end{center}
+\vspace{1em}
+
+\section*{Übungsblatt 3}
+
+\paragraph{Aufgabe 1.} Teilaufgabe~a) hat etwas mit Standgruppen zu tun. Für
+Teilaufgabe~b) ist interessant, was Fixpunkte mit Bahnen zu tun haben. (Was
+sind Fixpunkte denn überhaupt, und was sind Bahnen?) Welche Gleichung der
+Vorlesung ist also vermutlich anwendbar?
+
+\paragraph{Aufgabe 4.} Ein beliebiges Element der disjunkt-gemachten
+Vereinigung $Y_1 \amalg \cdots \amalg Y_n$ ist ein Paar~$(i,y)$, wobei~$i \in
+\{ 1,\ldots,n \}$ ein Index und~$y$ ein Element der entsprechenden Menge~$Y_i$ ist.
+Ein \emph{Isomorphismus von~$G$-Wirkungen} ist per Definition eine
+bijektive~$G$-äquivariante Abbildung. Für Teilaufgabe~b) ist es hilfreich,~$X$
+in Bahnen zu zerlegen.
+
+\paragraph{Aufgabe 5.}
+Diese Aufgabe benötigt aber nur die Definition von
+Normalteilern und das Verständnis der mengentheoretischen Schreibweise: Die
+Menge~$N$ besteht aus all den Elementen von~$G$, welche in allen~$N_i$ liegen. Über die
+Größe von~$I$ kann nichts vorausgesetzt werden. Wer mag, kann aber zuerst den
+Fall des Schnitts zweier Normalteiler behandeln; der allgemeine Fall verläuft
+ähnlich.
+
+
+\section*{Übungsblatt 4}
+
+\paragraph{Aufgabe 2.} Die Gruppe~$\OOO_n(\RR)$ ist die Menge der
+orthogonalen~$(n \times n)$-Matrizen. Eine Matrix~$A$ heißt genau dann
+\emph{orthogonal}, wenn das Produkt~$A^t A$ die
+Einheitsmatrix ist. Orthogonale Matrizen haben als Determinante stets~$\pm 1$.
+Die Gruppe~$\SO_n(\RR)$ ist die Untergruppe solcher
+orthogonalen Matrizen, deren Determinante~$+1$ ist. Für die Determinante gilt
+die Rechenregel~$\det(AB) = \det(A) \cdot \det(B)$.
+
+Bei Teilaufgabe~b) muss man sich zunächst überlegen, ob man~$\SO_n(\RR)$
+auf~$\CCC_2$ oder umgekehrt wirken lassen möchte (nur eine Variante
+funktioniert), und wie diese Wirkung explizit aussehen soll. Wie bei
+Teilaufgabe~c) die Gruppe~$\SO_3(\RR)$ auf~$\RR^3$ wirkt, ist im Skript
+angegeben (Beispiel 6.76).
+
+Im Staatsexamen ist das halbdirekte Produkt immer wieder wichtig, um die öfter
+vorkommenden Aufgaben der Art \emph{Geben Sie eine nicht-kommutative Gruppe der
+Ordnung~$2012$ an.} zu lösen.
+
+\hint{%
+Die Diagonalmatrix, die oben links eine~$-1$ stehen und deren restliche
+Diagonaleinträge mit~$+1$ besetzt sind, spielt bei Teilaufgabe~b) eine Rolle.
+Wer mich anschreibt, bekommt weitere Tipps.}
+
+\paragraph{Aufgabe 3.} In beiden Teilaufgaben geht es nicht um
+Umkehrfunktionen, sondern um Urbildmengen.
+
+\paragraph{Aufgabe 4.} Eine endliche Gruppe heißt genau dann \emph{$p$-Gruppe},
+wenn die Anzahl ihrer Elemente eine~$p$-Potenz ist.
+
+\hint{%
+Eine nichttriviale~$p$-Gruppe besitzt stets ein Element der Ordnung~$p$ in
+ihrem Zentrum. Das Kriterium aus~a) ist für~b) nützlich.}
+
+\paragraph{Aufgabe 5.} Ein \emph{größter endlicher auflösbarer Normalteiler}
+ist per Definition ein Normalteiler~$N$, welcher selbst endlich und auflösbar
+ist und folgende Eigenschaft hat: Für jeden beliebigen endlichen auflösbaren
+Normalteiler~$N'$ gilt~$N' \subseteq N$.
+
+\hint{Für~b) ist~a) nützlich.}
+
+\end{document}
