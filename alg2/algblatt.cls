@@ -79,6 +79,8 @@
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\AAA}{\mathrm{A}}
 \newcommand{\SSS}{\mathrm{S}}
+\newcommand{\OOO}{\mathrm{O}}
+\newcommand{\SO}{\mathrm{SO}}
 \newcommand{\CCC}{\mathrm{C}}
 \newcommand{\DDD}{\mathrm{D}}
 \newcommand{\ZZZ}{\mathrm{Z}}

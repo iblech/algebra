@@ -1,0 +1,52 @@
+\documentclass{algblatt}
+\input{config.tex}
+
+\begin{document}
+
+\maketitle{4}{Abgabe bis 12. November 2013, 17:00 Uhr}
+
+\begin{aufgabe}{2}{Normaler Abschluss}
+Sei~$H$ eine Untergruppe einer Gruppe~$G$. Sei~$(N_i)_{i \in I}$ die Familie
+all derjenigen Normalteiler von~$G$, welche~$H$ umfassen. Zeige,
+dass~$\bigcap_{i \in I} N_i$ der normale Abschluss von~$H$ in~$G$ ist.
+\end{aufgabe}
+
+\begin{aufgabeE}{2+2+2}{Beispiele für halbdirekte Produkte}
+\item Zeige, dass jedes direkte Produkt zweier Gruppen auch als halbdirektes
+Produkt angesehen werden kann.
+\item Zeige, dass die orthogonale Gruppe~$\OOO_n(\RR)$ isomorph zu einem
+halbdirekten Produkt von~$\SO_n(\RR)$ mit~$\CCC_2$ ist.
+\item Zeige, dass folgende Abbildung ein injektiver Gruppenhomomorphismus ist.
+\[ \RR^3 \rtimes \SO_3(\RR) \longrightarrow \GL_4(\RR),\quad
+  (b, A) \longmapsto \left(\begin{array}{ccc|c}
+    \multicolumn{3}{c|}{A} & b \\\hline
+    0 & 0 & 0 & 1
+  \end{array}\right) \]
+\end{aufgabeE}
+\vspace{-1em}
+
+\begin{aufgabe}{1+1}{Urbilder unter Gruppenhomomorphismen}
+Sei~$f : G \to H$ ein Gruppenhomomorphismus.
+\begin{enumerate}
+\item Sei~$K \subseteq H$ eine Untergruppe. Zeige, dass~$f^{-1}[K]$
+eine Untergruppe von~$G$ ist.
+\item Sei~$K \subseteq H$ ein Normalteiler. Zeige, dass~$f^{-1}[N]$
+ein Normalteiler von~$G$ ist.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabeE}{4+2}{Ein Kriterium für Auflösbarkeit}
+\item Sei~$G$ eine endliche Gruppe und~$N$ ein endlicher Normalteiler in~$G$.
+Zeige, dass~$G$ genau dann auflösbar ist, wenn~$G/N$ und~$N$ es sind.
+\item Zeige, dass jede endliche~$p$-Gruppe auflösbar ist.
+\end{aufgabeE}
+
+\begin{aufgabeE}{2+2}{Auflösbare Normalteiler}
+\item Seien~$N$ und~$N'$ auflösbare Normalteiler eine Gruppe~$G$. Zeige,
+dass~$N \cdot N' := \{ n n' \,|\, n \in N, n' \in N' \}$ eine Untergruppe und
+sogar ein auflösbarer Normalteiler von~$G$ ist.
+\item Sei~$G$ eine endliche Gruppe. Zeige, dass ein größter endlicher
+auflösbarer Normalteiler von~$G$ existiert.
+\end{aufgabeE}
+
+\end{document}
