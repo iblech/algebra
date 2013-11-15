@@ -128,14 +128,38 @@ Für eine der Richtungen der Behauptung der Aufgabe hilft der erste Sylowsche Sa
 \paragraph{Aufgabe 3.} Captain Obvious bittet mich, folgenden Tipp zu
 verbreiten: Die Sylowschen Sätze könnten helfen.
 
-In Kürze werde ich hier ein vollständiges Beispiel für eine andere Gruppenordnung
-online stellen. Die Aufgaben~3 und~4 sind typische Staatsexamensaufgaben und
-nicht ganz leicht, wenn man das Standardvorgehen nicht kennt. Auf Anfrage gebe
-ich gerne weitere Tipps.
+An dieser Stelle hatte ich ein vollständiges Schema versprochen, jedoch muss
+das bis nach der Besprechung warten, da ein solches zu viel vorwegnehmen würde.
+Auf Anfrage gebe ich aber trotzdem gerne weitere Tipps.
 
 \hint{%
-Fallunterscheidung nach der Anzahl gewisser Sylowscher Untergruppen treffen.
-Übersicht über mögliche Elementordnungen anlegen.}
+Ein Beispiel zur Überlappungsfrage: Eine Untergruppe mit~$2^2 \cdot 3^5$
+Elementen kann nur im Identitätselement mit einer Untergruppe von~$7^2 \cdot
+11^3$ überlappen (wieso?). Eine Untergruppe mit~$2^2 \cdot 3^5$ Elementen kann
+mit einer Untergruppe von~$3^2 \cdot 11^3$ Elementen in höchstens~$3^2$ Elementen
+überlappen (wieso?).}
+
+\hint{%
+Leider bleiben bei anderen Gruppenordnungen meistens mehrere Möglichkeiten für
+die Anzahl der Sylowschen~$p$-Untergruppen übrig. In diesen Fällen hilft es
+manchmal, für den hypothetischen Fall, dass alle~$n_p > 1$ sind, eine Übersicht
+über die Elemente der Gruppe anzulegen: Stets gibt es das neutrale Element.
+Ferner gibt es für jede Sylowsche Untergruppe jeweils entsprechend viele
+weitere Elemente. Das Identitätselement haben aber all diese Untergruppen
+gemeinsam und darf daher nicht mehrfach gezählt werden. Außerdem können sich
+Sylowsche Untergruppen zur selben Primzahl nichttrivial überlappen. Sylowsche
+Untergruppen zu verschiedenen Primzahlen haben aber stets nur das
+Identitätselement gemeinsam. Mit diesen Überlegungen kann man versuchen, einen
+Widerspruch herzuleiten: Die Elementübersicht muss zeigen, dass es mehr
+Elemente geben müsste, also faktisch in der Gruppe vorhanden sind.}
+
+\hint{%
+Hier ein Beispiel. Sei~$G$ eine Gruppe mit~$|G| = 84 = 2^2 \cdot 3 \cdot
+7$ Elementen. Dan muss die Anzahl~$n_7$ der Sylowschen~$7$-Untergruppen ein
+Teiler von~$2^2 \cdot 3$ und modulo~$7$ kongruent zu~$1$ sein. An positiven
+Teilern gibt es nur~$1, 2, 3, 4, 12$. Daher muss~$n_7 = 1$ sein. Es gibt also
+genau eine Sylowsche~$7$-Untergruppe, und diese muss daher ein Normalteiler
+sein.}
 
 \paragraph{Aufgabe 4.}
 Die zweite Voraussetzung an die beiden Primzahlen ist, dass~$p$ kein Teiler
