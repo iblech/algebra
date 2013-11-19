@@ -8,6 +8,7 @@
 \RequirePackage{amsmath,amsthm,amssymb,amscd,color,graphicx,environ}
 \RequirePackage{framed}
 \RequirePackage[protrusion=true,expansion=true]{microtype}
+\RequirePackage{multicol}
 \RequirePackage{lmodern}
 \RequirePackage{hyperref}
 
@@ -72,6 +73,7 @@
 \newcommand{\A}{\mathcal{A}}
 \newcommand{\B}{\mathcal{B}}
 \newcommand{\C}{\mathcal{C}}
+\renewcommand{\O}{\mathcal{O}}
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\NN}{\mathbb{N}}
 \newcommand{\QQ}{\mathbb{Q}}
