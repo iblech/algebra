@@ -178,10 +178,51 @@ g^{-1}$.
 \section*{Aufgabe 5}
 
 \paragraph{Aufgabe 1.} Ein~$i$-Minor ist die Determinante einer (nicht
-notwendigerweise zusammenhängenden)~$(i \times i)$-Untermatrix.
+notwendigerweise zusammenhängenden)~$(i \times i)$-Untermatrix. Etwa sind
+die~$2$-Minoren der Matrix
+\[ \begin{pmatrix}
+  1 & 2 & 3 \\
+  4 & 5 & 6
+\end{pmatrix} \]
+die Zahlen~$1\cdot5-4\cdot2$, $1\cdot6-4\cdot3$ und~$2\cdot6-5\cdot3$. Je nach
+Konvention gehören die Negativen dieser Zahlen auch noch zu den~$2$-Minoren;
+für welche Konvention man sich entscheidet, spielt bei dieser Aufgabe aber
+keine Rolle, da es sowieso nur um den größten gemeinsamen Teiler
+der~$i$-Minoren geht.
 
-\paragraph{Aufgabe 4.} Der Ring~$\ZZ_p$ ist nicht zu verwechseln mit dem
-Restklassenring~$\ZZ/(p)$.
+\hint{%
+Unter den Transformationen der Vorlesung, die man benötigt, um eine Matrix in
+smithsche Normalform zu überführen, ändern sich zwar die~$i$-Minoren, nicht
+aber der größte gemeinsame Teiler aller~$i$-Minoren. Dieses Faktum ist ggf. zu
+beweisen. Ein eleganter Beweis ist mit Techniken des äußeren Kalküls (siehe
+etwa die jetzige~LA-I-Vorlesung) möglich, andere Beweisansätze gibt es aber
+sicher auch.}
+
+Für Teilaufgabe~b) kann man das Verfahren aus der Vorlesung (mit Zeilen- und
+Spaltentransformationen) oder Teilaufgabe~a) verwenden.
+
+\paragraph{Aufgabe 2.} Bei beiden Teilaufgaben ist also eine Liste von
+abelschen Gruppen der jeweiligen Ordnung gesucht, sodass jede abelsche Gruppe
+dieser Ordnung isomorph zu einer der Gruppen auf der Liste ist und sodass keine
+zwei verschiedenen Gruppen der Liste zueinander isomorph sind. Ohne
+Unterstützung mit Vorlesungswissen ist die Aufgabe schwer.
+
+\paragraph{Aufgabe 3.} Die Notation in der Angabe ist etwas seltsam, hat aber
+einen guten Grund. Wie dem Text zu entnehmen ist, gilt
+\[ A[p^\infty] := \{ x \in A \,|\, \text{$\ord(x)$ ist eine~$p$-Potenz} \}
+\subseteq A. \]
+Bei der Besprechung von Blatt~5 haben wir gesehen, wie man diese Menge auch
+geringfügig einfacher beschreiben kann. Für Teilaufgabe~b) ist ein geeigneter
+Isomorphismus
+\[ A[p_1^\infty] \times \cdots \times A[p_r^\infty] \longrightarrow A \]
+zu finden (anzugeben). Auch muss nachgerechnet werden, dass die gefundene
+Abbildung tatsächlich ein Gruppenhomomorphismus ist und bijektiv ist.
+
+\paragraph{Aufgabe 4.} Der Ring~$\ZZ_{(p)}$ ist nicht zu verwechseln mit dem
+Restklassenring~$\ZZ/(p)$. Bitte rechnet nicht alle Ringaxiome nach, sondern
+nur die Unterringaxiome: Die neutralen Elemente bezüglich Addition und
+Multiplikation müssen enthalten sein, die Summe und das Produkt zweier Elemente
+muss wieder enthalten sein und Negative von Elementen müssen wieder enthalten sein.
 
 \paragraph{Aufgabe 5.} Es gilt $\ZZ[\zeta] = \{ a_0 + a_1 \zeta + \cdots +
 a_{n-1} \zeta^{n-1} \,|\, a_0,\ldots,a_{n-1} \in \ZZ \}$, dieser Umstand muss
