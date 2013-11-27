@@ -72,6 +72,9 @@
 \renewcommand{\i}{\mathrm{i}}
 \newcommand{\A}{\mathcal{A}}
 \newcommand{\B}{\mathcal{B}}
+\renewcommand{\aa}{\mathfrak{a}}
+\newcommand{\bb}{\mathfrak{b}}
+\newcommand{\cc}{\mathfrak{c}}
 \newcommand{\C}{\mathcal{C}}
 \renewcommand{\O}{\mathcal{O}}
 \newcommand{\CC}{\mathbb{C}}
