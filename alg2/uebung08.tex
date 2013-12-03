@@ -1,0 +1,72 @@
+\documentclass{algblatt}
+\input{config.tex}
+
+\begin{document}
+
+\maketitle{8}{Abgabe bis 10. Dezember 2013, 17:00 Uhr}
+
+\begin{aufgabe}{2+2}{Lokale Gleichheit und lokale Invertierbarkeit}
+Sei~$s_1,\ldots,s_n$ eine Zerlegung der Eins eines kommutativen Rings~$R$.
+\begin{enumerate}
+\item Zeige, dass Elemente~$f, g \in R$ genau dann gleich sind, wenn sie
+\emph{lokal gleich} sind, das heißt, wenn~$f = g$ in~$R[s_i^{-1}]$ für alle~$i
+\in \{ 1,\ldots, n \}$ gilt.
+\item Zeige, dass ein Element~$f \in R$ genau dann invertierbar ist, wenn es
+\emph{lokal invertierbar} ist, das heißt, wenn für jedes~$i \in
+\{1,\ldots,n\}$ das Bild von~$f$ in~$R[s_i^{-1}]$ invertierbar ist.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabeE}{3+2}{Spiel und Spaß mit dem gerichteten Limes}
+\item Sei~$(R_i)_{i \in I}$ ein gerichtetes System von Ringen mit Limes~$R =
+\varinjlim_{i \in I} R_i$. Zeige, dass ein Element~$x \in R_i$ genau dann
+in~$R$ invertierbar ist, wenn ein~$j \succeq i$ existiert, sodass~$x$ in~$R_j$
+invertierbar ist.
+
+\item Zeige, dass jeder Ring gerichteter Limes endlich erzeugter~$\ZZ$-Algebren
+ist.
+\end{aufgabeE}
+
+\begin{aufgabeE}{2+2+3}{Beispiele für Primfaktorzerlegungen}
+\item Zeige, dass~$3 + 2\i \in \ZZ[\i]$ irreduzibel ist.
+\item Zeige, dass~$X^2 + Y \in \ZZ[X,Y]$ irreduzibel ist.
+\item Bestimme die Primfaktorzerlegung von~$X^4 + 4\,Y^4 \in \ZZ[X,Y]$.
+\end{aufgabeE}
+
+\begin{aufgabeE}{2+2}{Allgemeine Irreduzibilitätskriterien}
+\item Sei~$f(X) = a_n X^n + a_{n-1} X^{n-1} + \cdots + a_1 X + a_0$ ein Polynom
+über einem Integritätsbereich~$R$. Sei Eins ein größter gemeinsamer Teiler der
+Koeffizienten von~$f(X)$. Sei~$p \in R$ ein Primelement,
+welches~$a_0,\ldots,a_{n-1}$ teilt, $a_n$ nicht teilt und~$a_0$ nicht im
+Quadrat teilt. Zeige, dass~$f(X)$ in~$R[X]$ irreduzibel ist.
+\item Sei~$I \subsetneq R$ ein echtes Ideal eines kommutativen Rings~$R$.
+Sei~$f(X) \in R[X]$ ein normiertes Polynom, das über~$R/I$ irreduzibel ist.
+Zeige, dass~$f(X)$ dann auch als Element von~$R[X]$ irreduzibel ist.
+\end{aufgabeE}
+
+\begin{center}
+\emph{Für eine spannende Bonus-Aufgabe bitte wenden.}
+\end{center}
+\newpage
+
+\begin{aufgabe}{2+2}{Lokale Gauß--Jordansche Normalform}
+Sei~$A \in R^{n \times m}$ eine Matrix über einem kommutativen Ring~$R$.
+Sei~$A$ \emph{vom Rang~$r$}, das heißt, dass das von den~$r$-Minoren von~$A$
+erzeugte Ideal das Einsideal und das von den~$(r+1)$-Minoren erzeugte Ideal das
+Nullideal ist.
+\begin{enumerate}
+\item Sei~$R$ ein \emph{lokaler Ring}, das heißt
+\[ \forall x,y \in R{:}\quad \text{$x + y$ invertierbar}
+\quad\Longrightarrow\quad
+\text{$x$ invertierbar oder $y$ invertierbar}. \]
+Zeige, dass~$A$ eine Gauß--Jordansche Normalform besitzt,
+also ähnlich zu einer rechteckigen Diagonalmatrix
+mit genau~$r$ Einsern und sonst nur Nullern auf der Hauptdiagonale ist.
+\item Sei nun~$R$ wieder beliebig. Zeige, dass~$A$ \emph{lokal} eine
+Gauß--Jordansche Normalform besitzt, dass es also eine
+Zerlegung~$s_1,\ldots,s_n$ der Eins von~$R$ gibt, sodass~$A$ für jedes~$i$
+über~$R[s_i^{-1}]$ ähnlich zu einer solchen Diagonalmatrix ist.
+\end{enumerate}
+\end{aufgabe}
+
+\end{document}

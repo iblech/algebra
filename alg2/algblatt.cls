@@ -24,7 +24,7 @@
 \newlength{\titleskip}
 \setlength{\titleskip}{1.5em}
 \renewcommand{\maketitle}[2]{%
-  \ifloesungen\else\thispagestyle{empty}\fi%
+  \ifloesungen\else\pagestyle{empty}\fi%
   Universität Augsburg \hfill Wintersemester 2013/2014 \\
   Lehrstuhl für Algebra und Zahlentheorie \\
   Prof. Marc Nieper-Wißkirchen \\
