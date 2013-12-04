@@ -17,7 +17,7 @@ Sei~$s_1,\ldots,s_n$ eine Zerlegung der Eins eines kommutativen Rings~$R$.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabeE}{3+2}{Spiel und Spaß mit dem gerichteten Limes}
+\begin{aufgabeE}{2+2}{Spiel und Spaß mit dem gerichteten Limes}
 \item Sei~$(R_i)_{i \in I}$ ein gerichtetes System von Ringen mit Limes~$R =
 \varinjlim_{i \in I} R_i$. Zeige, dass ein Element~$x \in R_i$ genau dann
 in~$R$ invertierbar ist, wenn ein~$j \succeq i$ existiert, sodass~$x$ in~$R_j$
@@ -27,10 +27,10 @@ invertierbar ist.
 ist.
 \end{aufgabeE}
 
-\begin{aufgabeE}{2+2+3}{Beispiele für Primfaktorzerlegungen}
-\item Zeige, dass~$3 + 2\i \in \ZZ[\i]$ irreduzibel ist.
-\item Zeige, dass~$X^2 + Y \in \ZZ[X,Y]$ irreduzibel ist.
-\item Bestimme die Primfaktorzerlegung von~$X^4 + 4\,Y^4 \in \ZZ[X,Y]$.
+\begin{aufgabeE}{1+1+2}{Beispiele für Primfaktorzerlegungen}
+\item[S a)] Zeige, dass~$3 + 2\i \in \ZZ[\i]$ irreduzibel ist.
+\item[S b)] Zeige, dass~$X^2 + Y \in \ZZ[X,Y]$ irreduzibel ist.
+\item[S c)] Bestimme die Primfaktorzerlegung von~$X^4 + 4\,Y^4 \in \ZZ[X,Y]$.
 \end{aufgabeE}
 
 \begin{aufgabeE}{2+2}{Allgemeine Irreduzibilitätskriterien}
@@ -44,25 +44,48 @@ Sei~$f(X) \in R[X]$ ein normiertes Polynom, das über~$R/I$ irreduzibel ist.
 Zeige, dass~$f(X)$ dann auch als Element von~$R[X]$ irreduzibel ist.
 \end{aufgabeE}
 
+\begin{aufgabe}{2+2}{Lokalisierung weg von einem Element}
+Sei~$f$ ein reguläres Element eines Integritätsbereichs~$R$.
+\begin{enumerate}
+\item Sei~$R$ sogar ein Ring mit eindeutiger Primfaktorzerlegung. Zeige,
+dass~$R[f^{-1}]$ dann ebenfalls ein Ring mit eindeutiger Primfaktorzerlegung
+ist.
+\item Sei~$R$ faktoriell. Zeige, dass dann~$R[f^{-1}]$ ebenfalls faktoriell
+ist.
+\end{enumerate}
+\end{aufgabe}
+
 \begin{center}
 \emph{Für eine spannende Bonus-Aufgabe bitte wenden.}
 \end{center}
 \newpage
 
-\begin{aufgabe}{2+2}{Lokale Gauß--Jordansche Normalform}
-Sei~$A \in R^{n \times m}$ eine Matrix über einem kommutativen Ring~$R$.
-Sei~$A$ \emph{vom Rang~$r$}, das heißt, dass das von den~$r$-Minoren von~$A$
+\begin{aufgabe}{1+2+1+2}{Lokale Gauß--Jordansche Normalform}
+Eine~$(n \times m)$-Matrix über einem beliebigen kommutativen Ring~$R$
+heißt genau dann \emph{vom Rang~$r$}, wenn das von den~$r$-Minoren von~$A$
 erzeugte Ideal das Einsideal und das von den~$(r+1)$-Minoren erzeugte Ideal das
 Nullideal ist.
 \begin{enumerate}
-\item Sei~$R$ ein \emph{lokaler Ring}, das heißt
+\item Finde ein Beispiel für eine Matrix über einem Ring, die in diesem Sinn
+keinen Rang besitzt.
+\end{enumerate}
+Ein kommutativer Ring~$R$ heißt \emph{lokaler Ring}, falls
 \[ \forall x,y \in R{:}\quad \text{$x + y$ invertierbar}
 \quad\Longrightarrow\quad
 \text{$x$ invertierbar oder $y$ invertierbar}. \]
-Zeige, dass~$A$ eine Gauß--Jordansche Normalform besitzt,
+\begin{enumerate}
+\addtocounter{enumi}{1}
+\item Sei~$A$ eine~$(n \times m)$-Matrix vom Rang~$r$ über einem lokalen Ring~$R$.
+Zeige, dass~$A$ eine \emph{Gauß--Jordansche Normalform} besitzt,
 also ähnlich zu einer rechteckigen Diagonalmatrix
 mit genau~$r$ Einsern und sonst nur Nullern auf der Hauptdiagonale ist.
-\item Sei nun~$R$ wieder beliebig. Zeige, dass~$A$ \emph{lokal} eine
+\item Sei nun~$R$ wieder ein beliebiger kommutativer Ring. Seien~$x,y \in R$ derart, dass die
+Summe~$x+y$ in~$R$ invertierbar ist. Zeige, dass es eine Zerlegung der Eins
+von~$R$ gibt, sodass in den lokalisierten Ringen jeweils~$x$ oder~$y$
+invertierbar ist. Gewissermaßen ist also jeder Ring \emph{lokal} ein lokaler
+Ring.
+\item Sei~$A$ eine~$(n \times m)$-Matrix vom Rang~$r$ über einem beliebigen
+kommutativen Ring~$R$. Zeige, dass~$A$ \emph{lokal} eine
 Gauß--Jordansche Normalform besitzt, dass es also eine
 Zerlegung~$s_1,\ldots,s_n$ der Eins von~$R$ gibt, sodass~$A$ für jedes~$i$
 über~$R[s_i^{-1}]$ ähnlich zu einer solchen Diagonalmatrix ist.
