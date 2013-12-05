@@ -34,3 +34,7 @@ Seite 207, ganz oben: (p-1)
 Seite 208: "entweder" streichen? (Bei y_1 oder y_2 null.)
 
 Seite 213, Aufg. 5.8.5: "quartisch" fehlt. Außerdem einmal f und einmal g.
+
+"1*n" statt "n*1" in Definition der Charakteristik.
+
+"endlich präsentiert": Ausbuchstabierung.

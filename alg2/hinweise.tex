@@ -288,7 +288,40 @@ wiederum bedeutet, steht bei der Definition der Lokalisierung im Skript. Bei
 Teilaufgabe~b) ist mit "`dem Bild von~$f$ in~$R[s_i^{-1}]$"' das Element~$f/1
 \in R[s_i^{-1}]$ gemeint.
 
-\paragraph{Aufgabe 2.} Bitte stellt am Donnerstag in der Übung fragen dazu!
+\paragraph{Aufgabe 2.} Wenn euch die Definition des gerichteten Limes
+im Skript zu ungenau ist, hier eine ausführlichere Definition: Als Menge ist~$R :=
+\varinjlim_{i \in I} R_i$ gegeben durch
+\[ R := \Bigl(\coprod_{i \in I} R_i\Bigr)/{\sim}. \]
+Ein beliebiges Element von~$R$ hat also die Form
+\[ [\langle i, x\rangle], \]
+wobei~$i$ ein Index aus~$I$ und~$x$ ein Element aus dem entsprechenden
+Ring~$R_i$ ist. Die Äquivalenzrelation ist durch die Forderung
+\[ \langle i, x \rangle \sim \langle j, y \rangle
+  \quad:\Longleftrightarrow\quad
+  \exists k \in I, i \preceq k, j \preceq k{:}\ \phi_{ik}(x) = \phi_{jk}(y) \]
+festgelegt. Ein Element von~$R$ wird also repräsentiert durch ein Element
+aus einem der~$R_i$, wobei zwei solche Elemente genau dann als äquivalent
+zählen, wenn ihr Bild in einem Ring~$R_k$ mit~$i,j \preceq k$ übereinstimmt.
+Die~$\phi$'s stammen aus dem Datum des gerichteten Systems, von dem man den
+Limes nimmt.
+
+Die Addition ist wie folgt definiert: Seien~$[\langle i, x \rangle], [\langle
+j, y\rangle]$ Elemente von~$R$. Da~$I$ gerichtet ist, gibt es eine gemeinsame
+obere Schanke für~$i$ und~$j$, also ein Element~$k \in I$ mit~$i \preceq k$
+und~$j \preceq k$. Die Summe der beiden Elemente ist dann als~$[\langle k,
+\phi_{ik}(x) + \phi_{jk}(x)]$ definiert. Man kann nachrechnen, dass dieses
+Ergebnis nicht von den getroffenen Wahlen (insgesamt drei Stück: den Wahlen der
+beiden Repräsentanten und die Wahl von~$k$) abhängt. (Ihr müsst das aber nicht
+machen, die Beweislast liegt dafür bei der Vorlesung.) Man addiert also, indem
+man die Repräsanten in einen gemeinsamen Ring überführt und dort addiert. Die
+Multiplikation funktioniert völlig analog.
+
+In Teilaufgabe~a) meint "`$x \in R_i$ in~$R_j$ invertierbar"',
+dass~$\phi_{ij}(x) \in R_j$ invertierbar ist.
+
+\emph{Bonusaufgabe:} Wieso ist wichtig, dass man von einer gerichteten Menge
+fordert, dass sie bewohnt ist (also ein Element enthält)?
+
 % x in R_j invbar
 
 \paragraph{Aufgabe 3.} Im Skript ist ein Schema-F-Verfahren beschrieben,
@@ -296,12 +329,22 @@ mit dem man Teilaufgabe~c) lösen kann. Vergesst nicht, die Irreduzibilität der
 gefundenen Faktoren nachzuweisen. Die Kriterien aus Aufgabe~4 könnten dafür und
 für Teilaufgabe~b) hilfreich sein.
 
+\paragraph{Aufgabe 4.} In Teilaufgabe~b) lautet die Voraussetzung an~$f(X)$ wie
+folgt: Wenn man~$f(X) = X^n + a_{n-1}X^{n-1} + \cdots + a_1X + a_0 \in R[X]$
+schreibt, so ist vorausgesetzt, dass~$\overline{f}(X) = X^n + [a_{n-1}]X^{n-1}
++ \cdots + [a_1]X + [a_0] \in (R/I)[X]$ irreduzibel ist.
+
+Wer sich fragt, wann die seltsame Bedingung an~$I$ erfüllt ist: Der
+Faktorring~$R/I$ ist genau dann ein Integritätsbereich, wenn~$I$ ein Primideal
+ist. Was das ist, lernen wir nächste Woche.
+
 \paragraph{Aufgabe 6.} Wer möchte, kann mit dieser Aufgabe mehr als~100\,\% der
 Übungspunkte erreichen oder diese interessante Aufgabe zugunsten anderer
-Aufgaben bearbeiten. Es darf verwendet werden, dass sich das Ideal
+Aufgaben bearbeiten. [Es bleibt aber dabei, dass für die 1,0 nicht~100\,\% der
+Übungspunkte benötigt werden.] Es darf verwendet werden, dass sich das Ideal
 der~$i$-Minoren unter Basiswechsel (d.\,h. unter Multiplikation mit
 invertierbaren Matrizen von links und von rechts) nicht ändert. Für
-Teilaufgabe~d) folgt noch ein genauerer Hinweis.
+Teilaufgabe~d) folgt ein genauerer Hinweis auf Anfrage per Mail.
 % XXX
 
 Matrizen~$A, B$ gleicher Dimension heißen genau dann \emph{zueinander ähnlich},
@@ -309,8 +352,8 @@ wenn es invertierbare Matrizen~$R, S$ passender Größe mit~$B = R A S$ gibt.
 
 Nur zur Information: Ein Beispiel für einen lokalen Ring ist~$\ZZ_{(p)}$,
 wobei~$p$ eine Primzahl ist. Ferner ist jeder Körper ein lokaler Ring. Der Ring
-$\ZZ$ selbst ist dagegen kein lokaler Ring. Der Ring~$K[X,Y]_{(X-a,Y-b)} =
-K[X,Y][S^{-1}]$ mit~$S = K[X,Y] \setminus (X-a,Y-b) = \{ f(X,Y) \in K[X,Y]
+$\ZZ$ selbst ist dagegen kein lokaler Ring. Der Ring~$K[X,Y]_{(X-a,Y-b)} :=
+S^{-1}K[X,Y]$ mit~$S := K[X,Y] \setminus (X-a,Y-b) = \{ f(X,Y) \in K[X,Y]
 \,|\, f(a,b) \neq 0 \}$ ist ein geometrisch motiviertes Beispiel für einen
 lokalen Ring: Seine Elemente sind \emph{Keime} "`guter Funktionen"' auf~$K^2$
 -- das sind Funktionen, die nur auf einer kleinen offenen Umgebung um~$(a,b)$ definiert
