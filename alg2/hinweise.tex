@@ -288,11 +288,30 @@ wiederum bedeutet, steht bei der Definition der Lokalisierung im Skript. Bei
 Teilaufgabe~b) ist mit "`dem Bild von~$f$ in~$R[s_i^{-1}]$"' das Element~$f/1
 \in R[s_i^{-1}]$ gemeint.
 
+\hint{%
+Teilaufgabe~b) kann man so anpacken, indem man erstmal ausschreibt, was die
+Voraussetzungen sind: Lokal sind Inverse geben, die haben eine bestimmte Form.
+Die Inversen sind wirklich Inverse (erfüllen also eine entsprechende Gleichung
+die auf~"`$=1$"' endet), das nach kann man Definition in einer Gleichung
+über~$R$ umwandeln. Dann mit~"`o.\,B.\,d.\,A."''s etwas Ordnung in den
+Index-Dschungel bringen und den~"`$1^N$"'-Trick der Vorlesung verwenden.
+Alternativ kann man auch ein bestimmtes Lemma der Vorlesung zu Hilfe nehmen,
+dann tauscht man ein paar Rechnungen gegen ein paar allgemeine Überlegungen
+ein.
+}
+
 \paragraph{Aufgabe 2.} Wenn euch die Definition des gerichteten Limes
-im Skript zu ungenau ist, hier eine ausführlichere Definition: Als Menge ist~$R :=
-\varinjlim_{i \in I} R_i$ gegeben durch
-\[ R := \Bigl(\coprod_{i \in I} R_i\Bigr)/{\sim}. \]
-Ein beliebiges Element von~$R$ hat also die Form
+im Skript zu ungenau ist, hier eine ausführlichere Definition: Sei ein
+gerichtetes System~$(R_i)_{i \in I}$ von Ringen gegeben. Dieses umfasst also
+eine bestimmte gerichtete Menge~$I$, für jeden Index~$i \in I$ jeweils einen
+Ring~$R_i$ und in der Notation unterdrückte Ringhomomorphismen~$\phi_{ij} : R_i
+\to R_j$ für jedes Paar~$(i,j)$ mit~$i \preceq j$. Diese Ringhomomorphismen
+müssen für~$i \preceq j \preceq k$ die Gleichung
+\[ \phi_{jk} \circ \phi_{ij} = \phi_{ik} : R_i \to R_k \]
+erfüllen. Als Menge ist dann der gerichtete Limes~$R :=
+\varinjlim_{i \in I} R_i$ durch
+\[ R := \Bigl(\coprod_{i \in I} R_i\Bigr)/{\sim} \]
+gegeben. Ein beliebiges Element von~$R$ hat also die Form
 \[ [\langle i, x\rangle], \]
 wobei~$i$ ein Index aus~$I$ und~$x$ ein Element aus dem entsprechenden
 Ring~$R_i$ ist. Die Äquivalenzrelation ist durch die Forderung
@@ -322,6 +341,11 @@ dass~$\phi_{ij}(x) \in R_j$ invertierbar ist.
 \emph{Bonusaufgabe:} Wieso ist wichtig, dass man von einer gerichteten Menge
 fordert, dass sie bewohnt ist (also ein Element enthält)?
 
+\hint{%
+Für Teilaufgabe~b) kann es sinnvoll sein, die Gesamtheit aller
+(als~$\ZZ$-Algebra) endlich erzeugten Unterringe des vorgegebenen Rings zu
+betrachten.}
+
 % x in R_j invbar
 
 \paragraph{Aufgabe 3.} Im Skript ist ein Schema-F-Verfahren beschrieben,
@@ -338,6 +362,10 @@ Wer sich fragt, wann die seltsame Bedingung an~$I$ erfüllt ist: Der
 Faktorring~$R/I$ ist genau dann ein Integritätsbereich, wenn~$I$ ein Primideal
 ist. Was das ist, lernen wir nächste Woche.
 
+\hint{%
+Für Polynome \emph{über Integritätsbereichen} gilt die übliche Gradformel (wieso?).
+}
+
 \paragraph{Aufgabe 6.} Wer möchte, kann mit dieser Aufgabe mehr als~100\,\% der
 Übungspunkte erreichen oder diese interessante Aufgabe zugunsten anderer
 Aufgaben bearbeiten. [Es bleibt aber dabei, dass für die 1,0 nicht~100\,\% der
@@ -350,6 +378,9 @@ Teilaufgabe~d) folgt ein genauerer Hinweis auf Anfrage per Mail.
 Matrizen~$A, B$ gleicher Dimension heißen genau dann \emph{zueinander ähnlich},
 wenn es invertierbare Matrizen~$R, S$ passender Größe mit~$B = R A S$ gibt.
 
+Ist der zugrundeliegende Ring sogar ein Körper, so führt die Rangdefinition der
+Übungs\-auf\-ga\-be auf die bekannte Rangdefinition aus der linearen Algebra.
+
 Nur zur Information: Ein Beispiel für einen lokalen Ring ist~$\ZZ_{(p)}$,
 wobei~$p$ eine Primzahl ist. Ferner ist jeder Körper ein lokaler Ring. Der Ring
 $\ZZ$ selbst ist dagegen kein lokaler Ring. Der Ring~$K[X,Y]_{(X-a,Y-b)} :=
@@ -358,5 +389,24 @@ S^{-1}K[X,Y]$ mit~$S := K[X,Y] \setminus (X-a,Y-b) = \{ f(X,Y) \in K[X,Y]
 lokalen Ring: Seine Elemente sind \emph{Keime} "`guter Funktionen"' auf~$K^2$
 -- das sind Funktionen, die nur auf einer kleinen offenen Umgebung um~$(a,b)$ definiert
 sein müssen.
+
+\hint{%
+Für Teilaufgabe~c) muss man mit verschachtelten Zerlegungen der Eins umgehen.
+Ich möchte nicht, dass ihr euch in lauter Technik verliert -- im Digicampus ist
+ein allgemeines Lemma festgehalten, dass ihr verwenden könnt.
+}
+
+\hint{%
+Zu Teilaufgabe~b): Der Fall~$r = 0$ lässt sich kurz erledigen, wieso? Im Fall~$r = 1$
+ist mindestens ein Matrixeintrag invertierbar (wieso?). Diesen kann man dann
+mit elementaren Zeilen- und Spaltenumformungen nach oben links bringen
+(wieso?). Wie geht es dann weiter? Vielleicht ist folgende allgemeine
+Beobachtung nützlich: Wenn das von den~$i$-Minoren erzeugte Ideal das Einsideal
+ist, so ist für alle~$j < i$ auch das von den~$j$-Minoren erzeugte Ideal das
+Einsideal ist.}
+
+\hint{%
+Bei Teilaufgabe~a) lässt sich ein Beispiel über~$R = \ZZ$ finden.
+}
 
 \end{document}

@@ -1,0 +1,79 @@
+\documentclass[12pt,a4paper,ngerman]{scrartcl}
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb,amscd,amsthm,color,graphicx}
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage{lmodern}
+\usepackage{hyperref}
+
+\setlength\parskip{\medskipamount}
+\setlength\parindent{0pt}
+
+\newcommand{\Kern}{\operatorname{ker}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{bsp}{Beispiel}
+
+\theoremstyle{plain}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{frage}{Frage}
+\newtheorem*{beh}{Behauptung}
+
+\theoremstyle{remark}
+\newtheorem*{bem}{Bemerkung}
+
+\usepackage{geometry}
+\geometry{tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=3cm}
+
+\begin{document}
+
+\section*{Verfeinerungen von Zerlegungen der Eins}
+
+Sei~$R$ ein kommutativer Ring und sei
+\[ 1 = s_1 + \cdots + s_n \] eine Zerlegung
+der Eins von~$R$,~$s_1,\ldots,s_n \in R$. Seien weiter für jeden der
+lokalisierten Ringe~$R[s_i^{-1}]$ Zerlegungen
+\[ 1 = t_{i,1} + \cdots + t_{i,m_i} \]
+der Eins von~$R[s_i^{-1}]$ gegeben,~$t_{i,1}, \ldots, t_{i,m_i} \in
+R[s_i^{-1}]$.
+
+\begin{beh}
+Dann gibt es eine Zerlegung
+\[ 1 = u_1 + \cdots + u_N \]
+von~$R$,~$u_1,\ldots,u_N \in R$ derart, dass es zu jedem der lokalisierten
+Ringe~$R[u_j^{-1}]$ jeweils ein~$i \in \{ 1,\ldots,n \}$ und ein~$k \in \{
+1,\ldots,m_i \}$ gibt, sodass~$s_i$ und~$t_{i,k}$ in~$R[u_j^{-1}]$ invertierbar
+sind.
+\end{beh}
+\begin{proof}
+Jedes~$t_{i,k}$ hat die Form~$t_{i,k} = t'_{i,k} / s_i^{\ell_{i,k}}$ für
+ein~$t'_{i,k} \in R$ und~$\ell_{i,k} \geq 0$. Ohne Einschränkung können wir
+davon ausgehen, dass die~$\ell_{i,k}$ für alle~$k \in \{ 1,\ldots,m_i \}$
+gleich sind (nötigenfalls einfach die Brüche noch mit geeigneten Potenzen
+von~$s_i$ erweitern). Somit können wir~$t_{i,k} = t'_{i,k} / s_i^{\ell_i}$ für
+ein allen~$k$ gemeinsamen Exponenten~$\ell_i \geq 0$ schreiben.
+
+Dass die~$t_{i,k}$, $k = 1,\ldots,m_i$ eine Zerlegung der~$1 \in R[s_i^{-1}]$
+bilden, bedeutet, dass wir einen Exponenten~$r_i \geq 0$ mit
+\[ s_i^{r_i} s_i^{\ell_i} = s_i^{r_i} (t_{i,1}' + \cdots + t_{i,m_i}') \]
+finden. Sei~$r := \max_{i=1,\ldots,n} (r_i + \ell_i)$. Dann können wir für
+alle~$i \in \{ 1,\ldots,n \}$
+\[ s_i^r = t_{i,1}'' + \cdots + t_{i,m_i}'' \]
+schreiben, wenn wir~$t_{i,k}'' := s_i^{r - \ell_i} t_{i,k}' \in R$ setzen.
+
+Nach der üblichen Überlegung, wie wir sie schon mehrmals in der Vorlesung
+vorkam, finden wir Koeffizienten~$b_1,\ldots,b_n \in R$ derart, dass
+\[ 1 = \sum_{i=1}^n b_i s_i^{r+1} = \sum_{i=1}^n \sum_{k=1}^{m_i} b_i s_i t_{i,k}'' \]
+gilt. Das ist unsere gesuchte Zerlegung der Eins, denn
+in~$R[(b_is_it_{i,k}'')^{-1}]$ sind~$b_is_it_{i,k}''$ und damit
+insbesondere~$s_i$ und~$t_{i,k}''$, und damit wiederum~$t_{i,k}$, invertierbar.
+\end{proof}
+
+\end{document}
