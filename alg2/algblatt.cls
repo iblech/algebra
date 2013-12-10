@@ -75,6 +75,7 @@
 \renewcommand{\aa}{\mathfrak{a}}
 \newcommand{\bb}{\mathfrak{b}}
 \newcommand{\cc}{\mathfrak{c}}
+\newcommand{\mm}{\mathfrak{m}}
 \newcommand{\C}{\mathcal{C}}
 \renewcommand{\O}{\mathcal{O}}
 \newcommand{\CC}{\mathbb{C}}
