@@ -1,0 +1,138 @@
+\documentclass[12pt,a4paper,ngerman]{scrartcl}
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb,amscd,amsthm,color,graphicx}
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage{lmodern}
+\usepackage{hyperref}
+
+\setlength\parskip{\medskipamount}
+\setlength\parindent{0pt}
+
+\newcommand{\Bild}{\operatorname{im}}
+\newcommand{\Kern}{\operatorname{ker}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\I}{\mathrm{i}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{bsp}{Beispiel}
+
+\theoremstyle{plain}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{beh}{Behauptung}
+
+\theoremstyle{remark}
+\newtheorem*{bem}{Bemerkung}
+
+\usepackage{geometry}
+\geometry{tmargin=3cm,bmargin=3cm,lmargin=2.5cm,rmargin=2.5cm}
+
+\renewcommand{\labelitemi}{--}
+
+\begin{document}
+
+\section*{Wichtige Isomorphismen von Ringen}
+
+\begin{align}
+  R/(0) &\cong R \\
+  R/(1) &\cong 0 \text{ (Nullring)} \\
+  R/(x,y) &\cong (R/(x))\,/\,([y]) \label{dopp} \\
+  (R/\mathfrak{a})[X] &\cong R[X]\,/\,\mathfrak{a}[X] \\
+  R[X]/(X-a) &\cong R \label{poly} \\
+\intertext{Ist außerdem~$L \supseteq K$ eine Körpererweiterung und~$u \in L$ ein
+über~$K$ algebraisches Element mit Minimalpolynom~$m \in K[X]$, so gilt:}
+  K(u) = K[u] &\cong K[X]/(m) \label{minp}
+\intertext{Schließlich gibt es noch den chinesischen Restsatz:
+Sind~$\mathfrak{a}, \mathfrak{b} \subseteq R$ Ideale mit~$\mathfrak{a} +
+\mathfrak{b} = (1)$, so gilt~$\mathfrak{a} \mathfrak{b} = \mathfrak{a} \cap
+\mathfrak{b}$ und}
+  R/(\mathfrak{a} \mathfrak{b}) &\cong R/\mathfrak{a} \times R/\mathfrak{b}
+  \label{chin}
+\end{align}
+
+
+\subsection*{Anwendung: Primalitäts- und Maximalitätsuntersuchung}
+
+Diese Rechenregeln sind in Kombination mit dem Satz
+\begin{quote}
+Ein Ideal~$\mathfrak{a}$ eines Rings~$R$ ist genau dann ein Primideal (bzw. ein
+maximales Ideal), wenn der Faktorring~$R/\mathfrak{a}$ ein
+Integritätsbereich (bzw. ein Körper) ist.
+\end{quote}
+nützlich, um ein gegebenes Ideal auf Primalität und Maximalität zu untersuchen.
+
+\subsubsection*{Beispiele}
+
+\begin{itemize}
+\item Das Ideal~$(5, X-3) \subseteq \Z[X]$ ist maximal, denn
+\[ \Z[X]/(5, X-3) \,\stackrel{\eqref{dopp}}{\cong}\, (\Z/(5))[X]\,/\,(X-[3])
+\,\stackrel{\eqref{poly}}{\cong}\, \Z/(5) \]
+ist ein Körper.
+\item Das Ideal~$(X^2, X-3) \subseteq \Z[X]$ ist weder prim noch maximal, denn
+\[ \Z[X]/(X^2, X-3) \,=\, \Z[X]/(3^2, X-3) \,\stackrel{\eqref{dopp}}{\cong}\,
+(\Z/(9))[X]\,/\,(X-[3]) \,\stackrel{\eqref{poly}}{\cong}\, \Z/(9) \]
+ist weder ein Integritätsbereich noch ein Körper.
+\item Das Ideal~$(X^2+1) \subseteq \R[X]$ ist maximal, denn
+\[ \R[X] / (X^2+1) \stackrel{\eqref{minp}}{\cong} \R(i) = \C \]
+ist ein Körper (von rechts nach links lesen!).
+\item Das Ideal~$(X^2-1) = (X+1) \cdot (X-1) \subseteq \R[X]$ ist weder
+maximal noch prim, denn
+\[ \R[X]/(X^2-1) \,\stackrel{\eqref{chin}}{\cong}\, \R[X]/(X+1) \times \R[X]/(X-1)
+\,\stackrel{\eqref{poly}}{\cong}\, \R \times \R \]
+ist weder ein Integritätsbereich noch ein Körper. Der chinesische
+Restsatz~\eqref{chin} war
+anwendbar, denn~$(X+1) + (X-1) = (\mathrm{ggT}(X+1,X-1)) = (1)$.
+\end{itemize}
+
+\end{document}
+
+\newpage
+
+\subsection*{Anwendung: Invertieren in einfachen Körpererweiterungen}
+
+Sei~$L \supseteq K$ eine Körpererweiterung und~$u \in L$ ein über~$K$
+algebraisches Element mit Minimalpolynom~$m \in K[X]$. Dann gilt also~$K(u) =
+K[u] \cong K[X]/(m)$. Somit übertragen sich die Techniken, um in~$K[X]/(m)$
+Inverse anzugeben, auf~$K(u)$.
+
+Sei zur Illustration~$x \in K(u)$, dann gibt es ein Polynom~$f \in K[X]$ mit~$x = f(u)$.
+Sei~$d = af + bm$ mit~$a,b \in K[X]$ eine Bézoutdarstellung des größten
+gemeinsamen Teilers~$d := \mathrm{ggT}(f,m)$.
+
+Dann tritt genau einer der folgenden Fälle ein:
+\begin{itemize}
+\item Der größte gemeinsame Teiler $d$ ist ein konstantes Polynom. Dann ist~$x$ in~$K(u)$
+invertierbar mit Inversem~$a(u)/d \in K(u)$.
+\item Der größte gemeinsame Teiler $d$ hat mindestens Grad 1. Dann ist~$x = 0$.
+\end{itemize}
+
+\subsubsection*{Beispiele}
+
+\begin{itemize}
+\item Sei $u := \sqrt{2} \in \C$. Dann hat~$u$
+das Minimalpolynom~$m := X^2 - 2 \in \Q[X]$ über~$\Q$ und eine~$\Q$-Basis
+von~$\Q(u)$ ist~$1, u$.
+
+Sei~$x := 3 \sqrt{2} - 5 \in \Q(u)$. Dann können wir obige Überlegung
+verwenden, um das Inverse~$x^{-1}$ als Linearkombination dieser Basis zu
+schreiben:
+In der obigen Notation ist~$f := 3 X - 5$. Eine Nebenrechnung zeigt, dass ein
+größter gemeinsamer Teiler von~$f$ und~$m$ das konstante Einspolynom ist, mit
+Bé\-zout\-dar\-stel\-lung
+\[ 1 = \left(-\frac{5}{7} - \frac{3}{7} X\right) f + \frac{9}{7} \, m. \]
+Also lässt sich das Inverse von~$x = f(u)$ als
+\[ x^{-1} = -\frac{5}{7} - \frac{3}{7} u \]
+schreiben.
+
+\item In Blatt 10, Aufgabe 1(d) geht es um ein komplizierteres Beispiel.
+\end{itemize}
+
+\end{document}

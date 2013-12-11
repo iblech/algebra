@@ -1,0 +1,76 @@
+\documentclass[12pt,a4paper,ngerman]{scrartcl}
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb,amscd,amsthm,color,graphicx}
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage{lmodern}
+\usepackage{hyperref}
+
+\setlength\parskip{\medskipamount}
+\setlength\parindent{0pt}
+
+\newcommand{\Bild}{\operatorname{im}}
+\newcommand{\Kern}{\operatorname{ker}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\I}{\mathrm{i}}
+
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{bsp}{Beispiel}
+
+\theoremstyle{plain}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{beh}{Behauptung}
+
+\theoremstyle{remark}
+\newtheorem*{bem}{Bemerkung}
+
+\usepackage{geometry}
+\geometry{tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=3cm}
+
+\begin{document}
+
+\section*{Rechenregeln für Ideale}
+
+\begin{enumerate}
+\item $(x_1,\ldots,x_n) + (y_1,\ldots,y_m) = (x_1,\ldots,x_n,y_1,\ldots,y_m)$
+\item $(x_1,\ldots,x_n) \cdot (y_1,\ldots,y_m) = (x_1 y_1,\ldots,x_1 y_m,x_2
+y_1,\ldots,x_2 y_m,\ldots\ldots,x_n y_1,\ldots,x_n y_m)$
+\item Die Reihenfolge der Erzeuger spielt keine Rolle.
+\item Ein Ideal ändert sich nicht, wenn man zu einem Erzeuger ein beliebiges
+Vielfaches eines anderen Erzeugers addiert.
+\item Ist ein Erzeuger ein Vielfaches eines anderen, so kann man ihn
+weglassen.
+\item Ein Ideal ändert sich nicht, wenn man einen Erzeuger mit einer beliebigen
+Einheit multipliziert.
+
+Ist einer der Erzeuger eine Einheit, so ist das Ideal schon das
+Einsideal.
+\item Speziell in Bézoutschen Ringen:
+\begin{align*}
+  (x_1,\ldots,x_n) &= (\mathrm{ggT}(x_1,\ldots,x_n)) \\
+  (x) \cap (y) &= (\mathrm{kgV}(x,y))
+\end{align*}
+\item Speziell in Polynomringen:
+\[ (f_1(X),\ldots,f_n(X),X-a) =
+(f_1(a),\ldots,f_n(a),X-a) \]
+\end{enumerate}
+
+\subsection*{Beispiele}
+
+\begin{itemize}
+\item in~$\mathbb{Z}$: $(8,6,4) = (\mathrm{ggT}(8,6,4)) = (2)$
+\item in~$\mathbb{Z}$: $(2,4) \cdot (3,6) = (2\cdot3,2\cdot6,4\cdot3,4\cdot6) =
+(6,12,12,24) = (6)$
+\item in~$\mathbb{Z}[X]$: $(X^2-25, X-3) = (3^2-25, X-3) = (-16, X-3) =
+(16,X-3)$
+\item in~$\mathbb{Q}$: $(8,6,4) = (1) = (2) = (3173)$
+\item in~$\mathbb{R}[X]$: $(X^2-25, X-3) = (3^2-25, X-3) = (-16, X-3) = (1)$
+\end{itemize}
+
+\end{document}
