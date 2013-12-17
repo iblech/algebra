@@ -5,7 +5,7 @@
 
 \maketitle{10}{Abgabe bis 7. Januar 2014, 17:00 Uhr}
 
-\begin{aufgabeE}{2+2}{Praktische Arbeit mit Idealen}
+\begin{aufgabeE}{2+3}{Praktische Arbeit mit Idealen}
 \item Finde eine Zerlegung~$1 = s_1 + \cdots + s_n$ von~$R = \ZZ[\sqrt{-13}]$,
 sodass für alle~$i \in \{ 1,\ldots,n \}$ das Ideal~$(7, 1 + \sqrt{-13})
 \subseteq R[s_i^{-1}]$ ein Hauptideal ist.
@@ -22,15 +22,16 @@ Ideale schon ein~$i \in \{1,\ldots,n\}$ mit~$\aa = \aa_i$ existiert.
 \item Zeige, dass in beliebigen kommutativen Ringen irreduzible Ideale
 prim
 sind.
-\item Zeige, dass in prüferschen Bereichen Zerlegungen von Ideale in Primideale
+\item Zeige, dass in prüferschen Bereichen Zerlegungen von Idealen in Primideale
 bis auf Reihenfolge eindeutig sind (sofern sie existieren).
 \end{enumerate}
 \end{aufgabe}
 
 \begin{aufgabe}{2+2}{Algorithmen zur Idealfaktorisierung}
 Sei~$R$ ein dedekindscher Bereich. Beschreibe unter den folgenden
-Voraussetzungen jeweils ein Verfahren, das jedes nicht verschwindende endlich erzeugte Ideal
-von~$R$ als Produkt von Primidealen schreibt.
+Voraussetzungen jeweils ein Verfahren, das ein gegebenes nicht verschwindendes
+endlich erzeugte Ideal von~$R$ in Primideale faktorisiert, also als Produkt von
+Primidealen schreibt.
 \begin{enumerate}
 \item Wir haben einen Test, der von einem gegebenen endlich erzeugten Ideal feststellt,
 ob es irreduzibel ist, und es gegebenenfalls in zwei echte Faktoren zerlegt.
@@ -40,7 +41,7 @@ es zu einem echten Ideal echt erweitert werden kann.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{4}{Gemeinsame Stoppstellen mehrerer Ketten}
+\begin{aufgabe}{3}{Gemeinsame Stoppstellen mehrerer Ketten}
 Sei~$R$ ein noetherscher kommutativer Ring. Ein Algorithmus produziere~$m$
 Ketten von endlich erzeugten Idealen in~$R$:
 \[ \begin{array}{@{}ccccccc@{}}
@@ -48,7 +49,7 @@ Ketten von endlich erzeugten Idealen in~$R$:
   \vdots &         & \vdots &         & \vdots &          \\
   \aa_{m0} &\subseteq& \aa_{m1} &\subseteq& \aa_{m2} &\subseteq& \cdots
 \end{array} \]
-Zeige, dass eine Stelle~$n$ gibt, sodass~$\aa_{jn} = \aa_{j(n+1)}$ für alle~$j \in
+Zeige, dass es eine Stelle~$n$ gibt, sodass~$\aa_{jn} = \aa_{j(n+1)}$ für alle~$j \in
 \{ 1,\ldots,m \}$ gilt.
 \end{aufgabe}
 
