@@ -1,0 +1,59 @@
+\documentclass{algblatt}
+\input{config.tex}
+
+\begin{document}
+
+\maketitle{10}{Abgabe bis 7. Januar 2014, 17:00 Uhr}
+
+\begin{aufgabeE}{2+2}{Praktische Arbeit mit Idealen}
+\item Finde eine Zerlegung~$1 = s_1 + \cdots + s_n$ von~$R = \ZZ[\sqrt{-13}]$,
+sodass für alle~$i \in \{ 1,\ldots,n \}$ das Ideal~$(7, 1 + \sqrt{-13})
+\subseteq R[s_i^{-1}]$ ein Hauptideal ist.
+\item Sei~$x$ eine Nullstelle des Polynoms~$X^4-X^2-3\,X+7$ in den
+algebraischen Zahlen. Sei~$K = \QQ(x)$. Bestimme eine teilweise Faktorisierung
+der Ideale~$(14,x+7)$ und~$(35,x-14)$ in~$\O_K$.
+\end{aufgabeE}
+
+\begin{aufgabe}{2+2}{Irreduzible Ideale}
+Ein nicht verschwindendes Ideal~$\aa$ eines Rings~$R$ heißt genau dann
+\emph{irreduzibel}, wenn für jede Zerlegung~$\aa = \aa_1 \cdots \aa_n$ in
+Ideale schon ein~$i \in \{1,\ldots,n\}$ mit~$\aa = \aa_i$ existiert.
+\begin{enumerate}
+\item Zeige, dass in beliebigen kommutativen Ringen irreduzible Ideale
+prim
+sind.
+\item Zeige, dass in prüferschen Bereichen Zerlegungen von Ideale in Primideale
+bis auf Reihenfolge eindeutig sind (sofern sie existieren).
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{2+2}{Algorithmen zur Idealfaktorisierung}
+Sei~$R$ ein dedekindscher Bereich. Beschreibe unter den folgenden
+Voraussetzungen jeweils ein Verfahren, das jedes nicht verschwindende endlich erzeugte Ideal
+von~$R$ als Produkt von Primidealen schreibt.
+\begin{enumerate}
+\item Wir haben einen Test, der von einem gegebenen endlich erzeugten Ideal feststellt,
+ob es irreduzibel ist, und es gegebenenfalls in zwei echte Faktoren zerlegt.
+\item Wir haben einen Test, der von einem gegebenen endlich erzeugten Ideal
+feststellt, ob es maximal ist, und gegebenenfalls ein Element liefert, um das
+es zu einem echten Ideal echt erweitert werden kann.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{4}{Gemeinsame Stoppstellen mehrerer Ketten}
+Sei~$R$ ein noetherscher kommutativer Ring. Ein Algorithmus produziere~$m$
+Ketten von endlich erzeugten Idealen in~$R$:
+\[ \begin{array}{@{}ccccccc@{}}
+  \aa_{10} &\subseteq& \aa_{11} &\subseteq& \aa_{12} &\subseteq& \cdots \\
+  \vdots &         & \vdots &         & \vdots &          \\
+  \aa_{m0} &\subseteq& \aa_{m1} &\subseteq& \aa_{m2} &\subseteq& \cdots
+\end{array} \]
+Zeige, dass eine Stelle~$n$ gibt, sodass~$\aa_{jn} = \aa_{j(n+1)}$ für alle~$j \in
+\{ 1,\ldots,m \}$ gilt.
+\end{aufgabe}
+
+\begin{aufgabe}{4}{Beispiel für eine Ganzheitsbasis}
+Bestimme eine~$\ZZ$-Basis von~$\O_{\QQ(\sqrt[3]{4})}$.
+\end{aufgabe}
+
+\end{document}
