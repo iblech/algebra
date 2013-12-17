@@ -35,12 +35,6 @@
 \usepackage{geometry}
 \geometry{tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=3cm}
 
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\lhead{Algebra II, SS 2011}
-\chead{6. September 2011}
-\rhead{Diskriminante}
-
 \newcommand{\repalg}[1]{(Rep.~d.~Alg.,~#1)}
 
 \newcommand{\tr}[1]{\operatorname{tr}_{K/\Q}(#1)}
@@ -87,8 +81,8 @@ sinnvoll ist.
 \subsection*{Diskriminante bei ganz-algebraischen Basisvektoren}
 
 Die Diskriminante ist stets eine rationale Zahl. Sind die~$b_i$ sogar
-ganz-algebraische Zahlen (d.\,h., erfüllen die~$b_i$ sogar eine normierte
-Polynomgleichung mit ganzzahligen Koeffizienten), dann ist die
+ganz-algebraische Zahlen (das bedeutet, dass die~$b_i$ sogar eine normierte
+Polynomgleichung mit ganzzahligen Koeffizienten erfüllen), dann ist die
 Diskriminante sogar eine ganze Zahl. (Die Umkehrung gilt nicht.)
 
 Das liegt daran, weil dann schon die Spuren~$\tr{b_ib_j}$ jeweils ganze Zahlen
@@ -108,7 +102,7 @@ muss es nach Voraussetzung immer geben. Dann gilt für die Diskriminante
   \vdots && \vdots \\
   B_n(z_1) & \cdots & B_n(z_n)
 \end{pmatrix}\right)^2, \]
-wobei~$z_1,\ldots,z_n$ die galoisschen Konjugierten von~$z$ in~$\QQ$ sind.
+wobei~$z_1,\ldots,z_n$ die galoissch Konjugierten von~$z$ in~$\QQ$ sind.
 
 
 \subsection*{Beispiel}
@@ -116,7 +110,7 @@ wobei~$z_1,\ldots,z_n$ die galoisschen Konjugierten von~$z$ in~$\QQ$ sind.
 Sei~$K = \Q(z)$ mit~$z = \sqrt[3]{2}$. Wir wollen die Diskriminante der
 Basis~$(b_1,b_2,b_3) = (1, z, z^2)$ bestimmen.
 
-Dazu setzen wir~$B_1 = 1$, $B_2 = X$ und~$B_3 = X^2$, denn dann gilt~$B_1(z) =
+Dazu setzen wir~$B_1 := 1$, $B_2 := X$ und~$B_3 := X^2$, denn dann gilt~$B_1(z) =
 b_1$, $B_2(z) = b_2$ und~$B_3(z) = b_3$.
 
 Das Minimalpolynom von~$z$ ist~$X^3-2$, also sind die galoissch Konjugierten
@@ -134,7 +128,7 @@ Folglich ergibt sich die Determinante als
 \section*{Nutzen der Diskriminante}
 
 Die Diskriminante kann man nutzen, um zu beweisen, dass eine Vermutung für eine
-Ganzheitsbasis in der Tat korrekt ist. Denn Hilfssatz~7.129 (auf Seite~336)
+Ganzheitsbasis in der Tat korrekt ist. Denn Hilfssatz~7.128 (auf Seite~336)
 garantiert folgendes:
 \begin{quote}
 Sei~$K \supseteq \Q$ ein Zahlkörper. Sei~$b_1,\ldots,b_n$ eine Basis von~$K$
@@ -163,7 +157,7 @@ unsere erste Vermutung:
 
 Nun gibt es zwei Möglichkeiten zu sehen, dass diese Vermutung falsch sein muss.
 Die eine besteht darin, zu beobachten, dass die Zahl~$(1+z)/2$ trotz des
-gegenteiligen Anscheins auch ganz-algebraisch ist (nämlich Nullstelle des
+gegenteiligen Anscheins auch ganz-algebraisch ist (nämlich als Nullstelle des
 Polynoms~$X^2-X+1$), andererseits aber sicher keine ganzzahlige Linearkombination
 von~$1$ und~$z$ ist.
 
@@ -176,7 +170,7 @@ Vermutung gelenkt:
 
 Um diese Vermutung zu überprüfen, berechnen wir zunächst die Diskriminante
 dieser Basis (Basis über~$\Q$ ist sie definitiv). Dazu wählen wir (mit der
-Notation von oben)~$B_1 = 1$, $B_2 = (1+X)/2$, und die galoisschen Konjugierten
+Notation von oben)~$B_1 := 1$, $B_2 := (1+X)/2$, die galoissch Konjugierten
 von~$z$ sind~$z$ und~$-z$. Somit gilt:
 \[ D(b_1,b_2) = \left(\operatorname{det} \begin{pmatrix}
   1 & 1 \\
@@ -192,15 +186,15 @@ gibt. Wir müssen zeigen, dass~$a$ und~$b$ Vielfache von~$3$ sind.
 
 Dazu treffen wir eine Fallunterscheidung über den Grad von~$x$:
 \begin{enumerate}
-\item $[\Q(x):\Q] = 1$. Dann muss~$b$ null sein (und ist somit ein Vielfaches
+\item $[\Q(x):\Q] = 1$. Dann muss~$b$ Null sein (und ist somit ein Vielfaches
 von~3). Das Minimalpolynom von~$x$ ist daher~$X - \frac{1}{3}a$ und besitzt
 nach Voraussetzung nur ganzzahlige Koeffizienten. Daher gilt~$a/3 \in \Z$, also
 ist auch~$a$ in der Tat ein Vielfaches von~$3$.
 \item $[\Q(x):\Q] = 2$. Durch Umstellen und Quadrieren erhält man die
 Polynomgleichung
 \[ x^2 - \frac{1}{3}(2a+b) x + \frac{1}{9}(a^2+ab+b^2) = 0 \]
-für~$x$. Das zugehörige Polynom~$X^2 - \frac{1}{3}(2a+b)X +
-\frac{1}{9}{a^2+ab+b^2}$ muss das Minimalpolynom von~$x$ sein, also erhalten
+für~$x$. Das Polynom~$X^2 - \frac{1}{3}(2a+b)X +
+\frac{1}{9}(a^2+ab+b^2)$ muss daher das Minimalpolynom von~$x$ sein, also erhalten
 wir, dass
 \[ 3 \mathrel{|} 2a+b \quad\text{und}\quad 9 \mathrel{|} a^2+ab+b^2. \]
 
@@ -227,7 +221,7 @@ uns klüger anstellen)\ldots
 \ldots und sehen, dass der einzige Fall, der die Teilbarkeitsbedingung erfüllt,
 $r = s = 0$ ist. Das war zu zeigen.
 \end{enumerate}
-Damit ist bewiesen, dass~$1, (1+z)/2$ eine Ganzheitsbasis von~$\mathcal{O}_K$
+Damit ist bewiesen, dass~$(1, (1+z)/2)$ eine Ganzheitsbasis von~$\mathcal{O}_K$
 ist.
 
 \begin{small}
@@ -266,8 +260,8 @@ von~$\mathcal{O}_K$ besteht.
 \item Versuche zu zeigen, dass~$\mathcal{O}_K \cap \left(\Z \frac{1}{d}b_1
 + \cdots + \Z \frac{1}{d}b_n\right) \subseteq \Z b_1 + \ldots + \Z b_n$.
 
-Nehme dazu ein beliebiges~$x = \frac{1}{d}a_1b_1 + \ldots + \frac{1}{d}a_nb_n$
-mit ganzen Zahlen~$a_1,\ldots,a_n \in \Z$ und~$x \in \mathcal{O}_K$. Treffe
+Nehme dazu ein beliebiges~$x = \frac{1}{d}a_1b_1 + \cdots + \frac{1}{d}a_nb_n$
+mit ganzen Zahlen~$a_1,\ldots,a_n$ und~$x \in \mathcal{O}_K$. Treffe
 eine Fallunterscheidung über den Grad von~$x$ und bestimme in jedem Fall sein
 Minimalpolynom.
 
@@ -276,7 +270,7 @@ Zahlen sind, zu zeigen, dass die~$a_i$ jeweils Vielfache von~$d$ sind.
 Hilfreich ist es dabei, ohne Einschränkung der Allgemeinheit anzunehmen, dass
 jedes~$a_i$ schon in der Menge~$\{ 0,1,\ldots,|d|-1 \}$ liegt. (Das haben wir
 oben über die Division mit Rest erreicht.)
-\item War der Versuch erfolgreich? Dann ist~$b_1,\ldots,b_n$ in der Tat eine
+\item War der Versuch erfolgreich? Dann ist~$b_1,\ldots,b_n$ eine
 Ganzheitsbasis von~$\mathcal{O}_K$.
 
 Sonst kann man aus dem Fehlschlag ein Element aus~$\mathcal{O}_K$ extrahieren,
@@ -292,6 +286,7 @@ Vermutung über die Ganzheitsbasis zu gelangen. Das spart Zeit.
 
 \section*{Siehe auch}
 
+\scriptsize
 \begin{itemize}
 \item[--] \url{http://en.wikipedia.org/wiki/Ring%20of%20integers}
 \item[--]
