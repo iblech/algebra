@@ -470,4 +470,75 @@ Rings enthalten ist, ist tatsächlich schon nilpotent. Wer mag, kann sich daran
 versuchen; in unserer Vorlesung haben wir aber nicht die nötige Technologie,
 um den Beweis einfach aussehen zu lassen.
 
+
+\section*{Übungsblatt 10}
+
+\paragraph{Aufgabe 1.} Für Teilaufgabe~a) könnte man die Beweise der
+Vorlesung durchgehen (die nämlich garantieren, dass das Ideal lokal ein
+Hauptideal ist). Das dauert aber in der Praxis recht lange. Schneller kommt man
+zum Ziel, wenn man versucht, durch systematisches Probieren eine geeignete
+Zerlegung der Eins zu finden. Für Teilaufgabe~b) gibt es in der Vorlesung ein
+Schema-F-Verfahren. Das sieht auf den ersten Blick länglich und umständlich
+aus, wird bei dieser Aufgabe aber schon nach dem ersten Schritt terminieren.
+
+\hint{%
+Manche Idealdivisionen lassen sich einfach durchführen: In jedem Ring gilt die
+Rechenregel~$(x \cdot a_1, \ldots, x \cdot a_n) : (x) = (a_1,\ldots,a_n)$,
+falls~$x$ ein reguläres Element ist (wieso?). Wenn man das Verfahren der Vorlesung
+anwendet, kann man also versuchen, die als Divisoren auftretenden Ideale zu
+Hauptidealen zu vereinfachen und die als Dividenden auftretenden Ideale so
+umzuschreiben, dass ihre Erzeuger jeweils Vielfache des Erzeugers des
+Divisorideals sind. Dabei ist die Rechenregel~$7 = x \cdot (3 + x - x^3)$
+nützlich (wieso gilt sie?).}
+
+\hint{%
+Für~$u := 1 + \sqrt{-13}$ gilt~$u \cdot \overline{u} = 1 + 13 = 14$. Je
+nachdem, wie man an Teilaufgabe~a) herangeht, kann diese Beziehung helfen oder
+auch nicht helfen.}
+
+\paragraph{Aufgabe 2.} In einer ersten Version des Übungsblatts fehlte die
+wichtige Voraussetzung, dass auch schon bei Teilaufgabe~a) der Ring als
+prüfersch und das irreduzible Ideal als endlich erzeugt angenommen werden kann.
+Entschuldigung dafür!
+
+\hint{%
+Für Teilaufgabe~a): Welche wichtige Rechenoperation mit Idealen funktioniert im
+Allgemeinen nur in prüferschen Bereichen gut? Vergesst bitte nicht,
+\emph{beide} Primidealaxiome nachzurechnen.}
+
+\paragraph{Aufgabe 3.} Exemplarisch wollen wir genauer verstehen, was der Test
+in Teilaufgabe~a) bewerkstelligen kann: Diesem Test kann man ein beliebiges
+nicht verschwindendes endlich erzeugte Ideal geben. Sollte das Ideal
+irreduzibel sein, meldet das der Test. Sollte das Ideal nicht irreduzibel sein,
+gibt es zwei Möglichkeiten: Es könnte das Einsideal sein, oder es könnte nicht
+das Einsideal sein. Der Test meldet dann, welcher dieser beiden Fälle
+eingetreten ist. Im zweiten Fall gibt er außerdem zwei Faktoren (wiederum
+endlich erzeugte Ideale) an, die miteinander multipliziert das getestete Ideal
+ergeben. Diese Faktoren sind \emph{echt}, also jeweils nicht das Einsideal.
+
+Diese Aufgabe ist recht interessant. Bitte zögert nicht, mir ggf. Fragen zu
+schicken. Insbesondere kann ich euch zeigen, wie man eines der in
+Spiegelschrift vorgeschlagenen Hilfsverfahren konstruiert.
+
+\hint{%
+Für Teilaufgabe~a) kann es hilfreich sein, zuerst ein Verfahren zu entwickeln,
+was von einem gegebenen nicht verschwindenden endlich erzeugten Ideal
+feststellt, ob es das Einsideal ist, oder sonst ein endlich erzeugtes
+irreduzibles Ideal findet, was das gegebene umfasst. Für Teilaufgabe~b) kann es
+analog hilfreich sein, erst ein Verfahren zu entwickeln, was von einem
+gegebenen nicht verschwindenden endlich erzeugten Ideal feststellt, ob es
+maximal ist, oder sonst ein endlich erzeugtes maximales Ideal findet, was das
+gegebene umfasst. Wozu helfen diese Hilfsverfahren?}
+
+\paragraph{Aufgabe 4.} Induktion über~$m$.
+
+\hint{%
+Im Induktionsschritt~$m \to m + 1$ kann man eine aufsteigende Folge~$i_0, i_1, i_2, \ldots$
+von Indizes finden, sodass für alle~$n \geq 0$ und~$j \in \{ 1,\ldots,m \}$
+gilt: $\aa_{j,i_n} = \aa_{j,i_{n+1}}$.
+Wie funktioniert das genau? Was hilft einem das?}
+
+\paragraph{Aufgabe 5.} Umfangreiche Erklärungen mit einem Musterbeispiel finden
+sich in einem separaten Dokument im Digicampus.
+
 \end{document}
