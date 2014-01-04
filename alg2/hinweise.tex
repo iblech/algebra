@@ -545,6 +545,35 @@ gilt: $\aa_{j,i_n} = \aa_{j,i_{n+1}}$.
 Wie funktioniert das genau? Was hilft einem das?}
 
 \paragraph{Aufgabe 5.} Umfangreiche Erklärungen mit einem Musterbeispiel finden
-sich in einem separaten Dokument im Digicampus.
+sich in einem separaten Dokument im Digicampus. Wenn man nach diesem Dokument
+vorgeht, muss man zum Schluss eine große Tabelle anlegen; das macht per Hand
+keinen Spaß. Besser ist es, wenn man sich entweder durch viel Denken
+Rechenarbeit abnimmt (mühsam!) oder sich eines Computers bedient (empfohlen!).
+Man muss das Verfahren nicht bis zum Ende durchziehen, um viele Punkt zu
+erzielen.
+
+Wer sich für den zahlentheoretischen Hintergrund interessiert, findet eine
+allgemeine Diskussion von reinen kubischen Erweiterungen in einer Notiz von Ian
+Kiming:
+\url{http://www.math.ku.dk/~kiming/lecture_notes/2003-2004-algebraic_number_theory_koch/pure_cubic_fields.pdf}
+
+\hint{%
+Vielleicht muss man das Minimalpolynom einer Zahl der Form
+\[ x = \tfrac{1}{108} (a + b\alpha + c\alpha^2) \]
+bestimmen. Das kann man mit dem Verfahren aus Algebra~I, Blatt~3, Aufgabe~2
+machen: Man stellt bezüglich der~$\QQ$-Basis~$(1,\alpha,\alpha^2)$
+von~$\QQ(\alpha)$ die Darstellungsmatrix zur linearen Abbildung~$z \mapsto xz$
+auf. Deren charakteristisches Polynom ist dann das Minimalpolynom von~$x$
+(falls es zufälligerweise irreduzibel sein sollte) oder zumindest ein
+Vielfaches des Minimalpolynoms (und das tatsächliche Minimalpolynom benötigt
+man hier gar nicht). Zur Kontrolle: Man erhält
+\[ X^3-\frac{a}{36}X^2+\frac{-4bc + a^2}{3888}X + \frac{-16c^3+12abc-4b^3-a^3}{1259712}. \]
+}
+
+\hint{%
+Die~$\QQ$-Basis~$(1,\alpha,\alpha^2)$ von~$\O_{\QQ(\alpha)}$, wobei~$\alpha = \sqrt[3]{4}$, ist noch
+keine Ganzheitsbasis. Für eine richtige Basis muss man das letzte Basiselement
+geeignet ersetzen. Zur Kontrolle: Die Diskriminante der dann erhaltenen Basis
+ist~$-108$.}
 
 \end{document}
