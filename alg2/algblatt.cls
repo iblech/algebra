@@ -77,6 +77,8 @@
 \newcommand{\cc}{\mathfrak{c}}
 \newcommand{\dd}{\mathfrak{d}}
 \newcommand{\mm}{\mathfrak{m}}
+\newcommand{\pp}{\mathfrak{p}}
+\newcommand{\qq}{\mathfrak{q}}
 \newcommand{\C}{\mathcal{C}}
 \renewcommand{\O}{\mathcal{O}}
 \newcommand{\CC}{\mathbb{C}}
