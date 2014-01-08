@@ -86,6 +86,7 @@
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\FF}{\mathbb{F}}
 \newcommand{\AAA}{\mathrm{A}}
 \newcommand{\SSS}{\mathrm{S}}
 \newcommand{\OOO}{\mathrm{O}}
