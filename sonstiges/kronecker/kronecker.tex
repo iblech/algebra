@@ -15,21 +15,21 @@
 
 Sei~$K$ ein Körper und~$f \in K[X]$ ein normiertes Polynom vom Grad
 mindestens~$1$. Aus diesen Daten können wir einen neuen Ring basteln, den Faktorring
-\[ K' := K[X]/(f). \]
+\[ K' := K[U]/(f(U)). \]
 Wenn wir diese Konstruktion mit dem Ziel ausführen, eine künstliche Nullstelle
-von~$f$ zu konstruieren (siehe unten), so trägt sie den Namen \emph{Kronecker-Konstruktion}.
+von~$f$ zu bauen (siehe unten), so trägt sie den Namen \emph{Kronecker-Konstruktion}.
 
 
 \subsubsection*{Elemente von~$K'$}
 
 Die Elemente von~$K'$ sind Äquivalenzklassen von Polynomen, wobei zwei Klassen
 genau dann als gleich angesehen werden, wenn die Differenz ihrer Repräsentanten
-ein Vielfaches von~$f$ ist. In~$K'$ rechnet man also \emph{modulo~$f$}. Ist~$g$
-ein Polynom, das bei Division durch~$f$ den Rest~$r$ lässt, so gilt~$[g] = [r]$
+ein Vielfaches von~$f(U)$ ist. In~$K'$ rechnet man also \emph{modulo~$f(U)$}. Ist~$g$
+ein Polynom, das bei Division durch~$f(U)$ den Rest~$r$ lässt, so gilt~$[g] = [r]$
 in~$K'$. Wir können daher festhalten:
-\[ K' = \{ [r] \,|\, r \in K[X],\ \deg r < \deg f \}. \]
+\[ K' = \{ [r] \,|\, r \in K[U],\ \deg r < \deg f \}. \]
 Das Nullelement von~$K'$ ist~$[0]$, die Äquivalenzklasse des Nullpolynoms. Es
-gilt~$[0] = [f]$. Das Element~$\alpha := [X] \in K'$ spielt eine besondere
+gilt~$[0] = [f(U)]$. Das Element~$\alpha := [U] \in K'$ spielt eine besondere
 Rolle. Jedes Element von~$K'$ ist ein rationaler (und sogar polynomieller)
 Ausdruck in~$\alpha$, daher können wir auch schreiben:
 \[ K' = K[\alpha] = K(\alpha). \]
@@ -51,11 +51,11 @@ einfach~"`$[z]$"' statt dem wörtlichen~"`$z$"'.
 \subsubsection*{Nutzen von~$K'$}
 
 Im Vergleich zum Ausgangskörper~$K$ enthält der Ring~$K'$ das besondere neue
-Element~$\alpha = [X]$. Dieses erfüllt die Rechenregel
+Element~$\alpha = [U]$. Dieses erfüllt die Rechenregel
 \[ f(\alpha) = 0 \in K', \]
 denn wenn~$f = \sum_{i=0}^n a_i X^i$, so gilt
-\[ f(\alpha) = \sum_{i=0}^n a_i [X]^i = \sum_{i=0}^n [a_i] [X]^i =
-  \Bigl[\sum_{i=0}^n a_i X^i\Bigr] = [f] = 0. \]
+\[ f(\alpha) = \sum_{i=0}^n a_i [U]^i = \sum_{i=0}^n [a_i] [U]^i =
+  \Bigl[\sum_{i=0}^n a_i U^i\Bigr] = [f(U)] = 0. \]
 Beim zweiten Gleichheitszeichen haben wir im Sinne des vorherigen Absatzes das
 Element~$a_i$ von~$K$ als Element~$[a_i]$ von~$K'$ aufgefasst.
 
@@ -113,23 +113,23 @@ kein Körper, da es Nullteiler gibt: Es gilt~$[g]\,[h] = [f] = 0$, obwohl~$[g]
 Wenn wir also das Problem
 \begin{quote}\emph{Konstruiere einen Oberkörper von~$K$, in dem das Polynom~$f$
 eine Nullstelle hat!}\end{quote}
-lösen wollen, können wir \emph{nicht} einfach~$K' = K[X]/(f)$ betrachten, da
+lösen wollen, können wir \emph{nicht} einfach~$K' = K[U]/(f(U))$ betrachten, da
 dieser Ring vielleicht kein Körper ist. Falls wir aber~$f$ in irreduzible
-Faktoren zerlegen können, etwa~$f = g_1 \cdots g_m$, so ist~$K[X]/(g_1)$ ein
-Oberkörper von~$K$ mit der gewünschten Eigenschaft: In~$K[X]/(g_1)$ ist das
-Element~$[X]$ eine künstliche Nullstelle von~$g_1$ und damit auch von~$f$.
+Faktoren zerlegen können, etwa~$f = g_1 \cdots g_m$, so ist~$K[U]/(g_1(U))$ ein
+Oberkörper von~$K$ mit der gewünschten Eigenschaft: In~$K[U]/(g_1(U))$ ist das
+Element~$[U]$ eine künstliche Nullstelle von~$g_1$ und damit auch von~$f$.
 
 Das Problem ist nicht eindeutig lösbar, auch nicht bis auf Isomorphie: Die
-Körper~$K[X]/(g_2)$, $\ldots$, $K[X]/(g_m)$ enthalten auch jeweils eine künstliche
-Nullstelle von~$f$, sind aber im Allgemeinen nicht isomorph zu~$K[X]/(g_1)$.
+Körper~$K[U]/(g_2(U))$, $\ldots$, $K[X]/(g_m(U))$ enthalten auch jeweils eine künstliche
+Nullstelle von~$f$, sind aber im Allgemeinen nicht isomorph zu~$K[U]/(g_1(U))$.
 
 
 \subsubsection*{Der Ring~$K'$ als ideeller Oberkörper}
 
 Wenn wir keine Zerlegung von~$f$ in irreduzible Faktoren bestimmen wollen (oder
-können), können wir trotzdem $K' = K[X]/(f)$ betrachten. Dieser Oberring
-von~$K$ ist zwar kein Körper, wir können ihn aber als \emph{ideellen}
-Oberkörper auffassen, und zwar in folgendem Sinn:
+können), können wir trotzdem $K' = K[U]/(f(U))$ betrachten. Dieser Oberring
+von~$K$ ist zwar im Allgemeinen kein Körper (nur dann, wenn~$f$ irreduzibel
+ist), aber es wäre auch verkehrt, ihn als völlig nutzlosen Ring abzutun.
 
 Addition, Subtraktion und Multiplikation in~$K'$ sind unproblematisch, diese
 Rechenoperationen benötigen nur, dass~$K'$ ein Ring ist, und das ist stets der
@@ -141,7 +141,7 @@ verloren:
 
 Tritt der dritte Fall ein, so haben wir in~$d :=
 \operatorname{ggT}(g,f)$ einen nichttrivialen Faktor von~$f$ gefunden. Dann
-können wir die gesamte Rechnung mit~$K[X]/(d)$ statt~$K[X]/(f)$ neustarten
+können wir die gesamte Rechnung mit~$K[U]/(d(U))$ statt~$K[U]/(f(U))$ neustarten
 (also von Beginn an neu aufrollen). Wenn wir in unserer Rechnung wieder zur
 Frage kommen, ob~$[g]$ invertierbar ist, wird dann die Antwort sein:
 Nein,~$[g]$ ist Null (da~$g$ ein Vielfaches von~$d$ ist). Beim zweiten
@@ -152,43 +152,91 @@ Sollte an einer späteren Stelle der Rechnung wieder der dritte Fall auftreten,
 erhalten wir abermals einen nichttrivialen Faktor und können die Rechnung
 abermals neustarten.
 
-\emph{Fazit.} Wenn wir genügend viele Neustarts durchführen, können wir
-in dem Ring~$K[X]/(f)$ rechnen, als ob er ein Körper wäre. Bei jedem Neustart
-finden wir einen nichttrivialen Teiler von~$f$.
+\emph{Fazit.} Obwohl der Ring~$K' = K[U]/(f(U))$ nur dann ein Körper ist, wenn~$f$
+irreduzibel ist, können wir mit ein wenig Umsicht auch sonst in~$K'$ so
+rechnen, \emph{als ob} er ein Körper wäre: Weil wir wissen, durch welchen
+besseren Ring wir ihn zu ersetzen haben, wenn wir bei einer Rechnung auf den
+problematischen dritten Fall stoßen. In diesem Sinn ist~$K'$ ein \emph{ideeller
+Oberkörper} von~$K$. Bei jedem Neustart finden wir einen
+nichttrivialen Faktor von~$f$.
 
 
 \subsubsection*{Beispiel}
 
 Sei~$K = \QQ$ und~$f = X^2 - 5\,X + 6$. Eine Nebenrechnung
 würde zeigen, dass dieses Polynom reduzibel ist, aber auf diese Nebenrechnung
-haben wir keine Lust; wir versuchen trotzdem, im Ring~$K[X]/(f)$ zu rechnen.
+haben wir keine Lust; wir versuchen trotzdem, im Ring~$K[U]/(f(U))$ zu rechnen.
 
 Etwa können wir uns die Frage stellen, ob~$\alpha - 1$ invertierbar ist. Dazu
-müssen wir den normierten größten gemeinsamen Teiler von~$g := X - 1$ und~$f$
+müssen wir den normierten größten gemeinsamen Teiler von~$g := U - 1$ und~$f(U)$
 bestimmen: Dieser ist~$d = 1$, und eine Bézoutdarstellung ist durch
-\[ d = 1 = -\tfrac{1}{2}(X^2 - 5\,X + 4) \cdot g + \tfrac{1}{2} \cdot f \]
-gegeben. Also ist~$[-\tfrac{1}{2}(X^2-5\,X+4)] =
+\[ d = 1 = -\tfrac{1}{2}(U^2 - 5\,U + 4) \cdot g + \tfrac{1}{2} \cdot f(U) \]
+gegeben. Also ist~$[-\tfrac{1}{2}(U^2-5\,U+4)] =
 -\tfrac{1}{2}(\alpha^2-5\alpha+4)$ ein Inverses von~$\alpha - 1$.
 
-Nun wollen wir uns die Frage stellen, ob~$\alpha - 2$ invertierbar ist. Der
-normierte größte gemeinsame Teiler von~$\tilde g := X - 2$ und~$f$ ist~$\tilde
-d = X-2$. Also tritt der dritte Fall ein: Wir haben den nichttrivialen
-Faktor~$\tilde d$ von~$f$ gefunden und Rollen unsere Rechnung neu auf,
-mit~$K[X]/(\tilde d)$ statt~$K[X]/(f)$.
+Auch können wir uns die Frage stellen, ob~$\alpha - 2$ invertierbar ist. Der
+normierte größte gemeinsame Teiler von~$\tilde g := U - 2$ und~$f(U)$ ist~$\tilde
+d = U-2$. Also tritt der dritte Fall ein: Wir haben den nichttrivialen
+Faktor~$X-2$ von~$f(X)$ gefunden und Rollen unsere Rechnung neu auf,
+mit~$K[U]/(\tilde d(U))$ statt~$K[U]/(f(U))$.
 
-Weitere Beispiele folgen!
+Nun können wir die Frage nach der Invertierbarkeit von~$\alpha - 2$ erneut
+stellen; jetzt ist der normierte größte gemeinsame Teiler von~$U-2$ und~$\tilde
+d$ zu berechnen. Dieser ist~$\tilde d$ und daher ist~$\alpha - 2$ im
+verbesserten Ring~$K[U]/(\tilde d(U))$ Null.
 
 
-\subsubsection*{Konstruktion von Zerfällungskörper}
+\subsubsection*{Konzept des Zerfällungskörpers}
 
-Diese Bemerkung wird später noch ausgebaut. Manchmal zerfällt in~$K[X]/(f)$ das
+Ein Zerfällungskörper eines Polynoms über einem Körper~$K$ ist ein Oberkörper
+von~$K$, in dem das Polynom vollständig in Linearfaktoren $(X-x_1) \cdots
+(X-x_n)$ zerfällt und in dem jedes Element ein polynomieller Ausdruck in den
+Nullstellen~$x_i$ ist.
+
+Ein Zerfällungskörper eines Polynoms ist also minimal unter allen
+Oberkörpern von~$K$, in denen das Polynom in Linearfaktoren zerfällt.
+
+\emph{Beispiel.} Der Körper~$\QQ$ ist kein Zerfällungskörper für das
+Polynom~$X^2 + 1 \in \QQ[X]$, da dieses über~$\QQ$ noch nicht in Linearfaktoren
+zerfällt. Der Rechenbereich~$\CC$ ist auch kein Zerfällungskörper, da sich nicht jedes
+Element von~$\CC$ als polynomiellen Ausdruck mit rationalen Koeffizienten in
+den beiden Nullstellen~$\pm \i$ schreiben lässt; $\CC$ ist viel zu groß. Ein
+Zerfällungskörper ist~$\QQ[\i]$.
+
+
+\subsubsection*{Konstruktion von Zerfällungskörpern}
+
+Manchmal zerfällt in~$K' = K[U]/(f(U))$ das
 Polynom~$f$ schon in Linearfaktoren: Zwar haben wir nur \emph{eine} Nullstelle
 künstlich hinzugefügt, es kann aber sein, dass sich die weiteren Nullstellen
-von~$f$ über diese eine ausdrücken lassen.
+von~$f$ über diese eine ausdrücken lassen. In diesem Fall ist~$K'$ ein
+(vielleicht nur ideeller) Zerfällungskörper für~$f$.
 
-Es kommt aber auch vor, dass~$f$ in~$K[X]/(f)$ noch nicht in Linearfaktoren
-zerfällt. Wenn etwa ein Polynom~$h \in (K[X]/(f))[Y]$ ein irreduzibler Faktor
-von~$f(Y)$ über~$K[X]/(f)$ ist, können wir die Kronecker-Konstruktion einfach
-wiederholen und~$(K[X]/(f))[Y]/(h)$ betrachten.
+\emph{Beispiel.} Im Ring~$K[U]/(f(U))$ aus dem vorherigen Zahlenbeispiel
+besitzt~$f$ neben der künstlichen Nullstelle~$\alpha = [U]$ noch die
+Nullstelle~$5-\alpha$, denn es gilt
+\begin{align*}
+  (X-\alpha) \cdot (X-(5-\alpha)) &=
+  X^2 - (\alpha + 5 - \alpha)\,X + \alpha \cdot (5-\alpha) \\
+  &= X^2 - 5\,X + (5\alpha - \alpha^2) \\
+  &= X^2 - 5\,X + 6 = f.
+\end{align*}
+
+Es kommt aber auch vor, dass~$f$ über~$K'$ noch nicht in Linearfaktoren
+zerfällt. Wenn wir dann einen nichttrivialen Faktor~$h \in K'[X]$ von~$f$
+finden (zum Beispiel das Ergebnis der Polynomdivision von~$f$
+durch~$X-\alpha$), können wir die Kronecker-Konstruktion einfach wiederholen
+und~$K'[V]/(h(V))$ betrachten. In diesem Ring wird~$h$ eine künstliche
+Nullstelle~$\beta := [V]$ besitzen und daher reduzibel sein, sodass wir einer
+Zerlegung von~$f$ in Linearfaktoren ein Stück näher gekommen sind.
+
+
+\subsubsection*{Bemerkung zu Blatt 11, Aufgabe 5}
+
+Bei Aufgabe~5 von Blatt~11 ist zu zeigen, dass ein \emph{tatsächlicher}
+Zerfällungskörper existiert, nicht nur ein ideeller. Dazu kann man die
+Kronecker-Konstruktion verwenden, muss aber darauf aufpassen, nur modulo
+irreduzibler Polynome zu rechnen. Damit das gelingt, ist die Voraussetzung,
+dass der Grundkörper~$K$ endlich ist, wesentlich.
 
 \end{document}
