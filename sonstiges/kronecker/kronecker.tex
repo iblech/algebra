@@ -1,0 +1,117 @@
+\documentclass{../../alg2/algblatt}
+
+\usepackage{stmaryrd}
+\usepackage{tabto}
+\usepackage{tikz}
+\usepackage{geometry}
+\usepackage{extarrows}
+%\geometry{tmargin=2cm,bmargin=2.0cm,lmargin=2.6cm,rmargin=2.6cm}
+
+\pagestyle{plain}
+
+\begin{document}
+
+\begin{center}\Large \sffamily\textbf{Wissenswertes zur Kronecker-Konstruktion}\end{center}
+
+Sei~$K$ ein Körper und~$f \in K[X]$ ein normiertes Polynom vom Grad
+mindestens~$1$. Aus diesen Daten können wir einen neuen Ring basteln, den Faktorring
+\[ K' := K[X]/(f). \]
+
+
+\subsubsection*{Elemente von~$K'$}
+
+Die Elemente von~$K'$ sind Äquivalenzklassen von Polynomen, wobei zwei Klassen
+genau dann als gleich angesehen werden, wenn die Differenz ihrer Repräsentanten
+ein Vielfaches von~$f$ ist. In~$K'$ rechnet man also \emph{modulo~$f$}. Ist~$g$
+ein Polynom, das bei Division durch~$f$ den Rest~$r$ lässt, so gilt~$[g] = [r]$
+in~$K'$. Wir können daher festhalten:
+\[ K' = \{ [r] \,|\, r \in K[X],\ \deg r < \deg f \}. \]
+Das Nullelement von~$K'$ ist~$[0]$, die Äquivalenzklasse des Nullpolynoms. Es
+gilt~$[0] = [f]$.
+
+
+\subsubsection*{Einbettung von~$K$ in~$K'$}
+
+Der Ring~$K'$ ist nicht im wörtlichen Sinn eine Obermenge von~$K$, da~$K'$ ja
+neu kon\-stru\-ier\-te Äquivalenzklassen enthält. Vermöge des kanonischen injektiven
+Ringhomomorphismus
+\[ K \longrightarrow K',\ z \longmapsto [z] \]
+können wir jedoch~$K$ als Unterring von~$K'$ \emph{ansehen}: Immer, wenn wir in
+die Verlegenheit kommen, ein Element~$z$ von~$K$ als Element von~$K'$
+interpretieren zu müssen (etwa wenn eine Formel nur dann Sinn ergibt, wenn an
+einer bestimmten Stelle ein Element von~$K'$ steht), so lesen wir
+einfach~"`$[z]$"' statt dem wörtlichen~"`$z$"'.
+
+
+\subsubsection*{Nutzen von~$K'$}
+
+Im Vergleich zum Ausgangskörper~$K$ enthält der Ring~$K'$ ein besonderes neues
+Element, nämlich~$\alpha := [X]$. Dieses erfüllt die Rechenregel
+\[ f(\alpha) = 0 \in K', \]
+denn wenn~$f = \sum_{i=0}^n a_i X^i$, so gilt
+\[ f(\alpha) = \sum_{i=0}^n a_i [X]^i = \sum_{i=0}^n [a_i] [X]^i =
+  \Bigl[\sum_{i=0}^n a_i X^i\Bigr] = [f] = 0. \]
+Beim zweiten Gleichheitszeichen haben wir im Sinne des vorherigen Absatzes das
+Element~$a_i$ von~$K$ als Element~$[a_i]$ von~$K'$ aufgefasst.
+
+\emph{In~$K'$ gibt es also ein Element~$\alpha$, dass die
+Rechenregel~$f(\alpha) = 0$ erfüllt.} Das ist der Grund, wieso die
+Kronecker-Konstruktion wichtig ist: Mit ihrer Hilfe können wir
+nach Belieben neue Ringe bauen, in denen dann ein vorgegebenes Polynom~$f$ eine
+künstliche Nullstelle~$\alpha$ besitzt. Die Kenntnis dieser künstlichen
+Nullstelle gibt aber keinerlei Information über den Zahlenwert richtiger
+Nullstellen von~$f$ (diese Frage könnte man sich etwa dann stellen, wenn~$K =
+\QQ$).
+
+
+\subsubsection*{Invertierbarkeit in~$K'$}
+
+Sei~$[g] \in K'$ ein beliebiges Element. Um zu entscheiden, ob~$[g]$ in~$K'$
+Null, invertierbar oder ein Nullteiler ist, ist es hilfreich, den normierten
+größten gemeinsamen Teiler~$d$ von~$g$ und~$f$ zu betrachten. Es gibt dann
+nämlich drei Fälle:
+\begin{itemize}
+\item Fall $d = 1$:
+
+Dann ist~$[g] \in K'$ invertierbar. Aus einer
+Bézoutdarstellung der Form~$d = pg + qf$ können wir das Inverse sofort ablesen:
+Es ist~$[p] \in K'$, denn
+\[ 1 = [d] = [p]\,[g] + [q]\,[f] = [p]\,[g]. \]
+
+\item Fall $d = f$:
+
+Dann ist~$[g] \in K'$ Null, da~$g$ ein Vielfaches von~$f$
+ist.
+
+\item Fall $0 < \deg d < \deg f$:
+
+Dann ist~$[g] \in K'$ ein Nullteiler, der
+selbst nicht Null ist. Denn da~$d$ gemeinsamer Teiler von~$f$ und~$g$ ist, gibt
+es Polynome~$u$ und~$v$ mit~$f = ud$ und~$g = vd$; daher gilt in~$K'$ die
+Rechnung
+\[ [u]\,[g] = [uvd] = [v]\,[f] = [v]\cdot0 = 0. \]
+Weder~$[u]$ noch~$[g]$ sind in~$K'$ Null, da~$u$ und~$g$ keine Vielfachen
+von~$f$ sind.
+\end{itemize}
+
+
+\subsubsection*{Der Ring~$K'$ als Oberkörper}
+
+Falls~$f$ irreduzibel ist, kann der dritte Fall des vorherigen Abschnitts nicht
+auftreten. Dann ist also jedes Element von~$K'$ entweder Null oder
+invertierbar, also ist~$K'$ in diesem Fall ein Körper.
+
+Falls~$f$ reduzibel ist, etwa~$f = gh$ mit~$\deg g, \deg h \geq 1$, so ist~$K'$
+kein Körper, da es Nullteiler gibt: Es gilt~$[g]\,[h] = [f] = 0$, obwohl~$[g]
+\neq 0$ und~$[h] \neq 0$.
+
+Wenn wir also das Problem
+\begin{quote}\emph{Konstruiere einen Oberkörper von~$K$, in dem das Polynom~$f$
+eine Nullstelle hat!}\end{quote}
+lösen wollen, können wir \emph{nicht} einfach~$K' = K[X]/(f)$ betrachten, da
+dieser Ring vielleicht kein Körper ist. Falls wir aber~$f$ in irreduzible
+Faktoren zerlegen können, etwa~$f = g_1 \cdots g_m$, so ist~$K[X]/(g_1)$ ein
+Oberkörper von~$K$ mit der gewünschten Eigenschaft: In~$K[X]/(g_1)$ ist das
+Element~$[X]$ eine künstliche Nullstelle von~$g_1$ und damit auch von~$f$.
+
+\end{document}
