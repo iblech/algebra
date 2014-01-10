@@ -5,7 +5,7 @@
 \usepackage{tikz}
 \usepackage{geometry}
 \usepackage{extarrows}
-%\geometry{tmargin=2cm,bmargin=2.0cm,lmargin=2.6cm,rmargin=2.6cm}
+\geometry{tmargin=2cm,bmargin=3.0cm,lmargin=3cm,rmargin=3cm}
 
 \pagestyle{plain}
 
@@ -16,6 +16,8 @@
 Sei~$K$ ein Körper und~$f \in K[X]$ ein normiertes Polynom vom Grad
 mindestens~$1$. Aus diesen Daten können wir einen neuen Ring basteln, den Faktorring
 \[ K' := K[X]/(f). \]
+Wenn wir diese Konstruktion mit dem Ziel ausführen, eine künstliche Nullstelle
+von~$f$ zu konstruieren (siehe unten), so trägt sie den Namen \emph{Kronecker-Konstruktion}.
 
 
 \subsubsection*{Elemente von~$K'$}
@@ -27,7 +29,10 @@ ein Polynom, das bei Division durch~$f$ den Rest~$r$ lässt, so gilt~$[g] = [r]$
 in~$K'$. Wir können daher festhalten:
 \[ K' = \{ [r] \,|\, r \in K[X],\ \deg r < \deg f \}. \]
 Das Nullelement von~$K'$ ist~$[0]$, die Äquivalenzklasse des Nullpolynoms. Es
-gilt~$[0] = [f]$.
+gilt~$[0] = [f]$. Das Element~$\alpha := [X] \in K'$ spielt eine besondere
+Rolle. Jedes Element von~$K'$ ist ein rationaler (und sogar polynomieller)
+Ausdruck in~$\alpha$, daher können wir auch schreiben:
+\[ K' = K[\alpha] = K(\alpha). \]
 
 
 \subsubsection*{Einbettung von~$K$ in~$K'$}
@@ -45,8 +50,8 @@ einfach~"`$[z]$"' statt dem wörtlichen~"`$z$"'.
 
 \subsubsection*{Nutzen von~$K'$}
 
-Im Vergleich zum Ausgangskörper~$K$ enthält der Ring~$K'$ ein besonderes neues
-Element, nämlich~$\alpha := [X]$. Dieses erfüllt die Rechenregel
+Im Vergleich zum Ausgangskörper~$K$ enthält der Ring~$K'$ das besondere neue
+Element~$\alpha = [X]$. Dieses erfüllt die Rechenregel
 \[ f(\alpha) = 0 \in K', \]
 denn wenn~$f = \sum_{i=0}^n a_i X^i$, so gilt
 \[ f(\alpha) = \sum_{i=0}^n a_i [X]^i = \sum_{i=0}^n [a_i] [X]^i =
@@ -113,5 +118,77 @@ dieser Ring vielleicht kein Körper ist. Falls wir aber~$f$ in irreduzible
 Faktoren zerlegen können, etwa~$f = g_1 \cdots g_m$, so ist~$K[X]/(g_1)$ ein
 Oberkörper von~$K$ mit der gewünschten Eigenschaft: In~$K[X]/(g_1)$ ist das
 Element~$[X]$ eine künstliche Nullstelle von~$g_1$ und damit auch von~$f$.
+
+Das Problem ist nicht eindeutig lösbar, auch nicht bis auf Isomorphie: Die
+Körper~$K[X]/(g_2)$, $\ldots$, $K[X]/(g_m)$ enthalten auch jeweils eine künstliche
+Nullstelle von~$f$, sind aber im Allgemeinen nicht isomorph zu~$K[X]/(g_1)$.
+
+
+\subsubsection*{Der Ring~$K'$ als ideeller Oberkörper}
+
+Wenn wir keine Zerlegung von~$f$ in irreduzible Faktoren bestimmen wollen (oder
+können), können wir trotzdem $K' = K[X]/(f)$ betrachten. Dieser Oberring
+von~$K$ ist zwar kein Körper, wir können ihn aber als \emph{ideellen}
+Oberkörper auffassen, und zwar in folgendem Sinn:
+
+Addition, Subtraktion und Multiplikation in~$K'$ sind unproblematisch, diese
+Rechenoperationen benötigen nur, dass~$K'$ ein Ring ist, und das ist stets der
+Fall. Nur bei der Division müssen wir aufpassen: Ein Element~$[g] \in K'$ kann
+ja Null, invertierbar oder ein Nullteiler sein. In den ersten beiden Fällen ist
+alles in Ordnung, diese beiden Fälle erwarten wir ja von einem Körper. Der
+dritte Fall darf bei einem Körper nicht auftreten. Aber nicht alle Hoffnung ist
+verloren:
+
+Tritt der dritte Fall ein, so haben wir in~$d :=
+\operatorname{ggT}(g,f)$ einen nichttrivialen Faktor von~$f$ gefunden. Dann
+können wir die gesamte Rechnung mit~$K[X]/(d)$ statt~$K[X]/(f)$ neustarten
+(also von Beginn an neu aufrollen). Wenn wir in unserer Rechnung wieder zur
+Frage kommen, ob~$[g]$ invertierbar ist, wird dann die Antwort sein:
+Nein,~$[g]$ ist Null (da~$g$ ein Vielfaches von~$d$ ist). Beim zweiten
+Durchgang wird der problematische dritte Fall an dieser Stelle also nicht
+auftreten.
+
+Sollte an einer späteren Stelle der Rechnung wieder der dritte Fall auftreten,
+erhalten wir abermals einen nichttrivialen Faktor und können die Rechnung
+abermals neustarten.
+
+\emph{Fazit.} Wenn wir genügend viele Neustarts durchführen, können wir
+in dem Ring~$K[X]/(f)$ rechnen, als ob er ein Körper wäre. Bei jedem Neustart
+finden wir einen nichttrivialen Teiler von~$f$.
+
+
+\subsubsection*{Beispiel}
+
+Sei~$K = \QQ$ und~$f = X^2 - 5\,X + 6$. Eine Nebenrechnung
+würde zeigen, dass dieses Polynom reduzibel ist, aber auf diese Nebenrechnung
+haben wir keine Lust; wir versuchen trotzdem, im Ring~$K[X]/(f)$ zu rechnen.
+
+Etwa können wir uns die Frage stellen, ob~$\alpha - 1$ invertierbar ist. Dazu
+müssen wir den normierten größten gemeinsamen Teiler von~$g := X - 1$ und~$f$
+bestimmen: Dieser ist~$d = 1$, und eine Bézoutdarstellung ist durch
+\[ d = 1 = -\tfrac{1}{2}(X^2 - 5\,X + 4) \cdot g + \tfrac{1}{2} \cdot f \]
+gegeben. Also ist~$[-\tfrac{1}{2}(X^2-5\,X+4)] =
+-\tfrac{1}{2}(\alpha^2-5\alpha+4)$ ein Inverses von~$\alpha - 1$.
+
+Nun wollen wir uns die Frage stellen, ob~$\alpha - 2$ invertierbar ist. Der
+normierte größte gemeinsame Teiler von~$\tilde g := X - 2$ und~$f$ ist~$\tilde
+d = X-2$. Also tritt der dritte Fall ein: Wir haben den nichttrivialen
+Faktor~$\tilde d$ von~$f$ gefunden und Rollen unsere Rechnung neu auf,
+mit~$K[X]/(\tilde d)$ statt~$K[X]/(f)$.
+
+Weitere Beispiele folgen!
+
+
+\subsubsection*{Konstruktion von Zerfällungskörper}
+
+Diese Bemerkung wird später noch ausgebaut. Manchmal zerfällt in~$K[X]/(f)$ das
+Polynom~$f$ schon in Linearfaktoren: Zwar haben wir nur \emph{eine} Nullstelle
+künstlich hinzugefügt, es kann aber sein, dass sich die weiteren Nullstellen
+von~$f$ über diese eine ausdrücken lassen.
+
+Es kommt aber auch vor, dass~$f$ in~$K[X]/(f)$ noch nicht in Linearfaktoren
+zerfällt. Wenn etwa ein Polynom~$h \in (K[X]/(f))[Y]$ ein irreduzibler Faktor
+von~$f(Y)$ über~$K[X]/(f)$ ist, können wir die Kronecker-Konstruktion einfach
+wiederholen und~$(K[X]/(f))[Y]/(h)$ betrachten.
 
 \end{document}
