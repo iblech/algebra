@@ -612,14 +612,46 @@ ist~$-108$.}
 
 \section*{Übungsblatt 11}
 
+\paragraph{Aufgabe 1.} Diese Aufgabe ist eine typische Staatsexamensaufgabe.
+Die "`S"'-Markierung hätte aber das Layout gestört.
+
+\paragraph{Aufgabe 2.} Gibt es Polynome, die keine Nullstellen besitzen, und
+trotzdem reduzibel ist?
+
 \paragraph{Aufgabe 3.} Hinweise in Spiegelschrift.
 
-%\hint{%
-%Zu Teilaufgabe b): Vielleicht hilft euch PrimitiIrgendwann muss man zeigen, dass das Polynom~$g(X) - h(X) Y$
-%als Element aus~$K(Y)[X]$ irreduzibel ist. Dazu kann man zunächst zeigen, dass
-%das Polynom primitiv ist, dass also der größte gemeinsame Teiler seiner 
-%}
-%
+\hint{%
+Folgendes Mehr-Schritte-Programm führt zum Erfolg (ohne Gewähr). Punkte gibt
+es schon für Teillösungen! Manche Schritte machen mehr Spaß als andere. Die
+hinteren Schritte sind nicht unbedingt die schwereren.
+\begin{itemize}
+\item Was ist ein Kandidat für das Minimalpolynom von~$X$ über~$K(y)$? Hat
+etwas mit~$g(X)$ und~$h(X)$ zu tun. Es ist etwas Konzentration erforderlich, um
+bei den vielen Variablennamen nicht durcheinander zu kommen. Im Rest der
+Aufgabe geht es darum, die Irreduzibilität dieses Polynoms nachzuweisen.
+\item Unter den gegebenen Voraussetzungen ist~$y \in K(X)$ transzendent
+über~$K$, d.\,h. es gibt keine Polynomgleichung vom Grad~$1$ oder höher,
+die~$y$ als Lösung und Koeffizienten aus~$K$ hat.
+\item Wegen dieser Transzendenz ist der Ring~$K[y]$ kanonisch isomorph
+zu~$K[Y]$. (Der erste Ring ist ein Unterring von~$K(X)$ und enthält alle in~$y$
+polynomiellen Ausdrücke. Der zweite Ring ist der Ring der Polynome in der
+formalen Unbestimmten~$Y$. Die Unbestimmte~$Y$ ist überhaupt nicht dasselbe wie~$y$.)
+\item Der Quotientenkörper von~$K[y]$ ist~$K(y)$. (Direkt nach Definition ist
+der Quotientenkörper von~$K[Y]$ gleich~$K(Y)$. Aber das ist nicht die Aussage,
+die da steht.)
+\item Zeige, dass das im ersten Schritt gefundene Polynom als Polynom
+über~$K[y]$ (in der Unbestimmten~$X$) primitiv ist, das also der größte
+gemeinsame Teiler der Koeffizienten vor den~$X^i$ Eins ist. Für diesen Schritt
+gibt es Bonuspunkte.
+\item Argumentiere, dass es genügt, die Irreduzibilität des angeblichen
+Minimalpolynoms als Element von~$K[y][X]$ nachzuweisen. (Eigentlich muss ja die
+Irreduzibilität als Element von~$K(y)[X]$ nachgewiesen werden.)
+\item Weise stattdessen die Irreduzibilität in~$K[X][Y]$ nach. Was ist damit
+gemeint? (Diese Frage stellt sich, weil im Polynom ja eigentlich~$y$ statt~$Y$
+vorkommt.) Wieso genügt das? Und wieso ist diese Irreduzibilität klar?
+\end{itemize}
+}
+
 \hint{%
 Zu Teilaufgabe a): Mit~$K(X)$ ist der Körper der rationalen Funktionen in einer
 Unbestimmten~$X$ über~$K$ gemeint. Seine Elemente sind Brüche, wobei Zähler und
