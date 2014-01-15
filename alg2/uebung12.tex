@@ -1,41 +1,39 @@
 \documentclass{algblatt}
 \input{config.tex}
-\setlength{\aufgabenskip}{1em}
 
 \begin{document}
 
 \maketitle{12}{Abgabe bis 21. Januar 2014, 17:00 Uhr}
 
-\begin{aufgabeE}{2+2+2}{Beispielrechnungen in endlicher Charakteristik}
+\begin{aufgabeE}{1+2+2}{Beispielrechnungen in endlicher Charakteristik}
 \item Finde von jedem Element aus~$\FF_7$ all seine siebten Wurzeln.
 \item Sei~$E := \FF_3[X]/(X^3 + X^2 + 2)$. Schreibe~$\alpha := [X] \in E$ als einen
-in~$\alpha^3$ rationalen Ausdrück über~$\FF_3$.
+in~$\alpha^3$ rationalen Ausdruck über~$\FF_3$.
 \item Sei~$K$ ein Körper der Charakteristik~$p$. Sei~$x$ ein Element einer
-Körpererweiterung mit~$K(x) = K(x^p)$. Konstruiere ein separables Polynom
-über~$K$, das~$x$ als Nullstelle besitzt.
+Körpererweiterung mit~$K(x) = K(x^p)$. Finde ein separables Polynom
+über~$K$, das~$x$ als Nullstelle hat.
 \end{aufgabeE}
 
 \begin{aufgabe}{2+2}{Vererbung von Separabilität}
 Sei~$L \supseteq E \supseteq K$ ein Turm von Körpererweiterungen. Zeige oder
-widerlege folgende Aussagen:
+widerlege:
 \begin{enumerate}
 \item Ist ein Element aus~$L$ über~$K$ separabel, so auch über~$E$.
 \item Ist ein Element aus~$L$ über~$E$ separabel, so auch über~$K$.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{2+2}{Kriterium für Separabilität}
-Sei~$N \geq 0$ eine natürliche Zahl und~$K$ ein Körper von Charakteristik
-größer als~$N$.
+\begin{aufgabe}{2+2}{Körper von nach unten beschränkter Charakteristik}
+Sei~$K$ ein Körper von Charakteristik größer als eine natürliche Zahl~$N$.
 \begin{enumerate}
-\item Sei~$f(X)$ ein Polynom vom Grad~$\leq N$ über~$K$. Zeige:
-Ist $f(X)$ irreduzibel, so auch separabel.
-\item Sei ferner~$K$ faktoriell und~$L$ eine endliche Erweiterung vom Grad~$N$.
-Zeige, dass~$L$ faktoriell ist.
+\item Zeige: Jedes irreduzibles Polynom vom Grad~$\leq N$ über~$K$ ist schon
+separabel.
+\item Sei~$L$ eine Erweiterung von~$K$ vom Grad~$N$.
+Zeige: Ist~$K$ faktoriell, so auch~$L$.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{2+1}{Gerichteter Limes von Körpern}
+\begin{aufgabe}{3+1}{Gerichteter Limes von Körpern}
 Sei~$(K_i)_{i \in I}$ ein gerichtetes System von Ringen. Seien alle~$K_i$ sogar
 Körper.
 \begin{enumerate}
@@ -46,11 +44,11 @@ jeden~$K_i$ aufgefasst werden kann.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{2+1}{Vollkommene Körper}
+\begin{aufgabe}{2+1}{Separabilität irreduzibler Polynome}
 Sei~$K$ ein faktorieller Körper.
 \begin{enumerate}
-\item Zeige, dass~$K$ genau dann vollkommen ist, wenn jedes irreduzible Polynom
-über~$K$ auch separabel über~$K$ ist.
+\item Zeige: Genau dann ist jedes irreduzible Polynom
+über~$K$ auch separabel über~$K$, wenn~$K$ vollkommen ist.
 \item Welche Richtung lässt sich noch zeigen, wenn wir nicht voraussetzen
 wollen, dass~$K$ faktoriell
 ist?
