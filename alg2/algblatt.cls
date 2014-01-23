@@ -99,6 +99,7 @@
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\GL}{\mathrm{GL}}
 \newcommand{\Gal}{\mathrm{Gal}}
+\newcommand{\Frob}{\mathrm{Frob}}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\ord}{ord}
 

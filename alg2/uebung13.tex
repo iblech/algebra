@@ -1,0 +1,54 @@
+\documentclass{algblatt}
+\input{config.tex}
+
+\begin{document}
+
+\maketitle{13}{Abgabe bis 28. Januar 2014, 17:00 Uhr}
+
+\begin{aufgabe}{2+2+2}{Vervollkommnung von Ringen}
+Sei~$R$ ein kommutativer Ring positiver Charakteristik~$p$. Der \emph{inverse
+Limes} $E := \varprojlim_{i \in \NN} R^{p^i}$ ist die Menge aller
+Folgen~$(x_0,x_1,x_2,\ldots)$ mit~$x_i \in R$ und~$x_{i+1}^p = x_i$ für alle~$i
+\in \NN$. Durch gliedweise Addition und Multiplikation wird~$E$ zu einem
+kommutativen Ring, genannt \emph{Vervollkommnung von~$R$}.
+\begin{enumerate}
+\item Zeige explizit, dass jedes Element aus~$E$ eine~$p$-te Wurzel besitzt.
+\item Sei~$R$ sogar ein Körper. Zeige, dass~$E$ vermöge der kanonischen
+Abbildung~$(x_0,x_1,\ldots) \mapsto x_0$ zu einem vollkommenen Unterkörper
+von~$R$ wird.
+\item Sei weiterhin~$R$ ein Körper. Zeige, dass~$E$ kanonisch isomorph zum
+Unterring all derjenigen Elemente von~$R$ ist, die für jedes~$n$ eine~$p^n$-te Wurzel
+besitzen.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{2+2}{Primkörper und Vollkommenheit in positiver Charakteristik}
+Sei~$K$ ein Körper positiver Charakteristik~$p$.
+\begin{enumerate}
+\item Zeige, dass der Primkörper von~$K$
+der kleinste Unterkörper von~$K$ ist.
+\item Zeige, dass~$K$ genau dann
+vollkommen ist, wenn der Frobenius ein Isomorphismus von~$K$ auf sich selbst
+ist.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabeE}{2+2}{Unterkörper endlicher Körper}
+\item Gibt es in einem Körper mit~27 Elementen einen Unterkörper mit neun
+Elementen?
+\item Sei~$K$ ein Körper mit~25 Elementen. Zeige, dass in~$K$ eine
+Quadratwurzel von~2 existiert. Gib einen Erzeuger der multiplikativen Gruppe
+von~$K$ in der Form~$a + b \sqrt{2}$ mit~$a,b \in \FF_5$ an.
+\end{aufgabeE}
+
+\begin{aufgabe}{2+4}{Automorphismen endlicher Körper}
+Sei~$q = p^n$ eine Primzahlpotenz.
+\begin{enumerate}
+\item Was ist~$(X^{q^d} - X) : (X^q - X)$?
+\item Sei~$L$ ein Körper mit~$q^d$ Elementen und~$K$ sein Unterkörper mit~$q$
+Elementen. Zeige, dass~$\Aut_K(L)$ von~$\Frob^n$ erzeugt wird und~$d$ Elemente
+besitzt.
+\end{enumerate}
+\end{aufgabe}
+
+\end{document}
