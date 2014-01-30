@@ -711,4 +711,75 @@ Primkörpers.
 "`Kleinstheit"' bezieht sich also nicht auf die Anzahl der Elemente, sondern
 auf die Inklusionsbeziehung.
 
+
+\section*{Blatt 14}
+
+\paragraph{Aufgabe 1.} Wenn ihr wollt, dürft ihr bei den Teilaufgaben~b) und~c)
+voraussetzen, dass~$L$ endlich über~$K$ ist. Dann gibt es weitere
+Beweismöglichkeiten (die aber etwa gleich schwer sind wie ohne die
+Zusatzvoraussetzung).
+
+\paragraph{Aufgabe 2.} Mit~$N_{L/K}(x)$ ist die \emph{Norm} des Elements~$x \in
+L$ über~$K$ gemeint. Sie ist definiert als die Determinante der~$K$-linearen
+Abbildung
+\[ L \longrightarrow L,\ z \longmapsto zx. \]
+
+\hint{%
+Führe den Fall eines beliebigen Elements~$x$ auf den Fall eines
+separablen Elements~$x$ zurück. Für diesen Fall ist nützlich, eine geeignete
+Basis von~$L$ über~$K$ zu wählen (eine, die etwas mit~$x$ zu tun hat) und sich
+an ein Faktum der Linearen Algebra zu erinnern: Nämlich, dass Minimalpolynom und
+charakteristisches Polynom der sog. \emph{Begleitmatrix} eines normierten
+Polynoms~$f(X) = X^n + a_{n-1} X^{n-1} + \cdots + a_1 X + a_0$, das ist die
+Matrix
+\[ B(f) =
+  \begin{pmatrix}
+    0 & 0 & \cdots & 0 & -c_0 \\
+    1 & 0 & \cdots & 0 & -c_1 \\
+    0 & 1 & \cdots & 0 & -c_2 \\
+    \vdots & \vdots & \vdots & \vdots & \vdots \\
+    0 & 0 & \cdots & 1 & -c_{n-1}
+  \end{pmatrix} \in K^{n \times n}, \]
+beide gleich~$f(X)$ sind.
+}
+
+\paragraph{Aufgabe 3.} Hinweise in Spiegelschrift.
+
+\hint{%
+Wieso hilft einem hier der Beweis des Satzes über das primitive Element
+überhaupt nicht weiter? (Wieso kann man also nicht das übliche Verfahren zur
+Bestimmung eines primitiven Elements verwenden?) Wie kann man stattdessen
+vorgehen? Das
+\href{http://alg.math.uni-augsburg.de/lehre/ss13/algebra-i/beispiele-und-erklarungen/umgang-mit-rechenbereichserweiterungen/at_download/file}{Hinweisblatt
+der Algebra~I über Körpererweiterungen} behält auch über allgemeinen Körpern
+Gültigkeit.
+}
+
+\paragraph{Aufgabe 4.} Manche Beweise des Kapitels über Transzendenzbasen haben
+vielleicht an ähnliche Beweise aus der Linearen Algebra erinnert. Das ist kein
+Zufall: Hinter beiden Situationen steckt ein tieferes Konzept, das der sog.
+\emph{Spannoperation}. In dieser Aufgabe wollen wir zwei Beispiele für
+Spannoperationen kennenlernen. Auf dem nächsten Blatt werden wir dann sehen,
+das man sich mit dem Konzept der Spannoperation manche Beweise der Vorlesung und
+manche Beweise der Linearen Algebra hätte sparen können.
+
+Eine \emph{Spannoperation} auf einer Menge~$S$ ist eine Vorschrift, die jeder
+endlichen Teilmenge~$I \subseteq S$ eine gewisse Teilmenge~$\langle I \rangle
+\subseteq S$ (nicht unbedingt endlich) zuordnet. Dabei müssen folgende vier
+Axiome erfüllt sein (für alle endlichen Teilmengen~$I,J \subseteq S$ und
+Elemente~$x,y \in S$):
+\begin{enumerate}
+\item[1.] $I \subseteq J \quad\Longrightarrow\quad \langle I \rangle \subseteq
+\langle J \rangle$.
+\item[2.] $I \subseteq \langle I \rangle$.
+\item[3.] $I \subseteq \langle J \rangle \quad\Longrightarrow\quad
+\langle I \rangle \subseteq \langle J \rangle$.
+\item[4.] $x \in \langle I \cup \{y\} \rangle \quad\Longrightarrow\quad
+\text{$x \in \langle I \rangle$ oder $y \in \langle I \cup\{x\} \rangle$}.$
+\end{enumerate}
+
+Spannoperationen sind nicht nur in der Algebra, sondern auch in der
+Kombinatorik wichtig. Verallgemeinerungen von Spannoperationen sind sog.
+\emph{Monaden}, welche überall in der Mathematik vorkommen.
+
 \end{document}
