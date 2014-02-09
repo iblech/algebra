@@ -99,7 +99,9 @@
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\GL}{\mathrm{GL}}
 \newcommand{\Gal}{\mathrm{Gal}}
+\newcommand{\Frob}{\mathrm{Frob}}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\ord}{ord}
+\newcommand{\disc}{\mathrm{disc}}
 
 \newcommand{\gra}[2]{[#1:#2]}
