@@ -30,6 +30,8 @@ Zusatz von Hilfssatz 5.26 falsch formuliert?
 
 Seite 202: "Wegen sigma^p * z = z": s/z/1/
 
+Seite 206: "Um die Gleichung (5.13) ZU LÖSEN reicht es also, ..."
+
 Seite 207, ganz oben: (p-1)
 Seite 208: "entweder" streichen? (Bei y_1 oder y_2 null.)
 
