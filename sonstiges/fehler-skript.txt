@@ -42,3 +42,18 @@ Seite 213, Aufg. 5.8.5: "quartisch" fehlt. Außerdem einmal f und einmal g.
 "endlich präsentiert": Ausbuchstabierung.
 
 Seite 318 teilweise Faktorisierung erster Teil des Beispiels
+
+
+Prop 8.11:
+* Wie x finden?
+* Komma am Ende
+* Wieso Kern nur durch diese erzeugt?
+
+* Klammer bei Erklärung des Kompositums
+
+* Seite 347: "als ideeller Körper": "r" statt "n"
+
+* Seite 354: "schon die Identität ist": NICHT vergessen
+
+* Seite 356: "wie etwa Q, alle Zahlkörper oder Q-quer": Danach Komma.
+* "nämlich X - b KOMMA schon über K"
