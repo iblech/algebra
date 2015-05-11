@@ -59,6 +59,11 @@ Prop 8.11:
 * "nämlich X - b KOMMA schon über K"
 
 
+Seite 275, bei der Auflistung der Matrixoperationen:
+* ... aus der Tatsache KOMMA daß wir bis auf Ähnlichkeit Zeilen vertauschen
+  dürfen KOMMA und wiederholter Anwendung der vorletzten Aussage (das zweite
+  Komma fehlt)
+
 Seite 276, im Beweis der Smithschen Normalform über Z:
 * nicht "Folge" ganzer Zahlen, eher "Prozess" (im Hinblick auf die spätere
   Verallgemeinerung auf noethersche Ringe)
