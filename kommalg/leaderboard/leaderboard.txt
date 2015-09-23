@@ -1,0 +1,13 @@
+[ MkAlgebraist
+    { name   = "Haskell"
+    , url    = "URL"
+    , awards = ["1 funktionaler Punkt"]
+    , sheets = [False,False,False,False,False,False,False,False,False,False,True,False]
+    }
+, MkAlgebraist
+    { name   = "Curry"
+    , url    = "URL"
+    , awards = ["1 λ-Punkt"]
+    , sheets = [False,True,False,False,False,False,False,False,False,False,False,False]
+    }
+]

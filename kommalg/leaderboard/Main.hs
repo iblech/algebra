@@ -13,14 +13,7 @@ data Algebraist = MkAlgebraist
     , awards :: [String]
     , sheets :: [Bool]
     }
-    deriving (Show,Eq)
-
-leaderboard =
-    [ MkAlgebraist "Haskell" "URL" ["1 funktionaler Punkt"] $
-        replicate 10 False ++ [True,False]
-    , MkAlgebraist "Curry" "URL" ["1 λ-Punkt"] $
-        [False,True] ++ replicate 10 False
-    ]
+    deriving (Show,Eq,Read)
 
 longestStreak :: Algebraist -> Int
 longestStreak = maximum . streaks
@@ -39,7 +32,7 @@ strength = mconcat
     ]
 
 main :: IO ()
-main = putStr . renderHtml $ renderLeaderboard leaderboard
+main = putStrLn . renderHtml . renderLeaderboard . read =<< readFile "leaderboard.txt"
 
 renderAlgebraist p = [hamlet|
   <tr>
