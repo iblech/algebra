@@ -79,7 +79,7 @@ $doctype 5
   <body>
     <h1>Kommutative Algebra
     <a href="http://brownsharpie.courtneygibbons.org/?p=1253">
-      <img src="images/love-commute.jpeg" alt="Love makes the diagram commute." style="width: 500px; height: 333px; border: 0">
+      <img src="../images/love-commute.jpeg" alt="Love makes the diagram commute." style="width: 500px; height: 333px; border: 0">
     <table>
       <tr>
         <th>AlgebraikerIn
@@ -91,7 +91,7 @@ $doctype 5
         ^{renderAlgebraist p}
     <p>
       <em>Du willst deine Strähne verbessern?<br>
-      <a href="uebung00.pdf">Blatt 0
+      <a href="../uebung00.pdf">Blatt 0
     <p class="moral">
       Whenever you meet a <em>functor</em>,<br>
       ask “What is its <em>codensity monad</em>?”.
