@@ -45,7 +45,7 @@
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\rhead{19. April 2013}
+\rhead{6. Oktober 2015}
 \lhead{Beweistechniken}
 
 \renewcommand{\labelitemi}{--}
@@ -66,7 +66,7 @@ Bis man zum eigentlichen Kern eines mathematischen Problems vordringt, muss man
 im Allgemeinen mehrere Definitionen entfalten. Das gelingt meist mit der
 Technik des direkten Beweisens ("`immer der Nase nach"').
 
-\emph{Beispiel:} Seien $f{:}\, X \to Y$ und $g{:}\, Y \to Z$ zwei Abbildungen. Wir
+\emph{Beispiel:} Seien $f: X \to Y$ und $g: Y \to Z$ zwei Abbildungen. Wir
 wollen zeigen:
 \[ \text{$f$ injektiv} \,\wedge\, \text{$g$ injektiv} \ \Longrightarrow\ 
   \text{$g \circ f$ injektiv}. \]
@@ -97,6 +97,15 @@ x)$. Dann folgt:
    f(x) = f(\tilde x) \ \stackrel{\text{$f$ inj.}}{\Longrightarrow}\ 
    x = \tilde x, \]
 das war zu zeigen.
+\end{indentblock}
+Mathematische Beweise sind in erster Linie (deutsche, englische, \ldots)
+\emph{Texte}. Natürlich kommen in Beweisen Formeln durchaus vor, aber von der
+äußeren Struktur her muss ein Beweis eine logisch schlüssige Argumentation
+sein. Daher ist folgender Beweisversuch ungenügend:
+\begin{indentblock}
+\[ g(f(x)) = g(f(\tilde x)) \qquad
+   f(x) = f(\tilde x) \qquad
+   x = \tilde x \]
 \end{indentblock}
 
 \newpage
@@ -156,7 +165,8 @@ Oder kürzer notiert:
 \Leftrightarrow \ldots \Leftrightarrow \ldots \Leftrightarrow B$
 
 \item Um \hil{$\forall x\in X{:}\, A(x)$} direkt zu zeigen, zeigt man, dass für
-jedes~$x \in X$ jeweils die Aussage~$A(x)$ gilt.
+jedes~$x \in X$ jeweils die Aussage~$A(x)$ gilt. Das macht man durch ein
+einziges, einheitliches Argument.
 
 \emph{Vorlage:} Sei~$x \in X$ beliebig. Da \ldots, gilt~$A(x)$.
 
