@@ -1,0 +1,61 @@
+\documentclass{uebblatt}
+\usepackage{wrapfig}
+
+\newcommand{\http}{http:/\kern-.2em/\kern-0.03em}
+
+\begin{document}
+
+\maketitle{1}{Abgabe bis zum Montag, den 19. Oktober 2015}
+
+\begin{aufgabe}{2+2+2+2}{Invertierbarkeit und Nilpotenz in Polynomringen}
+Sei~$A$ ein Ring. Sei~$f = a_0 + a_1 X + \cdots + a_m X^m \in A[X]$ ein Polynom
+über~$A$. Zeige:
+\begin{enumerate}
+\item Genau dann ist~$f$ eine Einheit in~$A[X]$, wenn~$a_0$ in~$A$ invertierbar
+und die~$a_1,\ldots,a_m$ nilpotent sind.
+\item Genau dann ist~$f$ nilpotent, wenn~$a_0,\ldots,a_m$ nilpotent sind.
+\item Jacobsches Radikal und Nilradikal von~$A[X]$ stimmen miteinander überein.
+\item Ist~$A$ \emph{reduziert}, d.\,h. ist nur die Null in~$A$ nilpotent,
+und ist~$g = b_0 + \cdots + b_n X^n \in A[X]$ mit~$fg = 0$, so gilt für alle passenden Indizes~$i$ und~$j$: $a_i b_j = 0$.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{2+1}{Lokale Ringe}
+\begin{enumerate}
+\item Zeige, dass ein Ring~$A$ genau dann ein lokaler Ring ist,
+wenn~$1 \neq 0$ in~$A$ und, wann immer eine Summe aus zwei Elementen
+invertierbar ist, schon mindestens ein Summand invertierbar ist.
+\item Was sind die einzigen idempotenten Elemente in einem lokalen Ring?
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{4}{Ringe mit nur einem Primideal}
+Sei~$A$ ein Ring mit Nilradikal~$\nnn$. Zeige, dass folgende
+Aussagen äquivalent sind:
+\begin{enumerate}
+\item[1.] In~$A$ gibt es genau ein Primideal.
+\item[2.] Jedes Element von~$A$ ist \emph{entweder} invertierbar \emph{oder}
+nilpotent.
+\item[3.] Der Faktorring~$A/\nnn$ ist ein Körper.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{1+2+2+2}{Boolsche Ringe}
+Sei~$A$ ein \emph{Boolscher Ring}, d.\,h. ein kommutativer Ring mit~$x^2 =
+x$ für alle~$x \in A$. Zeige:
+\begin{enumerate}
+\item Für alle~$x \in A$ gilt~$2x = 0$.
+\item Jedes Primideal~$\ppp$ von~$A$ ist maximal.
+\item Für jedes Primideal~$\ppp$ von~$A$ ist~$A/\ppp$ ein Körper mit zwei
+Elementen.
+\item Jedes endlich erzeugte Ideal von~$A$ ist ein Hauptideal.
+\end{enumerate}
+\end{aufgabe}
+
+\vfill
+\begin{center}
+  \rotatebox{90}{\tiny\sffamily \http spikedmath.com/182.html}
+  \includegraphics[height=3.7cm]{images/what-happens-in-math-camp}
+\end{center}
+
+\end{document}
