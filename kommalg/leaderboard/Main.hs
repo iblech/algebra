@@ -49,7 +49,7 @@ renderAlgebraist p = [hamlet|
     <td>#{concat $ intersperse ", " $ awards p}
 |]
 
-renderLeaderboard ps = [hamlet|
+renderLeaderboard ps = let _ = sortBy strength ps in [hamlet|
 $doctype 5
 <html lang="de">
   <head>
@@ -80,6 +80,22 @@ $doctype 5
     <h1>Kommutative Algebra
     <a href="http://brownsharpie.courtneygibbons.org/?p=1253">
       <img src="../images/love-commute.jpeg" alt="Love makes the diagram commute." style="width: 500px; height: 333px; border: 0">
+    <p>
+      <em>Du willst deine Übungsblattsträhne verbessern?<br>
+      <a href="../uebung00.pdf">Blatt 0
+      <br>
+      <a href="../uebung01.pdf">Blatt 1
+    <div style="text-align: center">
+      <iframe name="embed_readwrite" src="http://etherpad.wikimedia.org/p/kommutative-algebra-rueckmeldung?showControls=true&amp;showChat=false&amp;showLineNumbers=false&amp;useMonospaceFont=false" style="width: 80%; height: 20em;">
+      <p>
+        <a href="http://etherpad.wikimedia.org/p/kommutative-algebra-rueckmeldung">
+          Eingebettetes Pad funktioniert nicht? Direkt zum Pad.
+    <p class="moral">
+      Whenever you meet a <em>functor</em>,<br>
+      ask “What is its <em>codensity monad</em>?”.
+|]
+
+{-
     <table>
       <tr>
         <th>AlgebraikerIn
@@ -89,10 +105,4 @@ $doctype 5
         <th>besondere Auszeichnungen
       $forall p <- sortBy strength ps
         ^{renderAlgebraist p}
-    <p>
-      <em>Du willst deine Strähne verbessern?<br>
-      <a href="../uebung00.pdf">Blatt 0
-    <p class="moral">
-      Whenever you meet a <em>functor</em>,<br>
-      ask “What is its <em>codensity monad</em>?”.
-|]
+-}
