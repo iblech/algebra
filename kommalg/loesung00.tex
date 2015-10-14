@@ -1,0 +1,29 @@
+\documentclass{uebblatt}
+
+\begin{document}
+
+\section*{Teillösung zu Aufgabe 3 von Blatt 0}
+
+In der Übung gab es folgende Situation: Es war~$(\qqq_i)_{i \in I}$ eine Kette
+von Primidealen, welche alle unterhalb einem vorgegebenen Primideal~$\ppp$
+lagen. Wir mussten noch zeigen, dass~$\bigcap_{i \in I} \qqq_i$ wieder ein
+Primideal ist.
+
+Das geht so: Zunächst ist klar, dass die Eins nicht in~$\bigcap_i \qqq_i$
+liegt, denn die~$\qqq_i$ sind ja alles Primideale.\footnote{Für Fans der
+\emph{leeren Kette} sei angemerkt, dass dieses Argument im Spezialfall der
+leeren Kette nicht funktioniert. Wie kann man das Argument in diesem Fall
+retten?} Dann müssen wir noch die zweite Eigenschaft eines Primideals
+nachweisen.
+
+Seien dazu Elemente~$x,y \in A$ mit~$x \not\in \bigcap_i \qqq_i$ und~$y \not\in
+\bigcap_i \qqq_i$ gegeben. Wir müssen zeigen, dass auch~$xy \not\in \bigcap_i \qqq_i$.
+Zunächst können wir festhalten, dass es Indizes~$j$ und~$k$ gibt mit~$x \not\in
+\ppp_j$ und~$y \not\in \ppp_k$. \emph{Da die~$(\qqq_i)_i$ eine Kette bilden,}
+gilt~$\ppp_j \subseteq \ppp_k$ oder~$\ppp_j \supseteq \ppp_k$. Ohne
+Beschränkung der Allgemeinheit trete der erste Fall ein, also~$\ppp_j \subseteq
+\ppp_k$. Dann können wir folgern, dass auch~$y \not\in \ppp_j$. Da~$\ppp_j$ ein
+Primideal ist, folgt~$xy \not\in \ppp_j$ und somit insbesondere~$xy \not\in
+\bigcap_i \ppp_i$.
+
+\end{document}
