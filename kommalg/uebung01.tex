@@ -7,14 +7,13 @@
 \maketitle{1}{Abgabe bis zum Montag, den 19. Oktober 2015 \\
 Kummerkasten auf algebra.speicherleck.de}
 
-\begin{aufgabe}{m+2+2+2}{Invertierbarkeit und Nilpotenz in Polynomringen}
+\begin{aufgabe}{m+2+2}{Invertierbarkeit und Nilpotenz in Polynomringen}
 Sei~$A$ ein Ring. Sei~$f = a_0 + a_1 X + \cdots + a_m X^m \in A[X]$ ein Polynom
 über~$A$. Zeige:
 \begin{enumerate}
 \item Genau dann ist~$f$ eine Einheit in~$A[X]$, wenn~$a_0$ in~$A$ invertierbar
 und die~$a_1,\ldots,a_m$ nilpotent sind.
 \item Genau dann ist~$f$ nilpotent, wenn~$a_0,\ldots,a_m$ nilpotent sind.
-\item Jacobsches Radikal und Nilradikal von~$A[X]$ stimmen miteinander überein.
 \item Ist~$A$ \emph{reduziert}, d.\,h. ist nur die Null in~$A$ nilpotent,
 und ist~$g = b_0 + \cdots + b_n X^n \in A[X]$ mit~$fg = 0$, so gilt für alle passenden Indizes~$i$ und~$j$: $a_i b_j = 0$.
 \end{enumerate}
@@ -30,7 +29,7 @@ invertierbar ist, schon ein Summand invertierbar ist.
 \end{aufgabe}
 
 \begin{aufgabe}{4}{Ringe mit nur einem Primideal}
-Sei~$A$ ein Ring mit Nilradikal~$\nnn$. Zeige, dass folgende
+Sei~$A$ ein Ring. Sei~$\nnn$ das Ideal der nilpotenten Elemente in~$A$. Zeige, dass folgende
 Aussagen äquivalent sind:
 \begin{enumerate}
 \item[1.] In~$A$ gibt es genau ein Primideal.
@@ -38,7 +37,12 @@ Aussagen äquivalent sind:
 nilpotent.
 \item[3.] Der Faktorring~$A/\nnn$ ist ein Körper.
 \end{enumerate}
+{\scriptsize\emph{Hinweis.} Verwende für den Teil~"`1. $\Rightarrow$ 2."' ohne
+Beweis folgendes Lemma, das nächste Woche in der Vorlesung bewiesen wird: Der
+Schnitt über alle Primideale eines Rings besteht nur aus seinen nilpotenten
+Elementen.\par}
 \end{aufgabe}
+\enlargethispage{1.8em}
 
 \begin{aufgabe}{m+2+2+2}{Boolsche Ringe}
 Sei~$A$ ein \emph{Boolscher Ring}, d.\,h. ein kommutativer Ring mit~$x^2 =
