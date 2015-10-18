@@ -7,32 +7,61 @@
 
 \maketitle{2}{Abgabe bis zum Montag, den 26. Oktober 2015}
 
-\begin{aufgabe}{}{Invertierbarkeit und Nilpotenz in Ringen formaler Potenzreihen}
+\begin{aufgabe}{2+2+1}{Invertierbarkeit und Nilpotenz in Ringen formaler Potenzreihen}
 Sei~$A$ ein Ring. Sei~$f = a_0 + a_1 X + a_2 X^2 + \cdots \in
 \ps{A}$ eine formale Potenzreihe. Zeige:
 \begin{enumerate}
 \item Genau dann ist~$f$ eine Einheit in~$\ps{A}$, wenn~$a_0$ in~$A$ invertierbar
 ist.
 \item Ist~$f$ nilpotent, so sind alle Koeffizienten~$a_0,a_1,\ldots$ nilpotent.
-(Gilt die Umkehrung?)
-\item Ist~$\mmm$ ein maximales Ideal in~$\ps{A}$, so gilt~$X \in \mmm$, die
-Kontraktion~$\mmm_0 \defeq A \cap m$ ist ein maximales Ideal in~$A$ und~$\mmm$
-ist das von~$\mmm_0$ und~$X$ in~$\ps{A}$ erzeugte Ideal.
-\item Jedes Primideal von~$A$ ist Kontraktion eines Primideals von~$\ps{A}$.
+\item Gilt in~b) die Umkehrung? (Es genügt ein plausibles Argument.)
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{}{Charakterisierung von Wurzelidealen}
+\begin{aufgabe}{2+2}{Nilradikal und Jacobsonsches Radikal}
+Sei~$A$ ein Ring.
+\begin{enumerate}
+\item Jacobsonsches Radikal und Nilradikal von~$A[X]$ stimmen miteinander überein.
+\item Genau dann liegt eine Potenzreihe~$f$ im Jacobsonschen Radikal
+von~$\ps{A}$, wenn~$f(0)$ im Jacobsonschen Radikal von~$A$ liegt.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{3+1}{Charakterisierung von Wurzelidealen}
 Sei~$\aaa$ ein Ideal eines Rings. Zeige, dass~$\aaa$ genau dann mit
 seinem Wurzelideal übereinstimmt, wenn~$\aaa$ ein Schnitt von Primidealen ist.
 \end{aufgabe}
 
-\begin{aufgabe}{}{Inhalt von Polynomen}
-Sei~$A$ ein Ring. Sei für ein Polynom~$f = a_0 + \cdots + a_m X^m \in A[X]$ sein
-\emph{Wurzelinhalt} das Ideal~$J(f) \defeq \sqrt{(a_0,\ldots,a_m)}$. Zeige für
-alle Polynome~$f, g \in A[X]$: $J(fg) = J(f) \cap J(g)$.
+\begin{aufgabe}{3+1}{Inhalt von Polynomen}
+Sei~$A$ ein Ring. Der \emph{Wurzelinhalt} eines Polynoms~$f = a_0 + \cdots +
+a_m X^m \in A[X]$ ist das Ideal~$J(f) \defeq \sqrt{(a_0,\ldots,a_m)}$.
+\begin{enumerate}
+\item Zeige für alle Polynome~$f, g \in A[X]$: $J(fg) = J(f) \cap J(g)$.
+\item Ein Polynom heißt genau dann \emph{primitiv}, wenn sein Wurzelinhalt das
+Einsideal ist. Folgere: Genau dann ist ein Produkt~$fg$ primitiv, wenn~$f$
+und~$g$ es sind.
+\end{enumerate}
 \end{aufgabe}
+
+\begin{aufgabe}{2+2+1}{Ideale bestehend aus Nullteilern}
+\begin{enumerate}
+\item Sei~$I$ ein Ideal eines Rings, das nur Nullteiler enthält. Zeige, dass es
+in der Partialordnung all derjenigen Ideale, die~$I$ umfassen und nur Nullteiler
+enthalten, ein maximales Element gibt.
+\item Zeige, dass ein maximales Element wie in~a) stets ein Primideal ist.
+\item Folgere: Die Menge der Nullteiler eines Rings ist eine Vereinigung von
+Primidealen.
+\end{enumerate}
+\end{aufgabe}
+
+\centering
+\emph{Was bildet eine abelsche Gruppe unter Addition, einen Monoid unter
+Multiplikation, erfüllt ein Distributivgesetz und ist verflucht?}
+\par
 
 \end{document}
 
-\item Jacobsches Radikal und Nilradikal von~$A[X]$ stimmen miteinander überein.
+\item Ist~$\mmm$ ein maximales Ideal in~$\ps{A}$, so gilt~$X \in \mmm$, die
+Kontraktion~$\mmm_0 \defeq A \cap m$ ist ein maximales Ideal in~$A$ und~$\mmm$
+ist das von~$\mmm_0$ und~$X$ in~$\ps{A}$ erzeugte Ideal.
+\item Jedes Primideal von~$A$ ist Kontraktion eines Primideals von~$\ps{A}$.
