@@ -1,6 +1,15 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{uebblatt}[2013/03/29 LaTeX class]
 
+\DeclareOption{entwurf}{\AtEndOfClass{
+  \RequirePackage{draftwatermark}
+  \definecolor{pink}{rgb}{0.95,0.9,0.95}
+  \SetWatermarkText{\textsf{\textcolor{pink}{ENTWURF}}}
+  \SetWatermarkScale{1}
+}}
+
+\ProcessOptions\relax
+
 \LoadClass[a4paper,ngerman]{scrartcl}
 
 \RequirePackage{ifxetex}
@@ -19,7 +28,7 @@
 
 \RequirePackage{hyperref}
 
-\usepackage{tikz}
+\RequirePackage{tikz}
 \usetikzlibrary{calc,shapes.callouts,shapes.arrows}
 \newcommand{\hcancel}[5]{%
     \tikz[baseline=(tocancel.base)]{
