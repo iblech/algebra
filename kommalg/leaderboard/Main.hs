@@ -2,6 +2,7 @@
 module Main where
 
 import Data.List
+import Data.Maybe
 import Data.Monoid
 import Data.Ord
 import Text.Blaze.Html.Renderer.String
@@ -9,9 +10,10 @@ import MyHamlet
 
 data Algebraist = MkAlgebraist
     { name   :: String
+    , nick   :: String
     , url    :: String
     , awards :: [String]
-    , sheets :: [Bool]
+    , points :: [Maybe Int]
     }
     deriving (Show,Eq,Read)
 
@@ -22,7 +24,7 @@ currentStreak :: Algebraist -> Int
 currentStreak = last . streaks
 
 streaks :: Algebraist -> [Int]
-streaks = (0:) . map (length . filter id) . group . sheets
+streaks = (0:) . map (length . filter id) . group . map (maybe False (const True)) . points
 
 strength :: Algebraist -> Algebraist -> Ordering
 strength = mconcat
@@ -32,15 +34,15 @@ strength = mconcat
     ]
 
 main :: IO ()
-main = putStrLn . renderHtml . renderLeaderboard . read =<< readFile "leaderboard.txt"
+main = putStrLn . renderHtml . renderLeaderboard . read =<< getContents
 
 renderAlgebraist p = [hamlet|
   <tr>
     <td>
-      <a href="#{url p}">#{name p}
+      <a href="#{url p}">#{nick p}
     <td>
-      $forall sheet <- sheets p
-        $if sheet
+      $forall sheet <- points p
+        $if isJust sheet
           <span class="rect success">■
         $else
           <span class="rect failure">■
@@ -80,6 +82,15 @@ $doctype 5
     <h1>Kommutative Algebra
     <a href="http://brownsharpie.courtneygibbons.org/?p=1253">
       <img src="../images/love-commute.jpeg" alt="Love makes the diagram commute." style="width: 500px; height: 333px; border: 0">
+    <table>
+      <tr>
+        <th>AlgebraikerIn
+        <th>Abgaben
+        <th>längste Strähne
+        <th>aktuelle Strähne
+        <th>besondere Auszeichnungen
+      $forall p <- sortBy strength ps
+        ^{renderAlgebraist p}
     <p>
       <em>Du willst deine Übungsblattsträhne verbessern?<br>
       <a href="../uebung00.pdf">Blatt 0
@@ -94,15 +105,3 @@ $doctype 5
       Whenever you meet a <em>functor</em>,<br>
       ask “What is its <em>codensity monad</em>?”.
 |]
-
-{-
-    <table>
-      <tr>
-        <th>AlgebraikerIn
-        <th>Abgaben
-        <th>längste Strähne
-        <th>aktuelle Strähne
-        <th>besondere Auszeichnungen
-      $forall p <- sortBy strength ps
-        ^{renderAlgebraist p}
--}
