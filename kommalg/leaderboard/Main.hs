@@ -11,12 +11,13 @@ import Text.Printf
 import MyHamlet
 
 data Algebraist = MkAlgebraist
-    { name   :: String
-    , code   :: String
-    , nick   :: String
-    , url    :: String
-    , awards :: [String]
-    , points :: [Maybe Double]
+    { name     :: String
+    , code     :: String
+    , nick     :: String
+    , url      :: String
+    , awards   :: [String]
+    , points   :: [Maybe Double]
+    , comments :: String
     } deriving (Show,Eq,Read)
 
 data Config = MkConfig
