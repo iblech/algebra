@@ -116,7 +116,7 @@ $doctype 5
   <body>
     <h1>Kommutative Algebra
     <a href="http://brownsharpie.courtneygibbons.org/?p=1253">
-      <img src="../images/love-commute.jpeg" alt="Love makes the diagram commute." style="width: 500px; height: 333px; border: 0">
+      <img src="images/love-commute.jpeg" alt="Love makes the diagram commute." style="width: 500px; height: 333px; border: 0">
     <table>
       <tr>
         <th>AlgebraikerIn
@@ -130,7 +130,7 @@ $doctype 5
     <p>
       <em>Du willst deine Übungsblattsträhne verbessern?<br>
       $forall n <- [0,1,2]
-        <a href="../uebung#{format n}.pdf">Blatt #{show n}
+        <a href="uebung#{format n}.pdf">Blatt #{show n}
         <br>
     <div style="text-align: center">
       <iframe name="embed_readwrite" src="http://etherpad.wikimedia.org/p/kommutative-algebra-rueckmeldung?showControls=true&amp;showChat=false&amp;showLineNumbers=false&amp;useMonospaceFont=false" style="width: 80%; height: 20em;">

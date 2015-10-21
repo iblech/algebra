@@ -1,9 +1,11 @@
 #!/bin/bash
+# Benötigt leaderboard.txt auf der Standardeingabe.
 
-gpg -d leaderboard.txt.gpg | ssh speicherleck.de "
+ssh speicherleck.de "
   cd /var/www/iblech/stuff/tutor-kommalg/kommalg/leaderboard || exit
   git pull --rebase
   cabal build
+  cd ..
   rm *.html
-  ./dist/build/Main/Main > $1.html
+  ./leaderboard/dist/build/Main/Main > $1.html
 "
