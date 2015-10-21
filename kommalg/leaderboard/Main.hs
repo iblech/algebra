@@ -12,8 +12,8 @@ import MyHamlet
 
 data Algebraist = MkAlgebraist
     { name   :: String
-    , nick   :: String
     , code   :: String
+    , nick   :: String
     , url    :: String
     , awards :: [String]
     , points :: [Maybe Double]
