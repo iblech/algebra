@@ -104,7 +104,8 @@ $doctype 5
         text-align: center;
       }
       h1 { margin: 1em 0 0.5em 0; font-weight:normal; }
-      td, th { padding: 6px; }
+      th { padding: 6px; }
+      td { padding: 0px 6px 0px 6px; }
       th { background-color: #2d1630; color: white; }
       td:first-child { font-weight: bold; }
       table { margin-left: auto; margin-right: auto; text-align: left; }
