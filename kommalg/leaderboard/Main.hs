@@ -129,6 +129,8 @@ $doctype 5
         ^{renderAlgebraist config (elem p ps') p}
     <p>
       <em>Du willst deine Übungsblattsträhne verbessern?<br>
+      <a href="skript.pdf">Skript
+      <br>
       $forall n <- [0,1,2]
         <a href="uebung#{format n}.pdf">Blatt #{show n}
         <br>
