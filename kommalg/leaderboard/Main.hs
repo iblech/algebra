@@ -1,6 +1,7 @@
 {-# LANGUAGE QuasiQuotes #-}
 module Main where
 
+import Control.Monad
 import Data.List
 import Data.Maybe
 import Data.Monoid
@@ -12,11 +13,15 @@ import MyHamlet
 data Algebraist = MkAlgebraist
     { name   :: String
     , nick   :: String
+    , code   :: String
     , url    :: String
     , awards :: [String]
     , points :: [Maybe Double]
-    }
-    deriving (Show,Eq,Read)
+    } deriving (Show,Eq,Read)
+
+data Config = MkConfig
+    { totals :: [Int]
+    } deriving (Show,Eq,Read)
 
 longestStreak :: Algebraist -> Int
 longestStreak = maximum . streaks
@@ -35,9 +40,14 @@ strength = mconcat
     ]
 
 main :: IO ()
-main = putStrLn . renderHtml . renderLeaderboard . read =<< getContents
+main = do
+    (config,ps) <- fmap read $ getContents
+    writeFile "index.html" $ renderHtml $ renderLeaderboard config ps []
+    forM_ ps $ \p -> do
+        writeFile (code p ++ ".html") $ renderHtml $ renderLeaderboard config ps [p]
+    putStrLn $ renderHtml $ renderLeaderboard config ps ps
 
-renderAlgebraist p = [hamlet|
+renderAlgebraist config showPoints p = [hamlet|
   <tr>
     <td>
       <a href="#{url p}">#{nick p}
@@ -47,12 +57,36 @@ renderAlgebraist p = [hamlet|
           <span class="rect success">■
         $else
           <span class="rect failure">■
+    $if showPoints
+      <td>^{renderPoints config p}
+    $else
+      <td>
     <td>#{longestStreak p}
     <td>#{currentStreak p}
     <td>#{concat $ intersperse ", " $ awards p}
 |]
 
-renderLeaderboard ps = let format = printf "%02d" :: Int -> String in [hamlet|
+renderPoints config p =
+    let total  = sum $ map (maybe 0 id) $ points p
+        maxs   = sum $ totals $ config
+        ratio  = round $ 100 * total / fromIntegral maxs :: Int
+        sheets = concat . intersperse ", " $ zipWith format (points p) (totals config)
+        format n m
+            | Nothing <- n
+            = "–/" ++ show m
+            | Just n' <- n
+            = let n'' = floor n' :: Int
+              in  if fromIntegral n'' == n'
+                      then show n'' ++ "/" ++ show m
+                      else show n'' ++ ",5/" ++ show m
+    in [hamlet|
+<span title="#{sheets}">
+    #{show ratio} %
+|]
+
+renderLeaderboard config ps ps' =
+    let format     = printf "%02d" :: Int -> String
+    in [hamlet|
 $doctype 5
 <html lang="de">
   <head>
@@ -87,11 +121,12 @@ $doctype 5
       <tr>
         <th>AlgebraikerIn
         <th>Abgaben
+        <th>Punkte
         <th>längste Strähne
         <th>aktuelle Strähne
         <th>besondere Auszeichnungen
       $forall p <- sortBy strength ps
-        ^{renderAlgebraist p}
+        ^{renderAlgebraist config (elem p ps') p}
     <p>
       <em>Du willst deine Übungsblattsträhne verbessern?<br>
       $forall n <- [0,1,2]
