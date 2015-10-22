@@ -40,13 +40,18 @@ strength = mconcat
     , comparing nick
     ]
 
+totalPoints :: Algebraist -> Double
+totalPoints = sum . map (maybe 0 id) . points
+
 main :: IO ()
 main = do
     (config,ps) <- fmap read $ getContents
-    writeFile "index.html" $ renderHtml $ renderLeaderboard config ps []
+    let ps'  = sortBy strength ps
+        ps'' = sortBy (mconcat [ flip (comparing totalPoints), comparing nick ]) ps
+    writeFile "index.html" $ renderHtml $ renderLeaderboard config ps' []
     forM_ ps $ \p -> do
-        writeFile (code p ++ ".html") $ renderHtml $ renderLeaderboard config ps [p]
-    putStrLn $ renderHtml $ renderLeaderboard config ps ps
+        writeFile (code p ++ ".html") $ renderHtml $ renderLeaderboard config ps' [p]
+    putStrLn $ renderHtml $ renderLeaderboard config ps'' ps
 
 renderAlgebraist config showPoints p = [hamlet|
   <tr>
@@ -68,7 +73,7 @@ renderAlgebraist config showPoints p = [hamlet|
 |]
 
 renderPoints config p =
-    let total  = sum $ map (maybe 0 id) $ points p
+    let total  = totalPoints p
         maxs   = sum $ totals $ config
         ratio  = round $ 100 * total / fromIntegral maxs :: Int
         sheets = concat . intersperse ", " $ zipWith format (points p) (totals config)
@@ -86,7 +91,7 @@ renderPoints config p =
 |]
 
 renderLeaderboard config ps ps' =
-    let format     = printf "%02d" :: Int -> String
+    let format = printf "%02d" :: Int -> String
     in [hamlet|
 $doctype 5
 <html lang="de">
@@ -127,7 +132,7 @@ $doctype 5
         <th>längste Strähne
         <th>aktuelle Strähne
         <th>besondere Auszeichnungen
-      $forall p <- sortBy strength ps
+      $forall p <- ps
         ^{renderAlgebraist config (elem p ps') p}
     <p>
       <em>Du willst deine Übungsblattsträhne verbessern?<br>
