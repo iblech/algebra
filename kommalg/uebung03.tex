@@ -16,13 +16,47 @@ ist das von~$\mmm_0$ und~$X$ in~$\ps{A}$ erzeugte Ideal.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{}{Ein radikales Distributivgesetz}
+\begin{aufgabe}{2+m+m+2}{Rechnungen mit Idealen}
 \begin{enumerate}
-\item Zeige anhand eines Gegenbeispiels, das folgende Rechenregel für Ideale in
-einem Ring im Allgemeinen \emph{nicht} gilt:
-\[ \aaa \cap \sum_i \bbb_i = \sum_i (\aaa \cap \bbb_i). \]
-\item Zeige, dass folgende Regel aber durchaus stets gilt:
-\[ \sqrt{\aaa} \cap \sqrt{\sum_i \bbb_i} = \sqrt{\sum_i (\aaa \cap \bbb_i)}. \]
+\item Sei~$\aaa$ ein Ideal eines Rings~$A$. Finde einen kanonischen
+Ringhomomorphismus~$A[X]/\aaa[X] \to (A/\aaa)[X]$ und zeige, dass er ein
+Isomorphismus ist.
+\item Sei~$\ppp$ ein Primideal eines Rings~$A$. Zeige, dass dann auch~$\ppp[X]$
+in~$A[X]$ prim ist.
+\item Gilt die analoge Behauptung von~b) auch für maximale Ideale?
+\item Untersuche folgende Ideale auf Primalität und Maximalität:
+$(2, X)$ in~$\ZZ[X]$ und $([2], [X])$ in~$\ZZ[X]/(X^2 - X + 6)$.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{2+1}{Nichtbeispiele für Hauptidealbereiche}
+\begin{enumerate}
+\item Sei~$A$ ein Ring derart, dass jedes endlich erzeugte Ideal von~$A[X]$ ein
+Hauptideal ist. Zeige, dass jedes reguläre Element von~$A$ schon invertierbar
+ist.
+\item Folgere: $\ZZ[X]$ und~$\QQ[X,Y]$ sind keine Hauptidealbereiche.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{m+2}{Ein radikales Distributivgesetz}
+\begin{enumerate}
+\item Zeige anhand eines Gegenbeispiels, dass die Rechenregel
+"`$\aaa \cap \sum_i \bbb_i = \sum_i (\aaa \cap \bbb_i)$"'
+für Ideale in
+einem Ring im Allgemeinen \emph{nicht} gilt. \emph{Hinweis.} In den
+Ringen~$\ZZ$ und~$\QQ[X]$ wirst du keinen Erfolg haben.
+\item Zeige, dass folgende Regel durchaus stets gilt:
+$\sqrt{\aaa} \cap \sqrt{\sum_i \bbb_i} = \sqrt{\sum_i (\aaa \cap \bbb_i)}$.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{2+1}{Der Darstellungssatz von Stone}
+Sei~$A$ ein boolscher Ring. Sei~$\Spec A$ die Menge der Primideale von~$A$. Die
+Potenzmenge von~$\Spec A$ bildet mit der symmetrischen Differenz als Addition
+und dem Schnitt als Multiplikation ebenfalls einen boolschen Ring.
+\begin{enumerate}
+\item Gib explizit einen Ringhomomorphismus~$A \to \P(\Spec A)$ an.
+\item Zeige, dass dieser injektiv ist.
 \end{enumerate}
 \end{aufgabe}
 
