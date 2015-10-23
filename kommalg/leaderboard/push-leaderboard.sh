@@ -10,4 +10,5 @@ ssh speicherleck.de "
   cd ..
   rm *.html
   ./leaderboard/dist/build/Main/Main > $1.html
+  pdfjoin --outfile alle.pdf uebung??.pdf
 "

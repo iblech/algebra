@@ -141,6 +141,8 @@ $doctype 5
       $forall n <- [0,1,2]
         <a href="uebung#{format n}.pdf">Blatt #{show n}
         <br>
+      <a href="alle.pdf">Alle Übungsblätter in einer Datei
+      <br>
     <div style="text-align: center">
       <iframe name="embed_readwrite" src="http://etherpad.wikimedia.org/p/kommutative-algebra-rueckmeldung?showControls=true&amp;showChat=false&amp;showLineNumbers=false&amp;useMonospaceFont=false" style="width: 80%; height: 20em;">
       <p>
