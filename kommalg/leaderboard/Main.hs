@@ -22,6 +22,7 @@ data Algebraist = MkAlgebraist
 
 data Config = MkConfig
     { totals :: [Int]
+    , newestSheet :: Int
     } deriving (Show,Eq,Read)
 
 longestStreak :: Algebraist -> Int
@@ -92,6 +93,7 @@ renderPoints config p =
 
 renderLeaderboard config ps ps' =
     let format = printf "%02d" :: Int -> String
+        sheets = [0..newestSheet config]
     in [hamlet|
 $doctype 5
 <html lang="de">
@@ -138,7 +140,7 @@ $doctype 5
       <em>Du willst deine Übungsblattsträhne verbessern?<br>
       <a href="skript.pdf">Skript
       <br>
-      $forall n <- [0,1,2]
+      $forall n <- sheets
         <a href="uebung#{format n}.pdf">Blatt #{show n}
         <br>
       <a href="alle.pdf">Alle Übungsblätter in einer Datei
