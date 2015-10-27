@@ -137,6 +137,8 @@ $doctype 5
       $forall p <- ps
         ^{renderAlgebraist config (elem p ps') p}
     <p>
+      Fahre über deine Prozentzahl, um die Punkte auf den einzelnen Blättern einzusehen. Null Punkte bedeuten nur: noch nicht korrigiert.
+    <p>
       <em>Du willst deine Übungsblattsträhne verbessern?<br>
       <a href="skript.pdf">Skript
       <br>
