@@ -77,7 +77,9 @@ renderPoints config p =
     let total  = totalPoints p
         maxs   = sum $ totals $ config
         ratio  = round $ 100 * total / fromIntegral maxs :: Int
-        sheets = concat . intersperse ", " $ zipWith format (points p) (totals config)
+        sheets = concat . intersperse "\n" $
+            zipWith3 (\i n m -> "Blatt " ++ show i ++ ": " ++ format n m)
+                [1..] (points p) (totals config)
         format n m
             | Nothing <- n
             = "–/" ++ show m
