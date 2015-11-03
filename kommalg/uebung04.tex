@@ -1,16 +1,16 @@
-\documentclass[entwurf]{uebblatt}
+\documentclass{uebblatt}
 
 \begin{document}
 
 \maketitle{4}{}
 
-\begin{aufgabe}{}{Endliche Erzeugung bei Moduln}
+\begin{aufgabe}{m+2+m}{Endliche Erzeugung bei Moduln}
 \begin{enumerate}
 \item Finde ein Erzeugendensystem eines Moduls, sodass keine Teilfamilie eine
 Basis ist. Finde eine linear unabhängige Familie in einem Modul, sodass keine
 Erweiterung eine Basis ist.
 \item Sei~$0 \to M' \to M \to M'' \to 0$ eine kurze exakte Sequenz von Moduln.
-Zeige: Sind die beiden äußeren Moduln endlich erzeugt, so auch der mittlere.
+Zeige: Sind die beiden äußeren Moduln~$M'$ und~$M''$ endlich erzeugt, so auch der mittlere.
 \item Sei~$M$ ein endlich erzeugter~$A$-Modul. Sei~$\varphi : M \to A^n$ eine
 surjektive lineare Abbildung. Zeige, dass der Kern von~$\varphi$ endlich
 erzeugt ist.
@@ -18,19 +18,29 @@ erzeugt ist.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{}{Nullteiler bezüglich des Tensorprodukts}
+\begin{aufgabe}{2+m}{Erste Schritte mit exakten Sequenzen}
 \begin{enumerate}
-\item Zeige, dass~$\ZZ/(2) \otimes_\ZZ \ZZ/(3) = 0$.
-\item Sei~$P$ ein endlich erzeugter Modul über einem lokalen Ring~$(A,\mmm,k)$.
-Zeige: Ist~$P \otimes_A k = 0$, so auch~$P = 0$.
-\item Seien~$M$ und~$N$ endlich erzeugte Moduln über einem lokalen Ring~$A$.
-Zeige: Ist~$M \otimes_A N = 0$, so~$M = 0$ oder~$N = 0$.
+\item Sei~$M$ ein~$A$-Modul und~$\aaa$ ein Ideal in~$A$. Zeige: $M \otimes_A
+A/\aaa \cong M/\aaa M$.
+\item Seien~$M$ und~$N$ flache~$A$-Moduln. Zeige, dass auch~$M \otimes_A N$
+flach über~$A$ ist.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{}{Surjektivität von linearen Abbildungen}
+\begin{aufgabe}{2+m+2}{Nullteiler beim Tensorprodukt}
+Sei~$(A,\mmm,k)$ ein lokaler Ring.
 \begin{enumerate}
-\item Sei~$M$ und~$N$ Moduln über einem Ring~$A$. Sei~$N$ sogar endlich
+\item Zeige, dass~$\ZZ/(2) \otimes_\ZZ \ZZ/(3) = 0$.
+\item Sei~$P$ ein endlich erzeugter Modul über~$A$.
+Zeige: Ist~$P \otimes_A k = 0$, so auch~$P = 0$.
+\item Zeige: Für endlich erzeugte~$A$-Moduln~$M$ und~$N$ folgt aus~$M \otimes_A
+N = 0$ schon~$M = 0$ oder~$N = 0$.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{2+2+2}{Surjektivität von linearen Abbildungen}
+\begin{enumerate}
+\item Seien~$M$ und~$N$ Moduln über einem Ring~$A$. Sei~$N$ endlich
 erzeugt. Sei~$\aaa$ ein im Jacobsonschen Radikal enthaltenes Ideal von~$A$.
 Sei~$\varphi : M \to N$ eine~$A$-lineare Abbildung. Zeige: Ist die
 induzierte Abbildung~$M/\aaa M \to N/\aaa N$ surjektiv, so auch~$\varphi$.
@@ -41,6 +51,9 @@ aufgefasst als lineare Abbildung surjektiv ist. Zeige, dass~$M$ ähnlich zu eine
 (rechteckigen) Diagonalmatrix mit genau~$n$ Einsern auf der Hauptdiagonale ist.
 \end{enumerate}
 \end{aufgabe}
+
+\centering
+\includegraphics[scale=0.08]{images/rechts-ist-wo-das-tensorprodukt-exakt-ist}
 
 \end{document}
 
