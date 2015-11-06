@@ -128,6 +128,9 @@ $doctype 5
     <h1>Kommutative Algebra
     <a href="http://brownsharpie.courtneygibbons.org/?p=1253">
       <img src="images/love-commute.jpeg" alt="Love makes the diagram commute." style="width: 500px; height: 333px; border: 0">
+    <p>
+      <strong>
+        Aktuell: <a href="https://www.youtube.com/watch?v=mA402F5K47o">Eugenia Cheng in der Late Show von Stephen Colbert
     <table>
       <tr>
         <th>AlgebraikerIn
@@ -141,7 +144,8 @@ $doctype 5
     <p>
       Fahre über deine Prozentzahl, um die Punkte auf den einzelnen Blättern einzusehen. Null Punkte bedeuten nur: noch nicht korrigiert.
     <p>
-      <em>Du willst deine Übungsblattsträhne verbessern?<br>
+      <em>Du willst deine Übungsblattsträhne verbessern?
+      <br>
       <a href="skript.pdf">Skript
       <br>
       $forall n <- sheets
