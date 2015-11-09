@@ -21,7 +21,7 @@ data Algebraist = MkAlgebraist
     } deriving (Show,Eq,Read)
 
 data Config = MkConfig
-    { totals :: [Int]
+    { totals      :: [Int]
     , newestSheet :: Int
     } deriving (Show,Eq,Read)
 
