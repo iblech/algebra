@@ -130,7 +130,7 @@ $doctype 5
       <img src="images/love-commute.jpeg" alt="Love makes the diagram commute." style="width: 500px; height: 333px; border: 0">
     <p>
       <strong>
-        Aktuell: <a href="https://www.youtube.com/watch?v=mA402F5K47o">Eugenia Cheng in der Late Show von Stephen Colbert
+        Aktuell: <a href="https://www.youtube.com/watch?v=mA402F5K47o">Eugenia Cheng in der Late Show von Stephen Colbert</a>
     <table>
       <tr>
         <th>AlgebraikerIn
