@@ -1,0 +1,153 @@
+\documentclass{uebblatt}
+
+\usepackage{framed}
+
+\definecolor{haskell}{RGB}{150,0,255}
+
+\newcommand{\fmini}[2]{%
+  \setlength{\fboxrule}{2pt}%
+  \setlength{\fboxsep}{-3pt}%
+  \textcolor{haskell}{\fbox{\textcolor{black}{\parbox{#1}{\begin{center}#2\end{center}}}}}}
+
+\newcommand{\korr}[2]{
+  \begin{center}
+    \fmini{0.30\textwidth}{#1}
+    \textcolor{haskell}{$\xleftrightarrow{\qquad\quad}$}
+    \fmini{0.30\textwidth}{#2}
+  \end{center}}
+
+\newcounter{funnummer}
+\definecolor{shadecolor}{rgb}{.93,.93,.93}
+\NewEnviron{fun}{%
+  \refstepcounter{funnummer}%
+  \begin{shaded}%
+    \textbf{Spiel \& Spaß \thefunnummer.}
+    \BODY
+  \end{shaded}%
+}
+
+\begin{document}
+
+\begin{center}\Large\textbf{\textsf{Geometrische Vorstellung von Ringen}}\end{center}
+
+Sei~$A$ ein Ring (wie immer: kommutativ und mit Eins). Dann gibt es einen
+topologischen Raum,~$\Spec A$, mittels dem man sich den Ring anschaulich
+vorstellen kann. Auf diese Weise haben viele Konzepte und Resultate aus der
+Algebra eine geometrische Entsprechung; und umgekehrt.
+
+Die folgende Definition stellt das zentrale Bindeglied dar.
+
+\korr{Primideale von $A$}{Punkte von $\Spec A$}
+
+Die Topologie auf~$\Spec A$ definiert man wie folgt: Eine Teilmenge von~$\Spec
+A$ heißt genau dann \emph{abgeschlossen}, wenn sie von der Form~$V(\aaa) \defeq \{
+\ppp \in \Spec A \,|\, \aaa \subseteq \ppp \}$ ist, wobei~$\aaa$ ein beliebiges
+Ideal in~$A$ ist. Eine Teilmenge heißt genau dann \emph{offen}, wenn ihr
+Komplement abgeschlossen ist.
+
+\begin{fun}Weise nach, dass diese Festlegungen wirklich eine Topologie
+auf~$\Spec A$ definieren.\end{fun}
+
+Ein weiterer wichtiger Aspekt der Korrespondenz ist folgender.
+
+\korr{Elemente von $A$}{Funktionen auf $\Spec A$}
+
+Ist~$f$ nämlich ein Element von~$A$ und~$\ppp \in \Spec A$ ein Punkt, so können
+wir definieren: Der \emph{Funktionswert} von~$f$ an der Stelle~$\ppp$ ist das
+Bild von~$f$ in~$k(\ppp)$. Dabei ist~$k(\ppp)$ der \emph{Restklassenkörper} an
+der Stelle~$\ppp$, das ist der Körper~$A_\ppp/\ppp A_\ppp$.
+
+Sei zum Beispiel~$A = \RR[X]$ und~$f = X^2 - 2X + 3$. Sei~$\ppp = (X-4)$. Dann
+ist~$k(\ppp)$ kanonisch zu~$\RR$ isomorph, vermöge~$[f/g] \mapsto f(4)/g(4)$.
+Unter diesem Isomorphismus ist dann der Funktionswert von~$f$ bei~$\ppp$ gleich
+dem traditionell definierten Funktionswert~$f(4)$.
+
+\begin{fun}Was sind die Funktionswerte von~$90 \in \ZZ$ an allen Punkten
+aus~$\Spec \ZZ$? Wo hat die Funktion Nullstellen? Hat die Funktion auch
+doppelte Nullstellen?\end{fun}
+
+Im Vergleich zu den in der Differentialgeometrie, komplexen Geometrie oder
+riemannschen Geometrie untersuchten Räumen hat~$\Spec A$ noch eine
+Besonderheit: Nur in den seltensten Fällen ist~$\Spec A$ ein Hausdorffraum.
+Insbesondere sind einpunktige Mengen~$\{\ppp\}$ nicht immer abgeschlossen.
+Punkte~$\ppp$, für die~$\{\ppp\}$ doch abgeschlossen ist, heißen
+\emph{abgeschlossene Punkte}.
+
+\korr{maximale Ideale}{abgeschlossene Punkte}
+
+\korr{Ideale, die über~$\ppp$ sitzen}{Abschluss von~$\{\ppp\}$}
+
+Die abgeschlossenen Punkte von~$\Spec \CC[X,Y]$ sind alle von der
+Form~$(X-z,Y-w)$ mit~$z,w \in \CC$; die abgeschlossenen Punkte von~$\Spec
+\CC[X,Y]$ stehen also in kanonischer Eins-zu-Eins-Beziehung zu den Punkten des
+Vektorraums~$\CC^2$.
+
+In~$\Spec \CC[X,Y]$ gibt es aber auch noch nicht-abgeschlossene Punkte. Zum
+Beispiel ist der Punkt~$(Y-X^2)$ nicht abgeschlossen. In seinem Abschluss
+liegen (er selbst und) alle Punkte der Form~$(X-z,Y-w)$ mit~$w=z^2$, also alle
+Punkte der Normalparabel. Wenn man ein Bild von~$\Spec \CC[X,Y]$ zeichnet, malt
+man~$(Y-X^2)$ als eine Art delokalisierte Punktwolke, als Geisterpunkt, der
+überall und nirgendwo auf~$V((Y-X^2))$ sitzt.
+
+\begin{fun}Beweise die letzten beiden Korrespondenzen. Sei also~$\ppp$ ein
+Primideal. Zeige: Der topologische Abschluss von~$\{\ppp\}$ in~$\Spec A$ ist
+gerade die Menge derjenigen Primideale~$\qqq$, die über~$\ppp$ sitzen, also~$\{
+\qqq \in \Spec A \,|\, \ppp \subseteq \qqq \}$.\end{fun}
+
+Mehrere Aussagen der Algebra haben schon mit diesem kleinen Wörterbuch eine
+geometrische Bedeutung:
+
+\begin{itemize}
+\item \emph{Über jedem Primideal~$\ppp$ gibt es ein maximales Ideal~$\mmm$.}
+
+Jeder Punkt enthält einen abgeschlossenen Punkt in seinem Abschluss.
+Jeder generische Punkt spezialisiert sich zu mindestens einem abgeschlossenen
+Punkt.
+
+\item \emph{Das Primideal~$\ppp$ ist ein minimales Primideal.}
+
+Der Abschluss von~$\ppp$ ist eine irreduzible Komponente von~$\Spec A$.
+
+\item \emph{Der Ring enthält genau ein minimales Primideal.}
+
+Der Raum~$\Spec A$ ist irreduzibel.
+
+\item \emph{Unter jedem Primideal gibt es ein minimales Primideal.}
+
+Jeder Punkt liegt in irgendeiner irreduziblen Komponente.
+
+\item \emph{Der Ring ist lokal.}
+
+Der Raum~$\Spec A$ enthält nur einen einzigen abgeschlossenen Punkt.
+\end{itemize}
+
+\begin{fun}Sei~$A = \Spec \CC[X,Y]/(XY)$. Überzeuge dich davon, dass~$\Spec A$
+wie ein Achsenkreuz aussieht. Es besteht aus zwei irreduziblen Komponenten, den
+beiden Achsen. Zeige, dass~$A$ genau zwei minimale Primideale enthält
+(nämlich~$([X])$ und~$([Y])$) und erkläre, wie diese mit den Komponenten
+zusammenhängen.
+\end{fun}
+
+Mit dem geometrischen Raum~$\Spec A$ kann man sich auch (beliebige, nicht
+unbedingt prime) Ideale von~$A$ veranschaulichen. Und zwar kann man ein
+Ideal~$\aaa$ dadurch visualisieren, indem man die abgeschlossene
+Menge~$V(\aaa)$ betrachtet. \emph{Anschaulich ist das die Menge derjenigen
+Punkte, bei denen alle Funktionen aus~$\aaa$ verschwinden.}
+
+Dabei gelten folgende Rechenregeln:
+
+\begin{itemize}
+\item $V(0) = \Spec A$. Die Nullfunktion verschwindet an jedem Punkt.
+\item $V((1)) = \emptyset$. Die Einsfunktion verschwindet nirgendwo.
+\item $V(\aaa + \bbb) = V(\aaa) \cap V(\bbb)$. Punkte, bei denen alle
+Funktionen aus~$\aaa + \bbb$ verschwinden, sind genau die, bei denen alle
+Funktionen aus~$\aaa$ und alle Funktionen aus~$\bbb$ verschwinden.
+\item $V(\aaa \cap \bbb) = V(\aaa \cdot \bbb) = V(\aaa) \cup V(\bbb)$.
+\end{itemize}
+
+Die Geometrie ist aber \emph{blind bezüglich Nilpotenz}: Für jedes Ideal~$\aaa$
+gilt~$V(\aaa) = V(\sqrt{\aaa})$. Und wenn eine Funktion~$f \in A$ an allen
+Punkten verschwindet, heißt das nicht, dass~$f = 0$; es heißt nur, dass~$f$
+nilpotent ist.
+
+\end{document}
