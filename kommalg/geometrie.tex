@@ -128,6 +128,11 @@ beiden Achsen. Zeige, dass~$A$ genau zwei minimale Primideale enthält
 zusammenhängen.
 \end{fun}
 
+\begin{fun}Seien~$\ppp \subseteq \qqq$ Primideale. Sei~$\qqq$ Element einer
+offenen Teilmenge~$U$. Zeige, dass dann auch~$\ppp$ Element von~$U$ ist.
+(Offene Mengen enthalten also stets die angesprochenen Geisterpunkte.)
+\end{fun}
+
 Mit dem geometrischen Raum~$\Spec A$ kann man sich auch (beliebige, nicht
 unbedingt prime) Ideale von~$A$ veranschaulichen. Und zwar kann man ein
 Ideal~$\aaa$ dadurch visualisieren, indem man die abgeschlossene
@@ -146,8 +151,71 @@ Funktionen aus~$\aaa$ und alle Funktionen aus~$\bbb$ verschwinden.
 \end{itemize}
 
 Die Geometrie ist aber \emph{blind bezüglich Nilpotenz}: Für jedes Ideal~$\aaa$
-gilt~$V(\aaa) = V(\sqrt{\aaa})$. Und wenn eine Funktion~$f \in A$ an allen
-Punkten verschwindet, heißt das nicht, dass~$f = 0$; es heißt nur, dass~$f$
-nilpotent ist.
+gilt~$V(\aaa) = V(\sqrt{\aaa})$. Der Unterschied zwischen~$\aaa \cdot \bbb$
+und~$\aaa \cap \bbb$ ist geometrisch also nicht sichtbar.
+Und wenn eine Funktion~$f \in A$ an allen Punkten verschwindet, heißt das
+nicht, dass~$f = 0$; es heißt nur, dass~$f$ nilpotent ist.
+
+\begin{fun}Was ist~$V(\aaa : \bbb)$ geometrisch?\end{fun}
+
+\begin{fun}Mengen der Form~$D(f) \defeq \{ \ppp \in \Spec A \,|\, f \not\in
+\ppp \}$ mit~$f \in A$ heißen auch \emph{standardoffen}.
+\begin{enumerate}
+\item Zeige: Jede offene Menge von~$\Spec A$ ist Vereinigung
+standardoffener Teilmengen.
+\item Zeige, dass genau dann~$D(f) \subseteq D(g)$, wenn~$f \in
+\sqrt{(g)}$. Zeige allgemeiner, dass genau dann~$D(f) \subseteq \bigcup_i
+D(g_i)$, wenn~$f \in \sqrt{(g_i)_i}$.
+\item Folgere: Der Raum~$\Spec A$ ist stets kompakt.
+\item Zeige: Der Rahmen der offenen Mengen in~$\Spec A$ ist isomorph zum Rahmen
+der Wurzelideale in~$A$.
+\end{enumerate}
+\end{fun}
+
+\begin{fun}\begin{enumerate}
+\item Zeige: Eine offene Teilmenge~$U$ von~$\Spec A$ ist genau dann dicht,
+wenn~$\bigcap\limits_{\ppp \in U} \ppp = \sqrt{(0)}$.
+\item Besitze~$A$ nur endlich viele minimale Primideale. Zeige, dass eine
+offene Teilmenge von~$\Spec A$ genau dann dicht ist, wenn sie all diese
+enthält.\end{enumerate}\end{fun}
+
+\begin{fun}Zeige: Eine offene Teilmenge ist genau dann (nicht nur offen,
+sondern auch) abgeschlossen, wenn sie von der Form~$D(e)$ mit~$e^2 = e$
+ist.\end{fun}
+
+Schließlich sei noch bemerkt, dass man auch Moduln veranschaulichen kann. Und
+zwar stellt man sich einen~$A$-Modul~$M$ als eine Art verallgemeinertes
+Vektorbündel über~$\Spec A$ vor. Man visualisiert~$M$ als Ansammlung seiner
+Halme~$M_\ppp$: "`Über~$\ppp \in \Spec A$ sitzt~$M_\ppp$."' Eine Skizze würde
+hier viel helfen.
+
+Dazu passt, dass man den \emph{Träger} von~$M$ als Menge derjenigen
+Primideale~$\ppp$ definiert, sodass der Halm~$M_\ppp$ nicht Null ist.
+
+\begin{fun}\begin{enumerate}
+\item Rechne nach, dass der Träger des~$A$-Moduls~$A/\aaa$ genau~$V(\aaa)$
+ist.
+\item Zeige allgemeiner: Der Träger eines endlich erzeugten Moduls~$M$
+ist~$V(\operatorname{ann} M)$.\end{enumerate}\end{fun}
+
+\begin{fun}Sei~$\phi : V \to V$ ein Endomorphismus eines
+endlich-dimensionalen~$k$-Vektorraums. Dann wird~$V$ mittels
+der Skalarmultiplikation~$f \bullet x \defeq f(\phi)x$ zu einem~$k[X]$-Modul, den
+man zur besseren Unterscheidung dann auch mit~"`$V_\phi$"' bezeichnet.
+
+In der linearen Algebra zeigt man: Genau dann ist~$V_\phi$ zu einem
+weiteren~$k[X]$-Modul der Form~$V_{\phi'}$ isomorph, wenn die
+Endomorphismen~$\phi$ und~$\phi'$ zueinander ähnlich sind. Der Modul~$V_\phi$
+kodiert also den \emph{Ähnlichkeitstyp} von~$\phi$.
+
+Außerdem lernt man: Als~$k[X]$-Modul ist~$V_\phi$ isomorph zu~$k[X]/(d_1)
+\oplus \cdots \oplus k[X]/(d_r)$, wobei die Polynome~$d_i$ gewisse Polynome
+sind, deren Produkt das charakteristische Polynom von~$\phi$ ergibt. (Das
+Polynom~$d_r$ ist das Minimalpolynom von~$\phi$.)
+
+Erkläre, inwieweit~$V_\phi$ eine Verallgemeinerung des klassischen Spektrums
+von~$\phi$ -- der Menge der Eigenwerte -- darstellt. Denke dazu an den Träger
+von~$V_\phi$!
+\end{fun}
 
 \end{document}
