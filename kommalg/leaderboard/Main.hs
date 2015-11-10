@@ -148,6 +148,12 @@ $doctype 5
       <br>
       <a href="skript.pdf">Skript
       <br>
+      <a href="geometrie.pdf">Notizen zur geometrischen Visualisierung von Ringen
+      <br>
+      <a href="merkblatt-isos.pdf">Notizen zu wichtigen Ringisomorphismen
+      <br>
+      <a href="merkblatt-ideale.pdf">Notizen zu wichtigen Idealrechenregeln
+      <br>
       $forall n <- sheets
         <a href="uebung#{format n}.pdf">Blatt #{show n}
         <br>
