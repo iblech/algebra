@@ -84,7 +84,7 @@ renderPoints config p =
             | Nothing <- n
             = "–/" ++ show m
             | Just n' <- n
-            = let n'' = floor n' :: Int
+            = let n'' = floor n' :: Int  -- schlimmer Hack
               in  if fromIntegral n'' == n'
                       then show n'' ++ "/" ++ show m
                       else show n'' ++ ",5/" ++ show m
