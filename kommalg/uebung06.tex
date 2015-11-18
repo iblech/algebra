@@ -1,4 +1,5 @@
 \documentclass[entwurf]{uebblatt}
+\usepackage{wrapfig}
 
 \newcommand{\http}{http:/\kern-.2em/\kern-0.03em}
 
@@ -6,7 +7,7 @@
 
 \maketitle{6}{}
 
-\begin{aufgabe}{2+m+1}{Ein konkretes Beispiel für eine Primärzerlegung}
+\begin{aufgabe}{2+m+2}{Ein konkretes Beispiel für eine Primärzerlegung}
 Sei~$K$ ein Körper. Seien die Ideale~$\ppp_1 = (X,Y)$, $\ppp_2 = (X,Z)$
 und~$\mmm = (X,Y,Z)$ von~$K[X,Y,Z]$ gegeben. Sei~$\aaa = \ppp_1 \ppp_2$.
 \begin{enumerate}
@@ -32,16 +33,21 @@ ist~$\ppp[X]$ ein zu~$\aaa[X]$ isoliertes Primideal.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{2+2}{Ein Kriterium für Assoziiertheit}
+\begin{aufgabe}{2+m}{Ein Kriterium für Assoziiertheit}
 Sei~$\aaa$ ein Ideal eines Rings~$A$.
 Sei~$\ppp$ ein Ideal, das unter allen Idealen der Form~$(\aaa:x)$ mit~$x
 \in A$ und~$x \not\in \aaa$ maximal ist.
-\begin{enumerate}
-\item Zeige, dass~$\ppp$ ein Primideal ist.
-\item Sei~$\aaa$ zerlegbar. Zeige, dass~$\ppp$ ein zu~$\aaa$ assoziiertes
-Primideal ist.
-\end{enumerate}
+Zeige, dass~$\ppp$ ein Primideal ist, und dass dieses außerdem zu~$\aaa$
+assoziiert ist, wenn~$\aaa$ zerlegbar sein sollte.
 \end{aufgabe}
+
+\setlength{\wrapoverhang}{1.4cm}
+\setlength{\columnsep}{0.8cm}
+\begin{wrapfigure}{r}{0.3\textwidth}
+  \vspace{-2em}
+  \href{http://www.smbc-comics.com/?id=3565}{\includegraphics[scale=0.25]{images/smbc-fractions}}
+  \tiny\sffamily \http www.smbc-comics.com/?id=3565
+\end{wrapfigure}
 
 \begin{aufgabe}{0+2+2+m}{Erste Schritte mit ganzen Erweiterungen}
 \begin{enumerate}
@@ -54,15 +60,9 @@ von~$A$, das in~$B$ invertierbar ist. Zeige, dass~$x$ schon in~$A$ invertierbar 
 von~$A$ in~$B$. Seien~$f,g \in B[X]$ normierte Polynome mit~$fg \in C[X]$.
 Zeige, dass~$f \in C[X]$ und~$g \in C[X]$.
 \item Sei~$G$ eine endliche Gruppe von Automorphismen eines Rings~$A$. Zeige,
-dass~$A$ über dem Unterring~$A^G \defeq \{ x \in A \,|\, \text{$g(x)=x$ für
-alle $g \in G$} \}$ ganz ist.
+dass~$A$ über dem Unterring~$A^G$ der~$G$-Invarianten, also~$\{ x \in A \,|\, \text{$g(x)=x$ für
+alle $g \in G$} \}$, ganz ist.
 \end{enumerate}
 \end{aufgabe}
-
-\centering
-\begin{center}
-  \rotatebox{90}{\tiny\sffamily \http www.smbc-comics.com/?id=3565}
-  \href{http://www.smbc-comics.com/?id=3565}{\includegraphics[angle=90,height=4.5cm]{images/smbc-fractions}}
-\end{center}
 
 \end{document}
