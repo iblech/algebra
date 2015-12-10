@@ -159,12 +159,14 @@ $doctype 5
         <br>
       <a href="alle.pdf">Alle Übungsblätter in einer Datei
       <br>
-    <div style="text-align: center">
-      <iframe name="embed_readwrite" src="http://etherpad.wikimedia.org/p/kommutative-algebra-rueckmeldung?showControls=true&amp;showChat=false&amp;showLineNumbers=false&amp;useMonospaceFont=false" style="width: 80%; height: 20em;">
-      <p>
-        <a href="http://etherpad.wikimedia.org/p/kommutative-algebra-rueckmeldung">
-          Das Kummerpad funktioniert nicht? Direkt zum Pad.
+      <a href="http://etherpad.wikimedia.org/p/kommutative-algebra-rueckmeldung">
+        Anregungen oder Kritik? Zum Kummerpad.
     <p class="moral">
       Whenever you meet a <em>functor</em>,<br>
       ask “What is its <em>codensity monad</em>?”.
 |]
+
+{-
+    <div style="text-align: center">
+      <iframe name="embed_readwrite" src="http://etherpad.wikimedia.org/p/kommutative-algebra-rueckmeldung?showControls=true&amp;showChat=false&amp;showLineNumbers=false&amp;useMonospaceFont=false" style="width: 80%; height: 20em;">
+-}
