@@ -1,4 +1,4 @@
-\documentclass[entwurf]{uebblatt}
+\documentclass{uebblatt}
 
 \newcommand{\https}{https:/\kern-.2em/\kern-0.03em}
 
@@ -6,12 +6,12 @@
 
 \maketitle{9}{}
 
-\begin{aufgabe}{}{Ganz, endlich und von endlichem Typ}
+\begin{aufgabe}{2}{Ganz, endlich und von endlichem Typ}
 Sei~$A \to B$ ein Ringhomomorphismus. Zeige, dass~$B$ genau dann endlich
 über~$A$ ist, wenn~$B$ von endlichem Typ und ganz über~$A$ ist.
 \end{aufgabe}
 
-\begin{aufgabe}{}{Anwendungen der Noether-Normalisierung}
+\begin{aufgabe}{2+m}{Anwendungen der Noether-Normalisierung}
 \begin{enumerate}
 \item Sei~$A$ eine endlich erzeugte Algebra über einem Körper~$K$ und
 sei~$\mmm$ ein maximales Ideal in~$A$. Zeige, dass~$A/\mmm$ eine endliche
@@ -22,19 +22,39 @@ maximal ist.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{}{Lokalität der Noetherianität, verfeinert}
+\begin{aufgabe}{2}{Lokalität der Noetherianität, verfeinert}
 Sei~$A$ ein Ring, dessen Halme alle noethersch sind. Gelte außerdem, dass
 jedes Element~$x \in A \setminus \{0\}$ nur in endlich vielen maximalen Idealen
 liegt. Zeige, dass~$A$ noethersch ist.
 \end{aufgabe}
 
-\begin{aufgabe}{}{XXX}
+\begin{aufgabe}{2}{Ein schlimmes Ideal}
 Finde ein Beispiel für ein Ideal~$\aaa$, sodass für kein~$n \geq 0$
 die Inklusion~$(\sqrt{\aaa})^n \subseteq \aaa$ gilt.
 \end{aufgabe}
 
-\end{document}
+\begin{aufgabe}{m+1+m+1+m+1+1+1}{Großer Tag der Gegenbeispiele}
+Welche der folgenden Aussagen sind wahr? Kurze Begründung oder Gegenbeispiel!
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\begin{enumerate}
+\item Das Bild eines Ideals unter einem Ringhomomorphismus ist ein Ideal.
+\item Untermoduln endlich erzeugter Moduln sind endlich erzeugt.
+\item Unterringe noetherscher Ringe sind noethersch.
+\item Sind alle Halme eines Moduls endlich erzeugt, so auch der Modul selbst.
+\item Wenn ein Ringhomomorphismus~$\varphi : A \to B$ surjektiv ist, so folgt
+für je zwei parallele Ringhomomorphismen~$\alpha, \beta : B \to C$ aus~$\alpha
+\circ \varphi = \beta \circ \varphi$ schon~$\alpha = \beta$.
+\item Es gilt die Umkehrung von~5.
+\item Ein normiertes Polynom vom Grad~$n$ über einem Ring hat höchstens~$n$
+Nullstellen.
+\item Seien~$f,g,h \in K[X,Y]$ Polynome. Dann gilt~$(f,g) \cap (h) =
+(\operatorname{kgV}(f,h), \operatorname{kgV}(g,h))$.
+\end{enumerate}
+\end{aufgabe}
 
-Wahr oder falsch?
-* Untermoduln von e.e. Moduln sind e.e.
-* Das Bild eines Ideals ist ein Ideal.
+\centering
+\emph{Wenn ein Ring nicht noethersch ist:} \\
+\url{http://tiny.cc/no-no-noether}
+\par
+
+\end{document}
