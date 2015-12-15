@@ -1,4 +1,4 @@
-\documentclass{uebblatt}
+\documentclass[entwurf]{uebblatt}
 
 \newcommand{\https}{https:/\kern-.2em/\kern-0.03em}
 
@@ -6,7 +6,27 @@
 
 \maketitle{10}{}
 
-\begin{aufgabe}{}{Eine elementare Charakterisierung der Dimension}
+\begin{aufgabe}{m+m+1+1}{Erste Schritte mit der Dimension von Ringen}
+Bestimme für die folgenden Ringe ihre Dimension. Dabei ist~$K$ ein Körper.
+\begin{enumerate}
+\item $K$
+\item $K[X]$
+\item $\ZZ/(90)$
+\item $K[X,Y]/(XY)$
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{}{Artinität über einem Körper}
+Sei~$A$ eine endlich erzeugte Algebra über einem Körper~$K$. Zeige, dass~$A$
+genau dann als Ring artinsch ist, wenn~$A$ als~$K$-Vektorraum endlich
+dimensional ist.
+\end{aufgabe}
+
+\begin{aufgabe}{}{Beispiel für den Struktursatz artinscher Ringe}
+Schreibe den artischen Ring~$\ZZ/(90)$ als Produkt artinscher lokaler Ringe.
+\end{aufgabe}
+
+\begin{aufgabe}{2+2+2+0}{Eine elementare Charakterisierung der Dimension}
 Für ein Ringelement~$x \in A$ sei~$\bbb_x$ das Ideal~$(x) + (\sqrt{(0)}:x)$.
 \begin{enumerate}
 \item Sei~$\ppp$ ein minimales Primideal. Sei~$x \in A$. Zeige,
@@ -15,6 +35,12 @@ dass~$\bbb_x \not\subseteq \ppp$.
 \in \qqq \setminus \ppp$. Zeige, dass~$\bbb_x \subseteq \qqq$.
 \item Zeige für~$n \geq 0$: Genau dann gilt~$\dim A \leq n$, wenn~$\dim
 A/\bbb_x \leq n - 1$ für alle~$x \in A$.
+\item Folgere: Ein Ring ist genau dann von Dimension~$\leq n$, wenn für
+je $n+1$ Ringelemente~$x_0,\ldots,x_n$ eine Zahl~$r \geq 0$ mit
+\[ (x_0 \cdots x_n)^r \in (x_0 \cdots x_{n-1})^r (x_n^{r+1}) +
+  (x_0 \cdots x_{n-2})^r (x_{n-1}^{r+1}) + \cdots +
+  (x_0)^r (x_1^{r+1}) + (x_0^{r+1}) \]
+existiert.
 \end{enumerate}
 \end{aufgabe}
 
