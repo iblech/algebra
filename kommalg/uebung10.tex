@@ -1,6 +1,4 @@
-\documentclass[entwurf]{uebblatt}
-
-\newcommand{\https}{https:/\kern-.2em/\kern-0.03em}
+\documentclass{uebblatt}
 
 \begin{document}
 
@@ -16,19 +14,34 @@ Bestimme für die folgenden Ringe ihre Dimension. Dabei ist~$K$ ein Körper.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{}{Artinität über einem Körper}
-Sei~$A$ eine endlich erzeugte Algebra über einem Körper~$K$. Zeige, dass~$A$
-genau dann als Ring artinsch ist, wenn~$A$ als~$K$-Vektorraum endlich
-dimensional ist.
-\end{aufgabe}
-
-\begin{aufgabe}{}{Beispiel für den Struktursatz artinscher Ringe}
+\begin{aufgabe}{3}{Beispiel für den Struktursatz artinscher Ringe}
 Schreibe den artischen Ring~$\ZZ/(90)$ als Produkt artinscher lokaler Ringe.
 Gib also artinsche lokale Ringe~$A_1,\ldots,A_n$ und einen
 Isomorphismus~$\ZZ/(90) \to A_1 \times \cdots \times A_n$ an.
 \end{aufgabe}
 
-\begin{aufgabe}{2+2+2+0}{Eine elementare Charakterisierung der Dimension}
+\begin{aufgabe}{m+2+3+m}{Artinität über einem Körper}
+\begin{enumerate}
+\item Seien~$R$ ein Ring und~$M$ ein einfacher~$R$-Modul. Zeige, dass~$M$ isomorph
+zu einem~$R$-Modul der Form~$R/\mmm$ ist, wobei~$\mmm$ ein maximales Ideal in~$R$
+ist.
+\end{enumerate}
+Sei im Folgenden~$A$ eine endlich erzeugte lokale Algebra über einem
+Körper~$K$. Sei~$\mmm$ das maximale Ideal von~$A$.
+\begin{enumerate}
+\addtocounter{enumi}{1}
+\item Sei~$M = M_0 \supsetneq M_1 \supsetneq \cdots \supsetneq M_n = 0$ eine
+Kompositionsreihe eines~$A$-Moduls~$M$. Zeige, dass~$M$ als~$K$-Vektorraum
+von Dimension~$\dim_K M = n \cdot \dim_K(A/\mmm)$ ist.
+\item Zeige, dass~$A$ genau dann als Ring artinsch ist, wenn~$A$
+als~$K$-Vektorraum endlich dimensional ist. Zeige weiter, dass in diesem
+Fall~$\dim_K A = \ell(A) \cdot \dim_K(A/\mmm)$ gilt.
+\item Zeige den ersten Teil der Behauptung aus Teilaufgabe~c) auch für den
+Fall, dass~$A$ nicht lokal ist.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{2+m+2+0}{Eine elementare Charakterisierung der Dimension}
 Für ein Ringelement~$x \in A$ sei~$\bbb_x$ das Ideal~$(x) + (\sqrt{(0)}:x)$.
 \begin{enumerate}
 \item Sei~$\ppp$ ein minimales Primideal. Sei~$x \in A$. Zeige,
@@ -45,5 +58,8 @@ je $n+1$ Ringelemente~$x_0,\ldots,x_n$ eine Zahl~$r \geq 0$ mit
 existiert.
 \end{enumerate}
 \end{aufgabe}
+
+\centering
+\emph{\textbf{Joke 21.5.2.} Old Macdonald had a form; $e_i \wedge e_i = 0$.}
 
 \end{document}
