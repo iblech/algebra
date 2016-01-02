@@ -117,6 +117,7 @@
 \renewcommand{\SS}{\mathbb{S}}
 \newcommand{\aaa}{\mathfrak{a}}
 \newcommand{\bbb}{\mathfrak{b}}
+\newcommand{\ccc}{\mathfrak{c}}
 \newcommand{\ppp}{\mathfrak{p}}
 \newcommand{\qqq}{\mathfrak{q}}
 \newcommand{\mmm}{\mathfrak{m}}
