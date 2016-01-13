@@ -79,8 +79,9 @@ renderPoints config p =
         ratio  = round $ 100 * total / fromIntegral maxs :: Int
         sheets = concat . intersperse "\n" $
             zipWith3 (\i n m -> "Blatt " ++ show i ++ ": " ++ format n m)
-                [1..] (points p) (totals config)
-        format n m
+                [1..] (points p) (map Just (totals config) ++ repeat Nothing)
+        format n Nothing = init . init $ format n (Just 0)  -- noch schlimmerer Hack
+        format n (Just m)
             | Nothing <- n
             = "–/" ++ show m
             | Just n' <- n
