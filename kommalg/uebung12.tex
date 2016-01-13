@@ -7,13 +7,35 @@
 
 \maketitle{12}{}
 
-\begin{aufgabe}{}{Spiel und Spaß mit~$p$-adischen Zahlen}
+\begin{aufgabe}{m+1+1+1}{Spiel und Spaß mit~$p$-adischen Zahlen}
 Sei~$\ZZ_p = \varinjlim_n \ZZ/(p^n)$ der Ring der~$p$-adischen Zahlen.
 \begin{enumerate}
+\item Sei~$n$ eine zu~$p$ teilerfremde ganze Zahl. Zeige, dass~$n$ in~$\ZZ_p$
+invertierbar ist.
 \item Berechne $\lim_{n \to \infty} \frac{1}{1 + p^n}$ und $\lim_{n \to \infty}
 \frac{p^n}{1 + p^n}$ in~$\RR$ und in~$\ZZ_p$.
 \item Seien~$x$ und~$y$ ganze Zahlen. Finde eine Folge~$p$-adischer Zahlen, die
 in~$\RR$ gegen~$x$ und in~$\ZZ_p$ gegen~$y$ konvergiert.
+\item Gibt es in~$\ZZ_5$ eine Quadratwurzel aus~$-1$?
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{2+m+2+1}{Hensels Lemma}
+Sei~$A$ ein Ring. Sei~$f \in A[X]$ ein
+Polynom, das modulo einem Ideal~$\aaa$ eine einfache Nullstelle besitzt: ein Element~$x_1
+\in A$ mit~$f(x_1) \equiv 0$ modulo~$\aaa$, sodass es ein Element~$y \in A$
+mit~$f'(x_1) y \equiv 1$ modulo~$\aaa$ gibt.
+Wir definieren für~$n \geq 1$: \[ x_{n+1} \defeq x_n - y f(x_n). \]
+\begin{enumerate}
+\item Zeige für alle~$n \geq 1$, dass $x_n \equiv x_m \pmod{\aaa^m}$ für
+alle~$m < n$ und dass~$f(x_n) \equiv 0 \pmod{\aaa^n}$.
+% Tipp: formale Taylorentwicklung
+\item Zeige, dass~$(x_n)_n$ eine Cauchyfolge bezüglich der~$\aaa$-adischen
+Topologie ist.
+\item Sei~$A$ vollständig bezüglich dieser Topologie. Zeige,
+dass~$f$ eine Nullstelle in~$A$ besitzt.
+\item Unter welchem Namen ist das Konstruktionsverfahren für die~$x_n$ bekannt?
+Bewundere die Einheit der Mathematik.
 \end{enumerate}
 \end{aufgabe}
 
