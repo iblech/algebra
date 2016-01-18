@@ -1,13 +1,13 @@
-\documentclass[entwurf]{uebblatt}
+\documentclass{uebblatt}
 
 \newcommand{\cont}{\mathrm{cont}}
 \newcommand{\http}{http:/\kern-.2em/\kern-0.03em}
 
 \begin{document}
 
-\maketitle{12}{}
+\maketitle{12}{\href{https://en.wikipedia.org/wiki/P-adic_number}{\includegraphics[scale=0.24]{images/p-adic-numbers}}}
 
-\begin{aufgabe}{m+m+1+1+1}{Spiel und Spaß mit~$p$-adischen Zahlen}
+\begin{aufgabe}{m+m+2+1+1}{Spiel und Spaß mit~$p$-adischen Zahlen}
 Sei~$\ZZ_p$ der Ring der~$p$-adischen Ganzzahlen, konstruierbar
 als~$\varprojlim_n \ZZ/(p^n)$ oder Vervollständigung von~$\ZZ$ bezüglich
 der~$(p)$-adischen Topologie.
@@ -24,12 +24,12 @@ in~$\RR$ gegen~$x$ und in~$\ZZ_p$ gegen~$y$ konvergiert.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{2+m+2+1}{Hensels Lemma}
+\begin{aufgabe}{3+m+3+1}{Hensels Lemma}
 Sei~$A$ ein Ring. Sei~$f \in A[X]$ ein
 Polynom, das modulo einem Ideal~$\aaa$ eine einfache Nullstelle besitzt: ein Element~$x_1
 \in A$ mit~$f(x_1) \equiv 0$ modulo~$\aaa$, sodass es ein Element~$y \in A$
 mit~$f'(x_1) y \equiv 1$ modulo~$\aaa$ gibt.
-Wir definieren für~$n \geq 1$: \[ x_{n+1} \defeq x_n - y f(x_n). \]
+Wir definieren für~$n \geq 1$: $x_{n+1} \defeq x_n - y f(x_n)$.
 \begin{enumerate}
 \item Zeige für alle~$n \geq 1$, dass $x_n \equiv x_m \pmod{\aaa^m}$ für
 alle~$m < n$ und dass~$f(x_n) \equiv 0 \pmod{\aaa^n}$.
@@ -52,8 +52,5 @@ Bild von~$x$ unter dem kanonischen Homomorphismus~$A \to \hat A$ ebenfalls regul
 Sei~$K$ ein Körper mit~$2 \neq 0$. Zeige: Es gibt eine Potenzreihe~$p \in
 \ps{K}$ mit~$p^2 = 1 + X$.
 \end{aufgabe}
-
-\emph{Am Freitag folgt möglicherweise noch eine weitere Aufgabe (oder eine
-Hochskalierung der Punkte).}
 
 \end{document}
