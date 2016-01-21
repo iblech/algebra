@@ -180,5 +180,6 @@
 \newcommand{\brak}[1]{{\llbracket{#1}\rrbracket}}
 \newcommand{\defeq}{\vcentcolon=}
 \newcommand{\ps}[1]{{#1}\llbracket{X}\rrbracket}
+\newcommand{\psxy}[1]{{#1}\llbracket{X,Y}\rrbracket}
 
 \newcommand{\stackhref}[1]{\href{http://stacks.math.columbia.edu/tag/#1}{#1}}
