@@ -78,18 +78,20 @@ renderPoints config p =
         maxs   = sum $ totals $ config
         ratio  = round $ 100 * total / fromIntegral maxs :: Int
         sheets = concat . intersperse ", " $
-            zipWith3 (\i n m -> "B" ++ show i ++ ":" ++ nbsp ++ format n m)
+            zipWith3 (\i n m -> "B" ++ pad 2 '0' (show i) ++ ":" ++ [nbsp] ++ format n m)
                 [1..] (points p) (map Just (totals config) ++ repeat Nothing)
-        nbsp   = "\xa0"  -- NO-BREAK SPACE
-        format n Nothing = init . init $ format n (Just 0)  -- noch schlimmerer Hack
+        nbsp     = '\xa0'    -- NO-BREAK SPACE
+        figspace = '\x2007'  -- FIGURE SPACE
+        format n Nothing = init . init . init $ format n (Just 0)  -- noch schlimmerer Hack
         format n (Just m)
             | Nothing <- n
-            = "–/" ++ show m
+            = replicate 3 figspace ++ "–/" ++ pad 2 figspace (show m)
             | Just n' <- n
             = let n'' = floor n' :: Int  -- schlimmer Hack
               in  if fromIntegral n'' == n'
-                      then show n'' ++ "/" ++ show m
-                      else show n'' ++ ",5/" ++ show m
+                      then pad 2 figspace (show n'') ++ ",0/" ++ pad 2 figspace (show m)
+                      else pad 2 figspace (show n'') ++ ",5/" ++ pad 2 figspace (show m)
+        pad k s str = replicate (k - length str) s ++ str
     in [hamlet|
 <span title="#{sheets}">
     #{show ratio} %
