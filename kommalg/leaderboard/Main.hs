@@ -124,6 +124,7 @@ $doctype 5
       table { margin-left: auto; margin-right: auto; text-align: left; }
       .moral { border: 3px solid #2d1630; width: 18em; margin-left: auto; margin-right: auto; }
       .moral em { font-style: normal; }
+      .poem { width: 32em; padding: 1em; text-align: left; margin-left: auto; margin-right: auto; background-color: #e4999f; }
       .remark { width: 44em; margin-left: auto; margin-right: auto; }
       .rect { font-size: 200%; }
       .success { color: #44a340; }
@@ -165,6 +166,18 @@ $doctype 5
       <br>
       <a href="http://etherpad.wikimedia.org/p/kommutative-algebra-rueckmeldung">
         Anregungen oder Kritik? Zum Kummerpad.
+    <p class="poem">
+      Das Beste an dem neuen Jahr:<br>
+      Es startet gleich mit Algebra!<br>
+      Schlangenlemma und das von Zorn,<br>
+      da fühlt man sich wie neu geborn'n.<br>
+      Aussagen zeigen, auf die ein oder andre Weise,<br>
+      am besten jedoch durch direkte Beweise.<br>
+      Mittwoch und Freitag, das sind die tollsten Tage.<br>
+      Warum? Da ist kommutative Algebra, was soll die Frage?<br>
+      Hilbertscher Basissatz, Newton-Verfahren und Korrespondenzsätze,<br>
+      das sieht man auf einen Blick:<br>
+      Alles gibt Sinn, das ist die Einheit der Mathematik!
     <p class="moral">
       Whenever you meet a <em>functor</em>,<br>
       ask “What is its <em>codensity monad</em>?”.
