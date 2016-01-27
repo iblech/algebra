@@ -120,6 +120,7 @@
 \newcommand{\ccc}{\mathfrak{c}}
 \newcommand{\ppp}{\mathfrak{p}}
 \newcommand{\qqq}{\mathfrak{q}}
+\newcommand{\rrr}{\mathfrak{r}}
 \newcommand{\mmm}{\mathfrak{m}}
 \newcommand{\nnn}{\mathfrak{n}}
 \newcommand{\End}{\mathrm{End}}
