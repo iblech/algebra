@@ -1,4 +1,6 @@
-\documentclass[entwurf]{uebblatt}
+\documentclass{uebblatt}
+
+\usepackage{wrapfig}
 
 \begin{document}
 
@@ -9,23 +11,35 @@ Finde einen noetherschen Ring zusammen mit einem Ideal~$\aaa \neq (1)$
 mit~$\bigcap_{n=0}^\infty \aaa^n \neq (0)$.
 \end{aufgabe}
 
-\begin{aufgabe}{2+m+2}{Dimension des Polynomrings im nicht-noetherschen Fall}
+\begin{aufgabe}{m+2+2}{Fasern von Ringhomomorphismen}
+Sei~$\ppp$ ein Primideal eines Rings~$A$. Sei~$k(\ppp) \defeq A_\ppp/\ppp A_\ppp$
+der Restklassenkörper bei~$\ppp$. Sei~$B$ eine endliche~$A$-Algebra.
+\begin{enumerate}
+\item Zeige, dass die Primideale~$\qqq$
+von~$B$ mit~$A \cap \qqq = \ppp$ in kanonischer Eins-zu-Eins-Korrespondenz zu
+den Primidealen von~$B_\ppp/\ppp B_\ppp \cong B \otimes_A k(\ppp)$ stehen.
+\item Sei~$A$ ein Körper. Zeige, dass~$B$ nur endlich
+viele Primideale besitzt.
+\item Sei~$B$ endlich über~$A$. Zeige, dass es nur endlich viele
+Primideale~$\qqq$ wie in~b) gibt.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{2+2+m}{Dimension des Polynomrings im nicht-noetherschen Fall}
 Sei~$A$ ein Ring.
 \begin{enumerate}
 \item Zeige: $\dim A[X] \geq 1 + \dim A$.
 % Tipp: B3, A2b)
-\item Sei~$\ppp$ ein Primideal von~$A$. Zeige, dass die Primideale~$\qqq$
-von~$A[X]$ mit~$A \cap \qqq = \ppp$ in Eins-zu-Eins-Korrespondenz zu den
-Primidealen von~$k(\ppp)[X]$ stehen. Dabei ist~$k(\ppp)$ der
-Körper~$A_\ppp/\ppp A_\ppp$.
+\item Sei~$\ppp$ ein Primideal von~$A$. Die Primideale~$\qqq$
+von~$A[X]$ mit~$A \cap \qqq = \ppp$ stehen in Eins-zu-Eins-Korrespondenz zu den
+Primidealen eines gewissens Rings. Welchem? Welche Dimension hat dieser?
 \item Zeige: $\dim A[X] \leq 1 + 2 \dim A$.
 \end{enumerate}
 \end{aufgabe}
 
 \begin{aufgabe}{3}{Beispiele für Poincarésche Reihe und Hilbertsches Polynom}
 Berechne die Poincarésche Reihe und das Hilbertsche Polynom des
-gewichteten~$K[X,Y]$-Moduls $K[X,Y]/(X^2, XY)$ bezüglich~$\dim_K$.
-% und von noch paar Moduln
+gewichteten~$K[X,Y]$-Moduls $K[X,Y]/(X^2, XY)$ bezüglich~$\lambda = \dim_K$.
 \end{aufgabe}
 
 \begin{aufgabe}{1}{Dualität zwischen symmetrischer und äußerer Algebra}
@@ -36,12 +50,19 @@ Zeige: $\lambda(S, t) \cdot \lambda(E, -t) = 1$.
 \end{aufgabe}
 % Verwende ohne Beweis, dass dim_K E_k = \binom{n}{k}.
 
-\vfill
+\setlength{\wrapoverhang}{1.3cm}
+\setlength{\columnsep}{0.8cm}
+\begin{wrapfigure}{r}{0.38\textwidth}
+  \vspace{-1em}
+  \includegraphics{images/hilbert-scheme-of-points}
+\end{wrapfigure}
 
 \begin{aufgabe}{0}{Rationale Binomialkoeffizienten}
-\small
-Für rationale Zahlen~$x$ und natürliche Zahlen~$k$ setzen wir~$\binom{x}{k}
-\defeq x (x-1) \cdots (x-k+1) / k! \in \QQ$. Solche Binomialkoeffizienten
+\scriptsize
+Wir setzen~$\binom{x}{k}
+\defeq x (x-1) \cdots (x-k+1) / k! \in \QQ$ für rationale Zahlen~$x$ und
+natürliche Zahlen~$k$.
+Solche Binomialkoeffizienten
 kommen in Taylor-Entwicklungen vieler wichtiger Funktionen vor.
 \begin{enumerate}
 \item Zeige: Genau dann kommt im gekürzten Nenner einer rationalen Zahl~$a/b$
@@ -49,12 +70,10 @@ nicht der Primfaktor~$p$ vor, wenn es eine~$p$-adische Ganzzahl~$u$ mit~$bu = a$
 \item Verwende die Dichtheit von~$\ZZ$ in~$\ZZ_p$ und die Stetigkeit von
 Polynomen über~$\ZZ_p$, um zu folgern: Im gekürzten Nenner eines rationalen
 Binomialkoeffizienten~$\binom{x}{k}$ können nur solche Primfaktoren vorkommen, die auch
-im gekürzten Nenner von~$x$ vorkommen.
+im gekürzten Nenner von~$x$ vorkommen.\par
 \end{enumerate}
 \end{aufgabe}
 
-\centering
-\includegraphics{images/hilbert-scheme-of-points}
 
 \end{document}
 
@@ -62,10 +81,3 @@ Berechne die Poincarésche Reihe von ...
 https://people.kth.se/~laksov/courses/algebradr01/notes/grading2.pdf
 
 Spaß zum Matrizenmodell des Hilbertschemas? Geht vielleicht zu weit.
-
-Sei A ein Ring. Zeige: 1 + dim A <= dim A[X] <= 1 + 2 dim A.
-Teilaufgaben zur Hinführung:
-* (für die obere Schranke) Zeige, dass Primideale von A[X],
-  die über einem Primideal p von A liegen, in Eins-zu-Eins-Korrespondenz zu den
-  Primidealen von k(p)[X] stehen, wobei k(p) = A_p/pA_p.
-* (für die untere Schranke) Blatt 3, Aufgabe 2b).
