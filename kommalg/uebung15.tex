@@ -1,12 +1,16 @@
 \documentclass[entwurf]{uebblatt}
 
-\newcommand{\http}{http:/\kern-.2em/\kern-0.03em}
-
 \begin{document}
 
 \maketitle{15}{}
 
-\begin{aufgabe}{3+m}{Intervalle von Primidealen in noetherschen Ringen}
+\begin{aufgabe}{m}{Eine explizite Beschreibung der adischen Vervollständigung}
+Sei~$\aaa = (x_1,\ldots,x_n)$ ein Ideal in einem noetherschen Ring~$A$. Zeige,
+dass die Vervollständigung~$\hat A_\aaa$ isomorph
+zu~$\psmany{A}{X_1,\ldots,X_n}/(X_1-x_1,\ldots,X_n-x_n)$ ist.
+\end{aufgabe}
+
+\begin{aufgabe}{m+m}{Intervalle von Primidealen in noetherschen Ringen}
 \begin{enumerate}
 \item
 Seien~$\ppp \subseteq \qqq$ Primideale in einem
@@ -15,27 +19,33 @@ mit~$\ppp \subsetneq \rrr \subsetneq \qqq$. Zeige, dass~$(\ppp,\qqq)$ entweder
 leer oder unendlich ist.
 \item Sei~$A$ ein noetherscher Ring in dem alle Primideale in einer einzigen Kette~$\ppp_0
 \subsetneq \ppp_1 \subsetneq \cdots \subsetneq \ppp_n$ mit~$n \geq 2$ auftreten.
-Zeige, dass es in~$A$ ein Element~$x$ mit~$x + 0 \neq x$ gibt.
+Zeige: Es gibt ein Element~$x \in A$ mit~$x + 0 \neq x$.
 \end{enumerate}
 \end{aufgabe}
 
-\begin{aufgabe}{}{Dimension des Polynomrings im noetherschen Fall}
+\begin{aufgabe}{m}{Dimension des Polynomrings im noetherschen Fall}
 Sei~$A$ ein noetherscher Ring. Zeige: $\dim A[X] = 1 + \dim A$.
 % Teilaufgabe dazu formulieren!
 \end{aufgabe}
 
-\begin{aufgabe}{}{Nulldimensionale reguläre lokale Ringe}
+\begin{aufgabe}{m}{Nulldimensionale reguläre lokale Ringe}
 Zeige, dass ein Ring genau dann ein nulldimensionaler regulärer lokaler Ring
 ist, wenn er ein Körper ist.
 \end{aufgabe}
+
+\begin{aufgabe}{m}{Gar nicht mehr erste Schritte mit der Dimension von Ringen}
+Berechne die Dimension des Rings~$\CC[X,Y,Z]/(X-Z, X^2+Y^2+Z^2)$.
+\end{aufgabe}
+
+\vfill
+\centering
+\href{http://www.neverendingbooks.org/mumfords-treasure-map}{\includegraphics[scale=0.4]{images/mumfords-treasure-map}} \\[0.5em]
+\emph{Mumfords Schatzkarte der Primideale von~$\ZZ[X]$}
 
 \end{document}
 
 Dimension von { M in K^(n times m) | rk M <= k }.
 Kemper, Seite 70.
-
-\hat A_a = A[[x_1,...,x_n]]/(x_i-a_i) für a = (a_1,...,a_n) und A noethersch?
-http://www.math.uchicago.edu/~may/MISC/Topologies.pdf
 
 Was ist die Höhe des Primideals (pX - 1) in Z_p[X]?
 
