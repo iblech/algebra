@@ -172,6 +172,7 @@
 \DeclareMathOperator{\Image}{im}
 \DeclareMathOperator{\Ob}{Ob}
 \DeclareMathOperator{\Sing}{Sing}
+\DeclareMathOperator{\height}{ht}
 \newcommand{\Open}{\mathrm{Op}}
 \newcommand{\?}{\,{:}\,}
 \renewcommand{\_}{\mathpunct{.}\,}

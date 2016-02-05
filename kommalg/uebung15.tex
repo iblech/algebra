@@ -1,8 +1,9 @@
-\documentclass[entwurf]{uebblatt}
+\documentclass{uebblatt}
 
 \begin{document}
 
 \maketitle{15}{}
+\enlargethispage{2em}
 
 \begin{aufgabe}{m}{Eine explizite Beschreibung der adischen Vervollständigung}
 Sei~$\aaa = (x_1,\ldots,x_n)$ ein Ideal in einem noetherschen Ring~$A$. Zeige,
@@ -17,6 +18,8 @@ Seien~$\ppp \subseteq \qqq$ Primideale in einem
 noetherschen Ring. Sei~$(\ppp,\qqq)$ die Menge all derjenigen Primideale~$\rrr$
 mit~$\ppp \subsetneq \rrr \subsetneq \qqq$. Zeige, dass~$(\ppp,\qqq)$ entweder
 leer oder unendlich ist.
+% Falls nicht leer und endlich: Prop. 6.17, um ein Element x zu finden, über
+% dem q minimal sitzt. Dann klar (Noether-Voraussetzung nutzen!).
 \item Sei~$A$ ein noetherscher Ring in dem alle Primideale in einer einzigen Kette~$\ppp_0
 \subsetneq \ppp_1 \subsetneq \cdots \subsetneq \ppp_n$ mit~$n \geq 2$ auftreten.
 Zeige: Es gibt ein Element~$x \in A$ mit~$x + 0 \neq x$.
@@ -24,13 +27,24 @@ Zeige: Es gibt ein Element~$x \in A$ mit~$x + 0 \neq x$.
 \end{aufgabe}
 
 \begin{aufgabe}{m}{Dimension des Polynomrings im noetherschen Fall}
-Sei~$A$ ein noetherscher Ring. Zeige: $\dim A[X] = 1 + \dim A$.
-% Teilaufgabe dazu formulieren!
-\end{aufgabe}
-
-\begin{aufgabe}{m}{Nulldimensionale reguläre lokale Ringe}
-Zeige, dass ein Ring genau dann ein nulldimensionaler regulärer lokaler Ring
-ist, wenn er ein Körper ist.
+\begin{enumerate}
+\item Sei~$\ppp$ ein Primideal in einem Ring, das minimal mit der Eigenschaft
+ist, ein gegebenes zerlegbares Ideal~$\aaa$ zu umfassen. Zeige, dass~$\ppp$
+zu~$\aaa$ assoziiert ist.
+\item Sei~$\ppp$ ein Primideal der Höhe~$r$ in einem noetherschen Ring.
+Zeige, dass Elemente~$x_1,\ldots,x_r$ existieren, sodass~$\ppp$ unter allen
+Primidealen, die diese Elemente enthalten, minimal ist.
+% Satz 46.1
+\item Zeige für alle Primideale~$\ppp$ eines noetherschen Rings:~$\height
+\ppp[X] = \height \ppp$.
+% b) und Folgerung 45.14
+\item Sei~$A$ ein Ring in dem die Behauptung von~c) gilt.
+Sei~$\qqq \subseteq A[X]$ ein Primideal. Sei~$\ppp \defeq A \cap \qqq$.
+Zeige:~$\height \qqq \leq \height \ppp + 1$.
+% Induktion über die Höhe von q. Im Induktionsschritt ein q' < q mit um eins
+% verminderter Höhe hernehmen. Dran denken, dass p[X] <= q (und p'[X] <= q').
+\item Folgere: Für noethersche Ringe~$A$ gilt $\dim A[X] = 1 + \dim A$.
+\end{enumerate}
 \end{aufgabe}
 
 \begin{aufgabe}{m}{Gar nicht mehr erste Schritte mit der Dimension von Ringen}
@@ -54,7 +68,7 @@ projektiver Raum über dem Körper mit einem Element sein?
 \centering
 \href{http://www.neverendingbooks.org/mumfords-treasure-map}{\includegraphics[scale=0.2]{images/mumfords-treasure-map}} \\[0.5em]
 \small
-\emph{Mumfords Schatzkarte der Primideale von~$\ZZ[X]$}
+\emph{Mumfords Schatzkarte: die Primideale von~$\ZZ[X]$}
 
 \end{document}
 
@@ -65,3 +79,8 @@ Was ist die Höhe des Primideals (pX - 1) in Z_p[X]?
 
 http://www.uio.no/studier/emner/matnat/math/MAT4200/h12/mat4200_h12_problems.pdf
 http://folk.uio.no/fredrme/Kommalg.pdf (ganz am Ende)
+
+\begin{aufgabe}{m}{Nulldimensionale reguläre lokale Ringe}
+Zeige, dass ein Ring genau dann ein nulldimensionaler regulärer lokaler Ring
+ist, wenn er ein Körper ist.
+\end{aufgabe}
