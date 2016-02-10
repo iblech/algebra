@@ -68,3 +68,7 @@ Seite 276, im Beweis der Smithschen Normalform über Z:
 * nicht "Folge" ganzer Zahlen, eher "Prozess" (im Hinblick auf die spätere
   Verallgemeinerung auf noethersche Ringe)
 * nicht "stabilisieren", eher "halten"
+
+
+Lineare Disjunktheit: Welche Voraussetzungen benötigt man, dass diese Relation
+wirklich symmetrisch wird? Blatt 11, Aufgabe 4.
