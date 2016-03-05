@@ -1,0 +1,86 @@
+\documentclass{uebblatt}
+
+\usepackage[T1]{fontenc} 
+\usepackage{datatool}
+\usepackage{array}
+
+\pagestyle{empty}
+
+\begin{document}
+
+%\DTLsetseparator{;}           
+\DTLloaddb{teilnehmende}{teilnehmende.csv}
+\DTLsetnumberchars{.}{,}
+
+\DTLforeach*{teilnehmende}{%
+  \MatNo=Matrnr,\Nachname=Nachname,\Vorname=Vorname,\Bonus=Prozent}{%    
+  \clearpage
+  \begin{center}\Large\bfseries Kommutative Algebra\\ Wintersemester 2015/16\end{center}
+
+  \vspace{3em}
+
+  \begin{tabular}{|l|m{9cm}|}
+    \hline
+    \textbf{Name} & \textbf{\Nachname, \Vorname}  \\
+    \hline
+    \textbf{Matrikelnummer} & \MatNo  \\
+    \hline
+    \textbf{Codewort} & \rule{0pt}{2em} \\
+    \hline
+  \end{tabular}
+
+  \vspace{3em}
+
+  \begin{tabular}{|l|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|}
+    \hline
+    \textbf{Aufgabe} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{4} &
+    \multicolumn{1}{c|}{5} \\
+    \hline
+    \textbf{Punkte} & \rule{0pt}{2em} & \rule{0pt}{2em} & \rule{0pt}{2em} & \rule{0pt}{2em} & \rule{0pt}{2em} \\ 
+    \hline
+  \end{tabular}
+
+  \vspace{1cm}
+
+  \begin{tabular}{|l|m{1cm}|m{1cm}|m{1cm}|m{1cm}|c|}
+    \hline
+    \textbf{Aufgabe} & \multicolumn{1}{c|}{6} & \multicolumn{1}{c|}{7} & \multicolumn{1}{c|}{8} & \multicolumn{1}{c|}{9} &
+    \multicolumn{1}{c|}{Bonus} \\
+    \hline
+    \textbf{Punkte} & \rule{0pt}{2em} & \rule{0pt}{2em} & \rule{0pt}{2em} & \rule{0pt}{2em} & \textbf{\Bonus} \\ 
+    \hline
+  \end{tabular}
+
+  \vspace{3em}
+
+  \begin{tabular}{|l|m{9em}|}
+    \hline
+    \textbf{Gesamtpunktzahl} & \rule{0pt}{2em} \\
+    \hline
+    \textbf{Prüfungsnote} & \rule{0pt}{2em} \\
+    \hline
+  \end{tabular}
+  \vspace{3em}
+
+  \begin{itemize}
+  \item Überprüfen Sie die Angaben auf dem Deckblatt. Schreiben Sie leserlich ein
+  von Ihnen ausgedachtes Codewort in die entsprechende Zeile des Deckblatts.
+  Merken Sie sich ihr Codewort, weil wir die Prüfungsergebnisse nach den
+  Codeworten herausgeben werden. Tragen Sie ansonsten auf dem Deckblatt nichts
+  ein.
+  \item Bitte achten Sie auf saubere, stichhaltige und vollständige Begründungen.
+  Unleserliche oder nicht nachvollziehbare Bearbeitungen werden nicht korrigiert.
+  \item Hilfsmittel außer Schreibmaterialien und einem mit Notizen zweiseitig
+  beschriebenen DIN-A4-Blatt sind keine erlaubt.
+  \item Täuschungsversuche werden streng geahndet.
+  \item Wenn Sie der Meinung sind, einen Fehler in den Klausurunterlagen gefunden
+  zu haben, melden Sie sich bitte bei der Aufsicht.
+  \item Achten Sie darauf, am Ende alle Ihre bearbeiteten Blätter abzugeben.
+  \item Zur Bearbeitung der Klausuraufgaben haben Sie insgesamt $120$ Minuten Zeit.
+  \item Die Gesamtpunktzahl ist maximal $100$. In die Gesamtpunktzahl gehen maximal
+  $50$ Punkte an Bonuspunkten durch gute Mitarbeit in den Übungen ein
+  ($1$ Punkt pro $1\,\%$ gelöster Übungsaufgaben).
+  \end{itemize}
+}
+
+\end{document}  

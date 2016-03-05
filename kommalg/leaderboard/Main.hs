@@ -54,6 +54,12 @@ main = do
         writeFile (code p ++ ".html") $ renderHtml $ renderLeaderboard config ps' [p]
     putStrLn $ renderHtml $ renderLeaderboard config ps'' ps
 
+exportCSV :: (Config,[Algebraist]) -> IO ()
+exportCSV (config,ps) = do
+    let maxs = sum $ totals $ config
+    forM_ ps $ \p ->
+        printf "0,%s,%d\n" (name p) (round $ min 50 $ 100 * totalPoints p / fromIntegral maxs :: Integer)
+
 renderAlgebraist config showPoints p = [hamlet|
   <tr>
     <td>
