@@ -127,6 +127,7 @@ $doctype 5
       td { padding: 0px 6px 0px 6px; }
       th { background-color: #2d1630; color: white; }
       td:first-child { font-weight: bold; }
+      .exam td:nth-child(2) { text-align: right; }
       table { margin-left: auto; margin-right: auto; text-align: left; }
       .moral { border: 3px solid #2d1630; width: 18em; margin-left: auto; margin-right: auto; }
       .moral em { font-style: normal; }
@@ -172,6 +173,20 @@ $doctype 5
       <br>
       <a href="http://etherpad.wikimedia.org/p/kommutative-algebra-rueckmeldung">
         Anregungen oder Kritik? Zum Kummerpad.
+    <table class="exam">
+      <tr><th colspan="3">Ergebnisse der Klausur</th>
+      <tr><td>Bayes</td><td>84</td><td>2,0</td>
+      <tr><td>blaugrün8</td><td>95</td><td>1,0</td>
+      <tr><td>Dunklereli</td><td>100</td><td>1,0</td>
+      <tr><td>fg172</td><td>100</td><td>1,0</td>
+      <tr><td>Hoffnung</td><td>93</td><td>1,3</td>
+      <tr><td>Jippie</td><td>100</td><td>1,0</td>
+      <tr><td>KA_4-3-16</td><td>25</td><td>5,0</td>
+      <tr><td>Lineal</td><td>98</td><td>1,0</td>
+      <tr><td>norisknofun</td><td>64</td><td>3,3</td>
+      <tr><td>pangalaktischer Donnergurgler</td><td>100</td><td>1,0</td>
+      <tr><td>Smiley-Punkt</td><td>67</td><td>3,0</td>
+      <tr><td>Torsion</td><td>58</td><td>3,7</td>
     <p class="poem">
       Das Beste an dem neuen Jahr:<br>
       Es startet gleich mit Algebra!<br>
