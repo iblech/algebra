@@ -72,3 +72,15 @@ Seite 276, im Beweis der Smithschen Normalform über Z:
 
 Lineare Disjunktheit: Welche Voraussetzungen benötigt man, dass diese Relation
 wirklich symmetrisch wird? Blatt 11, Aufgabe 4.
+
+
+Seite 337 im Beweis der Existenz von Ganzheitsbasen: Z, nicht Z_b.
+Und muss man im Beweis bei der Definition der erzeugenden Relation nicht noch
+den ggT der (d,a_ji)_i herausteilen?
+Oder einfach all folgende Relationen nehmen:
+
+    { (e_1,...,e_m, a_1,...,a_n) in Z^(m+n) |
+        0 <= e_j < d,
+        sum e_j c_j + sum a_i b_i = 0 }
+
+Das ist auch eine endliche Menge.
